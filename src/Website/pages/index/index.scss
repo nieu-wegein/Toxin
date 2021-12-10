@@ -1,0 +1,24 @@
+@import "../../../variables/variables";
+@import "../../../normalize";
+@import "../../../fonts/fonts";
+@import "../../../components/main-header/main-header";
+@import "../../../components/logo/logo";
+@import "../../../components/button/button";
+
+
+
+* {
+  box-sizing: border-box;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.site-wrapper {
+  max-width: 1920px;
+  margin: 0 auto;
+}
+

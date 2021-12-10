@@ -1,0 +1,12 @@
+extends ../base
+//- TODO: Проверить ссылку в dist
+block vars
+  -var body = "index"
+  -var title = "Главная"
+
+block styles
+  link(rel = "stylesheet" href = "https://fonts.googleapis.com/css?family=Material+Icons&text=expand_more")
+
+block content
+  .site-wrapper
+    include ../../../components/main-header/main-header

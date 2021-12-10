@@ -1,0 +1,59 @@
+
+
+.main-header {
+
+  padding: 14px 9.72%;
+  display: flex;
+  justify-content: space-between;
+
+  &__navigation-container {
+    display: flex;
+    align-items: center;
+    max-width: 79.3%
+  }
+
+}
+
+.site-navigation  {
+
+  margin-right: 20px;
+
+  &__list {
+    font-family: Montserrat, sans-serif;
+    font-size: 14px;
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  &__item {
+    display: flex;
+    align-items: center;
+    padding: 4px 0;
+
+    &:not(:last-child) {
+      margin-right: 20px;
+    }
+  }
+
+  &__link {
+    text-decoration: none;
+    color: $site-dark-50;
+
+    .site-navigation__item_active & {
+
+      font-family: "Montserrat-Bold", sans-serif;
+      color: $site-dark-75;
+    }
+  }
+}
+
+.user-navigation{
+
+  display: flex; // Избегание переноса
+  &__item {
+
+    &:not(:last-child) {
+      margin-right: 20px;
+    }
+  }
+}

@@ -1,0 +1,23 @@
+@import "form-element_field/form-element__field";
+@import "form-element_dropdown/form-element__dropdown";
+
+.form-element {
+  max-width: 320px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+
+  &_label {
+    font-family: "Montserrat-Bold", sans-serif;
+    color: $site-dark;
+    text-transform: uppercase;
+    font-size: 12px;
+  }
+
+  &_note {
+    font-family: "Montserrat", sans-serif;
+    color: $site-dark-50;
+    text-transform: uppercase;
+    font-size: 12px;
+  }
+}

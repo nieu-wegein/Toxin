@@ -1,0 +1,18 @@
+-const main_nav_items = [{text: "О нас", active: " true"}, {text: "Услуги", expand: true}, {text: "Вакансии"}, {text: "Новости"}, {text: "Соглашения", expand: true}]
+
+include ../../mixins/menu-items
+include ../../components/button/button
+
+
+header.main-header
+  include ../logo/logo
+  .main-header__navigation-container
+    nav.site-navigation
+      ul.site-navigation__list
+        +menu-items(main_nav_items)(item_class = "site-navigation__item" link_class = "site-navigation__link")
+    ul.user-navigation
+      li.user-navigation__item
+        +button({type: "a", text: "Войти"})
+      li.user-navigation__item
+        +button({type: "a", modifiers: {primary: true}, text: "Зарегистрироваться"})
+

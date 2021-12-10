@@ -1,0 +1,12 @@
+mixin button(obj)
+  - if (obj.type === "a" || obj.type === "button") {
+    -var classes = ["button"]
+      .button-wrapper
+        - if (obj.modifiers) {
+          - if (obj.modifiers.primary) classes.push("button_primary")
+          - if (obj.modifiers.long) classes.push("button_long")
+          -}
+        #{obj.type}(class = classes) #{obj.text}
+    -}
+
+

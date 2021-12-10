@@ -1,0 +1,4 @@
+mixin form-element__field(obj)
+  input(type = "text" class = "form-element__field" placeholder = obj.text)
+  if obj.description
+    span #{obj.description}

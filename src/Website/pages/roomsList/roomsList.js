@@ -1,0 +1,1 @@
+import './roomsList.scss'
