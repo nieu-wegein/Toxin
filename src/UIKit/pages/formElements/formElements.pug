@@ -4,18 +4,31 @@ include ../../../components/form-element/form-element
   const input_list = [
     {label: "Text Field", note: "Default", item: {type: "field", text: "Email"}},
     {label: "Text Field", note: "Hover / Focus", item: {type: "field", text: "Email"}},
-    {label: "Dropdown", item: {type: "dropdown", text: "Сколько гостей", options: ["Взрослые", "Дети", "Младенцы"]}},
+    {
+      label: "Dropdown",
+      item: {
+        type: "dropdown",
+        id: "guests",
+        text:  "Сколько гостей",
+        options: [
+          {name: "Взрослые", value: "adults", declination: ["гость", "гостя", "гостей"]},
+          {name: "Дети", value: "children", declination: ["гость", "гостя", "гостей"]},
+          {name: "Младенцы", value: "babies", declination: ["гость", "гостя", "гостей"]}
+        ],
+        modifiers: {buttons: true}
+      }
+    },
     {label: "Masked text field", item: {type: "field", text: "ДД.ММ.ГГ"}}
   ]
 
 doctype html
 html(lang = "en")
   head
-      meta(charset="utf-8")
-      meta(name="viewport" content="initial-scale=1.0, width=device-width")
-      meta(name="keywords", content = "")
-      meta(name="description", content=" ")
-      link(rel = "stylesheet" href="https://fonts.googleapis.com/css?family=Material+Icons&amp;text=expand_more")
+    meta(charset="utf-8")
+    meta(name="viewport" content="initial-scale=1.0, width=device-width")
+    meta(name="keywords", content = "")
+    meta(name="description", content=" ")
+    link(rel = "stylesheet" href="https://fonts.googleapis.com/css?family=Material+Icons&amp;text=expand_more")
   body
     .wrapper
       .header
@@ -27,3 +40,4 @@ html(lang = "en")
               +form-element(item)
         .content_column
         .content_column
+    script(src="")

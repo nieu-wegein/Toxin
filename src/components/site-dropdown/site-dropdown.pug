@@ -1,0 +1,18 @@
+include site-dropdown__item
+include ../button/button
+
+mixin site-dropdown(obj)
+  if obj.options
+    .site-dropdown(id= obj.id)
+      button.site-dropdown__header(data-text= obj.text)
+        span.text-area #{obj.text}
+        span.material-icons expand_more
+      ul.site-dropdown__list
+        each option in obj.options
+          +site-dropdown__item(option)
+        if obj.modifiers.buttons
+          .site-dropdown__list-footer(tabindex= "-1")
+            +button({type: "button", text:"Очистить"})(class = "site-dropdown__button-clear")
+            +button({type: "button", text:"Применить"})(class = "site-dropdown__button-apply")
+
+

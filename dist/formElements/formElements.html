@@ -15,44 +15,48 @@
           <div class="main-fields-section">
             <div class="form-element">
               <label class="form-element_label">Text Field</label><span class="form-element_note">Default</span>
-              <input class="form-element__field" type="text" placeholder="Email">
+              <input class="site-field site-field:focus" type="text" placeholder="Email">
             </div>
             <div class="form-element">
               <label class="form-element_label">Text Field</label><span class="form-element_note">Hover / Focus</span>
-              <input class="form-element__field" type="text" placeholder="Email">
+              <input class="site-field site-field:focus" type="text" placeholder="Email">
             </div>
             <div class="form-element">
               <label class="form-element_label">Dropdown</label>
-              <div class="form-element__dropdown">
-                <button class="form-element__dropdown-header">Сколько гостей<span class="material-icons">expand_more</span></button>
-                <ul class="form-element__dropdown-list">
-                  <li class="form-element__dropdown-item">
-                    <div class="dropdown-item-text">Взрослые</div>
-                    <div class="dropdown-counter">
-                      <button class="dropdown-button">-</button><span class="dropdown-count">0</span>
-                      <button class="dropdown-button">+</button>
+              <div class="site-dropdown" id="guests">
+                <button class="site-dropdown__header" data-text="Сколько гостей"><span class="text-area">Сколько гостей</span><span class="material-icons">expand_more</span></button>
+                <ul class="site-dropdown__list">
+                  <li class="site-dropdown__item" tabindex="-1" data-value="adults" data-declination="[&quot;гость&quot;,&quot;гостя&quot;,&quot;гостей&quot;]">
+                    <div class="site-dropdown__item-text">Взрослые</div>
+                    <div class="site-dropdown__counter">
+                      <button class="site-dropdown__button-remove" disabled>-</button><span class="site-dropdown__count">0</span>
+                      <button class="site-dropdown__button-add">+</button>
                     </div>
                   </li>
-                  <li class="form-element__dropdown-item">
-                    <div class="dropdown-item-text">Дети</div>
-                    <div class="dropdown-counter">
-                      <button class="dropdown-button">-</button><span class="dropdown-count">0</span>
-                      <button class="dropdown-button">+</button>
+                  <li class="site-dropdown__item" tabindex="-1" data-value="children" data-declination="[&quot;гость&quot;,&quot;гостя&quot;,&quot;гостей&quot;]">
+                    <div class="site-dropdown__item-text">Дети</div>
+                    <div class="site-dropdown__counter">
+                      <button class="site-dropdown__button-remove" disabled>-</button><span class="site-dropdown__count">0</span>
+                      <button class="site-dropdown__button-add">+</button>
                     </div>
                   </li>
-                  <li class="form-element__dropdown-item">
-                    <div class="dropdown-item-text">Младенцы</div>
-                    <div class="dropdown-counter">
-                      <button class="dropdown-button">-</button><span class="dropdown-count">0</span>
-                      <button class="dropdown-button">+</button>
+                  <li class="site-dropdown__item" tabindex="-1" data-value="babies" data-declination="[&quot;гость&quot;,&quot;гостя&quot;,&quot;гостей&quot;]">
+                    <div class="site-dropdown__item-text">Младенцы</div>
+                    <div class="site-dropdown__counter">
+                      <button class="site-dropdown__button-remove" disabled>-</button><span class="site-dropdown__count">0</span>
+                      <button class="site-dropdown__button-add">+</button>
                     </div>
                   </li>
+                  <div class="site-dropdown__list-footer" tabindex="-1">
+                    <button class="button site-dropdown__button-clear">Очистить</button>
+                    <button class="button site-dropdown__button-apply">Применить</button>
+                  </div>
                 </ul>
               </div>
             </div>
             <div class="form-element">
               <label class="form-element_label">Masked text field</label>
-              <input class="form-element__field" type="text" placeholder="ДД.ММ.ГГ">
+              <input class="site-field site-field:focus" type="text" placeholder="ДД.ММ.ГГ">
             </div>
           </div>
         </div>
@@ -60,5 +64,6 @@
         <div class="content_column"></div>
       </div>
     </div>
+    <script src=""></script>
   </body>
 </html>

@@ -1,4 +1,4 @@
-.form-element__dropdown-item {
+.site-dropdown__item {
 
   display: flex;
   align-items: center;
@@ -11,24 +11,8 @@
   width: 100%;
   padding: 6px 7px 0 15px;
 
+
   &:last-child {
     margin-bottom: 7px;
   }
-}
-
-.dropdown-button {
-  width: 30px;
-  height: 30px;
-  background-color: white;
-  color: $site-dark-50;
-  border: 1px solid $site-dark-25;
-  border-radius: 50%;
-}
-
-.dropdown-counter {
-  display: flex;
-  align-items: center;
-}
-.dropdown-count {
-  margin: 0 10px;
 }

@@ -1,0 +1,92 @@
+@import "site-dropdown__item";
+@import "../button/button";
+
+.site-dropdown {
+
+  width: 100%;
+  position: relative;
+
+
+  &__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-family: "Montserrat", sans-serif;
+    font-size: 14px;
+    text-align: left;
+    background-color: white;
+    width: 100%;
+    padding: 8px 8px 9px 15px;
+    border: 1px solid $site-dark-25;
+    border-radius: 4px;
+    margin-top: 5px;
+    color: $site-dark-75;
+
+
+    &_square {
+      border-bottom-right-radius: 0;
+      border-bottom-left-radius: 0;
+    }
+
+    &:hover,
+    &:focus {
+      outline: 1px solid $site-dark-50;
+    }
+  }
+
+
+  &__list {
+    display: none;
+    width: 100%;
+    padding-left: 0;
+    margin: 0;
+    position: absolute;
+    z-index: 1;
+    background-color: white;
+    border: 1px solid $site-dark-50;
+    border-radius: 0 0 4px 4px;
+    border-top: none;
+
+    &-footer {
+      display: flex;
+      justify-content: space-between;
+      padding: 22px 8px 12px 15px;
+
+    }
+  }
+
+  &__button-add,
+  &__button-remove {
+    cursor: pointer;
+    width: 30px;
+    height: 30px;
+    background-color: white;
+    color: $site-dark-50;
+    border: 1px solid $site-dark-25;
+    border-radius: 50%;
+
+    &:disabled{
+      cursor: default;
+      opacity: 0.38;
+    }
+  }
+
+  &__button-clear,
+  {
+    cursor: pointer;
+    visibility: hidden;
+  }
+  &__button-apply {
+    cursor: pointer;
+  }
+
+  &__counter {
+    display: flex;
+    align-items: center;
+  }
+
+  &__count {
+    width: 32px;
+    text-align: center;
+  }
+}

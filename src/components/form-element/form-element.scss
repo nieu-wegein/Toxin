@@ -1,5 +1,5 @@
-@import "form-element_field/form-element__field";
-@import "form-element_dropdown/form-element__dropdown";
+@import "../site-field/site-field";
+@import "../site-dropdown/site-dropdown";
 
 .form-element {
   max-width: 320px;

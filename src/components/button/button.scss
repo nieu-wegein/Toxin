@@ -1,23 +1,25 @@
 .button {
 
-  padding: 8px 16px;
+  display: inline-block;
   border: none;
-  border-radius: 22px;
+  color: $site-purple;
+  background-color: white;
+  padding: 0;
 
   font-family: Montserrat-Bold, sans-serif;
   font-size: 12px;
   text-transform: uppercase;
 
-  color: #BC9CFF;
-  background-color: white;
-  display: inline-block;
 
   &-wrapper {
     padding: 2px;
     background: linear-gradient(180deg, $site-purple 0%, #8BA4F9 100%);
     border-radius: 22px;
   }
-
+  &.button_rounded {
+    padding: 8px 16px;
+    border-radius: 22px;
+  }
   &.button_primary {
     color: white;
     background: linear-gradient(180deg, $site-purple 0%, #8BA4F9 100%);

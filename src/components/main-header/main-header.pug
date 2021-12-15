@@ -12,7 +12,7 @@ header.main-header
         +menu-items(main_nav_items)(item_class = "site-navigation__item" link_class = "site-navigation__link")
     ul.user-navigation
       li.user-navigation__item
-        +button({type: "a", text: "Войти"})
+        +button({type: "a", modifiers: {rounded: true}, text: "Войти"})
       li.user-navigation__item
-        +button({type: "a", modifiers: {primary: true}, text: "Зарегистрироваться"})
+        +button({type: "a", modifiers: {primary: true, rounded: true}, text: "Зарегистрироваться"})
 
