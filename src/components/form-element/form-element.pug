@@ -1,20 +1,21 @@
-include ../site-field/site-field
+include ../site-input/site-input
 include ../site-dropdown/site-dropdown
 
 mixin form-element(obj)
   -if(obj.item) {
     .form-element
-      if obj.label
-        label.form-element_label() #{obj.label}
-      if obj.note
-        span.form-element_note #{obj.note}
+      .form-element__top
+        if obj.label
+          label.form-element__label() #{obj.label}
+        if obj.note
+          span.form-element__note #{obj.note}
       case obj.item.type
-        when "field"
-          +site-field(obj.item)
+        when "input"
+          +site-input(obj.item)
         when "checkbox"
-          +site-field(obj.item)
+          +site-input(obj.item)
         when "radio"
-          +site-field(obj.item)
+          +site-input(obj.item)
         when "dropdown"
           +site-dropdown(obj.item)
   -}

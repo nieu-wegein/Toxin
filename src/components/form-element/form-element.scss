@@ -1,4 +1,4 @@
-@import "../site-field/site-field";
+@import "../site-input/site-input";
 @import "../site-dropdown/site-dropdown";
 
 .form-element {
@@ -7,14 +7,21 @@
   flex-wrap: wrap;
   justify-content: space-between;
 
-  &_label {
+  &__top {
+    width: 100%;
+    margin-bottom: 5px;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__label {
     font-family: "Montserrat-Bold", sans-serif;
     color: $site-dark;
     text-transform: uppercase;
     font-size: 12px;
   }
 
-  &_note {
+  &__note {
     font-family: "Montserrat", sans-serif;
     color: $site-dark-50;
     text-transform: uppercase;

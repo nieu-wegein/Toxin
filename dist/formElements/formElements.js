@@ -11,12 +11,12 @@
 
 /***/ "./src/UIKit/pages/formElements/formElements.scss":
 /*!********************************************************!*\
-  !*** ./src/UIKit/pages/formElements/formElements.scss ***!
+  !*** ./src/UIKit/pages/form-elements/form-elements.scss ***!
   \********************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n// extracted by mini-css-extract-plugin\n\n\n//# sourceURL=webpack://toxin/./src/UIKit/pages/formElements/formElements.scss?");
+eval("__webpack_require__.r(__webpack_exports__);\n// extracted by mini-css-extract-plugin\n\n\n//# sourceURL=webpack://toxin/./src/UIKit/pages/form-elements/form-elements.scss?");
 
 /***/ }),
 
@@ -33,12 +33,12 @@ eval("__webpack_require__.r(__webpack_exports__);\n// extracted by mini-css-extr
 
 /***/ "./src/UIKit/pages/formElements/formElements.js":
 /*!******************************************************!*\
-  !*** ./src/UIKit/pages/formElements/formElements.js ***!
+  !*** ./src/UIKit/pages/form-elements/form-elements.js ***!
   \******************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _normalize_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../normalize.scss */ \"./src/normalize.scss\");\n/* harmony import */ var _formElements_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./formElements.scss */ \"./src/UIKit/pages/formElements/formElements.scss\");\n/* harmony import */ var _components_site_dropdown_site_dropdown__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../components/site-dropdown/site-dropdown */ \"./src/components/site-dropdown/site-dropdown.js\");\n/* harmony import */ var _jquery_3_6_0_min__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../jquery-3.6.0.min */ \"./src/jquery-3.6.0.min.js\");\n/* harmony import */ var _jquery_3_6_0_min__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_jquery_3_6_0_min__WEBPACK_IMPORTED_MODULE_3__);\n\r\n\r\n\r\n\r\n\r\n\r\nwindow.addEventListener('load', function() {\r\n\r\n  const inputList = _jquery_3_6_0_min__WEBPACK_IMPORTED_MODULE_3___default()(\".site-field\");\r\n  inputList[1].value = \"This is pretty awesome\"\r\n  inputList[1].focus();\r\n\r\n})\n\n//# sourceURL=webpack://toxin/./src/UIKit/pages/formElements/formElements.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _normalize_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../normalize.scss */ \"./src/normalize.scss\");\n/* harmony import */ var _formElements_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./form-elements.scss */ \"./src/UIKit/pages/form-elements/form-elements.scss\");\n/* harmony import */ var _components_site_dropdown_site_dropdown__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../components/site-dropdown/site-dropdown */ \"./src/components/site-dropdown/site-dropdown.js\");\n/* harmony import */ var _jquery_3_6_0_min__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../jquery-3.6.0.min */ \"./src/jquery-3.6.0.min.js\");\n/* harmony import */ var _jquery_3_6_0_min__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_jquery_3_6_0_min__WEBPACK_IMPORTED_MODULE_3__);\n\r\n\r\n\r\n\r\n\r\n\r\nwindow.addEventListener('load', function() {\r\n\r\n  const inputList = _jquery_3_6_0_min__WEBPACK_IMPORTED_MODULE_3___default()(\".site-input\");\r\n  inputList[1].value = \"This is pretty awesome\"\r\n  inputList[1].focus();\r\n\r\n})\n\n//# sourceURL=webpack://toxin/./src/UIKit/pages/form-elements/form-elements.js?");
 
 /***/ }),
 

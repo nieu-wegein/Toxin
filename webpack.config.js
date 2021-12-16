@@ -14,7 +14,7 @@ const PATHS = {
 module.exports = {
     mode: "development",
     entry: {
-        formElements:  PATHS.uikit + '/formElements/formElements.js',
+        formElements:  PATHS.uikit + '/form-elements/form-elements.js',
         index: PATHS.pages + '/index/index.js',
         registration: PATHS.pages + '/registration/registration.js',
         roomInfo: PATHS.pages + '/roomInfo/roomInfo.js',
@@ -63,9 +63,9 @@ module.exports = {
         }),
         new HtmlWebpackPlugin(
             {
-                filename: 'formElements/formElements.html',
+                filename: 'form-elements/form-elements.html',
                 chunks: ['formElements'],
-                template: PATHS.uikit + '/formElements/formElements.pug'
+                template: PATHS.uikit + '/form-elements/form-elements.pug'
             }),
         new HtmlWebpackPlugin(
             {

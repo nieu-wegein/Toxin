@@ -1,11 +1,10 @@
-.site-field {
+.site-input {
   font-family: "Montserrat", sans-serif;
   font-size: 14px;
   width: 100%;
   padding: 13px 15px;
   border: 1px solid $site-dark-25;
   border-radius: 4px;
-  margin-top: 5px;
   color: $site-dark-75;
 
   &::placeholder {

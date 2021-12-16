@@ -11,9 +11,12 @@
   padding: 30px;
 }
 
+
+
 .content {
   display: grid;
   grid-template-columns: 320px 320px 320px;
+  justify-content: space-between;
   padding: 32px 140px;
 }
 

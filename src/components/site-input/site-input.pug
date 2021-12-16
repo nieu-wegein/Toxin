@@ -1,0 +1,9 @@
+mixin site-input(obj)
+  -var classList = ["site-input"];
+
+  -if (obj.modifiers)
+    -if (obj.modifiers.mask) classList.push("site-input_masked");
+
+  input(type = "text" class = classList placeholder = obj.text)
+  if obj.description
+    span #{obj.description}

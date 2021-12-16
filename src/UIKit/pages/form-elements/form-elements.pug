@@ -2,8 +2,8 @@ include ../../../components/form-element/form-element
 
 -
   const input_list = [
-    {label: "Text Field", note: "Default", item: {type: "field", text: "Email"}},
-    {label: "Text Field", note: "Hover / Focus", item: {type: "field", text: "Email"}},
+    {label: "Text Field", note: "Default", item: {type: "input", text: "Email"}},
+    {label: "Text Field", note: "Hover / Focus", item: {type: "input", text: "Email"}},
     {
       label: "Dropdown",
       item: {
@@ -18,7 +18,7 @@ include ../../../components/form-element/form-element
         modifiers: {buttons: true}
       }
     },
-    {label: "Masked text field", item: {type: "field", text: "ДД.ММ.ГГ"}}
+    {label: "Masked text field", item: {type: "input", text: "ДД.ММ.ГГГГ", modifiers: {mask: true}}}
   ]
 
 doctype html
