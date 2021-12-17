@@ -6,7 +6,7 @@
     <meta name="keywords" content="">
     <meta name="description" content=" ">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Material+Icons&amp;amp;text=expand_more">
-  <script defer src="../formElements/formElements.js"></script><link href="../formElements/formElements.css" rel="stylesheet"></head>
+  <script defer src="../form-elements/form-elements.js"></script><link href="../form-elements/form-elements.css" rel="stylesheet"></head>
   <body>
     <div class="wrapper">
       <div class="header"><img class="logo" src="../img/min-logo.svg"></div>
@@ -14,15 +14,21 @@
         <div class="content_column">
           <div class="main-fields-section">
             <div class="form-element">
-              <label class="form-element_label">Text Field</label><span class="form-element_note">Default</span>
-              <input class="site-field site-field:focus" type="text" placeholder="Email">
+              <div class="form-element__top">
+                <label class="form-element__label">Text Field</label><span class="form-element__note">Default</span>
+              </div>
+              <input class="site-input" type="text" placeholder="Email">
             </div>
             <div class="form-element">
-              <label class="form-element_label">Text Field</label><span class="form-element_note">Hover / Focus</span>
-              <input class="site-field site-field:focus" type="text" placeholder="Email">
+              <div class="form-element__top">
+                <label class="form-element__label">Text Field</label><span class="form-element__note">Hover / Focus</span>
+              </div>
+              <input class="site-input" type="text" placeholder="Email">
             </div>
             <div class="form-element">
-              <label class="form-element_label">Dropdown</label>
+              <div class="form-element__top">
+                <label class="form-element__label">Dropdown</label>
+              </div>
               <div class="site-dropdown" id="guests">
                 <button class="site-dropdown__header" data-text="Сколько гостей"><span class="text-area">Сколько гостей</span><span class="material-icons">expand_more</span></button>
                 <ul class="site-dropdown__list">
@@ -55,8 +61,10 @@
               </div>
             </div>
             <div class="form-element">
-              <label class="form-element_label">Masked text field</label>
-              <input class="site-field site-field:focus" type="text" placeholder="ДД.ММ.ГГ">
+              <div class="form-element__top">
+                <label class="form-element__label">Masked text field</label>
+              </div>
+              <input class="site-input site-input_masked" type="text" placeholder="ДД.ММ.ГГГГ">
             </div>
           </div>
         </div>

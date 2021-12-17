@@ -10,23 +10,23 @@
 /******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
-/***/ "./src/Website/pages/registration/registration.scss":
+/***/ "./src/pages/Website/registration/registration.scss":
 /*!**********************************************************!*\
-  !*** ./src/Website/pages/registration/registration.scss ***!
+  !*** ./src/pages/Website/registration/registration.scss ***!
   \**********************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n// extracted by mini-css-extract-plugin\n\n\n//# sourceURL=webpack://toxin/./src/Website/pages/registration/registration.scss?");
+eval("__webpack_require__.r(__webpack_exports__);\n// extracted by mini-css-extract-plugin\n\n\n//# sourceURL=webpack://toxin/./src/pages/Website/registration/registration.scss?");
 
 /***/ }),
 
-/***/ "./src/Website/pages/registration/registration.js":
+/***/ "./src/pages/Website/registration/registration.js":
 /*!********************************************************!*\
-  !*** ./src/Website/pages/registration/registration.js ***!
+  !*** ./src/pages/Website/registration/registration.js ***!
   \********************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _registration_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./registration.scss */ \"./src/Website/pages/registration/registration.scss\");\n\n\n//# sourceURL=webpack://toxin/./src/Website/pages/registration/registration.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _registration_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./registration.scss */ \"./src/pages/Website/registration/registration.scss\");\n\n\n//# sourceURL=webpack://toxin/./src/pages/Website/registration/registration.js?");
 
 /***/ })
 
@@ -73,7 +73,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _reg
 /******/ 	// startup
 /******/ 	// Load entry module and return exports
 /******/ 	// This entry module can't be inlined because the eval devtool is used.
-/******/ 	var __webpack_exports__ = __webpack_require__("./src/Website/pages/registration/registration.js");
+/******/ 	var __webpack_exports__ = __webpack_require__("./src/pages/Website/registration/registration.js");
 /******/ 	
 /******/ })()
 ;

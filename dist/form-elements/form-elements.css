@@ -339,9 +339,9 @@ template {
 [hidden] {
   display: none;
 }
-/*!*****************************************************************************************************************************************!*\
-  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/UIKit/pages/form-elements/form-elements.scss ***!
-  \*****************************************************************************************************************************************/
+/*!*******************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/pages/UIKit/form-elements/form-elements.scss ***!
+  \*******************************************************************************************************************************************/
 .material-icons {
   font-family: "Material Icons";
   font-weight: normal;
@@ -379,20 +379,19 @@ template {
   src: local(""), url(../302252f8724c318c368d.woff) format("woff"), url(../befa0a20e040c60f7586.ttf) format("truetype"), url(../fac85a3030008d30b0b8.svg#Montserrat) format("svg");
   /* Legacy iOS */
 }
-.site-field {
+.site-input {
   font-family: "Montserrat", sans-serif;
   font-size: 14px;
   width: 100%;
   padding: 13px 15px;
   border: 1px solid rgba(31, 32, 65, 0.25);
   border-radius: 4px;
-  margin-top: 5px;
   color: rgba(31, 32, 65, 0.75);
 }
-.site-field::placeholder {
+.site-input::placeholder {
   color: rgba(31, 32, 65, 0.25);
 }
-.site-field:hover, .site-field:focus {
+.site-input:hover, .site-input:focus {
   outline: 1px solid rgba(31, 32, 65, 0.5);
 }
 
@@ -452,7 +451,6 @@ template {
   padding: 8px 8px 9px 15px;
   border: 1px solid rgba(31, 32, 65, 0.25);
   border-radius: 4px;
-  margin-top: 5px;
   color: rgba(31, 32, 65, 0.75);
 }
 .site-dropdown__header_square {
@@ -514,13 +512,19 @@ template {
   flex-wrap: wrap;
   justify-content: space-between;
 }
-.form-element_label {
+.form-element__top {
+  width: 100%;
+  margin-bottom: 5px;
+  display: flex;
+  justify-content: space-between;
+}
+.form-element__label {
   font-family: "Montserrat-Bold", sans-serif;
   color: #1f2041;
   text-transform: uppercase;
   font-size: 12px;
 }
-.form-element_note {
+.form-element__note {
   font-family: "Montserrat", sans-serif;
   color: rgba(31, 32, 65, 0.5);
   text-transform: uppercase;
@@ -539,6 +543,7 @@ template {
 .content {
   display: grid;
   grid-template-columns: 320px 320px 320px;
+  justify-content: space-between;
   padding: 32px 140px;
 }
 

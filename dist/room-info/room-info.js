@@ -10,23 +10,23 @@
 /******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
-/***/ "./src/Website/pages/roomsList/roomsList.scss":
+/***/ "./src/pages/Website/room-info/room-info.scss":
 /*!****************************************************!*\
-  !*** ./src/Website/pages/roomsList/roomsList.scss ***!
+  !*** ./src/pages/Website/room-info/room-info.scss ***!
   \****************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n// extracted by mini-css-extract-plugin\n\n\n//# sourceURL=webpack://toxin/./src/Website/pages/roomsList/roomsList.scss?");
+eval("__webpack_require__.r(__webpack_exports__);\n// extracted by mini-css-extract-plugin\n\n\n//# sourceURL=webpack://toxin/./src/pages/Website/room-info/room-info.scss?");
 
 /***/ }),
 
-/***/ "./src/Website/pages/roomsList/roomsList.js":
+/***/ "./src/pages/Website/room-info/room-info.js":
 /*!**************************************************!*\
-  !*** ./src/Website/pages/roomsList/roomsList.js ***!
+  !*** ./src/pages/Website/room-info/room-info.js ***!
   \**************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _roomsList_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./roomsList.scss */ \"./src/Website/pages/roomsList/roomsList.scss\");\n\n\n//# sourceURL=webpack://toxin/./src/Website/pages/roomsList/roomsList.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _room_info_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./room-info.scss */ \"./src/pages/Website/room-info/room-info.scss\");\n\n\n//# sourceURL=webpack://toxin/./src/pages/Website/room-info/room-info.js?");
 
 /***/ })
 
@@ -73,7 +73,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _roo
 /******/ 	// startup
 /******/ 	// Load entry module and return exports
 /******/ 	// This entry module can't be inlined because the eval devtool is used.
-/******/ 	var __webpack_exports__ = __webpack_require__("./src/Website/pages/roomsList/roomsList.js");
+/******/ 	var __webpack_exports__ = __webpack_require__("./src/pages/Website/room-info/room-info.js");
 /******/ 	
 /******/ })()
 ;

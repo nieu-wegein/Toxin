@@ -5,8 +5,8 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const PATHS = {
     source:  path.join(__dirname, '/src/'),
     dist:  path.join(__dirname, '/dist/'),
-    pages: path.join(__dirname, '/src/Website/pages/'),
-    uikit: path.join(__dirname, '/src/UIKit/pages/')
+    website: path.join(__dirname, '/src/pages/Website/'),
+    uikit: path.join(__dirname, '/src/pages/UIKit/')
 }
 
 //TODO: Исправить кавычки
@@ -14,11 +14,11 @@ const PATHS = {
 module.exports = {
     mode: "development",
     entry: {
-        formElements:  PATHS.uikit + '/form-elements/form-elements.js',
-        index: PATHS.pages + '/index/index.js',
-        registration: PATHS.pages + '/registration/registration.js',
-        roomInfo: PATHS.pages + '/roomInfo/roomInfo.js',
-        roomsList: PATHS.pages + '/roomsList/roomsList.js'
+        "form-elements":  PATHS.uikit + '/form-elements/form-elements.js',
+        index: PATHS.website + '/index/index.js',
+        registration: PATHS.website + '/registration/registration.js',
+        "room-info": PATHS.website + '/room-info/room-info.js',
+        "rooms-list": PATHS.website + '/rooms-list/rooms-list.js'
     },
     output: {
         path: PATHS.dist,
@@ -59,31 +59,31 @@ module.exports = {
         {
             filename: 'index/index.html',
             chunks: ['index'],
-            template: PATHS.pages + 'index/index.pug'
+            template: PATHS.website + 'index/index.pug'
         }),
         new HtmlWebpackPlugin(
             {
                 filename: 'form-elements/form-elements.html',
-                chunks: ['formElements'],
+                chunks: ['form-elements'],
                 template: PATHS.uikit + '/form-elements/form-elements.pug'
             }),
         new HtmlWebpackPlugin(
             {
-                filename: 'roomsList/roomsList.html',
-                chunks: ['roomsList'],
-                template: PATHS.pages + 'roomsList/roomsList.pug'
+                filename: 'rooms-list/rooms-list.html',
+                chunks: ['rooms-list'],
+                template: PATHS.website + 'rooms-list/rooms-list.pug'
             }),
         new HtmlWebpackPlugin(
             {
-                filename: 'roomInfo/roomInfo.html',
-                chunks: ['roomInfo'],
-                template: PATHS.pages + 'roomInfo/roomInfo.pug'
+                filename: 'room-info/room-info.html',
+                chunks: ['room-info'],
+                template: PATHS.website + 'room-info/room-info.pug'
             }),
         new HtmlWebpackPlugin(
             {
                 filename: 'registration/registration.html',
                 chunks: ['registration'],
-                template: PATHS.pages + 'registration/registration.pug'
+                template: PATHS.website + 'registration/registration.pug'
             }),
         new MiniCssExtractPlugin({
             filename: '[name]/[name].css'

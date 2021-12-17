@@ -10,23 +10,23 @@
 /******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
-/***/ "./src/Website/pages/index/index.scss":
+/***/ "./src/pages/Website/index/index.scss":
 /*!********************************************!*\
-  !*** ./src/Website/pages/index/index.scss ***!
+  !*** ./src/pages/Website/index/index.scss ***!
   \********************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n// extracted by mini-css-extract-plugin\n\n\n//# sourceURL=webpack://toxin/./src/Website/pages/index/index.scss?");
+eval("__webpack_require__.r(__webpack_exports__);\n// extracted by mini-css-extract-plugin\n\n\n//# sourceURL=webpack://toxin/./src/pages/Website/index/index.scss?");
 
 /***/ }),
 
-/***/ "./src/Website/pages/index/index.js":
+/***/ "./src/pages/Website/index/index.js":
 /*!******************************************!*\
-  !*** ./src/Website/pages/index/index.js ***!
+  !*** ./src/pages/Website/index/index.js ***!
   \******************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _index_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./index.scss */ \"./src/Website/pages/index/index.scss\");\n\r\n\r\n\n\n//# sourceURL=webpack://toxin/./src/Website/pages/index/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _index_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./index.scss */ \"./src/pages/Website/index/index.scss\");\n\r\n\r\n\n\n//# sourceURL=webpack://toxin/./src/pages/Website/index/index.js?");
 
 /***/ })
 
@@ -73,7 +73,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _ind
 /******/ 	// startup
 /******/ 	// Load entry module and return exports
 /******/ 	// This entry module can't be inlined because the eval devtool is used.
-/******/ 	var __webpack_exports__ = __webpack_require__("./src/Website/pages/index/index.js");
+/******/ 	var __webpack_exports__ = __webpack_require__("./src/pages/Website/index/index.js");
 /******/ 	
 /******/ })()
 ;
