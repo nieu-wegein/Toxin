@@ -1,3 +1,15 @@
+//Todo: переименовать все scss в индексы
+
+.site-dropdown__list {
+
+  padding-right: 7px;
+  padding-left: 15px;
+  margin: 0;
+  margin-bottom: 11px;
+
+  letter-spacing: 0.05px;
+}
+
 .site-dropdown__item {
 
   display: flex;
@@ -9,9 +21,5 @@
   text-transform: uppercase;
   list-style: none;
   width: 100%;
-  padding: 6px 7px 0 15px;
-
-  &:last-child {
-    margin-bottom: 7px;
-  }
+  margin-top: 6px;
 }

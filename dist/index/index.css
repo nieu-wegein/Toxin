@@ -367,14 +367,14 @@ template {
   font-family: "Montserrat";
   font-style: normal;
   font-weight: 400;
-  src: local(""), url(../b9d9c7093f2408897523.woff) format("woff"), url(../c25ae5d111af1d4df437.ttf) format("truetype"), url(../22d8566c41c8d731931b.svg#Montserrat) format("svg");
+  src: local(""), url(../cbe4afbec98f82e7c0c3.woff) format("woff"), url(../c25ae5d111af1d4df437.ttf) format("truetype"), url(../98eb3f9721e518b6dfdf.svg#Montserrat) format("svg");
   /* Legacy iOS */
 }
 @font-face {
   font-family: "Montserrat-Bold";
   font-style: normal;
   font-weight: 700;
-  src: local(""), url(../302252f8724c318c368d.woff) format("woff"), url(../befa0a20e040c60f7586.ttf) format("truetype"), url(../fac85a3030008d30b0b8.svg#Montserrat) format("svg");
+  src: local(""), url(../8dce55b2dd58ab84e75d.woff) format("woff"), url(../befa0a20e040c60f7586.ttf) format("truetype"), url(../d50151d8a16782a7cb6f.svg#Montserrat) format("svg");
   /* Legacy iOS */
 }
 .main-header {
@@ -424,25 +424,49 @@ template {
 .button {
   display: inline-block;
   border: none;
-  color: #bc9cff;
+  color: #BC9CFF;
   background-color: white;
   padding: 0;
   font-family: Montserrat-Bold, sans-serif;
   font-size: 12px;
   text-transform: uppercase;
 }
+.button:hover {
+  color: rgba(31, 32, 65, 0.5);
+}
 .button-wrapper {
   padding: 2px;
-  background: linear-gradient(180deg, #bc9cff 0%, #8BA4F9 100%);
+  background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
   border-radius: 22px;
 }
-.button.button_rounded {
-  padding: 8px 16px;
+.button_rounded {
+  color: #BC9CFF;
+  padding: 16px 16px;
   border-radius: 22px;
 }
-.button.button_primary {
+.button_secondary {
+  font-family: Montserrat-Bold, sans-serif;
   color: white;
-  background: linear-gradient(180deg, #bc9cff 0%, #8BA4F9 100%);
+  background: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%);
+}
+.button_primary {
+  font-family: Montserrat-Bold, sans-serif;
+  color: white;
+  background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+}
+
+.btn {
+  font-family: Montserrat;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: white;
+  line-height: 16px;
+  font-size: 12px;
+  display: inline-block;
+  border: none;
+  padding: 12px 17px;
+  border-radius: 22px;
+  background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
 }
 
 * {

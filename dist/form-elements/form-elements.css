@@ -369,24 +369,44 @@ template {
   font-family: "Montserrat";
   font-style: normal;
   font-weight: 400;
-  src: local(""), url(../b9d9c7093f2408897523.woff) format("woff"), url(../c25ae5d111af1d4df437.ttf) format("truetype"), url(../22d8566c41c8d731931b.svg#Montserrat) format("svg");
+  src: local(""), url(../cbe4afbec98f82e7c0c3.woff) format("woff"), url(../c25ae5d111af1d4df437.ttf) format("truetype"), url(../98eb3f9721e518b6dfdf.svg#Montserrat) format("svg");
   /* Legacy iOS */
 }
 @font-face {
   font-family: "Montserrat-Bold";
   font-style: normal;
   font-weight: 700;
-  src: local(""), url(../302252f8724c318c368d.woff) format("woff"), url(../befa0a20e040c60f7586.ttf) format("truetype"), url(../fac85a3030008d30b0b8.svg#Montserrat) format("svg");
+  src: local(""), url(../8dce55b2dd58ab84e75d.woff) format("woff"), url(../befa0a20e040c60f7586.ttf) format("truetype"), url(../d50151d8a16782a7cb6f.svg#Montserrat) format("svg");
   /* Legacy iOS */
 }
 .site-input {
   font-family: "Montserrat", sans-serif;
   font-size: 14px;
   width: 100%;
-  padding: 13px 15px;
+  padding: 12px 14px;
   border: 1px solid rgba(31, 32, 65, 0.25);
   border-radius: 4px;
   color: rgba(31, 32, 65, 0.75);
+  line-height: 18px;
+  letter-spacing: -0.25px;
+}
+.site-input__wrapper {
+  display: flex;
+  width: 100%;
+}
+.site-input_submit {
+  border-right: none;
+}
+.site-input__button {
+  cursor: pointer;
+  background-color: #BC9CFF;
+  background-image: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -webkit-text-stroke: transparent;
+  border: 1px solid rgba(31, 32, 65, 0.25);
+  border-left: none;
 }
 .site-input::placeholder {
   color: rgba(31, 32, 65, 0.25);
@@ -395,50 +415,6 @@ template {
   outline: 1px solid rgba(31, 32, 65, 0.5);
 }
 
-.site-dropdown__item {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  font-family: "Montserrat-Bold", sans-serif;
-  font-size: 12px;
-  color: #1f2041;
-  text-transform: uppercase;
-  list-style: none;
-  width: 100%;
-  padding: 6px 7px 0 15px;
-}
-.site-dropdown__item:last-child {
-  margin-bottom: 7px;
-}
-
-.button {
-  display: inline-block;
-  border: none;
-  color: #bc9cff;
-  background-color: white;
-  padding: 0;
-  font-family: Montserrat-Bold, sans-serif;
-  font-size: 12px;
-  text-transform: uppercase;
-}
-.button-wrapper {
-  padding: 2px;
-  background: linear-gradient(180deg, #bc9cff 0%, #8BA4F9 100%);
-  border-radius: 22px;
-}
-.button.button_rounded {
-  padding: 8px 16px;
-  border-radius: 22px;
-}
-.button.button_primary {
-  color: white;
-  background: linear-gradient(180deg, #bc9cff 0%, #8BA4F9 100%);
-}
-
-.site-dropdown {
-  width: 100%;
-  position: relative;
-}
 .site-dropdown__header {
   display: flex;
   align-items: center;
@@ -452,6 +428,7 @@ template {
   border: 1px solid rgba(31, 32, 65, 0.25);
   border-radius: 4px;
   color: rgba(31, 32, 65, 0.75);
+  letter-spacing: -0.25px;
 }
 .site-dropdown__header_square {
   border-bottom-right-radius: 0;
@@ -460,11 +437,90 @@ template {
 .site-dropdown__header:hover, .site-dropdown__header:focus {
   outline: 1px solid rgba(31, 32, 65, 0.5);
 }
+
 .site-dropdown__list {
+  padding-right: 7px;
+  padding-left: 15px;
+  margin: 0;
+  margin-bottom: 11px;
+  letter-spacing: 0.05px;
+}
+
+.site-dropdown__item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-family: "Montserrat-Bold", sans-serif;
+  font-size: 12px;
+  color: #1f2041;
+  text-transform: uppercase;
+  list-style: none;
+  width: 100%;
+  margin-top: 6px;
+}
+
+.site-dropdown__footer {
+  display: flex;
+  justify-content: space-between;
+  padding: 12px 8px 12px 15px;
+  line-height: 15px;
+}
+
+.button {
+  display: inline-block;
+  border: none;
+  color: #BC9CFF;
+  background-color: white;
+  padding: 0;
+  font-family: Montserrat-Bold, sans-serif;
+  font-size: 12px;
+  text-transform: uppercase;
+}
+.button:hover {
+  color: rgba(31, 32, 65, 0.5);
+}
+.button-wrapper {
+  padding: 2px;
+  background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+  border-radius: 22px;
+}
+.button_rounded {
+  color: #BC9CFF;
+  padding: 16px 16px;
+  border-radius: 22px;
+}
+.button_secondary {
+  font-family: Montserrat-Bold, sans-serif;
+  color: white;
+  background: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%);
+}
+.button_primary {
+  font-family: Montserrat-Bold, sans-serif;
+  color: white;
+  background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+}
+
+.btn {
+  font-family: Montserrat;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: white;
+  line-height: 16px;
+  font-size: 12px;
+  display: inline-block;
+  border: none;
+  padding: 12px 17px;
+  border-radius: 22px;
+  background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+}
+
+.site-dropdown {
+  width: 100%;
+  position: relative;
+}
+.site-dropdown__window {
   display: none;
   width: 100%;
-  padding-left: 0;
-  margin: 0;
   position: absolute;
   z-index: 1;
   background-color: white;
@@ -472,10 +528,12 @@ template {
   border-radius: 0 0 4px 4px;
   border-top: none;
 }
-.site-dropdown__list-footer {
-  display: flex;
-  justify-content: space-between;
-  padding: 22px 8px 12px 15px;
+.site-dropdown__window_free {
+  width: auto;
+  margin-top: 6px;
+  border: 1px solid rgba(31, 32, 65, 0.25);
+  border-radius: 4px;
+  box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05);
 }
 .site-dropdown__button-add, .site-dropdown__button-remove {
   cursor: pointer;
@@ -496,6 +554,7 @@ template {
 }
 .site-dropdown__button-apply {
   cursor: pointer;
+  letter-spacing: -0.25px;
 }
 .site-dropdown__counter {
   display: flex;
@@ -506,9 +565,130 @@ template {
   text-align: center;
 }
 
-.form-element {
-  max-width: 320px;
+.site-calendar {
+  padding: 0 19px;
+  margin-bottom: 8px;
+  width: 318px;
+  border-radius: 4px;
+  text-align: center;
+}
+.site-calendar__header {
+  padding: 20px 0;
   display: flex;
+  justify-content: space-between;
+  font-family: "Montserrat-Bold";
+  font-size: 19px;
+  color: #1f2041;
+  line-height: 24px;
+  margin-bottom: 10px;
+}
+.site-calendar__prev-button, .site-calendar__next-button {
+  padding: 0;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  color: #BC9CFF;
+}
+.site-calendar__days-section, .site-calendar__date-section {
+  font-family: "Montserrat-Bold";
+  font-size: 12px;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+.site-calendar__date-section {
+  font-family: "Montserrat";
+  flex-wrap: wrap;
+}
+.site-calendar__date-cell.start-range {
+  border-radius: 50% 0 0 50%;
+}
+.site-calendar__date-cell.focus-range {
+  background: rgba(31, 32, 65, 0.05);
+}
+.site-calendar__date-cell.range {
+  background: linear-gradient(180deg, rgba(188, 156, 255, 0.25) 0%, rgba(139, 164, 249, 0.25) 100%);
+}
+.site-calendar__date-cell.end-range {
+  border-radius: 0 50% 50% 0;
+}
+.site-calendar__date-cell:hover {
+  background: linear-gradient(180deg, rgba(188, 156, 255, 0.25) 0%, rgba(139, 164, 249, 0.25) 100%);
+}
+.site-calendar__day, .site-calendar__date {
+  line-height: 15px;
+  padding: 0;
+  width: 40px;
+  height: 40px;
+}
+.site-calendar__day {
+  color: #BC9CFF;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.site-calendar__date {
+  border: none;
+  background-color: transparent;
+  color: rgba(31, 32, 65, 0.5);
+  cursor: pointer;
+  border-radius: 50%;
+}
+.site-calendar__date.button_primary {
+  color: white;
+}
+.site-calendar__date.button_secondary {
+  color: white;
+}
+.site-calendar__date:disabled {
+  cursor: default;
+  color: rgba(31, 32, 65, 0.25);
+}
+.site-calendar__optional-row {
+  display: flex;
+}
+
+.site-checkbox {
+  position: absolute;
+  z-index: -1;
+  opacity: 0;
+}
+.site-checkbox__group {
+  margin: 0;
+  margin-top: 11px;
+  padding-left: 0;
+  list-style: none;
+}
+.site-checkbox__item {
+  margin-bottom: 12px;
+}
+.site-checkbox__label {
+  line-height: 18px;
+  position: relative;
+  display: inline-flex;
+  font-family: "Montserrat", sans-serif;
+  font-size: 14px;
+  color: rgba(31, 32, 65, 0.5);
+  padding-left: 30px;
+}
+.site-checkbox__label::before {
+  position: absolute;
+  left: 0;
+  content: " ";
+  width: 18px;
+  height: 18px;
+  border: 1px solid rgba(31, 32, 65, 0.25);
+  border-radius: 4px;
+}
+.site-checkbox:checked + .site-checkbox__label::before {
+  background-color: white;
+  background: url(../c93d1d2e0ebf70b1d568.svg) no-repeat center;
+  border: 1px solid #BC9CFF;
+}
+
+.form-element {
+  width: 100%;
+  display: inline-flex;
   flex-wrap: wrap;
   justify-content: space-between;
 }
@@ -523,12 +703,17 @@ template {
   color: #1f2041;
   text-transform: uppercase;
   font-size: 12px;
+  line-height: 15px;
 }
 .form-element__note {
   font-family: "Montserrat", sans-serif;
   color: rgba(31, 32, 65, 0.5);
   text-transform: uppercase;
   font-size: 12px;
+}
+
+* {
+  box-sizing: border-box;
 }
 
 .wrapper {
@@ -543,17 +728,36 @@ template {
 .content {
   display: grid;
   grid-template-columns: 320px 320px 320px;
+  padding: 31px 141px;
   justify-content: space-between;
-  padding: 32px 140px;
 }
 
-.main-fields-section {
-  margin-bottom: 40px;
+.content__column {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: start;
 }
-.main-fields-section .form-element {
-  margin-bottom: 21px;
+.content__column:nth-child(2) {
+  padding-left: 27px;
 }
-
-* {
-  box-sizing: border-box;
+.content__column .form-element {
+  margin-bottom: 20px;
+}
+.content__column .form-element:nth-child(3) {
+  margin-bottom: 24px;
+}
+.content__column .form-element:nth-child(4) {
+  margin-bottom: 37px;
+}
+.content__column .date-dropdown__wrapper {
+  width: 150px;
+}
+.content__column .filter-wrapper {
+  margin-top: 20px;
+  width: 267px;
+}
+.content__column .check-radio-wrapper {
+  display: inline-flex;
+  width: 230px;
 }

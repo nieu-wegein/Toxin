@@ -1,22 +1,32 @@
 include ../site-input/site-input
 include ../site-dropdown/site-dropdown
+include ../site-checkbox/site-checkbox
+
+
 
 mixin form-element(obj)
-  -if(obj.item) {
-    .form-element
+
+  -const classList = ["form-element"]
+
+  -if (obj.item) {
+
+    div(class = classList)
       .form-element__top
         if obj.label
-          label.form-element__label() #{obj.label}
+          label.form-element__label(for = obj.item.id) #{obj.label}
         if obj.note
           span.form-element__note #{obj.note}
       case obj.item.type
         when "input"
           +site-input(obj.item)
         when "checkbox"
-          +site-input(obj.item)
+          +site-checkbox-group(obj.item)
         when "radio"
           +site-input(obj.item)
         when "dropdown"
           +site-dropdown(obj.item)
+
+
+
   -}
 

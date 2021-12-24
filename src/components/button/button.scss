@@ -1,3 +1,7 @@
+
+//mixin buttonMix()
+
+
 .button {
 
   display: inline-block;
@@ -10,19 +14,47 @@
   font-size: 12px;
   text-transform: uppercase;
 
+  &:hover {
+    color: $site-dark-50;
+  }
+
 
   &-wrapper {
     padding: 2px;
-    background: linear-gradient(180deg, $site-purple 0%, #8BA4F9 100%);
+    background: $primary-gradient;
     border-radius: 22px;
-  }
-  &.button_rounded {
-    padding: 8px 16px;
-    border-radius: 22px;
-  }
-  &.button_primary {
-    color: white;
-    background: linear-gradient(180deg, $site-purple 0%, #8BA4F9 100%);
   }
 
+  &_rounded {
+    color: $site-purple;
+    padding: 16px 16px;
+    border-radius: 22px;
+  }
+
+  &_secondary {
+    font-family: Montserrat-Bold, sans-serif;
+    color: white;
+    background: $secondary-gradient;
+  }
+
+  &_primary {
+    font-family: Montserrat-Bold, sans-serif;
+    color: white;
+    background: $primary-gradient;
+  }
+
+}
+
+.btn {
+  font-family: Montserrat;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: white;
+  line-height: 16px;
+  font-size: 12px;
+  display: inline-block;
+  border: none;
+  padding: 12px 17px;
+  border-radius: 22px;
+  background: $primary-gradient;
 }

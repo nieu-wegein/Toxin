@@ -1,9 +1,13 @@
 mixin site-input(obj)
-  -var classList = ["site-input"];
+  -var inputClassList = ["site-input"];
 
   -if (obj.modifiers)
-    -if (obj.modifiers.mask) classList.push("site-input_masked");
+    -if (obj.modifiers.datemask) inputClassList.push("site-input_date");
+    -if (obj.modifiers.submit) inputClassList.push("site-input_submit");
 
-  input(type = "text" class = classList placeholder = obj.text)
+  .site-input__wrapper
+    input(type = "text" id = obj.id class = inputClassList placeholder = obj.text)
+    if obj.modifiers && obj.modifiers.submit
+      button.site-input__button.material-icons arrow_forward
   if obj.description
     span #{obj.description}

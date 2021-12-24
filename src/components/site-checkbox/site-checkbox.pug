@@ -1,0 +1,7 @@
+
+mixin site-checkbox-group(obj)
+  ul.site-checkbox__group
+    each option in obj.options
+      li.site-checkbox__item
+        input(type = "checkbox" id = option.id class = "site-checkbox" checked = option.checked)
+        label(class = "site-checkbox__label" for = option.id) #{option.label}

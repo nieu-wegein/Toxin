@@ -1,4 +1,4 @@
-import $ from '../../jquery-3.6.0.min';
+import $ from '../../../jquery-3.6.0.min';
 
 window.jQuery = $;
 window.$ = $;

@@ -1,0 +1,32 @@
+include site-dropdown__header/site-dropdown__header
+include site-dropdown__list/site-dropdown__list
+include site-dropdown__item/site-dropdown__item
+include site-dropdown__footer/site-dropdown__footer
+
+
+
+  //- Todo: перенести классы в массивы во всех файлах
+  //- TODO:! вынести массивы классов в пределы миксина
+  //-TODO: Проверить, видны массивы классов за пределами миксина
+
+
+mixin site-dropdown(obj)
+  -
+    const dropdownClassList = ["site-dropdown"];
+
+    const modifiers = {}; // Во избежание ошибок при передаче элемента без модификатора
+
+
+    if (obj.modifiers) {
+
+      if (obj.modifiers.buttons) modifiers.buttons = true
+
+    }
+
+  div(class = dropdownClassList id= obj.id)
+    +dropdown-header(obj.text)
+    div(tabindex = -1 class = "site-dropdown__window")
+      if obj.options
+        +site-dropdown__list(obj.options)
+      if modifiers.buttons
+        +site-dropdown__footer()

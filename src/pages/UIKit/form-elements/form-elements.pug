@@ -1,24 +1,36 @@
 include ../../../components/form-element/form-element
 
+  //-TODO: изменить структуру
+  //-TODO: обернуть компоненты в лейблы
 -
-  const input_list = [
-    {label: "Text Field", note: "Default", item: {type: "input", text: "Email"}},
-    {label: "Text Field", note: "Hover / Focus", item: {type: "input", text: "Email"}},
-    {
-      label: "Dropdown",
-      item: {
-        type: "dropdown",
-        id: "guests",
-        text:  "Сколько гостей",
+  const first_list = [
+    {label: "Text Field", note: "Default", item: {type: "input", id: "email", text: "Email"}},
+    {label: "Text Field", note: "Hover / Focus", item: {type: "input", id: "awesome"}},
+    {label: "Dropdown", item: {type: "dropdown", id: "guests", text:  "Сколько гостей",
         options: [
           {name: "Взрослые", value: "adults", declination: ["гость", "гостя", "гостей"]},
           {name: "Дети", value: "children", declination: ["гость", "гостя", "гостей"]},
           {name: "Младенцы", value: "babies", declination: ["гость", "гостя", "гостей"]}
         ],
-        modifiers: {buttons: true}
-      }
-    },
-    {label: "Masked text field", item: {type: "input", text: "ДД.ММ.ГГГГ", modifiers: {mask: true}}}
+        modifiers: {buttons: true} //counted-list: true
+      }},
+    {label: "Masked text field", item: {type: "input", id: "date", text: "ДД.ММ.ГГГГ", modifiers: {datemask: true}}},
+  ]
+
+  const second_list = [
+    {label: "Date Dropdown", item: {type: "dropdown", id: "departure", text: "ДД.ММ.ГГГГ", shared: {id: "ui-page-calendar"}, modifiers: {calendar: {type: "range"}, buttons: true}}},
+    {label: "Date Dropdown", item: {type: "dropdown", id: "arrival", text: "ДД.ММ.ГГГГ", shared: {for: "ui-page-calendar"}, modifiers: {calendar: {type: "range"}, buttons: true}}},
+    {label: "Filter Date Dropdown", item: {type: "dropdown", id: "filter-dates", text: "ДД.ММ.ГГГГ - ДД.ММ.ГГГГ", modifiers: {calendar: {type: "range"}, buttons: true}}},
+    {label: "Subscription Text Field", item: {type: "input", text: "Email", modifiers: {submit: true}}}
+  ]
+
+  const checkbox_list = [
+    {label: "Checkbox Buttons", item: {type: "checkbox", options: [
+          {label: "Можно курить", id: "smoking", checked: true},
+          {label: "Можно с питомцами", id: "animals", checked: true},
+          {label: "Можно пригласить гостей (до 10 человек)", id: "invitation", checked: true}
+        ]
+    }}
   ]
 
 doctype html
@@ -34,10 +46,19 @@ html(lang = "en")
       .header
         img.logo(src = "../img/min-logo.svg")
       .content
-        .content_column
-          .main-fields-section
-            each item in input_list
-              +form-element(item)
-        .content_column
-        .content_column
-    script(src="")
+        .content__column
+          each item in first_list
+            +form-element(item)
+          .date-dropdown__wrapper
+            +form-element(second_list[0])
+          .date-dropdown__wrapper
+            +form-element(second_list[1])
+          .filter-wrapper
+            +form-element(second_list[2])
+          .filter-wrapper
+            +form-element(second_list[3])
+
+        .content__column
+          .check-radio-wrapper
+            +form-element(checkbox_list[0])
+        .content__column

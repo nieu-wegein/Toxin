@@ -1,8 +1,20 @@
 import $ from "../../jquery-3.6.0.min";
 
-class Input {
+//-TODO: не ставится точка после очистки инпута бекспейсом, если курсор стоит на позиции точки.
+//-TODO: Проверить delete и другие способы очистки инпута
+
+class SiteInput {
+
+}
+
+class MaskedInput extends SiteInput {
+
+}
+
+class DateInput extends MaskedInput {
 
   constructor(input) {
+    super(input)
     this.input = input;
 
     this.input.on("input", this.setMask)
@@ -32,10 +44,7 @@ class Input {
 
 $(function () {
 
-  const maskedInputList = $(".site-input_masked");
-
-  maskedInputList.each((i, input) => {
-    new Input($(input))
-  })
+  const maskedInputList = $(".site-input_date");
+  maskedInputList.each((i, input) => {new DateInput($(input))})
 
 })

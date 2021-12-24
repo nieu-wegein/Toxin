@@ -2,10 +2,37 @@
   font-family: "Montserrat", sans-serif;
   font-size: 14px;
   width: 100%;
-  padding: 13px 15px;
+  padding: 12px 14px;
   border: 1px solid $site-dark-25;
   border-radius: 4px;
   color: $site-dark-75;
+  line-height: 18px;
+  letter-spacing: -0.25px;
+
+  &__wrapper {
+    display: flex;
+    width: 100%;
+  }
+
+  &_submit {
+    border-right: none;
+  }
+
+  &__button {
+
+    cursor: pointer;
+
+    background-color: $site-purple;
+    background-image: $primary-gradient;
+
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -webkit-text-stroke: transparent;
+
+    border: 1px solid $site-dark-25;
+    border-left: none;
+  }
 
   &::placeholder {
     color: $site-dark-25;

@@ -1,0 +1,25 @@
+.site-dropdown__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-family: "Montserrat", sans-serif;
+  font-size: 14px;
+  text-align: left;
+  background-color: white;
+  width: 100%;
+  padding: 8px 8px 9px 15px;
+  border: 1px solid $site-dark-25;
+  border-radius: 4px;
+  color: $site-dark-75;
+  letter-spacing: -0.25px;
+
+  &_square {
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+  }
+
+  &:hover,
+  &:focus {
+    outline: 1px solid $site-dark-50;
+  }
+}

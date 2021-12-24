@@ -11,67 +11,269 @@
     <div class="wrapper">
       <div class="header"><img class="logo" src="../img/min-logo.svg"></div>
       <div class="content">
-        <div class="content_column">
-          <div class="main-fields-section">
-            <div class="form-element">
-              <div class="form-element__top">
-                <label class="form-element__label">Text Field</label><span class="form-element__note">Default</span>
-              </div>
-              <input class="site-input" type="text" placeholder="Email">
+        <div class="content__column">
+          <div class="form-element">
+            <div class="form-element__top">
+              <label class="form-element__label" for="email">Text Field</label><span class="form-element__note">Default</span>
             </div>
-            <div class="form-element">
-              <div class="form-element__top">
-                <label class="form-element__label">Text Field</label><span class="form-element__note">Hover / Focus</span>
-              </div>
-              <input class="site-input" type="text" placeholder="Email">
+            <div class="site-input__wrapper">
+              <input class="site-input" type="text" id="email" placeholder="Email">
             </div>
-            <div class="form-element">
-              <div class="form-element__top">
-                <label class="form-element__label">Dropdown</label>
-              </div>
-              <div class="site-dropdown" id="guests">
-                <button class="site-dropdown__header" data-text="Сколько гостей"><span class="text-area">Сколько гостей</span><span class="material-icons">expand_more</span></button>
+          </div>
+          <div class="form-element">
+            <div class="form-element__top">
+              <label class="form-element__label" for="awesome">Text Field</label><span class="form-element__note">Hover / Focus</span>
+            </div>
+            <div class="site-input__wrapper">
+              <input class="site-input" type="text" id="awesome">
+            </div>
+          </div>
+          <div class="form-element">
+            <div class="form-element__top">
+              <label class="form-element__label" for="guests">Dropdown</label>
+            </div>
+            <div class="site-dropdown site-dropdown_counting-dropdown" id="guests">
+              <button class="site-dropdown__header" data-text="Сколько гостей"><span class="text-area">Сколько гостей</span><span class="material-icons">expand_more</span></button>
+              <div class="site-dropdown__window" tabindex="-1">
                 <ul class="site-dropdown__list">
-                  <li class="site-dropdown__item" tabindex="-1" data-value="adults" data-declination="[&quot;гость&quot;,&quot;гостя&quot;,&quot;гостей&quot;]">
+                  <li class="site-dropdown__item" data-value="adults" data-declination="[&quot;гость&quot;,&quot;гостя&quot;,&quot;гостей&quot;]">
                     <div class="site-dropdown__item-text">Взрослые</div>
                     <div class="site-dropdown__counter">
                       <button class="site-dropdown__button-remove" disabled>-</button><span class="site-dropdown__count">0</span>
                       <button class="site-dropdown__button-add">+</button>
                     </div>
                   </li>
-                  <li class="site-dropdown__item" tabindex="-1" data-value="children" data-declination="[&quot;гость&quot;,&quot;гостя&quot;,&quot;гостей&quot;]">
+                  <li class="site-dropdown__item" data-value="children" data-declination="[&quot;гость&quot;,&quot;гостя&quot;,&quot;гостей&quot;]">
                     <div class="site-dropdown__item-text">Дети</div>
                     <div class="site-dropdown__counter">
                       <button class="site-dropdown__button-remove" disabled>-</button><span class="site-dropdown__count">0</span>
                       <button class="site-dropdown__button-add">+</button>
                     </div>
                   </li>
-                  <li class="site-dropdown__item" tabindex="-1" data-value="babies" data-declination="[&quot;гость&quot;,&quot;гостя&quot;,&quot;гостей&quot;]">
+                  <li class="site-dropdown__item" data-value="babies" data-declination="[&quot;гость&quot;,&quot;гостя&quot;,&quot;гостей&quot;]">
                     <div class="site-dropdown__item-text">Младенцы</div>
                     <div class="site-dropdown__counter">
                       <button class="site-dropdown__button-remove" disabled>-</button><span class="site-dropdown__count">0</span>
                       <button class="site-dropdown__button-add">+</button>
                     </div>
                   </li>
-                  <div class="site-dropdown__list-footer" tabindex="-1">
+                </ul>
+                <div class="site-dropdown__footer" tabindex="-1">
+                  <button class="button site-dropdown__button-clear">Очистить</button>
+                  <button class="button site-dropdown__button-apply">Применить</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="form-element">
+            <div class="form-element__top">
+              <label class="form-element__label" for="date">Masked text field</label>
+            </div>
+            <div class="site-input__wrapper">
+              <input class="site-input site-input_date" type="text" id="date" placeholder="ДД.ММ.ГГГГ">
+            </div>
+          </div>
+          <div class="date-dropdown__wrapper">
+            <div class="form-element">
+              <div class="form-element__top">
+                <label class="form-element__label" for="departure">Date Dropdown</label>
+              </div>
+              <div class="site-dropdown site-dropdown_shared-calendar" id="departure">
+                <button class="site-dropdown__header" data-text="ДД.ММ.ГГГГ" data-windowid="ui-page-calendar"><span class="text-area">ДД.ММ.ГГГГ</span><span class="material-icons">expand_more</span></button>
+                <div class="site-dropdown__window site-dropdown__window_free site-dropdown__window_free" tabindex="-1" id="ui-page-calendar">
+                  <div class="site-calendar site-calendar_range">
+                    <div class="site-calendar__header">
+                      <button class="site-calendar__prev-button material-icons">arrow_back</button><span class="site-calendar__header-text">Август 2019</span>
+                      <button class="site-calendar__next-button material-icons">arrow_forward</button>
+                    </div>
+                    <div class="site-calendar__days-section">
+                      <div class="site-calendar__day">Пн</div>
+                      <div class="site-calendar__day">Вт</div>
+                      <div class="site-calendar__day">Ср</div>
+                      <div class="site-calendar__day">Чт</div>
+                      <div class="site-calendar__day">Пт</div>
+                      <div class="site-calendar__day">Сб</div>
+                      <div class="site-calendar__day">Вс</div>
+                    </div>
+                    <div class="site-calendar__date-section"><span class="site-calendar__date-cell">
+                        <button class="site-calendar__date">29</button></span><span class="site-calendar__date-cell">
+                        <button class="site-calendar__date">30</button></span><span class="site-calendar__date-cell">
+                        <button class="site-calendar__date">31</button></span><span class="site-calendar__date-cell">
+                        <button class="site-calendar__date">1</button></span><span class="site-calendar__date-cell">
+                        <button class="site-calendar__date">2</button></span><span class="site-calendar__date-cell">
+                        <button class="site-calendar__date">3</button></span><span class="site-calendar__date-cell">
+                        <button class="site-calendar__date">4</button></span><span class="site-calendar__date-cell">
+                        <button class="site-calendar__date">5</button></span><span class="site-calendar__date-cell">
+                        <button class="site-calendar__date">6</button></span><span class="site-calendar__date-cell">
+                        <button class="site-calendar__date">7</button></span><span class="site-calendar__date-cell">
+                        <button class="site-calendar__date">8</button></span><span class="site-calendar__date-cell">
+                        <button class="site-calendar__date">9</button></span><span class="site-calendar__date-cell">
+                        <button class="site-calendar__date">10</button></span><span class="site-calendar__date-cell">
+                        <button class="site-calendar__date">11</button></span><span class="site-calendar__date-cell">
+                        <button class="site-calendar__date">12</button></span><span class="site-calendar__date-cell">
+                        <button class="site-calendar__date">13</button></span><span class="site-calendar__date-cell">
+                        <button class="site-calendar__date">14</button></span><span class="site-calendar__date-cell">
+                        <button class="site-calendar__date">15</button></span><span class="site-calendar__date-cell">
+                        <button class="site-calendar__date">16</button></span><span class="site-calendar__date-cell">
+                        <button class="site-calendar__date">17</button></span><span class="site-calendar__date-cell">
+                        <button class="site-calendar__date">18</button></span><span class="site-calendar__date-cell">
+                        <button class="site-calendar__date">19</button></span><span class="site-calendar__date-cell">
+                        <button class="site-calendar__date">20</button></span><span class="site-calendar__date-cell">
+                        <button class="site-calendar__date">21</button></span><span class="site-calendar__date-cell">
+                        <button class="site-calendar__date">22</button></span><span class="site-calendar__date-cell">
+                        <button class="site-calendar__date">23</button></span><span class="site-calendar__date-cell">
+                        <button class="site-calendar__date">24</button></span><span class="site-calendar__date-cell">
+                        <button class="site-calendar__date">25</button></span><span class="site-calendar__date-cell">
+                        <button class="site-calendar__date">26</button></span><span class="site-calendar__date-cell">
+                        <button class="site-calendar__date">27</button></span><span class="site-calendar__date-cell">
+                        <button class="site-calendar__date">28</button></span><span class="site-calendar__date-cell">
+                        <button class="site-calendar__date">29</button></span><span class="site-calendar__date-cell">
+                        <button class="site-calendar__date">30</button></span><span class="site-calendar__date-cell">
+                        <button class="site-calendar__date">31</button></span><span class="site-calendar__date-cell">
+                        <button class="site-calendar__date">1</button></span>
+                      <div class="site-calendar__optional-row"><span class="site-calendar__date-cell">
+                          <button class="site-calendar__date">2</button></span><span class="site-calendar__date-cell">
+                          <button class="site-calendar__date">3</button></span><span class="site-calendar__date-cell">
+                          <button class="site-calendar__date">4</button></span><span class="site-calendar__date-cell">
+                          <button class="site-calendar__date">5</button></span><span class="site-calendar__date-cell">
+                          <button class="site-calendar__date">6</button></span><span class="site-calendar__date-cell">
+                          <button class="site-calendar__date">7</button></span><span class="site-calendar__date-cell">
+                          <button class="site-calendar__date">8</button></span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="site-dropdown__footer" tabindex="-1">
                     <button class="button site-dropdown__button-clear">Очистить</button>
                     <button class="button site-dropdown__button-apply">Применить</button>
                   </div>
-                </ul>
+                </div>
               </div>
             </div>
+          </div>
+          <div class="date-dropdown__wrapper">
             <div class="form-element">
               <div class="form-element__top">
-                <label class="form-element__label">Masked text field</label>
+                <label class="form-element__label" for="arrival">Date Dropdown</label>
               </div>
-              <input class="site-input site-input_masked" type="text" placeholder="ДД.ММ.ГГГГ">
+              <div class="site-dropdown site-dropdown_shared-calendar" id="arrival">
+                <button class="site-dropdown__header" data-text="ДД.ММ.ГГГГ" data-windowid="ui-page-calendar"><span class="text-area">ДД.ММ.ГГГГ</span><span class="material-icons">expand_more</span></button>
+              </div>
+            </div>
+          </div>
+          <div class="filter-wrapper">
+            <div class="form-element">
+              <div class="form-element__top">
+                <label class="form-element__label" for="filter-dates">Filter Date Dropdown</label>
+              </div>
+              <div class="site-dropdown site-dropdown_range-calendar" id="filter-dates">
+                <button class="site-dropdown__header" data-text="ДД.ММ.ГГГГ - ДД.ММ.ГГГГ"><span class="text-area">ДД.ММ.ГГГГ - ДД.ММ.ГГГГ</span><span class="material-icons">expand_more</span></button>
+                <div class="site-dropdown__window site-dropdown__window_free" tabindex="-1">
+                  <div class="site-calendar site-calendar_range">
+                    <div class="site-calendar__header">
+                      <button class="site-calendar__prev-button material-icons">arrow_back</button><span class="site-calendar__header-text">Август 2019</span>
+                      <button class="site-calendar__next-button material-icons">arrow_forward</button>
+                    </div>
+                    <div class="site-calendar__days-section">
+                      <div class="site-calendar__day">Пн</div>
+                      <div class="site-calendar__day">Вт</div>
+                      <div class="site-calendar__day">Ср</div>
+                      <div class="site-calendar__day">Чт</div>
+                      <div class="site-calendar__day">Пт</div>
+                      <div class="site-calendar__day">Сб</div>
+                      <div class="site-calendar__day">Вс</div>
+                    </div>
+                    <div class="site-calendar__date-section"><span class="site-calendar__date-cell">
+                        <button class="site-calendar__date">29</button></span><span class="site-calendar__date-cell">
+                        <button class="site-calendar__date">30</button></span><span class="site-calendar__date-cell">
+                        <button class="site-calendar__date">31</button></span><span class="site-calendar__date-cell">
+                        <button class="site-calendar__date">1</button></span><span class="site-calendar__date-cell">
+                        <button class="site-calendar__date">2</button></span><span class="site-calendar__date-cell">
+                        <button class="site-calendar__date">3</button></span><span class="site-calendar__date-cell">
+                        <button class="site-calendar__date">4</button></span><span class="site-calendar__date-cell">
+                        <button class="site-calendar__date">5</button></span><span class="site-calendar__date-cell">
+                        <button class="site-calendar__date">6</button></span><span class="site-calendar__date-cell">
+                        <button class="site-calendar__date">7</button></span><span class="site-calendar__date-cell">
+                        <button class="site-calendar__date">8</button></span><span class="site-calendar__date-cell">
+                        <button class="site-calendar__date">9</button></span><span class="site-calendar__date-cell">
+                        <button class="site-calendar__date">10</button></span><span class="site-calendar__date-cell">
+                        <button class="site-calendar__date">11</button></span><span class="site-calendar__date-cell">
+                        <button class="site-calendar__date">12</button></span><span class="site-calendar__date-cell">
+                        <button class="site-calendar__date">13</button></span><span class="site-calendar__date-cell">
+                        <button class="site-calendar__date">14</button></span><span class="site-calendar__date-cell">
+                        <button class="site-calendar__date">15</button></span><span class="site-calendar__date-cell">
+                        <button class="site-calendar__date">16</button></span><span class="site-calendar__date-cell">
+                        <button class="site-calendar__date">17</button></span><span class="site-calendar__date-cell">
+                        <button class="site-calendar__date">18</button></span><span class="site-calendar__date-cell">
+                        <button class="site-calendar__date">19</button></span><span class="site-calendar__date-cell">
+                        <button class="site-calendar__date">20</button></span><span class="site-calendar__date-cell">
+                        <button class="site-calendar__date">21</button></span><span class="site-calendar__date-cell">
+                        <button class="site-calendar__date">22</button></span><span class="site-calendar__date-cell">
+                        <button class="site-calendar__date">23</button></span><span class="site-calendar__date-cell">
+                        <button class="site-calendar__date">24</button></span><span class="site-calendar__date-cell">
+                        <button class="site-calendar__date">25</button></span><span class="site-calendar__date-cell">
+                        <button class="site-calendar__date">26</button></span><span class="site-calendar__date-cell">
+                        <button class="site-calendar__date">27</button></span><span class="site-calendar__date-cell">
+                        <button class="site-calendar__date">28</button></span><span class="site-calendar__date-cell">
+                        <button class="site-calendar__date">29</button></span><span class="site-calendar__date-cell">
+                        <button class="site-calendar__date">30</button></span><span class="site-calendar__date-cell">
+                        <button class="site-calendar__date">31</button></span><span class="site-calendar__date-cell">
+                        <button class="site-calendar__date">1</button></span>
+                      <div class="site-calendar__optional-row"><span class="site-calendar__date-cell">
+                          <button class="site-calendar__date">2</button></span><span class="site-calendar__date-cell">
+                          <button class="site-calendar__date">3</button></span><span class="site-calendar__date-cell">
+                          <button class="site-calendar__date">4</button></span><span class="site-calendar__date-cell">
+                          <button class="site-calendar__date">5</button></span><span class="site-calendar__date-cell">
+                          <button class="site-calendar__date">6</button></span><span class="site-calendar__date-cell">
+                          <button class="site-calendar__date">7</button></span><span class="site-calendar__date-cell">
+                          <button class="site-calendar__date">8</button></span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="site-dropdown__footer" tabindex="-1">
+                    <button class="button site-dropdown__button-clear">Очистить</button>
+                    <button class="button site-dropdown__button-apply">Применить</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="filter-wrapper">
+            <div class="form-element">
+              <div class="form-element__top">
+                <label class="form-element__label">Subscription Text Field</label>
+              </div>
+              <div class="site-input__wrapper">
+                <input class="site-input site-input_submit" type="text" placeholder="Email">
+                <button class="site-input__button material-icons">arrow_forward</button>
+              </div>
             </div>
           </div>
         </div>
-        <div class="content_column"></div>
-        <div class="content_column"></div>
+        <div class="content__column">
+          <div class="check-radio-wrapper">
+            <div class="form-element">
+              <div class="form-element__top">
+                <label class="form-element__label">Checkbox Buttons</label>
+              </div>
+              <ul class="site-checkbox__group">
+                <li class="site-checkbox__item">
+                  <input class="site-checkbox" type="checkbox" id="smoking" checked>
+                  <label class="site-checkbox__label" for="smoking">Можно курить</label>
+                </li>
+                <li class="site-checkbox__item">
+                  <input class="site-checkbox" type="checkbox" id="animals" checked>
+                  <label class="site-checkbox__label" for="animals">Можно с питомцами</label>
+                </li>
+                <li class="site-checkbox__item">
+                  <input class="site-checkbox" type="checkbox" id="invitation" checked>
+                  <label class="site-checkbox__label" for="invitation">Можно пригласить гостей (до 10 человек)</label>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="content__column"></div>
       </div>
     </div>
-    <script src=""></script>
   </body>
 </html>

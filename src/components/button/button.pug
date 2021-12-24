@@ -1,22 +1,26 @@
-mixin wrapper(rounded)
+mixin _wrapper(rounded)
   if rounded
     .button-wrapper
       block
   else
     block
 
+
 //-TODO: Добавить src
 mixin button(obj)
-  - if (obj.type === "a" || obj.type === "button") {
-    -const classes = ["button", attributes.class];
-    -let rounded = false;
 
-      - if (obj.modifiers) {
-        - if (obj.modifiers.rounded) classes.push("button_rounded"); rounded = true;
-        - if (obj.modifiers.primary) classes.push("button_primary")
-        - if (obj.modifiers.long) classes.push("button_long")
-      -}
+  -const buttonClassList = ["button", attributes.class];
 
-    +wrapper(rounded)
-      #{obj.type}(class = classes) #{obj.text}
+    -
+      if (obj.type === "a" || obj.type === "button") {
+      let rounded = false;
+
+        if (obj.modifiers) {
+           if (obj.modifiers.rounded) buttonClassList.push("button_rounded"); rounded = true;
+           if (obj.modifiers.primary) buttonClassList.push("button_primary")
+           if (obj.modifiers.long) buttonClassList.push("button_long")
+        }
+
+    +_wrapper(rounded)
+      #{obj.type}(class = buttonClassList) #{obj.text}
   -}

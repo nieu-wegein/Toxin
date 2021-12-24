@@ -1,9 +1,11 @@
 @import "../site-input/site-input";
 @import "../site-dropdown/site-dropdown";
+@import "../site-calendar/site-calendar";
+@import "../site-checkbox/site-checkbox";
 
 .form-element {
-  max-width: 320px;
-  display: flex;
+  width: 100%;
+  display: inline-flex;
   flex-wrap: wrap;
   justify-content: space-between;
 
@@ -19,6 +21,7 @@
     color: $site-dark;
     text-transform: uppercase;
     font-size: 12px;
+    line-height: 15px;
   }
 
   &__note {

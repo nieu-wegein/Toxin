@@ -1,18 +1,62 @@
-include site-dropdown__item
-include ../button/button
-//- Todo: перенести классы в массивы во всех файлах
+include site-dropdown__header/site-dropdown__header
+include site-dropdown__list/site-dropdown__list
+include site-dropdown__footer/site-dropdown__footer
+include ../site-calendar/site-calendar
+
+
+
+  //- Todo: перенести классы в массивы во всех файлах
+  //- TODO:! вынести массивы классов в пределы миксина
+  //-TODO: Проверить, видны массивы классов за пределами миксина
+
 mixin site-dropdown(obj)
-  if obj.options
-    .site-dropdown(id= obj.id)
-      button.site-dropdown__header(data-text= obj.text)
-        span.text-area #{obj.text}
-        span.material-icons expand_more
-      ul.site-dropdown__list
-        each option in obj.options
-          +site-dropdown__item(option)
-        if obj.modifiers.buttons
-          .site-dropdown__list-footer(tabindex= "-1")
-            +button({type: "button", text:"Очистить"})(class = "site-dropdown__button-clear")
-            +button({type: "button", text:"Применить"})(class = "site-dropdown__button-apply")
+    -
+      const dropdownClassList = ["site-dropdown"];
+      const windowClassList = ["site-dropdown__window"]
+      const calendarClassList = ["site-calendar"]
+      const modifiers = {}; // Во избежание ошибок при передаче элемента без модификатора
+      let windowId;
+      let forWindow;
+
+
+
+      if(obj.shared) {
+        windowId = obj.shared.id
+        forWindow = obj.shared.for ? obj.shared.for : obj.shared.id
+        windowClassList.push("site-dropdown__window_free")
+      }
+
+      if (obj.modifiers) {
+        if (obj.modifiers.calendar){
+
+            modifiers.calendar = obj.modifiers.calendar;
+            switch(modifiers.calendar.type) {
+              case "date":  calendarClassList.push("site-calendar_date");
+                            dropdownClassList.push ("site-dropdown_date-calendar");
+                            windowClassList.push("site-dropdown__window_free");
+                            break;
+              case "range": calendarClassList.push("site-calendar_range");
+                            obj.shared ? dropdownClassList.push("site-dropdown_shared-calendar") : dropdownClassList.push("site-dropdown_range-calendar");
+                            windowClassList.push("site-dropdown__window_free");
+                            break;
+            }
+        }
+        else dropdownClassList.push("site-dropdown_counting-dropdown");
+
+        if (obj.modifiers.buttons) modifiers.buttons = true
+      }
+
+    div(class = dropdownClassList id= obj.id)
+      +dropdown-header(obj.text, forWindow)
+      if !obj.shared || windowId
+        div(tabindex = -1 class = windowClassList id = windowId)
+          if obj.options
+            +site-dropdown__list(obj.options)
+          else if modifiers.calendar
+            +site-calendar(calendarClassList)
+          if modifiers.buttons
+            +site-dropdown__footer()
+    if obj.description
+      span #{obj.description}
 
 

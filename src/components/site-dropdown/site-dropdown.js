@@ -1,20 +1,28 @@
 import $ from "../../jquery-3.6.0.min";
 
 //TODO: разбить на дочерние классы
-class Dropdown {
+//TODO: РЕФАКТОРИНГ!!!
+
+
+class SiteDropdown {
+
+}
+
+export class CountingDropdown extends SiteDropdown {
 
   constructor(dropdown) {
-    this.dropdown = dropdown;
+    super(dropdown)
+    this.dropdown = $(dropdown);
     this.state = {}
     this.header = $(".site-dropdown__header", this.dropdown);
-    this.list = $(".site-dropdown__list", this.dropdown);
-    this.items = $(".site-dropdown__item", this.list);
-    this.footer = $(".site-dropdown__list-footer", this.list);
-    this.counters = $(".site-dropdown__counter", this.list).get();
+    this.window = $(".site-dropdown__window", this.dropdown);
+    this.items = $(".site-dropdown__item", this.window);
+    this.footer = $(".site-dropdown__footer", this.window);
+    this.counters = $(".site-dropdown__counter", this.window).get();
     this.textArea = $(".text-area", this.header)
 
 
-    this.header.click(this.toogleList);
+    this.header.click(this.toogleWindow);
     this.dropdown.focusout(this.onFocusLoose);
     if (this.footer) {
       this.footer.click(this.onFooterClick);
@@ -23,15 +31,16 @@ class Dropdown {
       this.items.click(this.onItemClick())
   }
 
-  toogleList = () => {
+  toogleWindow = () => {
     this.header.toggleClass("site-dropdown__header_square");
-    this.list.toggle();
+    this.window.toggle();
   }
 
   onFocusLoose = (e) => {
-    if ($(this.dropdown).has(e.relatedTarget).length === 0) {
+    if (this.dropdown.has(e.relatedTarget).length === 0) {
+
       this.header.removeClass("site-dropdown__header_square");
-      this.list.hide();
+      this.window.hide();
     }
   }
 
@@ -56,6 +65,7 @@ class Dropdown {
         else
           text += cases[2]
       }
+
       else text += "";
     }
 
@@ -109,9 +119,9 @@ class Dropdown {
 
   toogleClearButton = () => {
     if (this.footer) {
-      let clear = true;
+      let clear = true; //TODO
       const buttonClear = $(".site-dropdown__button-clear", this.footer)
-      const counters = $(".site-dropdown__count", this.list).get()
+      const counters = $(".site-dropdown__count", this.window).get()
 
       let count = counters.reduce((sum, current) => {
         return sum += parseInt(current.innerText)
@@ -137,16 +147,17 @@ class Dropdown {
       })
     }
     else if (e.target === buttonApply[0]) {
-      this.list.hide()
+      this.window.hide();
       this.updateHeaderState();
     }
 
   }
 }
 
+
 $(function (){
 
-  const dropdownsList = $(".site-dropdown");
-  dropdownsList.each((i, dropdown) => {new Dropdown($(dropdown))});
+  const dropdownsList = $(".site-dropdown_counting-dropdown");
+  dropdownsList.each((i, dropdown) => {new CountingDropdown(dropdown)});
 
 })

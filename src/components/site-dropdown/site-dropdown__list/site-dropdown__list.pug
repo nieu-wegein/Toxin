@@ -1,0 +1,13 @@
+mixin site-dropdown__list(options)
+  ul.site-dropdown__list
+    each option in options
+      +_site-dropdown__item(option)
+
+
+mixin _site-dropdown__item(option)
+  li.site-dropdown__item(data-value= option.value, data-declination= option.declination)
+    .site-dropdown__item-text #{option.name}
+    .site-dropdown__counter
+      button.site-dropdown__button-remove(disabled) -
+      span.site-dropdown__count 0
+      button.site-dropdown__button-add +
