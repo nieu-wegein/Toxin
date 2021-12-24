@@ -3,7 +3,7 @@ include ../../../components/form-element/form-element
   //-TODO: изменить структуру
   //-TODO: обернуть компоненты в лейблы
 -
-  const first_list = [
+  const firstList = [
     {label: "Text Field", note: "Default", item: {type: "input", id: "email", text: "Email"}},
     {label: "Text Field", note: "Hover / Focus", item: {type: "input", id: "awesome"}},
     {label: "Dropdown", item: {type: "dropdown", id: "guests", text:  "Сколько гостей",
@@ -17,20 +17,27 @@ include ../../../components/form-element/form-element
     {label: "Masked text field", item: {type: "input", id: "date", text: "ДД.ММ.ГГГГ", modifiers: {datemask: true}}},
   ]
 
-  const second_list = [
+  const secondList = [
     {label: "Date Dropdown", item: {type: "dropdown", id: "departure", text: "ДД.ММ.ГГГГ", shared: {id: "ui-page-calendar"}, modifiers: {calendar: {type: "range"}, buttons: true}}},
     {label: "Date Dropdown", item: {type: "dropdown", id: "arrival", text: "ДД.ММ.ГГГГ", shared: {for: "ui-page-calendar"}, modifiers: {calendar: {type: "range"}, buttons: true}}},
     {label: "Filter Date Dropdown", item: {type: "dropdown", id: "filter-dates", text: "ДД.ММ.ГГГГ - ДД.ММ.ГГГГ", modifiers: {calendar: {type: "range"}, buttons: true}}},
     {label: "Subscription Text Field", item: {type: "input", text: "Email", modifiers: {submit: true}}}
   ]
 
-  const checkbox_list = [
+  const checkboxList = [
     {label: "Checkbox Buttons", item: {type: "checkbox", options: [
-          {label: "Можно курить", id: "smoking", checked: true},
+          {label: "Можно курить", id: "smoking"},
           {label: "Можно с питомцами", id: "animals", checked: true},
           {label: "Можно пригласить гостей (до 10 человек)", id: "invitation", checked: true}
-        ]
-    }}
+        ]}}
+  ]
+
+  const radioList = [
+    {label: "Radio Buttons", item: {
+        type: "radio", options: [
+          {label: "Мужчина", id: "man", name: "sex", checked: true},
+          {label: "Женщина", id: "woman", name: "sex"},
+        ]}}
   ]
 
 doctype html
@@ -47,18 +54,19 @@ html(lang = "en")
         img.logo(src = "../img/min-logo.svg")
       .content
         .content__column
-          each item in first_list
+          each item in firstList
             +form-element(item)
           .date-dropdown__wrapper
-            +form-element(second_list[0])
+            +form-element(secondList[0])
           .date-dropdown__wrapper
-            +form-element(second_list[1])
+            +form-element(secondList[1])
           .filter-wrapper
-            +form-element(second_list[2])
+            +form-element(secondList[2])
           .filter-wrapper
-            +form-element(second_list[3])
+            +form-element(secondList[3])
 
         .content__column
           .check-radio-wrapper
-            +form-element(checkbox_list[0])
-        .content__column
+            +form-element(checkboxList[0])
+            +form-element(radioList[0])
+

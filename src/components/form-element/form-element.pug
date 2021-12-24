@@ -1,6 +1,7 @@
 include ../site-input/site-input
 include ../site-dropdown/site-dropdown
 include ../site-checkbox/site-checkbox
+include ../site-radio/site-radio
 
 
 
@@ -22,10 +23,9 @@ mixin form-element(obj)
         when "checkbox"
           +site-checkbox-group(obj.item)
         when "radio"
-          +site-input(obj.item)
+          +site-radio-group(obj.item)
         when "dropdown"
           +site-dropdown(obj.item)
-
 
 
   -}
