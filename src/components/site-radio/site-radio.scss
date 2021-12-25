@@ -20,7 +20,6 @@
   }
 
   &__label{
-    line-height: 24px;
     position: relative;
     display: inline-flex;
     font-family: "Montserrat", sans-serif;
@@ -32,6 +31,7 @@
       box-sizing: border-box;
       position: absolute;
       left: 0;
+      top: -2px;
       content: " ";
       width: 20px;
       height:  20px;
