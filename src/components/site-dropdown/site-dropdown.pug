@@ -19,7 +19,6 @@ mixin site-dropdown(obj)
       let forWindow;
 
 
-
       if(obj.shared) {
         windowId = obj.shared.id
         forWindow = obj.shared.for ? obj.shared.for : obj.shared.id
@@ -41,22 +40,31 @@ mixin site-dropdown(obj)
                             break;
             }
         }
-        else dropdownClassList.push("site-dropdown_counting-dropdown");
+        else dropdownClassList.push("site-dropdown_counting-dropdown"); //Если не будет модификатора, не создастся дропдаун
 
         if (obj.modifiers.buttons) modifiers.buttons = true
       }
 
-    div(class = dropdownClassList id= obj.id)
-      +dropdown-header(obj.text, forWindow)
-      if !obj.shared || windowId
-        div(tabindex = -1 class = windowClassList id = windowId)
-          if obj.options
-            +site-dropdown__list(obj.options)
-          else if modifiers.calendar
-            +site-calendar(calendarClassList)
-          if modifiers.buttons
-            +site-dropdown__footer()
-    if obj.description
-      span #{obj.description}
+
+
+    .form-element
+      .form-element__top
+        if obj.label
+          label.form-element__label(for = obj.id) #{obj.label}
+        if obj.note
+          span.form-element__note #{obj.note}
+
+      div(class = dropdownClassList id= obj.id)
+        +dropdown-header(obj.text, forWindow)
+        if !obj.shared || windowId
+          div(tabindex = -1 class = windowClassList id = windowId)
+            if obj.options
+              +site-dropdown__list(obj.options)
+            else if modifiers.calendar
+              +site-calendar(calendarClassList)
+            if modifiers.buttons
+              +site-dropdown__footer()
+      if obj.description
+        span #{obj.description}
 
 

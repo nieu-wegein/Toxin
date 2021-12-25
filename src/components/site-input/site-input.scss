@@ -1,11 +1,11 @@
 .site-input {
-  font-family: "Montserrat", sans-serif;
-  font-size: 14px;
+
+  @include site-body();
+
   width: 100%;
   padding: 12px 14px;
   border: 1px solid $site-dark-25;
   border-radius: 4px;
-  color: $site-dark-75;
   line-height: 18px;
   letter-spacing: -0.25px;
 

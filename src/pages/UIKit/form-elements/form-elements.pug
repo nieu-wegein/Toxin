@@ -1,49 +1,52 @@
-include ../../../components/form-element/form-element
+//include ../../../components/form-element/form-element
+include ../../../components/site-input/site-input
+include ../../../components/site-dropdown/site-dropdown
+include ../../../components/site-checkbox/site-checkbox
+include ../../../components/site-radio/site-radio
+include ../../../components/site-section/site-section
 
   //-TODO: изменить структуру
   //-TODO: обернуть компоненты в лейблы
 -
   const firstList = [
-    {label: "Text Field", note: "Default", item: {type: "input", id: "email", text: "Email"}},
-    {label: "Text Field", note: "Hover / Focus", item: {type: "input", id: "awesome"}},
-    {label: "Dropdown", item: {type: "dropdown", id: "guests", text:  "Сколько гостей",
+    {label: "Text Field", note: "Default",  id: "email", text: "Email"},
+    {label: "Text Field", note: "Hover / Focus", id: "awesome"},
+    {label: "Dropdown", id: "guests", text:  "Сколько гостей",
         options: [
           {name: "Взрослые", value: "adults", declination: ["гость", "гостя", "гостей"]},
           {name: "Дети", value: "children", declination: ["гость", "гостя", "гостей"]},
           {name: "Младенцы", value: "babies", declination: ["гость", "гостя", "гостей"]}
         ],
         modifiers: {buttons: true} //counted-list: true
-      }},
-    {label: "Masked text field", item: {type: "input", id: "date", text: "ДД.ММ.ГГГГ", modifiers: {datemask: true}}},
+      },
+    {label: "Masked text field",  id: "date", text: "ДД.ММ.ГГГГ", modifiers: {datemask: true}},
   ]
 
   const secondList = [
-    {label: "Date Dropdown", item: {type: "dropdown", id: "departure", text: "ДД.ММ.ГГГГ", shared: {id: "ui-page-calendar"}, modifiers: {calendar: {type: "range"}, buttons: true}}},
-    {label: "Date Dropdown", item: {type: "dropdown", id: "arrival", text: "ДД.ММ.ГГГГ", shared: {for: "ui-page-calendar"}, modifiers: {calendar: {type: "range"}, buttons: true}}},
-    {label: "Filter Date Dropdown", item: {type: "dropdown", id: "filter-dates", text: "ДД.ММ.ГГГГ - ДД.ММ.ГГГГ", modifiers: {calendar: {type: "range"}, buttons: true}}},
-    {label: "Subscription Text Field", item: {type: "input", text: "Email", modifiers: {submit: true}}}
+    {label: "Date Dropdown", id: "departure", text: "ДД.ММ.ГГГГ", shared: {id: "ui-page-calendar"}, modifiers: {calendar: {type: "range"}, buttons: true}},
+    {label: "Date Dropdown", id: "arrival", text: "ДД.ММ.ГГГГ", shared: {for: "ui-page-calendar"}, modifiers: {calendar: {type: "range"}, buttons: true}},
+    {label: "Filter Date Dropdown", id: "filter-dates", text: "ДД.ММ.ГГГГ - ДД.ММ.ГГГГ", modifiers: {calendar: {type: "range"}, buttons: true}},
+    {label: "Subscription Text Field",  text: "Email", modifiers: {submit: true}}
   ]
 
   const checkboxList = [
-    {label: "Checkbox Buttons", item: {type: "checkbox", options: [
+    {label: "Checkbox Buttons", options: [
           {label: "Можно курить", id: "smoking"},
           {label: "Можно с питомцами", id: "animals", checked: true},
           {label: "Можно пригласить гостей (до 10 человек)", id: "invitation", checked: true}
-        ]}},
-    {label: "Toggle", item: {type: "checkbox", options: [
+        ]},
+    {label: "Toggle",  options: [
           {label: "Получать спецпредложения", id: "offer", checked: true},
           {label: "Получать спецпредложения", id: "offer-2"},
         ],
         modifiers: {toggle: true}}
-    }
   ]
 
   const radioList = [
-    {label: "Radio Buttons", item: {
-        type: "radio", options: [
+    {label: "Radio Buttons", options: [
           {label: "Мужчина", id: "man", name: "sex", checked: true},
           {label: "Женщина", id: "woman", name: "sex"},
-        ]}}
+        ]}
   ]
 
 doctype html
@@ -60,21 +63,28 @@ html(lang = "en")
         img.logo(src = "../img/min-logo.svg")
       .content
         .content__column
-          each item in firstList
-            +form-element(item)
+          +site-input(firstList[0])
+          +site-input(firstList[1])
+          +site-dropdown(firstList[2])
+          +site-input(firstList[3])
           .date-dropdown__wrapper
-            +form-element(secondList[0])
+            +site-dropdown(secondList[0])
           .date-dropdown__wrapper
-            +form-element(secondList[1])
+            +site-dropdown(secondList[1])
           .filter-wrapper
-            +form-element(secondList[2])
+            +site-dropdown(secondList[2])
           .filter-wrapper
-            +form-element(secondList[3])
-
+            +site-input(secondList[3])
         .content__column
           .check-radio-wrapper
-            +form-element(checkboxList[0])
-            +form-element(radioList[0])
+            +site-checkbox-group(checkboxList[0])
+            +site-radio-group(radioList[0])
           .toggle_wrapper
-            +form-element(checkboxList[1])
+            +site-checkbox-group(checkboxList[1])
+
+          +site-section({h3: "Like Button"})
+            .like-buttons-wrapper
+              include ../../../components/like-button/like-button
+              include ../../../components/like-button/like-button
+        .content__column
 

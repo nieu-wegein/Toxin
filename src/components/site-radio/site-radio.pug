@@ -1,8 +1,11 @@
 
 
 mixin site-radio-group(obj)
-  ul.site-radio__group
-    each option in obj.options
-      li.site-radio__item
-        input(type = "radio" id = option.id class = "site-radio" name = option.name checked = option.checked)
-        label(class = "site-radio__label" for = option.id) #{option.label}
+  .form-element
+    fieldset.form-element__fieldset
+      legend.form-element__legend #{obj.label}
+      ul.site-radio__group
+        each option in obj.options
+          li.site-radio__item
+            input(type = "radio" id = option.id class = "site-radio" name = option.name checked = option.checked)
+            label(class = "site-radio__label" for = option.id) #{option.label}

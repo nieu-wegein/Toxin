@@ -1,3 +1,5 @@
+//TODO: Поменять все на миксины с параметрами по умолчанию
+
 $site-purple: #BC9CFF;
 $site-green: #6FCF97;
 $site-dark: rgba(31, 32, 65, 1);
@@ -8,3 +10,32 @@ $site-dark-5: rgba(31, 32, 65, 0.05);
 $primary-gradient: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
 $primary-gradient-25: linear-gradient(180deg, rgba(188,156,255,0.25) 0%, rgba(139,164,249,0.25) 100%);
 $secondary-gradient: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%);
+
+%site-h1 {
+  color: $site-dark;
+  font-size: 24px;
+  font-family: "Montserrat-Bold", sans-serif;
+  line-height: 29px;
+}
+
+%site-h2 {
+  color: $site-dark;
+  font-size: 19px;
+  font-family: "Montserrat-Bold", sans-serif;
+  line-height: 23px;
+}
+
+%site-h3 {
+  color: $site-dark;
+  font-size: 12px;
+  font-family: "Montserrat-Bold", sans-serif;
+  line-height: 15px;
+  text-transform: uppercase;
+}
+
+@mixin site-body($color: $site-dark-75, $font:"Montserrat", $fontS: 14px, $lineH: 24px){
+  color: $color;
+  font-family: $font, sans-serif;
+  font-size: $fontS;
+  line-height: $lineH;
+}

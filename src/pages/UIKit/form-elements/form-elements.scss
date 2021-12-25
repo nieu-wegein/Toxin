@@ -1,5 +1,12 @@
 @import "../../../fonts/fonts";
 @import "../../../variables/variables";
+@import "../../../components/site-input/site-input";
+@import "../../../components/site-dropdown/site-dropdown";
+@import "../../../components/site-calendar/site-calendar";
+@import "../../../components/site-checkbox/site-checkbox";
+@import "../../../components/site-radio/site-radio";
+@import "../../../components/site-section/site-section";
+@import "../../../components/like-button/like-button";
 @import "../../../components/form-element/form-element";
 
 * {
@@ -46,10 +53,10 @@
   &:nth-child(2) {
 
     .form-element {
-      margin-bottom: 42px;
+      margin-bottom: 41px;
 
-      &:nth-child(2) {
-        margin-bottom: 27px;
+      &:nth-child(2) { // TODO: Исправить
+        margin-bottom: 29px;
       }
     }
     padding-left: 27px;
@@ -68,6 +75,12 @@
     width: 230px;
   }
   .toggle_wrapper {
+    margin-bottom: 3px;
     width: 265px;
+  }
+  .like-buttons-wrapper {
+    width: 90px;
+    display: flex;
+    justify-content: space-between;
   }
 }

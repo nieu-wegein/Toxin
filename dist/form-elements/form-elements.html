@@ -1,4 +1,8 @@
-<!DOCTYPE html>
+
+<!--include ../../../components/form-element/form-element-->
+<!-- -for (let key in obj) {-->
+<!--   #{key} #{obj[key]}-->
+<!-- -}--><!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="utf-8">
@@ -252,58 +256,68 @@
         <div class="content__column">
           <div class="check-radio-wrapper">
             <div class="form-element">
-              <div class="form-element__top">
-                <label class="form-element__label">Checkbox Buttons</label>
-              </div>
-              <ul class="site-checkbox__group">
-                <li class="site-checkbox__item">
-                  <input class="site-checkbox" type="checkbox" id="smoking">
-                  <label class="site-checkbox__label" for="smoking">Можно курить</label>
-                </li>
-                <li class="site-checkbox__item">
-                  <input class="site-checkbox" type="checkbox" id="animals" checked>
-                  <label class="site-checkbox__label" for="animals">Можно с питомцами</label>
-                </li>
-                <li class="site-checkbox__item">
-                  <input class="site-checkbox" type="checkbox" id="invitation" checked>
-                  <label class="site-checkbox__label" for="invitation">Можно пригласить гостей (до 10 человек)</label>
-                </li>
-              </ul>
+              <fieldset class="form-element__fieldset">
+                <legend class="form-element__legend">Checkbox Buttons</legend>
+                <ul class="site-checkbox__group">
+                  <li class="site-checkbox__item">
+                    <input class="site-checkbox" type="checkbox" id="smoking">
+                    <label class="site-checkbox__label" for="smoking">Можно курить</label>
+                  </li>
+                  <li class="site-checkbox__item">
+                    <input class="site-checkbox" type="checkbox" id="animals" checked>
+                    <label class="site-checkbox__label" for="animals">Можно с питомцами</label>
+                  </li>
+                  <li class="site-checkbox__item">
+                    <input class="site-checkbox" type="checkbox" id="invitation" checked>
+                    <label class="site-checkbox__label" for="invitation">Можно пригласить гостей (до 10 человек)</label>
+                  </li>
+                </ul>
+              </fieldset>
             </div>
             <div class="form-element">
-              <div class="form-element__top">
-                <label class="form-element__label">Radio Buttons</label>
-              </div>
-              <ul class="site-radio__group">
-                <li class="site-radio__item">
-                  <input class="site-radio" type="radio" id="man" name="sex" checked>
-                  <label class="site-radio__label" for="man">Мужчина</label>
-                </li>
-                <li class="site-radio__item">
-                  <input class="site-radio" type="radio" id="woman" name="sex">
-                  <label class="site-radio__label" for="woman">Женщина</label>
-                </li>
-              </ul>
+              <fieldset class="form-element__fieldset">
+                <legend class="form-element__legend">Radio Buttons</legend>
+                <ul class="site-radio__group">
+                  <li class="site-radio__item">
+                    <input class="site-radio" type="radio" id="man" name="sex" checked>
+                    <label class="site-radio__label" for="man">Мужчина</label>
+                  </li>
+                  <li class="site-radio__item">
+                    <input class="site-radio" type="radio" id="woman" name="sex">
+                    <label class="site-radio__label" for="woman">Женщина</label>
+                  </li>
+                </ul>
+              </fieldset>
             </div>
           </div>
           <div class="toggle_wrapper">
             <div class="form-element">
-              <div class="form-element__top">
-                <label class="form-element__label">Toggle</label>
-              </div>
-              <ul class="site-checkbox__group">
-                <li class="site-checkbox__item">
-                  <input class="site-checkbox site-checkbox_toggle" type="checkbox" id="offer" checked>
-                  <label class="site-checkbox__label" for="offer">Получать спецпредложения</label>
-                </li>
-                <li class="site-checkbox__item">
-                  <input class="site-checkbox site-checkbox_toggle" type="checkbox" id="offer-2">
-                  <label class="site-checkbox__label" for="offer-2">Получать спецпредложения</label>
-                </li>
-              </ul>
+              <fieldset class="form-element__fieldset">
+                <legend class="form-element__legend">Toggle</legend>
+                <ul class="site-checkbox__group">
+                  <li class="site-checkbox__item">
+                    <input class="site-checkbox site-checkbox_toggle" type="checkbox" id="offer" checked>
+                    <label class="site-checkbox__label" for="offer">Получать спецпредложения</label>
+                  </li>
+                  <li class="site-checkbox__item">
+                    <input class="site-checkbox site-checkbox_toggle" type="checkbox" id="offer-2">
+                    <label class="site-checkbox__label" for="offer-2">Получать спецпредложения</label>
+                  </li>
+                </ul>
+              </fieldset>
             </div>
           </div>
+          <section class="site-section">
+            <div class="site-section__top">
+              <h3 class="site-section__h3">Like Button</h3>
+            </div>
+            <div class="like-buttons-wrapper">
+<button class="like-button material-icons"><span class="like-button__counter">0</span></button>
+<button class="like-button material-icons"><span class="like-button__counter">0</span></button>
+            </div>
+          </section>
         </div>
+        <div class="content__column"></div>
       </div>
     </div>
   </body>

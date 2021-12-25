@@ -1,0 +1,23 @@
+mixin site-section(obj)
+  section.site-section
+    .site-section__top
+      -for(let key in obj) {
+       if key === "h1"
+        h1.site-section__h1 #{obj.h1}
+       if key === "h2"
+        h2.site-section__h2 #{obj.h2}
+       if key === "h3"
+        h3.site-section__h3 #{obj.h3}
+       if key === "note"
+        .site-section__note #{obj.note}
+      -}
+    block
+
+
+
+
+
+
+// -for (let key in obj) {
+//   #{key} #{obj[key]}
+// -}

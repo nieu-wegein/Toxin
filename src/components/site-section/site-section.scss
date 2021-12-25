@@ -1,0 +1,28 @@
+.site-section {
+
+  &__top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__note {
+    @include site-body($color: $site-dark-50);
+  }
+
+  &__h1 {
+    @extend %site-h1;
+    margin: 0;
+  }
+
+  &__h2 {
+    @extend %site-h2;
+    margin: 0;
+  }
+
+  &__h3 {
+    @extend %site-h3;
+    margin: 0;
+    margin-bottom: 16px;
+  }
+}

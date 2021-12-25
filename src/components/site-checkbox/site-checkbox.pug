@@ -4,8 +4,12 @@ mixin site-checkbox-group(obj)
   -const checkboxClassList = ["site-checkbox"]
   -if (obj.modifiers && obj.modifiers.toggle) checkboxClassList.push("site-checkbox_toggle")
 
-  ul.site-checkbox__group
-    each option in obj.options
-      li.site-checkbox__item
-        input(type = "checkbox" id = option.id class = checkboxClassList checked = option.checked)
-        label(class = "site-checkbox__label" for = option.id) #{option.label}
+
+  .form-element
+    fieldset.form-element__fieldset
+      legend.form-element__legend #{obj.label}
+      ul.site-checkbox__group
+        each option in obj.options
+          li.site-checkbox__item
+            input(type = "checkbox" id = option.id class = checkboxClassList checked = option.checked)
+            label(class = "site-checkbox__label" for = option.id) #{option.label}
