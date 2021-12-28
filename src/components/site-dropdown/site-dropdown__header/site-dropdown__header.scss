@@ -1,5 +1,5 @@
 .site-dropdown__header {
-  display: flex;
+  display: flex; //TODO: проблемы с flex и button
   align-items: center;
   justify-content: space-between;
   font-family: "Montserrat", sans-serif;
@@ -12,6 +12,11 @@
   border-radius: 4px;
   color: $site-dark-75;
   letter-spacing: -0.25px;
+  cursor: pointer;
+
+  &-icon {
+    align-self: baseline;
+  }
 
   &_square {
     border-bottom-right-radius: 0;

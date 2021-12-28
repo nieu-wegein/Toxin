@@ -1,0 +1,20 @@
+mixin site-range-slider(obj)
+
+  -let middle = Math.floor((obj.max + obj.min) / 2)
+
+  .form-element
+    .form-element__top
+      if obj.label
+        label.form-element__label(for = obj.id) #{obj.label}
+        .form-element__note
+          span.start-range #{obj.min}
+          |₽
+          |!{' - '}
+          span.end-range #{obj.max}
+          |₽
+    .site-range-slider
+      .site-range-slider__track
+      input(type = "range" min = obj.min max = middle value = obj.min  id = obj.id).site-range-slider__input
+      .site-range-slider__fill
+      input(type = "range" min = middle+1  max = obj.max  value = obj.max id = obj.id + "-1").site-range-slider__input
+

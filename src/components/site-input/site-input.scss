@@ -9,29 +9,28 @@
   line-height: 18px;
   letter-spacing: -0.25px;
 
-  &__wrapper {
+  &-wrapper {
     display: flex;
     width: 100%;
   }
 
   &_submit {
+    border-radius: 4px 0 0 4px;
     border-right: none;
   }
 
   &__button {
 
+    @include background-text-transparent();
     cursor: pointer;
+    padding-right: 11px;
 
     background-color: $site-purple;
     background-image: $primary-gradient;
 
-    -webkit-background-clip: text;
-    -moz-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    -webkit-text-stroke: transparent;
-
     border: 1px solid $site-dark-25;
     border-left: none;
+    border-radius: 0 4px 4px 0;
   }
 
   &::placeholder {

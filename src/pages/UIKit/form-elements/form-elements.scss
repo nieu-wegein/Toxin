@@ -7,6 +7,8 @@
 @import "../../../components/site-radio/site-radio";
 @import "../../../components/site-section/site-section";
 @import "../../../components/like-button/like-button";
+@import "../../../components/rate-button/rate-button";
+@import "../../../components/site-range-slider/site-range-slider";
 @import "../../../components/form-element/form-element";
 
 * {
@@ -62,6 +64,11 @@
     padding-left: 27px;
   }
 
+
+  &:nth-child(3) {
+    align-items: flex-start;
+  }
+
   .date-dropdown__wrapper {
     width: 150px;
   }
@@ -78,9 +85,22 @@
     margin-bottom: 3px;
     width: 265px;
   }
+  .site-section {
+    width: 100%;
+    margin-bottom: 40px;
+  }
   .like-buttons-wrapper {
     width: 90px;
     display: flex;
     justify-content: space-between;
+  }
+  .rate-buttons-wrapper {
+    width: 260px;
+    display: flex;
+    justify-content: space-between;
+  }
+  .range-slider-wrapper {
+    width: 260px;
+    display: flex;
   }
 }

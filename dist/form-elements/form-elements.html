@@ -2,7 +2,8 @@
 <!--include ../../../components/form-element/form-element-->
 <!-- -for (let key in obj) {-->
 <!--   #{key} #{obj[key]}-->
-<!-- -}--><!DOCTYPE html>
+<!-- -}-->
+<!--TODO: переименовать компоненты, вложить элементы в компоненты--><!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="utf-8">
@@ -20,7 +21,7 @@
             <div class="form-element__top">
               <label class="form-element__label" for="email">Text Field</label><span class="form-element__note">Default</span>
             </div>
-            <div class="site-input__wrapper">
+            <div class="site-input-wrapper">
               <input class="site-input" type="text" id="email" placeholder="Email">
             </div>
           </div>
@@ -28,7 +29,7 @@
             <div class="form-element__top">
               <label class="form-element__label" for="awesome">Text Field</label><span class="form-element__note">Hover / Focus</span>
             </div>
-            <div class="site-input__wrapper">
+            <div class="site-input-wrapper">
               <input class="site-input" type="text" id="awesome">
             </div>
           </div>
@@ -37,7 +38,7 @@
               <label class="form-element__label" for="guests">Dropdown</label>
             </div>
             <div class="site-dropdown site-dropdown_counting-dropdown" id="guests">
-              <button class="site-dropdown__header" data-text="Сколько гостей"><span class="text-area">Сколько гостей</span><span class="material-icons">expand_more</span></button>
+              <button class="site-dropdown__header" data-text="Сколько гостей"><span class="text-area">Сколько гостей</span><span class="site-dropdown__header-icon material-icons">expand_more</span></button>
               <div class="site-dropdown__window" tabindex="-1">
                 <ul class="site-dropdown__list">
                   <li class="site-dropdown__item" data-value="adults" data-declination="[&quot;гость&quot;,&quot;гостя&quot;,&quot;гостей&quot;]">
@@ -73,7 +74,7 @@
             <div class="form-element__top">
               <label class="form-element__label" for="date">Masked text field</label>
             </div>
-            <div class="site-input__wrapper">
+            <div class="site-input-wrapper">
               <input class="site-input site-input_date" type="text" id="date" placeholder="ДД.ММ.ГГГГ">
             </div>
           </div>
@@ -83,7 +84,7 @@
                 <label class="form-element__label" for="departure">Date Dropdown</label>
               </div>
               <div class="site-dropdown site-dropdown_shared-calendar" id="departure">
-                <button class="site-dropdown__header" data-text="ДД.ММ.ГГГГ" data-windowid="ui-page-calendar"><span class="text-area">ДД.ММ.ГГГГ</span><span class="material-icons">expand_more</span></button>
+                <button class="site-dropdown__header" data-text="ДД.ММ.ГГГГ" data-windowid="ui-page-calendar"><span class="text-area">ДД.ММ.ГГГГ</span><span class="site-dropdown__header-icon material-icons">expand_more</span></button>
                 <div class="site-dropdown__window site-dropdown__window_free site-dropdown__window_free" tabindex="-1" id="ui-page-calendar">
                   <div class="site-calendar site-calendar_range">
                     <div class="site-calendar__header">
@@ -160,7 +161,7 @@
                 <label class="form-element__label" for="arrival">Date Dropdown</label>
               </div>
               <div class="site-dropdown site-dropdown_shared-calendar" id="arrival">
-                <button class="site-dropdown__header" data-text="ДД.ММ.ГГГГ" data-windowid="ui-page-calendar"><span class="text-area">ДД.ММ.ГГГГ</span><span class="material-icons">expand_more</span></button>
+                <button class="site-dropdown__header" data-text="ДД.ММ.ГГГГ" data-windowid="ui-page-calendar"><span class="text-area">ДД.ММ.ГГГГ</span><span class="site-dropdown__header-icon material-icons">expand_more</span></button>
               </div>
             </div>
           </div>
@@ -170,7 +171,7 @@
                 <label class="form-element__label" for="filter-dates">Filter Date Dropdown</label>
               </div>
               <div class="site-dropdown site-dropdown_range-calendar" id="filter-dates">
-                <button class="site-dropdown__header" data-text="ДД.ММ.ГГГГ - ДД.ММ.ГГГГ"><span class="text-area">ДД.ММ.ГГГГ - ДД.ММ.ГГГГ</span><span class="material-icons">expand_more</span></button>
+                <button class="site-dropdown__header" data-text="ДД.ММ.ГГГГ - ДД.ММ.ГГГГ"><span class="text-area">ДД.ММ.ГГГГ - ДД.ММ.ГГГГ</span><span class="site-dropdown__header-icon material-icons">expand_more</span></button>
                 <div class="site-dropdown__window site-dropdown__window_free" tabindex="-1">
                   <div class="site-calendar site-calendar_range">
                     <div class="site-calendar__header">
@@ -246,7 +247,7 @@
               <div class="form-element__top">
                 <label class="form-element__label">Subscription Text Field</label>
               </div>
-              <div class="site-input__wrapper">
+              <div class="site-input-wrapper">
                 <input class="site-input site-input_submit" type="text" placeholder="Email">
                 <button class="site-input__button material-icons">arrow_forward</button>
               </div>
@@ -316,8 +317,56 @@
 <button class="like-button material-icons"><span class="like-button__counter">0</span></button>
             </div>
           </section>
+          <section class="site-section">
+            <div class="site-section__top">
+              <h3 class="site-section__h3">Rate Button</h3>
+            </div>
+            <div class="rate-buttons-wrapper">
+              <div class="rate-button">
+                <input class="rate-button__radio" type="radio" id="ui-star-5" name="sample-stars-1" value="5 stars">
+                <label class="rate-button__label material-icons" for="ui-star-5"><span class="rate-button__label-text">5 звезд</span></label>
+                <input class="rate-button__radio" type="radio" id="ui-star-4" name="sample-stars-1" value="4 stars">
+                <label class="rate-button__label material-icons" for="ui-star-4"><span class="rate-button__label-text">4 звезды</span></label>
+                <input class="rate-button__radio" type="radio" id="ui-star-3" name="sample-stars-1" value="3 stars">
+                <label class="rate-button__label material-icons" for="ui-star-3"><span class="rate-button__label-text">3 звезды</span></label>
+                <input class="rate-button__radio" type="radio" id="ui-star-2" name="sample-stars-1" value="2 stars">
+                <label class="rate-button__label material-icons" for="ui-star-2"><span class="rate-button__label-text">2 звезды</span></label>
+                <input class="rate-button__radio" type="radio" id="ui-star-1" name="sample-stars-1" value="1 star">
+                <label class="rate-button__label material-icons" for="ui-star-1"><span class="rate-button__label-text">1 звезду</span></label>
+              </div>
+              <div class="rate-button">
+                <input class="rate-button__radio" type="radio" id="ui-star-10" name="sample-stars-2" value="5 stars">
+                <label class="rate-button__label material-icons" for="ui-star-10"><span class="rate-button__label-text">5 звезд</span></label>
+                <input class="rate-button__radio" type="radio" id="ui-star-9" name="sample-stars-2" value="4 stars">
+                <label class="rate-button__label material-icons" for="ui-star-9"><span class="rate-button__label-text">4 звезды</span></label>
+                <input class="rate-button__radio" type="radio" id="ui-star-8" name="sample-stars-2" value="3 stars">
+                <label class="rate-button__label material-icons" for="ui-star-8"><span class="rate-button__label-text">3 звезды</span></label>
+                <input class="rate-button__radio" type="radio" id="ui-star-7" name="sample-stars-2" value="2 stars">
+                <label class="rate-button__label material-icons" for="ui-star-7"><span class="rate-button__label-text">2 звезды</span></label>
+                <input class="rate-button__radio" type="radio" id="ui-star-6" name="sample-stars-2" value="1 star">
+                <label class="rate-button__label material-icons" for="ui-star-6"><span class="rate-button__label-text">1 звезду</span></label>
+              </div>
+            </div>
+          </section>
         </div>
-        <div class="content__column"></div>
+        <div class="content__column">
+          <div class="range-slider-wrapper">
+            <div class="form-element">
+              <div class="form-element__top">
+                <label class="form-element__label">Range Slider</label>
+                <div class="form-element__note"><span class="start-range">1</span>₽
+ - <span class="end-range">10006</span>₽
+                </div>
+              </div>
+              <div class="site-range-slider">
+                <div class="site-range-slider__track"></div>
+                <input class="site-range-slider__input" type="range" min="1" max="5003" value="1">
+                <div class="site-range-slider__fill"></div>
+                <input class="site-range-slider__input" type="range" min="5004" max="10006" value="10006" id="undefined-1">
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </body>

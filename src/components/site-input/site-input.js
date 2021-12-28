@@ -15,7 +15,7 @@ class DateInput extends MaskedInput {
 
   constructor(input) {
     super(input)
-    this.input = input;
+    this.input = $(input);
 
     this.input.on("input", this.setMask)
   }
@@ -45,6 +45,6 @@ class DateInput extends MaskedInput {
 $(function () {
 
   const maskedInputList = $(".site-input_date");
-  maskedInputList.each((i, input) => {new DateInput($(input))})
+  maskedInputList.each((i, input) => {new DateInput(input)})
 
 })

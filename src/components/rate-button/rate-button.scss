@@ -1,0 +1,42 @@
+.rate-button {
+
+  display: inline-flex;
+  flex-direction: row-reverse;
+
+  &__label {
+    color: $site-purple;
+    cursor: pointer;
+
+    &-text {
+      @include visually-hidden();
+    }
+
+    &::before {
+      @include background-text-transparent();
+      content: "star_border" / "Оценить в ";
+      top:0;
+      left:0;
+
+      background-color: rgba(188,156,255, 1);
+      background-image: $primary-gradient;
+
+    }
+  }
+
+  &__radio {
+    @include visually-hidden();
+
+    &:hover ~ .rate-button__label::before {
+      content: "star";
+      background-color: rgba(188,156,255, 0.25);
+      background-image: $primary-gradient-25;
+    }
+
+    &:checked + .rate-button__label::before,
+    &:checked ~ .rate-button__label::before {
+      content: "star";
+      background-color: rgba(188,156,255, 1);
+      background-image: $primary-gradient;
+    }
+  }
+}

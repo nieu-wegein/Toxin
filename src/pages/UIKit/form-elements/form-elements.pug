@@ -4,6 +4,8 @@ include ../../../components/site-dropdown/site-dropdown
 include ../../../components/site-checkbox/site-checkbox
 include ../../../components/site-radio/site-radio
 include ../../../components/site-section/site-section
+include ../../../components/rate-button/rate-button
+include ../../../components/site-range-slider/site-range-slider
 
   //-TODO: изменить структуру
   //-TODO: обернуть компоненты в лейблы
@@ -46,7 +48,11 @@ include ../../../components/site-section/site-section
     {label: "Radio Buttons", options: [
           {label: "Мужчина", id: "man", name: "sex", checked: true},
           {label: "Женщина", id: "woman", name: "sex"},
-        ]}
+        ]},
+  ]
+
+  const rangeSliderList = [
+    {label: "Range Slider", min: 1, max: 10006}
   ]
 
 doctype html
@@ -86,5 +92,11 @@ html(lang = "en")
             .like-buttons-wrapper
               include ../../../components/like-button/like-button
               include ../../../components/like-button/like-button
+          +site-section({h3: "Rate Button"})
+            .rate-buttons-wrapper
+              +rate-button("sample-stars-1", ["ui-star-1", "ui-star-2", "ui-star-3", "ui-star-4", "ui-star-5"])
+              +rate-button("sample-stars-2", ["ui-star-6", "ui-star-7", "ui-star-8", "ui-star-9", "ui-star-10"])
         .content__column
+          .range-slider-wrapper
+            +site-range-slider(rangeSliderList[0])
 

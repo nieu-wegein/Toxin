@@ -1,0 +1,75 @@
+
+
+.site-range-slider {
+
+  position: relative;
+  display: flex;
+  margin-top: 18px;
+  width: 100%;
+
+  &__input {
+
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-color: transparent;
+    width: 100%;
+    margin-top: -7px; // для firefox
+
+    &::-webkit-slider-runnable-track {
+      -webkit-appearance: none;
+    }
+
+    &::-moz-range-track {
+      -webkit-appearance: none;
+    }
+
+    &::-webkit-slider-thumb {
+     -webkit-appearance: none;
+      height: 16px;
+      width: 16px;
+      padding: 2px;
+      background: $secondary-gradient;
+      background-clip: padding-box;
+
+      border: 2px solid white;
+      border-radius: 50%;
+      cursor: pointer;
+      margin-top: 2px;
+    }
+
+    &::-moz-range-thumb {
+      height: 8px;
+      width: 8px;
+      padding: 2px;
+      background: $secondary-gradient;
+      background-clip: padding-box;
+
+      border: 2px solid white;
+      border-radius: 50%;
+      cursor: pointer;
+
+    }
+  }
+
+  &__track {
+    width: 100%;
+    position: absolute;
+    z-index: -1;
+    border: 1px solid $site-dark-25;
+    background: transparent;
+    height: 6px;
+    border-radius: 3px
+  }
+
+  &__fill {
+    box-sizing: content-box;
+    position: absolute;
+    left: 0.01px;
+    right: 0.01px;
+    z-index: -1;
+    background: $secondary-gradient;
+    height: 6px;
+    border-radius: 3px;
+  }
+}

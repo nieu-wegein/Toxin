@@ -12,7 +12,7 @@ mixin site-input(obj)
         if obj.note
           span.form-element__note #{obj.note}
 
-      .site-input__wrapper
+      .site-input-wrapper
         input(type = "text" id = obj.id class = inputClassList placeholder = obj.text)
         if obj.modifiers && obj.modifiers.submit
           button.site-input__button.material-icons arrow_forward
