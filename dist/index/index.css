@@ -444,55 +444,64 @@ template {
 }
 
 .button {
-  display: inline-block;
+  cursor: pointer;
   border: none;
   color: #BC9CFF;
   background-color: white;
   padding: 0;
   font-family: Montserrat-Bold, sans-serif;
   font-size: 12px;
+  line-height: 15px;
   text-transform: uppercase;
+  position: relative;
 }
 .button:hover {
   color: rgba(31, 32, 65, 0.5);
 }
-.button-wrapper {
-  padding: 2px;
-  background: -webkit-gradient(linear, left top, left bottom, from(#BC9CFF), to(#8BA4F9));
-  background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
-  border-radius: 22px;
-}
 .button_rounded {
   color: #BC9CFF;
-  padding: 16px 16px;
+  padding: 12px 19px 13px 18px;
+  letter-spacing: -0.15px;
+  border: 2px double transparent;
   border-radius: 22px;
+  background-origin: border-box;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(white), to(white)), -webkit-gradient(linear, left top, left bottom, from(#BC9CFF), to(#8BA4F9));
+  background-image: linear-gradient(white, white), linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+  background-clip: padding-box, border-box;
+}
+.button_rounded:hover {
+  color: #BC9CFF;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(white), to(white)), -webkit-gradient(linear, left top, left bottom, from(rgba(188, 156, 255, 0.5)), to(rgba(139, 164, 249, 0.5)));
+  background-image: linear-gradient(white, white), linear-gradient(180deg, rgba(188, 156, 255, 0.5) 0%, rgba(139, 164, 249, 0.5) 100%);
 }
 .button_secondary {
   font-family: Montserrat-Bold, sans-serif;
   color: white;
-  background: -webkit-gradient(linear, left top, left bottom, from(#6FCF97), to(#66D2EA));
-  background: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%);
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#6FCF97), to(#66D2EA));
+  background-image: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%);
 }
 .button_primary {
   font-family: Montserrat-Bold, sans-serif;
   color: white;
-  background: -webkit-gradient(linear, left top, left bottom, from(#BC9CFF), to(#8BA4F9));
-  background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#BC9CFF), to(#8BA4F9));
+  background-image: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+  background-clip: border-box;
 }
-
-.btn {
-  font-family: Montserrat;
-  text-transform: uppercase;
-  font-weight: 700;
+.button_primary:hover {
+  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(188, 156, 255, 0.5)), to(rgba(139, 164, 249, 0.5)));
+  background-image: linear-gradient(180deg, rgba(188, 156, 255, 0.5) 0%, rgba(139, 164, 249, 0.5) 100%);
   color: white;
-  line-height: 16px;
-  font-size: 12px;
-  display: inline-block;
-  border: none;
-  padding: 12px 17px;
-  border-radius: 22px;
-  background: -webkit-gradient(linear, left top, left bottom, from(#BC9CFF), to(#8BA4F9));
-  background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+}
+.button_flexible {
+  width: 100%;
+}
+.button.icon::after {
+  font-family: "Material Icons";
+  font-size: 24px;
+  right: 9px;
+  position: absolute;
+  text-transform: none;
+  content: "arrow_forward";
 }
 
 * {

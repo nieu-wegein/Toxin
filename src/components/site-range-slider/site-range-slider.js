@@ -11,22 +11,27 @@ class RangeSlider {
 
     $(this.rangeInputs[0]).on("input", this.setStartValue);
     $(this.rangeInputs[1]).on("input", this.setEndValue);
+
+    this.setStartValue();
+    this.setEndValue();
+
   }
 
-  setStartValue = (e) => {
+  setStartValue = () => {
     //ширина слайдера минус место под кнопку - так же как и в стандартном инпуте
     const sliderWidth = this.slider.width()/2 - 16; // вынести за пределы функции, если не нужен адаптив для элементов формы
-    const left = (e.currentTarget.value - e.currentTarget.min) / (e.currentTarget.max - e.currentTarget.min) * sliderWidth;
+    const left = (this.rangeInputs[0].value - this.rangeInputs[0].min) / (this.rangeInputs[0].max - this.rangeInputs[0].min) * sliderWidth;
 
-    this.startRangeDisplay[0].innerText = e.currentTarget.value;
+
+    this.startRangeDisplay[0].innerText = this.rangeInputs[0].value;
     this.fill.css("left", left);
   }
 
-  setEndValue = (e) => {
+  setEndValue = () => {
     const sliderWidth = this.slider.width()/2 - 16;
-    const right = sliderWidth - ((e.currentTarget.value - e.currentTarget.min) / (e.currentTarget.max - e.currentTarget.min) *  sliderWidth);
+    const right = sliderWidth - ((this.rangeInputs[1].value - this.rangeInputs[1].min) / (this.rangeInputs[1].max - this.rangeInputs[1].min) *  sliderWidth);
 
-    this.endRangeDisplay[0].innerText = e.currentTarget.value;
+    this.endRangeDisplay[0].innerText = this.rangeInputs[1].value;
     this.fill.css("right", right );
   }
 

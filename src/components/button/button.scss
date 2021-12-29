@@ -4,7 +4,7 @@
 
 .button {
 
-  display: inline-block;
+  cursor: pointer;
   border: none;
   color: $site-purple;
   background-color: white;
@@ -12,49 +12,82 @@
 
   font-family: Montserrat-Bold, sans-serif;
   font-size: 12px;
+  line-height: 15px;
   text-transform: uppercase;
+
+  position: relative;
 
   &:hover {
     color: $site-dark-50;
   }
 
-
-  &-wrapper {
-    padding: 2px;
-    background: $primary-gradient;
-    border-radius: 22px;
-  }
-
   &_rounded {
     color: $site-purple;
-    padding: 16px 16px;
+    padding: 12px 19px 13px 18px;
+    letter-spacing: -0.15px;
+
+   // position: relative;
+
+    border: 2px double transparent;
     border-radius: 22px;
+    background-origin: border-box;
+  //  background-clip: padding-box;
+
+    background-image: linear-gradient(white, white), $primary-gradient;
+    background-clip: padding-box, border-box;
+
+    &:hover {
+      color: $site-purple;
+      background-image: linear-gradient(white, white), $primary-gradient-50;
+    }
+
+
+    //&::before {
+    //  position: absolute;
+    //  content: "";
+    //  top: -2px;
+    //  right: -2px;
+    //  bottom: -2px;
+    //  left: -2px;
+    //  z-index: -1;
+    //  background-image: $primary-gradient;
+    //  border-radius: 22px;
+    //}
   }
 
   &_secondary {
     font-family: Montserrat-Bold, sans-serif;
     color: white;
-    background: $secondary-gradient;
+    background-image: $secondary-gradient;
   }
 
   &_primary {
     font-family: Montserrat-Bold, sans-serif;
     color: white;
-    background: $primary-gradient;
+    background-image: $primary-gradient;
+    background-clip:  border-box;
+
+    &:hover {
+      background-image: $primary-gradient-50;
+      color: white;
+    }
   }
 
-}
+  &_flexible {
+    width: 100%;
+  }
 
-.btn {
-  font-family: Montserrat;
-  text-transform: uppercase;
-  font-weight: 700;
-  color: white;
-  line-height: 16px;
-  font-size: 12px;
-  display: inline-block;
-  border: none;
-  padding: 12px 17px;
-  border-radius: 22px;
-  background: $primary-gradient;
+  //TODO: Отрефакторить все остальное
+  &.icon::after {
+
+    font-family: "Material Icons";
+    font-size: 24px;
+
+    right: 9px;
+
+    position: absolute;
+    text-transform: none;
+    content: "arrow_forward";
+
+  }
 }

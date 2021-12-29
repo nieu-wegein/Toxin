@@ -6,6 +6,7 @@ include ../../../components/site-radio/site-radio
 include ../../../components/site-section/site-section
 include ../../../components/rate-button/rate-button
 include ../../../components/site-range-slider/site-range-slider
+include ../../../components/button/button
 
   //-TODO: изменить структуру
   //-TODO: обернуть компоненты в лейблы
@@ -28,7 +29,7 @@ include ../../../components/site-range-slider/site-range-slider
     {label: "Date Dropdown", id: "departure", text: "ДД.ММ.ГГГГ", shared: {id: "ui-page-calendar"}, modifiers: {calendar: {type: "range"}, buttons: true}},
     {label: "Date Dropdown", id: "arrival", text: "ДД.ММ.ГГГГ", shared: {for: "ui-page-calendar"}, modifiers: {calendar: {type: "range"}, buttons: true}},
     {label: "Filter Date Dropdown", id: "filter-dates", text: "ДД.ММ.ГГГГ - ДД.ММ.ГГГГ", modifiers: {calendar: {type: "range"}, buttons: true}},
-    {label: "Subscription Text Field",  text: "Email", modifiers: {submit: true}}
+    {label: "Subscription Text Field", id: "subscription", text: "Email", modifiers: {submit: true}}
   ]
 
   const checkboxList = [
@@ -52,7 +53,17 @@ include ../../../components/site-range-slider/site-range-slider
   ]
 
   const rangeSliderList = [
-    {label: "Range Slider", min: 1, max: 10006}
+    {label: "Range Slider", id: "range", min: 1, max: 15485, startVal: 5000, endVal: 10000}
+  ]
+
+  const buttonsList = [
+    {type: "button", text: "Click Me", modifiers: {rounded: true, primary: true}},
+    {type: "button", text: "Click Me", modifiers: {rounded: true, primary: true}},
+    {type: "button", text: "Click Me", modifiers: {rounded: true}},
+    {type: "button", text: "Click Me", modifiers: {rounded: true}},
+    {type: "button", text: "Click Me"},
+    {type: "button", text: "Click Me"},
+    {type: "button", text: "Перейти к оплате", modifiers: {rounded: true, primary: true, flexible: true, icon: true}}
   ]
 
 doctype html
@@ -99,4 +110,13 @@ html(lang = "en")
         .content__column
           .range-slider-wrapper
             +site-range-slider(rangeSliderList[0])
+          +site-section({h3: "Buttons"})
+            .fixed-buttons-wrapper
+              +button(buttonsList[0])
+              +button(buttonsList[1])
+              +button(buttonsList[2])
+              +button(buttonsList[3])
+              +button(buttonsList[4])
+              +button(buttonsList[5])
+            +button(buttonsList[6])
 

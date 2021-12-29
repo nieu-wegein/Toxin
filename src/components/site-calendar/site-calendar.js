@@ -77,7 +77,7 @@ class SiteCalendar {
       if(this.state.todayButton)
         $(this.state.todayButton).addClass("button_secondary")
       else {
-        this.state.todayButton = this.dates.find((date) => date.innerText == this.today.getDate());
+        this.state.todayButton = this.dates.find((date) => date.innerText == this.today.getDate() && $(date).data("fulldate"));
         $(this.state.todayButton).addClass("button_secondary");
       }
     }

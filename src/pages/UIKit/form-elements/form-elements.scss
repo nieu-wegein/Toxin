@@ -54,6 +54,8 @@
 
   &:nth-child(2) {
 
+    padding-left: 27px;
+
     .form-element {
       margin-bottom: 41px;
 
@@ -61,12 +63,16 @@
         margin-bottom: 29px;
       }
     }
-    padding-left: 27px;
   }
 
 
   &:nth-child(3) {
     align-items: flex-start;
+
+    .form-element {
+      margin-bottom: 39px;
+
+    }
   }
 
   .date-dropdown__wrapper {
@@ -100,7 +106,14 @@
     justify-content: space-between;
   }
   .range-slider-wrapper {
-    width: 260px;
+    width: 266px;
     display: flex;
+  }
+  .fixed-buttons-wrapper {
+    width: 240px;
+    .button {
+      margin-right: 15px;
+      margin-bottom: 30px;
+    }
   }
 }
