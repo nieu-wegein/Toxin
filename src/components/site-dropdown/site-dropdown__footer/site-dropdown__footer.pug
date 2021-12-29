@@ -2,5 +2,5 @@ include ../../button/button
 
 mixin site-dropdown__footer
   .site-dropdown__footer(tabindex= "-1")
-    +button({type: "button", text: "Очистить"})(class = "site-dropdown__button-clear")
-    +button({type: "button", text: "Применить"})(class = "site-dropdown__button-apply")
+    +button({type: "button", text: "Очистить", classList: "site-dropdown__button-clear"})
+    +button({type: "button", text: "Применить", classList: "site-dropdown__button-apply"})

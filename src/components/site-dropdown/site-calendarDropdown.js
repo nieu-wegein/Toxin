@@ -61,6 +61,7 @@ class CalendarDropdown extends SiteDropdown {
   }
 
   apply = () => {
+    console.log(1223);
     this.window.hide();
   }
 }

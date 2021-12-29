@@ -1,8 +1,8 @@
 //-TODO: Добавить src
+
 mixin button(obj)
 
   -const buttonClassList = ["button", obj.classList];
-
     -
       if (obj.type === "a" || obj.type === "button") {
         let rounded = false;
@@ -10,6 +10,7 @@ mixin button(obj)
         if (obj.modifiers) {
            if (obj.modifiers.rounded) buttonClassList.push("button_rounded"); rounded = true;
            if (obj.modifiers.primary) buttonClassList.push("button_primary")
+           if (obj.modifiers.secondary) buttonClassList.push("button_secondary")
            if (obj.modifiers.flexible) buttonClassList.push("button_flexible")
            if (obj.modifiers.icon) buttonClassList.push("icon")
         }

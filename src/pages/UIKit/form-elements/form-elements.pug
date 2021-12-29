@@ -1,4 +1,3 @@
-//include ../../../components/form-element/form-element
 include ../../../components/site-input/site-input
 include ../../../components/site-dropdown/site-dropdown
 include ../../../components/site-checkbox/site-checkbox
@@ -7,6 +6,7 @@ include ../../../components/site-section/site-section
 include ../../../components/rate-button/rate-button
 include ../../../components/site-range-slider/site-range-slider
 include ../../../components/button/button
+include ../../../components/site-pagination/site-pagination
 
   //-TODO: изменить структуру
   //-TODO: обернуть компоненты в лейблы
@@ -63,7 +63,7 @@ include ../../../components/button/button
     {type: "button", text: "Click Me", modifiers: {rounded: true}},
     {type: "button", text: "Click Me"},
     {type: "button", text: "Click Me"},
-    {type: "button", text: "Перейти к оплате", modifiers: {rounded: true, primary: true, flexible: true, icon: true}}
+    {type: "a", text: "Перейти к оплате", modifiers: {rounded: true, primary: true, flexible: true, icon: true}}
   ]
 
 doctype html
@@ -88,9 +88,9 @@ html(lang = "en")
             +site-dropdown(secondList[0])
           .date-dropdown__wrapper
             +site-dropdown(secondList[1])
-          .filter-wrapper
+          .filter-date-wrapper
             +site-dropdown(secondList[2])
-          .filter-wrapper
+          .filter-date-wrapper
             +site-input(secondList[3])
         .content__column
           .check-radio-wrapper
@@ -112,11 +112,9 @@ html(lang = "en")
             +site-range-slider(rangeSliderList[0])
           +site-section({h3: "Buttons"})
             .fixed-buttons-wrapper
-              +button(buttonsList[0])
-              +button(buttonsList[1])
-              +button(buttonsList[2])
-              +button(buttonsList[3])
-              +button(buttonsList[4])
-              +button(buttonsList[5])
+              -for(let i = 0; i < 6; i++)
+                +button(buttonsList[i])
             +button(buttonsList[6])
+          +site-section({h3: "Pagination"})
+            +site-pagination()
 

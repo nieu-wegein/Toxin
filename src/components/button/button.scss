@@ -9,6 +9,8 @@
   color: $site-purple;
   background-color: white;
   padding: 0;
+  display: inline-block;
+  text-align: center;
 
   font-family: Montserrat-Bold, sans-serif;
   font-size: 12px;
@@ -59,6 +61,10 @@
     font-family: Montserrat-Bold, sans-serif;
     color: white;
     background-image: $secondary-gradient;
+
+    &:hover{
+      background-image: $secondary-gradient;
+    }
   }
 
   &_primary {
@@ -83,6 +89,7 @@
     font-family: "Material Icons";
     font-size: 24px;
 
+    top: 13px;
     right: 9px;
 
     position: absolute;
