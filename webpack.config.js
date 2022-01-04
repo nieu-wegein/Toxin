@@ -14,9 +14,10 @@ const PATHS = {
 module.exports = {
     mode: "development",
     entry: {
-        "form-elements":  PATHS.uikit + '/form-elements/form-elements.js',
-        index: PATHS.website + '/index/index.js',
-        registration: PATHS.website + '/registration/registration.js',
+        "form-elements": PATHS.uikit + '/form-elements/form-elements.js',
+        "cards": PATHS.uikit + '/cards/cards.js',
+        "index": PATHS.website + '/index/index.js',
+        "registration": PATHS.website + '/registration/registration.js',
         "room-info": PATHS.website + '/room-info/room-info.js',
         "rooms-list": PATHS.website + '/rooms-list/rooms-list.js'
     },
@@ -67,6 +68,12 @@ module.exports = {
                 chunks: ['form-elements'],
                 template: PATHS.uikit + '/form-elements/form-elements.pug'
             }),
+      new HtmlWebpackPlugin(
+        {
+          filename: 'cards/cards.html',
+          chunks: ['cards'],
+          template: PATHS.uikit + '/cards/cards.pug'
+        }),
         new HtmlWebpackPlugin(
             {
                 filename: 'rooms-list/rooms-list.html',

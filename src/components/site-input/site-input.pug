@@ -1,3 +1,7 @@
+//TODO: Валидация
+
+include ../form-element/form-element
+
 mixin site-input(obj)
     -var inputClassList = ["site-input"];
 
@@ -5,13 +9,7 @@ mixin site-input(obj)
       -if (obj.modifiers.datemask) inputClassList.push("site-input_date");
       -if (obj.modifiers.submit) inputClassList.push("site-input_submit");
 
-    .form-element
-      .form-element__top
-        if obj.label
-          label.form-element__label(for = obj.id) !{obj.label}
-        if obj.note
-          span.form-element__note !{obj.note}
-
+    +form-element(obj)
       .site-input-wrapper
         input(type = "text" id = obj.id class = inputClassList placeholder = obj.text)
         if obj.modifiers && obj.modifiers.submit

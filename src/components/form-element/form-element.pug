@@ -1,30 +1,18 @@
-include ../site-input/site-input
-include ../site-dropdown/site-dropdown
-include ../site-checkbox/site-checkbox
-include ../site-radio/site-radio
-
-
-
 mixin form-element(obj)
 
-  -const classList = ["form-element"]
+  -
+    const topClassList = ["form-element__top"];
 
-  -if (obj.item) {
+    if(obj.modifiers && obj.modifiers.label === "hidden") {
+      topClassList.push("form-element__top_hidden")
+    }
 
-    div(class = classList)
-      .form-element__top
-        if obj.label
-          label.form-element__label(for = obj.item.id) !{obj.label}
+  .form-element
+    if(obj.label)
+      div(class = topClassList)
+        label(class = "form-element__label", for = obj.id) !{obj.label}
         if obj.note
           span.form-element__note !{obj.note}
-      case obj.item.type
-        when "input"
-          +site-input(obj.item)
-        when "checkbox"
-          +site-checkbox-group(obj.item)
-        when "radio"
-          +site-radio-group(obj.item)
-        when "dropdown"
-          +site-dropdown(obj.item)
-  -}
-
+      block
+    else
+      block

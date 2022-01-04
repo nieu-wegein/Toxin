@@ -10,8 +10,9 @@ include ../../../components/site-pagination/site-pagination
 include ../../../components/site-ul/site-ul
 include ../../../components/features-list/features-list
 include ../../../components/site-testimonial/site-testimonial
-  //-TODO: изменить структуру
+
   //-TODO: обернуть компоненты в лейблы
+    //-TODO: ограничить загрузку material-icons
   //-TODO: переименовать поле label у филдсетов
 -
   const firstList = [
@@ -64,17 +65,17 @@ include ../../../components/site-testimonial/site-testimonial
   ]
 
   const checkboxList = [
-    {label: "Checkbox buttons", options: [
+    {fieldset: "Checkbox buttons", options: [
           {label: "Можно курить", id: "smoking"},
           {label: "Можно с питомцами", id: "animals", checked: true},
           {label: "Можно пригласить гостей (до 10 человек)", id: "invitation", checked: true}
         ]},
-    {label: "Toggle",  options: [
+    {fieldset: "Toggle",  options: [
           {label: "Получать спецпредложения", id: "offer", checked: true},
           {label: "Получать спецпредложения", id: "offer-2"},
         ],
         modifiers: {toggle: true}},
-    {label: "Expandable checkbox list", options: [
+    {fieldset: "Expandable checkbox list", options: [
         {label: "Завтрак", id: "breakfast"},
         {label: "Письменный стол", id: "desk"},
         {label: "Стул для кормления", id: "feeding chair"},
@@ -83,7 +84,7 @@ include ../../../components/site-testimonial/site-testimonial
         {label: "Шампунь", id: "shampoo"},
       ],
       modifiers: {expandable: true}},
-    {label: "Expandable checkbox list", options: [
+    {fieldset: "Expandable checkbox list", options: [
         {label: "Завтрак", id: "breakfast"},
         {label: "Письменный стол", id: "desk", checked: true},
         {label: "Стул для кормления", id: "feeding chair", checked: true},
@@ -92,7 +93,7 @@ include ../../../components/site-testimonial/site-testimonial
         {label: "Шампунь", id: "shampoo"},
       ],
       modifiers: {expandable: true}},
-    {label: "Rich checkbox buttons", options: [
+    {fieldset: "Rich checkbox buttons", options: [
         {label: "Широкий коридор", id: "wide-corridor", note: "Ширина коридоров в номере <br> не менее 91 см."},
         {label: "Помощник для инвалидов", id: "assistant", note: "На 1 этаже вас встретит специалист  и проводит до номера."},
       ],
@@ -101,7 +102,7 @@ include ../../../components/site-testimonial/site-testimonial
   ]
 
   const radioList = [
-    {label: "Radio buttons", options: [
+    {fieldset: "Radio buttons", options: [
           {label: "Мужчина", id: "man", name: "sex", checked: true},
           {label: "Женщина", id: "woman", name: "sex"},
         ]},
@@ -128,7 +129,7 @@ html(lang = "en")
     meta(name="viewport" content="initial-scale=1.0, width=device-width")
     meta(name="keywords", content = "")
     meta(name="description", content=" ")
-    link(rel = "stylesheet" href="https://fonts.googleapis.com/css?family=Material+Icons&amp;text=expand_more")
+    link(rel = "stylesheet" href="https://fonts.googleapis.com/css?family=Material+Icons")
   body
     .wrapper
       .header

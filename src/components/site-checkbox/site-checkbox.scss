@@ -1,12 +1,14 @@
 
 .site-checkbox {
 
-  margin-top: 12px;
+  &:not(:first-child) {
+    margin-top: 12px;
+  }
 
-  &-group {
-    margin: 0;
-    padding-left: 0;
+  &-list {
     list-style: none;
+    padding: 0;
+    margin: 0;
   }
 
   &__input {
@@ -51,10 +53,8 @@
 
   &_toggle {
 
-    margin-top: 10px;
-
-    &:first-child {
-      margin-top: 8px;
+    &:not(:first-child) {
+      margin-top: 10px;
     }
 
     .site-checkbox__input {

@@ -1,7 +1,6 @@
 import "../../../normalize.scss";
 import "./form-elements.scss";
 import "../../../components/site-dropdown/site-dropdown";
-import "../../../components/site-calendar/site-calendar";
 import "../../../components/site-dropdown/site-calendarDropdown";
 import "../../../components/site-input/site-input";
 import "../../../components/like-button/like-button";
@@ -33,5 +32,5 @@ $(function() {
 
   $(".site-dropdown__window", $("#dd-buttons-filled")).show();
 
-  $(".form-element__legend_expand").get()[1].click();
+  $(".site-fieldset__legend_expand").get()[0].click();
 })

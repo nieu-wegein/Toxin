@@ -11,7 +11,7 @@ include ../site-calendar/site-calendar
 
 mixin site-dropdown(obj)
     -
-      const dropdownClassList = ["site-dropdown"];
+      const dropdownClassList = ["site-dropdown", obj.classList];
       const windowClassList = ["site-dropdown__window"]
       const calendarClassList = ["site-calendar"]
       const modifiers = {}; // Во избежание ошибок при передаче элемента без модификатора

@@ -1,32 +1,31 @@
+include ../site-fieldset/site-fieldset
+
+
+mixin _checkbox-wraper(obj)
+  if obj.fieldset
+    +site-fieldset(obj.fieldset, obj.modifiers)
+      block
+  else
+    block
+
 
 mixin site-checkbox-group(obj)
-
-  -const checkboxClassList = ["site-checkbox"];
-  -const legendClassList = ["form-element__legend"];
-  -const groupClassList = ["site-checkbox-group"];
-
   -
+    const checkboxClassList = ["site-checkbox"];
     if (obj.modifiers) {
         if( obj.modifiers.toggle){
-                checkboxClassList.push("site-checkbox_toggle")
-        }
-        if (obj.modifiers.expandable) {
-            legendClassList.push("form-element__legend_expand");
-            groupClassList.push("form-element_shrunk");
+          checkboxClassList.push("site-checkbox_toggle")
         }
         if (obj.modifiers.rich) {
           checkboxClassList.push("site-checkbox_rich");
         }
     }
 
-
-  .form-element
-    fieldset.form-element__fieldset
-      legend(class = legendClassList) !{obj.label}
-      ul(class = groupClassList)
-        each option in obj.options
-          li(class = checkboxClassList)
-            input(type = "checkbox" id = option.id class = "site-checkbox__input" checked = option.checked)
-            label(class = "site-checkbox__label"  for = option.id) !{option.label}
-            if(obj.modifiers && obj.modifiers.rich)
-              p.form-element__description !{option.note}
+  +_checkbox-wraper(obj)
+    ul.site-checkbox-list
+      each option in obj.options
+        li(class = checkboxClassList)
+          input(type = "checkbox" id = option.id class = "site-checkbox__input" checked = option.checked)
+          label(class = "site-checkbox__label"  for = option.id) !{option.label}
+          if(obj.modifiers && obj.modifiers.rich)
+            p.form-element__description !{option.note}

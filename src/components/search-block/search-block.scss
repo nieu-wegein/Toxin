@@ -1,0 +1,40 @@
+@import "../site-dropdown/site-dropdown";
+@import "../site-calendar/site-calendar";
+
+.search-block {
+
+  background-color: white;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  border-radius: 4px;
+  box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.2);
+
+  padding: 40px 29px 30px 29px;
+  max-width: 380px;
+
+  &__heading {
+    @extend %site-h1;
+    margin: 0;
+    margin-bottom:20px ;
+  }
+
+  &__form {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+
+    &>.button {
+      margin-top: 32px;
+    }
+  }
+
+  .date-dropdown-wrapper {
+    width: 150px;
+  }
+
+  .guests-dropdown-wrapper {
+    width: 100%;
+    margin-top: 21px;
+  }
+
+
+}

@@ -1,0 +1,20 @@
+mixin site-fieldset(legend, modifiers)
+  -
+     const legendClassList = ["site-fieldset__legend"];
+     const areaClassList = ["site-fieldset__area"];
+
+     if (modifiers) {
+         if (modifiers.expandable) {
+           legendClassList.push("site-fieldset__legend_expand reverse");
+           areaClassList.push("site-fieldset__area_expanded");
+         }
+         if (modifiers.fieldset === "hidden") {
+           legendClassList.push("site-fieldset__legend_hidden");
+         }
+     }
+
+  fieldset.site-fieldset
+    if(legend)
+      legend(class = legendClassList) !{legend}
+    div(class = areaClassList)
+      block

@@ -17,6 +17,7 @@ $secondary-gradient: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%);
   font-size: 24px;
   font-family: "Montserrat-Bold", sans-serif;
   line-height: 29px;
+  margin: 0;
 }
 
 %site-h2 {
@@ -24,6 +25,7 @@ $secondary-gradient: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%);
   font-size: 19px;
   font-family: "Montserrat-Bold", sans-serif;
   line-height: 23px;
+  margin: 0;
 }
 
 %site-h3 {
@@ -32,6 +34,7 @@ $secondary-gradient: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%);
   font-family: "Montserrat-Bold", sans-serif;
   line-height: 15px;
   text-transform: uppercase;
+  margin: 0;
 }
 
 @mixin site-body($color: $site-dark-75, $font:"Montserrat", $fontS: 14px, $lineH: 24px){

@@ -1,0 +1,28 @@
+include ../site-input/site-input
+include ../site-radio/site-radio
+include ../site-checkbox/site-checkbox
+include ../site-fieldset/site-fieldset
+
+//TODO: Отправка данных на сервер
+article.registration-block
+  h1.registration-block__heading Регистрация аккаунта
+  .registration-block__body
+    form.registration-block__form
+      +site-fieldset("Личные данные", {fieldset: "hidden"})
+        +site-input({label: "Имя", id: "first-name", text: "Имя", modifiers: {label: "hidden"}})
+        +site-input({label: "Фамилия", id: "last-name", text: "Фамилия", modifiers: {label: "hidden"}})
+        +site-radio-group({options: [
+            {label: "Мужчина", id: "man", name: "sex", checked: true},
+            {label: "Женщина", id: "woman", name: "sex"}
+          ]})
+        +site-input({label: "Дата Рождения", id: "date-of-birth", text: "ДД-ММ-ГГГГ", modifiers: {datemask: true}})
+      +site-fieldset("Данные для входа в сервис")
+        +site-input({id: "email", text: "Email"})
+        +site-input({id: "password", text: "Пароль"})
+      +site-checkbox-group({options: [
+          {label: "Получать спецпредложения", id: "offer-2"}],
+           modifiers: {toggle: true}})
+      +button({type: "a", text: "Перейти к оплате", modifiers: {rounded: true, primary: true, flexible: true, icon: true}})
+    footer.registration-block__footer
+      span.registration-block__already-have Уже есть аккаунт на Toxin
+      +button({type: "button", text: "Войти", modifiers: {rounded: true}})

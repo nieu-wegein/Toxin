@@ -15,17 +15,17 @@ mixin site-calendar(classList)
 
   div(class = classList)
     .site-calendar__header
-      button.site-calendar__prev-button.material-icons arrow_back
+      button(type = "button" class = "site-calendar__prev-button material-icons") arrow_back
       span.site-calendar__header-text Август 2019
-      button.site-calendar__next-button.material-icons arrow_forward
+      button(type = "button" class = "site-calendar__next-button material-icons") arrow_forward
     .site-calendar__days-section
       each day in calendarDays
         .site-calendar__day !{day}
     .site-calendar__date-section
       each date in calendarDate
         span.site-calendar__date-cell
-          button.site-calendar__date !{date}
+          button(type = "button" class = "site-calendar__date") !{date}
       .site-calendar__optional-row
         -for(let i = 2; i < 9; i++)
           span.site-calendar__date-cell
-            button.site-calendar__date !{i}
+            button(type = "button" class = "site-calendar__date") !{i}

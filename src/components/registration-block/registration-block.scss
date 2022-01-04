@@ -1,0 +1,46 @@
+@import "../site-input/site-input";
+@import "../site-radio/site-radio";
+@import "../site-checkbox/site-checkbox";
+@import "../site-fieldset/site-fieldset";
+
+.registration-block {
+
+  background-color: white;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  border-radius: 4px;
+  box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.2);
+
+  padding: 40px 29px 30px 29px;
+  max-width: 380px;
+
+  &__heading {
+    @extend %site-h1;
+    margin: 0;
+    margin-bottom:20px ;
+  }
+
+  &__form {
+    display: grid;
+    align-items: start;
+    align-content: start;
+    grid-template-rows: 236px 126px 47px 74px;
+  }
+
+  &__already-have{
+    font-family: "Montserrat", sans-serif;
+    font-size: 14px;
+    line-height: 18px;
+    letter-spacing: -0.2px;
+    margin-right: 33px;
+  }
+
+  .site-fieldset {
+    .form-element {
+      margin-bottom: 10px;
+    }
+    .site-radio-list {
+      margin-bottom: 21px;
+    }
+  }
+
+}

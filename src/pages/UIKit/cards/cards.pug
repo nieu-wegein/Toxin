@@ -1,0 +1,17 @@
+
+doctype html
+html(lang = "en")
+  head
+    meta(charset="utf-8")
+    meta(name="viewport" content="initial-scale=1.0, width=device-width")
+    meta(name="keywords", content = "")
+    meta(name="description", content=" ")
+    link(rel = "stylesheet" href="https://fonts.googleapis.com/css?family=Material+Icons")
+  body.cards-page
+    .wrapper
+      .header
+        img.logo(src = "../img/min-logo.svg")
+      .content
+        .content__column
+          include ../../../components/search-block/search-block
+          include ../../../components/registration-block/registration-block

@@ -1,12 +1,18 @@
+include ../site-fieldset/site-fieldset
+include ../form-element/form-element
 
+mixin _fieldset-wrapper(obj)
+  if obj.fieldset
+    +site-fieldset(obj.fieldset, obj.modifiers)
+      block
+  else
+    block
 
 mixin site-radio-group(obj)
 
-  .form-element
-    fieldset.form-element__fieldset
-      legend.form-element__legend !{obj.label}
-      ul.site-radio-group
-        each option in obj.options
-          li.site-radio
-            input(type = "radio" id = option.id class = "site-radio__input" name = option.name checked = option.checked)
-            label(class = "site-radio__label" for = option.id) !{option.label}
+  +_fieldset-wrapper(obj)
+    ul.site-radio-list
+      each option in obj.options
+        li.site-radio
+          input(type = "radio" id = option.id class = "site-radio__input" name = option.name checked = option.checked)
+          label(class = "site-radio__label" for = option.id) !{option.label}

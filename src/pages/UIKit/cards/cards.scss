@@ -1,0 +1,42 @@
+@import "../../../fonts/fonts";
+@import "../../../variables/variables";
+@import "../../../components/search-block/search-block";
+@import "../../../components/registration-block/registration-block";
+
+
+
+* {
+  box-sizing: border-box;
+}
+
+.cards-page {
+  background-color: #F4F4F6;
+}
+
+.wrapper {
+  width: 1440px;
+  margin: 0 auto;
+}
+
+.header {
+  padding: 30px;
+}
+
+.content {
+  padding-top: 38px;
+  margin: 0 auto;
+  width: 1160px;
+
+  &__column {
+    .search-block {
+      margin-bottom: 39px;
+    }
+
+    &:first-child {
+      min-height: 1060px;
+    }
+  }
+}
+
+
+
