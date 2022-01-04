@@ -1,36 +1,45 @@
 .site-pagination {
-  display: flex;
-  flex-wrap: wrap;
 
-  &__button {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+
+  &__link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
     font-family: "Montserrat", sans-serif;
     font-size: 12px;
     line-height: 15px;
     color: $site-dark-50;
 
-    padding: 0;
     width: 40px;
     height: 40px;
-    border: none;
-    background-color: transparent;
-    cursor: pointer;
     border-radius: 50%;
 
     &:hover{
       font-family: "Montserrat-Bold", sans-serif;
       color: white;
-      background: $primary-gradient-50;
+      background: $primary-gradient-25;
     }
 
     &.button_primary {
       font-family: "Montserrat-Bold", sans-serif;
       color: white;
+      &:hover{
+        background: $primary-gradient;
+      }
     }
 
     &.button_secondary {
       font-size: 24px;
       font-family: "Material Icons", sans-serif;
       color: white;
+      &:hover{
+        background-image: $secondary-gradient;
+      }
     }
   }
 

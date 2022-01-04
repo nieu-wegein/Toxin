@@ -15,5 +15,5 @@ mixin button(obj)
            if (obj.modifiers.icon) buttonClassList.push("icon")
         }
 
-    #{obj.type}(class = buttonClassList) #{obj.text}
+    #{obj.type}(class = buttonClassList) !{obj.text}
   -}

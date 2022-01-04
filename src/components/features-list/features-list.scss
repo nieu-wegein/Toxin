@@ -1,0 +1,47 @@
+.features-list {
+
+  @include site-body();
+  margin: 0;
+
+  &__wrapper {
+    position: relative;
+
+    &::before {
+      @include background-text-transparent();
+      font-family: "Material Icons";
+      font-size: 48px;
+      line-height: 48px;
+      margin-right: 10px;
+      float: left;
+
+      background-image: $primary-gradient;
+    }
+
+    &:not(:first-child) {
+      border-top: 1px solid rgba(31, 32, 65, 0.1);
+      padding-top: 20px;
+    }
+    &:not(:last-child) {
+      padding-bottom: 20px;
+    }
+
+    &_comfort::before {
+      content: "insert_emoticon";
+    }
+    &_convenience::before {
+      content: "location_city";
+    }
+  }
+
+  &__termin {
+    font-family: Montserrat-Bold;
+  }
+
+  &__description {
+    margin: 0;
+
+    &:not(:last-child) {
+      margin-bottom: 20px;
+    }
+  }
+}

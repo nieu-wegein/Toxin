@@ -2,14 +2,11 @@
 
 mixin site-radio-group(obj)
 
-  -const radioClassList = ["site-radio"]
-  -if (obj.modifiers && obj.modifiers.rate) radioClassList.push("site-checkbox_rate")
-
   .form-element
     fieldset.form-element__fieldset
-      legend.form-element__legend #{obj.label}
-      ul.site-radio__group
+      legend.form-element__legend !{obj.label}
+      ul.site-radio-group
         each option in obj.options
-          li.site-radio__item
-            input(type = "radio" id = option.id class = radioClassList name = option.name checked = option.checked)
-            label(class = "site-radio__label" for = option.id) #{option.label}
+          li.site-radio
+            input(type = "radio" id = option.id class = "site-radio__input" name = option.name checked = option.checked)
+            label(class = "site-radio__label" for = option.id) !{option.label}

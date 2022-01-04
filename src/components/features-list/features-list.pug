@@ -1,0 +1,14 @@
+
+-
+  const dict = {
+    comfort: ["Комфорт", "Шумопоглощающие стены"],
+    convenience: ["Удобство",  "Окно в каждой из спален"]
+  }
+
+
+mixin features-list(...items)
+  dl.features-list
+    each item in items
+      div(class = ["features-list__wrapper", "features-list__wrapper_" + item])
+        dt.features-list__termin #{dict[item][0]}
+        dd.features-list__description #{dict[item][1]}

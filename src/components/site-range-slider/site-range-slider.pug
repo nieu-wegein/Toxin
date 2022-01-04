@@ -5,12 +5,12 @@ mixin site-range-slider(obj)
   .form-element
     .form-element__top
       if obj.label
-        label.form-element__label(for = obj.id) #{obj.label}
+        label.form-element__label(for = obj.id) !{obj.label}
         .form-element__note
-          span.start-range #{obj.min}
+          span.start-range !{obj.min}
           |₽
           |!{' - '}
-          span.end-range #{obj.max}
+          span.end-range !{obj.max}
           |₽
     .site-range-slider
       .site-range-slider__track

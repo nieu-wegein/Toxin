@@ -34,6 +34,14 @@ $secondary-gradient: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%);
   text-transform: uppercase;
 }
 
+@mixin site-body($color: $site-dark-75, $font:"Montserrat", $fontS: 14px, $lineH: 24px){
+  color: $color;
+  font-family: $font, sans-serif;
+  font-size: $fontS;
+  line-height: $lineH;
+  letter-spacing: -0.1px;
+}
+
 @mixin visually-hidden() {
   clip: rect(0 0 0 0);
   width: 1px;
@@ -41,13 +49,6 @@ $secondary-gradient: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%);
   opacity: 0;
   z-index: -1;
   position: absolute;
-}
-
-@mixin site-body($color: $site-dark-75, $font:"Montserrat", $fontS: 14px, $lineH: 24px){
-  color: $color;
-  font-family: $font, sans-serif;
-  font-size: $fontS;
-  line-height: $lineH;
 }
 
 @mixin background-text-transparent() {

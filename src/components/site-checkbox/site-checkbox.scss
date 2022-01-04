@@ -1,30 +1,32 @@
 
 .site-checkbox {
-  position: absolute;
-  z-index: -1;
-  opacity: 0;
 
+  margin-top: 12px;
 
-  &__group {
+  &-group {
     margin: 0;
-    margin-top: 12px;
     padding-left: 0;
     list-style: none;
   }
 
-  &__item {
-    &:not(:last-child) {
-      margin-bottom: 12px;
+  &__input {
+    position: absolute;
+    z-index: -1;
+    opacity: 0;
+
+    &:checked {
+      &+.site-checkbox__label::before {
+        background: url("../../../components/site-checkbox/checkbox-checked.svg") no-repeat center;
+        border: 1px solid $site-purple;
+      }
     }
   }
 
   &__label{
-    line-height: 18px;
+    @include site-body($color: $site-dark-50, $lineH: 18px);
+
     position: relative;
-    display: inline-flex;
-    font-family: "Montserrat", sans-serif;
-    font-size: 14px;
-    color: $site-dark-50;
+    display: flex;
     padding-left: 30px;
     cursor: pointer;
 
@@ -40,20 +42,41 @@
     }
   }
 
-  &:checked {
-    &+.site-checkbox__label::before {
-        background: url("../../../components/site-checkbox/checkbox-checked.svg") no-repeat center;
-        border: 1px solid $site-purple;
-      }
+  &_rich {
+    & .site-checkbox__label {
+      font-family: "Montserrat-Bold";
+      color: $site-dark-75;
     }
+  }
 
   &_toggle {
 
-    &+.site-checkbox__label {
+    margin-top: 10px;
+
+    &:first-child {
+      margin-top: 8px;
+    }
+
+    .site-checkbox__input {
+      &:checked {
+        &+.site-checkbox__label::before {
+          background-image: none;
+        }
+
+        &+.site-checkbox__label::after {
+          animation: toggle;
+          animation-duration: 0.3s;
+          left: 24px;
+          background: $primary-gradient;
+        }
+      }
+    }
+
+    & .site-checkbox__label {
       padding-left: 50px;
-      line-height: 21px;
       color: $site-dark-75;
       align-items: center;
+      line-height: 24px;
 
       &::before {
         width: 40px;
@@ -66,7 +89,7 @@
 
         position: absolute;
         left: 4px;
-        top: 4px;
+        top: 6px;
         content: " ";
         width: 12px;
         height: 12px;
@@ -74,18 +97,11 @@
         border-radius: 50%;
       }
     }
+  }
 
-    &:checked {
-      &+.site-checkbox__label::before {
-        background-image: none;
-      }
-      &+.site-checkbox__label::after {
-        animation: toggle;
-        animation-duration: 0.3s;
-        left: 24px;
-        background: $primary-gradient;
-      }
-    }
+  & .form-element__description {
+    margin-top: 5px;
+    padding-left: 30px;
   }
 }
 

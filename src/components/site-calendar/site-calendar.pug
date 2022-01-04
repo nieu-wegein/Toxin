@@ -20,12 +20,12 @@ mixin site-calendar(classList)
       button.site-calendar__next-button.material-icons arrow_forward
     .site-calendar__days-section
       each day in calendarDays
-        .site-calendar__day #{day}
+        .site-calendar__day !{day}
     .site-calendar__date-section
       each date in calendarDate
         span.site-calendar__date-cell
-          button.site-calendar__date #{date}
+          button.site-calendar__date !{date}
       .site-calendar__optional-row
         -for(let i = 2; i < 9; i++)
           span.site-calendar__date-cell
-            button.site-calendar__date #{i}
+            button.site-calendar__date !{i}

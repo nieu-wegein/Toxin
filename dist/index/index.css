@@ -449,6 +449,8 @@ template {
   color: #BC9CFF;
   background-color: white;
   padding: 0;
+  display: inline-block;
+  text-align: center;
   font-family: Montserrat-Bold, sans-serif;
   font-size: 12px;
   line-height: 15px;
@@ -480,6 +482,10 @@ template {
   background-image: -webkit-gradient(linear, left top, left bottom, from(#6FCF97), to(#66D2EA));
   background-image: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%);
 }
+.button_secondary:hover {
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#6FCF97), to(#66D2EA));
+  background-image: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%);
+}
 .button_primary {
   font-family: Montserrat-Bold, sans-serif;
   color: white;
@@ -498,6 +504,7 @@ template {
 .button.icon::after {
   font-family: "Material Icons";
   font-size: 24px;
+  top: 13px;
   right: 9px;
   position: absolute;
   text-transform: none;

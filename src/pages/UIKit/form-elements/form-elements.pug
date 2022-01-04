@@ -7,13 +7,16 @@ include ../../../components/rate-button/rate-button
 include ../../../components/site-range-slider/site-range-slider
 include ../../../components/button/button
 include ../../../components/site-pagination/site-pagination
-
+include ../../../components/site-ul/site-ul
+include ../../../components/features-list/features-list
+include ../../../components/site-testimonial/site-testimonial
   //-TODO: изменить структуру
   //-TODO: обернуть компоненты в лейблы
+  //-TODO: переименовать поле label у филдсетов
 -
   const firstList = [
-    {label: "Text Field", note: "Default",  id: "email", text: "Email"},
-    {label: "Text Field", note: "Hover / Focus", id: "awesome"},
+    {label: "Text field", note: "Default",  id: "email", text: "Email"},
+    {label: "Text field", note: "Hover / Focus", id: "awesome"},
     {label: "Dropdown", id: "guests", text:  "Сколько гостей",
         options: [
           {name: "Взрослые", value: "adults", declination: ["гость", "гостя", "гостей"]},
@@ -26,14 +29,42 @@ include ../../../components/site-pagination/site-pagination
   ]
 
   const secondList = [
-    {label: "Date Dropdown", id: "departure", text: "ДД.ММ.ГГГГ", shared: {id: "ui-page-calendar"}, modifiers: {calendar: {type: "range"}, buttons: true}},
-    {label: "Date Dropdown", id: "arrival", text: "ДД.ММ.ГГГГ", shared: {for: "ui-page-calendar"}, modifiers: {calendar: {type: "range"}, buttons: true}},
-    {label: "Filter Date Dropdown", id: "filter-dates", text: "ДД.ММ.ГГГГ - ДД.ММ.ГГГГ", modifiers: {calendar: {type: "range"}, buttons: true}},
-    {label: "Subscription Text Field", id: "subscription", text: "Email", modifiers: {submit: true}}
+    {label: "Date dropdown", id: "departure", text: "ДД.ММ.ГГГГ", shared: {id: "ui-page-calendar"}, modifiers: {calendar: {type: "range"}, buttons: true}},
+    {label: "Date dropdown", id: "arrival", text: "ДД.ММ.ГГГГ", shared: {for: "ui-page-calendar"}, modifiers: {calendar: {type: "range"}, buttons: true}},
+    {label: "Filter date dropdown", id: "filter-dates", text: "ДД.ММ.ГГГГ - ДД.ММ.ГГГГ", modifiers: {calendar: {type: "range"}, buttons: true}},
+    {label: "Subscription text field", id: "subscription", text: "Email", modifiers: {submit: true}},
+    {label: "Dropdown", note: "Default", id: "dd-default", text: "Комнаты",
+      options: [
+        {name: "Спальни", value: "bedrooms", declination: ["спальня", "спальни", "спален"]},
+        {name: "Кровать", value: "beds", declination: ["кровать", "кровати", "кроватей"]},
+        {name: "Ванные комнаты", value: "bathrooms", declination: ["ванная комната", "ванные комнаты", "ванных комнат"]}
+      ]},
+    {label: "Dropdown", note: "Expanded", id: "dd-expanded", text: "Комнаты",
+      options: [
+        {name: "Спальни", value: "bedrooms", declination: ["спальня", "спальни", "спален"]},
+        {name: "Кровать", value: "beds", declination: ["кровать", "кровати", "кроватей"]},
+        {name: "Ванные комнаты", value: "bathrooms", declination: ["ванная комната", "ванные комнаты", "ванных комнат"]}
+      ]},
+    {label: "Dropdown", id: "dd-buttons-expanded", text: "Сколько гостей",
+      options: [
+        {name: "Взрослые", value: "adults", declination: ["гость", "гостя", "гостей"]},
+        {name: "Дети", value: "children", declination: ["гость", "гостя", "гостей"]},
+        {name: "Младенцы", value: "babies", declination: ["гость", "гостя", "гостей"]}
+      ],
+      modifiers: {buttons: true}
+    },
+    {label: "Dropdown", id: "dd-buttons-filled", text: "Сколько гостей",
+      options: [
+        {name: "Взрослые", value: "adults", declination: ["гость", "гостя", "гостей"]},
+        {name: "Дети", value: "children", declination: ["гость", "гостя", "гостей"]},
+        {name: "Младенцы", value: "babies", declination: ["гость", "гостя", "гостей"]}
+      ],
+      modifiers: {buttons: true}
+    }
   ]
 
   const checkboxList = [
-    {label: "Checkbox Buttons", options: [
+    {label: "Checkbox buttons", options: [
           {label: "Можно курить", id: "smoking"},
           {label: "Можно с питомцами", id: "animals", checked: true},
           {label: "Можно пригласить гостей (до 10 человек)", id: "invitation", checked: true}
@@ -42,18 +73,42 @@ include ../../../components/site-pagination/site-pagination
           {label: "Получать спецпредложения", id: "offer", checked: true},
           {label: "Получать спецпредложения", id: "offer-2"},
         ],
-        modifiers: {toggle: true}}
+        modifiers: {toggle: true}},
+    {label: "Expandable checkbox list", options: [
+        {label: "Завтрак", id: "breakfast"},
+        {label: "Письменный стол", id: "desk"},
+        {label: "Стул для кормления", id: "feeding chair"},
+        {label: "Кроватка", id: "crib"},
+        {label: "Телевизор", id: "TV"},
+        {label: "Шампунь", id: "shampoo"},
+      ],
+      modifiers: {expandable: true}},
+    {label: "Expandable checkbox list", options: [
+        {label: "Завтрак", id: "breakfast"},
+        {label: "Письменный стол", id: "desk", checked: true},
+        {label: "Стул для кормления", id: "feeding chair", checked: true},
+        {label: "Кроватка", id: "crib", checked: true},
+        {label: "Телевизор", id: "TV"},
+        {label: "Шампунь", id: "shampoo"},
+      ],
+      modifiers: {expandable: true}},
+    {label: "Rich checkbox buttons", options: [
+        {label: "Широкий коридор", id: "wide-corridor", note: "Ширина коридоров в номере <br> не менее 91 см."},
+        {label: "Помощник для инвалидов", id: "assistant", note: "На 1 этаже вас встретит специалист  и проводит до номера."},
+      ],
+      modifiers: {rich: true}
+    },
   ]
 
   const radioList = [
-    {label: "Radio Buttons", options: [
+    {label: "Radio buttons", options: [
           {label: "Мужчина", id: "man", name: "sex", checked: true},
           {label: "Женщина", id: "woman", name: "sex"},
         ]},
   ]
 
   const rangeSliderList = [
-    {label: "Range Slider", id: "range", min: 1, max: 15485, startVal: 5000, endVal: 10000}
+    {label: "Range slider", id: "range", min: 1, max: 15485, startVal: 5000, endVal: 10000}
   ]
 
   const buttonsList = [
@@ -84,21 +139,18 @@ html(lang = "en")
           +site-input(firstList[1])
           +site-dropdown(firstList[2])
           +site-input(firstList[3])
-          .date-dropdown__wrapper
+          .date-dropdown-wrapper
             +site-dropdown(secondList[0])
-          .date-dropdown__wrapper
             +site-dropdown(secondList[1])
-          .filter-date-wrapper
+          .filter-items-wrapper
             +site-dropdown(secondList[2])
-          .filter-date-wrapper
+          .filter-items-wrapper
             +site-input(secondList[3])
         .content__column
-          .check-radio-wrapper
+          .checkbox-wrapper
             +site-checkbox-group(checkboxList[0])
-            +site-radio-group(radioList[0])
-          .toggle_wrapper
-            +site-checkbox-group(checkboxList[1])
-
+          +site-radio-group(radioList[0])
+          +site-checkbox-group(checkboxList[1])
           +site-section({h3: "Like Button"})
             .like-buttons-wrapper
               include ../../../components/like-button/like-button
@@ -111,10 +163,30 @@ html(lang = "en")
           .range-slider-wrapper
             +site-range-slider(rangeSliderList[0])
           +site-section({h3: "Buttons"})
-            .fixed-buttons-wrapper
-              -for(let i = 0; i < 6; i++)
+            .site-buttons-wrapper
+              -for(let i = 0; i < 7; i++)
                 +button(buttonsList[i])
-            +button(buttonsList[6])
           +site-section({h3: "Pagination"})
             +site-pagination()
-
+        .content__column
+          +site-dropdown(secondList[4])
+          +site-dropdown(secondList[5])
+        .content__column
+          +site-dropdown(secondList[6])
+        .content__column
+          +site-dropdown(secondList[7])
+        .content__column
+          .expandable-checkbox-wrapper
+            +site-checkbox-group(checkboxList[2])
+            +site-checkbox-group(checkboxList[3])
+        .content__column
+          .rich-checkbox-wrapper
+            +site-checkbox-group(checkboxList[4])
+        .content__column
+          +site-section({h3: "Bullet List"})
+            .bullet-list-wrapper
+              +site-ul("Нельзя с питомцами", "Без вечеринок и мероприятий", "Время прибытия — после 13:00, а выезд до 12:00" )
+        .content__column
+          +features-list("comfort", "convenience")
+        .content__column
+          +site-testimonial()

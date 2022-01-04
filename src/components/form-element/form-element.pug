@@ -14,9 +14,9 @@ mixin form-element(obj)
     div(class = classList)
       .form-element__top
         if obj.label
-          label.form-element__label(for = obj.item.id) #{obj.label}
+          label.form-element__label(for = obj.item.id) !{obj.label}
         if obj.note
-          span.form-element__note #{obj.note}
+          span.form-element__note !{obj.note}
       case obj.item.type
         when "input"
           +site-input(obj.item)

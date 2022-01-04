@@ -4,9 +4,12 @@ mixin site-pagination()
 
   -const buttonsList = ["1", "2", "3", "...", "15"]
 
-    .site-pagination
-      button.site-pagination__button.button_primary #{buttonsList[0]}
+    ul.site-pagination
+      li
+        a.site-pagination__link.button_primary !{buttonsList[0]}
       -for(let i = 1; i < buttonsList.length; i++)
-        button.site-pagination__button #{buttonsList[i]}
-      button.site-pagination__button.button_secondary.material-icons arrow_forward
-      span.site-pagination__summary 1 – 12 из 100+ вариантов аренды
+        li
+          a.site-pagination__link !{buttonsList[i]}
+      li
+        a.site-pagination__link.button_secondary.material-icons arrow_forward
+    .site-pagination__summary 1 – 12 из 100+ вариантов аренды

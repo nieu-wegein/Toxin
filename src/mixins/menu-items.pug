@@ -2,7 +2,7 @@
 mixin menu-items(items)
   each item in items
     li(class = attributes.item_class class = item.active ? "site-navigation__item_active":null )
-      a(class = attributes.link_class  href = "index.html") #{item.text}
+      a(class = attributes.link_class  href = "index.html") !{item.text}
       -if(item.expand) {
           span.material-icons expand_more
       -}

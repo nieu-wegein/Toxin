@@ -8,13 +8,13 @@ mixin site-input(obj)
     .form-element
       .form-element__top
         if obj.label
-          label.form-element__label(for = obj.id) #{obj.label}
+          label.form-element__label(for = obj.id) !{obj.label}
         if obj.note
-          span.form-element__note #{obj.note}
+          span.form-element__note !{obj.note}
 
       .site-input-wrapper
         input(type = "text" id = obj.id class = inputClassList placeholder = obj.text)
         if obj.modifiers && obj.modifiers.submit
           button.site-input__button.material-icons arrow_forward
       if obj.description
-        span #{obj.description}
+        span !{obj.description}

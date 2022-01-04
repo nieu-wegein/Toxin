@@ -1,13 +1,16 @@
 
 .form-element {
   width: 100%;
-  display: inline-flex;
+
+  display: flex;
+  vertical-align: top; // избавление от отступа в 2 px
   flex-wrap: wrap;
   justify-content: space-between;
 
   &__top {
     width: 100%;
     margin-bottom: 5px;
+    line-height: 15px;
     display: flex;
     justify-content: space-between;
   }
@@ -19,9 +22,29 @@
 
   &__legend {
     margin-bottom: 5px;
+
+    &_expand {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      cursor: pointer;
+
+      &::after {
+        content: "expand_more";
+        font-family: "Material Icons";
+        font-size: 24px;
+        color: $site-dark-50;
+        text-transform: none;
+      }
+
+      &.reverse::after {
+        content: "expand_less";
+      }
+    }
   }
 
   &__fieldset {
+    width: 100%;
     padding: 0;
     margin: 0;
     border: none;
@@ -30,7 +53,27 @@
   &__note {
     font-family: "Montserrat", sans-serif;
     color: $site-dark-50;
+    font-size: 12px;
     text-transform: uppercase;
+  }
+
+  &__description {
+    font-family: "Montserrat", sans-serif;
+    color: $site-dark-50;
     font-size: 12px;
   }
+
+
+  &_expanded {
+    max-height: 5000px;
+    transition: max-height 0.8s ease-in;
+  }
+
+  &_shrunk {
+    max-height: 0;
+    margin: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out, margin 0.2s;
+  }
 }
+
