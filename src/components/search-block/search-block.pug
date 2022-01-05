@@ -1,32 +1,33 @@
 include ../site-dropdown/site-dropdown
 include ../button/button
 
-article.search-block
-  h1.search-block__heading Найдём номера под ваши пожелания
-  .search-block__body
-    form.search-block__form
-      .date-dropdown-wrapper
-        +site-dropdown({
-          label: "Прибытие",
-          id: "departure",
-          text: "ДД.ММ.ГГГГ",
-          shared: {id: "ui-page-calendar"},
-          modifiers: {calendar: {type: "range"}, buttons: true}
-        })
-      .date-dropdown-wrapper
-        +site-dropdown({
-          label: "Выезд",
-          id: "arrival",
-          text: "ДД.ММ.ГГГГ",
-          shared: {for: "ui-page-calendar"},
-          modifiers: {calendar: {type: "range"}, buttons: true}
-        })
-      .guests-dropdown-wrapper
-        +site-dropdown({label: "Гости", id: "guest-dropdown", text: "Сколько гостей",
-          options: [
-            {name: "Взрослые", value: "adults", declination: ["гость", "гостя", "гостей"]},
-            {name: "Дети", value: "children", declination: ["гость", "гостя", "гостей"]},
-            {name: "Младенцы", value: "babies", declination: ["гость", "гостя", "гостей"]}
-          ],
-          modifiers: {buttons: true}})
-      +button({type: "button", text:"Подобрать номер", modifiers: {rounded: true, primary: true, flexible: true, icon: true}})
+mixin search-block()
+  article.search-block
+    h1.search-block__heading Найдём номера под ваши пожелания
+    .search-block__body
+      form.search-block__form
+        .date-dropdown-wrapper
+          +site-dropdown({
+            label: "Прибытие",
+            id: "departure",
+            text: "ДД.ММ.ГГГГ",
+            shared: {id: "ui-page-calendar"},
+            modifiers: {calendar: {type: "range"}, buttons: true}
+          })
+        .date-dropdown-wrapper
+          +site-dropdown({
+            label: "Выезд",
+            id: "arrival",
+            text: "ДД.ММ.ГГГГ",
+            shared: {for: "ui-page-calendar"},
+            modifiers: {calendar: {type: "range"}, buttons: true}
+          })
+        .guests-dropdown-wrapper
+          +site-dropdown({label: "Гости", id: "guest-dropdown", text: "Сколько гостей",
+            options: [
+              {name: "Взрослые", value: "adults", declination: ["гость", "гостя", "гостей"]},
+              {name: "Дети", value: "children", declination: ["гость", "гостя", "гостей"]},
+              {name: "Младенцы", value: "babies", declination: ["гость", "гостя", "гостей"]}
+            ],
+            modifiers: {buttons: true}})
+        +button({type: "button", text:"Подобрать номер", modifiers: {rounded: true, primary: true, flexible: true, icon: true}})

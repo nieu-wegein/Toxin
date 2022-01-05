@@ -14,12 +14,11 @@
   &__heading {
     @extend %site-h1;
     margin: 0;
-    margin-bottom:20px ;
+    margin-bottom:20px;
   }
 
   &__form {
-    display: flex;
-    justify-content: space-between;
+    display: flex;justify-content: space-between;
     flex-wrap: wrap;
 
     &>.button {

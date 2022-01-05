@@ -1,0 +1,65 @@
+//TODO: Убрать общие названия классов и id в блоках
+
+include ../site-dropdown/site-dropdown
+
+mixin booking-block()
+  article.booking-block
+    header.booking-block__header
+      p.booking-block__room-number.booking-block__room-number_luxe №888
+      p.booking-block__price
+        span.booking-block__price-value 9 990₽
+        |  в сутки
+    .booking-block__body
+      form.booking-block__form
+        .date-dropdown-wrapper
+          +site-dropdown({
+            label: "Прибытие",
+            id: "booking-departure",
+            text: "ДД.ММ.ГГГГ",
+            shared: {id: "booking"},
+            modifiers: {calendar: {type: "range"}, buttons: true}
+          })
+        .date-dropdown-wrapper
+          +site-dropdown({
+            label: "Выезд",
+            id: "booking-arrival",
+            text: "ДД.ММ.ГГГГ",
+            shared: {for: "booking"},
+            modifiers: {calendar: {type: "range"}, buttons: true}
+          })
+        .guests-dropdown-wrapper
+          +site-dropdown({
+            label: "Гости", id: "guest-dropdown", text: "Сколько гостей",
+            options: [
+              {name: "Взрослые", value: "adults", declination: ["гость", "гостя", "гостей"]},
+              {name: "Дети", value: "children", declination: ["гость", "гостя", "гостей"]},
+              {name: "Младенцы", value: "babies", declination: ["гость", "гостя", "гостей"]}
+            ],
+            modifiers: {buttons: true}
+          })
+        section.booking-block__bill-section
+          table.booking-block__bill-table
+            tr.booking-block__bill-row
+              td
+                div.booking-block__calculation
+                  p.booking-block__termin 9 990₽ х 4 суток
+              td
+                span.booking-block__definition 39 960₽
+            tr.booking-block__bill-row
+              td
+                div.booking-block__calculation
+                  p.booking-block__termin Сбор за услуги: скидка 2 179₽
+              td
+                span.booking-block__definition 0₽
+            tr.booking-block__bill-row
+              td
+                div.booking-block__calculation
+                  p.booking-block__termin Сбор за дополнительные услуги
+              td
+                span.booking-block__definition 300₽
+            tr.booking-block__bill-row.booking-block__bill-row_total
+              td
+                p.booking-block__termin.booking-block__termin_total Итого
+              td
+                span.booking-block__definition.booking-block__definition_total 38 081₽
+        +button({type: "button", text: "Забронировать", modifiers: {rounded: true, primary: true, flexible: true, icon: true}})

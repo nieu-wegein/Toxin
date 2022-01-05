@@ -1,0 +1,131 @@
+.booking-block {
+  background-color: white;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  border-radius: 4px;
+  box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.2);
+
+  padding: 40px 29px 30px 29px;
+  max-width: 380px;
+
+  &__header {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    margin-bottom: 20px;
+  }
+
+  &__room-number {
+
+    @extend %site-h1;
+
+    &:first-letter {
+      font-size: 14px;
+      line-height: 17px;
+      margin-right: 4px;
+    }
+
+    &_luxe::after {
+      content: "Люкс";
+
+      font-size: 12px;
+      line-height: 14px;
+      text-transform: uppercase;
+      color: $site-purple;
+
+      margin: 0 8px;
+    }
+  }
+
+  &__price {
+    margin: 0;
+    font-family: "Montserrat", sans-serif;
+    font-size: 12px;
+    line-height: 18px;
+    color: $site-dark-50;
+  }
+
+  &__price-value {
+    font-family: "Montserrat-Bold", sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+  }
+
+  &__form {
+    display: flex;
+    justify-content: space-between;flex-wrap: wrap;
+  }
+
+  .date-dropdown-wrapper {
+    width: 150px;
+  }
+
+  .guests-dropdown-wrapper {
+    width: 100%;
+    margin-top: 21px;
+  }
+
+  &__bill-section {
+    width: 100%;
+    @include site-body($lineH: 18px);
+    padding-top: 8px;
+    padding-bottom: 9px;
+  }
+
+  &__calculation {
+
+    display: flex;
+
+    &::after {
+
+      box-sizing: border-box;
+      content: "i";
+      width: 20px;
+      height: 20px;
+      font-family: "Montserrat-Bold";
+      text-align: center;
+      color: $site-dark-25;
+      border: 1px solid $site-dark-25;
+      border-radius: 50%;
+      margin-left: 5px;
+    }
+  }
+
+  &__bill {
+
+    &-table {
+      width: 100%;
+      border-collapse: separate;
+      border-spacing: 0 12px;
+    }
+
+    &-row {
+      vertical-align: top;
+
+      :nth-child(even) {
+        text-align: right;
+      }
+      &_total {
+        @extend %site-h2;
+        font-weight: 700;
+      }
+    }
+
+  }
+
+  .booking-block__termin {
+    max-width: 215px;
+    margin: 0;
+    &_total {
+      margin-top: 15px;
+    }
+  }
+
+  .booking-block__definition {
+    &_total {
+      display: inline-block;
+      margin-top: 15px;
+      letter-spacing: 0.4px;
+    }
+  }
+
+}

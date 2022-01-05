@@ -2,6 +2,7 @@
 @import "../../../variables/variables";
 @import "../../../components/search-block/search-block";
 @import "../../../components/registration-block/registration-block";
+@import "../../../components/booking-block/booking-block";
 
 
 
@@ -23,6 +24,7 @@
 }
 
 .content {
+  display: flex;
   padding-top: 38px;
   margin: 0 auto;
   width: 1160px;
@@ -31,9 +33,11 @@
     .search-block {
       margin-bottom: 39px;
     }
-
     &:first-child {
-      min-height: 1060px;
+      margin-right: 40px;
+    }
+    &:nth-child(2) {
+      margin-top: 2px;
     }
   }
 }

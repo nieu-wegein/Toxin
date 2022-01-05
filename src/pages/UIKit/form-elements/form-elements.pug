@@ -119,7 +119,7 @@ include ../../../components/site-testimonial/site-testimonial
     {type: "button", text: "Click Me", modifiers: {rounded: true}},
     {type: "button", text: "Click Me"},
     {type: "button", text: "Click Me"},
-    {type: "a", text: "Перейти к оплате", modifiers: {rounded: true, primary: true, flexible: true, icon: true}}
+    {type: "button", text: "Перейти к оплате", modifiers: {rounded: true, primary: true, flexible: true, icon: true}}
   ]
 
 doctype html
@@ -165,8 +165,8 @@ html(lang = "en")
             +site-range-slider(rangeSliderList[0])
           +site-section({h3: "Buttons"})
             .site-buttons-wrapper
-              -for(let i = 0; i < 7; i++)
-                +button(buttonsList[i])
+              each button in buttonsList
+                +button(button)
           +site-section({h3: "Pagination"})
             +site-pagination()
         .content__column

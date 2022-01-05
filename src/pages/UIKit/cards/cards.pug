@@ -1,3 +1,6 @@
+include ../../../components/search-block/search-block
+include ../../../components/registration-block/registration-block
+include ../../../components/booking-block/booking-block
 
 doctype html
 html(lang = "en")
@@ -13,5 +16,7 @@ html(lang = "en")
         img.logo(src = "../img/min-logo.svg")
       .content
         .content__column
-          include ../../../components/search-block/search-block
-          include ../../../components/registration-block/registration-block
+          +search-block()
+          +registration-block()
+        .content__column
+          +booking-block()

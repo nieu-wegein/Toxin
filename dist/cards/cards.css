@@ -346,6 +346,7 @@ template {
 /*!*********************************************************************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/postcss-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/pages/UIKit/cards/cards.scss ***!
   \*********************************************************************************************************************************************************************/
+@charset "UTF-8";
 .material-icons {
   font-family: "Material Icons";
   font-weight: normal;
@@ -384,7 +385,7 @@ template {
   src: local(""), url(../8dce55b2dd58ab84e75d.woff) format("woff"), url(../befa0a20e040c60f7586.ttf) format("truetype"), url(../d50151d8a16782a7cb6f.svg#Montserrat) format("svg");
   /* Legacy iOS */
 }
-.registration-block__heading, .search-block__heading {
+.booking-block__room-number, .registration-block__heading, .search-block__heading {
   color: #1f2041;
   font-size: 24px;
   font-family: "Montserrat-Bold", sans-serif;
@@ -392,7 +393,7 @@ template {
   margin: 0;
 }
 
-.site-calendar__header {
+.booking-block__bill-row_total, .site-calendar__header {
   color: #1f2041;
   font-size: 19px;
   font-family: "Montserrat-Bold", sans-serif;
@@ -1091,6 +1092,124 @@ template {
   margin-bottom: 21px;
 }
 
+.booking-block {
+  background-color: white;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  border-radius: 4px;
+  -webkit-box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.2);
+          box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.2);
+  padding: 40px 29px 30px 29px;
+  max-width: 380px;
+}
+.booking-block__header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: baseline;
+      -ms-flex-align: baseline;
+          align-items: baseline;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-bottom: 20px;
+}
+.booking-block__room-number:first-letter {
+  font-size: 14px;
+  line-height: 17px;
+  margin-right: 4px;
+}
+.booking-block__room-number_luxe::after {
+  content: "Люкс";
+  font-size: 12px;
+  line-height: 14px;
+  text-transform: uppercase;
+  color: #BC9CFF;
+  margin: 0 8px;
+}
+.booking-block__price {
+  margin: 0;
+  font-family: "Montserrat", sans-serif;
+  font-size: 12px;
+  line-height: 18px;
+  color: rgba(31, 32, 65, 0.5);
+}
+.booking-block__price-value {
+  font-family: "Montserrat-Bold", sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+}
+.booking-block__form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+.booking-block .date-dropdown-wrapper {
+  width: 150px;
+}
+.booking-block .guests-dropdown-wrapper {
+  width: 100%;
+  margin-top: 21px;
+}
+.booking-block__bill-section {
+  width: 100%;
+  color: rgba(31, 32, 65, 0.75);
+  font-family: "Montserrat", sans-serif;
+  font-size: 14px;
+  line-height: 18px;
+  letter-spacing: -0.1px;
+  padding-top: 8px;
+  padding-bottom: 9px;
+}
+.booking-block__calculation {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+.booking-block__calculation::after {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  content: "i";
+  width: 20px;
+  height: 20px;
+  font-family: "Montserrat-Bold";
+  text-align: center;
+  color: rgba(31, 32, 65, 0.25);
+  border: 1px solid rgba(31, 32, 65, 0.25);
+  border-radius: 50%;
+  margin-left: 5px;
+}
+.booking-block__bill-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0 12px;
+}
+.booking-block__bill-row {
+  vertical-align: top;
+}
+.booking-block__bill-row :nth-child(even) {
+  text-align: right;
+}
+.booking-block__bill-row_total {
+  font-weight: 700;
+}
+.booking-block .booking-block__termin {
+  max-width: 215px;
+  margin: 0;
+}
+.booking-block .booking-block__termin_total {
+  margin-top: 15px;
+}
+.booking-block .booking-block__definition_total {
+  display: inline-block;
+  margin-top: 15px;
+  letter-spacing: 0.4px;
+}
+
 * {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
@@ -1110,6 +1229,9 @@ template {
 }
 
 .content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   padding-top: 38px;
   margin: 0 auto;
   width: 1160px;
@@ -1118,5 +1240,8 @@ template {
   margin-bottom: 39px;
 }
 .content__column:first-child {
-  min-height: 1060px;
+  margin-right: 40px;
+}
+.content__column:nth-child(2) {
+  margin-top: 2px;
 }
