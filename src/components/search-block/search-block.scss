@@ -13,7 +13,6 @@
 
   &__heading {
     @extend %site-h1;
-    margin: 0;
     margin-bottom:20px;
   }
 
@@ -21,7 +20,7 @@
     display: flex;justify-content: space-between;
     flex-wrap: wrap;
 
-    &>.button {
+    &>.button { //TODO: Исправить обращение к кнопке
       margin-top: 32px;
     }
   }

@@ -1,0 +1,18 @@
+include ../site-fieldset/site-fieldset
+include ../site-input/site-input
+include ../button/button
+
+//TODO: Поменять теги заголовков у карточек
+//TODO: Поменять id, добавив в них название блока
+
+mixin log-in-block()
+  article.log-in-block
+    h2.log-in-block__heading Войти
+    form.log-in-block__form
+      +site-fieldset("Данные для входа в сервис", {fieldset: "hidden"})
+        +site-input({id: "log-in-email", label: "Email", text: "Email", modifiers: {label: "hidden"}})
+        +site-input({id: "log-in-password", label: "Пароль", text: "Пароль", modifiers: {label: "hidden"}})
+        +button({type:"button", text: "Войти", modifiers: {primary: true, rounded: true, flexible: true, icon: true}})
+    footer.log-in-block__footer
+      span.log-in-block__already-have Нет аккаунта на Toxin?
+      +button({type: "button", text: "Создать", modifiers: {rounded: true}})

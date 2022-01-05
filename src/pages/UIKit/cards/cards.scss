@@ -3,6 +3,7 @@
 @import "../../../components/search-block/search-block";
 @import "../../../components/registration-block/registration-block";
 @import "../../../components/booking-block/booking-block";
+@import "../../../components/log-in-block/log-in-block";
 
 
 
@@ -30,14 +31,18 @@
   width: 1160px;
 
   &__column {
-    .search-block {
-      margin-bottom: 39px;
-    }
     &:first-child {
       margin-right: 40px;
     }
     &:nth-child(2) {
       margin-top: 2px;
+    }
+
+    .search-block {
+      margin-bottom: 39px;
+    }
+    .booking-block {
+      margin-bottom: 39px;
     }
   }
 }

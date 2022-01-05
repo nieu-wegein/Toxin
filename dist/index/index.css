@@ -461,7 +461,7 @@ template {
   color: rgba(31, 32, 65, 0.5);
 }
 .button_rounded {
-  min-width: 100px;
+  width: 100px;
   min-height: 44px;
   color: #BC9CFF;
   padding: 12px 19px 13px 18px;

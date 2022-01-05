@@ -35,9 +35,21 @@ eval("__webpack_require__.r(__webpack_exports__);\n// extracted by mini-css-extr
 /*!*******************************************************!*\
   !*** ./src/components/booking-block/booking-block.js ***!
   \*******************************************************/
-/***/ (function() {
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
-eval("\n\n//# sourceURL=webpack://toxin/./src/components/booking-block/booking-block.js?");
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _site_dropdown_site_dropdown__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../site-dropdown/site-dropdown */ \"./src/components/site-dropdown/site-dropdown.js\");\n/* harmony import */ var _site_dropdown_site_calendarDropdown__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../site-dropdown/site-calendarDropdown */ \"./src/components/site-dropdown/site-calendarDropdown.js\");\n\r\n\n\n//# sourceURL=webpack://toxin/./src/components/booking-block/booking-block.js?");
+
+/***/ }),
+
+/***/ "./src/components/log-in-block/log-in-block.js":
+/*!*****************************************************!*\
+  !*** ./src/components/log-in-block/log-in-block.js ***!
+  \*****************************************************/
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _site_input_site_input__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../site-input/site-input */ \"./src/components/site-input/site-input.js\");\n\n\n//# sourceURL=webpack://toxin/./src/components/log-in-block/log-in-block.js?");
 
 /***/ }),
 
@@ -124,7 +136,7 @@ eval("var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*! jQuery
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _normalize_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../normalize.scss */ \"./src/normalize.scss\");\n/* harmony import */ var _cards_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./cards.scss */ \"./src/pages/UIKit/cards/cards.scss\");\n/* harmony import */ var _components_search_block_search_block__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../components/search-block/search-block */ \"./src/components/search-block/search-block.js\");\n/* harmony import */ var _components_registration_block_registration_block__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../components/registration-block/registration-block */ \"./src/components/registration-block/registration-block.js\");\n/* harmony import */ var _components_booking_block_booking_block__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../../components/booking-block/booking-block */ \"./src/components/booking-block/booking-block.js\");\n/* harmony import */ var _components_booking_block_booking_block__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_components_booking_block_booking_block__WEBPACK_IMPORTED_MODULE_4__);\n\r\n\r\n\r\n\r\n\n\n//# sourceURL=webpack://toxin/./src/pages/UIKit/cards/cards.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _normalize_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../normalize.scss */ \"./src/normalize.scss\");\n/* harmony import */ var _cards_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./cards.scss */ \"./src/pages/UIKit/cards/cards.scss\");\n/* harmony import */ var _components_search_block_search_block__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../components/search-block/search-block */ \"./src/components/search-block/search-block.js\");\n/* harmony import */ var _components_registration_block_registration_block__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../components/registration-block/registration-block */ \"./src/components/registration-block/registration-block.js\");\n/* harmony import */ var _components_booking_block_booking_block__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../../components/booking-block/booking-block */ \"./src/components/booking-block/booking-block.js\");\n/* harmony import */ var _components_log_in_block_log_in_block__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../../components/log-in-block/log-in-block */ \"./src/components/log-in-block/log-in-block.js\");\n\r\n\r\n\r\n\r\n\r\n\n\n//# sourceURL=webpack://toxin/./src/pages/UIKit/cards/cards.js?");
 
 /***/ })
 

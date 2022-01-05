@@ -1,7 +1,10 @@
 
 <!--TODO: Валидация-->
 <!--TODO: Отправка данных на сервер-->
-<!--TODO: Убрать общие названия классов и id в блоках--><!DOCTYPE html>
+<!--TODO: Убрать общие названия классов и id в блоках-->
+<!--TODO: Валидация-->
+<!--TODO: Поменять теги заголовков у карточек-->
+<!--TODO: Поменять id, добавив в них название блока--><!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="utf-8">
@@ -16,7 +19,7 @@
       <div class="content">
         <div class="content__column">
           <article class="search-block">
-            <h1 class="search-block__heading">Найдём номера под ваши пожелания</h1>
+            <h2 class="search-block__heading">Найдём номера под ваши пожелания</h2>
             <div class="search-block__body">
               <form class="search-block__form">
                 <div class="date-dropdown-wrapper">
@@ -150,7 +153,7 @@
             </div>
           </article>
           <article class="registration-block">
-            <h1 class="registration-block__heading">Регистрация аккаунта</h1>
+            <h2 class="registration-block__heading">Регистрация аккаунта</h2>
             <div class="registration-block__body">
               <form class="registration-block__form">
                 <fieldset class="site-fieldset">
@@ -196,11 +199,17 @@
                   <legend class="site-fieldset__legend">Данные для входа в сервис</legend>
                   <div class="site-fieldset__area">
                     <div class="form-element">
+                      <div class="form-element__top form-element__top_hidden">
+                        <label class="form-element__label" for="email">Email</label>
+                      </div>
                       <div class="site-input-wrapper">
                         <input class="site-input" type="text" id="email" placeholder="Email">
                       </div>
                     </div>
                     <div class="form-element">
+                      <div class="form-element__top form-element__top_hidden">
+                        <label class="form-element__label" for="password">Пароль</label>
+                      </div>
                       <div class="site-input-wrapper">
                         <input class="site-input" type="text" id="password" placeholder="Пароль">
                       </div>
@@ -215,10 +224,10 @@
                 </ul>
                 <button class="button button_rounded button_primary button_flexible icon" type="button">Перейти к оплате</button>
               </form>
-              <footer class="registration-block__footer"><span class="registration-block__already-have">Уже есть аккаунт на Toxin</span>
-                <button class="button button_rounded" type="button">Войти</button>
-              </footer>
             </div>
+            <footer class="registration-block__footer"><span class="registration-block__already-have">Уже есть аккаунт на Toxin</span>
+              <button class="button button_rounded" type="button">Войти</button>
+            </footer>
           </article>
         </div>
         <div class="content__column">
@@ -392,6 +401,36 @@
                 <button class="button button_rounded button_primary button_flexible icon" type="button">Забронировать</button>
               </form>
             </div>
+          </article>
+          <article class="log-in-block">
+            <h2 class="log-in-block__heading">Войти</h2>
+            <form class="log-in-block__form">
+              <fieldset class="site-fieldset">
+                <legend class="site-fieldset__legend site-fieldset__legend_hidden">Данные для входа в сервис</legend>
+                <div class="site-fieldset__area">
+                  <div class="form-element">
+                    <div class="form-element__top form-element__top_hidden">
+                      <label class="form-element__label" for="log-in-email">Email</label>
+                    </div>
+                    <div class="site-input-wrapper">
+                      <input class="site-input" type="text" id="log-in-email" placeholder="Email">
+                    </div>
+                  </div>
+                  <div class="form-element">
+                    <div class="form-element__top form-element__top_hidden">
+                      <label class="form-element__label" for="log-in-password">Пароль</label>
+                    </div>
+                    <div class="site-input-wrapper">
+                      <input class="site-input" type="text" id="log-in-password" placeholder="Пароль">
+                    </div>
+                  </div>
+                  <button class="button button_rounded button_primary button_flexible icon" type="button">Войти</button>
+                </div>
+              </fieldset>
+            </form>
+            <footer class="log-in-block__footer"><span class="log-in-block__already-have">Нет аккаунта на Toxin?</span>
+              <button class="button button_rounded" type="button">Создать</button>
+            </footer>
           </article>
         </div>
       </div>

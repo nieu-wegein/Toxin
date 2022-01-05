@@ -15,7 +15,6 @@
 
   &__heading {
     @extend %site-h1;
-    margin: 0;
     margin-bottom:20px ;
   }
 
@@ -23,15 +22,19 @@
     display: grid;
     align-items: start;
     align-content: start;
-    grid-template-rows: 236px 126px 47px 74px;
+    grid-template-rows: 236px 126px 47px 44px;
+  }
+
+  &__footer {
+    padding-top: 30px;
   }
 
   &__already-have{
     font-family: "Montserrat", sans-serif;
     font-size: 14px;
     line-height: 18px;
-    letter-spacing: -0.2px;
-    margin-right: 33px;
+    letter-spacing: -0.15px;
+    margin-right: 31px;
   }
 
   .site-fieldset {
