@@ -372,14 +372,14 @@ template {
   font-family: "Montserrat";
   font-style: normal;
   font-weight: 400;
-  src: local(""), url(../cbe4afbec98f82e7c0c3.woff) format("woff"), url(../c25ae5d111af1d4df437.ttf) format("truetype"), url(../98eb3f9721e518b6dfdf.svg#Montserrat) format("svg");
+  src: local(""), url(../815a9e9ccfffa41179b2.woff) format("woff"), url(../e552eceeaa6929459f9f.ttf) format("truetype"), url(../22d8566c41c8d731931b.svg#Montserrat) format("svg");
   /* Legacy iOS */
 }
 @font-face {
   font-family: "Montserrat-Bold";
   font-style: normal;
   font-weight: 700;
-  src: local(""), url(../8dce55b2dd58ab84e75d.woff) format("woff"), url(../befa0a20e040c60f7586.ttf) format("truetype"), url(../d50151d8a16782a7cb6f.svg#Montserrat) format("svg");
+  src: local(""), url(../ed42f12c8204ea6029e6.woff) format("woff"), url(../8053470a105c34478b57.ttf) format("truetype"), url(../fac85a3030008d30b0b8.svg#Montserrat) format("svg");
   /* Legacy iOS */
 }
 .main-header {

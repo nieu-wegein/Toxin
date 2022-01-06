@@ -1,6 +1,6 @@
 // import {Dropdown} from "./site-dropdown"
 import $ from "../../jquery-3.6.0.min";
-
+import "../site-calendar/site-calendar"
 
 class SiteDropdown {
 

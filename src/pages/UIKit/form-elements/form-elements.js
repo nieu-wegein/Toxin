@@ -21,9 +21,9 @@ $(function() {
   $(".like-button__counter", likeButtons[1]).text("12");
   $(".like-button__counter", likeButtons[2]).text("12");
 
-  const rateButtons = $(".rate-button__radio");
-  $(rateButtons[1]).attr("checked", true);
-  $(rateButtons[5]).attr("checked", true);
+  const rateButtons = $(".rate-button").get();
+  $("[value='5 stars']", rateButtons[0]).attr("checked", true);
+  $("[value='4 stars']", rateButtons[1]).attr("checked", true);
 
   $(".site-dropdown__window", $("#dd-expanded")).show();
   $(".site-dropdown__window", $("#dd-buttons-expanded")).show();

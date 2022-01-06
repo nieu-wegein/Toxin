@@ -158,8 +158,8 @@ html(lang = "en")
               include ../../../components/like-button/like-button
           +site-section({h3: "Rate Button"})
             .rate-buttons-wrapper
-              +rate-button("sample-stars-1", ["ui-star-1", "ui-star-2", "ui-star-3", "ui-star-4", "ui-star-5"])
-              +rate-button("sample-stars-2", ["ui-star-6", "ui-star-7", "ui-star-8", "ui-star-9", "ui-star-10"])
+              +rate-button({name: "sample-stars-1", id: "ui-stars"})
+              +rate-button({name: "sample-stars-2", id: "ui-rate"})
         .content__column
           .range-slider-wrapper
             +site-range-slider(rangeSliderList[0])

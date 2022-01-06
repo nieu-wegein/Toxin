@@ -1,20 +1,20 @@
 //TODO: переименовать компоненты, вложить элементы в компоненты
 
-mixin rate-button(name, idList)
-  .rate-button
-      input(type = "radio" id = idList[4] class = "rate-button__radio" name = name value = "5 stars")
-      label(class = "rate-button__label material-icons" for = idList[4])
-        span.rate-button__label-text 5 звезд
-      input(type = "radio" id = idList[3] class = "rate-button__radio" name = name value = "4 stars")
-      label(class = "rate-button__label material-icons" for = idList[3])
-        span.rate-button__label-text 4 звезды
-      input(type = "radio" id = idList[2] class = "rate-button__radio" name = name value = "3 stars")
-      label(class = "rate-button__label material-icons" for = idList[2])
-        span.rate-button__label-text 3 звезды
-      input(type = "radio" id = idList[1] class = "rate-button__radio" name = name value = "2 stars")
-      label(class = "rate-button__label material-icons" for = idList[1])
-        span.rate-button__label-text 2 звезды
-      input(type = "radio" id = idList[0] class = "rate-button__radio" name = name value = "1 star")
-      label(class = "rate-button__label material-icons" for = idList[0])
-        span.rate-button__label-text 1 звезду
+mixin rate-button(obj)
+  div(class = "rate-button" id = obj.id)
+    input(type = "radio" id = obj.id + "_star-5" class = "rate-button__radio" name = obj.name value = "5 stars")
+    label(class = "rate-button__label material-icons" for = obj.id + "_star-5")
+      span.rate-button__label-text 5 звезд
+    input(type = "radio" id = obj.id + "_star-4" class = "rate-button__radio" name = obj.name value = "4 stars")
+    label(class = "rate-button__label material-icons" for = obj.id + "_star-4")
+      span.rate-button__label-text 4 звезды
+    input(type = "radio" id = obj.id + "_star-3" class = "rate-button__radio" name = obj.name value = "3 stars")
+    label(class = "rate-button__label material-icons" for = obj.id + "_star-3")
+      span.rate-button__label-text 3 звезды
+    input(type = "radio" id = obj.id + "_star-2" class = "rate-button__radio" name = obj.name value = "2 stars")
+    label(class = "rate-button__label material-icons" for = obj.id + "_star-2")
+      span.rate-button__label-text 2 звезды
+    input(type = "radio" id = obj.id + "_star-1" class = "rate-button__radio" name = obj.name value = "1 star")
+    label(class = "rate-button__label material-icons" for = obj.id + "_star-1")
+      span.rate-button__label-text 1 звезду
 

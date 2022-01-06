@@ -1,5 +1,5 @@
 import $ from "../../jquery-3.6.0.min";
-import "../site-calendar/site-calendar"
+
 
 //TODO: разбить на дочерние классы
 //TODO: РЕФАКТОРИНГ!!!

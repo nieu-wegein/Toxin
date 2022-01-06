@@ -375,14 +375,14 @@ template {
   font-family: "Montserrat";
   font-style: normal;
   font-weight: 400;
-  src: local(""), url(../cbe4afbec98f82e7c0c3.woff) format("woff"), url(../c25ae5d111af1d4df437.ttf) format("truetype"), url(../98eb3f9721e518b6dfdf.svg#Montserrat) format("svg");
+  src: local(""), url(../815a9e9ccfffa41179b2.woff) format("woff"), url(../e552eceeaa6929459f9f.ttf) format("truetype"), url(../22d8566c41c8d731931b.svg#Montserrat) format("svg");
   /* Legacy iOS */
 }
 @font-face {
   font-family: "Montserrat-Bold";
   font-style: normal;
   font-weight: 700;
-  src: local(""), url(../8dce55b2dd58ab84e75d.woff) format("woff"), url(../befa0a20e040c60f7586.ttf) format("truetype"), url(../d50151d8a16782a7cb6f.svg#Montserrat) format("svg");
+  src: local(""), url(../ed42f12c8204ea6029e6.woff) format("woff"), url(../8053470a105c34478b57.ttf) format("truetype"), url(../fac85a3030008d30b0b8.svg#Montserrat) format("svg");
   /* Legacy iOS */
 }
 .site-section__h1 {
@@ -535,8 +535,9 @@ template {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  padding: 12px 8px 12px 15px;
+  padding: 12px 8px 18px 15px;
   line-height: 15px;
+  background-color: white;
 }
 
 .form-element {
@@ -580,6 +581,104 @@ template {
   font-family: "Montserrat", sans-serif;
   color: rgba(31, 32, 65, 0.5);
   font-size: 12px;
+}
+
+.site-calendar {
+  padding: 0 19px;
+  padding-bottom: 8px;
+  width: 318px;
+  border-radius: 4px;
+  text-align: center;
+  background-color: white;
+}
+.site-calendar__header {
+  padding: 20px 0;
+  margin-bottom: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+.site-calendar__prev-button, .site-calendar__next-button {
+  padding: 0;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  color: #BC9CFF;
+}
+.site-calendar__days-section, .site-calendar__date-section {
+  font-family: "Montserrat-Bold";
+  font-size: 12px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+.site-calendar__date-section {
+  font-family: "Montserrat";
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+.site-calendar__date-cell.start-range {
+  border-radius: 50% 0 0 50%;
+}
+.site-calendar__date-cell.focus-range {
+  background: rgba(31, 32, 65, 0.05);
+}
+.site-calendar__date-cell.range {
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(188, 156, 255, 0.25)), to(rgba(139, 164, 249, 0.25)));
+  background: linear-gradient(180deg, rgba(188, 156, 255, 0.25) 0%, rgba(139, 164, 249, 0.25) 100%);
+}
+.site-calendar__date-cell.end-range {
+  border-radius: 0 50% 50% 0;
+}
+.site-calendar__date-cell:hover {
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(188, 156, 255, 0.25)), to(rgba(139, 164, 249, 0.25)));
+  background: linear-gradient(180deg, rgba(188, 156, 255, 0.25) 0%, rgba(139, 164, 249, 0.25) 100%);
+}
+.site-calendar__day, .site-calendar__date {
+  line-height: 15px;
+  padding: 0;
+  width: 40px;
+  height: 40px;
+}
+.site-calendar__day {
+  color: #BC9CFF;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.site-calendar__date {
+  border: none;
+  background-color: transparent;
+  color: rgba(31, 32, 65, 0.5);
+  cursor: pointer;
+  border-radius: 50%;
+}
+.site-calendar__date.button_primary {
+  color: white;
+}
+.site-calendar__date.button_secondary {
+  color: white;
+}
+.site-calendar__date:disabled {
+  cursor: default;
+  color: rgba(31, 32, 65, 0.25);
+}
+.site-calendar__optional-row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
 
 .button {
@@ -710,10 +809,11 @@ template {
 
 .site-calendar {
   padding: 0 19px;
-  margin-bottom: 8px;
+  padding-bottom: 8px;
   width: 318px;
   border-radius: 4px;
   text-align: center;
+  background-color: white;
 }
 .site-calendar__header {
   padding: 20px 0;
@@ -1162,6 +1262,7 @@ template {
   content: "star_border"/"Оценить в ";
   top: 0;
   left: 0;
+  font-size: 24px;
   background-color: #bc9cff;
   background-image: -webkit-gradient(linear, left top, left bottom, from(#BC9CFF), to(#8BA4F9));
   background-image: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);

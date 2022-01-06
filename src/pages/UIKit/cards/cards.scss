@@ -4,6 +4,9 @@
 @import "../../../components/registration-block/registration-block";
 @import "../../../components/booking-block/booking-block";
 @import "../../../components/log-in-block/log-in-block";
+@import "../../../components/site-calendar/site-calendar";
+@import "../../../components/site-dropdown/site-dropdown__footer/site-dropdown__footer";
+@import "../../../components/room-card/room-card";
 
 
 
@@ -31,9 +34,11 @@
   width: 1160px;
 
   &__column {
-    &:first-child {
+
+    &:not(:last-child) {
       margin-right: 40px;
     }
+
     &:nth-child(2) {
       margin-top: 2px;
     }
@@ -42,6 +47,12 @@
       margin-bottom: 39px;
     }
     .booking-block {
+      margin-bottom: 39px;
+    }
+    .calendar-wrapper {
+      margin-bottom: 42px;
+    }
+    .room-card {
       margin-bottom: 39px;
     }
   }

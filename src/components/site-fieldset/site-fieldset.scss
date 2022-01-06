@@ -28,6 +28,7 @@
 
       &.reverse::after {
         content: "expand_less";
+        //transform: rotate(180deg);
       }
     }
 

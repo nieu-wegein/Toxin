@@ -2,9 +2,12 @@
 <!--TODO: Валидация-->
 <!--TODO: Отправка данных на сервер-->
 <!--TODO: Убрать общие названия классов и id в блоках-->
+<!--TODO: ИТОГО-->
+<!--TODO: Кнопки вместо псевдоэлементов-->
 <!--TODO: Валидация-->
 <!--TODO: Поменять теги заголовков у карточек-->
-<!--TODO: Поменять id, добавив в них название блока--><!DOCTYPE html>
+<!--TODO: Поменять id, добавив в них название блока-->
+<!--TODO: переименовать компоненты, вложить элементы в компоненты--><!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="utf-8">
@@ -367,34 +370,34 @@
                 <section class="booking-block__bill-section">
                   <table class="booking-block__bill-table">
                     <tr class="booking-block__bill-row">
-                      <td>
+                      <td class="booking-block__bill-data">
                         <div class="booking-block__calculation">
                           <p class="booking-block__termin">9 990₽ х 4 суток</p>
                         </div>
                       </td>
-                      <td><span class="booking-block__definition">39 960₽</span></td>
+                      <td class="booking-block__bill-data"><span class="booking-block__definition">39 960₽</span></td>
                     </tr>
                     <tr class="booking-block__bill-row">
-                      <td>
+                      <td class="booking-block__bill-data">
                         <div class="booking-block__calculation">
                           <p class="booking-block__termin">Сбор за услуги: скидка 2 179₽</p>
                         </div>
                       </td>
-                      <td><span class="booking-block__definition">0₽</span></td>
+                      <td class="booking-block__bill-data"><span class="booking-block__definition">0₽</span></td>
                     </tr>
                     <tr class="booking-block__bill-row">
-                      <td>
+                      <td class="booking-block__bill-data">
                         <div class="booking-block__calculation">
                           <p class="booking-block__termin">Сбор за дополнительные услуги</p>
                         </div>
                       </td>
-                      <td><span class="booking-block__definition">300₽</span></td>
+                      <td class="booking-block__bill-data"><span class="booking-block__definition">300₽</span></td>
                     </tr>
                     <tr class="booking-block__bill-row booking-block__bill-row_total">
-                      <td>
+                      <td class="booking-block__bill-data">
                         <p class="booking-block__termin booking-block__termin_total">Итого</p>
                       </td>
-                      <td><span class="booking-block__definition booking-block__definition_total">38 081₽</span></td>
+                      <td class="booking-block__bill-data"><span class="booking-block__definition booking-block__definition_total">38 081₽</span></td>
                     </tr>
                   </table>
                 </section>
@@ -431,6 +434,141 @@
             <footer class="log-in-block__footer"><span class="log-in-block__already-have">Нет аккаунта на Toxin?</span>
               <button class="button button_rounded" type="button">Создать</button>
             </footer>
+          </article>
+        </div>
+        <div class="content__column">
+          <div class="calendar-wrapper">
+            <div class="site-calendar site-calendar_range">
+              <div class="site-calendar__header">
+                <button class="site-calendar__prev-button material-icons" type="button">arrow_back</button><span class="site-calendar__header-text">Август 2019</span>
+                <button class="site-calendar__next-button material-icons" type="button">arrow_forward</button>
+              </div>
+              <div class="site-calendar__days-section">
+                <div class="site-calendar__day">Пн</div>
+                <div class="site-calendar__day">Вт</div>
+                <div class="site-calendar__day">Ср</div>
+                <div class="site-calendar__day">Чт</div>
+                <div class="site-calendar__day">Пт</div>
+                <div class="site-calendar__day">Сб</div>
+                <div class="site-calendar__day">Вс</div>
+              </div>
+              <div class="site-calendar__date-section"><span class="site-calendar__date-cell">
+                  <button class="site-calendar__date" type="button">29</button></span><span class="site-calendar__date-cell">
+                  <button class="site-calendar__date" type="button">30</button></span><span class="site-calendar__date-cell">
+                  <button class="site-calendar__date" type="button">31</button></span><span class="site-calendar__date-cell">
+                  <button class="site-calendar__date" type="button">1</button></span><span class="site-calendar__date-cell">
+                  <button class="site-calendar__date" type="button">2</button></span><span class="site-calendar__date-cell">
+                  <button class="site-calendar__date" type="button">3</button></span><span class="site-calendar__date-cell">
+                  <button class="site-calendar__date" type="button">4</button></span><span class="site-calendar__date-cell">
+                  <button class="site-calendar__date" type="button">5</button></span><span class="site-calendar__date-cell">
+                  <button class="site-calendar__date" type="button">6</button></span><span class="site-calendar__date-cell">
+                  <button class="site-calendar__date" type="button">7</button></span><span class="site-calendar__date-cell">
+                  <button class="site-calendar__date" type="button">8</button></span><span class="site-calendar__date-cell">
+                  <button class="site-calendar__date" type="button">9</button></span><span class="site-calendar__date-cell">
+                  <button class="site-calendar__date" type="button">10</button></span><span class="site-calendar__date-cell">
+                  <button class="site-calendar__date" type="button">11</button></span><span class="site-calendar__date-cell">
+                  <button class="site-calendar__date" type="button">12</button></span><span class="site-calendar__date-cell">
+                  <button class="site-calendar__date" type="button">13</button></span><span class="site-calendar__date-cell">
+                  <button class="site-calendar__date" type="button">14</button></span><span class="site-calendar__date-cell">
+                  <button class="site-calendar__date" type="button">15</button></span><span class="site-calendar__date-cell">
+                  <button class="site-calendar__date" type="button">16</button></span><span class="site-calendar__date-cell">
+                  <button class="site-calendar__date" type="button">17</button></span><span class="site-calendar__date-cell">
+                  <button class="site-calendar__date" type="button">18</button></span><span class="site-calendar__date-cell">
+                  <button class="site-calendar__date" type="button">19</button></span><span class="site-calendar__date-cell">
+                  <button class="site-calendar__date" type="button">20</button></span><span class="site-calendar__date-cell">
+                  <button class="site-calendar__date" type="button">21</button></span><span class="site-calendar__date-cell">
+                  <button class="site-calendar__date" type="button">22</button></span><span class="site-calendar__date-cell">
+                  <button class="site-calendar__date" type="button">23</button></span><span class="site-calendar__date-cell">
+                  <button class="site-calendar__date" type="button">24</button></span><span class="site-calendar__date-cell">
+                  <button class="site-calendar__date" type="button">25</button></span><span class="site-calendar__date-cell">
+                  <button class="site-calendar__date" type="button">26</button></span><span class="site-calendar__date-cell">
+                  <button class="site-calendar__date" type="button">27</button></span><span class="site-calendar__date-cell">
+                  <button class="site-calendar__date" type="button">28</button></span><span class="site-calendar__date-cell">
+                  <button class="site-calendar__date" type="button">29</button></span><span class="site-calendar__date-cell">
+                  <button class="site-calendar__date" type="button">30</button></span><span class="site-calendar__date-cell">
+                  <button class="site-calendar__date" type="button">31</button></span><span class="site-calendar__date-cell">
+                  <button class="site-calendar__date" type="button">1</button></span>
+                <div class="site-calendar__optional-row"><span class="site-calendar__date-cell">
+                    <button class="site-calendar__date" type="button">2</button></span><span class="site-calendar__date-cell">
+                    <button class="site-calendar__date" type="button">3</button></span><span class="site-calendar__date-cell">
+                    <button class="site-calendar__date" type="button">4</button></span><span class="site-calendar__date-cell">
+                    <button class="site-calendar__date" type="button">5</button></span><span class="site-calendar__date-cell">
+                    <button class="site-calendar__date" type="button">6</button></span><span class="site-calendar__date-cell">
+                    <button class="site-calendar__date" type="button">7</button></span><span class="site-calendar__date-cell">
+                    <button class="site-calendar__date" type="button">8</button></span>
+                </div>
+              </div>
+            </div>
+            <div class="site-dropdown__footer" tabindex="-1">
+              <button class="button site-dropdown__button-clear" type="button">Очистить</button>
+              <button class="button site-dropdown__button-apply" type="button">Применить</button>
+            </div>
+          </div>
+          <article class="room-card room-card_luxe" id="room888">
+            <div class="room-card__image-container"><img class="room-card__image" src="../../../components/room-card/room888.png" alt="Фотография номера">
+              <button class="room-card__arrow room-card__arrow_left material-icons">chevron_left</button>
+              <button class="room-card__arrow room-card__arrow_right material-icons">chevron_right</button>
+              <div class="room-card__bullets-block">
+                <div class="room-card__bullet room-card__bullet_active"></div>
+                <div class="room-card__bullet"></div>
+                <div class="room-card__bullet"></div>
+                <div class="room-card__bullet"></div>
+              </div>
+            </div>
+            <div class="room-card__body">
+              <div class="room-card__info">
+                <p class="room-card__room-number">№<span class="room-card__room-number-value">888</span></p>
+                <p class="room-card__price"><span class="room-card__price-value">9 990₽</span> в сутки</p>
+              </div>
+              <div class="room-card__rating">
+                <div class="rate-button" id="room888_room-rate">
+                  <input class="rate-button__radio" type="radio" id="room888_room-rate_star-5" name="room888_room-rate" value="5 stars">
+                  <label class="rate-button__label material-icons" for="room888_room-rate_star-5"><span class="rate-button__label-text">5 звезд</span></label>
+                  <input class="rate-button__radio" type="radio" id="room888_room-rate_star-4" name="room888_room-rate" value="4 stars">
+                  <label class="rate-button__label material-icons" for="room888_room-rate_star-4"><span class="rate-button__label-text">4 звезды</span></label>
+                  <input class="rate-button__radio" type="radio" id="room888_room-rate_star-3" name="room888_room-rate" value="3 stars">
+                  <label class="rate-button__label material-icons" for="room888_room-rate_star-3"><span class="rate-button__label-text">3 звезды</span></label>
+                  <input class="rate-button__radio" type="radio" id="room888_room-rate_star-2" name="room888_room-rate" value="2 stars">
+                  <label class="rate-button__label material-icons" for="room888_room-rate_star-2"><span class="rate-button__label-text">2 звезды</span></label>
+                  <input class="rate-button__radio" type="radio" id="room888_room-rate_star-1" name="room888_room-rate" value="1 star">
+                  <label class="rate-button__label material-icons" for="room888_room-rate_star-1"><span class="rate-button__label-text">1 звезду</span></label>
+                </div>
+                <p class="room-card__testimonial-counter"><span class="room-card__testimonial-count">145</span> Отзывов</p>
+              </div>
+            </div>
+          </article>
+          <article class="room-card" id="room848">
+            <div class="room-card__image-container"><img class="room-card__image" src="../../../components/room-card/room840.png" alt="Фотография номера">
+              <button class="room-card__arrow room-card__arrow_left material-icons">chevron_left</button>
+              <button class="room-card__arrow room-card__arrow_right material-icons">chevron_right</button>
+              <div class="room-card__bullets-block">
+                <div class="room-card__bullet room-card__bullet_active"></div>
+                <div class="room-card__bullet"></div>
+                <div class="room-card__bullet"></div>
+                <div class="room-card__bullet"></div>
+              </div>
+            </div>
+            <div class="room-card__body">
+              <div class="room-card__info">
+                <p class="room-card__room-number">№<span class="room-card__room-number-value">840</span></p>
+                <p class="room-card__price"><span class="room-card__price-value">9 990₽</span> в сутки</p>
+              </div>
+              <div class="room-card__rating">
+                <div class="rate-button" id="room848_room-rate">
+                  <input class="rate-button__radio" type="radio" id="room848_room-rate_star-5" name="room848_room-rate" value="5 stars">
+                  <label class="rate-button__label material-icons" for="room848_room-rate_star-5"><span class="rate-button__label-text">5 звезд</span></label>
+                  <input class="rate-button__radio" type="radio" id="room848_room-rate_star-4" name="room848_room-rate" value="4 stars">
+                  <label class="rate-button__label material-icons" for="room848_room-rate_star-4"><span class="rate-button__label-text">4 звезды</span></label>
+                  <input class="rate-button__radio" type="radio" id="room848_room-rate_star-3" name="room848_room-rate" value="3 stars">
+                  <label class="rate-button__label material-icons" for="room848_room-rate_star-3"><span class="rate-button__label-text">3 звезды</span></label>
+                  <input class="rate-button__radio" type="radio" id="room848_room-rate_star-2" name="room848_room-rate" value="2 stars">
+                  <label class="rate-button__label material-icons" for="room848_room-rate_star-2"><span class="rate-button__label-text">2 звезды</span></label>
+                  <input class="rate-button__radio" type="radio" id="room848_room-rate_star-1" name="room848_room-rate" value="1 star">
+                  <label class="rate-button__label material-icons" for="room848_room-rate_star-1"><span class="rate-button__label-text">1 звезду</span></label>
+                </div>
+                <p class="room-card__testimonial-counter"><span class="room-card__testimonial-count">65</span> Отзывов</p>
+              </div>
+            </div>
           </article>
         </div>
       </div>

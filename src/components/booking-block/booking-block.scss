@@ -1,3 +1,8 @@
+@import "../site-dropdown/site-dropdown";
+@import "../button/button";
+
+//TODO: Проверить css в браузере на повторение одного и того же кода
+
 .booking-block {
   background-color: white;
   border: 1px solid rgba(0, 0, 0, 0.12);
@@ -20,7 +25,7 @@
 
     &:first-letter {
       font-size: 14px;
-      line-height: 17px;
+      line-height: 18px;
       margin-right: 4px;
     }
 
@@ -31,8 +36,7 @@
       line-height: 14px;
       text-transform: uppercase;
       color: $site-purple;
-
-      margin: 0 8px;
+      margin-left: 8px;
     }
   }
 
@@ -47,7 +51,6 @@
   &__price-value {
     font-family: "Montserrat-Bold", sans-serif;
     font-size: 14px;
-    font-weight: 700;
   }
 
   &__form {
@@ -67,8 +70,32 @@
   &__bill-section {
     width: 100%;
     @include site-body($lineH: 18px);
-    padding-top: 8px;
-    padding-bottom: 9px;
+    padding-top: 7px;
+    padding-bottom: 8px;
+  }
+
+  &__bill {
+
+    &-table {
+      width: 100%;
+      border-collapse: separate;
+      border-spacing: 0 14px;
+    }
+
+    &-row {
+      vertical-align: top;
+
+      :nth-child(even) {
+        text-align: right;
+      }
+      &_total {
+        @extend %site-h2;
+      }
+    }
+
+    &-data {
+      padding: 0;
+    }
   }
 
   &__calculation {
@@ -81,35 +108,13 @@
       content: "i";
       width: 20px;
       height: 20px;
-      font-family: "Montserrat-Bold";
+      font-family: "Montserrat-Bold", sans-serif;
       text-align: center;
       color: $site-dark-25;
       border: 1px solid $site-dark-25;
       border-radius: 50%;
       margin-left: 5px;
     }
-  }
-
-  &__bill {
-
-    &-table {
-      width: 100%;
-      border-collapse: separate;
-      border-spacing: 0 12px;
-    }
-
-    &-row {
-      vertical-align: top;
-
-      :nth-child(even) {
-        text-align: right;
-      }
-      &_total {
-        @extend %site-h2;
-        font-weight: 700;
-      }
-    }
-
   }
 
   .booking-block__termin {
@@ -124,7 +129,6 @@
     &_total {
       display: inline-block;
       margin-top: 15px;
-      letter-spacing: 0.4px;
     }
   }
 

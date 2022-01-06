@@ -1,0 +1,37 @@
+include ../rate-button/rate-button
+
+mixin room-card(id, room)
+
+  -
+    const cardClassList = ["room-card"];
+    const card = room ? room :  {
+      img: "../../../components/room-card/room888.png",
+      number: "888",
+      price: "9 990₽",
+      testimonials: "145",
+      luxe: true
+    };
+    if(card.luxe) cardClassList.push("room-card_luxe");
+
+  article(class = cardClassList id = id)
+    .room-card__image-container
+      img(class = "room-card__image" src = card.img alt = "Фотография номера")
+      button.room-card__arrow.room-card__arrow_left.material-icons chevron_left
+      button.room-card__arrow.room-card__arrow_right.material-icons chevron_right
+      .room-card__bullets-block
+        .room-card__bullet.room-card__bullet_active
+        .room-card__bullet
+        .room-card__bullet
+        .room-card__bullet
+    .room-card__body
+      .room-card__info
+        p.room-card__room-number №
+          span.room-card__room-number-value !{card.number}
+        p.room-card__price
+          span.room-card__price-value !{card.price}
+          |  в сутки
+      .room-card__rating
+        +rate-button({name: id + "_room-rate", id: id + "_room-rate"})
+        p.room-card__testimonial-counter
+          span.room-card__testimonial-count !{card.testimonials}
+          |  Отзывов

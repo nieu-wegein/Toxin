@@ -1,3 +1,7 @@
+@import "../site-input/site-input";
+@import "../site-fieldset/site-fieldset";
+@import "../button/button";
+
 .log-in-block {
   background-color: white;
   border: 1px solid rgba(0, 0, 0, 0.12);
@@ -29,6 +33,6 @@
     font-size: 14px;
     line-height: 18px;
     letter-spacing: 0px;
-    margin-right: 53px;
+    margin-right: 52px;
   }
 }

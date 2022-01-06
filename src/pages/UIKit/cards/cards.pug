@@ -2,6 +2,9 @@ include ../../../components/search-block/search-block
 include ../../../components/registration-block/registration-block
 include ../../../components/booking-block/booking-block
 include ../../../components/log-in-block/log-in-block
+include ../../../components/site-calendar/site-calendar
+include ../../../components/site-dropdown/site-dropdown__footer/site-dropdown__footer
+include ../../../components/room-card/room-card
 
 doctype html
 html(lang = "en")
@@ -22,3 +25,9 @@ html(lang = "en")
         .content__column
           +booking-block()
           +log-in-block()
+        .content__column
+          .calendar-wrapper
+            +site-calendar("site-calendar site-calendar_range")
+            +site-dropdown__footer()
+          +room-card("room888")
+          +room-card("room848", {img: "../../../components/room-card/room840.png", number: "840", price: "9 990₽", testimonials: "65"})
