@@ -1,0 +1,98 @@
+@import "../site-button/site-button";
+@import "../site-logo/site-logo";
+
+.main-header {
+
+  padding: 15px 9.72%;
+  display: flex;
+  justify-content: space-between;
+  background-color: white;
+  box-shadow: 0px 10px 20px $site-dark-5;
+  font-family: Montserrat, sans-serif;
+  font-size: 14px;
+  line-height: 17px;
+  color: $site-dark-50;
+
+}
+
+.navigation-wrapper {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  width: 70%;
+}
+
+.site-navigation  {
+  display: flex;
+  justify-content: flex-end;
+  width: 59.5%;
+  align-items: center;
+  margin-right: 2.5%;
+
+  &__list {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  &__item {
+
+    &:not(:last-child) {
+      margin-right: 20px;
+    }
+  }
+
+  &__link {
+
+    display: inline-flex;
+    align-items: center;
+    text-decoration: none;
+    color: $site-dark-50;
+
+    &_expanded:after {
+      font-family: "Material Icons";
+      font-size: 24px;
+      content: "expand_more"
+    }
+
+    &_active {
+      font-family: "Montserrat-Bold", sans-serif;
+      color: $site-dark-75;
+    }
+  }
+}
+
+.user-navigation{
+
+  &__list {
+    display: flex; // Избегание переноса
+    list-style: none;
+    padding: 0;
+    margin: 0;
+
+    &_logged {
+
+      align-items: center;
+
+      & .user-navigation__item {
+        margin-left: 18px;
+      }
+
+      &::before {
+        content: " ";
+        width: 1px;
+        height: 30px;
+        align-self: stretch;
+        background-color: $site-dark-10;
+      }
+    }
+  }
+
+  &__item {
+    display:inline-block;
+    &:not(:last-child) {
+      margin-right: 20px;
+    }
+  }
+}

@@ -18,7 +18,7 @@ function toggleLike(e) {
 
 $(function() {
 
-  $(".like-button").each((i, button) => {
+  $(".like-site-button").each((i, button) => {
     $(button).click(toggleLike);
   })
 

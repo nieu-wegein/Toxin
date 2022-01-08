@@ -1,20 +1,14 @@
 @import "../../../variables/variables";
 @import "../../../normalize";
 @import "../../../fonts/fonts";
-@import "../../../components/main-header/main-header";
-@import "../../../components/logo/logo";
-@import "../../../components/button/button";
+@import "../../../components/site-header/site-header";
+@import "../../../components/site-logo/site-logo";
+@import "../../../components/site-button/site-button";
 
 
 
 * {
   box-sizing: border-box;
-}
-
-ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
 }
 
 .site-wrapper {

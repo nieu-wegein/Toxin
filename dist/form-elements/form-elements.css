@@ -687,7 +687,6 @@ template {
   color: #BC9CFF;
   background-color: white;
   padding: 0;
-  display: inline-block;
   text-align: center;
   font-family: Montserrat-Bold, sans-serif;
   font-size: 12px;
@@ -702,9 +701,11 @@ template {
   width: 100px;
   min-height: 44px;
   color: #BC9CFF;
-  padding: 12px 19px 13px 18px;
+  padding: 7px 17px 8px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   letter-spacing: -0.15px;
-  border: 2px double transparent;
+  border: 2px solid transparent;
   border-radius: 22px;
   background-origin: border-box;
   background-image: -webkit-gradient(linear, left top, left bottom, from(white), to(white)), -webkit-gradient(linear, left top, left bottom, from(#BC9CFF), to(#8BA4F9));

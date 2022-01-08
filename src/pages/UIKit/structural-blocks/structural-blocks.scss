@@ -1,0 +1,30 @@
+@import "../../../fonts/fonts";
+@import "../../../variables/variables";
+@import "../../../components/site-header/site-header";
+
+//Временно для ПП
+body::-webkit-scrollbar {
+  width: 0 !important
+}
+body {
+  overflow: -moz-scrollbars-none;
+  -ms-overflow-style: none;
+}
+
+.structural-blocks-page {
+  background-color: #F4F4F6;
+
+}
+
+.header-wrapper {
+  width: 1440px;
+  margin: 0 auto 28px;
+}
+
+.structural-blocks-header {
+  padding: 30px;
+}
+
+.main-header {
+  margin-bottom: 40px;
+}

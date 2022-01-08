@@ -1,0 +1,17 @@
+include ../../../components/site-header/site-header
+
+doctype html
+html(lang = "en")
+  head
+    meta(charset="utf-8")
+    meta(name="viewport" content="initial-scale=1.0, width=device-width")
+    meta(name="keywords", content = "")
+    meta(name="description", content=" ")
+    link(rel = "stylesheet" href="https://fonts.googleapis.com/css?family=Material+Icons")
+  body.structural-blocks-page
+    .header-wrapper
+      .structural-blocks-header
+        img.logo(src = "../img/min-logo.svg")
+    .body
+        +site-header()
+        +site-header("Юлий Цезарь")

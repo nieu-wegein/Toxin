@@ -1,9 +1,16 @@
+
 //- TODO: Поправить if
-mixin menu-items(items)
+  //TODO: Дропдаун-меню
+mixin menu-items(items, itemClass, linkClass)
+
   each item in items
-    li(class = attributes.item_class class = item.active ? "site-navigation__item_active":null )
-      a(class = attributes.link_class  href = "index.html") !{item.text}
-      -if(item.expand) {
-          span.material-icons expand_more
-      -}
+
+    -const linkClassList = [linkClass];
+    -if (item.expand) linkClassList.push("site-navigation__link_expanded")
+    -if (item.active) linkClassList.push("site-navigation__link_active")
+
+    li(class = itemClass)
+      a(class = linkClassList  href = "index.html") !{item.text}
+
+
 

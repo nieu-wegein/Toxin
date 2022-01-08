@@ -14,8 +14,8 @@ class SiteCalendar {
     this.dateSection = $(".site-calendar__date-section", calendar);
     this.dates = $(".site-calendar__date", this.dateSection).get()
     this.optionalRow =  $(".site-calendar__optional-row", this.dateSection);
-    this.buttonPrev = $(".site-calendar__prev-button", calendar)
-    this.buttonNext = $(".site-calendar__next-button", calendar)
+    this.buttonPrev = $(".site-calendar__prev-site-button", calendar)
+    this.buttonNext = $(".site-calendar__next-site-button", calendar)
     this.today = new Date();
 
     this.state = {

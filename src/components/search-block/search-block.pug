@@ -1,5 +1,5 @@
 include ../site-dropdown/site-dropdown
-include ../button/button
+include ../site-button/site-button
 
 mixin search-block()
   article.search-block
@@ -30,4 +30,4 @@ mixin search-block()
               {name: "Младенцы", value: "babies", declination: ["гость", "гостя", "гостей"]}
             ],
             modifiers: {buttons: true}})
-        +button({type: "button", text:"Подобрать номер", modifiers: {rounded: true, primary: true, flexible: true, icon: true}})
+        +site-button({type: "button", text:"Подобрать номер", modifiers: {rounded: true, primary: true, flexible: true, icon: true}})

@@ -2,7 +2,7 @@
 //TODO: ИТОГО
 //TODO: Кнопки вместо псевдоэлементов
 include ../site-dropdown/site-dropdown
-include ../button/button
+include ../site-button/site-button
 
 mixin booking-block()
   article.booking-block
@@ -64,4 +64,4 @@ mixin booking-block()
                 p.booking-block__termin.booking-block__termin_total Итого
               td.booking-block__bill-data
                 span.booking-block__definition.booking-block__definition_total 38 081₽
-        +button({type: "button", text: "Забронировать", modifiers: {rounded: true, primary: true, flexible: true, icon: true}})
+        +site-button({type: "button", text: "Забронировать", modifiers: {rounded: true, primary: true, flexible: true, icon: true}})

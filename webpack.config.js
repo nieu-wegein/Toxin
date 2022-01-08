@@ -16,6 +16,7 @@ module.exports = {
     entry: {
         "form-elements": PATHS.uikit + '/form-elements/form-elements.js',
         "cards": PATHS.uikit + '/cards/cards.js',
+        "structural-blocks": PATHS.uikit + '/structural-blocks/structural-blocks.js',
         "index": PATHS.website + '/index/index.js',
         "registration": PATHS.website + '/registration/registration.js',
         "room-info": PATHS.website + '/room-info/room-info.js',
@@ -62,38 +63,44 @@ module.exports = {
             chunks: ['index'],
             template: PATHS.website + 'index/index.pug'
         }),
-        new HtmlWebpackPlugin(
-            {
-                filename: 'form-elements/form-elements.html',
-                chunks: ['form-elements'],
-                template: PATHS.uikit + '/form-elements/form-elements.pug'
-            }),
+      new HtmlWebpackPlugin(
+        {
+            filename: 'form-elements/form-elements.html',
+            chunks: ['form-elements'],
+            template: PATHS.uikit + '/form-elements/form-elements.pug'
+        }),
       new HtmlWebpackPlugin(
         {
           filename: 'cards/cards.html',
           chunks: ['cards'],
           template: PATHS.uikit + '/cards/cards.pug'
         }),
-        new HtmlWebpackPlugin(
-            {
-                filename: 'rooms-list/rooms-list.html',
-                chunks: ['rooms-list'],
-                template: PATHS.website + 'rooms-list/rooms-list.pug'
-            }),
-        new HtmlWebpackPlugin(
-            {
-                filename: 'room-info/room-info.html',
-                chunks: ['room-info'],
-                template: PATHS.website + 'room-info/room-info.pug'
-            }),
-        new HtmlWebpackPlugin(
-            {
-                filename: 'registration/registration.html',
-                chunks: ['registration'],
-                template: PATHS.website + 'registration/registration.pug'
-            }),
-        new MiniCssExtractPlugin({
-            filename: '[name]/[name].css'
-        })
+      new HtmlWebpackPlugin(
+        {
+          filename: 'structural-blocks/structural-blocks.html',
+          chunks: ['structural-blocks'],
+          template: PATHS.uikit + '/structural-blocks/structural-blocks.pug'
+        }),
+      new HtmlWebpackPlugin(
+          {
+              filename: 'rooms-list/rooms-list.html',
+              chunks: ['rooms-list'],
+              template: PATHS.website + 'rooms-list/rooms-list.pug'
+          }),
+      new HtmlWebpackPlugin(
+          {
+              filename: 'room-info/room-info.html',
+              chunks: ['room-info'],
+              template: PATHS.website + 'room-info/room-info.pug'
+          }),
+      new HtmlWebpackPlugin(
+          {
+              filename: 'registration/registration.html',
+              chunks: ['registration'],
+              template: PATHS.website + 'registration/registration.pug'
+          }),
+      new MiniCssExtractPlugin({
+          filename: '[name]/[name].css'
+      })
     ]
 }

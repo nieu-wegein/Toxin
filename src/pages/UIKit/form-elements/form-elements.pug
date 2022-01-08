@@ -5,7 +5,7 @@ include ../../../components/site-radio/site-radio
 include ../../../components/site-section/site-section
 include ../../../components/rate-button/rate-button
 include ../../../components/site-range-slider/site-range-slider
-include ../../../components/button/button
+include ../../../components/site-button/site-button
 include ../../../components/site-pagination/site-pagination
 include ../../../components/site-ul/site-ul
 include ../../../components/features-list/features-list
@@ -130,7 +130,7 @@ html(lang = "en")
     meta(name="keywords", content = "")
     meta(name="description", content=" ")
     link(rel = "stylesheet" href="https://fonts.googleapis.com/css?family=Material+Icons")
-  body
+  body.form-elements-page
     .wrapper
       .header
         img.logo(src = "../img/min-logo.svg")
@@ -166,7 +166,7 @@ html(lang = "en")
           +site-section({h3: "Buttons"})
             .site-buttons-wrapper
               each button in buttonsList
-                +button(button)
+                +site-button(button)
           +site-section({h3: "Pagination"})
             +site-pagination()
         .content__column
