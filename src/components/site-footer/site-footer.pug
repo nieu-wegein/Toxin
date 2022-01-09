@@ -1,0 +1,48 @@
+include ../../mixins/menu-items
+include ../site-section/site-section
+include ../site-input/site-input
+include ../social-link/social-link
+
+//TODO: Заменить теги секций
+
+mixin site-footer()
+
+  -
+    const footerLinks = [
+            [{text: "О нас"},{text: "Новости"},{text: "Служба поддержки"},{text: "Услуги"}],
+            [{text: "О сервисе"},{text: "Наша команда"},{text: "Вакансии"},{text: "Инвесторы"}],
+            [{text: "Соглашения"},{text: "Сообщества"},{text: "Связь с нами"}]
+    ]
+
+  footer.site-footer
+    .site-footer__content
+      .site-footer__info-block
+        include ../site-logo/site-logo
+        p.site-footer__info-text Бронирование номеров в лучшем отеле 2019 года по версии ассоциации «Отельные взгляды»
+      .site-footer__links-section
+        +site-section({h3: "Навигация", classList: "site-footer__menu-block"})
+          ul.site-footer__menu-list
+            +menu-items(footerLinks[0], "site-footer__menu-item", "site-footer__menu-link")
+        +site-section({h3: "О нас", classList: "site-footer__menu-block"})
+          ul.site-footer__menu-list
+            +menu-items(footerLinks[1], "site-footer__menu-item", "site-footer__menu-link")
+        +site-section({h3: "Служба поддержки", classList: "site-footer__menu-block"})
+          ul.site-footer__menu-list
+            +menu-items(footerLinks[2], "site-footer__menu-item", "site-footer__menu-link")
+      +site-section({h3: "Подписка", classList: "site-footer__subscription-block"})
+        p.site-footer__subscription-text Получайте специальные предложения и новости сервиса
+        form.site-footer__subscription-form
+          +site-input({label: "Подписка", text: "Email", modifiers: {submit: true, label: "hidden"}})
+    .site-footer__bottom
+      p.site-footer__copyright Copyright © 2018 Toxin отель. Все права защищены.
+      ul.site-footer__social-links
+        li.site-footer__social-link
+          +social-link("tw")
+        li.site-footer__social-link
+          +social-link("fb")
+        li.site-footer__social-link
+          +social-link("ig")
+
+
+
+

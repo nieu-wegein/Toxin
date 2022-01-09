@@ -3,27 +3,26 @@ include ../site-button/site-button
 
   //TODO: = Unbuffered code
   //TODO: Заменить интерполяцию на # там, куда приходят данные из-вне
--const mainNavItems = [{text: "О нас", active: true}, {text: "Услуги", expand: true}, {text: "Вакансии"}, {text: "Новости"}, {text: "Соглашения", expand: true}]
 
 mixin site-header(user)
+  -
+    const mainNavItems = [{text: "О нас", active: true}, {text: "Услуги",expand: true}, {text: "Вакансии"}, {text: "Новости"}, {text: "Соглашения", expand: true}]
+    const usermenuClassList = ["site-header__user-nav-list"];
+    if(user) usermenuClassList.push("site-header__user-nav-list_logged");
 
-  -const usermenuClassList = ["user-navigation__list"];
-  -if(user) usermenuClassList.push("user-navigation__list_logged");
-
-  header.main-header
+  header.site-header
     include ../site-logo/site-logo
-    .navigation-wrapper
-      nav.site-navigation
-        ul.site-navigation__list
-          +menu-items(mainNavItems, "site-navigation__item", "site-navigation__link")
-      .user-navigation
+    .site-header__navigation-wrapper
+      nav.site-header__site-navigation
+        ul.site-header__site-nav-list
+          +menu-items(mainNavItems, "site-header__site-nav-item", "site-header__nav-link")
+      .site-header__user-navigation
         ul(class = usermenuClassList)
           if(user)
-            -usermenuClassList.push("user-navigation__list_logged");
-            li.user-navigation__item #{user}
+            +menu-items([{text: user}], "site-header__user-nav-item", "site-header__nav-link")
           else
-            li.user-navigation__item
+            li.site-header__user-nav-item
               +site-button({type: "a", modifiers: {rounded: true}, text: "Войти"})
-            li.user-navigation__item
+            li.site-header__user-nav-item
               +site-button({type: "a", modifiers: {primary: true, rounded: true}, text: "Зарегистрироваться"})
 

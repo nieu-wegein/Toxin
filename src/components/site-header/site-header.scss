@@ -1,7 +1,7 @@
 @import "../site-button/site-button";
 @import "../site-logo/site-logo";
 
-.main-header {
+.site-header {
 
   padding: 15px 9.72%;
   display: flex;
@@ -13,38 +13,35 @@
   line-height: 17px;
   color: $site-dark-50;
 
-}
+  &__navigation-wrapper{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    width: 70%;
+  }
 
-.navigation-wrapper {
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  width: 70%;
-}
+  &__site-navigation  {
+    display: flex;
+    justify-content: flex-end;
+    width: 59.5%;
+    align-items: center;
+    margin-right: 2.5%;
+  }
 
-.site-navigation  {
-  display: flex;
-  justify-content: flex-end;
-  width: 59.5%;
-  align-items: center;
-  margin-right: 2.5%;
-
-  &__list {
+  &__site-nav-list {
     display: flex;
     list-style: none;
     padding: 0;
     margin: 0;
   }
 
-  &__item {
-
+  &__site-nav-item {
     &:not(:last-child) {
       margin-right: 20px;
     }
   }
 
-  &__link {
-
+  &__nav-link {
     display: inline-flex;
     align-items: center;
     text-decoration: none;
@@ -61,12 +58,9 @@
       color: $site-dark-75;
     }
   }
-}
 
-.user-navigation{
-
-  &__list {
-    display: flex; // Избегание переноса
+  &__user-nav-list {
+    display: flex;
     list-style: none;
     padding: 0;
     margin: 0;
@@ -75,8 +69,10 @@
 
       align-items: center;
 
-      & .user-navigation__item {
-        margin-left: 18px;
+      & .site-header__user-nav-item {
+        &:first-child {
+          margin-left: 18px;
+        }
       }
 
       &::before {
@@ -89,8 +85,7 @@
     }
   }
 
-  &__item {
-    display:inline-block;
+  &__user-nav-item {
     &:not(:last-child) {
       margin-right: 20px;
     }

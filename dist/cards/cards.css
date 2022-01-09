@@ -856,6 +856,49 @@ template {
   margin-top: 21px;
 }
 
+.form-element {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  vertical-align: top;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+.form-element__top {
+  width: 100%;
+  margin-bottom: 5px;
+  line-height: 15px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+.form-element__top_hidden {
+  clip: rect(0 0 0 0);
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+  z-index: -1;
+  position: absolute;
+}
+.form-element__note {
+  font-family: "Montserrat", sans-serif;
+  color: rgba(31, 32, 65, 0.5);
+  font-size: 12px;
+  text-transform: uppercase;
+}
+.form-element__description {
+  font-family: "Montserrat", sans-serif;
+  color: rgba(31, 32, 65, 0.5);
+  font-size: 12px;
+}
+
 .site-input {
   color: rgba(31, 32, 65, 0.75);
   font-family: "Montserrat", sans-serif;
@@ -1765,6 +1808,49 @@ template {
 .booking-block .booking-block__definition_total {
   display: inline-block;
   margin-top: 15px;
+}
+
+.form-element {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  vertical-align: top;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+.form-element__top {
+  width: 100%;
+  margin-bottom: 5px;
+  line-height: 15px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+.form-element__top_hidden {
+  clip: rect(0 0 0 0);
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+  z-index: -1;
+  position: absolute;
+}
+.form-element__note {
+  font-family: "Montserrat", sans-serif;
+  color: rgba(31, 32, 65, 0.5);
+  font-size: 12px;
+  text-transform: uppercase;
+}
+.form-element__description {
+  font-family: "Montserrat", sans-serif;
+  color: rgba(31, 32, 65, 0.5);
+  font-size: 12px;
 }
 
 .site-input {

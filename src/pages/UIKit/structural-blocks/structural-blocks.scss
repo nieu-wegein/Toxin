@@ -1,6 +1,7 @@
 @import "../../../fonts/fonts";
 @import "../../../variables/variables";
 @import "../../../components/site-header/site-header";
+@import "../../../components/site-footer/site-footer.scss";
 
 //Временно для ПП
 body::-webkit-scrollbar {
@@ -14,17 +15,45 @@ body {
 .structural-blocks-page {
   background-color: #F4F4F6;
 
+  .site-footer:nth-child(4) {
+    max-width: 768px;
+    margin: 0 auto 140px;
+    line-height: 17px;
+    .site-footer {
+      &__content {
+        padding: 120px 9.72% 0;
+      }
+      &__info-block {
+        max-width: 100%;
+        margin: 0 auto;
+      }
+      &__info-text,
+      &__links-section,
+      &__subscription-block {
+        display: none;
+      }
+      &__bottom {
+        text-align: center;
+        flex-wrap: wrap;
+        justify-content: center;
+        margin-top: 0;
+        padding: 20px 9.72% 120px;
+      }
+      &__copyright {
+        width: 100%;
+        margin-bottom: 25px;
+      }
+    }
+  }
 }
 
-.header-wrapper {
-  width: 1440px;
+
+.structural-blocks-header {
+  padding: 2.08%;
   margin: 0 auto 28px;
 }
 
-.structural-blocks-header {
-  padding: 30px;
-}
-
-.main-header {
+.site-header,
+.site-footer {
   margin-bottom: 40px;
 }

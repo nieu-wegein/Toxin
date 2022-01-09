@@ -1,13 +1,13 @@
 
 //- TODO: Поправить if
   //TODO: Дропдаун-меню
+  // ? Перенести в site-header
 mixin menu-items(items, itemClass, linkClass)
 
   each item in items
-
     -const linkClassList = [linkClass];
-    -if (item.expand) linkClassList.push("site-navigation__link_expanded")
-    -if (item.active) linkClassList.push("site-navigation__link_active")
+    -if (item.expand) linkClassList.push(linkClass + "_expanded");
+    -if (item.active) linkClassList.push(linkClass + "_active");
 
     li(class = itemClass)
       a(class = linkClassList  href = "index.html") !{item.text}

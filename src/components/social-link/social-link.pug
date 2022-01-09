@@ -1,0 +1,13 @@
+
+mixin social-link(network)
+
+  -
+    let tag = "";
+    let href = "";
+    switch(network) {
+      case "tw" : tag = "<i class = 'fab fa-twitter'></i>"; href = 'https://twitter.com'; break;
+      case "fb" : tag = "<i class = 'fab fa-facebook-square'></i>"; href = 'https://facebook.com'; break;
+      case "ig" : tag = "<i class = 'fab fa-instagram'> </i>"; href = 'https://instagram.com'; break;
+    }
+
+  a(class = "social-link" href = href) !{tag}

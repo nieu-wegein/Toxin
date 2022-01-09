@@ -1,0 +1,127 @@
+@import "../site-logo/site-logo";
+@import "../site-section/site-section";
+@import "../site-input/site-input";
+
+.site-footer {
+
+  @include site-body; //TODO: привести к единому стилю
+  box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05);
+
+  &__content {
+    padding: 100px 9.72% 102px;
+    display: flex;
+    background-color: white;
+    box-shadow: 0px 1px 0px rgba(31, 32, 65, 0.1);
+  }
+
+  &__info-block {
+    max-width: 22.4%;
+    margin-right: 3.5%;
+  }
+
+  .site-logo {
+    display: block; // избавление от line-height
+  }
+
+  &__info-text {
+    margin:  18px 0;
+  }
+
+  &__links-section {
+    display: flex;
+    list-style: none;
+    flex-grow: 1;
+    margin-top: 4px;
+  }
+
+  &__menu {
+    &-block {
+      width: 33.3%;
+    }
+    &-list {
+      padding: 0;
+      margin: 0;
+      margin-top: 8px;
+      list-style: none;
+    }
+    &-item {
+      line-height: 17px;
+      &:not(:last-child) {
+        margin-bottom: 20px;
+      }
+    }
+    &-link {
+      text-decoration: none;
+      color: $site-dark-50;
+    }
+  }
+
+  &__subscription {
+    &-block {
+      max-width: 22.4%;
+      margin-top: 4px;
+    }
+    &-text {
+      margin-top: 4px;
+      margin-bottom: 22px;
+    }
+  }
+
+  &__bottom {
+    display: flex;
+    justify-content: space-between;
+    background-color: white;
+    margin-top: 1px;
+    padding: 23px 9.72%;
+  }
+
+  &__copyright{
+    margin: 0;
+  }
+
+  &__social-links {
+    display: flex;
+    @include background-text-transparent();
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    font-size: 24px;
+    background-image: $primary-gradient;
+  }
+
+  &__social-link {
+    width: 24px;
+    &:not(:last-child) {
+      margin-right: 20px;
+    }
+  }
+}
+
+@media(max-width: 768px) {
+  .site-footer {
+    line-height: 17px;
+    &__content {
+      padding: 120px 9.72% 0;
+    }
+    &__info-block {
+      max-width: 100%;
+      margin: 0 auto;
+    }
+    &__info-text,
+    &__links-section,
+    &__subscription-block {
+      display: none;
+    }
+    &__bottom {
+      text-align: center;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-top: 0;
+      padding: 20px 9.72% 120px;
+    }
+    &__copyright {
+      width: 100%;
+      margin-bottom: 25px;
+    }
+  }
+}

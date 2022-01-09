@@ -453,12 +453,12 @@ template {
   content: "arrow_forward";
 }
 
-.logo-link {
+.site-logo {
   display: inline-block;
   height: 40px;
 }
 
-.main-header {
+.site-header {
   padding: 15px 9.72%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -474,8 +474,7 @@ template {
   line-height: 17px;
   color: rgba(31, 32, 65, 0.5);
 }
-
-.navigation-wrapper {
+.site-header__navigation-wrapper {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -487,8 +486,7 @@ template {
           align-items: center;
   width: 70%;
 }
-
-.site-navigation {
+.site-header__site-navigation {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -501,7 +499,7 @@ template {
           align-items: center;
   margin-right: 2.5%;
 }
-.site-navigation__list {
+.site-header__site-nav-list {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -509,10 +507,10 @@ template {
   padding: 0;
   margin: 0;
 }
-.site-navigation__item:not(:last-child) {
+.site-header__site-nav-item:not(:last-child) {
   margin-right: 20px;
 }
-.site-navigation__link {
+.site-header__nav-link {
   display: -webkit-inline-box;
   display: -ms-inline-flexbox;
   display: inline-flex;
@@ -522,17 +520,16 @@ template {
   text-decoration: none;
   color: rgba(31, 32, 65, 0.5);
 }
-.site-navigation__link_expanded:after {
+.site-header__nav-link_expanded:after {
   font-family: "Material Icons";
   font-size: 24px;
   content: "expand_more";
 }
-.site-navigation__link_active {
+.site-header__nav-link_active {
   font-family: "Montserrat-Bold", sans-serif;
   color: rgba(31, 32, 65, 0.75);
 }
-
-.user-navigation__list {
+.site-header__user-nav-list {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -540,15 +537,15 @@ template {
   padding: 0;
   margin: 0;
 }
-.user-navigation__list_logged {
+.site-header__user-nav-list_logged {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
 }
-.user-navigation__list_logged .user-navigation__item {
+.site-header__user-nav-list_logged .site-header__user-nav-item:first-child {
   margin-left: 18px;
 }
-.user-navigation__list_logged::before {
+.site-header__user-nav-list_logged::before {
   content: " ";
   width: 1px;
   height: 30px;
@@ -556,14 +553,11 @@ template {
       align-self: stretch;
   background-color: rgba(31, 32, 65, 0.1);
 }
-.user-navigation__item {
-  display: inline-block;
-}
-.user-navigation__item:not(:last-child) {
+.site-header__user-nav-item:not(:last-child) {
   margin-right: 20px;
 }
 
-.logo-link {
+.site-logo {
   display: inline-block;
   height: 40px;
 }
