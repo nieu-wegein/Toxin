@@ -1,18 +1,38 @@
-@import "../../../variables/variables";
-@import "../../../normalize";
 @import "../../../fonts/fonts";
+@import "../../../variables/variables";
 @import "../../../components/site-header/site-header";
-@import "../../../components/site-logo/site-logo";
-@import "../../../components/site-button/site-button";
+@import "../../../components/site-footer/site-footer.scss";
+@import "../../../components/search-block/search-block.scss";
 
-
+//Временно для ПП
+body {
+  overflow: -moz-scrollbars-none;
+  -ms-overflow-style: none;
+}
+body::-webkit-scrollbar {
+  width: 0 !important
+}
 
 * {
   box-sizing: border-box;
 }
 
-.site-wrapper {
-  max-width: 1920px;
-  margin: 0 auto;
+
+.main-page-body {
+
 }
 
+.room-selection {
+  padding: 70px 9.72% 0;
+  min-height: 830px;
+  background-image: url("./img/background.png");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+@media (max-width: 768px) {
+  .search-block {
+    margin: 0 auto;
+  }
+}

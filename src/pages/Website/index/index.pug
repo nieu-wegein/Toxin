@@ -1,12 +1,22 @@
-extends ../base
-//- TODO: Проверить ссылку в dist
-block vars
-  -var body = "index"
-  -var title = "Главная"
+include ../../../components/site-header/site-header
+include ../../../components/site-footer/site-footer
+include ../../../components/search-block/search-block
 
-block styles
-  link(rel = "stylesheet" href = "https://fonts.googleapis.com/css?family=Material+Icons&text=expand_more")
+  //- TODO: Проверить ссылку в dist
 
-block content
-  .site-wrapper
-    include ../../../components/site-header/site-header
+doctype html
+html(lang = "en")
+head
+  meta(charset="utf-8")
+  meta(name="viewport" content="initial-scale=1.0, width=device-width")
+  meta(name="keywords", content = "")
+  meta(name="description", content=" ")
+  link(rel = "stylesheet" href="https://fonts.googleapis.com/css?family=Material+Icons")
+  script(src="https://kit.fontawesome.com/a54cde8a02.js" crossorigin="anonymous")
+
+body.main-page
+  +site-header()
+  main.main-page-body
+    section.room-selection
+      +search-block()
+  +site-footer()
