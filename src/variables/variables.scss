@@ -19,13 +19,15 @@ $secondary-gradient: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%);
   font-family: "Montserrat-Bold", sans-serif;
   line-height: 29px;
   margin: 0; //TODO: убрать margin
+  letter-spacing: -0.1px;
 }
 
 %site-h2 {
   color: $site-dark;
   font-size: 19px;
   font-family: "Montserrat-Bold", sans-serif;
-  line-height: 23px;
+  line-height: 24px;
+  letter-spacing: 0.2px;
   margin: 0;
 }
 

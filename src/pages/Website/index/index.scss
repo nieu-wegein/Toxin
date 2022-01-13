@@ -17,18 +17,15 @@ body::-webkit-scrollbar {
   box-sizing: border-box;
 }
 
-
-.main-page-body {
-
-}
-
-.room-selection {
-  padding: 70px 9.72% 0;
-  min-height: 830px;
-  background-image: url("./img/background.png");
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
+.search-offer {
+  &__room-selection {
+    padding: 70px 9.72% 0;
+    min-height: 830px;
+    background-image: url("./img/background.png");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
 }
 
 @media (max-width: 768px) {

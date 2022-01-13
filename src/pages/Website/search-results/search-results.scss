@@ -1,0 +1,72 @@
+@import "../../../fonts/fonts";
+@import "../../../variables/variables";
+@import "../../../components/site-header/site-header";
+@import "../../../components/site-footer/site-footer.scss";
+@import "../../../components/rooms-filter-menu/rooms-filter-menu.scss";
+@import "../../../components/room-card/room-card.scss";
+@import "../../../components/site-pagination/site-pagination";
+
+
+body {
+  overflow: -moz-scrollbars-none;
+  -ms-overflow-style: none;
+}
+body::-webkit-scrollbar {
+  width: 0 !important
+}
+
+* {
+  box-sizing: border-box; //TODO: Изменить логику
+}
+
+$pagination-width: 240px;
+$parent: 100%;
+
+.search-results {
+
+  &__main {
+    display: flex;
+    padding: 30px calc(9.72% - 12px) 70px 9.72%;
+    margin-bottom: 1px;
+    border-bottom: 1px solid $site-dark-25;
+  }
+
+  &__aside {
+    min-height: 1024px;
+  }
+
+  &__rooms-section {
+    padding-left: 59px;
+  }
+
+  &__rooms-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: inline-flex;
+    flex-wrap: wrap;
+    margin-bottom: 41px;
+  }
+
+  &__rooms-item {
+    width: 270px;
+    margin-top: 20.5px;
+    margin-right: 12px;
+  }
+
+  &__pagination-container {
+    margin-left: calc((#{$parent} - #{$pagination-width}) /2 - 12px);
+  }
+}
+
+@media (max-width: 1438px) {
+  .search-results {
+    & .site-section__top {
+      justify-content: center;
+      text-align: center;
+    }
+    &__rooms-list {
+      justify-content: center;
+    }
+  }
+}

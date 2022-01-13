@@ -19,8 +19,8 @@ module.exports = {
         "structural-blocks": PATHS.uikit + '/structural-blocks/structural-blocks.js',
         "index": PATHS.website + '/index/index.js',
         "registration": PATHS.website + '/registration/registration.js',
-        "room-info": PATHS.website + '/room-info/room-info.js',
-        "rooms-list": PATHS.website + '/rooms-list/rooms-list.js'
+        "search-results": PATHS.website + '/search-results/search-results.js',
+        "room-details": PATHS.website + '/room-details/room-details.js'
     },
     output: {
         path: PATHS.dist,
@@ -83,15 +83,15 @@ module.exports = {
         }),
       new HtmlWebpackPlugin(
           {
-              filename: 'rooms-list/rooms-list.html',
-              chunks: ['rooms-list'],
-              template: PATHS.website + 'rooms-list/rooms-list.pug'
+              filename: 'search-results/search-results.html',
+              chunks: ['search-results'],
+              template: PATHS.website + 'search-results/search-results.pug'
           }),
       new HtmlWebpackPlugin(
           {
-              filename: 'room-info/room-info.html',
-              chunks: ['room-info'],
-              template: PATHS.website + 'room-info/room-info.pug'
+              filename: 'room-details/room-details.html',
+              chunks: ['room-details'],
+              template: PATHS.website + 'room-details/room-details.pug'
           }),
       new HtmlWebpackPlugin(
           {

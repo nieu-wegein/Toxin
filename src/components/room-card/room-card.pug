@@ -33,7 +33,8 @@ mixin room-card(id, room)
           span.room-card__price-value !{card.price}
           |  в сутки
       .room-card__rating
-        +rate-button({name: id + "_room-rate", id: id + "_room-rate"})
+        form.room-card__rate-form
+          +rate-button({name: id + "_room-rate", id: id + "_room-rate"})
         p.room-card__testimonial-counter
           span.room-card__testimonial-count !{card.testimonials}
           |  Отзывов

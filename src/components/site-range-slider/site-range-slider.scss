@@ -6,6 +6,7 @@
   display: flex;
   margin-top: 18px;
   width: 100%;
+  z-index: 1;
 
   &__input {
 
@@ -71,5 +72,11 @@
     background: $secondary-gradient;
     height: 6px;
     border-radius: 3px;
+  }
+
+  &+.form-element__description {
+    width: 100%;
+    margin-top: 10px;
+    margin-bottom: 0;
   }
 }

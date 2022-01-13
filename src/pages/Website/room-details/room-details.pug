@@ -1,0 +1,41 @@
+include ../../../components/site-header/site-header
+include ../../../components/site-footer/site-footer
+include ../../../components/features-list/features-list
+include ../../../components/site-section/site-section
+include ../../../components/doughnut-chart/doughnut-chart
+
+//TODO: ненужные загрузки стилей и скриптов
+//TODO: ЗАГОЛОВКИ В СЕКЦИЯХ
+
+
+- const path = "/pages/website/room-details/img/"
+
+doctype html
+html(lang = "en")
+head
+  meta(charset="utf-8")
+  meta(name="viewport" content="initial-scale=1.0, width=device-width")
+  meta(name="keywords", content = "")
+  meta(name="description", content=" ")
+  link(rel = "stylesheet" href="https://fonts.googleapis.com/css?family=Material+Icons")
+  script(src="https://kit.fontawesome.com/a54cde8a02.js" crossorigin="anonymous")
+
+body.room-details
+  +site-header()
+  main.room-details__main
+    section.room-details__photos-section
+      .room-details__photos-column
+        .room-details__photo-container
+          img(class = "room-details__room-photo", src = path + "room888-m.png" alt = "Фотография комнаты")
+      .room-details__photos-column
+        .room-details__photo-container
+          img(class = "room-details__room-photo", src = path + "room888_2-s.png" alt = "Фотография комнаты")
+        .room-details__photo-container
+          img(class = "room-details__room-photo", src = path + "room888_3-s.png" alt = "Фотография комнаты")
+    section.room-details__room-info-section
+      +site-section({h2: "Сведения о номере", classList: "room-details__room-features"})
+        +features-list("comfort", "convenience", "cosiness")
+      +site-section({h2: "Впечатления от номера", classList: "room-details__room-impressions"})
+        +doughnut-chart({great: 130, good: 65, satisfactory: 65, poorly: 0})
+
+  +site-footer()

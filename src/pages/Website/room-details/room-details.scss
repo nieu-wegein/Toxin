@@ -1,0 +1,61 @@
+@import "../../../fonts/fonts";
+@import "../../../variables/variables";
+@import "../../../components/site-header/site-header";
+@import "../../../components/site-footer/site-footer";
+@import "../../../components/features-list/features-list";
+@import "../../../components/doughnut-chart/doughnut-chart.scss";
+
+
+body {
+  overflow: -moz-scrollbars-none;
+  -ms-overflow-style: none;
+}
+body::-webkit-scrollbar {
+  width: 0 !important
+}
+
+.room-details {
+
+  &__main {
+    width: 1440px;
+    margin: 0 auto;
+  }
+
+  &__photos-section {
+    overflow: hidden;
+    height: 485px;
+    display: flex;
+    justify-content: center;
+  }
+
+  &__photos-column {
+    &:nth-child(2) {
+      .room-details__photo-container {
+        height: 50%;
+      }
+    }
+  }
+
+  &__room-photo {
+    width: 100%;
+  }
+
+  &__room-info-section {
+    display: flex;
+    padding: 70px 140px;
+  }
+
+  &__room-features {
+    width: 280px;
+    margin-right: 81px;
+    .features-list {
+      margin-top: 20px;
+    }
+  }
+
+  &__room-impressions {
+    .doughnut-chart {
+      margin-top: 21px;
+    }
+  }
+}

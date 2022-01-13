@@ -84,7 +84,7 @@
     align-items: center;
     justify-content: space-between;
     padding-top: 8px;
-    padding-bottom: 20px;
+    padding-bottom: 14px;
   }
 
   &__room-number {
@@ -132,7 +132,7 @@
       line-height: 14px;
       text-transform: uppercase;
       color: $site-purple;
-      margin-left: 1px;
+      margin-left: 8px;
     }
   }
 }

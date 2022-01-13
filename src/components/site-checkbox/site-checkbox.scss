@@ -1,8 +1,9 @@
+@import "../site-fieldset/site-fieldset";
 
 .site-checkbox {
 
   &:not(:first-child) {
-    margin-top: 12px;
+    margin-top: 13px;
   }
 
   &-list {
@@ -45,6 +46,11 @@
   }
 
   &_rich {
+
+    &:not(:first-child) {
+      margin-top: 9px;
+    }
+
     & .site-checkbox__label {
       font-family: "Montserrat-Bold";
       color: $site-dark-75;
@@ -100,7 +106,8 @@
   }
 
   & .form-element__description {
-    margin-top: 5px;
+    margin: 0;
+    margin-top: 7px;
     padding-left: 30px;
   }
 }

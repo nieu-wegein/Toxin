@@ -1,6 +1,7 @@
 
 <!--TODO: Валидация-->
 <!--TODO: Submit для кнопки-->
+<!--TODO: изменить классы заголовков-->
 <!--TODO: переименовать компоненты, вложить элементы в компоненты--><!DOCTYPE html>
 <html lang="en">
   <head>
@@ -378,15 +379,17 @@
             <div class="site-section__top">
               <h3 class="site-section__h3">Pagination</h3>
             </div>
-            <ul class="site-pagination">
-              <li><a class="site-pagination__link button_primary">1</a></li>
-              <li><a class="site-pagination__link">2</a></li>
-              <li><a class="site-pagination__link">3</a></li>
-              <li><a class="site-pagination__link">...</a></li>
-              <li><a class="site-pagination__link">15</a></li>
-              <li><a class="site-pagination__link button_secondary material-icons">arrow_forward</a></li>
-            </ul>
-            <div class="site-pagination__summary">1 – 12 из 100+ вариантов аренды</div>
+            <div class="site-pagination">
+              <ul class="site-pagination__pages">
+                <li><a class="site-pagination__link button_primary">1</a></li>
+                <li><a class="site-pagination__link">2</a></li>
+                <li><a class="site-pagination__link">3</a></li>
+                <li><a class="site-pagination__link">...</a></li>
+                <li><a class="site-pagination__link">15</a></li>
+                <li><a class="site-pagination__link button_secondary material-icons">arrow_forward</a></li>
+              </ul>
+              <div class="site-pagination__summary">1 – 12 из 100+ вариантов аренды</div>
+            </div>
           </section>
         </div>
         <div class="content__column">
@@ -538,8 +541,8 @@
         <div class="content__column">
           <div class="expandable-checkbox-wrapper">
             <fieldset class="site-fieldset">
-              <legend class="site-fieldset__legend site-fieldset__legend_expand reverse">Expandable checkbox list</legend>
-              <div class="site-fieldset__area site-fieldset__area_expanded">
+              <legend class="site-fieldset__legend site-fieldset__legend_expand">Expandable checkbox list</legend>
+              <div class="site-fieldset__area site-fieldset__area_shrunk">
                 <ul class="site-checkbox-list">
                   <li class="site-checkbox">
                     <input class="site-checkbox__input" type="checkbox" id="breakfast">
@@ -569,8 +572,8 @@
               </div>
             </fieldset>
             <fieldset class="site-fieldset">
-              <legend class="site-fieldset__legend site-fieldset__legend_expand reverse">Expandable checkbox list</legend>
-              <div class="site-fieldset__area site-fieldset__area_expanded">
+              <legend class="site-fieldset__legend site-fieldset__legend_expand">Expandable checkbox list</legend>
+              <div class="site-fieldset__area site-fieldset__area_shrunk">
                 <ul class="site-checkbox-list">
                   <li class="site-checkbox">
                     <input class="site-checkbox__input" type="checkbox" id="breakfast">

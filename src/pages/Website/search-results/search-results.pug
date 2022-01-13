@@ -1,0 +1,47 @@
+include ../../../components/site-header/site-header
+include ../../../components/site-footer/site-footer
+include ../../../components/rooms-filter-menu/rooms-filter-menu
+include ../../../components/room-card/room-card
+include ../../../components/site-pagination/site-pagination
+-
+  const path = "/pages/website/search-results/img/"
+  const roomsList = [
+    {img: path + "room888-s.png", number: "888", price: "9 990₽", testimonials: "145", luxe: true},
+    {img: path + "room840-s.png", number: "840", price: "9 990₽", testimonials: "65"},
+    {img: path + "room980-s.png", number: "980", price: "8 500₽", testimonials: "35", luxe: true},
+    {img: path + "room856-s.png", number: "856", price: "7 300₽", testimonials: "19"},
+    {img: path + "room740-s.png", number: "740", price: "6 000₽", testimonials: "44"},
+    {img: path + "room982-s.png", number: "982", price: "5 800₽", testimonials: "56"},
+    {img: path + "room678-s.png", number: "678", price: "5 500₽", testimonials: "45"},
+    {img: path + "room450-s.png", number: "450", price: "5 300₽", testimonials: "39"},
+    {img: path + "room350-s.png", number: "350", price: "5 000₽", testimonials: "77"},
+    {img: path + "room666-s.png", number: "666", price: "5 000₽", testimonials: "25"},
+    {img: path + "room444-s.png", number: "444", price: "5 000₽", testimonials: "15"},
+    {img: path + "room352-s.png", number: "352", price: "5 000₽", testimonials: "55"}
+  ]
+
+//TODO: Центрировать контейнер
+
+doctype html
+html(lang = "en")
+head
+  meta(charset="utf-8")
+  meta(name="viewport" content="initial-scale=1.0, width=device-width")
+  meta(name="keywords", content = "")
+  meta(name="description", content=" ")
+  link(rel = "stylesheet" href="https://fonts.googleapis.com/css?family=Material+Icons")
+  script(src="https://kit.fontawesome.com/a54cde8a02.js" crossorigin="anonymous")
+
+body.search-results
+  +site-header()
+  main.search-results__main
+    aside.search-results__aside
+      +rooms-filter-menu()
+    +site-section({h1: "Номера, которые мы для вас подобрали", classList: "search-results__rooms-section"})
+      ul.search-results__rooms-list
+        each room, i in roomsList
+          li.search-results__rooms-item
+            +room-card("room" + room.number, roomsList[i])
+      .search-results__pagination-container
+        +site-pagination()
+  +site-footer()

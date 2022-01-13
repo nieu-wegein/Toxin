@@ -3,7 +3,6 @@
 @import "../../../components/site-input/site-input";
 @import "../../../components/site-dropdown/site-dropdown";
 @import "../../../components/site-calendar/site-calendar";
-@import "../../../components/site-fieldset/site-fieldset";
 @import "../../../components/site-checkbox/site-checkbox";
 @import "../../../components/site-radio/site-radio";
 @import "../../../components/site-section/site-section";
@@ -113,14 +112,8 @@
     padding-left: 54px;
 
     //TODO: Исправить
-    .site-fieldset:nth-child(1) .site-fieldset__legend {
-      margin-bottom: 17px;
-    }
     .site-fieldset:nth-child(2) .site-fieldset__legend {
       margin-bottom: 14px;
-    }
-    .site-fieldset:nth-child(3) .site-fieldset__legend {
-      margin-bottom: 13px;
     }
 
     grid-template-rows: 170px 92px 129px 91px;

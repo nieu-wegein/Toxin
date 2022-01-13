@@ -5,8 +5,8 @@ mixin site-fieldset(legend, modifiers)
 
      if (modifiers) {
          if (modifiers.expandable) {
-           legendClassList.push("site-fieldset__legend_expand reverse");
-           areaClassList.push("site-fieldset__area_expanded");
+           legendClassList.push("site-fieldset__legend_expand");
+           areaClassList.push("site-fieldset__area_shrunk");
          }
          if (modifiers.fieldset === "hidden") {
            legendClassList.push("site-fieldset__legend_hidden");

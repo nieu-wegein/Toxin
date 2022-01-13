@@ -1,12 +1,13 @@
 
--
-  const dict = {
-    comfort: ["Комфорт", "Шумопоглощающие стены"],
-    convenience: ["Удобство",  "Окно в каждой из спален"]
-  }
-
-
 mixin features-list(...items)
+
+  -
+    const dict = {
+      comfort: ["Комфорт", "Шумопоглощающие стены"],
+      convenience: ["Удобство", "Окно в каждой из спален"],
+      cosiness : ["Уют", "Номер оснащен камином"]
+    }
+
   dl.features-list
     each item in items
       div(class = ["features-list__wrapper", "features-list__wrapper_" + item])

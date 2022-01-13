@@ -12,6 +12,8 @@
   font-size: 14px;
   line-height: 17px;
   color: $site-dark-50;
+  position: relative;
+  z-index: 1;
 
   &__navigation-wrapper{
     display: flex;

@@ -4,7 +4,8 @@ mixin site-pagination()
 
   -const buttonsList = ["1", "2", "3", "...", "15"]
 
-    ul.site-pagination
+  .site-pagination
+    ul.site-pagination__pages
       li
         a.site-pagination__link.button_primary !{buttonsList[0]}
       -for(let i = 1; i < buttonsList.length; i++)

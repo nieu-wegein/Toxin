@@ -1,0 +1,138 @@
+//@import "../rate-button/rate-button";
+
+.room-card {
+
+  width: 270px;
+  background-color: white;
+  box-shadow: 0px 10px 20px $site-dark-5;
+  border-radius: 4px;
+  overflow: hidden;
+
+  &__image-container{
+    position: relative;
+    overflow: hidden;
+    height: 151px;
+    &:hover {
+      & .room-card__arrow{
+        display: inline-block;
+      }
+    }
+  }
+
+  &__image{
+    width: 100%;
+  }
+
+  &__bullets-block {
+    position: absolute;
+    bottom: 15px;
+    right: 15px;
+    line-height: 7.5px;
+  }
+
+  &__bullet {
+    display: inline-block;
+    vertical-align: top;
+    width: 7.5px;
+    height: 7.5px;
+    border: 1px solid white;
+    border-radius: 50%;
+    &_active {
+      background-color: white;
+    }
+  }
+
+  &__arrow {
+    position: absolute;
+    cursor: pointer;
+    width: 42px;
+    height: 100%;
+    background-color: transparent;
+    font-size: 24px;
+    color: white;
+    border: none;
+    padding: 0;
+    display: none;
+
+    &_left {
+      left: 0;
+      background: linear-gradient(90deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0) 99.99%, rgba(255, 255, 255, 0) 100%);
+    }
+
+    &_right {
+      right: 0;
+      background: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, rgba(0, 0, 0, 0) 0.01%, rgba(0, 0, 0, 0.5) 100%);
+    }
+  }
+
+  &__body {
+    width: 233px;
+    margin: 0 17px 0 20px;
+    padding-top: 21px;
+  }
+
+  &__info {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    padding-bottom: 10px;
+    border-bottom: 1px solid $site-dark-10;
+  }
+
+  &__rating {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 8px;
+    padding-bottom: 14px;
+  }
+
+  &__room-number {
+    font-family: "Montserrat-Bold", sans-serif;
+    font-size: 19px;
+    line-height: 24px;
+    color: $site-dark;
+    margin: 0;
+
+    &:first-letter {
+      font-size: 14px;
+      line-height: 17px;
+      margin-right: 4px;
+    }
+  }
+
+  &__price,
+  &__testimonial-counter {
+    margin: 0;
+    font-family: "Montserrat", sans-serif;
+    line-height: 18px;
+    color: $site-dark-50;
+  }
+
+  &__price {
+    font-size: 12px;
+  }
+
+  &__testimonial-counter {
+    font-size: 14px;
+  }
+
+  &__price-value,
+  &__testimonial-count {
+    font-family: "Montserrat-Bold", sans-serif;
+    font-size: 14px;
+  }
+
+  &_luxe {
+    .room-card__room-number::after {
+      position: relative;
+      top: 1px;
+      content: "Люкс";
+      font-size: 12px;
+      line-height: 14px;
+      text-transform: uppercase;
+      color: $site-purple;
+      margin-left: 1px;
+    }
+  }
+}

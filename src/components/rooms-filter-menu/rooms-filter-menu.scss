@@ -1,0 +1,17 @@
+@import "../site-input/site-input";
+@import "../site-dropdown/site-dropdown";
+@import "../site-range-slider/site-range-slider";
+@import "../site-checkbox/site-checkbox";
+
+
+.rooms-filter-menu {
+  width: 266px;
+
+  display: grid;
+  align-items: start;
+  grid-template-rows: 84px 95px 101px 160px 175px 94px;
+
+  &__checkbox-wrapper {
+    width: 256px;
+  }
+}

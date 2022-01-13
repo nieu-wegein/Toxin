@@ -1,9 +1,13 @@
 .site-pagination {
 
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  display: flex;
+  display: inline-block;
+
+  &__pages {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+  }
 
   &__link {
     display: flex;

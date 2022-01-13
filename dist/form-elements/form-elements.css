@@ -391,13 +391,15 @@ template {
   font-family: "Montserrat-Bold", sans-serif;
   line-height: 29px;
   margin: 0;
+  letter-spacing: -0.1px;
 }
 
 .site-section__h2, .site-calendar__header {
   color: #1f2041;
   font-size: 19px;
   font-family: "Montserrat-Bold", sans-serif;
-  line-height: 23px;
+  line-height: 24px;
+  letter-spacing: 0.2px;
   margin: 0;
 }
 
@@ -998,9 +1000,12 @@ template {
   -webkit-transition: max-height 0.8s ease-in;
   transition: max-height 0.8s ease-in;
 }
+.site-fieldset__area .site-checkbox-list {
+  margin-top: 12px;
+}
 
 .site-checkbox:not(:first-child) {
-  margin-top: 12px;
+  margin-top: 13px;
 }
 .site-checkbox-list {
   list-style: none;
@@ -1039,6 +1044,9 @@ template {
   height: 20px;
   border: 1px solid rgba(31, 32, 65, 0.25);
   border-radius: 4px;
+}
+.site-checkbox_rich:not(:first-child) {
+  margin-top: 9px;
 }
 .site-checkbox_rich .site-checkbox__label {
   font-family: "Montserrat-Bold";
@@ -1086,7 +1094,8 @@ template {
   border-radius: 50%;
 }
 .site-checkbox .form-element__description {
-  margin-top: 5px;
+  margin: 0;
+  margin-top: 7px;
   padding-left: 30px;
 }
 
@@ -1111,6 +1120,59 @@ template {
     left: 25px;
   }
 }
+.site-fieldset {
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  border: none;
+}
+.site-fieldset__legend {
+  margin-bottom: 5px;
+}
+.site-fieldset__legend_expand {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  cursor: pointer;
+}
+.site-fieldset__legend_expand::after {
+  content: "expand_more";
+  font-family: "Material Icons";
+  font-size: 24px;
+  color: rgba(31, 32, 65, 0.5);
+  text-transform: none;
+}
+.site-fieldset__legend_expand.reverse::after {
+  content: "expand_less";
+}
+.site-fieldset__legend_hidden {
+  clip: rect(0 0 0 0);
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+  z-index: -1;
+  position: absolute;
+}
+.site-fieldset__area_shrunk {
+  max-height: 0;
+  margin: 0;
+  overflow: hidden;
+  -webkit-transition: max-height 0.2s ease-out, margin 0.2s;
+  transition: max-height 0.2s ease-out, margin 0.2s;
+}
+.site-fieldset__area_expanded {
+  max-height: 5000px;
+  -webkit-transition: max-height 0.8s ease-in;
+  transition: max-height 0.8s ease-in;
+}
+.site-fieldset__area .site-checkbox-list {
+  margin-top: 12px;
+}
+
 .site-radio {
   display: inline-block;
 }
@@ -1339,6 +1401,7 @@ template {
   display: flex;
   margin-top: 18px;
   width: 100%;
+  z-index: 1;
 }
 .site-range-slider__input {
   -webkit-appearance: none;
@@ -1398,6 +1461,11 @@ template {
   height: 6px;
   border-radius: 3px;
 }
+.site-range-slider + .form-element__description {
+  width: 100%;
+  margin-top: 10px;
+  margin-bottom: 0;
+}
 
 .form-element {
   width: 100%;
@@ -1443,6 +1511,9 @@ template {
 }
 
 .site-pagination {
+  display: inline-block;
+}
+.site-pagination__pages {
   list-style: none;
   padding: 0;
   margin: 0;
@@ -1564,6 +1635,9 @@ template {
 }
 .features-list__wrapper_convenience::before {
   content: "location_city";
+}
+.features-list__wrapper_cosiness::before {
+  content: "whatshot";
 }
 .features-list__termin {
   font-family: Montserrat-Bold;
@@ -1721,14 +1795,8 @@ template {
   padding-left: 54px;
   grid-template-rows: 170px 92px 129px 91px;
 }
-.content__column:nth-child(2) .site-fieldset:nth-child(1) .site-fieldset__legend {
-  margin-bottom: 17px;
-}
 .content__column:nth-child(2) .site-fieldset:nth-child(2) .site-fieldset__legend {
   margin-bottom: 14px;
-}
-.content__column:nth-child(2) .site-fieldset:nth-child(3) .site-fieldset__legend {
-  margin-bottom: 13px;
 }
 .content__column:nth-child(3) {
   grid-template-rows: 88px 309px;

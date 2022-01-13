@@ -12,21 +12,21 @@
 
 /***/ "./src/pages/Website/room-info/room-info.scss":
 /*!****************************************************!*\
-  !*** ./src/pages/Website/room-info/room-info.scss ***!
+  !*** ./src/pages/Website/room-details/room-details.scss ***!
   \****************************************************/
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
-eval("__webpack_require__.r(__webpack_exports__);\n// extracted by mini-css-extract-plugin\n\n\n//# sourceURL=webpack://toxin/./src/pages/Website/room-info/room-info.scss?");
+eval("__webpack_require__.r(__webpack_exports__);\n// extracted by mini-css-extract-plugin\n\n\n//# sourceURL=webpack://toxin/./src/pages/Website/room-details/room-details.scss?");
 
 /***/ }),
 
 /***/ "./src/pages/Website/room-info/room-info.js":
 /*!**************************************************!*\
-  !*** ./src/pages/Website/room-info/room-info.js ***!
+  !*** ./src/pages/Website/room-details/room-details.js ***!
   \**************************************************/
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _room_info_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./room-info.scss */ \"./src/pages/Website/room-info/room-info.scss\");\n\n\n//# sourceURL=webpack://toxin/./src/pages/Website/room-info/room-info.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _room_info_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./room-details.scss */ \"./src/pages/Website/room-details/room-details.scss\");\n\n\n//# sourceURL=webpack://toxin/./src/pages/Website/room-details/room-details.js?");
 
 /***/ })
 

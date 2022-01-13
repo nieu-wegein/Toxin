@@ -14,14 +14,15 @@ $(function() {
   const inputList = $(".site-input");
   inputList[1].value = "This is pretty awesome"
 
-  const likeButtons = $(".like-site-button");
+  const likeButtons = $(".like-button");
+  console.log(likeButtons)
   $(likeButtons[1]).addClass("like-button_active");
   $(likeButtons[2]).addClass("like-button_active");
   $(".like-button__counter", likeButtons[0]).text("2");
   $(".like-button__counter", likeButtons[1]).text("12");
   $(".like-button__counter", likeButtons[2]).text("12");
 
-  const rateButtons = $(".rate-site-button").get();
+  const rateButtons = $(".rate-button").get();
   $("[value='5 stars']", rateButtons[0]).attr("checked", true);
   $("[value='4 stars']", rateButtons[1]).attr("checked", true);
 
@@ -32,5 +33,5 @@ $(function() {
 
   $(".site-dropdown__window", $("#dd-buttons-filled")).show();
 
-  $(".site-fieldset__legend_expand").get()[0].click();
+  $(".site-fieldset__legend_expand").get()[1].click();
 })

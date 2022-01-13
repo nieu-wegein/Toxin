@@ -1,0 +1,815 @@
+
+<!--TODO: изменить классы заголовков-->
+<!--TODO: Валидация-->
+<!--TODO: Submit для кнопки-->
+<!--TODO: Заменить теги секций-->
+<!--TODO: Валидация-->
+<!--TODO: Submit для кнопки-->
+<!--TODO: Слайдер-->
+<!--TODO: переименовать компоненты, вложить элементы в компоненты-->
+<!--TODO: Центрировать контейнер--><!DOCTYPE html>
+<html lang="en"></html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="initial-scale=1.0, width=device-width">
+  <meta name="keywords" content="">
+  <meta name="description" content=" ">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Material+Icons">
+  <script src="https://kit.fontawesome.com/a54cde8a02.js" crossorigin="anonymous"></script>
+<script defer src="../results-page/results-page.js"></script><link href="../results-page/results-page.css" rel="stylesheet"></head>
+<body class="search-results">
+  <header class="site-header">
+<!--TODO: Добавить src по всему проекту--><a class="site-logo" href="index.html"><img class="site-logo__image" src="../img/site-logo.svg" alt="TOXIN логотип"></a>
+    <div class="site-header__navigation-wrapper">
+      <nav class="site-header__site-navigation">
+        <ul class="site-header__site-nav-list">
+          <li class="site-header__site-nav-item"><a class="site-header__nav-link site-header__nav-link_active" href="index.html">О нас</a></li>
+          <li class="site-header__site-nav-item"><a class="site-header__nav-link site-header__nav-link_expanded" href="index.html">Услуги</a></li>
+          <li class="site-header__site-nav-item"><a class="site-header__nav-link" href="index.html">Вакансии</a></li>
+          <li class="site-header__site-nav-item"><a class="site-header__nav-link" href="index.html">Новости</a></li>
+          <li class="site-header__site-nav-item"><a class="site-header__nav-link site-header__nav-link_expanded" href="index.html">Соглашения</a></li>
+        </ul>
+      </nav>
+      <div class="site-header__user-navigation">
+        <ul class="site-header__user-nav-list">
+          <li class="site-header__user-nav-item">
+            <a class="button button_rounded" type="a">Войти</a>
+          </li>
+          <li class="site-header__user-nav-item">
+            <a class="button button_rounded button_primary" type="a">Зарегистрироваться</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </header>
+  <main class="search-results__main">
+    <aside class="search-results__aside">
+      <form class="rooms-filter-menu">
+        <div class="form-element">
+          <div class="form-element__top">
+            <label class="form-element__label" for="filter-dates">Даты пребывания в отеле</label>
+          </div>
+          <div class="site-dropdown site-dropdown_range-calendar" id="filter-dates">
+            <button class="site-dropdown__header" type="button" data-text="ДД.ММ.ГГГГ - ДД.ММ.ГГГГ"><span class="text-area">ДД.ММ.ГГГГ - ДД.ММ.ГГГГ</span><span class="site-dropdown__header-icon material-icons">expand_more</span></button>
+            <div class="site-dropdown__window site-dropdown__window_free" tabindex="-1">
+              <div class="site-calendar site-calendar_range">
+                <div class="site-calendar__header">
+                  <button class="site-calendar__prev-button material-icons" type="button">arrow_back</button><span class="site-calendar__header-text">Август 2019</span>
+                  <button class="site-calendar__next-button material-icons" type="button">arrow_forward</button>
+                </div>
+                <div class="site-calendar__days-section">
+                  <div class="site-calendar__day">Пн</div>
+                  <div class="site-calendar__day">Вт</div>
+                  <div class="site-calendar__day">Ср</div>
+                  <div class="site-calendar__day">Чт</div>
+                  <div class="site-calendar__day">Пт</div>
+                  <div class="site-calendar__day">Сб</div>
+                  <div class="site-calendar__day">Вс</div>
+                </div>
+                <div class="site-calendar__date-section"><span class="site-calendar__date-cell">
+                    <button class="site-calendar__date" type="button">29</button></span><span class="site-calendar__date-cell">
+                    <button class="site-calendar__date" type="button">30</button></span><span class="site-calendar__date-cell">
+                    <button class="site-calendar__date" type="button">31</button></span><span class="site-calendar__date-cell">
+                    <button class="site-calendar__date" type="button">1</button></span><span class="site-calendar__date-cell">
+                    <button class="site-calendar__date" type="button">2</button></span><span class="site-calendar__date-cell">
+                    <button class="site-calendar__date" type="button">3</button></span><span class="site-calendar__date-cell">
+                    <button class="site-calendar__date" type="button">4</button></span><span class="site-calendar__date-cell">
+                    <button class="site-calendar__date" type="button">5</button></span><span class="site-calendar__date-cell">
+                    <button class="site-calendar__date" type="button">6</button></span><span class="site-calendar__date-cell">
+                    <button class="site-calendar__date" type="button">7</button></span><span class="site-calendar__date-cell">
+                    <button class="site-calendar__date" type="button">8</button></span><span class="site-calendar__date-cell">
+                    <button class="site-calendar__date" type="button">9</button></span><span class="site-calendar__date-cell">
+                    <button class="site-calendar__date" type="button">10</button></span><span class="site-calendar__date-cell">
+                    <button class="site-calendar__date" type="button">11</button></span><span class="site-calendar__date-cell">
+                    <button class="site-calendar__date" type="button">12</button></span><span class="site-calendar__date-cell">
+                    <button class="site-calendar__date" type="button">13</button></span><span class="site-calendar__date-cell">
+                    <button class="site-calendar__date" type="button">14</button></span><span class="site-calendar__date-cell">
+                    <button class="site-calendar__date" type="button">15</button></span><span class="site-calendar__date-cell">
+                    <button class="site-calendar__date" type="button">16</button></span><span class="site-calendar__date-cell">
+                    <button class="site-calendar__date" type="button">17</button></span><span class="site-calendar__date-cell">
+                    <button class="site-calendar__date" type="button">18</button></span><span class="site-calendar__date-cell">
+                    <button class="site-calendar__date" type="button">19</button></span><span class="site-calendar__date-cell">
+                    <button class="site-calendar__date" type="button">20</button></span><span class="site-calendar__date-cell">
+                    <button class="site-calendar__date" type="button">21</button></span><span class="site-calendar__date-cell">
+                    <button class="site-calendar__date" type="button">22</button></span><span class="site-calendar__date-cell">
+                    <button class="site-calendar__date" type="button">23</button></span><span class="site-calendar__date-cell">
+                    <button class="site-calendar__date" type="button">24</button></span><span class="site-calendar__date-cell">
+                    <button class="site-calendar__date" type="button">25</button></span><span class="site-calendar__date-cell">
+                    <button class="site-calendar__date" type="button">26</button></span><span class="site-calendar__date-cell">
+                    <button class="site-calendar__date" type="button">27</button></span><span class="site-calendar__date-cell">
+                    <button class="site-calendar__date" type="button">28</button></span><span class="site-calendar__date-cell">
+                    <button class="site-calendar__date" type="button">29</button></span><span class="site-calendar__date-cell">
+                    <button class="site-calendar__date" type="button">30</button></span><span class="site-calendar__date-cell">
+                    <button class="site-calendar__date" type="button">31</button></span><span class="site-calendar__date-cell">
+                    <button class="site-calendar__date" type="button">1</button></span>
+                  <div class="site-calendar__optional-row"><span class="site-calendar__date-cell">
+                      <button class="site-calendar__date" type="button">2</button></span><span class="site-calendar__date-cell">
+                      <button class="site-calendar__date" type="button">3</button></span><span class="site-calendar__date-cell">
+                      <button class="site-calendar__date" type="button">4</button></span><span class="site-calendar__date-cell">
+                      <button class="site-calendar__date" type="button">5</button></span><span class="site-calendar__date-cell">
+                      <button class="site-calendar__date" type="button">6</button></span><span class="site-calendar__date-cell">
+                      <button class="site-calendar__date" type="button">7</button></span><span class="site-calendar__date-cell">
+                      <button class="site-calendar__date" type="button">8</button></span>
+                  </div>
+                </div>
+              </div>
+              <div class="site-dropdown__footer" tabindex="-1">
+                <button class="button site-dropdown__button-clear" type="button">Очистить</button>
+                <button class="button site-dropdown__button-apply" type="button">Применить</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="form-element">
+          <div class="form-element__top">
+            <label class="form-element__label" for="filter-guests">Гости</label>
+          </div>
+          <div class="site-dropdown site-dropdown_counting-dropdown" id="filter-guests">
+            <button class="site-dropdown__header" type="button" data-text="Сколько гостей"><span class="text-area">Сколько гостей</span><span class="site-dropdown__header-icon material-icons">expand_more</span></button>
+            <div class="site-dropdown__window" tabindex="-1">
+              <ul class="site-dropdown__list">
+                <li class="site-dropdown__item" data-value="adults" data-declination="[&quot;гость&quot;,&quot;гостя&quot;,&quot;гостей&quot;]">
+                  <div class="site-dropdown__item-text">Взрослые</div>
+                  <div class="site-dropdown__counter">
+                    <button class="site-dropdown__button-remove" type="button" disabled>-</button><span class="site-dropdown__count">0</span>
+                    <button class="site-dropdown__button-add" type="button">+</button>
+                  </div>
+                </li>
+                <li class="site-dropdown__item" data-value="children" data-declination="[&quot;гость&quot;,&quot;гостя&quot;,&quot;гостей&quot;]">
+                  <div class="site-dropdown__item-text">Дети</div>
+                  <div class="site-dropdown__counter">
+                    <button class="site-dropdown__button-remove" type="button" disabled>-</button><span class="site-dropdown__count">0</span>
+                    <button class="site-dropdown__button-add" type="button">+</button>
+                  </div>
+                </li>
+                <li class="site-dropdown__item" data-value="babies" data-declination="[&quot;гость&quot;,&quot;гостя&quot;,&quot;гостей&quot;]">
+                  <div class="site-dropdown__item-text">Младенцы</div>
+                  <div class="site-dropdown__counter">
+                    <button class="site-dropdown__button-remove" type="button" disabled>-</button><span class="site-dropdown__count">0</span>
+                    <button class="site-dropdown__button-add" type="button">+</button>
+                  </div>
+                </li>
+              </ul>
+              <div class="site-dropdown__footer" tabindex="-1">
+                <button class="button site-dropdown__button-clear" type="button">Очистить</button>
+                <button class="button site-dropdown__button-apply" type="button">Применить</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="form-element">
+          <div class="form-element__top">
+            <label class="form-element__label" for="filter-price">Диапазон цены</label>
+            <div class="form-element__note"><span class="start-range">1</span>₽
+ - <span class="end-range">15485</span>₽
+            </div>
+          </div>
+          <div class="site-range-slider">
+            <div class="site-range-slider__track"></div>
+            <input class="site-range-slider__input" type="range" min="1" max="7743" value="5000" id="filter-price">
+            <div class="site-range-slider__fill"></div>
+            <input class="site-range-slider__input" type="range" min="7744" max="15485" value="10000" id="filter-price-1">
+          </div>
+          <!--TODO: добавить описание во все элементы формы-->
+          <p class="form-element__description">Стоимость за сутки пребывания в номере</p>
+        </div>
+        <fieldset class="site-fieldset">
+          <legend class="site-fieldset__legend">Правила дома</legend>
+          <div class="site-fieldset__area">
+            <ul class="site-checkbox-list">
+              <li class="site-checkbox">
+                <input class="site-checkbox__input" type="checkbox" id="smoking">
+                <label class="site-checkbox__label" for="smoking">Можно курить</label>
+              </li>
+              <li class="site-checkbox">
+                <input class="site-checkbox__input" type="checkbox" id="animals" checked>
+                <label class="site-checkbox__label" for="animals">Можно с питомцами</label>
+              </li>
+              <li class="site-checkbox">
+                <input class="site-checkbox__input" type="checkbox" id="invitation" checked>
+                <label class="site-checkbox__label" for="invitation">Можно пригласить гостей <br> (до 10 человек)</label>
+              </li>
+            </ul>
+          </div>
+        </fieldset>
+        <fieldset class="site-fieldset">
+          <legend class="site-fieldset__legend">Доступность</legend>
+          <div class="site-fieldset__area">
+            <ul class="site-checkbox-list">
+              <li class="site-checkbox site-checkbox_rich">
+                <input class="site-checkbox__input" type="checkbox" id="wide-corridor">
+                <label class="site-checkbox__label" for="wide-corridor">Широкий коридор</label>
+                <p class="form-element__description">Ширина коридоров в номере <br> не менее 91 см.</p>
+              </li>
+              <li class="site-checkbox site-checkbox_rich">
+                <input class="site-checkbox__input" type="checkbox" id="assistant">
+                <label class="site-checkbox__label" for="assistant">Помощник для инвалидов</label>
+                <p class="form-element__description">На 1 этаже вас встретит специалист  и проводит до номера.</p>
+              </li>
+            </ul>
+          </div>
+        </fieldset>
+        <div class="form-element">
+          <div class="form-element__top">
+            <label class="form-element__label" for="amenities">Удобства номера</label>
+          </div>
+          <div class="site-dropdown site-dropdown_counting-dropdown" id="amenities">
+            <button class="site-dropdown__header" type="button" data-text="Комнаты"><span class="text-area">Комнаты</span><span class="site-dropdown__header-icon material-icons">expand_more</span></button>
+            <div class="site-dropdown__window" tabindex="-1">
+              <ul class="site-dropdown__list">
+                <li class="site-dropdown__item" data-value="bedrooms" data-declination="[&quot;спальня&quot;,&quot;спальни&quot;,&quot;спален&quot;]">
+                  <div class="site-dropdown__item-text">Спальни</div>
+                  <div class="site-dropdown__counter">
+                    <button class="site-dropdown__button-remove" type="button" disabled>-</button><span class="site-dropdown__count">0</span>
+                    <button class="site-dropdown__button-add" type="button">+</button>
+                  </div>
+                </li>
+                <li class="site-dropdown__item" data-value="beds" data-declination="[&quot;кровать&quot;,&quot;кровати&quot;,&quot;кроватей&quot;]">
+                  <div class="site-dropdown__item-text">Кровать</div>
+                  <div class="site-dropdown__counter">
+                    <button class="site-dropdown__button-remove" type="button" disabled>-</button><span class="site-dropdown__count">0</span>
+                    <button class="site-dropdown__button-add" type="button">+</button>
+                  </div>
+                </li>
+                <li class="site-dropdown__item" data-value="bathrooms" data-declination="[&quot;ванная комната&quot;,&quot;ванные комнаты&quot;,&quot;ванных комнат&quot;]">
+                  <div class="site-dropdown__item-text">Ванные комнаты</div>
+                  <div class="site-dropdown__counter">
+                    <button class="site-dropdown__button-remove" type="button" disabled>-</button><span class="site-dropdown__count">0</span>
+                    <button class="site-dropdown__button-add" type="button">+</button>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="rooms-filter-menu__checkbox-wrapper">
+          <fieldset class="site-fieldset">
+            <legend class="site-fieldset__legend site-fieldset__legend_expand">Дополнительные удобства</legend>
+            <div class="site-fieldset__area site-fieldset__area_shrunk">
+              <ul class="site-checkbox-list">
+                <li class="site-checkbox">
+                  <input class="site-checkbox__input" type="checkbox" id="breakfast">
+                  <label class="site-checkbox__label" for="breakfast">Завтрак</label>
+                </li>
+                <li class="site-checkbox">
+                  <input class="site-checkbox__input" type="checkbox" id="desk" checked>
+                  <label class="site-checkbox__label" for="desk">Письменный стол</label>
+                </li>
+                <li class="site-checkbox">
+                  <input class="site-checkbox__input" type="checkbox" id="feeding chair" checked>
+                  <label class="site-checkbox__label" for="feeding chair">Стул для кормления</label>
+                </li>
+                <li class="site-checkbox">
+                  <input class="site-checkbox__input" type="checkbox" id="crib" checked>
+                  <label class="site-checkbox__label" for="crib">Кроватка</label>
+                </li>
+                <li class="site-checkbox">
+                  <input class="site-checkbox__input" type="checkbox" id="TV">
+                  <label class="site-checkbox__label" for="TV">Телевизор</label>
+                </li>
+                <li class="site-checkbox">
+                  <input class="site-checkbox__input" type="checkbox" id="shampoo">
+                  <label class="site-checkbox__label" for="shampoo">Шампунь</label>
+                </li>
+              </ul>
+            </div>
+          </fieldset>
+        </div>
+      </form>
+    </aside>
+    <section class="site-section search-results__rooms-section">
+      <div class="site-section__top">
+        <h1 class="site-section__h1">Номера, которые мы для вас подобрали</h1>
+      </div>
+      <ul class="search-results__rooms-list">
+        <li class="search-results__rooms-item">
+          <article class="room-card room-card_luxe" id="room888">
+            <div class="room-card__image-container"><img class="room-card__image" src="/pages/website/results-page/img/room888-s.png" alt="Фотография номера">
+              <button class="room-card__arrow room-card__arrow_left material-icons">chevron_left</button>
+              <button class="room-card__arrow room-card__arrow_right material-icons">chevron_right</button>
+              <div class="room-card__bullets-block">
+                <div class="room-card__bullet room-card__bullet_active"></div>
+                <div class="room-card__bullet"></div>
+                <div class="room-card__bullet"></div>
+                <div class="room-card__bullet"></div>
+              </div>
+            </div>
+            <div class="room-card__body">
+              <div class="room-card__info">
+                <p class="room-card__room-number">№<span class="room-card__room-number-value">888</span></p>
+                <p class="room-card__price"><span class="room-card__price-value">9 990₽</span> в сутки</p>
+              </div>
+              <div class="room-card__rating">
+                <form class="room-card__rate-form">
+                  <div class="rate-button" id="room888_room-rate">
+                    <input class="rate-button__radio" type="radio" id="room888_room-rate_star-5" name="room888_room-rate" value="5 stars">
+                    <label class="rate-button__label material-icons" for="room888_room-rate_star-5"><span class="rate-button__label-text">5 звезд</span></label>
+                    <input class="rate-button__radio" type="radio" id="room888_room-rate_star-4" name="room888_room-rate" value="4 stars">
+                    <label class="rate-button__label material-icons" for="room888_room-rate_star-4"><span class="rate-button__label-text">4 звезды</span></label>
+                    <input class="rate-button__radio" type="radio" id="room888_room-rate_star-3" name="room888_room-rate" value="3 stars">
+                    <label class="rate-button__label material-icons" for="room888_room-rate_star-3"><span class="rate-button__label-text">3 звезды</span></label>
+                    <input class="rate-button__radio" type="radio" id="room888_room-rate_star-2" name="room888_room-rate" value="2 stars">
+                    <label class="rate-button__label material-icons" for="room888_room-rate_star-2"><span class="rate-button__label-text">2 звезды</span></label>
+                    <input class="rate-button__radio" type="radio" id="room888_room-rate_star-1" name="room888_room-rate" value="1 star">
+                    <label class="rate-button__label material-icons" for="room888_room-rate_star-1"><span class="rate-button__label-text">1 звезду</span></label>
+                  </div>
+                </form>
+                <p class="room-card__testimonial-counter"><span class="room-card__testimonial-count">145</span> Отзывов</p>
+              </div>
+            </div>
+          </article>
+        </li>
+        <li class="search-results__rooms-item">
+          <article class="room-card" id="room840">
+            <div class="room-card__image-container"><img class="room-card__image" src="/pages/website/results-page/img/room840-s.png" alt="Фотография номера">
+              <button class="room-card__arrow room-card__arrow_left material-icons">chevron_left</button>
+              <button class="room-card__arrow room-card__arrow_right material-icons">chevron_right</button>
+              <div class="room-card__bullets-block">
+                <div class="room-card__bullet room-card__bullet_active"></div>
+                <div class="room-card__bullet"></div>
+                <div class="room-card__bullet"></div>
+                <div class="room-card__bullet"></div>
+              </div>
+            </div>
+            <div class="room-card__body">
+              <div class="room-card__info">
+                <p class="room-card__room-number">№<span class="room-card__room-number-value">840</span></p>
+                <p class="room-card__price"><span class="room-card__price-value">9 990₽</span> в сутки</p>
+              </div>
+              <div class="room-card__rating">
+                <form class="room-card__rate-form">
+                  <div class="rate-button" id="room840_room-rate">
+                    <input class="rate-button__radio" type="radio" id="room840_room-rate_star-5" name="room840_room-rate" value="5 stars">
+                    <label class="rate-button__label material-icons" for="room840_room-rate_star-5"><span class="rate-button__label-text">5 звезд</span></label>
+                    <input class="rate-button__radio" type="radio" id="room840_room-rate_star-4" name="room840_room-rate" value="4 stars">
+                    <label class="rate-button__label material-icons" for="room840_room-rate_star-4"><span class="rate-button__label-text">4 звезды</span></label>
+                    <input class="rate-button__radio" type="radio" id="room840_room-rate_star-3" name="room840_room-rate" value="3 stars">
+                    <label class="rate-button__label material-icons" for="room840_room-rate_star-3"><span class="rate-button__label-text">3 звезды</span></label>
+                    <input class="rate-button__radio" type="radio" id="room840_room-rate_star-2" name="room840_room-rate" value="2 stars">
+                    <label class="rate-button__label material-icons" for="room840_room-rate_star-2"><span class="rate-button__label-text">2 звезды</span></label>
+                    <input class="rate-button__radio" type="radio" id="room840_room-rate_star-1" name="room840_room-rate" value="1 star">
+                    <label class="rate-button__label material-icons" for="room840_room-rate_star-1"><span class="rate-button__label-text">1 звезду</span></label>
+                  </div>
+                </form>
+                <p class="room-card__testimonial-counter"><span class="room-card__testimonial-count">65</span> Отзывов</p>
+              </div>
+            </div>
+          </article>
+        </li>
+        <li class="search-results__rooms-item">
+          <article class="room-card room-card_luxe" id="room980">
+            <div class="room-card__image-container"><img class="room-card__image" src="/pages/website/results-page/img/room980-s.png" alt="Фотография номера">
+              <button class="room-card__arrow room-card__arrow_left material-icons">chevron_left</button>
+              <button class="room-card__arrow room-card__arrow_right material-icons">chevron_right</button>
+              <div class="room-card__bullets-block">
+                <div class="room-card__bullet room-card__bullet_active"></div>
+                <div class="room-card__bullet"></div>
+                <div class="room-card__bullet"></div>
+                <div class="room-card__bullet"></div>
+              </div>
+            </div>
+            <div class="room-card__body">
+              <div class="room-card__info">
+                <p class="room-card__room-number">№<span class="room-card__room-number-value">980</span></p>
+                <p class="room-card__price"><span class="room-card__price-value">8 500₽</span> в сутки</p>
+              </div>
+              <div class="room-card__rating">
+                <form class="room-card__rate-form">
+                  <div class="rate-button" id="room980_room-rate">
+                    <input class="rate-button__radio" type="radio" id="room980_room-rate_star-5" name="room980_room-rate" value="5 stars">
+                    <label class="rate-button__label material-icons" for="room980_room-rate_star-5"><span class="rate-button__label-text">5 звезд</span></label>
+                    <input class="rate-button__radio" type="radio" id="room980_room-rate_star-4" name="room980_room-rate" value="4 stars">
+                    <label class="rate-button__label material-icons" for="room980_room-rate_star-4"><span class="rate-button__label-text">4 звезды</span></label>
+                    <input class="rate-button__radio" type="radio" id="room980_room-rate_star-3" name="room980_room-rate" value="3 stars">
+                    <label class="rate-button__label material-icons" for="room980_room-rate_star-3"><span class="rate-button__label-text">3 звезды</span></label>
+                    <input class="rate-button__radio" type="radio" id="room980_room-rate_star-2" name="room980_room-rate" value="2 stars">
+                    <label class="rate-button__label material-icons" for="room980_room-rate_star-2"><span class="rate-button__label-text">2 звезды</span></label>
+                    <input class="rate-button__radio" type="radio" id="room980_room-rate_star-1" name="room980_room-rate" value="1 star">
+                    <label class="rate-button__label material-icons" for="room980_room-rate_star-1"><span class="rate-button__label-text">1 звезду</span></label>
+                  </div>
+                </form>
+                <p class="room-card__testimonial-counter"><span class="room-card__testimonial-count">35</span> Отзывов</p>
+              </div>
+            </div>
+          </article>
+        </li>
+        <li class="search-results__rooms-item">
+          <article class="room-card" id="room856">
+            <div class="room-card__image-container"><img class="room-card__image" src="/pages/website/results-page/img/room856-s.png" alt="Фотография номера">
+              <button class="room-card__arrow room-card__arrow_left material-icons">chevron_left</button>
+              <button class="room-card__arrow room-card__arrow_right material-icons">chevron_right</button>
+              <div class="room-card__bullets-block">
+                <div class="room-card__bullet room-card__bullet_active"></div>
+                <div class="room-card__bullet"></div>
+                <div class="room-card__bullet"></div>
+                <div class="room-card__bullet"></div>
+              </div>
+            </div>
+            <div class="room-card__body">
+              <div class="room-card__info">
+                <p class="room-card__room-number">№<span class="room-card__room-number-value">856</span></p>
+                <p class="room-card__price"><span class="room-card__price-value">7 300₽</span> в сутки</p>
+              </div>
+              <div class="room-card__rating">
+                <form class="room-card__rate-form">
+                  <div class="rate-button" id="room856_room-rate">
+                    <input class="rate-button__radio" type="radio" id="room856_room-rate_star-5" name="room856_room-rate" value="5 stars">
+                    <label class="rate-button__label material-icons" for="room856_room-rate_star-5"><span class="rate-button__label-text">5 звезд</span></label>
+                    <input class="rate-button__radio" type="radio" id="room856_room-rate_star-4" name="room856_room-rate" value="4 stars">
+                    <label class="rate-button__label material-icons" for="room856_room-rate_star-4"><span class="rate-button__label-text">4 звезды</span></label>
+                    <input class="rate-button__radio" type="radio" id="room856_room-rate_star-3" name="room856_room-rate" value="3 stars">
+                    <label class="rate-button__label material-icons" for="room856_room-rate_star-3"><span class="rate-button__label-text">3 звезды</span></label>
+                    <input class="rate-button__radio" type="radio" id="room856_room-rate_star-2" name="room856_room-rate" value="2 stars">
+                    <label class="rate-button__label material-icons" for="room856_room-rate_star-2"><span class="rate-button__label-text">2 звезды</span></label>
+                    <input class="rate-button__radio" type="radio" id="room856_room-rate_star-1" name="room856_room-rate" value="1 star">
+                    <label class="rate-button__label material-icons" for="room856_room-rate_star-1"><span class="rate-button__label-text">1 звезду</span></label>
+                  </div>
+                </form>
+                <p class="room-card__testimonial-counter"><span class="room-card__testimonial-count">19</span> Отзывов</p>
+              </div>
+            </div>
+          </article>
+        </li>
+        <li class="search-results__rooms-item">
+          <article class="room-card" id="room740">
+            <div class="room-card__image-container"><img class="room-card__image" src="/pages/website/results-page/img/room740-s.png" alt="Фотография номера">
+              <button class="room-card__arrow room-card__arrow_left material-icons">chevron_left</button>
+              <button class="room-card__arrow room-card__arrow_right material-icons">chevron_right</button>
+              <div class="room-card__bullets-block">
+                <div class="room-card__bullet room-card__bullet_active"></div>
+                <div class="room-card__bullet"></div>
+                <div class="room-card__bullet"></div>
+                <div class="room-card__bullet"></div>
+              </div>
+            </div>
+            <div class="room-card__body">
+              <div class="room-card__info">
+                <p class="room-card__room-number">№<span class="room-card__room-number-value">740</span></p>
+                <p class="room-card__price"><span class="room-card__price-value">6 000₽</span> в сутки</p>
+              </div>
+              <div class="room-card__rating">
+                <form class="room-card__rate-form">
+                  <div class="rate-button" id="room740_room-rate">
+                    <input class="rate-button__radio" type="radio" id="room740_room-rate_star-5" name="room740_room-rate" value="5 stars">
+                    <label class="rate-button__label material-icons" for="room740_room-rate_star-5"><span class="rate-button__label-text">5 звезд</span></label>
+                    <input class="rate-button__radio" type="radio" id="room740_room-rate_star-4" name="room740_room-rate" value="4 stars">
+                    <label class="rate-button__label material-icons" for="room740_room-rate_star-4"><span class="rate-button__label-text">4 звезды</span></label>
+                    <input class="rate-button__radio" type="radio" id="room740_room-rate_star-3" name="room740_room-rate" value="3 stars">
+                    <label class="rate-button__label material-icons" for="room740_room-rate_star-3"><span class="rate-button__label-text">3 звезды</span></label>
+                    <input class="rate-button__radio" type="radio" id="room740_room-rate_star-2" name="room740_room-rate" value="2 stars">
+                    <label class="rate-button__label material-icons" for="room740_room-rate_star-2"><span class="rate-button__label-text">2 звезды</span></label>
+                    <input class="rate-button__radio" type="radio" id="room740_room-rate_star-1" name="room740_room-rate" value="1 star">
+                    <label class="rate-button__label material-icons" for="room740_room-rate_star-1"><span class="rate-button__label-text">1 звезду</span></label>
+                  </div>
+                </form>
+                <p class="room-card__testimonial-counter"><span class="room-card__testimonial-count">44</span> Отзывов</p>
+              </div>
+            </div>
+          </article>
+        </li>
+        <li class="search-results__rooms-item">
+          <article class="room-card" id="room982">
+            <div class="room-card__image-container"><img class="room-card__image" src="/pages/website/results-page/img/room982-s.png" alt="Фотография номера">
+              <button class="room-card__arrow room-card__arrow_left material-icons">chevron_left</button>
+              <button class="room-card__arrow room-card__arrow_right material-icons">chevron_right</button>
+              <div class="room-card__bullets-block">
+                <div class="room-card__bullet room-card__bullet_active"></div>
+                <div class="room-card__bullet"></div>
+                <div class="room-card__bullet"></div>
+                <div class="room-card__bullet"></div>
+              </div>
+            </div>
+            <div class="room-card__body">
+              <div class="room-card__info">
+                <p class="room-card__room-number">№<span class="room-card__room-number-value">982</span></p>
+                <p class="room-card__price"><span class="room-card__price-value">5 800₽</span> в сутки</p>
+              </div>
+              <div class="room-card__rating">
+                <form class="room-card__rate-form">
+                  <div class="rate-button" id="room982_room-rate">
+                    <input class="rate-button__radio" type="radio" id="room982_room-rate_star-5" name="room982_room-rate" value="5 stars">
+                    <label class="rate-button__label material-icons" for="room982_room-rate_star-5"><span class="rate-button__label-text">5 звезд</span></label>
+                    <input class="rate-button__radio" type="radio" id="room982_room-rate_star-4" name="room982_room-rate" value="4 stars">
+                    <label class="rate-button__label material-icons" for="room982_room-rate_star-4"><span class="rate-button__label-text">4 звезды</span></label>
+                    <input class="rate-button__radio" type="radio" id="room982_room-rate_star-3" name="room982_room-rate" value="3 stars">
+                    <label class="rate-button__label material-icons" for="room982_room-rate_star-3"><span class="rate-button__label-text">3 звезды</span></label>
+                    <input class="rate-button__radio" type="radio" id="room982_room-rate_star-2" name="room982_room-rate" value="2 stars">
+                    <label class="rate-button__label material-icons" for="room982_room-rate_star-2"><span class="rate-button__label-text">2 звезды</span></label>
+                    <input class="rate-button__radio" type="radio" id="room982_room-rate_star-1" name="room982_room-rate" value="1 star">
+                    <label class="rate-button__label material-icons" for="room982_room-rate_star-1"><span class="rate-button__label-text">1 звезду</span></label>
+                  </div>
+                </form>
+                <p class="room-card__testimonial-counter"><span class="room-card__testimonial-count">56</span> Отзывов</p>
+              </div>
+            </div>
+          </article>
+        </li>
+        <li class="search-results__rooms-item">
+          <article class="room-card" id="room678">
+            <div class="room-card__image-container"><img class="room-card__image" src="/pages/website/results-page/img/room678-s.png" alt="Фотография номера">
+              <button class="room-card__arrow room-card__arrow_left material-icons">chevron_left</button>
+              <button class="room-card__arrow room-card__arrow_right material-icons">chevron_right</button>
+              <div class="room-card__bullets-block">
+                <div class="room-card__bullet room-card__bullet_active"></div>
+                <div class="room-card__bullet"></div>
+                <div class="room-card__bullet"></div>
+                <div class="room-card__bullet"></div>
+              </div>
+            </div>
+            <div class="room-card__body">
+              <div class="room-card__info">
+                <p class="room-card__room-number">№<span class="room-card__room-number-value">678</span></p>
+                <p class="room-card__price"><span class="room-card__price-value">5 500₽</span> в сутки</p>
+              </div>
+              <div class="room-card__rating">
+                <form class="room-card__rate-form">
+                  <div class="rate-button" id="room678_room-rate">
+                    <input class="rate-button__radio" type="radio" id="room678_room-rate_star-5" name="room678_room-rate" value="5 stars">
+                    <label class="rate-button__label material-icons" for="room678_room-rate_star-5"><span class="rate-button__label-text">5 звезд</span></label>
+                    <input class="rate-button__radio" type="radio" id="room678_room-rate_star-4" name="room678_room-rate" value="4 stars">
+                    <label class="rate-button__label material-icons" for="room678_room-rate_star-4"><span class="rate-button__label-text">4 звезды</span></label>
+                    <input class="rate-button__radio" type="radio" id="room678_room-rate_star-3" name="room678_room-rate" value="3 stars">
+                    <label class="rate-button__label material-icons" for="room678_room-rate_star-3"><span class="rate-button__label-text">3 звезды</span></label>
+                    <input class="rate-button__radio" type="radio" id="room678_room-rate_star-2" name="room678_room-rate" value="2 stars">
+                    <label class="rate-button__label material-icons" for="room678_room-rate_star-2"><span class="rate-button__label-text">2 звезды</span></label>
+                    <input class="rate-button__radio" type="radio" id="room678_room-rate_star-1" name="room678_room-rate" value="1 star">
+                    <label class="rate-button__label material-icons" for="room678_room-rate_star-1"><span class="rate-button__label-text">1 звезду</span></label>
+                  </div>
+                </form>
+                <p class="room-card__testimonial-counter"><span class="room-card__testimonial-count">45</span> Отзывов</p>
+              </div>
+            </div>
+          </article>
+        </li>
+        <li class="search-results__rooms-item">
+          <article class="room-card" id="room450">
+            <div class="room-card__image-container"><img class="room-card__image" src="/pages/website/results-page/img/room450-s.png" alt="Фотография номера">
+              <button class="room-card__arrow room-card__arrow_left material-icons">chevron_left</button>
+              <button class="room-card__arrow room-card__arrow_right material-icons">chevron_right</button>
+              <div class="room-card__bullets-block">
+                <div class="room-card__bullet room-card__bullet_active"></div>
+                <div class="room-card__bullet"></div>
+                <div class="room-card__bullet"></div>
+                <div class="room-card__bullet"></div>
+              </div>
+            </div>
+            <div class="room-card__body">
+              <div class="room-card__info">
+                <p class="room-card__room-number">№<span class="room-card__room-number-value">450</span></p>
+                <p class="room-card__price"><span class="room-card__price-value">5 300₽</span> в сутки</p>
+              </div>
+              <div class="room-card__rating">
+                <form class="room-card__rate-form">
+                  <div class="rate-button" id="room450_room-rate">
+                    <input class="rate-button__radio" type="radio" id="room450_room-rate_star-5" name="room450_room-rate" value="5 stars">
+                    <label class="rate-button__label material-icons" for="room450_room-rate_star-5"><span class="rate-button__label-text">5 звезд</span></label>
+                    <input class="rate-button__radio" type="radio" id="room450_room-rate_star-4" name="room450_room-rate" value="4 stars">
+                    <label class="rate-button__label material-icons" for="room450_room-rate_star-4"><span class="rate-button__label-text">4 звезды</span></label>
+                    <input class="rate-button__radio" type="radio" id="room450_room-rate_star-3" name="room450_room-rate" value="3 stars">
+                    <label class="rate-button__label material-icons" for="room450_room-rate_star-3"><span class="rate-button__label-text">3 звезды</span></label>
+                    <input class="rate-button__radio" type="radio" id="room450_room-rate_star-2" name="room450_room-rate" value="2 stars">
+                    <label class="rate-button__label material-icons" for="room450_room-rate_star-2"><span class="rate-button__label-text">2 звезды</span></label>
+                    <input class="rate-button__radio" type="radio" id="room450_room-rate_star-1" name="room450_room-rate" value="1 star">
+                    <label class="rate-button__label material-icons" for="room450_room-rate_star-1"><span class="rate-button__label-text">1 звезду</span></label>
+                  </div>
+                </form>
+                <p class="room-card__testimonial-counter"><span class="room-card__testimonial-count">39</span> Отзывов</p>
+              </div>
+            </div>
+          </article>
+        </li>
+        <li class="search-results__rooms-item">
+          <article class="room-card" id="room350">
+            <div class="room-card__image-container"><img class="room-card__image" src="/pages/website/results-page/img/room350-s.png" alt="Фотография номера">
+              <button class="room-card__arrow room-card__arrow_left material-icons">chevron_left</button>
+              <button class="room-card__arrow room-card__arrow_right material-icons">chevron_right</button>
+              <div class="room-card__bullets-block">
+                <div class="room-card__bullet room-card__bullet_active"></div>
+                <div class="room-card__bullet"></div>
+                <div class="room-card__bullet"></div>
+                <div class="room-card__bullet"></div>
+              </div>
+            </div>
+            <div class="room-card__body">
+              <div class="room-card__info">
+                <p class="room-card__room-number">№<span class="room-card__room-number-value">350</span></p>
+                <p class="room-card__price"><span class="room-card__price-value">5 000₽</span> в сутки</p>
+              </div>
+              <div class="room-card__rating">
+                <form class="room-card__rate-form">
+                  <div class="rate-button" id="room350_room-rate">
+                    <input class="rate-button__radio" type="radio" id="room350_room-rate_star-5" name="room350_room-rate" value="5 stars">
+                    <label class="rate-button__label material-icons" for="room350_room-rate_star-5"><span class="rate-button__label-text">5 звезд</span></label>
+                    <input class="rate-button__radio" type="radio" id="room350_room-rate_star-4" name="room350_room-rate" value="4 stars">
+                    <label class="rate-button__label material-icons" for="room350_room-rate_star-4"><span class="rate-button__label-text">4 звезды</span></label>
+                    <input class="rate-button__radio" type="radio" id="room350_room-rate_star-3" name="room350_room-rate" value="3 stars">
+                    <label class="rate-button__label material-icons" for="room350_room-rate_star-3"><span class="rate-button__label-text">3 звезды</span></label>
+                    <input class="rate-button__radio" type="radio" id="room350_room-rate_star-2" name="room350_room-rate" value="2 stars">
+                    <label class="rate-button__label material-icons" for="room350_room-rate_star-2"><span class="rate-button__label-text">2 звезды</span></label>
+                    <input class="rate-button__radio" type="radio" id="room350_room-rate_star-1" name="room350_room-rate" value="1 star">
+                    <label class="rate-button__label material-icons" for="room350_room-rate_star-1"><span class="rate-button__label-text">1 звезду</span></label>
+                  </div>
+                </form>
+                <p class="room-card__testimonial-counter"><span class="room-card__testimonial-count">77</span> Отзывов</p>
+              </div>
+            </div>
+          </article>
+        </li>
+        <li class="search-results__rooms-item">
+          <article class="room-card" id="room666">
+            <div class="room-card__image-container"><img class="room-card__image" src="/pages/website/results-page/img/room666-s.png" alt="Фотография номера">
+              <button class="room-card__arrow room-card__arrow_left material-icons">chevron_left</button>
+              <button class="room-card__arrow room-card__arrow_right material-icons">chevron_right</button>
+              <div class="room-card__bullets-block">
+                <div class="room-card__bullet room-card__bullet_active"></div>
+                <div class="room-card__bullet"></div>
+                <div class="room-card__bullet"></div>
+                <div class="room-card__bullet"></div>
+              </div>
+            </div>
+            <div class="room-card__body">
+              <div class="room-card__info">
+                <p class="room-card__room-number">№<span class="room-card__room-number-value">666</span></p>
+                <p class="room-card__price"><span class="room-card__price-value">5 000₽</span> в сутки</p>
+              </div>
+              <div class="room-card__rating">
+                <form class="room-card__rate-form">
+                  <div class="rate-button" id="room666_room-rate">
+                    <input class="rate-button__radio" type="radio" id="room666_room-rate_star-5" name="room666_room-rate" value="5 stars">
+                    <label class="rate-button__label material-icons" for="room666_room-rate_star-5"><span class="rate-button__label-text">5 звезд</span></label>
+                    <input class="rate-button__radio" type="radio" id="room666_room-rate_star-4" name="room666_room-rate" value="4 stars">
+                    <label class="rate-button__label material-icons" for="room666_room-rate_star-4"><span class="rate-button__label-text">4 звезды</span></label>
+                    <input class="rate-button__radio" type="radio" id="room666_room-rate_star-3" name="room666_room-rate" value="3 stars">
+                    <label class="rate-button__label material-icons" for="room666_room-rate_star-3"><span class="rate-button__label-text">3 звезды</span></label>
+                    <input class="rate-button__radio" type="radio" id="room666_room-rate_star-2" name="room666_room-rate" value="2 stars">
+                    <label class="rate-button__label material-icons" for="room666_room-rate_star-2"><span class="rate-button__label-text">2 звезды</span></label>
+                    <input class="rate-button__radio" type="radio" id="room666_room-rate_star-1" name="room666_room-rate" value="1 star">
+                    <label class="rate-button__label material-icons" for="room666_room-rate_star-1"><span class="rate-button__label-text">1 звезду</span></label>
+                  </div>
+                </form>
+                <p class="room-card__testimonial-counter"><span class="room-card__testimonial-count">25</span> Отзывов</p>
+              </div>
+            </div>
+          </article>
+        </li>
+        <li class="search-results__rooms-item">
+          <article class="room-card" id="room444">
+            <div class="room-card__image-container"><img class="room-card__image" src="/pages/website/results-page/img/room444-s.png" alt="Фотография номера">
+              <button class="room-card__arrow room-card__arrow_left material-icons">chevron_left</button>
+              <button class="room-card__arrow room-card__arrow_right material-icons">chevron_right</button>
+              <div class="room-card__bullets-block">
+                <div class="room-card__bullet room-card__bullet_active"></div>
+                <div class="room-card__bullet"></div>
+                <div class="room-card__bullet"></div>
+                <div class="room-card__bullet"></div>
+              </div>
+            </div>
+            <div class="room-card__body">
+              <div class="room-card__info">
+                <p class="room-card__room-number">№<span class="room-card__room-number-value">444</span></p>
+                <p class="room-card__price"><span class="room-card__price-value">5 000₽</span> в сутки</p>
+              </div>
+              <div class="room-card__rating">
+                <form class="room-card__rate-form">
+                  <div class="rate-button" id="room444_room-rate">
+                    <input class="rate-button__radio" type="radio" id="room444_room-rate_star-5" name="room444_room-rate" value="5 stars">
+                    <label class="rate-button__label material-icons" for="room444_room-rate_star-5"><span class="rate-button__label-text">5 звезд</span></label>
+                    <input class="rate-button__radio" type="radio" id="room444_room-rate_star-4" name="room444_room-rate" value="4 stars">
+                    <label class="rate-button__label material-icons" for="room444_room-rate_star-4"><span class="rate-button__label-text">4 звезды</span></label>
+                    <input class="rate-button__radio" type="radio" id="room444_room-rate_star-3" name="room444_room-rate" value="3 stars">
+                    <label class="rate-button__label material-icons" for="room444_room-rate_star-3"><span class="rate-button__label-text">3 звезды</span></label>
+                    <input class="rate-button__radio" type="radio" id="room444_room-rate_star-2" name="room444_room-rate" value="2 stars">
+                    <label class="rate-button__label material-icons" for="room444_room-rate_star-2"><span class="rate-button__label-text">2 звезды</span></label>
+                    <input class="rate-button__radio" type="radio" id="room444_room-rate_star-1" name="room444_room-rate" value="1 star">
+                    <label class="rate-button__label material-icons" for="room444_room-rate_star-1"><span class="rate-button__label-text">1 звезду</span></label>
+                  </div>
+                </form>
+                <p class="room-card__testimonial-counter"><span class="room-card__testimonial-count">15</span> Отзывов</p>
+              </div>
+            </div>
+          </article>
+        </li>
+        <li class="search-results__rooms-item">
+          <article class="room-card" id="room352">
+            <div class="room-card__image-container"><img class="room-card__image" src="/pages/website/results-page/img/room352-s.png" alt="Фотография номера">
+              <button class="room-card__arrow room-card__arrow_left material-icons">chevron_left</button>
+              <button class="room-card__arrow room-card__arrow_right material-icons">chevron_right</button>
+              <div class="room-card__bullets-block">
+                <div class="room-card__bullet room-card__bullet_active"></div>
+                <div class="room-card__bullet"></div>
+                <div class="room-card__bullet"></div>
+                <div class="room-card__bullet"></div>
+              </div>
+            </div>
+            <div class="room-card__body">
+              <div class="room-card__info">
+                <p class="room-card__room-number">№<span class="room-card__room-number-value">352</span></p>
+                <p class="room-card__price"><span class="room-card__price-value">5 000₽</span> в сутки</p>
+              </div>
+              <div class="room-card__rating">
+                <form class="room-card__rate-form">
+                  <div class="rate-button" id="room352_room-rate">
+                    <input class="rate-button__radio" type="radio" id="room352_room-rate_star-5" name="room352_room-rate" value="5 stars">
+                    <label class="rate-button__label material-icons" for="room352_room-rate_star-5"><span class="rate-button__label-text">5 звезд</span></label>
+                    <input class="rate-button__radio" type="radio" id="room352_room-rate_star-4" name="room352_room-rate" value="4 stars">
+                    <label class="rate-button__label material-icons" for="room352_room-rate_star-4"><span class="rate-button__label-text">4 звезды</span></label>
+                    <input class="rate-button__radio" type="radio" id="room352_room-rate_star-3" name="room352_room-rate" value="3 stars">
+                    <label class="rate-button__label material-icons" for="room352_room-rate_star-3"><span class="rate-button__label-text">3 звезды</span></label>
+                    <input class="rate-button__radio" type="radio" id="room352_room-rate_star-2" name="room352_room-rate" value="2 stars">
+                    <label class="rate-button__label material-icons" for="room352_room-rate_star-2"><span class="rate-button__label-text">2 звезды</span></label>
+                    <input class="rate-button__radio" type="radio" id="room352_room-rate_star-1" name="room352_room-rate" value="1 star">
+                    <label class="rate-button__label material-icons" for="room352_room-rate_star-1"><span class="rate-button__label-text">1 звезду</span></label>
+                  </div>
+                </form>
+                <p class="room-card__testimonial-counter"><span class="room-card__testimonial-count">55</span> Отзывов</p>
+              </div>
+            </div>
+          </article>
+        </li>
+      </ul>
+      <div class="search-results__pagination-container">
+        <div class="site-pagination">
+          <ul class="site-pagination__pages">
+            <li><a class="site-pagination__link button_primary">1</a></li>
+            <li><a class="site-pagination__link">2</a></li>
+            <li><a class="site-pagination__link">3</a></li>
+            <li><a class="site-pagination__link">...</a></li>
+            <li><a class="site-pagination__link">15</a></li>
+            <li><a class="site-pagination__link button_secondary material-icons">arrow_forward</a></li>
+          </ul>
+          <div class="site-pagination__summary">1 – 12 из 100+ вариантов аренды</div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer class="site-footer">
+    <div class="site-footer__content">
+      <div class="site-footer__info-block">
+<!--TODO: Добавить src по всему проекту--><a class="site-logo" href="index.html"><img class="site-logo__image" src="../img/site-logo.svg" alt="TOXIN логотип"></a>
+        <p class="site-footer__info-text">Бронирование номеров в лучшем отеле 2019 года по версии ассоциации «Отельные взгляды»</p>
+      </div>
+      <div class="site-footer__links-section">
+        <section class="site-section site-footer__menu-block">
+          <div class="site-section__top">
+            <h3 class="site-section__h3">Навигация</h3>
+          </div>
+          <ul class="site-footer__menu-list">
+            <li class="site-footer__menu-item"><a class="site-footer__menu-link" href="index.html">О нас</a></li>
+            <li class="site-footer__menu-item"><a class="site-footer__menu-link" href="index.html">Новости</a></li>
+            <li class="site-footer__menu-item"><a class="site-footer__menu-link" href="index.html">Служба поддержки</a></li>
+            <li class="site-footer__menu-item"><a class="site-footer__menu-link" href="index.html">Услуги</a></li>
+          </ul>
+        </section>
+        <section class="site-section site-footer__menu-block">
+          <div class="site-section__top">
+            <h3 class="site-section__h3">О нас</h3>
+          </div>
+          <ul class="site-footer__menu-list">
+            <li class="site-footer__menu-item"><a class="site-footer__menu-link" href="index.html">О сервисе</a></li>
+            <li class="site-footer__menu-item"><a class="site-footer__menu-link" href="index.html">Наша команда</a></li>
+            <li class="site-footer__menu-item"><a class="site-footer__menu-link" href="index.html">Вакансии</a></li>
+            <li class="site-footer__menu-item"><a class="site-footer__menu-link" href="index.html">Инвесторы</a></li>
+          </ul>
+        </section>
+        <section class="site-section site-footer__menu-block">
+          <div class="site-section__top">
+            <h3 class="site-section__h3">Служба поддержки</h3>
+          </div>
+          <ul class="site-footer__menu-list">
+            <li class="site-footer__menu-item"><a class="site-footer__menu-link" href="index.html">Соглашения</a></li>
+            <li class="site-footer__menu-item"><a class="site-footer__menu-link" href="index.html">Сообщества</a></li>
+            <li class="site-footer__menu-item"><a class="site-footer__menu-link" href="index.html">Связь с нами</a></li>
+          </ul>
+        </section>
+      </div>
+      <section class="site-section site-footer__subscription-block">
+        <div class="site-section__top">
+          <h3 class="site-section__h3">Подписка</h3>
+        </div>
+        <p class="site-footer__subscription-text">Получайте специальные предложения и новости сервиса</p>
+        <form class="site-footer__subscription-form">
+          <div class="form-element">
+            <div class="form-element__top form-element__top_hidden">
+              <label class="form-element__label">Подписка</label>
+            </div>
+            <div class="site-input-wrapper">
+              <input class="site-input site-input_submit" type="text" placeholder="Email">
+              <button class="site-input__button material-icons">arrow_forward</button>
+            </div>
+          </div>
+        </form>
+      </section>
+    </div>
+    <div class="site-footer__bottom">
+      <p class="site-footer__copyright">Copyright © 2018 Toxin отель. Все права защищены.</p>
+      <ul class="site-footer__social-links">
+        <li class="site-footer__social-link"><a class="social-link" href="https://twitter.com"><i class = 'fab fa-twitter'></i></a>
+        </li>
+        <li class="site-footer__social-link"><a class="social-link" href="https://facebook.com"><i class = 'fab fa-facebook-square'></i></a>
+        </li>
+        <li class="site-footer__social-link"><a class="social-link" href="https://instagram.com"><i class = 'fab fa-instagram'> </i></a>
+        </li>
+      </ul>
+    </div>
+  </footer>
+</body>
