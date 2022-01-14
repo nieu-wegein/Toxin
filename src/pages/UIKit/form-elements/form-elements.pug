@@ -122,6 +122,12 @@ include ../../../components/site-testimonial/site-testimonial
     {type: "button", text: "Перейти к оплате", modifiers: {rounded: true, primary: true, flexible: true, icon: true}}
   ]
 
+  const testimonialsList = [{
+    name: "Мурад Сарафанов", date: "5 дней назад",
+    text: "Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару  — никто не жаловался из соседей.",
+    img: path + "user1.png"
+  }]
+
 doctype html
 html(lang = "en")
   head
@@ -190,4 +196,4 @@ html(lang = "en")
         .content__column
           +features-list("comfort", "convenience")
         .content__column
-          +site-testimonial()
+          +site-testimonial(testimonialsList[0])

@@ -384,7 +384,7 @@ template {
   src: local(""), url(../ed42f12c8204ea6029e6.woff) format("woff"), url(../8053470a105c34478b57.ttf) format("truetype"), url(../fac85a3030008d30b0b8.svg#Montserrat) format("svg");
   /* Legacy iOS */
 }
-.search-block__heading, .site-section__h1 {
+.search-block__heading, .site-section__heading_h1 {
   color: #1f2041;
   font-size: 24px;
   font-family: "Montserrat-Bold", sans-serif;
@@ -393,7 +393,7 @@ template {
   letter-spacing: -0.1px;
 }
 
-.site-calendar__header, .site-section__h2 {
+.site-calendar__header, .site-section__heading_h2 {
   color: #1f2041;
   font-size: 19px;
   font-family: "Montserrat-Bold", sans-serif;
@@ -402,7 +402,7 @@ template {
   margin: 0;
 }
 
-.form-element__label, .site-section__h3 {
+.form-element__label, .site-section__heading_h3 {
   color: #1f2041;
   font-size: 12px;
   font-family: "Montserrat-Bold", sans-serif;
@@ -608,18 +608,22 @@ template {
   color: rgba(31, 32, 65, 0.5);
   font-family: "Montserrat", sans-serif;
   font-size: 14px;
-  line-height: 24px;
+  line-height: 14px;
   letter-spacing: -0.1px;
 }
-.site-section__h1 {
+.site-section__heading {
   margin: 0;
 }
-.site-section__h2 {
-  margin: 0;
-}
-.site-section__h3 {
-  margin: 0;
+.site-section__heading_h3 {
   margin-bottom: 15px;
+}
+.site-section__heading_hidden {
+  clip: rect(0 0 0 0);
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+  z-index: -1;
+  position: absolute;
 }
 
 .form-element {
@@ -801,13 +805,13 @@ template {
   margin: 0;
 }
 .site-footer__social-links {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
   -webkit-background-clip: text;
   -moz-background-clip: text;
   -webkit-text-fill-color: transparent;
   -webkit-text-stroke: transparent;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   list-style: none;
   margin: 0;
   padding: 0;

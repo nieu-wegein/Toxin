@@ -10,7 +10,10 @@
   &__item {
     padding-left: 20px;
     position: relative;
-    margin-bottom: 10px;
+
+    &:not(:last-child) {
+      margin-bottom: 10px;
+    }
 
     &::before {
       content: " ";

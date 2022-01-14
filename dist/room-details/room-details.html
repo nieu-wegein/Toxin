@@ -4,8 +4,12 @@
 <!--TODO: Submit для кнопки-->
 <!--TODO: Заменить теги секций-->
 <!--TODO: изменить классы заголовков-->
+<!--TODO: Убрать общие названия классов и id в блоках-->
+<!--TODO: ИТОГО-->
+<!--TODO: Кнопки вместо псевдоэлементов-->
 <!--TODO: ненужные загрузки стилей и скриптов-->
-<!--TODO: ЗАГОЛОВКИ В СЕКЦИЯХ--><!DOCTYPE html>
+<!--TODO: ЗАГОЛОВКИ В СЕКЦИЯХ-->
+<!--TODO: вынести данные на страницы--><!DOCTYPE html>
 <html lang="en"></html>
 <head>
   <meta charset="utf-8">
@@ -31,57 +35,55 @@
       <div class="site-header__user-navigation">
         <ul class="site-header__user-nav-list">
           <li class="site-header__user-nav-item">
-            <a class="button button_rounded" type="a">Войти
-              <!--TODO: = Unbuffered code-->
-              <!--TODO: Заменить интерполяцию на # там, куда приходят данные из-вне-->
-            </a>
+            <a class="button button_rounded" type="a">Войти</a>
           </li>
           <li class="site-header__user-nav-item">
-            <a class="button button_rounded button_primary" type="a">Зарегистрироваться
-              <!--TODO: = Unbuffered code-->
-              <!--TODO: Заменить интерполяцию на # там, куда приходят данные из-вне-->
-            </a>
+            <a class="button button_rounded button_primary" type="a">Зарегистрироваться</a>
           </li>
         </ul>
       </div>
     </div>
   </header>
-  <main class="room-details__main">
-    <section class="room-details__photos-section">
-      <div class="room-details__photos-column">
-        <div class="room-details__photo-container"><img class="room-details__room-photo" src="/pages/website/room-details/img/room888-m.png" alt="Фотография комнаты"></div>
-      </div>
-      <div class="room-details__photos-column">
-        <div class="room-details__photo-container"><img class="room-details__room-photo" src="/pages/website/room-details/img/room888_2-s.png" alt="Фотография комнаты"></div>
-        <div class="room-details__photo-container"><img class="room-details__room-photo" src="/pages/website/room-details/img/room888_3-s.png" alt="Фотография комнаты"></div>
-      </div>
-    </section>
-    <section class="room-details__room-info-section">
-      <section class="site-section room-details__room-features">
+  <div class="room-details__main-wrapper">
+    <main class="room-details__main">
+      <section class="site-section room-details__photos-section">
         <div class="site-section__top">
-          <h2 class="site-section__h2">Сведения о номере</h2>
+          <h2 class="site-section__heading site-section__heading_hidden site-section__heading_h2">Фотографии номера</h2>
         </div>
-        <dl class="features-list">
-          <div class="features-list__wrapper features-list__wrapper_comfort">
-            <dt class="features-list__termin">Комфорт</dt>
-            <dd class="features-list__description">Шумопоглощающие стены</dd>
-          </div>
-          <div class="features-list__wrapper features-list__wrapper_convenience">
-            <dt class="features-list__termin">Удобство</dt>
-            <dd class="features-list__description">Окно в каждой из спален</dd>
-          </div>
-          <div class="features-list__wrapper features-list__wrapper_cosiness">
-            <dt class="features-list__termin">Уют</dt>
-            <dd class="features-list__description">Номер оснащен камином</dd>
-          </div>
-        </dl>
+        <div class="room-details__photos-column">
+          <div class="room-details__photo-container"><img class="room-details__room-photo" src="/pages/website/room-details/img/room888-m.png" alt="Фотография комнаты"></div>
+        </div>
+        <div class="room-details__photos-column">
+          <div class="room-details__photo-container"><img class="room-details__room-photo" src="/pages/website/room-details/img/room888_2-s.png" alt="Фотография комнаты"></div>
+          <div class="room-details__photo-container"><img class="room-details__room-photo" src="/pages/website/room-details/img/room888_3-s.png" alt="Фотография комнаты"></div>
+        </div>
       </section>
-      <section class="site-section room-details__room-impressions">
-        <div class="site-section__top">
-          <h2 class="site-section__h2">Впечатления от номера</h2>
-        </div>
-        <div class="doughnut-chart">
-          <figure class="doughnut-chart__chart"><svg width="120" height="120" xmlns="http://www.w3.org/2000/svg">
+      <div class="room-details__main-info-wrapper">
+        <section class="site-section room-details__room-features">
+          <div class="site-section__top">
+            <h2 class="site-section__heading site-section__heading_h2">Сведения о номере</h2>
+          </div>
+          <dl class="features-list">
+            <div class="features-list__wrapper features-list__wrapper_comfort">
+              <dt class="features-list__termin">Комфорт</dt>
+              <dd class="features-list__description">Шумопоглощающие стены</dd>
+            </div>
+            <div class="features-list__wrapper features-list__wrapper_convenience">
+              <dt class="features-list__termin">Удобство</dt>
+              <dd class="features-list__description">Окно в каждой из спален</dd>
+            </div>
+            <div class="features-list__wrapper features-list__wrapper_cosiness">
+              <dt class="features-list__termin">Уют</dt>
+              <dd class="features-list__description">Номер оснащен камином</dd>
+            </div>
+          </dl>
+        </section>
+        <section class="site-section room-details__room-impressions">
+          <div class="site-section__top">
+            <h2 class="site-section__heading site-section__heading_h2">Впечатления от номера</h2>
+          </div>
+          <div class="doughnut-chart">
+            <figure class="doughnut-chart__chart"><svg width="120" height="120" xmlns="http://www.w3.org/2000/svg">
 <defs>
 <linearGradient id="poorly">
 <stop offset="0%" stop-color="#3D4975" />
@@ -115,31 +117,260 @@
 <text class="doughnut-chart__votes-count" x="50%" y="49%" text-anchor="middle" font-family="Montserrat-Bold, sans-serif" font-size="24" fill = "#BC9CFF">260</text>
 <text class="doughnut-chart__votes-span" x="50%" y="64%" text-anchor="middle" font-family="Montserrat-Bold, sans-serif" font-size="15"  fill = "#BC9CFF">голосов</text>
 </svg>
-            <figcaption class="doughnut-chart__caption">
-              <dl class="doughnut-chart__legend">
-                <div class="doughnut-chart__item-wrapper">
-                  <dt class="doughnut-chart__color doughnut-chart__color_yellow"></dt>
-                  <dd class="doughnut-chart__definition">Великолепно<span class="doughnut-chart__color-label">- 130 голосов</span></dd>
-                </div>
-                <div class="doughnut-chart__item-wrapper">
-                  <dt class="doughnut-chart__color doughnut-chart__color_green"></dt>
-                  <dd class="doughnut-chart__definition">Хорошо<span class="doughnut-chart__color-label">- 65 голосов</span></dd>
-                </div>
-                <div class="doughnut-chart__item-wrapper">
-                  <dt class="doughnut-chart__color doughnut-chart__color_violet"></dt>
-                  <dd class="doughnut-chart__definition">Удовлетворительно<span class="doughnut-chart__color-label">- 65 голосов</span></dd>
-                </div>
-                <div class="doughnut-chart__item-wrapper">
-                  <dt class="doughnut-chart__color doughnut-chart__color_black"></dt>
-                  <dd class="doughnut-chart__definition">Разочарован<span class="doughnut-chart__color-label">- 0 голосов</span></dd>
-                </div>
-              </dl>
-            </figcaption>
-          </figure>
+              <figcaption class="doughnut-chart__caption">
+                <dl class="doughnut-chart__legend">
+                  <div class="doughnut-chart__item-wrapper">
+                    <dt class="doughnut-chart__color doughnut-chart__color_yellow"></dt>
+                    <dd class="doughnut-chart__definition">Великолепно<span class="doughnut-chart__color-label">- 130 голосов</span></dd>
+                  </div>
+                  <div class="doughnut-chart__item-wrapper">
+                    <dt class="doughnut-chart__color doughnut-chart__color_green"></dt>
+                    <dd class="doughnut-chart__definition">Хорошо<span class="doughnut-chart__color-label">- 65 голосов</span></dd>
+                  </div>
+                  <div class="doughnut-chart__item-wrapper">
+                    <dt class="doughnut-chart__color doughnut-chart__color_violet"></dt>
+                    <dd class="doughnut-chart__definition">Удовлетворительно<span class="doughnut-chart__color-label">- 65 голосов</span></dd>
+                  </div>
+                  <div class="doughnut-chart__item-wrapper">
+                    <dt class="doughnut-chart__color doughnut-chart__color_black"></dt>
+                    <dd class="doughnut-chart__definition">Разочарован<span class="doughnut-chart__color-label">- 0 голосов</span></dd>
+                  </div>
+                </dl>
+              </figcaption>
+            </figure>
+          </div>
+        </section>
+        <section class="site-section room-details__room-testimonials">
+          <div class="site-section__top">
+            <h2 class="site-section__heading site-section__heading_h2">Отзывы посетителей номера</h2>
+            <div class="site-section__note">2 отзыва</div>
+          </div>
+          <blockquote class="site-testimonial">
+            <header class="site-testimonial__header">
+              <div class="site-testimonial__image-container"><img class="site-testimonial__author-image" src="/pages/website/room-details/img/user1.png" width="44" height="44" alt="Фотография автора отзыва"></div>
+              <div class="site-testimonial__info">
+                <cite class="site-testimonial__author-name">Мурад Сарафанов</cite>
+                <time class="site-testimonial__time" datetime="P5D">5 дней назад</time>
+              </div>
+            </header>
+            <div class="site-testimonial__body">
+              <div class="site-testimonial__button-wrapper">
+<button class="like-button material-icons"><span class="like-button__counter">0</span></button>
+              </div>
+              <p class="site-testimonial__text">Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару  — никто не жаловался из соседей.</p>
+            </div>
+          </blockquote>
+          <blockquote class="site-testimonial">
+            <header class="site-testimonial__header">
+              <div class="site-testimonial__image-container"><img class="site-testimonial__author-image" src="/pages/website/room-details/img/user2.png" width="44" height="44" alt="Фотография автора отзыва"></div>
+              <div class="site-testimonial__info">
+                <cite class="site-testimonial__author-name">Патрисия Стёклышкова</cite>
+                <time class="site-testimonial__time" datetime="P5D">Неделю назад</time>
+              </div>
+            </header>
+            <div class="site-testimonial__body">
+              <div class="site-testimonial__button-wrapper">
+<button class="like-button material-icons"><span class="like-button__counter">0</span></button>
+              </div>
+              <p class="site-testimonial__text">Обслуживание на высоте! Всё аккуратно, чисто. Завтраки в номер советую заказать, каждый день новое блюдо и десерт как комплимент</p>
+            </div>
+          </blockquote>
+        </section>
+        <section class="site-section room-details__room-rules">
+          <div class="site-section__top">
+            <h2 class="site-section__heading site-section__heading_h2">Правила</h2>
+          </div>
+          <ul class="site-ul">
+            <li class="site-ul__item">Нельзя с питомцами</li>
+            <li class="site-ul__item">Без вечеринок и мероприятий</li>
+            <li class="site-ul__item">Время прибытия — после 13:00, а выезд до 12:00</li>
+          </ul>
+        </section>
+        <section class="site-section room-details__cancellation">
+          <div class="site-section__top">
+            <h2 class="site-section__heading site-section__heading_h2">Отмена</h2>
+          </div>
+          <p class="room-details__cancellation-text">Бесплатная отмена в течение 48 ч. После этого при отмене не позднее чем за 5 дн. до прибытия вы получите полный возврат за вычетом сбора за услуги.</p>
+        </section>
+      </div>
+      <section class="site-section room-details__booking-section">
+        <div class="site-section__top">
+          <h2 class="site-section__heading site-section__heading_hidden site-section__heading_h2">Забронировать</h2>
         </div>
+        <article class="booking-block">
+          <header class="booking-block__header">
+            <p class="booking-block__room-number booking-block__room-number_luxe">№888</p>
+            <p class="booking-block__price"><span class="booking-block__price-value">9 990₽</span> в сутки</p>
+          </header>
+          <div class="booking-block__body">
+            <form class="booking-block__form">
+              <div class="date-dropdown-wrapper">
+                <div class="form-element">
+                  <div class="form-element__top">
+                    <label class="form-element__label" for="booking-departure">Прибытие</label>
+                  </div>
+                  <div class="site-dropdown site-dropdown_shared-calendar" id="booking-departure">
+                    <button class="site-dropdown__header" type="button" data-text="ДД.ММ.ГГГГ" data-windowid="booking"><span class="text-area">ДД.ММ.ГГГГ</span><span class="site-dropdown__header-icon material-icons">expand_more</span></button>
+                    <div class="site-dropdown__window site-dropdown__window_free site-dropdown__window_free" tabindex="-1" id="booking">
+                      <div class="site-calendar site-calendar_range">
+                        <div class="site-calendar__header">
+                          <button class="site-calendar__prev-button material-icons" type="button">arrow_back</button><span class="site-calendar__header-text">Август 2019</span>
+                          <button class="site-calendar__next-button material-icons" type="button">arrow_forward</button>
+                        </div>
+                        <div class="site-calendar__days-section">
+                          <div class="site-calendar__day">Пн</div>
+                          <div class="site-calendar__day">Вт</div>
+                          <div class="site-calendar__day">Ср</div>
+                          <div class="site-calendar__day">Чт</div>
+                          <div class="site-calendar__day">Пт</div>
+                          <div class="site-calendar__day">Сб</div>
+                          <div class="site-calendar__day">Вс</div>
+                        </div>
+                        <div class="site-calendar__date-section"><span class="site-calendar__date-cell">
+                            <button class="site-calendar__date" type="button">29</button></span><span class="site-calendar__date-cell">
+                            <button class="site-calendar__date" type="button">30</button></span><span class="site-calendar__date-cell">
+                            <button class="site-calendar__date" type="button">31</button></span><span class="site-calendar__date-cell">
+                            <button class="site-calendar__date" type="button">1</button></span><span class="site-calendar__date-cell">
+                            <button class="site-calendar__date" type="button">2</button></span><span class="site-calendar__date-cell">
+                            <button class="site-calendar__date" type="button">3</button></span><span class="site-calendar__date-cell">
+                            <button class="site-calendar__date" type="button">4</button></span><span class="site-calendar__date-cell">
+                            <button class="site-calendar__date" type="button">5</button></span><span class="site-calendar__date-cell">
+                            <button class="site-calendar__date" type="button">6</button></span><span class="site-calendar__date-cell">
+                            <button class="site-calendar__date" type="button">7</button></span><span class="site-calendar__date-cell">
+                            <button class="site-calendar__date" type="button">8</button></span><span class="site-calendar__date-cell">
+                            <button class="site-calendar__date" type="button">9</button></span><span class="site-calendar__date-cell">
+                            <button class="site-calendar__date" type="button">10</button></span><span class="site-calendar__date-cell">
+                            <button class="site-calendar__date" type="button">11</button></span><span class="site-calendar__date-cell">
+                            <button class="site-calendar__date" type="button">12</button></span><span class="site-calendar__date-cell">
+                            <button class="site-calendar__date" type="button">13</button></span><span class="site-calendar__date-cell">
+                            <button class="site-calendar__date" type="button">14</button></span><span class="site-calendar__date-cell">
+                            <button class="site-calendar__date" type="button">15</button></span><span class="site-calendar__date-cell">
+                            <button class="site-calendar__date" type="button">16</button></span><span class="site-calendar__date-cell">
+                            <button class="site-calendar__date" type="button">17</button></span><span class="site-calendar__date-cell">
+                            <button class="site-calendar__date" type="button">18</button></span><span class="site-calendar__date-cell">
+                            <button class="site-calendar__date" type="button">19</button></span><span class="site-calendar__date-cell">
+                            <button class="site-calendar__date" type="button">20</button></span><span class="site-calendar__date-cell">
+                            <button class="site-calendar__date" type="button">21</button></span><span class="site-calendar__date-cell">
+                            <button class="site-calendar__date" type="button">22</button></span><span class="site-calendar__date-cell">
+                            <button class="site-calendar__date" type="button">23</button></span><span class="site-calendar__date-cell">
+                            <button class="site-calendar__date" type="button">24</button></span><span class="site-calendar__date-cell">
+                            <button class="site-calendar__date" type="button">25</button></span><span class="site-calendar__date-cell">
+                            <button class="site-calendar__date" type="button">26</button></span><span class="site-calendar__date-cell">
+                            <button class="site-calendar__date" type="button">27</button></span><span class="site-calendar__date-cell">
+                            <button class="site-calendar__date" type="button">28</button></span><span class="site-calendar__date-cell">
+                            <button class="site-calendar__date" type="button">29</button></span><span class="site-calendar__date-cell">
+                            <button class="site-calendar__date" type="button">30</button></span><span class="site-calendar__date-cell">
+                            <button class="site-calendar__date" type="button">31</button></span><span class="site-calendar__date-cell">
+                            <button class="site-calendar__date" type="button">1</button></span>
+                          <div class="site-calendar__optional-row"><span class="site-calendar__date-cell">
+                              <button class="site-calendar__date" type="button">2</button></span><span class="site-calendar__date-cell">
+                              <button class="site-calendar__date" type="button">3</button></span><span class="site-calendar__date-cell">
+                              <button class="site-calendar__date" type="button">4</button></span><span class="site-calendar__date-cell">
+                              <button class="site-calendar__date" type="button">5</button></span><span class="site-calendar__date-cell">
+                              <button class="site-calendar__date" type="button">6</button></span><span class="site-calendar__date-cell">
+                              <button class="site-calendar__date" type="button">7</button></span><span class="site-calendar__date-cell">
+                              <button class="site-calendar__date" type="button">8</button></span>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="site-dropdown__footer" tabindex="-1">
+                        <button class="button site-dropdown__button-clear" type="button">Очистить</button>
+                        <button class="button site-dropdown__button-apply" type="button">Применить</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="date-dropdown-wrapper">
+                <div class="form-element">
+                  <div class="form-element__top">
+                    <label class="form-element__label" for="booking-arrival">Выезд</label>
+                  </div>
+                  <div class="site-dropdown site-dropdown_shared-calendar" id="booking-arrival">
+                    <button class="site-dropdown__header" type="button" data-text="ДД.ММ.ГГГГ" data-windowid="booking"><span class="text-area">ДД.ММ.ГГГГ</span><span class="site-dropdown__header-icon material-icons">expand_more</span></button>
+                  </div>
+                </div>
+              </div>
+              <div class="guests-dropdown-wrapper">
+                <div class="form-element">
+                  <div class="form-element__top">
+                    <label class="form-element__label" for="guest-dropdown">Гости</label>
+                  </div>
+                  <div class="site-dropdown site-dropdown_counting-dropdown" id="guest-dropdown">
+                    <button class="site-dropdown__header" type="button" data-text="Сколько гостей"><span class="text-area">Сколько гостей</span><span class="site-dropdown__header-icon material-icons">expand_more</span></button>
+                    <div class="site-dropdown__window" tabindex="-1">
+                      <ul class="site-dropdown__list">
+                        <li class="site-dropdown__item" data-value="adults" data-declination="[&quot;гость&quot;,&quot;гостя&quot;,&quot;гостей&quot;]">
+                          <div class="site-dropdown__item-text">Взрослые</div>
+                          <div class="site-dropdown__counter">
+                            <button class="site-dropdown__button-remove" type="button" disabled>-</button><span class="site-dropdown__count">0</span>
+                            <button class="site-dropdown__button-add" type="button">+</button>
+                          </div>
+                        </li>
+                        <li class="site-dropdown__item" data-value="children" data-declination="[&quot;гость&quot;,&quot;гостя&quot;,&quot;гостей&quot;]">
+                          <div class="site-dropdown__item-text">Дети</div>
+                          <div class="site-dropdown__counter">
+                            <button class="site-dropdown__button-remove" type="button" disabled>-</button><span class="site-dropdown__count">0</span>
+                            <button class="site-dropdown__button-add" type="button">+</button>
+                          </div>
+                        </li>
+                        <li class="site-dropdown__item" data-value="babies" data-declination="[&quot;гость&quot;,&quot;гостя&quot;,&quot;гостей&quot;]">
+                          <div class="site-dropdown__item-text">Младенцы</div>
+                          <div class="site-dropdown__counter">
+                            <button class="site-dropdown__button-remove" type="button" disabled>-</button><span class="site-dropdown__count">0</span>
+                            <button class="site-dropdown__button-add" type="button">+</button>
+                          </div>
+                        </li>
+                      </ul>
+                      <div class="site-dropdown__footer" tabindex="-1">
+                        <button class="button site-dropdown__button-clear" type="button">Очистить</button>
+                        <button class="button site-dropdown__button-apply" type="button">Применить</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <section class="booking-block__bill-section">
+                <table class="booking-block__bill-table">
+                  <tr class="booking-block__bill-row">
+                    <td class="booking-block__bill-data">
+                      <div class="booking-block__calculation">
+                        <p class="booking-block__termin">9 990₽ х 4 суток</p>
+                      </div>
+                    </td>
+                    <td class="booking-block__bill-data"><span class="booking-block__definition">39 960₽</span></td>
+                  </tr>
+                  <tr class="booking-block__bill-row">
+                    <td class="booking-block__bill-data">
+                      <div class="booking-block__calculation">
+                        <p class="booking-block__termin">Сбор за услуги: скидка 2 179₽</p>
+                      </div>
+                    </td>
+                    <td class="booking-block__bill-data"><span class="booking-block__definition">0₽</span></td>
+                  </tr>
+                  <tr class="booking-block__bill-row">
+                    <td class="booking-block__bill-data">
+                      <div class="booking-block__calculation">
+                        <p class="booking-block__termin">Сбор за дополнительные услуги</p>
+                      </div>
+                    </td>
+                    <td class="booking-block__bill-data"><span class="booking-block__definition">300₽</span></td>
+                  </tr>
+                  <tr class="booking-block__bill-row booking-block__bill-row_total">
+                    <td class="booking-block__bill-data">
+                      <p class="booking-block__termin booking-block__termin_total">Итого</p>
+                    </td>
+                    <td class="booking-block__bill-data"><span class="booking-block__definition booking-block__definition_total">38 081₽</span></td>
+                  </tr>
+                </table>
+              </section>
+              <button class="button button_rounded button_primary button_flexible icon" type="button">Забронировать</button>
+            </form>
+          </div>
+        </article>
       </section>
-    </section>
-  </main>
+    </main>
+  </div>
   <footer class="site-footer">
     <div class="site-footer__content">
       <div class="site-footer__info-block">
@@ -149,7 +380,7 @@
       <div class="site-footer__links-section">
         <section class="site-section site-footer__menu-block">
           <div class="site-section__top">
-            <h3 class="site-section__h3">Навигация</h3>
+            <h3 class="site-section__heading site-section__heading_h3">Навигация</h3>
           </div>
           <ul class="site-footer__menu-list">
             <li class="site-footer__menu-item"><a class="site-footer__menu-link" href="index.html">О нас</a></li>
@@ -160,7 +391,7 @@
         </section>
         <section class="site-section site-footer__menu-block">
           <div class="site-section__top">
-            <h3 class="site-section__h3">О нас</h3>
+            <h3 class="site-section__heading site-section__heading_h3">О нас</h3>
           </div>
           <ul class="site-footer__menu-list">
             <li class="site-footer__menu-item"><a class="site-footer__menu-link" href="index.html">О сервисе</a></li>
@@ -171,7 +402,7 @@
         </section>
         <section class="site-section site-footer__menu-block">
           <div class="site-section__top">
-            <h3 class="site-section__h3">Служба поддержки</h3>
+            <h3 class="site-section__heading site-section__heading_h3">Служба поддержки</h3>
           </div>
           <ul class="site-footer__menu-list">
             <li class="site-footer__menu-item"><a class="site-footer__menu-link" href="index.html">Соглашения</a></li>
@@ -182,7 +413,7 @@
       </div>
       <section class="site-section site-footer__subscription-block">
         <div class="site-section__top">
-          <h3 class="site-section__h3">Подписка</h3>
+          <h3 class="site-section__heading site-section__heading_h3">Подписка</h3>
         </div>
         <p class="site-footer__subscription-text">Получайте специальные предложения и новости сервиса</p>
         <form class="site-footer__subscription-form">

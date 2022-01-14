@@ -1,17 +1,16 @@
 
+mixin site-testimonial(obj)
 
-mixin site-testimonial()
+  -
+    const template = []
   blockquote.site-testimonial
     header.site-testimonial__header
       .site-testimonial__image-container
-        img.site-testimonial__author-image(src = "../../../components/site-testimonial/avatar.png" width = "44" height = "44"  alt = "Фотография автора отзыва")
+        img.site-testimonial__author-image(src = obj.img width = "44" height = "44"  alt = "Фотография автора отзыва")
       .site-testimonial__info
-        cite.site-testimonial__author-name Мурад Сарафанов
-        time.site-testimonial__time(datetime = "P5D") 5 дней назад
+        cite.site-testimonial__author-name #{obj.name}
+        time.site-testimonial__time(datetime = "P5D") #{obj.date}
     .site-testimonial__body
       .site-testimonial__button-wrapper
         include ../like-button/like-button
-      p.site-testimonial__text
-        | Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий.
-        | И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не
-        | жаловался из соседей.
+      p.site-testimonial__text !{obj.text}

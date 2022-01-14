@@ -7,22 +7,27 @@
   }
 
   &__note {
-    @include site-body($color: $site-dark-50);
+    @include site-body($color: $site-dark-50, $lineH: 14px);
   }
 
-  &__h1 {
-    @extend %site-h1;
+  &__heading {
     margin: 0;
-  }
 
-  &__h2 {
-    @extend %site-h2;
-    margin: 0;
-  }
+    &_h1 {
+      @extend %site-h1;
+    }
 
-  &__h3 {
-    @extend %site-h3;
-    margin: 0;
-    margin-bottom: 15px;
+    &_h2 {
+      @extend %site-h2;
+    }
+
+    &_h3 {
+      @extend %site-h3;
+      margin-bottom: 15px;
+    }
+
+    &_hidden {
+      @include visually-hidden();
+    }
   }
 }

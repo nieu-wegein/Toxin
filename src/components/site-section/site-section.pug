@@ -2,17 +2,20 @@
 
 mixin site-section(obj)
 
-  -const sectionClassList = ["site-section", obj.classList]
+  -
+    const sectionClassList = ["site-section", obj.classList]
+    const headerClassList = ["site-section__heading"];
+    if(obj.header === "hidden") headerClassList.push("site-section__heading_hidden")
 
   section(class = sectionClassList)
     .site-section__top
       -for(let key in obj) {
          if key === "h1"
-          h1.site-section__h1 !{obj.h1}
+          h1(class = [headerClassList, "site-section__heading_h1"]) !{obj.h1}
          if key === "h2"
-          h2.site-section__h2 !{obj.h2}
+          h2(class = [headerClassList, "site-section__heading_h2"]) !{obj.h2}
          if key === "h3"
-          h3.site-section__h3 !{obj.h3}
+          h3(class = [headerClassList, "site-section__heading_h3"]) !{obj.h3}
          if key === "note"
           .site-section__note !{obj.note}
       -}
