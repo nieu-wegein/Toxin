@@ -6,6 +6,8 @@ include ../../../components/site-calendar/site-calendar
 include ../../../components/site-dropdown/site-dropdown__footer/site-dropdown__footer
 include ../../../components/room-card/room-card
 
+  //TODO: отрефакторить поля- и объекты-модификаторы
+
 doctype html
 html(lang = "en")
   head
@@ -21,7 +23,7 @@ html(lang = "en")
       .content
         .content__column
           +search-block()
-          +registration-block()
+          +registration-block({modifiers: {paymentLink: true}})
         .content__column
           +booking-block()
           +log-in-block()
