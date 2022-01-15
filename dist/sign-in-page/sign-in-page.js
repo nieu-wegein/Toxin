@@ -20,14 +20,14 @@ eval("__webpack_require__.r(__webpack_exports__);\n// extracted by mini-css-extr
 
 /***/ }),
 
-/***/ "./src/pages/Website/registration/registration.scss":
+/***/ "./src/pages/Website/sign-in-page/sign-in-page.scss":
 /*!**********************************************************!*\
-  !*** ./src/pages/Website/registration/registration.scss ***!
+  !*** ./src/pages/Website/sign-in-page/sign-in-page.scss ***!
   \**********************************************************/
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n// extracted by mini-css-extract-plugin\n\n\n//# sourceURL=webpack://toxin/./src/pages/Website/registration/registration.scss?");
+eval("__webpack_require__.r(__webpack_exports__);\n// extracted by mini-css-extract-plugin\n\n\n//# sourceURL=webpack://toxin/./src/pages/Website/sign-in-page/sign-in-page.scss?");
 
 /***/ }),
 
@@ -74,14 +74,14 @@ eval("var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*! jQuery
 
 /***/ }),
 
-/***/ "./src/pages/Website/registration/registration.js":
+/***/ "./src/pages/Website/sign-in-page/sign-in-page.js":
 /*!********************************************************!*\
-  !*** ./src/pages/Website/registration/registration.js ***!
+  !*** ./src/pages/Website/sign-in-page/sign-in-page.js ***!
   \********************************************************/
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _normalize_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../normalize.scss */ \"./src/normalize.scss\");\n/* harmony import */ var _registration_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./registration.scss */ \"./src/pages/Website/registration/registration.scss\");\n/* harmony import */ var _components_registration_block_registration_block__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../components/registration-block/registration-block */ \"./src/components/registration-block/registration-block.js\");\n/* harmony import */ var _components_log_in_block_log_in_block__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../components/log-in-block/log-in-block */ \"./src/components/log-in-block/log-in-block.js\");\n\r\n\r\n\r\n\r\n\r\n\r\n\n\n//# sourceURL=webpack://toxin/./src/pages/Website/registration/registration.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _normalize_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../normalize.scss */ \"./src/normalize.scss\");\n/* harmony import */ var _sign_in_page_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./sign-in-page.scss */ \"./src/pages/Website/sign-in-page/sign-in-page.scss\");\n/* harmony import */ var _components_registration_block_registration_block__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../components/registration-block/registration-block */ \"./src/components/registration-block/registration-block.js\");\n/* harmony import */ var _components_log_in_block_log_in_block__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../components/log-in-block/log-in-block */ \"./src/components/log-in-block/log-in-block.js\");\n/* harmony import */ var _jquery_3_6_0_min__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../../jquery-3.6.0.min */ \"./src/jquery-3.6.0.min.js\");\n/* harmony import */ var _jquery_3_6_0_min__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_jquery_3_6_0_min__WEBPACK_IMPORTED_MODULE_4__);\n\r\n\r\n\r\n\r\n\r\n\r\n_jquery_3_6_0_min__WEBPACK_IMPORTED_MODULE_4___default()(function() {\r\n\r\n  _jquery_3_6_0_min__WEBPACK_IMPORTED_MODULE_4___default()(\"\")\r\n\r\n})\r\n\r\n\r\n\n\n//# sourceURL=webpack://toxin/./src/pages/Website/sign-in-page/sign-in-page.js?");
 
 /***/ })
 
@@ -157,7 +157,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _nor
 /******/ 	// startup
 /******/ 	// Load entry module and return exports
 /******/ 	// This entry module can't be inlined because the eval devtool is used.
-/******/ 	var __webpack_exports__ = __webpack_require__("./src/pages/Website/registration/registration.js");
+/******/ 	var __webpack_exports__ = __webpack_require__("./src/pages/Website/sign-in-page/sign-in-page.js");
 /******/ 	
 /******/ })()
 ;

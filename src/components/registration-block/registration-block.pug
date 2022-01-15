@@ -5,7 +5,11 @@ include ../site-fieldset/site-fieldset
 include ../site-button/site-button
 
 //TODO: Отправка данных на сервер
-mixin registration-block()
+mixin registration-block(obj = {})
+  -
+    let buttonText = "Зарегистрироваться";
+    if(obj.modifiers && obj.modifiers.paymentLink) buttonText = "Перейти к оплате"
+
   article.registration-block
     h2.registration-block__heading Регистрация аккаунта
     .registration-block__body
@@ -24,7 +28,7 @@ mixin registration-block()
         +site-checkbox-group({options: [
             {label: "Получать спецпредложения", id: "offer-2"}],
              modifiers: {toggle: true}})
-        +site-button({type: "button", text: "Перейти к оплате", modifiers: {rounded: true, primary: true, flexible: true, icon: true}})
+        +site-button({type: "button", text: buttonText, modifiers: {primary: true, flexible: true, icon: "arrow"}})
     footer.registration-block__footer
       span.registration-block__already-have Уже есть аккаунт на Toxin
-      +site-button({type: "button", text: "Войти", modifiers: {rounded: true}})
+      +site-button({type: "a", text: "Войти", modifiers: {rounded: true, block: true}})

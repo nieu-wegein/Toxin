@@ -1,20 +1,12 @@
 
-//mixin buttonMix()
-
-
 .button {
 
+  @include site-h3($color: $site-purple);
   cursor: pointer;
   border: none;
-  color: $site-purple;
   background-color: white;
   padding: 0;
   text-align: center;
-
-  font-family: Montserrat-Bold, sans-serif;
-  font-size: 12px;
-  line-height: 15px;
-  text-transform: uppercase;
   position: relative;
 
   &:hover {
@@ -22,20 +14,17 @@
   }
 
   &_rounded {
-    width: 100px;
+    min-width: 100px;
     min-height: 44px;
-    color: $site-purple;
 
-   // padding: 12px 19px 13px 18px;
     padding: 7px 17px 8px;
     box-sizing: border-box;
-
     letter-spacing: -0.15px;
 
     border: 2px solid transparent;
     border-radius: 22px;
-    background-origin: border-box;
 
+    background-origin: border-box;
     background-image: linear-gradient(white, white), $primary-gradient;
     background-clip: padding-box, border-box;
 
@@ -43,19 +32,6 @@
       color: $site-purple;
       background-image: linear-gradient(white, white), $primary-gradient-50;
     }
-
-
-    //&::before {
-    //  position: absolute;
-    //  content: "";
-    //  top: -2px;
-    //  right: -2px;
-    //  bottom: -2px;
-    //  left: -2px;
-    //  z-index: -1;
-    //  background-image: $primary-gradient;
-    //  border-radius: 22px;
-    //}
   }
 
   &_secondary {
@@ -80,12 +56,18 @@
     }
   }
 
+  &_block {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+  }
+
   &_flexible {
     width: 100%;
   }
 
   //TODO: Отрефакторить все остальное
-  &.icon::after {
+  &.arrow::after {
 
     font-family: "Material Icons";
     font-size: 24px;

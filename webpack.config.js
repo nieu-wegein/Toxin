@@ -19,6 +19,7 @@ module.exports = {
         "structural-blocks": PATHS.uikit + '/structural-blocks/structural-blocks.js',
         "index": PATHS.website + '/index/index.js',
         "registration": PATHS.website + '/registration/registration.js',
+        "sign-in-page": PATHS.website + '/sign-in-page/sign-in-page.js',
         "search-results": PATHS.website + '/search-results/search-results.js',
         "room-details": PATHS.website + '/room-details/room-details.js'
     },
@@ -99,6 +100,12 @@ module.exports = {
               chunks: ['registration'],
               template: PATHS.website + 'registration/registration.pug'
           }),
+      new HtmlWebpackPlugin(
+        {
+          filename: 'sign-in-page/sign-in-page.html',
+          chunks: ['sign-in-page'],
+          template: PATHS.website + 'sign-in-page/sign-in-page.pug'
+        }),
       new MiniCssExtractPlugin({
           filename: '[name]/[name].css'
       })

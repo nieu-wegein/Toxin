@@ -19,7 +19,7 @@
   }
 
   &__label {
-    @extend %site-h3;
+    @include site-h3();
   }
 
   &__note {

@@ -22,7 +22,7 @@
     }
 
     &_h3 {
-      @extend %site-h3;
+      @include site-h3();
       margin-bottom: 15px;
     }
 

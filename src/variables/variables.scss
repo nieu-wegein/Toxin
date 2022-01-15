@@ -31,11 +31,11 @@ $secondary-gradient: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%);
   margin: 0;
 }
 
-%site-h3 {
-  color: $site-dark;
-  font-size: 12px;
-  font-family: "Montserrat-Bold", sans-serif;
-  line-height: 15px;
+@mixin site-h3($color: $site-dark, $font:"Montserrat-Bold", $fontS: 12px, $lineH: 15px) {
+  color: $color;
+  font-size: $fontS;
+  font-family: $font, sans-serif;
+  line-height: $lineH;
   text-transform: uppercase;
   margin: 0;
 }

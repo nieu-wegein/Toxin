@@ -5,7 +5,6 @@
 @import "../../../components/registration-block/registration-block";
 @import "../../../components/log-in-block/log-in-block.scss";
 
-
 body {
   overflow: -moz-scrollbars-none;
   -ms-overflow-style: none;
@@ -14,14 +13,10 @@ body::-webkit-scrollbar {
   width: 0 !important
 }
 
-* {
-  box-sizing: border-box;
-}
+.sign-in-page {
 
-.registration-page {
-
-  &__registration-section {
-    min-height: 683px;
+  &__sign-in-section {
+    min-height: 702px;
     display: flex;
     justify-content: center;
     background-image: url("./img/background.png");
@@ -30,12 +25,11 @@ body::-webkit-scrollbar {
     background-repeat: no-repeat;
 
     .registration-block {
+      display: none;
       transform: translate(3px);
-      margin: 18px 0;
     }
 
     .log-in-block {
-      display: none;
       margin: 172px 0;
     }
   }

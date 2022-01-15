@@ -1,8 +1,7 @@
 include ../../../components/site-header/site-header
 include ../../../components/site-footer/site-footer
-include ../../../components/search-block/search-block
-
-  //- TODO: Проверить ссылку в dist
+include ../../../components/registration-block/registration-block
+include ../../../components/log-in-block/log-in-block
 
 doctype html
 html(lang = "en")
@@ -14,10 +13,11 @@ head
   link(rel = "stylesheet" href="https://fonts.googleapis.com/css?family=Material+Icons")
   script(src="https://kit.fontawesome.com/a54cde8a02.js" crossorigin="anonymous")
 
-body.search-offer
+
+body.sign-in-page
   +site-header()
-  main.search-offer__main
-    section.search-offer__search-section
-      +search-block()
-      p.search-offer__slogan Лучшие номера для вашей работы, отдыха и просто вдохновения
+  main.sign-in-page__main
+    section.sign-in-page__sign-in-section
+      +registration-block()
+      +log-in-block()
   +site-footer()
