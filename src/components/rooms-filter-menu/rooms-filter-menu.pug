@@ -17,19 +17,19 @@ mixin rooms-filter-menu()
     })
     +site-range-slider({label: "Диапазон цены", id: "filter-price", description: "Стоимость за сутки пребывания в номере", min: 1, max: 15485, startVal: 5000, endVal: 10000})
     +site-checkbox-group({fieldset: "Правила дома", options: [
-        {label: "Можно курить", id: "smoking"},
-        {label: "Можно с питомцами", id: "animals", checked: true},
+        {label: "Можно курить", id: "filter-smoking"},
+        {label: "Можно с питомцами", id: "filter-animals", checked: true},
         {label: "Можно пригласить гостей <br> (до 10 человек)", id: "invitation", checked: true}
       ]
     })
     +site-checkbox-group({fieldset: "Доступность", options: [
-      {label: "Широкий коридор", id: "wide-corridor", note: "Ширина коридоров в номере <br> не менее 91 см."},
-      {label: "Помощник для инвалидов", id: "assistant", note: "На 1 этаже вас встретит специалист  и проводит до номера."},
+      {label: "Широкий коридор", id: "filter-wide-corridor", note: "Ширина коридоров в номере <br> не менее 91 см."},
+      {label: "Помощник для инвалидов", id: "filter-assistant", note: "На 1 этаже вас встретит специалист  и проводит до номера."},
     ],
     modifiers: {rich: true}
     })
     +site-dropdown({
-      label: "Удобства номера", id: "amenities", text: "Комнаты",
+      label: "Удобства номера", id: "filter-amenities", text: "Комнаты",
       options: [
         {name: "Спальни", value: "bedrooms", declination: ["спальня", "спальни", "спален"]},
         {name: "Кровать", value: "beds", declination: ["кровать", "кровати", "кроватей"]},
@@ -39,12 +39,12 @@ mixin rooms-filter-menu()
     .rooms-filter-menu__checkbox-wrapper
       +site-checkbox-group({
         fieldset: "Дополнительные удобства", options: [
-          {label: "Завтрак", id: "breakfast"},
-          {label: "Письменный стол", id: "desk", checked: true},
-          {label: "Стул для кормления", id: "feeding chair", checked: true},
-          {label: "Кроватка", id: "crib", checked: true},
-          {label: "Телевизор", id: "TV"},
-          {label: "Шампунь", id: "shampoo"},
+          {label: "Завтрак", id: "filter-breakfast"},
+          {label: "Письменный стол", id: "filter-desk", checked: true},
+          {label: "Стул для кормления", id: "filter-feeding chair", checked: true},
+          {label: "Кроватка", id: "filter-crib", checked: true},
+          {label: "Телевизор", id: "filter-TV"},
+          {label: "Шампунь", id: "filter-shampoo"},
         ],
         modifiers: {expandable: true}
       })

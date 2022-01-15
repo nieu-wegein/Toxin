@@ -1,6 +1,3 @@
-//TODO: Убрать общие названия классов и id в блоках
-//TODO: ИТОГО
-//TODO: Кнопки вместо псевдоэлементов
 include ../site-dropdown/site-dropdown
 include ../site-button/site-button
 
@@ -13,25 +10,25 @@ mixin booking-block()
         |  в сутки
     .booking-block__body
       form.booking-block__form
-        .date-dropdown-wrapper
+        .booking-block__date-dropdown-wrapper
           +site-dropdown({
             label: "Прибытие",
             id: "booking-departure",
             text: "ДД.ММ.ГГГГ",
-            shared: {id: "booking"},
+            shared: {id: "booking-dropdown"},
             modifiers: {calendar: {type: "range"}, buttons: true}
           })
-        .date-dropdown-wrapper
+        .booking-block__date-dropdown-wrapper
           +site-dropdown({
             label: "Выезд",
             id: "booking-arrival",
             text: "ДД.ММ.ГГГГ",
-            shared: {for: "booking"},
+            shared: {for: "booking-dropdown"},
             modifiers: {calendar: {type: "range"}, buttons: true}
           })
-        .guests-dropdown-wrapper
+        .booking-block__guests-dropdown-wrapper
           +site-dropdown({
-            label: "Гости", id: "guest-dropdown", text: "Сколько гостей",
+            label: "Гости", id: "booking-guest-dropdown", text: "Сколько гостей",
             options: [
               {name: "Взрослые", value: "adults", declination: ["гость", "гостя", "гостей"]},
               {name: "Дети", value: "children", declination: ["гость", "гостя", "гостей"]},
@@ -51,12 +48,14 @@ mixin booking-block()
               td.booking-block__bill-data
                 div.booking-block__calculation
                   p.booking-block__termin Сбор за услуги: скидка 2 179₽
+                  button(type = "button" class = "booking-block__termin-info") i
               td.booking-block__bill-data
                 span.booking-block__definition 0₽
             tr.booking-block__bill-row
               td.booking-block__bill-data
                 div.booking-block__calculation
                   p.booking-block__termin Сбор за дополнительные услуги
+                  button(type = "button" class = "booking-block__termin-info") i
               td.booking-block__bill-data
                 span.booking-block__definition 300₽
             tr.booking-block__bill-row.booking-block__bill-row_total

@@ -58,11 +58,11 @@
     justify-content: space-between;flex-wrap: wrap;
   }
 
-  .date-dropdown-wrapper {
+  &__date-dropdown-wrapper {
     width: 150px;
   }
 
-  .guests-dropdown-wrapper {
+  &__guests-dropdown-wrapper {
     width: 100%;
     margin-top: 21px;
   }
@@ -70,16 +70,16 @@
   &__bill {
 
     &-section{
-      width: 100%;
       @include site-body($lineH: 18px);
+      width: 100%;
       padding-top: 7px;
-      padding-bottom: 6px;
+      padding-bottom: 4px;
     }
 
     &-table {
       width: 100%;
       border-collapse: separate;
-      border-spacing: 0 14px;
+      border-spacing: 0 15px;
     }
 
     &-row {
@@ -99,13 +99,17 @@
   }
 
   &__calculation {
-
     display: flex;
+  }
 
-    &::after {
+  .booking-block__termin {
+    max-width: 215px;
+    margin: 0;
 
-      box-sizing: border-box;
-      content: "i";
+    &-info {
+      position: relative;
+      bottom: 2px;
+      cursor: pointer;
       width: 20px;
       height: 20px;
       font-family: "Montserrat-Bold", sans-serif;
@@ -114,14 +118,26 @@
       border: 1px solid $site-dark-25;
       border-radius: 50%;
       margin-left: 5px;
+      background-color: transparent;
     }
-  }
 
-  .booking-block__termin {
-    max-width: 215px;
-    margin: 0;
     &_total {
       margin-top: 15px;
+      max-width: 100%;
+      display: flex;
+      align-items: flex-end;
+
+      &:after {
+        content: " ";
+        width: 100%;
+        height: 0;
+        margin-left: 5px;
+
+        position: relative;
+        bottom: 6px;
+
+        border-bottom: 1px dashed $site-dark-25;
+      }
     }
   }
 

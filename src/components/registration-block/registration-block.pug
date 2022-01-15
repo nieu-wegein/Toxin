@@ -15,18 +15,18 @@ mixin registration-block(obj = {})
     .registration-block__body
       form.registration-block__form
         +site-fieldset("Личные данные", {fieldset: "hidden"})
-          +site-input({label: "Имя", id: "first-name", text: "Имя", modifiers: {label: "hidden"}})
-          +site-input({label: "Фамилия", id: "last-name", text: "Фамилия", modifiers: {label: "hidden"}})
+          +site-input({label: "Имя", id: "reg-first-name", text: "Имя", modifiers: {label: "hidden"}})
+          +site-input({label: "Фамилия", id: "reg-last-name", text: "Фамилия", modifiers: {label: "hidden"}})
           +site-radio-group({options: [
-              {label: "Мужчина", id: "man", name: "sex", checked: true},
-              {label: "Женщина", id: "woman", name: "sex"}
+              {label: "Мужчина", id: "reg-man", name: "sex", checked: true},
+              {label: "Женщина", id: "reg-woman", name: "sex"}
             ]})
-          +site-input({label: "Дата Рождения", id: "date-of-birth", text: "ДД-ММ-ГГГГ", modifiers: {datemask: true}})
+          +site-input({label: "Дата Рождения", id: "reg-date-of-birth", text: "ДД-ММ-ГГГГ", modifiers: {datemask: true}})
         +site-fieldset("Данные для входа в сервис")
-          +site-input({label: "Email", id: "email", text: "Email", modifiers: {label: "hidden"}})
-          +site-input({label: "Пароль", id: "password", text: "Пароль", modifiers: {label: "hidden"}})
+          +site-input({label: "Email", id: "reg-email", text: "Email", modifiers: {label: "hidden"}})
+          +site-input({label: "Пароль", id: "reg-password", text: "Пароль", modifiers: {label: "hidden"}})
         +site-checkbox-group({options: [
-            {label: "Получать спецпредложения", id: "offer-2"}],
+            {label: "Получать спецпредложения", id: "reg-offer"}],
              modifiers: {toggle: true}})
         +site-button({type: "button", text: buttonText, modifiers: {primary: true, flexible: true, icon: "arrow"}})
     footer.registration-block__footer

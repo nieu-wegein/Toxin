@@ -6,24 +6,24 @@ mixin search-block()
     h2.search-block__heading Найдём номера под ваши пожелания
     .search-block__body
       form.search-block__form
-        .date-dropdown-wrapper
+        .search-block__date-dropdown-wrapper
           +site-dropdown({
             label: "Прибытие",
-            id: "departure",
+            id: "search-departure",
             text: "ДД.ММ.ГГГГ",
-            shared: {id: "ui-page-calendar"},
+            shared: {id: "search-calendar"},
             modifiers: {calendar: {type: "range"}, buttons: true}
           })
-        .date-dropdown-wrapper
+        .search-block__date-dropdown-wrapper
           +site-dropdown({
             label: "Выезд",
-            id: "arrival",
+            id: "search-arrival",
             text: "ДД.ММ.ГГГГ",
             shared: {for: "ui-page-calendar"},
             modifiers: {calendar: {type: "range"}, buttons: true}
           })
-        .guests-dropdown-wrapper
-          +site-dropdown({label: "Гости", id: "guest-dropdown", text: "Сколько гостей",
+        .search-block__guests-dropdown-wrapper
+          +site-dropdown({label: "Гости", id: "search-guest-dropdown", text: "Сколько гостей",
             options: [
               {name: "Взрослые", value: "adults", declination: ["гость", "гостя", "гостей"]},
               {name: "Дети", value: "children", declination: ["гость", "гостя", "гостей"]},

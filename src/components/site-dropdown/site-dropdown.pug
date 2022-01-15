@@ -7,13 +7,14 @@ include ../site-calendar/site-calendar
 //-Todo: перенести классы в массивы во всех файлах
 //-TODO:! вынести массивы классов в пределы миксина
 //-TODO: Проверить, видны массивы классов за пределами миксина
+//TODO: 42 строка
 
 mixin site-dropdown(obj)
   -
     const dropdownClassList = ["site-dropdown", obj.classList];
     const windowClassList = ["site-dropdown__window"]
     const calendarClassList = ["site-calendar"]
-    const modifiers = {}; // Во избежание ошибок при передаче элемента без модификатора
+    const modifiers = {}; // Во избежание ошибок при передаче параметров без модификатора
     let windowId;
     let forWindow;
 
