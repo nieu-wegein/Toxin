@@ -8,8 +8,7 @@
 <!--TODO: Отправка данных на сервер-->
 <!--TODO: Валидация-->
 <!--TODO: Submit для кнопки-->
-<!--TODO: Поменять теги заголовков у карточек-->
-<!--TODO: Поменять id, добавив в них название блока--><!DOCTYPE html>
+<!--TODO: Убрать задание классов компонентам и миксы из scss и pug--><!DOCTYPE html>
 <html lang="en"></html>
 <head>
   <meta charset="utf-8">
@@ -53,36 +52,36 @@
               <div class="site-fieldset__area">
                 <div class="form-element">
                   <div class="form-element__top form-element__top_hidden">
-                    <label class="form-element__label" for="first-name">Имя</label>
+                    <label class="form-element__label" for="reg-first-name">Имя</label>
                   </div>
                   <div class="site-input-wrapper">
-                    <input class="site-input" type="text" id="first-name" placeholder="Имя">
+                    <input class="site-input" type="text" id="reg-first-name" placeholder="Имя">
                   </div>
                 </div>
                 <div class="form-element">
                   <div class="form-element__top form-element__top_hidden">
-                    <label class="form-element__label" for="last-name">Фамилия</label>
+                    <label class="form-element__label" for="reg-last-name">Фамилия</label>
                   </div>
                   <div class="site-input-wrapper">
-                    <input class="site-input" type="text" id="last-name" placeholder="Фамилия">
+                    <input class="site-input" type="text" id="reg-last-name" placeholder="Фамилия">
                   </div>
                 </div>
                 <ul class="site-radio-list">
                   <li class="site-radio">
-                    <input class="site-radio__input" type="radio" id="man" name="sex" checked>
-                    <label class="site-radio__label" for="man">Мужчина</label>
+                    <input class="site-radio__input" type="radio" id="reg-man" name="sex" checked>
+                    <label class="site-radio__label" for="reg-man">Мужчина</label>
                   </li>
                   <li class="site-radio">
-                    <input class="site-radio__input" type="radio" id="woman" name="sex">
-                    <label class="site-radio__label" for="woman">Женщина</label>
+                    <input class="site-radio__input" type="radio" id="reg-woman" name="sex">
+                    <label class="site-radio__label" for="reg-woman">Женщина</label>
                   </li>
                 </ul>
                 <div class="form-element">
                   <div class="form-element__top">
-                    <label class="form-element__label" for="date-of-birth">Дата Рождения</label>
+                    <label class="form-element__label" for="reg-date-of-birth">Дата Рождения</label>
                   </div>
                   <div class="site-input-wrapper">
-                    <input class="site-input site-input_date" type="text" id="date-of-birth" placeholder="ДД-ММ-ГГГГ">
+                    <input class="site-input site-input_date" type="text" id="reg-date-of-birth" placeholder="ДД-ММ-ГГГГ">
                   </div>
                 </div>
               </div>
@@ -92,26 +91,26 @@
               <div class="site-fieldset__area">
                 <div class="form-element">
                   <div class="form-element__top form-element__top_hidden">
-                    <label class="form-element__label" for="email">Email</label>
+                    <label class="form-element__label" for="reg-email">Email</label>
                   </div>
                   <div class="site-input-wrapper">
-                    <input class="site-input" type="text" id="email" placeholder="Email">
+                    <input class="site-input" type="text" id="reg-email" placeholder="Email">
                   </div>
                 </div>
                 <div class="form-element">
                   <div class="form-element__top form-element__top_hidden">
-                    <label class="form-element__label" for="password">Пароль</label>
+                    <label class="form-element__label" for="reg-password">Пароль</label>
                   </div>
                   <div class="site-input-wrapper">
-                    <input class="site-input" type="text" id="password" placeholder="Пароль">
+                    <input class="site-input" type="text" id="reg-password" placeholder="Пароль">
                   </div>
                 </div>
               </div>
             </fieldset>
             <ul class="site-checkbox-list">
               <li class="site-checkbox site-checkbox_toggle">
-                <input class="site-checkbox__input" type="checkbox" id="offer-2">
-                <label class="site-checkbox__label" for="offer-2">Получать спецпредложения</label>
+                <input class="site-checkbox__input" type="checkbox" id="reg-offer">
+                <label class="site-checkbox__label" for="reg-offer">Получать спецпредложения</label>
               </li>
             </ul>
             <button class="button button_rounded button_primary button_flexible arrow" type="button">Зарегистрироваться</button>
@@ -142,7 +141,7 @@
                   <input class="site-input" type="text" id="log-in-password" placeholder="Пароль">
                 </div>
               </div>
-              <button class="button button_rounded button_primary button_flexible arrow" type="button">Войти</button>
+              <button class="button log-in-block__sign-button button_rounded button_primary button_flexible arrow" type="button">Войти</button>
             </div>
           </fieldset>
         </form>

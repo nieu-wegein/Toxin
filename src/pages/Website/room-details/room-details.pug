@@ -15,7 +15,7 @@ include ../../../components/booking-block/booking-block
 
 
 -
-  const path = "/pages/website/room-details/img/"
+  const imgPath = "/pages/website/room-details/img/"
   decline(4, ["","",""])
 
   const testimonialsList = {
@@ -24,12 +24,12 @@ include ../../../components/booking-block/booking-block
       {
         name: "Мурад Сарафанов", date: "5 дней назад",
         text: "Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару  — никто не жаловался из соседей.",
-        img: path + "user1.png"
+        img: imgPath + "user1.png"
       },
       {
         name: "Патрисия Стёклышкова", date: "Неделю назад",
         text: "Обслуживание на высоте! Всё аккуратно, чисто. Завтраки в номер советую заказать, каждый день новое блюдо и десерт как комплимент",
-        img: path + "user2.png"
+        img: imgPath + "user2.png"
       }]
   };
 
@@ -64,12 +64,12 @@ body.room-details
       +site-section({h2: "Фотографии номера", header: "hidden", classList: "room-details__photos-section"})
         .room-details__photos-column
           .room-details__photo-container
-            img(class = "room-details__room-photo", src = path + "room888-m.png" alt = "Фотография комнаты")
+            img(class = "room-details__room-photo", src = imgPath + "room888-1_m.png" alt = "Фотография комнаты")
         .room-details__photos-column
           .room-details__photo-container
-            img(class = "room-details__room-photo", src = path + "room888_2-s.png" alt = "Фотография комнаты")
+            img(class = "room-details__room-photo", src = imgPath + "room888-2_s.png" alt = "Фотография комнаты")
           .room-details__photo-container
-            img(class = "room-details__room-photo", src = path + "room888_3-s.png" alt = "Фотография комнаты")
+            img(class = "room-details__room-photo", src = imgPath + "room888-3_s.png" alt = "Фотография комнаты")
       .room-details__main-info-wrapper
         +site-section({h2: "Сведения о номере", classList: "room-details__room-features"})
           +features-list("comfort", "convenience", "cosiness")

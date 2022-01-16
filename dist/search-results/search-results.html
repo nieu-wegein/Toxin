@@ -5,7 +5,7 @@
 <!--TODO: Заменить теги секций-->
 <!--TODO: Валидация-->
 <!--TODO: Submit для кнопки-->
-<!--TODO: Слайдер-->
+<!--TODO: 42 строка-->
 <!--TODO: переименовать компоненты, вложить элементы в компоненты-->
 <!--TODO: Центрировать контейнер--><!DOCTYPE html>
 <html lang="en"></html>
@@ -176,12 +176,12 @@
           <div class="site-fieldset__area">
             <ul class="site-checkbox-list">
               <li class="site-checkbox">
-                <input class="site-checkbox__input" type="checkbox" id="smoking">
-                <label class="site-checkbox__label" for="smoking">Можно курить</label>
+                <input class="site-checkbox__input" type="checkbox" id="filter-smoking">
+                <label class="site-checkbox__label" for="filter-smoking">Можно курить</label>
               </li>
               <li class="site-checkbox">
-                <input class="site-checkbox__input" type="checkbox" id="animals" checked>
-                <label class="site-checkbox__label" for="animals">Можно с питомцами</label>
+                <input class="site-checkbox__input" type="checkbox" id="filter-animals" checked>
+                <label class="site-checkbox__label" for="filter-animals">Можно с питомцами</label>
               </li>
               <li class="site-checkbox">
                 <input class="site-checkbox__input" type="checkbox" id="invitation" checked>
@@ -195,13 +195,13 @@
           <div class="site-fieldset__area">
             <ul class="site-checkbox-list">
               <li class="site-checkbox site-checkbox_rich">
-                <input class="site-checkbox__input" type="checkbox" id="wide-corridor">
-                <label class="site-checkbox__label" for="wide-corridor">Широкий коридор</label>
+                <input class="site-checkbox__input" type="checkbox" id="filter-wide-corridor">
+                <label class="site-checkbox__label" for="filter-wide-corridor">Широкий коридор</label>
                 <p class="form-element__description">Ширина коридоров в номере <br> не менее 91 см.</p>
               </li>
               <li class="site-checkbox site-checkbox_rich">
-                <input class="site-checkbox__input" type="checkbox" id="assistant">
-                <label class="site-checkbox__label" for="assistant">Помощник для инвалидов</label>
+                <input class="site-checkbox__input" type="checkbox" id="filter-assistant">
+                <label class="site-checkbox__label" for="filter-assistant">Помощник для инвалидов</label>
                 <p class="form-element__description">На 1 этаже вас встретит специалист  и проводит до номера.</p>
               </li>
             </ul>
@@ -209,9 +209,9 @@
         </fieldset>
         <div class="form-element">
           <div class="form-element__top">
-            <label class="form-element__label" for="amenities">Удобства номера</label>
+            <label class="form-element__label" for="filter-amenities">Удобства номера</label>
           </div>
-          <div class="site-dropdown site-dropdown_counting-dropdown" id="amenities">
+          <div class="site-dropdown site-dropdown_counting-dropdown" id="filter-amenities">
             <button class="site-dropdown__header" type="button" data-text="Комнаты"><span class="text-area">Комнаты</span><span class="site-dropdown__header-icon material-icons">expand_more</span></button>
             <div class="site-dropdown__window" tabindex="-1">
               <ul class="site-dropdown__list">
@@ -246,28 +246,28 @@
             <div class="site-fieldset__area site-fieldset__area_shrunk">
               <ul class="site-checkbox-list">
                 <li class="site-checkbox">
-                  <input class="site-checkbox__input" type="checkbox" id="breakfast">
-                  <label class="site-checkbox__label" for="breakfast">Завтрак</label>
+                  <input class="site-checkbox__input" type="checkbox" id="filter-breakfast">
+                  <label class="site-checkbox__label" for="filter-breakfast">Завтрак</label>
                 </li>
                 <li class="site-checkbox">
-                  <input class="site-checkbox__input" type="checkbox" id="desk" checked>
-                  <label class="site-checkbox__label" for="desk">Письменный стол</label>
+                  <input class="site-checkbox__input" type="checkbox" id="filter-desk" checked>
+                  <label class="site-checkbox__label" for="filter-desk">Письменный стол</label>
                 </li>
                 <li class="site-checkbox">
-                  <input class="site-checkbox__input" type="checkbox" id="feeding chair" checked>
-                  <label class="site-checkbox__label" for="feeding chair">Стул для кормления</label>
+                  <input class="site-checkbox__input" type="checkbox" id="filter-feeding chair" checked>
+                  <label class="site-checkbox__label" for="filter-feeding chair">Стул для кормления</label>
                 </li>
                 <li class="site-checkbox">
-                  <input class="site-checkbox__input" type="checkbox" id="crib" checked>
-                  <label class="site-checkbox__label" for="crib">Кроватка</label>
+                  <input class="site-checkbox__input" type="checkbox" id="filter-crib" checked>
+                  <label class="site-checkbox__label" for="filter-crib">Кроватка</label>
                 </li>
                 <li class="site-checkbox">
-                  <input class="site-checkbox__input" type="checkbox" id="TV">
-                  <label class="site-checkbox__label" for="TV">Телевизор</label>
+                  <input class="site-checkbox__input" type="checkbox" id="filter-TV">
+                  <label class="site-checkbox__label" for="filter-TV">Телевизор</label>
                 </li>
                 <li class="site-checkbox">
-                  <input class="site-checkbox__input" type="checkbox" id="shampoo">
-                  <label class="site-checkbox__label" for="shampoo">Шампунь</label>
+                  <input class="site-checkbox__input" type="checkbox" id="filter-shampoo">
+                  <label class="site-checkbox__label" for="filter-shampoo">Шампунь</label>
                 </li>
               </ul>
             </div>
@@ -282,12 +282,16 @@
       <ul class="search-results__rooms-list">
         <li class="search-results__rooms-item">
           <article class="room-card room-card_luxe" id="room888">
-            <div class="room-card__image-container"><img class="room-card__image" src="/pages/website/search-results/img/room888-s.png" alt="Фотография номера">
+            <div class="room-card__image-container">
+              <ul class="room-card__image-list">
+                <li class="room-card__image-item"><img class="room-card__image" src="/pages/website/search-results/img/room888-1_s.png" alt="Фотография номера"></li>
+                <li class="room-card__image-item"><img class="room-card__image" src="/pages/website/search-results/img/room888-2_s.png" alt="Фотография номера"></li>
+                <li class="room-card__image-item"><img class="room-card__image" src="/pages/website/search-results/img/room888-3_s.png" alt="Фотография номера"></li>
+              </ul>
               <button class="room-card__arrow room-card__arrow_left material-icons">chevron_left</button>
               <button class="room-card__arrow room-card__arrow_right material-icons">chevron_right</button>
               <div class="room-card__bullets-block">
                 <div class="room-card__bullet room-card__bullet_active"></div>
-                <div class="room-card__bullet"></div>
                 <div class="room-card__bullet"></div>
                 <div class="room-card__bullet"></div>
               </div>
@@ -319,12 +323,16 @@
         </li>
         <li class="search-results__rooms-item">
           <article class="room-card" id="room840">
-            <div class="room-card__image-container"><img class="room-card__image" src="/pages/website/search-results/img/room840-s.png" alt="Фотография номера">
+            <div class="room-card__image-container">
+              <ul class="room-card__image-list">
+                <li class="room-card__image-item"><img class="room-card__image" src="/pages/website/search-results/img/room840_s.png" alt="Фотография номера"></li>
+                <li class="room-card__image-item"><img class="room-card__image" src="/pages/website/search-results/img/test.png" alt="Фотография номера"></li>
+                <li class="room-card__image-item"><img class="room-card__image" src="/pages/website/search-results/img/test.png" alt="Фотография номера"></li>
+              </ul>
               <button class="room-card__arrow room-card__arrow_left material-icons">chevron_left</button>
               <button class="room-card__arrow room-card__arrow_right material-icons">chevron_right</button>
               <div class="room-card__bullets-block">
                 <div class="room-card__bullet room-card__bullet_active"></div>
-                <div class="room-card__bullet"></div>
                 <div class="room-card__bullet"></div>
                 <div class="room-card__bullet"></div>
               </div>
@@ -356,12 +364,16 @@
         </li>
         <li class="search-results__rooms-item">
           <article class="room-card room-card_luxe" id="room980">
-            <div class="room-card__image-container"><img class="room-card__image" src="/pages/website/search-results/img/room980-s.png" alt="Фотография номера">
+            <div class="room-card__image-container">
+              <ul class="room-card__image-list">
+                <li class="room-card__image-item"><img class="room-card__image" src="/pages/website/search-results/img/room980_s.png" alt="Фотография номера"></li>
+                <li class="room-card__image-item"><img class="room-card__image" src="/pages/website/search-results/img/test.png" alt="Фотография номера"></li>
+                <li class="room-card__image-item"><img class="room-card__image" src="/pages/website/search-results/img/test.png" alt="Фотография номера"></li>
+              </ul>
               <button class="room-card__arrow room-card__arrow_left material-icons">chevron_left</button>
               <button class="room-card__arrow room-card__arrow_right material-icons">chevron_right</button>
               <div class="room-card__bullets-block">
                 <div class="room-card__bullet room-card__bullet_active"></div>
-                <div class="room-card__bullet"></div>
                 <div class="room-card__bullet"></div>
                 <div class="room-card__bullet"></div>
               </div>
@@ -393,12 +405,16 @@
         </li>
         <li class="search-results__rooms-item">
           <article class="room-card" id="room856">
-            <div class="room-card__image-container"><img class="room-card__image" src="/pages/website/search-results/img/room856-s.png" alt="Фотография номера">
+            <div class="room-card__image-container">
+              <ul class="room-card__image-list">
+                <li class="room-card__image-item"><img class="room-card__image" src="/pages/website/search-results/img/room856_s.png" alt="Фотография номера"></li>
+                <li class="room-card__image-item"><img class="room-card__image" src="/pages/website/search-results/img/test.png" alt="Фотография номера"></li>
+                <li class="room-card__image-item"><img class="room-card__image" src="/pages/website/search-results/img/test.png" alt="Фотография номера"></li>
+              </ul>
               <button class="room-card__arrow room-card__arrow_left material-icons">chevron_left</button>
               <button class="room-card__arrow room-card__arrow_right material-icons">chevron_right</button>
               <div class="room-card__bullets-block">
                 <div class="room-card__bullet room-card__bullet_active"></div>
-                <div class="room-card__bullet"></div>
                 <div class="room-card__bullet"></div>
                 <div class="room-card__bullet"></div>
               </div>
@@ -430,12 +446,16 @@
         </li>
         <li class="search-results__rooms-item">
           <article class="room-card" id="room740">
-            <div class="room-card__image-container"><img class="room-card__image" src="/pages/website/search-results/img/room740-s.png" alt="Фотография номера">
+            <div class="room-card__image-container">
+              <ul class="room-card__image-list">
+                <li class="room-card__image-item"><img class="room-card__image" src="/pages/website/search-results/img/room740_s.png" alt="Фотография номера"></li>
+                <li class="room-card__image-item"><img class="room-card__image" src="/pages/website/search-results/img/test.png" alt="Фотография номера"></li>
+                <li class="room-card__image-item"><img class="room-card__image" src="/pages/website/search-results/img/test.png" alt="Фотография номера"></li>
+              </ul>
               <button class="room-card__arrow room-card__arrow_left material-icons">chevron_left</button>
               <button class="room-card__arrow room-card__arrow_right material-icons">chevron_right</button>
               <div class="room-card__bullets-block">
                 <div class="room-card__bullet room-card__bullet_active"></div>
-                <div class="room-card__bullet"></div>
                 <div class="room-card__bullet"></div>
                 <div class="room-card__bullet"></div>
               </div>
@@ -467,12 +487,16 @@
         </li>
         <li class="search-results__rooms-item">
           <article class="room-card" id="room982">
-            <div class="room-card__image-container"><img class="room-card__image" src="/pages/website/search-results/img/room982-s.png" alt="Фотография номера">
+            <div class="room-card__image-container">
+              <ul class="room-card__image-list">
+                <li class="room-card__image-item"><img class="room-card__image" src="/pages/website/search-results/img/room982_s.png" alt="Фотография номера"></li>
+                <li class="room-card__image-item"><img class="room-card__image" src="/pages/website/search-results/img/test.png" alt="Фотография номера"></li>
+                <li class="room-card__image-item"><img class="room-card__image" src="/pages/website/search-results/img/test.png" alt="Фотография номера"></li>
+              </ul>
               <button class="room-card__arrow room-card__arrow_left material-icons">chevron_left</button>
               <button class="room-card__arrow room-card__arrow_right material-icons">chevron_right</button>
               <div class="room-card__bullets-block">
                 <div class="room-card__bullet room-card__bullet_active"></div>
-                <div class="room-card__bullet"></div>
                 <div class="room-card__bullet"></div>
                 <div class="room-card__bullet"></div>
               </div>
@@ -504,12 +528,16 @@
         </li>
         <li class="search-results__rooms-item">
           <article class="room-card" id="room678">
-            <div class="room-card__image-container"><img class="room-card__image" src="/pages/website/search-results/img/room678-s.png" alt="Фотография номера">
+            <div class="room-card__image-container">
+              <ul class="room-card__image-list">
+                <li class="room-card__image-item"><img class="room-card__image" src="/pages/website/search-results/img/room678_s.png" alt="Фотография номера"></li>
+                <li class="room-card__image-item"><img class="room-card__image" src="/pages/website/search-results/img/test.png" alt="Фотография номера"></li>
+                <li class="room-card__image-item"><img class="room-card__image" src="/pages/website/search-results/img/test.png" alt="Фотография номера"></li>
+              </ul>
               <button class="room-card__arrow room-card__arrow_left material-icons">chevron_left</button>
               <button class="room-card__arrow room-card__arrow_right material-icons">chevron_right</button>
               <div class="room-card__bullets-block">
                 <div class="room-card__bullet room-card__bullet_active"></div>
-                <div class="room-card__bullet"></div>
                 <div class="room-card__bullet"></div>
                 <div class="room-card__bullet"></div>
               </div>
@@ -541,12 +569,16 @@
         </li>
         <li class="search-results__rooms-item">
           <article class="room-card" id="room450">
-            <div class="room-card__image-container"><img class="room-card__image" src="/pages/website/search-results/img/room450-s.png" alt="Фотография номера">
+            <div class="room-card__image-container">
+              <ul class="room-card__image-list">
+                <li class="room-card__image-item"><img class="room-card__image" src="/pages/website/search-results/img/room450_s.png" alt="Фотография номера"></li>
+                <li class="room-card__image-item"><img class="room-card__image" src="/pages/website/search-results/img/test.png" alt="Фотография номера"></li>
+                <li class="room-card__image-item"><img class="room-card__image" src="/pages/website/search-results/img/test.png" alt="Фотография номера"></li>
+              </ul>
               <button class="room-card__arrow room-card__arrow_left material-icons">chevron_left</button>
               <button class="room-card__arrow room-card__arrow_right material-icons">chevron_right</button>
               <div class="room-card__bullets-block">
                 <div class="room-card__bullet room-card__bullet_active"></div>
-                <div class="room-card__bullet"></div>
                 <div class="room-card__bullet"></div>
                 <div class="room-card__bullet"></div>
               </div>
@@ -578,12 +610,16 @@
         </li>
         <li class="search-results__rooms-item">
           <article class="room-card" id="room350">
-            <div class="room-card__image-container"><img class="room-card__image" src="/pages/website/search-results/img/room350-s.png" alt="Фотография номера">
+            <div class="room-card__image-container">
+              <ul class="room-card__image-list">
+                <li class="room-card__image-item"><img class="room-card__image" src="/pages/website/search-results/img/room350_s.png" alt="Фотография номера"></li>
+                <li class="room-card__image-item"><img class="room-card__image" src="/pages/website/search-results/img/test.png" alt="Фотография номера"></li>
+                <li class="room-card__image-item"><img class="room-card__image" src="/pages/website/search-results/img/test.png" alt="Фотография номера"></li>
+              </ul>
               <button class="room-card__arrow room-card__arrow_left material-icons">chevron_left</button>
               <button class="room-card__arrow room-card__arrow_right material-icons">chevron_right</button>
               <div class="room-card__bullets-block">
                 <div class="room-card__bullet room-card__bullet_active"></div>
-                <div class="room-card__bullet"></div>
                 <div class="room-card__bullet"></div>
                 <div class="room-card__bullet"></div>
               </div>
@@ -615,12 +651,16 @@
         </li>
         <li class="search-results__rooms-item">
           <article class="room-card" id="room666">
-            <div class="room-card__image-container"><img class="room-card__image" src="/pages/website/search-results/img/room666-s.png" alt="Фотография номера">
+            <div class="room-card__image-container">
+              <ul class="room-card__image-list">
+                <li class="room-card__image-item"><img class="room-card__image" src="/pages/website/search-results/img/room666_s.png" alt="Фотография номера"></li>
+                <li class="room-card__image-item"><img class="room-card__image" src="/pages/website/search-results/img/test.png" alt="Фотография номера"></li>
+                <li class="room-card__image-item"><img class="room-card__image" src="/pages/website/search-results/img/test.png" alt="Фотография номера"></li>
+              </ul>
               <button class="room-card__arrow room-card__arrow_left material-icons">chevron_left</button>
               <button class="room-card__arrow room-card__arrow_right material-icons">chevron_right</button>
               <div class="room-card__bullets-block">
                 <div class="room-card__bullet room-card__bullet_active"></div>
-                <div class="room-card__bullet"></div>
                 <div class="room-card__bullet"></div>
                 <div class="room-card__bullet"></div>
               </div>
@@ -652,12 +692,16 @@
         </li>
         <li class="search-results__rooms-item">
           <article class="room-card" id="room444">
-            <div class="room-card__image-container"><img class="room-card__image" src="/pages/website/search-results/img/room444-s.png" alt="Фотография номера">
+            <div class="room-card__image-container">
+              <ul class="room-card__image-list">
+                <li class="room-card__image-item"><img class="room-card__image" src="/pages/website/search-results/img/room444_s.png" alt="Фотография номера"></li>
+                <li class="room-card__image-item"><img class="room-card__image" src="/pages/website/search-results/img/test.png" alt="Фотография номера"></li>
+                <li class="room-card__image-item"><img class="room-card__image" src="/pages/website/search-results/img/test.png" alt="Фотография номера"></li>
+              </ul>
               <button class="room-card__arrow room-card__arrow_left material-icons">chevron_left</button>
               <button class="room-card__arrow room-card__arrow_right material-icons">chevron_right</button>
               <div class="room-card__bullets-block">
                 <div class="room-card__bullet room-card__bullet_active"></div>
-                <div class="room-card__bullet"></div>
                 <div class="room-card__bullet"></div>
                 <div class="room-card__bullet"></div>
               </div>
@@ -689,12 +733,16 @@
         </li>
         <li class="search-results__rooms-item">
           <article class="room-card" id="room352">
-            <div class="room-card__image-container"><img class="room-card__image" src="/pages/website/search-results/img/room352-s.png" alt="Фотография номера">
+            <div class="room-card__image-container">
+              <ul class="room-card__image-list">
+                <li class="room-card__image-item"><img class="room-card__image" src="/pages/website/search-results/img/room352_s.png" alt="Фотография номера"></li>
+                <li class="room-card__image-item"><img class="room-card__image" src="/pages/website/search-results/img/test.png" alt="Фотография номера"></li>
+                <li class="room-card__image-item"><img class="room-card__image" src="/pages/website/search-results/img/test.png" alt="Фотография номера"></li>
+              </ul>
               <button class="room-card__arrow room-card__arrow_left material-icons">chevron_left</button>
               <button class="room-card__arrow room-card__arrow_right material-icons">chevron_right</button>
               <div class="room-card__bullets-block">
                 <div class="room-card__bullet room-card__bullet_active"></div>
-                <div class="room-card__bullet"></div>
                 <div class="room-card__bullet"></div>
                 <div class="room-card__bullet"></div>
               </div>

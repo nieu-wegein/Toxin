@@ -60,7 +60,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _jqu
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _jquery_3_6_0_min__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../jquery-3.6.0.min */ \"./src/jquery-3.6.0.min.js\");\n/* harmony import */ var _jquery_3_6_0_min__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_jquery_3_6_0_min__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _site_fieldset_site_fieldset__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../site-fieldset/site-fieldset */ \"./src/components/site-fieldset/site-fieldset.js\");\n\r\n\r\n\n\n//# sourceURL=webpack://toxin/./src/components/site-checkbox/site-checkbox.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _site_fieldset_site_fieldset__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../site-fieldset/site-fieldset */ \"./src/components/site-fieldset/site-fieldset.js\");\n\r\n\n\n//# sourceURL=webpack://toxin/./src/components/site-checkbox/site-checkbox.js?");
 
 /***/ }),
 

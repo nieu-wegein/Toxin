@@ -2,7 +2,8 @@
 <!--TODO: изменить классы заголовков-->
 <!--TODO: Валидация-->
 <!--TODO: Submit для кнопки-->
-<!--TODO: Заменить теги секций--><!DOCTYPE html>
+<!--TODO: Заменить теги секций-->
+<!--TODO: 42 строка--><!DOCTYPE html>
 <html lang="en"></html>
 <head>
   <meta charset="utf-8">
@@ -41,14 +42,14 @@
         <h2 class="search-block__heading">Найдём номера под ваши пожелания</h2>
         <div class="search-block__body">
           <form class="search-block__form">
-            <div class="date-dropdown-wrapper">
+            <div class="search-block__date-dropdown-wrapper">
               <div class="form-element">
                 <div class="form-element__top">
-                  <label class="form-element__label" for="departure">Прибытие</label>
+                  <label class="form-element__label" for="search-departure">Прибытие</label>
                 </div>
-                <div class="site-dropdown site-dropdown_shared-calendar" id="departure">
-                  <button class="site-dropdown__header" type="button" data-text="ДД.ММ.ГГГГ" data-windowid="ui-page-calendar"><span class="text-area">ДД.ММ.ГГГГ</span><span class="site-dropdown__header-icon material-icons">expand_more</span></button>
-                  <div class="site-dropdown__window site-dropdown__window_free site-dropdown__window_free" tabindex="-1" id="ui-page-calendar">
+                <div class="site-dropdown site-dropdown_shared-calendar" id="search-departure">
+                  <button class="site-dropdown__header" type="button" data-text="ДД.ММ.ГГГГ" data-windowid="search-calendar"><span class="text-area">ДД.ММ.ГГГГ</span><span class="site-dropdown__header-icon material-icons">expand_more</span></button>
+                  <div class="site-dropdown__window site-dropdown__window_free site-dropdown__window_free" tabindex="-1" id="search-calendar">
                     <div class="site-calendar site-calendar_range">
                       <div class="site-calendar__header">
                         <button class="site-calendar__prev-button material-icons" type="button">arrow_back</button><span class="site-calendar__header-text">Август 2019</span>
@@ -118,22 +119,22 @@
                 </div>
               </div>
             </div>
-            <div class="date-dropdown-wrapper">
+            <div class="search-block__date-dropdown-wrapper">
               <div class="form-element">
                 <div class="form-element__top">
-                  <label class="form-element__label" for="arrival">Выезд</label>
+                  <label class="form-element__label" for="search-arrival">Выезд</label>
                 </div>
-                <div class="site-dropdown site-dropdown_shared-calendar" id="arrival">
+                <div class="site-dropdown site-dropdown_shared-calendar" id="search-arrival">
                   <button class="site-dropdown__header" type="button" data-text="ДД.ММ.ГГГГ" data-windowid="ui-page-calendar"><span class="text-area">ДД.ММ.ГГГГ</span><span class="site-dropdown__header-icon material-icons">expand_more</span></button>
                 </div>
               </div>
             </div>
-            <div class="guests-dropdown-wrapper">
+            <div class="search-block__guests-dropdown-wrapper">
               <div class="form-element">
                 <div class="form-element__top">
-                  <label class="form-element__label" for="guest-dropdown">Гости</label>
+                  <label class="form-element__label" for="search-guest-dropdown">Гости</label>
                 </div>
-                <div class="site-dropdown site-dropdown_counting-dropdown" id="guest-dropdown">
+                <div class="site-dropdown site-dropdown_counting-dropdown" id="search-guest-dropdown">
                   <button class="site-dropdown__header" type="button" data-text="Сколько гостей"><span class="text-area">Сколько гостей</span><span class="site-dropdown__header-icon material-icons">expand_more</span></button>
                   <div class="site-dropdown__window" tabindex="-1">
                     <ul class="site-dropdown__list">

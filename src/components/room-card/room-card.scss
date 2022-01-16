@@ -21,6 +21,18 @@
 
   &__image{
     width: 100%;
+
+    &-list {
+      padding: 0;
+      margin: 0;
+      list-style: none;
+      display: flex;
+      transition: transform .5s;
+    }
+
+    &-item {
+      flex-shrink: 0;
+    }
   }
 
   &__bullets-block {
@@ -44,6 +56,7 @@
 
   &__arrow {
     position: absolute;
+    top:0;
     cursor: pointer;
     width: 42px;
     height: 100%;

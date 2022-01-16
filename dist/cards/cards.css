@@ -871,10 +871,10 @@ template {
 .search-block__form > .button {
   margin-top: 32px;
 }
-.search-block .date-dropdown-wrapper {
+.search-block__date-dropdown-wrapper {
   width: 150px;
 }
-.search-block .guests-dropdown-wrapper {
+.search-block__guests-dropdown-wrapper {
   width: 100%;
   margin-top: 21px;
 }
@@ -1952,27 +1952,27 @@ template {
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
 }
-.booking-block .date-dropdown-wrapper {
+.booking-block__date-dropdown-wrapper {
   width: 150px;
 }
-.booking-block .guests-dropdown-wrapper {
+.booking-block__guests-dropdown-wrapper {
   width: 100%;
   margin-top: 21px;
 }
 .booking-block__bill-section {
-  width: 100%;
   color: rgba(31, 32, 65, 0.75);
   font-family: "Montserrat", sans-serif;
   font-size: 14px;
   line-height: 18px;
   letter-spacing: -0.1px;
+  width: 100%;
   padding-top: 7px;
-  padding-bottom: 6px;
+  padding-bottom: 4px;
 }
 .booking-block__bill-table {
   width: 100%;
   border-collapse: separate;
-  border-spacing: 0 14px;
+  border-spacing: 0 15px;
 }
 .booking-block__bill-row {
   vertical-align: top;
@@ -1988,10 +1988,14 @@ template {
   display: -ms-flexbox;
   display: flex;
 }
-.booking-block__calculation::after {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-  content: "i";
+.booking-block .booking-block__termin {
+  max-width: 215px;
+  margin: 0;
+}
+.booking-block .booking-block__termin-info {
+  position: relative;
+  bottom: 2px;
+  cursor: pointer;
   width: 20px;
   height: 20px;
   font-family: "Montserrat-Bold", sans-serif;
@@ -2000,13 +2004,26 @@ template {
   border: 1px solid rgba(31, 32, 65, 0.25);
   border-radius: 50%;
   margin-left: 5px;
-}
-.booking-block .booking-block__termin {
-  max-width: 215px;
-  margin: 0;
+  background-color: transparent;
 }
 .booking-block .booking-block__termin_total {
   margin-top: 15px;
+  max-width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+}
+.booking-block .booking-block__termin_total:after {
+  content: " ";
+  width: 100%;
+  height: 0;
+  margin-left: 5px;
+  position: relative;
+  bottom: 6px;
+  border-bottom: 1px dashed rgba(31, 32, 65, 0.25);
 }
 .booking-block .booking-block__definition_total {
   display: inline-block;
@@ -2474,6 +2491,22 @@ template {
 .room-card__image {
   width: 100%;
 }
+.room-card__image-list {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-transition: -webkit-transform 0.5s;
+  transition: -webkit-transform 0.5s;
+  transition: transform 0.5s;
+  transition: transform 0.5s, -webkit-transform 0.5s;
+}
+.room-card__image-item {
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+}
 .room-card__bullets-block {
   position: absolute;
   bottom: 15px;
@@ -2493,6 +2526,7 @@ template {
 }
 .room-card__arrow {
   position: absolute;
+  top: 0;
   cursor: pointer;
   width: 42px;
   height: 100%;

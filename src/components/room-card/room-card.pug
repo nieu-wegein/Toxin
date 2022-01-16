@@ -1,4 +1,3 @@
-//TODO: Слайдер
 
 include ../rate-button/rate-button
 
@@ -7,7 +6,7 @@ mixin room-card(id, room)
   -
     const cardClassList = ["room-card"];
     const card = room ? room :  {
-      img: "../../../components/room-card/room888.png",
+      imgList: ["../../../components/room-card/img/no-image.jpg"],
       number: "888",
       price: "9 990₽",
       testimonials: "145",
@@ -17,14 +16,18 @@ mixin room-card(id, room)
 
   article(class = cardClassList id = id)
     .room-card__image-container
-      img(class = "room-card__image" src = card.img alt = "Фотография номера")
-      button.room-card__arrow.room-card__arrow_left.material-icons chevron_left
-      button.room-card__arrow.room-card__arrow_right.material-icons chevron_right
+      ul.room-card__image-list
+        each img in card.imgList
+          li.room-card__image-item
+            img(class = "room-card__image" src = img alt = "Фотография номера")
+      button(class = "room-card__arrow room-card__arrow_left material-icons") chevron_left
+      button(class = "room-card__arrow room-card__arrow_right material-icons" ) chevron_right
       .room-card__bullets-block
-        .room-card__bullet.room-card__bullet_active
-        .room-card__bullet
-        .room-card__bullet
-        .room-card__bullet
+        each img, i in card.imgList
+          if i === 0
+            .room-card__bullet.room-card__bullet_active
+          else
+            .room-card__bullet
     .room-card__body
       .room-card__info
         p.room-card__room-number №

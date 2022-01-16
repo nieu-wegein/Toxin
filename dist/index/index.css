@@ -1339,10 +1339,10 @@ template {
 .search-block__form > .button {
   margin-top: 32px;
 }
-.search-block .date-dropdown-wrapper {
+.search-block__date-dropdown-wrapper {
   width: 150px;
 }
-.search-block .guests-dropdown-wrapper {
+.search-block__guests-dropdown-wrapper {
   width: 100%;
   margin-top: 21px;
 }

@@ -1674,6 +1674,22 @@ template {
 .room-card__image {
   width: 100%;
 }
+.room-card__image-list {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-transition: -webkit-transform 0.5s;
+  transition: -webkit-transform 0.5s;
+  transition: transform 0.5s;
+  transition: transform 0.5s, -webkit-transform 0.5s;
+}
+.room-card__image-item {
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+}
 .room-card__bullets-block {
   position: absolute;
   bottom: 15px;
@@ -1693,6 +1709,7 @@ template {
 }
 .room-card__arrow {
   position: absolute;
+  top: 0;
   cursor: pointer;
   width: 42px;
   height: 100%;

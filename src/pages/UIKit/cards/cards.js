@@ -4,6 +4,7 @@ import "../../../components/search-block/search-block"
 import "../../../components/registration-block/registration-block"
 import "../../../components/booking-block/booking-block"
 import "../../../components/log-in-block/log-in-block"
+import "../../../components/room-card/room-card";
 import $ from "../../../jquery-3.6.0.min";
 
 
@@ -15,9 +16,5 @@ $(function(){
   $("[value='4 stars']", rateButtons[1]).attr("checked", true);
 
   const roomCards = $(".room-card").get();
-
-  // $(".room-card__image", roomCards[1]).attr("src", "../../../components/room-card/aaas.png");
-  // $(".room-card__room-number", roomCards[1]).text("№840").removeClass(".room-card__room-number_luxe");
-  // $(".room-card__image", roomCards[1]).attr("src", "../../../components/room-card/aaas.png");
 })
 

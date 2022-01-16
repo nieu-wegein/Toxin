@@ -4,9 +4,7 @@
 <!--TODO: Submit для кнопки-->
 <!--TODO: Заменить теги секций-->
 <!--TODO: изменить классы заголовков-->
-<!--TODO: Убрать общие названия классов и id в блоках-->
-<!--TODO: ИТОГО-->
-<!--TODO: Кнопки вместо псевдоэлементов-->
+<!--TODO: 42 строка-->
 <!--TODO: ненужные загрузки стилей и скриптов-->
 <!--TODO: ЗАГОЛОВКИ В СЕКЦИЯХ-->
 <!--TODO: вынести данные на страницы--><!DOCTYPE html>
@@ -49,11 +47,11 @@
           <h2 class="site-section__heading site-section__heading_hidden site-section__heading_h2">Фотографии номера</h2>
         </div>
         <div class="room-details__photos-column">
-          <div class="room-details__photo-container"><img class="room-details__room-photo" src="/pages/website/room-details/img/room888-m.png" alt="Фотография комнаты"></div>
+          <div class="room-details__photo-container"><img class="room-details__room-photo" src="/pages/website/room-details/img/room888-1_m.png" alt="Фотография комнаты"></div>
         </div>
         <div class="room-details__photos-column">
-          <div class="room-details__photo-container"><img class="room-details__room-photo" src="/pages/website/room-details/img/room888_2-s.png" alt="Фотография комнаты"></div>
-          <div class="room-details__photo-container"><img class="room-details__room-photo" src="/pages/website/room-details/img/room888_3-s.png" alt="Фотография комнаты"></div>
+          <div class="room-details__photo-container"><img class="room-details__room-photo" src="/pages/website/room-details/img/room888-2_s.png" alt="Фотография комнаты"></div>
+          <div class="room-details__photo-container"><img class="room-details__room-photo" src="/pages/website/room-details/img/room888-3_s.png" alt="Фотография комнаты"></div>
         </div>
       </section>
       <div class="room-details__main-info-wrapper">
@@ -202,14 +200,14 @@
           </header>
           <div class="booking-block__body">
             <form class="booking-block__form">
-              <div class="date-dropdown-wrapper">
+              <div class="booking-block__date-dropdown-wrapper">
                 <div class="form-element">
                   <div class="form-element__top">
                     <label class="form-element__label" for="booking-departure">Прибытие</label>
                   </div>
                   <div class="site-dropdown site-dropdown_shared-calendar" id="booking-departure">
-                    <button class="site-dropdown__header" type="button" data-text="ДД.ММ.ГГГГ" data-windowid="booking"><span class="text-area">ДД.ММ.ГГГГ</span><span class="site-dropdown__header-icon material-icons">expand_more</span></button>
-                    <div class="site-dropdown__window site-dropdown__window_free site-dropdown__window_free" tabindex="-1" id="booking">
+                    <button class="site-dropdown__header" type="button" data-text="ДД.ММ.ГГГГ" data-windowid="booking-dropdown"><span class="text-area">ДД.ММ.ГГГГ</span><span class="site-dropdown__header-icon material-icons">expand_more</span></button>
+                    <div class="site-dropdown__window site-dropdown__window_free site-dropdown__window_free" tabindex="-1" id="booking-dropdown">
                       <div class="site-calendar site-calendar_range">
                         <div class="site-calendar__header">
                           <button class="site-calendar__prev-button material-icons" type="button">arrow_back</button><span class="site-calendar__header-text">Август 2019</span>
@@ -279,22 +277,22 @@
                   </div>
                 </div>
               </div>
-              <div class="date-dropdown-wrapper">
+              <div class="booking-block__date-dropdown-wrapper">
                 <div class="form-element">
                   <div class="form-element__top">
                     <label class="form-element__label" for="booking-arrival">Выезд</label>
                   </div>
                   <div class="site-dropdown site-dropdown_shared-calendar" id="booking-arrival">
-                    <button class="site-dropdown__header" type="button" data-text="ДД.ММ.ГГГГ" data-windowid="booking"><span class="text-area">ДД.ММ.ГГГГ</span><span class="site-dropdown__header-icon material-icons">expand_more</span></button>
+                    <button class="site-dropdown__header" type="button" data-text="ДД.ММ.ГГГГ" data-windowid="booking-dropdown"><span class="text-area">ДД.ММ.ГГГГ</span><span class="site-dropdown__header-icon material-icons">expand_more</span></button>
                   </div>
                 </div>
               </div>
-              <div class="guests-dropdown-wrapper">
+              <div class="booking-block__guests-dropdown-wrapper">
                 <div class="form-element">
                   <div class="form-element__top">
-                    <label class="form-element__label" for="guest-dropdown">Гости</label>
+                    <label class="form-element__label" for="booking-guest-dropdown">Гости</label>
                   </div>
-                  <div class="site-dropdown site-dropdown_counting-dropdown" id="guest-dropdown">
+                  <div class="site-dropdown site-dropdown_counting-dropdown" id="booking-guest-dropdown">
                     <button class="site-dropdown__header" type="button" data-text="Сколько гостей"><span class="text-area">Сколько гостей</span><span class="site-dropdown__header-icon material-icons">expand_more</span></button>
                     <div class="site-dropdown__window" tabindex="-1">
                       <ul class="site-dropdown__list">
@@ -342,6 +340,7 @@
                     <td class="booking-block__bill-data">
                       <div class="booking-block__calculation">
                         <p class="booking-block__termin">Сбор за услуги: скидка 2 179₽</p>
+                        <button class="booking-block__termin-info" type="button">i</button>
                       </div>
                     </td>
                     <td class="booking-block__bill-data"><span class="booking-block__definition">0₽</span></td>
@@ -350,6 +349,7 @@
                     <td class="booking-block__bill-data">
                       <div class="booking-block__calculation">
                         <p class="booking-block__termin">Сбор за дополнительные услуги</p>
+                        <button class="booking-block__termin-info" type="button">i</button>
                       </div>
                     </td>
                     <td class="booking-block__bill-data"><span class="booking-block__definition">300₽</span></td>
