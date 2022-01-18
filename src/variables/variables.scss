@@ -1,5 +1,6 @@
-//TODO: Поменять все на миксины с параметрами по умолчанию
 
+$ff-normal: "Montserrat", sans-serif;
+$ff-bold: "Montserrat-Bold", sans-serif;
 $site-purple: #BC9CFF;
 $site-green: #6FCF97;
 $site-dark: rgba(31, 32, 65, 1);
@@ -13,20 +14,20 @@ $primary-gradient-25: linear-gradient(180deg, rgba(188,156,255,0.25) 0%, rgba(13
 $primary-gradient-50: linear-gradient(180deg, rgba(188,156,255,0.5) 0%, rgba(139,164,249,0.5) 100%);
 $secondary-gradient: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%);
 
-%site-h1 {
-  color: $site-dark;
-  font-size: 24px;
-  font-family: "Montserrat-Bold", sans-serif;
-  line-height: 29px;
-  margin: 0; //TODO: убрать margin
+@mixin site-h1 ($color: $site-dark, $font:"Montserrat-Bold", $fontS: 24px, $lineH: 29px){
+  color: $color;
+  font-size:  $fontS;
+  font-family: $font, sans-serif;
+  line-height: $lineH;
+  margin: 0;
   letter-spacing: -0.1px;
 }
 
-%site-h2 {
-  color: $site-dark;
-  font-size: 19px;
-  font-family: "Montserrat-Bold", sans-serif;
-  line-height: 24px;
+@mixin site-h2($color: $site-dark, $font:"Montserrat-Bold", $fontS: 19px, $lineH: 24px) {
+  color: $color;
+  font-size: $fontS;
+  font-family: $font, sans-serif;
+  line-height: $lineH;
   letter-spacing: 0.2px;
   margin: 0;
 }

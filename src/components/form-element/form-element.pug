@@ -8,9 +8,10 @@ mixin form-element(obj)
     }
 
   .form-element
-    if(obj.label)
+    if(obj.label || obj.note)
       div(class = topClassList)
-        label(class = "form-element__label", for = obj.id) !{obj.label}
+        if obj.label
+          label(class = "form-element__label", for = obj.id) !{obj.label}
         if obj.note
           span.form-element__note !{obj.note}
       block

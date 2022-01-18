@@ -384,24 +384,6 @@ template {
   src: local(""), url(../ed42f12c8204ea6029e6.woff) format("woff"), url(../8053470a105c34478b57.ttf) format("truetype"), url(../fac85a3030008d30b0b8.svg#Montserrat) format("svg");
   /* Legacy iOS */
 }
-.site-section__heading_h1 {
-  color: #1f2041;
-  font-size: 24px;
-  font-family: "Montserrat-Bold", sans-serif;
-  line-height: 29px;
-  margin: 0;
-  letter-spacing: -0.1px;
-}
-
-.site-section__heading_h2 {
-  color: #1f2041;
-  font-size: 19px;
-  font-family: "Montserrat-Bold", sans-serif;
-  line-height: 24px;
-  letter-spacing: 0.2px;
-  margin: 0;
-}
-
 .button {
   color: #BC9CFF;
   font-size: 12px;
@@ -439,7 +421,7 @@ template {
   background-image: linear-gradient(white, white), linear-gradient(180deg, rgba(188, 156, 255, 0.5) 0%, rgba(139, 164, 249, 0.5) 100%);
 }
 .button_secondary {
-  font-family: Montserrat-Bold, sans-serif;
+  font-family: "Montserrat-Bold", sans-serif;
   color: white;
   background-image: -webkit-gradient(linear, left top, left bottom, from(#6FCF97), to(#66D2EA));
   background-image: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%);
@@ -449,7 +431,7 @@ template {
   background-image: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%);
 }
 .button_primary {
-  font-family: Montserrat-Bold, sans-serif;
+  font-family: "Montserrat-Bold", sans-serif;
   color: white;
   background-image: -webkit-gradient(linear, left top, left bottom, from(#BC9CFF), to(#8BA4F9));
   background-image: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
@@ -475,13 +457,13 @@ template {
   width: 100%;
 }
 .button.arrow::after {
+  content: "arrow_forward";
   font-family: "Material Icons";
   font-size: 24px;
   top: 13px;
   right: 9px;
   position: absolute;
   text-transform: none;
-  content: "arrow_forward";
 }
 
 .site-logo {
@@ -500,7 +482,7 @@ template {
   background-color: white;
   -webkit-box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05);
           box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05);
-  font-family: Montserrat, sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-size: 14px;
   line-height: 17px;
   color: rgba(31, 32, 65, 0.5);
@@ -614,6 +596,22 @@ template {
   letter-spacing: -0.1px;
 }
 .site-section__heading {
+  margin: 0;
+}
+.site-section__heading_h1 {
+  color: #1f2041;
+  font-size: 24px;
+  font-family: "Montserrat-Bold", sans-serif;
+  line-height: 29px;
+  margin: 0;
+  letter-spacing: -0.1px;
+}
+.site-section__heading_h2 {
+  color: #1f2041;
+  font-size: 19px;
+  font-family: "Montserrat-Bold", sans-serif;
+  line-height: 24px;
+  letter-spacing: 0.2px;
   margin: 0;
 }
 .site-section__heading_h3 {

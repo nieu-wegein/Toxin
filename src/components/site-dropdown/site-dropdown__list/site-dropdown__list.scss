@@ -1,4 +1,4 @@
-//Todo: переименовать все scss в индексы
+
 
 .site-dropdown__list {
 
@@ -12,14 +12,11 @@
 
 .site-dropdown__item {
 
+  @include site-h3();
   display: flex;
   align-items: center;
   justify-content: space-between;
-  font-family: "Montserrat-Bold", sans-serif;
-  font-size: 12px;
-  color: $site-dark;
-  text-transform: uppercase;
   list-style: none;
   width: 100%;
-  margin-top: 6px;
+  margin-top: 4px;
 }

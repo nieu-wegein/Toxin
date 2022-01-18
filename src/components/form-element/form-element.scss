@@ -23,14 +23,14 @@
   }
 
   &__note {
-    font-family: "Montserrat", sans-serif;
+    font-family: $ff-normal;
     color: $site-dark-50;
     font-size: 12px;
     text-transform: uppercase;
   }
 
   &__description {
-    font-family: "Montserrat", sans-serif;
+    font-family: $ff-normal;
     color: $site-dark-50;
     font-size: 12px;
   }

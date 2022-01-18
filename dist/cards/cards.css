@@ -385,24 +385,6 @@ template {
   src: local(""), url(../ed42f12c8204ea6029e6.woff) format("woff"), url(../8053470a105c34478b57.ttf) format("truetype"), url(../fac85a3030008d30b0b8.svg#Montserrat) format("svg");
   /* Legacy iOS */
 }
-.log-in-block__heading, .booking-block__room-number, .registration-block__heading, .search-block__heading {
-  color: #1f2041;
-  font-size: 24px;
-  font-family: "Montserrat-Bold", sans-serif;
-  line-height: 29px;
-  margin: 0;
-  letter-spacing: -0.1px;
-}
-
-.booking-block__bill-row_total, .site-calendar__header {
-  color: #1f2041;
-  font-size: 19px;
-  font-family: "Montserrat-Bold", sans-serif;
-  line-height: 24px;
-  letter-spacing: 0.2px;
-  margin: 0;
-}
-
 .site-dropdown__header {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -447,6 +429,12 @@ template {
 }
 
 .site-dropdown__item {
+  color: #1f2041;
+  font-size: 12px;
+  font-family: "Montserrat-Bold", sans-serif;
+  line-height: 15px;
+  text-transform: uppercase;
+  margin: 0;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -456,13 +444,9 @@ template {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  font-family: "Montserrat-Bold", sans-serif;
-  font-size: 12px;
-  color: #1f2041;
-  text-transform: uppercase;
   list-style: none;
   width: 100%;
-  margin-top: 6px;
+  margin-top: 4px;
 }
 
 .site-dropdown__footer {
@@ -537,6 +521,12 @@ template {
   background-color: white;
 }
 .site-calendar__header {
+  color: #1f2041;
+  font-size: 19px;
+  font-family: "Montserrat-Bold", sans-serif;
+  line-height: 24px;
+  letter-spacing: 0.2px;
+  margin: 0;
   padding: 20px 0;
   margin-bottom: 10px;
   display: -webkit-box;
@@ -554,7 +544,7 @@ template {
   color: #BC9CFF;
 }
 .site-calendar__days-section, .site-calendar__date-section {
-  font-family: "Montserrat-Bold";
+  font-family: "Montserrat-Bold", sans-serif;
   font-size: 12px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -564,7 +554,7 @@ template {
           justify-content: space-between;
 }
 .site-calendar__date-section {
-  font-family: "Montserrat";
+  font-family: "Montserrat", sans-serif;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
 }
@@ -663,7 +653,7 @@ template {
   background-image: linear-gradient(white, white), linear-gradient(180deg, rgba(188, 156, 255, 0.5) 0%, rgba(139, 164, 249, 0.5) 100%);
 }
 .button_secondary {
-  font-family: Montserrat-Bold, sans-serif;
+  font-family: "Montserrat-Bold", sans-serif;
   color: white;
   background-image: -webkit-gradient(linear, left top, left bottom, from(#6FCF97), to(#66D2EA));
   background-image: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%);
@@ -673,7 +663,7 @@ template {
   background-image: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%);
 }
 .button_primary {
-  font-family: Montserrat-Bold, sans-serif;
+  font-family: "Montserrat-Bold", sans-serif;
   color: white;
   background-image: -webkit-gradient(linear, left top, left bottom, from(#BC9CFF), to(#8BA4F9));
   background-image: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
@@ -699,13 +689,13 @@ template {
   width: 100%;
 }
 .button.arrow::after {
+  content: "arrow_forward";
   font-family: "Material Icons";
   font-size: 24px;
   top: 13px;
   right: 9px;
   position: absolute;
   text-transform: none;
-  content: "arrow_forward";
 }
 
 .site-dropdown {
@@ -801,7 +791,7 @@ template {
   background-image: linear-gradient(white, white), linear-gradient(180deg, rgba(188, 156, 255, 0.5) 0%, rgba(139, 164, 249, 0.5) 100%);
 }
 .button_secondary {
-  font-family: Montserrat-Bold, sans-serif;
+  font-family: "Montserrat-Bold", sans-serif;
   color: white;
   background-image: -webkit-gradient(linear, left top, left bottom, from(#6FCF97), to(#66D2EA));
   background-image: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%);
@@ -811,7 +801,7 @@ template {
   background-image: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%);
 }
 .button_primary {
-  font-family: Montserrat-Bold, sans-serif;
+  font-family: "Montserrat-Bold", sans-serif;
   color: white;
   background-image: -webkit-gradient(linear, left top, left bottom, from(#BC9CFF), to(#8BA4F9));
   background-image: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
@@ -837,13 +827,13 @@ template {
   width: 100%;
 }
 .button.arrow::after {
+  content: "arrow_forward";
   font-family: "Material Icons";
   font-size: 24px;
   top: 13px;
   right: 9px;
   position: absolute;
   text-transform: none;
-  content: "arrow_forward";
 }
 
 .search-block {
@@ -855,7 +845,21 @@ template {
   padding: 40px 29px 30px 29px;
   max-width: 380px;
 }
+.search-block__heading-hidden {
+  clip: rect(0 0 0 0);
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+  z-index: -1;
+  position: absolute;
+}
 .search-block__heading {
+  color: #1f2041;
+  font-size: 24px;
+  font-family: "Montserrat-Bold", sans-serif;
+  line-height: 29px;
+  margin: 0;
+  letter-spacing: -0.1px;
   margin-bottom: 20px;
 }
 .search-block__form {
@@ -1073,6 +1077,11 @@ template {
   background-clip: content-box;
 }
 .site-radio__label {
+  color: rgba(31, 32, 65, 0.5);
+  font-family: "Montserrat", sans-serif;
+  font-size: 14px;
+  line-height: 24px;
+  letter-spacing: -0.1px;
   position: relative;
   display: -webkit-inline-box;
   display: -ms-inline-flexbox;
@@ -1080,10 +1089,6 @@ template {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  font-family: "Montserrat", sans-serif;
-  font-size: 14px;
-  line-height: 24px;
-  color: rgba(31, 32, 65, 0.5);
   padding-left: 30px;
   cursor: pointer;
 }
@@ -1204,7 +1209,7 @@ template {
   margin-top: 9px;
 }
 .site-checkbox_rich .site-checkbox__label {
-  font-family: "Montserrat-Bold";
+  font-family: "Montserrat-Bold", sans-serif;
   color: rgba(31, 32, 65, 0.75);
 }
 .site-checkbox_toggle:not(:first-child) {
@@ -1371,7 +1376,7 @@ template {
   background-image: linear-gradient(white, white), linear-gradient(180deg, rgba(188, 156, 255, 0.5) 0%, rgba(139, 164, 249, 0.5) 100%);
 }
 .button_secondary {
-  font-family: Montserrat-Bold, sans-serif;
+  font-family: "Montserrat-Bold", sans-serif;
   color: white;
   background-image: -webkit-gradient(linear, left top, left bottom, from(#6FCF97), to(#66D2EA));
   background-image: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%);
@@ -1381,7 +1386,7 @@ template {
   background-image: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%);
 }
 .button_primary {
-  font-family: Montserrat-Bold, sans-serif;
+  font-family: "Montserrat-Bold", sans-serif;
   color: white;
   background-image: -webkit-gradient(linear, left top, left bottom, from(#BC9CFF), to(#8BA4F9));
   background-image: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
@@ -1407,13 +1412,13 @@ template {
   width: 100%;
 }
 .button.arrow::after {
+  content: "arrow_forward";
   font-family: "Material Icons";
   font-size: 24px;
   top: 13px;
   right: 9px;
   position: absolute;
   text-transform: none;
-  content: "arrow_forward";
 }
 
 .registration-block {
@@ -1426,6 +1431,12 @@ template {
   max-width: 380px;
 }
 .registration-block__heading {
+  color: #1f2041;
+  font-size: 24px;
+  font-family: "Montserrat-Bold", sans-serif;
+  line-height: 29px;
+  margin: 0;
+  letter-spacing: -0.1px;
   margin-bottom: 20px;
 }
 .registration-block__form {
@@ -1498,6 +1509,12 @@ template {
 }
 
 .site-dropdown__item {
+  color: #1f2041;
+  font-size: 12px;
+  font-family: "Montserrat-Bold", sans-serif;
+  line-height: 15px;
+  text-transform: uppercase;
+  margin: 0;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1507,13 +1524,9 @@ template {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  font-family: "Montserrat-Bold", sans-serif;
-  font-size: 12px;
-  color: #1f2041;
-  text-transform: uppercase;
   list-style: none;
   width: 100%;
-  margin-top: 6px;
+  margin-top: 4px;
 }
 
 .site-dropdown__footer {
@@ -1588,6 +1601,12 @@ template {
   background-color: white;
 }
 .site-calendar__header {
+  color: #1f2041;
+  font-size: 19px;
+  font-family: "Montserrat-Bold", sans-serif;
+  line-height: 24px;
+  letter-spacing: 0.2px;
+  margin: 0;
   padding: 20px 0;
   margin-bottom: 10px;
   display: -webkit-box;
@@ -1605,7 +1624,7 @@ template {
   color: #BC9CFF;
 }
 .site-calendar__days-section, .site-calendar__date-section {
-  font-family: "Montserrat-Bold";
+  font-family: "Montserrat-Bold", sans-serif;
   font-size: 12px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1615,7 +1634,7 @@ template {
           justify-content: space-between;
 }
 .site-calendar__date-section {
-  font-family: "Montserrat";
+  font-family: "Montserrat", sans-serif;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
 }
@@ -1714,7 +1733,7 @@ template {
   background-image: linear-gradient(white, white), linear-gradient(180deg, rgba(188, 156, 255, 0.5) 0%, rgba(139, 164, 249, 0.5) 100%);
 }
 .button_secondary {
-  font-family: Montserrat-Bold, sans-serif;
+  font-family: "Montserrat-Bold", sans-serif;
   color: white;
   background-image: -webkit-gradient(linear, left top, left bottom, from(#6FCF97), to(#66D2EA));
   background-image: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%);
@@ -1724,7 +1743,7 @@ template {
   background-image: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%);
 }
 .button_primary {
-  font-family: Montserrat-Bold, sans-serif;
+  font-family: "Montserrat-Bold", sans-serif;
   color: white;
   background-image: -webkit-gradient(linear, left top, left bottom, from(#BC9CFF), to(#8BA4F9));
   background-image: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
@@ -1750,13 +1769,13 @@ template {
   width: 100%;
 }
 .button.arrow::after {
+  content: "arrow_forward";
   font-family: "Material Icons";
   font-size: 24px;
   top: 13px;
   right: 9px;
   position: absolute;
   text-transform: none;
-  content: "arrow_forward";
 }
 
 .site-dropdown {
@@ -1852,7 +1871,7 @@ template {
   background-image: linear-gradient(white, white), linear-gradient(180deg, rgba(188, 156, 255, 0.5) 0%, rgba(139, 164, 249, 0.5) 100%);
 }
 .button_secondary {
-  font-family: Montserrat-Bold, sans-serif;
+  font-family: "Montserrat-Bold", sans-serif;
   color: white;
   background-image: -webkit-gradient(linear, left top, left bottom, from(#6FCF97), to(#66D2EA));
   background-image: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%);
@@ -1862,7 +1881,7 @@ template {
   background-image: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%);
 }
 .button_primary {
-  font-family: Montserrat-Bold, sans-serif;
+  font-family: "Montserrat-Bold", sans-serif;
   color: white;
   background-image: -webkit-gradient(linear, left top, left bottom, from(#BC9CFF), to(#8BA4F9));
   background-image: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
@@ -1888,13 +1907,13 @@ template {
   width: 100%;
 }
 .button.arrow::after {
+  content: "arrow_forward";
   font-family: "Material Icons";
   font-size: 24px;
   top: 13px;
   right: 9px;
   position: absolute;
   text-transform: none;
-  content: "arrow_forward";
 }
 
 .booking-block {
@@ -1905,6 +1924,14 @@ template {
           box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.2);
   padding: 40px 29px 30px 29px;
   max-width: 380px;
+}
+.booking-block__heading {
+  clip: rect(0 0 0 0);
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+  z-index: -1;
+  position: absolute;
 }
 .booking-block__header {
   display: -webkit-box;
@@ -1917,6 +1944,14 @@ template {
       -ms-flex-pack: justify;
           justify-content: space-between;
   margin-bottom: 20px;
+}
+.booking-block__room-number {
+  color: #1f2041;
+  font-size: 24px;
+  font-family: "Montserrat-Bold", sans-serif;
+  line-height: 29px;
+  margin: 0;
+  letter-spacing: -0.1px;
 }
 .booking-block__room-number:first-letter {
   font-size: 14px;
@@ -1979,6 +2014,14 @@ template {
 }
 .booking-block__bill-row :nth-child(even) {
   text-align: right;
+}
+.booking-block__bill-row_total {
+  color: #1f2041;
+  font-size: 19px;
+  font-family: "Montserrat-Bold", sans-serif;
+  line-height: 24px;
+  letter-spacing: 0.2px;
+  margin: 0;
 }
 .booking-block__bill-data {
   padding: 0;
@@ -2233,7 +2276,7 @@ template {
   background-image: linear-gradient(white, white), linear-gradient(180deg, rgba(188, 156, 255, 0.5) 0%, rgba(139, 164, 249, 0.5) 100%);
 }
 .button_secondary {
-  font-family: Montserrat-Bold, sans-serif;
+  font-family: "Montserrat-Bold", sans-serif;
   color: white;
   background-image: -webkit-gradient(linear, left top, left bottom, from(#6FCF97), to(#66D2EA));
   background-image: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%);
@@ -2243,7 +2286,7 @@ template {
   background-image: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%);
 }
 .button_primary {
-  font-family: Montserrat-Bold, sans-serif;
+  font-family: "Montserrat-Bold", sans-serif;
   color: white;
   background-image: -webkit-gradient(linear, left top, left bottom, from(#BC9CFF), to(#8BA4F9));
   background-image: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
@@ -2269,13 +2312,13 @@ template {
   width: 100%;
 }
 .button.arrow::after {
+  content: "arrow_forward";
   font-family: "Material Icons";
   font-size: 24px;
   top: 13px;
   right: 9px;
   position: absolute;
   text-transform: none;
-  content: "arrow_forward";
 }
 
 .log-in-block {
@@ -2288,6 +2331,12 @@ template {
   max-width: 380px;
 }
 .log-in-block__heading {
+  color: #1f2041;
+  font-size: 24px;
+  font-family: "Montserrat-Bold", sans-serif;
+  line-height: 29px;
+  margin: 0;
+  letter-spacing: -0.1px;
   margin-bottom: 20px;
 }
 .log-in-block__form .button {
@@ -2299,7 +2348,7 @@ template {
 .log-in-block__footer {
   padding-top: 30px;
 }
-.log-in-block__already-have {
+.log-in-block__no-account {
   font-family: "Montserrat", sans-serif;
   font-size: 14px;
   line-height: 18px;
@@ -2316,6 +2365,12 @@ template {
   background-color: white;
 }
 .site-calendar__header {
+  color: #1f2041;
+  font-size: 19px;
+  font-family: "Montserrat-Bold", sans-serif;
+  line-height: 24px;
+  letter-spacing: 0.2px;
+  margin: 0;
   padding: 20px 0;
   margin-bottom: 10px;
   display: -webkit-box;
@@ -2333,7 +2388,7 @@ template {
   color: #BC9CFF;
 }
 .site-calendar__days-section, .site-calendar__date-section {
-  font-family: "Montserrat-Bold";
+  font-family: "Montserrat-Bold", sans-serif;
   font-size: 12px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -2343,7 +2398,7 @@ template {
           justify-content: space-between;
 }
 .site-calendar__date-section {
-  font-family: "Montserrat";
+  font-family: "Montserrat", sans-serif;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
 }
@@ -2443,6 +2498,7 @@ template {
   -moz-background-clip: text;
   -webkit-text-fill-color: transparent;
   -webkit-text-stroke: transparent;
+  font-family: "Material Icons";
   content: "star_border"/"Оценить в ";
   top: 0;
   left: 0;
@@ -2479,6 +2535,14 @@ template {
           box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05);
   border-radius: 4px;
   overflow: hidden;
+}
+.room-card__heading {
+  clip: rect(0 0 0 0);
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+  z-index: -1;
+  position: absolute;
 }
 .room-card__image-container {
   position: relative;
@@ -2520,6 +2584,8 @@ template {
   height: 7.5px;
   border: 1px solid white;
   border-radius: 50%;
+  -webkit-box-shadow: 0px 5px 5px rgba(31, 32, 65, 0.3);
+          box-shadow: 0px 5px 5px rgba(31, 32, 65, 0.3);
 }
 .room-card__bullet_active {
   background-color: white;
@@ -2579,10 +2645,11 @@ template {
   padding-bottom: 14px;
 }
 .room-card__room-number {
-  font-family: "Montserrat-Bold", sans-serif;
-  font-size: 19px;
-  line-height: 24px;
   color: #1f2041;
+  font-size: 19px;
+  font-family: "Montserrat-Bold", sans-serif;
+  line-height: 24px;
+  letter-spacing: 0.2px;
   margin: 0;
 }
 .room-card__room-number:first-letter {
@@ -2617,9 +2684,14 @@ template {
   margin-left: 8px;
 }
 
-* {
+html {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+}
+
+* {
+  -webkit-box-sizing: inherit;
+          box-sizing: inherit;
 }
 
 .cards-page {

@@ -2,7 +2,6 @@ include ../../../components/site-header/site-header
 include ../../../components/site-footer/site-footer
 include ../../../components/search-block/search-block
 
-  //- TODO: Проверить ссылку в dist
 
 doctype html
 html(lang = "en")
@@ -16,7 +15,8 @@ head
 
 body.search-offer
   +site-header()
-  main.search-offer__main
+  main.search-offer__main-section
+    h1.search-offer__main-heading Toxin - Бронирование номеров в лучшем отеле страны
     section.search-offer__search-section
       +search-block()
       p.search-offer__slogan Лучшие номера для вашей работы, отдыха и просто вдохновения

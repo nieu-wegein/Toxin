@@ -1,9 +1,13 @@
 include ../site-dropdown/site-dropdown
 include ../site-button/site-button
+include ../../helpers/declinejs
 
 
-mixin booking-block()
+//TODO: рассчеты стоимости
+
+mixin booking-block(obj)
   article.booking-block
+    h2.booking-block__heading Бронирование номера
     header.booking-block__header
       p.booking-block__room-number.booking-block__room-number_luxe №888
       p.booking-block__price
@@ -42,7 +46,7 @@ mixin booking-block()
             tr.booking-block__bill-row
               td.booking-block__bill-data
                 div.booking-block__calculation
-                  p.booking-block__termin 9 990₽ х 4 суток
+                  p.booking-block__termin 9 990₽ х #{decline(4, ["сутки", "суток", "суток"])}
               td.booking-block__bill-data
                 span.booking-block__definition 39 960₽
             tr.booking-block__bill-row

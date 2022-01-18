@@ -1,4 +1,3 @@
-//-TODO: Добавить src
 
 mixin site-button(obj)
 
@@ -16,6 +15,6 @@ mixin site-button(obj)
     }
 
   if obj.type === "a"
-    a(class = buttonClassList) !{obj.text}
+    a(class = buttonClassList src = obj.src) !{obj.text}
   if obj.type === "button"
     button(class = buttonClassList type = obj.type) !{obj.text}

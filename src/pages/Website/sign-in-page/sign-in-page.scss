@@ -13,7 +13,14 @@ body::-webkit-scrollbar {
   width: 0 !important
 }
 
+html { box-sizing: border-box; }
+* {box-sizing: inherit}
+
 .sign-in-page {
+
+  &__main-heading {
+    @include visually-hidden();
+  }
 
   &__sign-in-section {
     min-height: 702px;

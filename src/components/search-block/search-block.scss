@@ -11,8 +11,12 @@
   padding: 40px 29px 30px 29px;
   max-width: 380px;
 
+  &__heading-hidden {
+    @include visually-hidden();
+  }
+
   &__heading {
-    @extend %site-h1;
+    @include site-h1();
     margin-bottom:20px;
   }
 
@@ -20,7 +24,7 @@
     display: flex;justify-content: space-between;
     flex-wrap: wrap;
 
-    &>.button { //TODO: Исправить обращение к кнопке
+    &>.button {
       margin-top: 32px;
     }
   }

@@ -20,14 +20,14 @@ eval("__webpack_require__.r(__webpack_exports__);\n// extracted by mini-css-extr
 
 /***/ }),
 
-/***/ "./src/pages/Website/registration/registration.scss":
-/*!**********************************************************!*\
-  !*** ./src/pages/Website/registration/registration.scss ***!
-  \**********************************************************/
+/***/ "./src/pages/Website/registration-page/registration-page.scss":
+/*!********************************************************************!*\
+  !*** ./src/pages/Website/registration-page/registration-page.scss ***!
+  \********************************************************************/
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n// extracted by mini-css-extract-plugin\n\n\n//# sourceURL=webpack://toxin/./src/pages/Website/registration/registration.scss?");
+eval("__webpack_require__.r(__webpack_exports__);\n// extracted by mini-css-extract-plugin\n\n\n//# sourceURL=webpack://toxin/./src/pages/Website/registration-page/registration-page.scss?");
 
 /***/ }),
 
@@ -60,7 +60,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _sit
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _jquery_3_6_0_min__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../jquery-3.6.0.min */ \"./src/jquery-3.6.0.min.js\");\n/* harmony import */ var _jquery_3_6_0_min__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_jquery_3_6_0_min__WEBPACK_IMPORTED_MODULE_0__);\n\r\n\r\n//-TODO: не ставится точка после очистки инпута бекспейсом, если курсор стоит на позиции точки.\r\n//-TODO: Проверить delete и другие способы очистки инпута\r\n\r\nclass SiteInput {\r\n\r\n}\r\n\r\nclass MaskedInput extends SiteInput {\r\n\r\n}\r\n\r\nclass DateInput extends MaskedInput {\r\n\r\n  constructor(input) {\r\n    super(input)\r\n    this.input = _jquery_3_6_0_min__WEBPACK_IMPORTED_MODULE_0___default()(input);\r\n\r\n    this.input.on(\"input\", this.setMask)\r\n  }\r\n\r\n  setMask = (e) => {\r\n\r\n    const inputText = this.input[0].value;\r\n    this.input.attr(\"maxlength\",\"10\");\r\n    const current = this.input[0].selectionStart;\r\n\r\n\r\n    const regex = /^(((0|$)([1-9]|$))|([1-2]|$)([0-9]|$)|(3|$)([0-1]|$))(\\.|$)((0|$)([1-9]|$)|(1|$)([0-2]|$))(\\.|$)((1|$)(9|$)([5-9]|$)(\\d|$)|(2|$)(0|$)(\\d|$)(\\d|$))/g;\r\n    //0[1-9] или [0-2][0-9] или 3[0-1] . 0[1-9] или 1[0-2] . 19[5-9][0-9] или 20[0-9][0-9]\r\n\r\n\r\n    if (!regex.test(inputText)) {\r\n      this.input[0].value = inputText.slice(0, -1)\r\n    } else if((current === 2 || current === 5)&&(e.originalEvent.inputType !== \"deleteContentBackward\")) {\r\n\r\n      this.input[0].value = inputText + \".\";\r\n    }\r\n\r\n  }\r\n}\r\n\r\n\r\n_jquery_3_6_0_min__WEBPACK_IMPORTED_MODULE_0___default()(function () {\r\n\r\n  const maskedInputList = _jquery_3_6_0_min__WEBPACK_IMPORTED_MODULE_0___default()(\".site-input_date\");\r\n  maskedInputList.each((i, input) => {new DateInput(input)})\r\n\r\n})\n\n//# sourceURL=webpack://toxin/./src/components/site-input/site-input.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _jquery_3_6_0_min__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../jquery-3.6.0.min */ \"./src/jquery-3.6.0.min.js\");\n/* harmony import */ var _jquery_3_6_0_min__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_jquery_3_6_0_min__WEBPACK_IMPORTED_MODULE_0__);\n\r\n\r\n//-TODO: не ставится точка после очистки инпута бекспейсом, если курсор стоит на позиции точки.\r\n//-TODO: Проверить delete и другие способы очистки инпута\r\n\r\nclass SiteInput {\r\n\r\n}\r\n\r\nclass MaskedInput extends SiteInput {\r\n\r\n}\r\n\r\nclass DateInput extends MaskedInput {\r\n\r\n  constructor(input) {\r\n    super(input)\r\n    this.input = _jquery_3_6_0_min__WEBPACK_IMPORTED_MODULE_0___default()(input);\r\n\r\n    this.input.on(\"input\", this.setMask)\r\n  }\r\n\r\n  setMask = (e) => {\r\n\r\n    const inputText = this.input[0].value;\r\n    this.input.attr(\"maxlength\",\"10\");\r\n    const current = this.input[0].selectionStart;\r\n\r\n\r\n    const regex = /^(((0|$)([1-9]|$))|([1-2]|$)([0-9]|$)|(3|$)([0-1]|$))(\\.|$)((0|$)([1-9]|$)|(1|$)([0-2]|$))(\\.|$)((1|$)(9|$)([5-9]|$)(\\d|$)|(2|$)(0|$)(\\d|$)(\\d|$))/g;\r\n    //0[1-9] или [1-2][0-9] или 3[0-1] . 0[1-9] или 1[0-2] . 19[5-9][0-9] или 20[0-9][0-9]\r\n\r\n\r\n    if (!regex.test(inputText)) {\r\n      this.input[0].value = inputText.slice(0, -1)\r\n    } else if((current === 2 || current === 5)&&(e.originalEvent.inputType !== \"deleteContentBackward\")) {\r\n\r\n      this.input[0].value = inputText + \".\";\r\n    }\r\n\r\n  }\r\n}\r\n\r\n\r\n_jquery_3_6_0_min__WEBPACK_IMPORTED_MODULE_0___default()(function () {\r\n\r\n  const maskedInputList = _jquery_3_6_0_min__WEBPACK_IMPORTED_MODULE_0___default()(\".site-input_date\");\r\n  maskedInputList.each((i, input) => {new DateInput(input)})\r\n\r\n})\n\n//# sourceURL=webpack://toxin/./src/components/site-input/site-input.js?");
 
 /***/ }),
 
@@ -74,14 +74,14 @@ eval("var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*! jQuery
 
 /***/ }),
 
-/***/ "./src/pages/Website/registration/registration.js":
-/*!********************************************************!*\
-  !*** ./src/pages/Website/registration/registration.js ***!
-  \********************************************************/
+/***/ "./src/pages/Website/registration-page/registration-page.js":
+/*!******************************************************************!*\
+  !*** ./src/pages/Website/registration-page/registration-page.js ***!
+  \******************************************************************/
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _normalize_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../normalize.scss */ \"./src/normalize.scss\");\n/* harmony import */ var _registration_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./registration.scss */ \"./src/pages/Website/registration/registration.scss\");\n/* harmony import */ var _components_registration_block_registration_block__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../components/registration-block/registration-block */ \"./src/components/registration-block/registration-block.js\");\n/* harmony import */ var _components_log_in_block_log_in_block__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../components/log-in-block/log-in-block */ \"./src/components/log-in-block/log-in-block.js\");\n\r\n\r\n\r\n\r\n\r\n\r\n\n\n//# sourceURL=webpack://toxin/./src/pages/Website/registration/registration.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _normalize_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../normalize.scss */ \"./src/normalize.scss\");\n/* harmony import */ var _registration_page_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./registration-page.scss */ \"./src/pages/Website/registration-page/registration-page.scss\");\n/* harmony import */ var _components_registration_block_registration_block__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../components/registration-block/registration-block */ \"./src/components/registration-block/registration-block.js\");\n/* harmony import */ var _components_log_in_block_log_in_block__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../components/log-in-block/log-in-block */ \"./src/components/log-in-block/log-in-block.js\");\n\r\n\r\n\r\n\r\n\r\n\r\n\n\n//# sourceURL=webpack://toxin/./src/pages/Website/registration-page/registration-page.js?");
 
 /***/ })
 
@@ -157,7 +157,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _nor
 /******/ 	// startup
 /******/ 	// Load entry module and return exports
 /******/ 	// This entry module can't be inlined because the eval devtool is used.
-/******/ 	var __webpack_exports__ = __webpack_require__("./src/pages/Website/registration/registration.js");
+/******/ 	var __webpack_exports__ = __webpack_require__("./src/pages/Website/registration-page/registration-page.js");
 /******/ 	
 /******/ })()
 ;

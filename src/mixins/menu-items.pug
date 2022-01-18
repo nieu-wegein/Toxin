@@ -1,7 +1,5 @@
 
-//- TODO: Поправить if
-  //TODO: Дропдаун-меню
-  // ? Перенести в site-header
+//TODO: Дропдаун-меню
 mixin menu-items(items, itemClass, linkClass)
 
   each item in items
@@ -12,6 +10,7 @@ mixin menu-items(items, itemClass, linkClass)
 
     li(class = itemClass)
       a(class = linkClassList  href = "index.html") !{item.text}
+
 
 
 

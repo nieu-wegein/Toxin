@@ -1,12 +1,10 @@
 
-<!--TODO: изменить классы заголовков-->
+<!--TODO: Дропдаун-меню-->
+<!--TODO: Дропдаун-меню-->
 <!--TODO: Валидация-->
 <!--TODO: Submit для кнопки-->
-<!--TODO: Заменить теги секций-->
-<!--TODO: изменить классы заголовков-->
-<!--TODO: 42 строка-->
-<!--TODO: ненужные загрузки стилей и скриптов-->
-<!--TODO: ЗАГОЛОВКИ В СЕКЦИЯХ-->
+<!--TODO: datetime = ...-->
+<!--TODO: рассчеты стоимости-->
 <!--TODO: вынести данные на страницы--><!DOCTYPE html>
 <html lang="en"></html>
 <head>
@@ -40,8 +38,9 @@
       </div>
     </div>
   </header>
-  <div class="room-details__main-wrapper">
-    <main class="room-details__main">
+  <div class="room-details__main-section-wrapper">
+    <main class="room-details__main-section">
+      <h1 class="room-details__main-heading">Информация о номере</h1>
       <section class="site-section room-details__photos-section">
         <div class="site-section__top">
           <h2 class="site-section__heading site-section__heading_hidden site-section__heading_h2">Фотографии номера</h2>
@@ -151,7 +150,7 @@
             </header>
             <div class="site-testimonial__body">
               <div class="site-testimonial__button-wrapper">
-<button class="like-button material-icons"><span class="like-button__counter">0</span></button>
+<button class="like-button"><span class="like-button__counter">0</span></button>
               </div>
               <p class="site-testimonial__text">Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару  — никто не жаловался из соседей.</p>
             </div>
@@ -166,7 +165,7 @@
             </header>
             <div class="site-testimonial__body">
               <div class="site-testimonial__button-wrapper">
-<button class="like-button material-icons"><span class="like-button__counter">0</span></button>
+<button class="like-button"><span class="like-button__counter">0</span></button>
               </div>
               <p class="site-testimonial__text">Обслуживание на высоте! Всё аккуратно, чисто. Завтраки в номер советую заказать, каждый день новое блюдо и десерт как комплимент</p>
             </div>
@@ -194,6 +193,7 @@
           <h2 class="site-section__heading site-section__heading_hidden site-section__heading_h2">Забронировать</h2>
         </div>
         <article class="booking-block">
+          <h2 class="booking-block__heading">Бронирование номера</h2>
           <header class="booking-block__header">
             <p class="booking-block__room-number booking-block__room-number_luxe">№888</p>
             <p class="booking-block__price"><span class="booking-block__price-value">9 990₽</span> в сутки</p>

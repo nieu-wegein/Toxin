@@ -6,11 +6,8 @@ include ../../../components/doughnut-chart/doughnut-chart
 include ../../../components/site-testimonial/site-testimonial
 include ../../../components/site-ul/site-ul
 include ../../../components/booking-block/booking-block
+include ../../../helpers/declinejs
 
-
-
-//TODO: ненужные загрузки стилей и скриптов
-//TODO: ЗАГОЛОВКИ В СЕКЦИЯХ
 //TODO: вынести данные на страницы
 
 
@@ -33,19 +30,6 @@ include ../../../components/booking-block/booking-block
       }]
   };
 
-  function decline(number, cases) {
-    const last = number % 10;
-    const penult = Math.floor(number % 100 / 10);
-
-    if (last === 1 && penult !== 1)
-      return number + " " + cases[0]
-    else if (last > 1 && last < 5 && penult !== 1)
-      return number + " " + cases[1]
-    else
-      return number + " " + cases[2]
-  }
-
-
 doctype html
 html(lang = "en")
 head
@@ -59,8 +43,9 @@ head
 
 body.room-details
   +site-header()
-  .room-details__main-wrapper
-    main.room-details__main
+  .room-details__main-section-wrapper
+    main.room-details__main-section
+      h1.room-details__main-heading Информация о номере
       +site-section({h2: "Фотографии номера", header: "hidden", classList: "room-details__photos-section"})
         .room-details__photos-column
           .room-details__photo-container

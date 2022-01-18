@@ -20,7 +20,7 @@ body::-webkit-scrollbar {
 
 .room-details {
 
-  &__main {
+  &__main-section {
     display: flex;
     flex-wrap: wrap;
     max-width: 1440px;
@@ -29,6 +29,10 @@ body::-webkit-scrollbar {
     &-wrapper {
       border-bottom: 1px solid $site-dark-25;
     }
+  }
+
+  &__main-heading {
+    @include visually-hidden();
   }
 
   &__photos-section {

@@ -1,8 +1,8 @@
 .site-dropdown__header {
-  display: flex; //TODO: проблемы с flex и site-button
+  display: flex;
   align-items: center;
   justify-content: space-between;
-  font-family: "Montserrat", sans-serif;
+  font-family: $ff-normal;
   font-size: 14px;
   line-height: 18px;
   text-align: left;

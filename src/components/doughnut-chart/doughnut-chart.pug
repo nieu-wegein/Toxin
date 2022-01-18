@@ -1,15 +1,12 @@
+include ../../helpers/declinejs
 
 mixin doughnut-chart(obj)
 
   -
+    const cases = ["голос", "голоса", "голосов"];
     const circumference  = 364.2;
     const votes = obj.great + obj.good + obj.satisfactory + obj.poorly;
     const unitSize = circumference / votes;
-
-     // const poorly = getDashedLine(obj.poorly * unitSize);
-     // const satisfactory = getDashedLine(obj.satisfactory * unitSize);
-     // const good = getDashedLine(obj.good * unitSize);
-     // const great = getDashedLine(obj.great * unitSize);
 
      const poorly = obj.poorly * unitSize;
      const satisfactory = obj.satisfactory * unitSize;
@@ -46,35 +43,35 @@ mixin doughnut-chart(obj)
         </defs>
 
         <circle r="58" cx="60" cy="60"  transform="rotate(-90 60 60)" stroke-dasharray = "#{getDashedLine(poorly)} #{circumference}" stroke-width="4" stroke="url(#poorly)" fill="none">
-          <title>#{obj.poorly} голосов</title>
+          <title>#{decline(obj.poorly, cases)}</title>
         </circle>
         <circle r="58" cx="60" cy="60" transform="rotate(-90 60 60)"  stroke-dasharray = "#{getDashedLine(satisfactory)} #{circumference}" stroke-dashoffset = "-#{poorly}" stroke-width="4" stroke="url(#satisfactory)" fill="none">
-          <title>#{obj.satisfactory} голосов</title>
+          <title>#{decline(obj.satisfactory, cases)}</title>
         </circle>
         <circle r="58" cx="60" cy="60" transform="rotate(-90 60 60)" stroke-dasharray = "#{getDashedLine(good)} #{circumference}" stroke-dashoffset = "-#{satisfactory + poorly}"  stroke-width="4" stroke="url(#good)" fill="none">
-          <title>#{obj.good} голосов</title>
+          <title>#{decline(obj.good, cases)}</title>
         </circle>
         <circle r="58" cx="60" cy="60" transform="rotate(-90 60 60)"  stroke-dasharray = "#{getDashedLine(great)} #{circumference}" stroke-dashoffset = "-#{good + satisfactory + poorly}" stroke-width="4" stroke="url(#great)" fill="none">
-          <title>#{obj.great} голосов</title>
+          <title>#{decline(obj.great, cases)}</title>
         </circle>
         <text class="doughnut-chart__votes-count" x="50%" y="49%" text-anchor="middle" font-family="Montserrat-Bold, sans-serif" font-size="24" fill = "#BC9CFF">#{votes}</text>
-        <text class="doughnut-chart__votes-span" x="50%" y="64%" text-anchor="middle" font-family="Montserrat-Bold, sans-serif" font-size="15"  fill = "#BC9CFF">голосов</text>
+        <text class="doughnut-chart__votes-span" x="50%" y="64%" text-anchor="middle" font-family="Montserrat-Bold, sans-serif" font-size="15"  fill = "#BC9CFF">#{decline(votes, cases, false)}</text>
       </svg>
       figcaption.doughnut-chart__caption
         dl.doughnut-chart__legend
           .doughnut-chart__item-wrapper
             dt.doughnut-chart__color.doughnut-chart__color_yellow
             dd.doughnut-chart__definition Великолепно
-              span.doughnut-chart__color-label - #{obj.great} голосов
+              span.doughnut-chart__color-label - #{decline(obj.great, cases)}
           .doughnut-chart__item-wrapper
             dt.doughnut-chart__color.doughnut-chart__color_green
             dd.doughnut-chart__definition Хорошо
-              span.doughnut-chart__color-label - #{obj.good} голосов
+              span.doughnut-chart__color-label - #{decline(obj.good, cases)}
           .doughnut-chart__item-wrapper
             dt.doughnut-chart__color.doughnut-chart__color_violet
             dd.doughnut-chart__definition Удовлетворительно
-              span.doughnut-chart__color-label - #{obj.satisfactory} голосов
+              span.doughnut-chart__color-label - #{decline(obj.satisfactory, cases)}
           .doughnut-chart__item-wrapper
             dt.doughnut-chart__color.doughnut-chart__color_black
             dd.doughnut-chart__definition Разочарован
-              span.doughnut-chart__color-label - #{obj.poorly} голосов
+              span.doughnut-chart__color-label - #{decline(obj.poorly, cases)}

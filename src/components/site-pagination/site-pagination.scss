@@ -14,7 +14,7 @@
     justify-content: center;
     align-items: center;
 
-    font-family: "Montserrat", sans-serif;
+    font-family: $ff-normal;
     font-size: 12px;
     line-height: 15px;
     color: $site-dark-50;
@@ -24,13 +24,13 @@
     border-radius: 50%;
 
     &:hover{
-      font-family: "Montserrat-Bold", sans-serif;
+      font-family: $ff-bold;
       color: white;
       background: $primary-gradient-25;
     }
 
     &.button_primary {
-      font-family: "Montserrat-Bold", sans-serif;
+      font-family: $ff-bold;
       color: white;
       &:hover{
         background: $primary-gradient;
@@ -39,7 +39,7 @@
 
     &.button_secondary {
       font-size: 24px;
-      font-family: "Material Icons", sans-serif;
+      font-family: "Material Icons";
       color: white;
       &:hover{
         background-image: $secondary-gradient;

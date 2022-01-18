@@ -1,5 +1,7 @@
-
 include ../rate-button/rate-button
+include ../../helpers/declinejs
+
+//TODO: рейтинг из-вне
 
 mixin room-card(id, room)
 
@@ -15,6 +17,7 @@ mixin room-card(id, room)
     if(card.luxe) cardClassList.push("room-card_luxe");
 
   article(class = cardClassList id = id)
+    h2.room-card__heading Комната №  #{card.number}
     .room-card__image-container
       ul.room-card__image-list
         each img in card.imgList
@@ -31,13 +34,12 @@ mixin room-card(id, room)
     .room-card__body
       .room-card__info
         p.room-card__room-number №
-          span.room-card__room-number-value !{card.number}
+          span.room-card__room-number-value #{card.number}
         p.room-card__price
-          span.room-card__price-value !{card.price}
+          span.room-card__price-value #{card.price}
           |  в сутки
       .room-card__rating
         form.room-card__rate-form
           +rate-button({name: id + "_room-rate", id: id + "_room-rate"})
         p.room-card__testimonial-counter
-          span.room-card__testimonial-count !{card.testimonials}
-          |  Отзывов
+          span.room-card__testimonial-count #{decline(card.testimonials, ["отзыв", "отзыва", "отзывов"])}

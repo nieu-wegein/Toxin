@@ -14,11 +14,14 @@ body::-webkit-scrollbar {
   width: 0 !important
 }
 
-* {
-  box-sizing: border-box;
-}
+html { box-sizing: border-box; }
+* {box-sizing: inherit}
 
 .registration-page {
+
+  &__main-heading {
+    @include visually-hidden();
+  }
 
   &__registration-section {
     min-height: 683px;

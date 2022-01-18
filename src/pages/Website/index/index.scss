@@ -13,11 +13,15 @@ body::-webkit-scrollbar {
   width: 0 !important
 }
 
-* {
-  box-sizing: border-box;
-}
+html { box-sizing: border-box; }
+* {box-sizing: inherit}
 
 .search-offer {
+
+  &__main-heading {
+    @include visually-hidden();
+  }
+
   &__search-section {
     @include site-body();
     position: relative;

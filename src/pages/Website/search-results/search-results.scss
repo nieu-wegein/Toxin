@@ -15,20 +15,23 @@ body::-webkit-scrollbar {
   width: 0 !important
 }
 
-* {
-  box-sizing: border-box; //TODO: Изменить логику
-}
+html { box-sizing: border-box; }
+* {box-sizing: inherit}
 
 $pagination-width: 240px;
 $parent: 100%;
 
 .search-results {
 
-  &__main {
+  &__main-section {
     display: flex;
     padding: 30px calc(9.72% - 12px) 70px 9.72%;
     margin-bottom: 1px;
     border-bottom: 1px solid $site-dark-25;
+  }
+
+  &__main-heading {
+    @include visually-hidden();
   }
 
   &__aside {

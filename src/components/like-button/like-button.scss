@@ -17,12 +17,13 @@
   padding: 0 4px;
 
   &::before {
+    font-family: "Material Icons";
     content: "favorite_border";
     margin-right: 7px;
   }
 
   &__counter {
-    font-family: Montserrat;
+    font-family: $ff-normal;
   }
 
   &_active {
@@ -32,6 +33,7 @@
     color: $site-purple;
 
     &::before {
+
       @include background-text-transparent();
       content: "favorite";
 
@@ -40,6 +42,7 @@
     }
 
     &::after {
+      font-family: "Material Icons";
       @include background-text-transparent();
       content: "favorite";
       position: absolute;

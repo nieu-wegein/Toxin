@@ -1,8 +1,7 @@
 
 .site-ul {
 
-  @include site-body;
-  line-height: 24px;
+  @include site-body($lineH: 24px);
   list-style: none;
   margin: 0;
   padding: 0;

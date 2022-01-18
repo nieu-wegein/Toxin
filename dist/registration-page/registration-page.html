@@ -1,14 +1,13 @@
 
-<!--TODO: изменить классы заголовков-->
+<!--TODO: Дропдаун-меню-->
+<!--TODO: Дропдаун-меню-->
 <!--TODO: Валидация-->
 <!--TODO: Submit для кнопки-->
-<!--TODO: Заменить теги секций-->
 <!--TODO: Валидация-->
 <!--TODO: Submit для кнопки-->
 <!--TODO: Отправка данных на сервер-->
 <!--TODO: Валидация-->
-<!--TODO: Submit для кнопки-->
-<!--TODO: Убрать задание классов компонентам и миксы из scss и pug--><!DOCTYPE html>
+<!--TODO: Submit для кнопки--><!DOCTYPE html>
 <html lang="en"></html>
 <head>
   <meta charset="utf-8">
@@ -17,7 +16,7 @@
   <meta name="description" content=" ">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Material+Icons">
   <script src="https://kit.fontawesome.com/a54cde8a02.js" crossorigin="anonymous"></script>
-<script defer src="../registration/registration.js"></script><link href="../registration/registration.css" rel="stylesheet"></head>
+<script defer src="../registration-page/registration-page.js"></script><link href="../registration-page/registration-page.css" rel="stylesheet"></head>
 <body class="registration-page">
   <header class="site-header">
 <!--TODO: Добавить src по всему проекту--><a class="site-logo" href="index.html"><img class="site-logo__image" src="../img/site-logo.svg" alt="TOXIN логотип"></a>
@@ -41,7 +40,8 @@
       </div>
     </div>
   </header>
-  <main class="registration-page__main">
+  <main class="registration-page__main-section">
+    <h1 class="registration-page__main-heading">Страница регистрации аккаунта</h1>
     <section class="registration-page__registration-section">
       <article class="registration-block">
         <h2 class="registration-block__heading">Регистрация аккаунта</h2>
@@ -141,11 +141,11 @@
                   <input class="site-input" type="text" id="log-in-password" placeholder="Пароль">
                 </div>
               </div>
-              <button class="button log-in-block__sign-button button_rounded button_primary button_flexible arrow" type="button">Войти</button>
+              <button class="button button_rounded button_primary button_flexible arrow" type="button">Войти</button>
             </div>
           </fieldset>
         </form>
-        <footer class="log-in-block__footer"><span class="log-in-block__already-have">Нет аккаунта на Toxin?</span><a class="button log-in-block__registration-link button_rounded button_block">Создать</a>
+        <footer class="log-in-block__footer"><span class="log-in-block__no-account">Нет аккаунта на Toxin?</span><a class="button button_rounded button_block">Создать</a>
         </footer>
       </article>
     </section>

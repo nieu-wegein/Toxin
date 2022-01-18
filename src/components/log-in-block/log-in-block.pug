@@ -2,7 +2,6 @@ include ../site-fieldset/site-fieldset
 include ../site-input/site-input
 include ../site-button/site-button
 
-//TODO: Убрать задание классов компонентам и миксы из scss и pug
 
 mixin log-in-block()
   article.log-in-block
@@ -11,7 +10,7 @@ mixin log-in-block()
       +site-fieldset("Данные для входа в сервис", {fieldset: "hidden"})
         +site-input({id: "log-in-email", label: "Email", text: "Email", modifiers: {label: "hidden"}})
         +site-input({id: "log-in-password", label: "Пароль", text: "Пароль", modifiers: {label: "hidden"}})
-        +site-button({type:"button", text: "Войти", classList: "log-in-block__sign-button", modifiers: {primary: true, flexible: true, icon: "arrow"}})
+        +site-button({type:"button", text: "Войти", modifiers: {primary: true, flexible: true, icon: "arrow"}})
     footer.log-in-block__footer
-      span.log-in-block__already-have Нет аккаунта на Toxin?
-      +site-button({type: "a", text: "Создать", classList: "log-in-block__registration-link", modifiers: {rounded: true, block: true}})
+      span.log-in-block__no-account Нет аккаунта на Toxin?
+      +site-button({type: "a", text: "Создать", modifiers: {rounded: true, block: true}})

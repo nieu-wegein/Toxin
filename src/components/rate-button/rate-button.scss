@@ -13,6 +13,7 @@
 
     &::before {
       @include background-text-transparent();
+      font-family: "Material Icons";
       content: "star_border" / "Оценить в ";
       top:0;
       left:0;

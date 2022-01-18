@@ -34,14 +34,10 @@
   }
 
   &__label{
-
+    @include site-body($color: $site-dark-50);
     position: relative;
     display: inline-flex;
     align-items: center;
-    font-family: "Montserrat", sans-serif;
-    font-size: 14px;
-    line-height: 24px;
-    color: $site-dark-50;
     padding-left: 30px;
     cursor: pointer;
 

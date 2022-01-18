@@ -15,7 +15,7 @@
   max-width: 380px;
 
   &__heading {
-    @extend %site-h1;
+    @include site-h1();
     margin-bottom:20px ;
   }
 
@@ -31,7 +31,7 @@
   }
 
   &__already-have{
-    font-family: "Montserrat", sans-serif;
+    font-family: $ff-normal;
     font-size: 14px;
     line-height: 18px;
     letter-spacing: -0.15px;

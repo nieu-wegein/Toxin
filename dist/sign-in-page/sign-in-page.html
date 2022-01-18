@@ -1,14 +1,13 @@
 
-<!--TODO: изменить классы заголовков-->
+<!--TODO: Дропдаун-меню-->
+<!--TODO: Дропдаун-меню-->
 <!--TODO: Валидация-->
 <!--TODO: Submit для кнопки-->
-<!--TODO: Заменить теги секций-->
 <!--TODO: Валидация-->
 <!--TODO: Submit для кнопки-->
 <!--TODO: Отправка данных на сервер-->
 <!--TODO: Валидация-->
-<!--TODO: Submit для кнопки-->
-<!--TODO: Убрать задание классов компонентам и миксы из scss и pug--><!DOCTYPE html>
+<!--TODO: Submit для кнопки--><!DOCTYPE html>
 <html lang="en"></html>
 <head>
   <meta charset="utf-8">
@@ -41,7 +40,8 @@
       </div>
     </div>
   </header>
-  <main class="sign-in-page__main">
+  <main class="sign-in-page__main-section">
+    <h1 class="sign-in-page__main-heading">Страница входа в аккаунт</h1>
     <section class="sign-in-page__sign-in-section">
       <article class="registration-block">
         <h2 class="registration-block__heading">Регистрация аккаунта</h2>
@@ -141,11 +141,11 @@
                   <input class="site-input" type="text" id="log-in-password" placeholder="Пароль">
                 </div>
               </div>
-              <button class="button log-in-block__sign-button button_rounded button_primary button_flexible arrow" type="button">Войти</button>
+              <button class="button button_rounded button_primary button_flexible arrow" type="button">Войти</button>
             </div>
           </fieldset>
         </form>
-        <footer class="log-in-block__footer"><span class="log-in-block__already-have">Нет аккаунта на Toxin?</span><a class="button log-in-block__registration-link button_rounded button_block">Создать</a>
+        <footer class="log-in-block__footer"><span class="log-in-block__no-account">Нет аккаунта на Toxin?</span><a class="button button_rounded button_block">Создать</a>
         </footer>
       </article>
     </section>

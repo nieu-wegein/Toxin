@@ -14,11 +14,11 @@
     margin: 0;
 
     &_h1 {
-      @extend %site-h1;
+      @include site-h1();
     }
 
     &_h2 {
-      @extend %site-h2;
+      @include site-h2();
     }
 
     &_h3 {

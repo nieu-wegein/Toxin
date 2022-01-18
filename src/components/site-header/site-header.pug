@@ -1,12 +1,10 @@
 include ../../mixins/menu-items
 include ../site-button/site-button
 
-  //TODO: = Unbuffered code
-  //TODO: Заменить интерполяцию на # там, куда приходят данные из-вне
-
 mixin site-header(user)
   -
     const mainNavItems = [{text: "О нас", active: true}, {text: "Услуги",expand: true}, {text: "Вакансии"}, {text: "Новости"}, {text: "Соглашения", expand: true}]
+
     const usermenuClassList = ["site-header__user-nav-list"];
     if(user) usermenuClassList.push("site-header__user-nav-list_logged");
 

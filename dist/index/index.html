@@ -1,9 +1,8 @@
 
-<!--TODO: изменить классы заголовков-->
+<!--TODO: Дропдаун-меню-->
+<!--TODO: Дропдаун-меню-->
 <!--TODO: Валидация-->
-<!--TODO: Submit для кнопки-->
-<!--TODO: Заменить теги секций-->
-<!--TODO: 42 строка--><!DOCTYPE html>
+<!--TODO: Submit для кнопки--><!DOCTYPE html>
 <html lang="en"></html>
 <head>
   <meta charset="utf-8">
@@ -36,10 +35,12 @@
       </div>
     </div>
   </header>
-  <main class="search-offer__main">
+  <main class="search-offer__main-section">
+    <h1 class="search-offer__main-heading">Toxin - Бронирование номеров в лучшем отеле страны</h1>
     <section class="search-offer__search-section">
       <article class="search-block">
-        <h2 class="search-block__heading">Найдём номера под ваши пожелания</h2>
+        <h2 class="search-block__heading-hidden">Поиск номера по датам заезда и выезда</h2>
+        <div class="search-block__heading">Найдём номера под ваши пожелания</div>
         <div class="search-block__body">
           <form class="search-block__form">
             <div class="search-block__date-dropdown-wrapper">
@@ -125,7 +126,7 @@
                   <label class="form-element__label" for="search-arrival">Выезд</label>
                 </div>
                 <div class="site-dropdown site-dropdown_shared-calendar" id="search-arrival">
-                  <button class="site-dropdown__header" type="button" data-text="ДД.ММ.ГГГГ" data-windowid="ui-page-calendar"><span class="text-area">ДД.ММ.ГГГГ</span><span class="site-dropdown__header-icon material-icons">expand_more</span></button>
+                  <button class="site-dropdown__header" type="button" data-text="ДД.ММ.ГГГГ" data-windowid="search-calendar"><span class="text-area">ДД.ММ.ГГГГ</span><span class="site-dropdown__header-icon material-icons">expand_more</span></button>
                 </div>
               </div>
             </div>

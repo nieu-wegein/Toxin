@@ -3,7 +3,8 @@ include ../site-button/site-button
 
 mixin search-block()
   article.search-block
-    h2.search-block__heading Найдём номера под ваши пожелания
+    h2.search-block__heading-hidden Поиск номера по датам заезда и выезда
+    .search-block__heading Найдём номера под ваши пожелания
     .search-block__body
       form.search-block__form
         .search-block__date-dropdown-wrapper
@@ -19,7 +20,7 @@ mixin search-block()
             label: "Выезд",
             id: "search-arrival",
             text: "ДД.ММ.ГГГГ",
-            shared: {for: "ui-page-calendar"},
+            shared: {for: "search-calendar"},
             modifiers: {calendar: {type: "range"}, buttons: true}
           })
         .search-block__guests-dropdown-wrapper

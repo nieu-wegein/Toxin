@@ -4,14 +4,10 @@ include site-dropdown__footer/site-dropdown__footer
 include ../form-element/form-element
 include ../site-calendar/site-calendar
 
-//-Todo: перенести классы в массивы во всех файлах
-//-TODO:! вынести массивы классов в пределы миксина
-//-TODO: Проверить, видны массивы классов за пределами миксина
-//TODO: 42 строка
 
 mixin site-dropdown(obj)
   -
-    const dropdownClassList = ["site-dropdown", obj.classList];
+    const dropdownClassList = ["site-dropdown"];
     const windowClassList = ["site-dropdown__window"]
     const calendarClassList = ["site-calendar"]
     const modifiers = {}; // Во избежание ошибок при передаче параметров без модификатора
@@ -39,7 +35,7 @@ mixin site-dropdown(obj)
                           windowClassList.push("site-dropdown__window_free");
                           break;
           }
-      } //Если не будет модификатора, не создастся дропдаун
+      }
       else dropdownClassList.push("site-dropdown_counting-dropdown");
 
       if (obj.modifiers.buttons) modifiers.buttons = true

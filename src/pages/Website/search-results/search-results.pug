@@ -6,21 +6,21 @@ include ../../../components/site-pagination/site-pagination
 -
   const imgPath = "/pages/website/search-results/img/"
   const roomsList = [
-    {imgList: [imgPath + "room888-1_s.png", imgPath + "room888-2_s.png", imgPath + "room888-3_s.png"], number: "888", price: "9 990₽", testimonials: "145", luxe: true},
-    {imgList: [imgPath + "room840_s.png", imgPath + "test.png", imgPath + "test.png"], number: "840", price: "9 990₽", testimonials: "65"},
-    {imgList: [imgPath + "room980_s.png", imgPath + "test.png", imgPath + "test.png"], number: "980", price: "8 500₽", testimonials: "35", luxe: true},
-    {imgList: [imgPath + "room856_s.png", imgPath + "test.png", imgPath + "test.png"], number: "856", price: "7 300₽", testimonials: "19"},
-    {imgList: [imgPath+ "room740_s.png", imgPath + "test.png", imgPath + "test.png"], number: "740", price: "6 000₽", testimonials: "44"},
-    {imgList: [imgPath + "room982_s.png", imgPath + "test.png", imgPath + "test.png"], number: "982", price: "5 800₽", testimonials: "56"},
-    {imgList: [imgPath + "room678_s.png", imgPath + "test.png", imgPath + "test.png"], number: "678", price: "5 500₽", testimonials: "45"},
-    {imgList: [imgPath + "room450_s.png", imgPath + "test.png", imgPath + "test.png"], number: "450", price: "5 300₽", testimonials: "39"},
-    {imgList: [imgPath + "room350_s.png", imgPath + "test.png", imgPath + "test.png"], number: "350", price: "5 000₽", testimonials: "77"},
-    {imgList: [imgPath + "room666_s.png", imgPath + "test.png", imgPath + "test.png"], number: "666", price: "5 000₽", testimonials: "25"},
-    {imgList: [imgPath + "room444_s.png", imgPath + "test.png", imgPath + "test.png"], number: "444", price: "5 000₽", testimonials: "15"},
-    {imgList: [imgPath + "room352_s.png", imgPath + "test.png", imgPath + "test.png"], number: "352", price: "5 000₽", testimonials: "55"}
+    {imgList: [imgPath + "room888-1_s.png", imgPath + "room888-2_s.png", imgPath + "room888-3_s.png", imgPath + "test.png"], number: "888", price: "9 990₽", testimonials: "145", luxe: true},
+    {imgList: [imgPath + "room840_s.png", imgPath + "test.png", imgPath + "test.png", imgPath + "test.png"], number: "840", price: "9 990₽", testimonials: "65"},
+    {imgList: [imgPath + "room980_s.png", imgPath + "test.png", imgPath + "test.png", imgPath + "test.png"], number: "980", price: "8 500₽", testimonials: "35", luxe: true},
+    {imgList: [imgPath + "room856_s.png", imgPath + "test.png", imgPath + "test.png", imgPath + "test.png"], number: "856", price: "7 300₽", testimonials: "19"},
+    {imgList: [imgPath+ "room740_s.png", imgPath + "test.png", imgPath + "test.png", imgPath + "test.png"], number: "740", price: "6 000₽", testimonials: "44"},
+    {imgList: [imgPath + "room982_s.png", imgPath + "test.png", imgPath + "test.png", imgPath + "test.png"], number: "982", price: "5 800₽", testimonials: "56"},
+    {imgList: [imgPath + "room678_s.png", imgPath + "test.png", imgPath + "test.png", imgPath + "test.png"], number: "678", price: "5 500₽", testimonials: "45"},
+    {imgList: [imgPath + "room450_s.png", imgPath + "test.png", imgPath + "test.png", imgPath + "test.png"], number: "450", price: "5 300₽", testimonials: "39"},
+    {imgList: [imgPath + "room350_s.png", imgPath + "test.png", imgPath + "test.png", imgPath + "test.png"], number: "350", price: "5 000₽", testimonials: "77"},
+    {imgList: [imgPath + "room666_s.png", imgPath + "test.png", imgPath + "test.png", imgPath + "test.png"], number: "666", price: "5 000₽", testimonials: "25"},
+    {imgList: [imgPath + "room444_s.png", imgPath + "test.png", imgPath + "test.png", imgPath + "test.png"], number: "444", price: "5 000₽", testimonials: "15"},
+    {imgList: [imgPath + "room352_s.png", imgPath + "test.png", imgPath + "test.png", imgPath + "test.png"], number: "352", price: "5 000₽", testimonials: "55"}
   ]
 
-//TODO: Центрировать контейнер
+
 
 doctype html
 html(lang = "en")
@@ -34,7 +34,8 @@ head
 
 body.search-results
   +site-header()
-  main.search-results__main
+  main.search-results__main-section
+    h1.search-results__main-heading Результаты поиска
     aside.search-results__aside
       +rooms-filter-menu()
     +site-section({h1: "Номера, которые мы для вас подобрали", classList: "search-results__rooms-section"})

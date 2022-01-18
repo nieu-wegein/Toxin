@@ -6,7 +6,7 @@ include ../../../components/site-calendar/site-calendar
 include ../../../components/site-dropdown/site-dropdown__footer/site-dropdown__footer
 include ../../../components/room-card/room-card
 
-  //TODO: отрефакторить поля- и объекты-модификаторы
+
 
 - const imgPath = "/pages/UIKit/cards/img/"
 
@@ -33,5 +33,5 @@ html(lang = "en")
           .calendar-wrapper
             +site-calendar("site-calendar site-calendar_range")
             +site-dropdown__footer()
-          +room-card("room888", {imgList: [imgPath + "room888-1_s.png", imgPath + "room888-2_s.png", imgPath + "room888-3_s.png"], number: "888", price: "9 990₽", testimonials: "145"})
-          +room-card("room848", {imgList: [imgPath + "room840.png", imgPath + "test.png", imgPath + "test.png"], number: "840", price: "9 990₽", testimonials: "65"})
+          +room-card("room888", {imgList: [imgPath + "room888-1_s.png", imgPath + "room888-2_s.png", imgPath + "room888-3_s.png", imgPath + "test.png"], number: "888", price: "9 990₽", testimonials: "145", luxe: true})
+          +room-card("room848", {imgList: [imgPath + "room840.png", imgPath + "test.png", imgPath + "test.png", imgPath + "test.png"], number: "840", price: "9 990₽", testimonials: "65"})

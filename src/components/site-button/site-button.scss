@@ -35,7 +35,7 @@
   }
 
   &_secondary {
-    font-family: Montserrat-Bold, sans-serif;
+    font-family: $ff-bold;
     color: white;
     background-image: $secondary-gradient;
 
@@ -45,7 +45,7 @@
   }
 
   &_primary {
-    font-family: Montserrat-Bold, sans-serif;
+    font-family: $ff-bold;
     color: white;
     background-image: $primary-gradient;
     background-clip:  border-box;
@@ -66,9 +66,10 @@
     width: 100%;
   }
 
-  //TODO: Отрефакторить все остальное
+
   &.arrow::after {
 
+    content: "arrow_forward";
     font-family: "Material Icons";
     font-size: 24px;
 
@@ -77,7 +78,7 @@
 
     position: absolute;
     text-transform: none;
-    content: "arrow_forward";
+
 
   }
 }

@@ -12,6 +12,10 @@
   padding: 40px 29px 30px 29px;
   max-width: 380px;
 
+  &__heading {
+    @include visually-hidden();
+  }
+
   &__header {
     display: flex;
     align-items: baseline;
@@ -21,7 +25,7 @@
 
   &__room-number {
 
-    @extend %site-h1;
+    @include site-h1();
 
     &:first-letter {
       font-size: 14px;
@@ -42,14 +46,14 @@
 
   &__price {
     margin: 0;
-    font-family: "Montserrat", sans-serif;
+    font-family: $ff-normal;
     font-size: 12px;
     line-height: 18px;
     color: $site-dark-50;
   }
 
   &__price-value {
-    font-family: "Montserrat-Bold", sans-serif;
+    font-family: $ff-bold;
     font-size: 14px;
   }
 
@@ -89,7 +93,7 @@
         text-align: right;
       }
       &_total {
-        @extend %site-h2;
+        @include site-h2();
       }
     }
 
@@ -112,7 +116,7 @@
       cursor: pointer;
       width: 20px;
       height: 20px;
-      font-family: "Montserrat-Bold", sans-serif;
+      font-family: $ff-bold;
       text-align: center;
       color: $site-dark-25;
       border: 1px solid $site-dark-25;

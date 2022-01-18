@@ -18,7 +18,7 @@ module.exports = {
         "cards": PATHS.uikit + '/cards/cards.js',
         "structural-blocks": PATHS.uikit + '/structural-blocks/structural-blocks.js',
         "index": PATHS.website + '/index/index.js',
-        "registration": PATHS.website + '/registration/registration.js',
+        "registration-page": PATHS.website + '/registration-page/registration-page.js',
         "sign-in-page": PATHS.website + '/sign-in-page/sign-in-page.js',
         "search-results": PATHS.website + '/search-results/search-results.js',
         "room-details": PATHS.website + '/room-details/room-details.js'
@@ -96,9 +96,9 @@ module.exports = {
           }),
       new HtmlWebpackPlugin(
           {
-              filename: 'registration/registration.html',
-              chunks: ['registration'],
-              template: PATHS.website + 'registration/registration.pug'
+              filename: 'registration-page/registration-page.html',
+              chunks: ['registration-page'],
+              template: PATHS.website + 'registration-page/registration-page.pug'
           }),
       new HtmlWebpackPlugin(
         {
