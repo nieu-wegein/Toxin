@@ -41,6 +41,7 @@
       text-transform: uppercase;
       color: $site-purple;
       margin-left: 8px;
+      letter-spacing: 0.2px;
     }
   }
 
@@ -145,11 +146,11 @@
     }
   }
 
-  .booking-block__definition {
+  .booking-block__result {
+    white-space: nowrap;
     &_total {
       display: inline-block;
       margin-top: 15px;
     }
   }
-
 }

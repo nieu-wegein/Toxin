@@ -7,8 +7,34 @@ include ../../../components/site-dropdown/site-dropdown__footer/site-dropdown__f
 include ../../../components/room-card/room-card
 
 
-
-- const imgPath = "/pages/UIKit/cards/img/"
+-
+  const imgPath = "/pages/UIKit/cards/img/"
+  const room888 = {
+    imgList: [imgPath + "room888-1_s.png", imgPath + "room888-2_s.png", imgPath + "room888-3_s.png", imgPath + "test.png"],
+    number: "888",
+    price: 9990,
+    charge: -2179,
+    extraCharge: 300,
+    currency: "₽",
+    luxe: true,
+    rating: {great: 130, good: 65, satisfactory: 65, poorly: 0}, // 5 звезд
+    testimonialsList: {
+      count: 145,
+      items: []
+    },
+  };
+  const room840 = {
+    imgList: [imgPath + "room840.png", imgPath + "test.png", imgPath + "test.png", imgPath + "test.png"],
+    number: "840",
+    price: 9990,
+    currency: "₽",
+    luxe: false,
+    rating: {great: 130, good: 65, satisfactory: 65, poorly: 0}, // 5 звезд
+    testimonialsList: {
+      count: 65,
+      items: []
+    }
+  }
 
 doctype html
 html(lang = "en")
@@ -27,11 +53,11 @@ html(lang = "en")
           +search-block()
           +registration-block({modifiers: {paymentLink: true}})
         .content__column
-          +booking-block()
+          +booking-block(room888)
           +log-in-block()
         .content__column
           .calendar-wrapper
             +site-calendar("site-calendar site-calendar_range")
             +site-dropdown__footer()
-          +room-card("room888", {imgList: [imgPath + "room888-1_s.png", imgPath + "room888-2_s.png", imgPath + "room888-3_s.png", imgPath + "test.png"], number: "888", price: "9 990₽", testimonials: "145", luxe: true})
+          +room-card("room888", {imgList: [room888.imgList[0], room888.imgList[1], room888.imgList[2], room888.imgList[3]], number: room888.number, price: "9 990₽", testimonials: room888.testimonialsList.count, luxe: true})
           +room-card("room848", {imgList: [imgPath + "room840.png", imgPath + "test.png", imgPath + "test.png", imgPath + "test.png"], number: "840", price: "9 990₽", testimonials: "65"})

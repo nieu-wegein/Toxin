@@ -1965,6 +1965,7 @@ template {
   text-transform: uppercase;
   color: #BC9CFF;
   margin-left: 8px;
+  letter-spacing: 0.2px;
 }
 .booking-block__price {
   margin: 0;
@@ -2068,7 +2069,10 @@ template {
   bottom: 6px;
   border-bottom: 1px dashed rgba(31, 32, 65, 0.25);
 }
-.booking-block .booking-block__definition_total {
+.booking-block .booking-block__result {
+  white-space: nowrap;
+}
+.booking-block .booking-block__result_total {
   display: inline-block;
   margin-top: 15px;
 }

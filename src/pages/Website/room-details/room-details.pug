@@ -6,29 +6,40 @@ include ../../../components/doughnut-chart/doughnut-chart
 include ../../../components/site-testimonial/site-testimonial
 include ../../../components/site-ul/site-ul
 include ../../../components/booking-block/booking-block
-include ../../../helpers/declinejs
+include ../../../helpers/decline-js
 
 //TODO: вынести данные на страницы
 
 
 -
-  const imgPath = "/pages/website/room-details/img/"
-  decline(4, ["","",""])
-
-  const testimonialsList = {
-    count: 2,
-    items: [
-      {
-        name: "Мурад Сарафанов", date: "5 дней назад",
-        text: "Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару  — никто не жаловался из соседей.",
-        img: imgPath + "user1.png"
-      },
-      {
-        name: "Патрисия Стёклышкова", date: "Неделю назад",
-        text: "Обслуживание на высоте! Всё аккуратно, чисто. Завтраки в номер советую заказать, каждый день новое блюдо и десерт как комплимент",
-        img: imgPath + "user2.png"
-      }]
-  };
+  const imgPath = "/pages/website/room-details/img/";
+  const room = {
+    imgList: [imgPath + "room888-1_m.png", imgPath + "room888-2_s.png", imgPath + "room888-3_s.png"],
+    number: "888",
+    price: 9990,
+    charge: -2179,
+    extraCharge: 300,
+    currency: "₽",
+    luxe: true,
+    features: ["comfort", "convenience", "cosiness"],
+    rules: ["Нельзя с питомцами", "Без вечеринок и мероприятий", "Время прибытия — после 13:00, а выезд до 12:00"],
+    cancellation: "Бесплатная отмена в течение 48 ч. После этого при отмене не позднее чем за 5 дн. до прибытия вы получите полный возврат за вычетом сбора за услуги.",
+    rating: {great: 130, good: 65, satisfactory: 65, poorly: 0},
+    testimonialsList: {
+      count: 2,
+      items: [
+        {
+          name: "Мурад Сарафанов", date: "5 дней назад",
+          text: "Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару  — никто не жаловался из соседей.",
+          img: imgPath + "user1.png"
+        },
+        {
+          name: "Патрисия Стёклышкова", date: "Неделю назад",
+          text: "Обслуживание на высоте! Всё аккуратно, чисто. Завтраки в номер советую заказать, каждый день новое блюдо и десерт как комплимент",
+          img: imgPath + "user2.png"
+        }]
+    },
+  }
 
 doctype html
 html(lang = "en")
@@ -49,24 +60,24 @@ body.room-details
       +site-section({h2: "Фотографии номера", header: "hidden", classList: "room-details__photos-section"})
         .room-details__photos-column
           .room-details__photo-container
-            img(class = "room-details__room-photo", src = imgPath + "room888-1_m.png" alt = "Фотография комнаты")
+            img(class = "room-details__room-photo", src = room.imgList[0] alt = "Фотография комнаты")
         .room-details__photos-column
           .room-details__photo-container
-            img(class = "room-details__room-photo", src = imgPath + "room888-2_s.png" alt = "Фотография комнаты")
+            img(class = "room-details__room-photo", src = room.imgList[1] alt = "Фотография комнаты")
           .room-details__photo-container
-            img(class = "room-details__room-photo", src = imgPath + "room888-3_s.png" alt = "Фотография комнаты")
+            img(class = "room-details__room-photo", src = room.imgList[2] alt = "Фотография комнаты")
       .room-details__main-info-wrapper
         +site-section({h2: "Сведения о номере", classList: "room-details__room-features"})
-          +features-list("comfort", "convenience", "cosiness")
+          +features-list(room.features)
         +site-section({h2: "Впечатления от номера", classList: "room-details__room-impressions"})
-          +doughnut-chart({great: 130, good: 65, satisfactory: 65, poorly: 0})
-        +site-section({h2: "Отзывы посетителей номера", note: decline(testimonialsList.count, ['отзыв', 'отзыва', 'отзывов']), classList: "room-details__room-testimonials"})
-          each testimonial in testimonialsList.items
+          +doughnut-chart(room.rating)
+        +site-section({h2: "Отзывы посетителей номера", note: decline(room.testimonialsList.count, ['отзыв', 'отзыва', 'отзывов']), classList: "room-details__room-testimonials"})
+          each testimonial in room.testimonialsList.items
             +site-testimonial(testimonial)
         +site-section({h2: "Правила", classList: "room-details__room-rules"})
-          +site-ul("Нельзя с питомцами", "Без вечеринок и мероприятий", "Время прибытия — после 13:00, а выезд до 12:00")
+          +site-ul(room.rules)
         +site-section({h2: "Отмена", classList: "room-details__cancellation"})
-          p.room-details__cancellation-text Бесплатная отмена в течение 48 ч. После этого при отмене не позднее чем за 5 дн. до прибытия вы получите полный возврат за вычетом сбора за услуги.
+          p.room-details__cancellation-text !{room.cancellation}
       +site-section({h2: "Забронировать", header: "hidden", classList: "room-details__booking-section"})
-        +booking-block()
+        +booking-block({...room})
   +site-footer()
