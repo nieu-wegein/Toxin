@@ -8,7 +8,7 @@ include ../../../components/room-card/room-card
 
 
 -
-  const imgPath = "/pages/UIKit/cards/img/"
+  const imgPath = "/pages/UIKit/cards/img/";
   const room888 = {
     imgList: [imgPath + "room888-1_s.png", imgPath + "room888-2_s.png", imgPath + "room888-3_s.png", imgPath + "test.png"],
     number: "888",
@@ -16,23 +16,21 @@ include ../../../components/room-card/room-card
     charge: -2179,
     extraCharge: 300,
     currency: "₽",
+    stars: 5,
     luxe: true,
-    rating: {great: 130, good: 65, satisfactory: 65, poorly: 0}, // 5 звезд
     testimonialsList: {
-      count: 145,
-      items: []
+      count: 145
     },
   };
   const room840 = {
     imgList: [imgPath + "room840.png", imgPath + "test.png", imgPath + "test.png", imgPath + "test.png"],
     number: "840",
-    price: 9990,
+    price: 9900,
     currency: "₽",
     luxe: false,
-    rating: {great: 130, good: 65, satisfactory: 65, poorly: 0}, // 5 звезд
+    stars: 4,
     testimonialsList: {
-      count: 65,
-      items: []
+      count: 65
     }
   }
 
@@ -47,7 +45,8 @@ html(lang = "en")
   body.cards-page
     .wrapper
       .header
-        img.logo(src = "../img/min-logo.svg")
+        a(href = "../index/index.html")
+          img.logo(src = "../img/min-logo.svg")
       .content
         .content__column
           +search-block()
@@ -59,5 +58,5 @@ html(lang = "en")
           .calendar-wrapper
             +site-calendar("site-calendar site-calendar_range")
             +site-dropdown__footer()
-          +room-card("room888", {imgList: [room888.imgList[0], room888.imgList[1], room888.imgList[2], room888.imgList[3]], number: room888.number, price: "9 990₽", testimonials: room888.testimonialsList.count, luxe: true})
-          +room-card("room848", {imgList: [imgPath + "room840.png", imgPath + "test.png", imgPath + "test.png", imgPath + "test.png"], number: "840", price: "9 990₽", testimonials: "65"})
+          +room-card("room888", room888)
+          +room-card("room840", room840)

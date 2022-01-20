@@ -15,6 +15,6 @@ mixin site-button(obj)
     }
 
   if obj.type === "a"
-    a(class = buttonClassList src = obj.src) !{obj.text}
-  if obj.type === "button"
+    a(class = buttonClassList href = obj.href) !{obj.text}
+  else if obj.type === "button"
     button(class = buttonClassList type = obj.type) !{obj.text}

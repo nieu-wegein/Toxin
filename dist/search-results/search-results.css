@@ -398,6 +398,7 @@ template {
   padding: 0;
   text-align: center;
   position: relative;
+  text-decoration: none;
 }
 .button:hover {
   color: rgba(31, 32, 65, 0.5);
@@ -522,6 +523,35 @@ template {
   list-style: none;
   padding: 0;
   margin: 0;
+  background-color: white;
+}
+.site-header__site-nav-list .site-header__site-nav-list {
+  position: absolute;
+  padding-top: 10px;
+  border: 1px solid rgba(31, 32, 65, 0.1);
+  border-top: none;
+  -webkit-box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05);
+          box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05);
+  display: none;
+  white-space: nowrap;
+}
+.site-header__site-nav-list .site-header__site-nav-list:hover {
+  display: block;
+}
+.site-header__site-nav-list .site-header__site-nav-list .site-header__site-nav-item {
+  margin-right: 0;
+}
+.site-header__site-nav-list .site-header__site-nav-list .site-header__site-nav-item:hover {
+  background-color: rgba(31, 32, 65, 0.1);
+}
+.site-header__site-nav-list .site-header__site-nav-list .site-header__nav-link {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 10px 20px;
+}
+.site-header__site-nav-item {
+  position: relative;
 }
 .site-header__site-nav-item:not(:last-child) {
   margin-right: 20px;
@@ -536,7 +566,10 @@ template {
   text-decoration: none;
   color: rgba(31, 32, 65, 0.5);
 }
-.site-header__nav-link_expanded:after {
+.site-header__nav-link_expanded:hover + .site-header__site-nav-list {
+  display: block;
+}
+.site-header__nav-link_expanded::after {
   font-family: "Material Icons";
   font-size: 24px;
   content: "expand_more";
@@ -1221,6 +1254,7 @@ template {
   padding: 0;
   text-align: center;
   position: relative;
+  text-decoration: none;
 }
 .button:hover {
   color: rgba(31, 32, 65, 0.5);
@@ -1775,7 +1809,7 @@ template {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  padding-top: 8px;
+  padding-top: 7px;
   padding-bottom: 14px;
 }
 .room-card__room-number {
@@ -1785,6 +1819,7 @@ template {
   line-height: 24px;
   letter-spacing: 0.2px;
   margin: 0;
+  letter-spacing: 0;
 }
 .room-card__room-number:first-letter {
   font-size: 14px;
@@ -1876,8 +1911,8 @@ template {
   font-size: 14px;
   line-height: 24px;
   letter-spacing: -0.1px;
-  margin-top: 10px;
-  margin-left: 6px;
+  margin-top: 8px;
+  margin-left: 5px;
 }
 
 body {
@@ -1930,7 +1965,7 @@ html {
   display: inline-flex;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-  margin-bottom: 41px;
+  margin-bottom: 42px;
 }
 .search-results__rooms-item {
   width: 270px;

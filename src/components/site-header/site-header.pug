@@ -1,26 +1,70 @@
-include ../../mixins/menu-items
+include ../../mixins/site-menu
 include ../site-button/site-button
 
-mixin site-header(user)
+mixin site-header(obj = {})
   -
-    const mainNavItems = [{text: "О нас", active: true}, {text: "Услуги",expand: true}, {text: "Вакансии"}, {text: "Новости"}, {text: "Соглашения", expand: true}]
+    const pages = {
+      formElements: "../form-elements/form-elements.html",
+      cards: "../cards/cards.html",
+      structuralBlocks: "../structural-blocks/structural-blocks.html",
+      main: "../index/index.html",
+      searchResults: "../search-results/search-results.html",
+      roomDetails: "../room-details/room-details.html",
+      signIn: "../sign-in-page/sign-in-page.html",
+      registration: "../registration-page/registration-page.html"
+    }
 
-    const usermenuClassList = ["site-header__user-nav-list"];
-    if(user) usermenuClassList.push("site-header__user-nav-list_logged");
+    const navMenu = {
+      classList: "site-header__site-nav-list",
+      itemClass: "site-header__site-nav-item",
+      linkClass: "site-header__nav-link",
+      items: [
+        {text: "О нас", active: obj.active === "О нас", href: pages.main},
+        {text: "Услуги", active: obj.active === "Услуги", href: pages.main,
+        dropdown:[
+            {text: "form-elements", href: pages.formElements},
+            {text: "cards", href: pages.cards},
+            {text: "structural-blocks", href: pages.structuralBlocks},
+            {text: "main", href: pages.main},
+            {text: "search-results", href: pages.searchResults},
+            {text: "room-details", href: pages.roomDetails},
+            {text: "sign-in-page", href: pages.signIn},
+            {text: "registration-page", href: pages.registration},
+          ]
+        },
+        {text: "Вакансии", active: obj.active === "Вакансии", href: pages.main},
+        {text: "Новости", active: obj.active === "Новости", href: pages.main},
+        {text: "Соглашения", active: obj.active === "Соглашения", href: pages.main,
+          dropdown: [
+            {text: "Соглашение 1", href: pages.main},
+            {text: "Соглашение 2", href: pages.main},
+            {text: "Соглашение 3", href: pages.main}
+          ]
+        }
+      ]
+    };
+
+    const userMenu = {
+      classList: ["site-header__user-nav-list", "site-header__user-nav-list_logged"],
+      itemClass: "site-header__user-nav-item",
+      linkClass: "site-header__nav-link",
+      items: [
+        {text: obj.user}
+      ]
+    };
 
   header.site-header
     include ../site-logo/site-logo
     .site-header__navigation-wrapper
       nav.site-header__site-navigation
-        ul.site-header__site-nav-list
-          +menu-items(mainNavItems, "site-header__site-nav-item", "site-header__nav-link")
+        +site-menu(navMenu)
       .site-header__user-navigation
-        ul(class = usermenuClassList)
-          if(user)
-            +menu-items([{text: user}], "site-header__user-nav-item", "site-header__nav-link")
-          else
+        if(obj.user)
+          +site-menu(userMenu)
+        else
+          ul.site-header__user-nav-list
             li.site-header__user-nav-item
-              +site-button({type: "a", modifiers: {rounded: true}, text: "Войти"})
+              +site-button({type: "a", href: pages.signIn, modifiers: {rounded: true}, text: "Войти"})
             li.site-header__user-nav-item
-              +site-button({type: "a", modifiers: {primary: true}, text: "Зарегистрироваться"})
+              +site-button({type: "a", href: pages.registration, modifiers: {primary: true}, text: "Зарегистрироваться"})
 

@@ -398,6 +398,7 @@ template {
   padding: 0;
   text-align: center;
   position: relative;
+  text-decoration: none;
 }
 .button:hover {
   color: rgba(31, 32, 65, 0.5);
@@ -522,6 +523,35 @@ template {
   list-style: none;
   padding: 0;
   margin: 0;
+  background-color: white;
+}
+.site-header__site-nav-list .site-header__site-nav-list {
+  position: absolute;
+  padding-top: 10px;
+  border: 1px solid rgba(31, 32, 65, 0.1);
+  border-top: none;
+  -webkit-box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05);
+          box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05);
+  display: none;
+  white-space: nowrap;
+}
+.site-header__site-nav-list .site-header__site-nav-list:hover {
+  display: block;
+}
+.site-header__site-nav-list .site-header__site-nav-list .site-header__site-nav-item {
+  margin-right: 0;
+}
+.site-header__site-nav-list .site-header__site-nav-list .site-header__site-nav-item:hover {
+  background-color: rgba(31, 32, 65, 0.1);
+}
+.site-header__site-nav-list .site-header__site-nav-list .site-header__nav-link {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 10px 20px;
+}
+.site-header__site-nav-item {
+  position: relative;
 }
 .site-header__site-nav-item:not(:last-child) {
   margin-right: 20px;
@@ -536,7 +566,10 @@ template {
   text-decoration: none;
   color: rgba(31, 32, 65, 0.5);
 }
-.site-header__nav-link_expanded:after {
+.site-header__nav-link_expanded:hover + .site-header__site-nav-list {
+  display: block;
+}
+.site-header__nav-link_expanded::after {
   font-family: "Material Icons";
   font-size: 24px;
   content: "expand_more";
@@ -1391,6 +1424,7 @@ template {
   padding: 0;
   text-align: center;
   position: relative;
+  text-decoration: none;
 }
 .button:hover {
   color: rgba(31, 32, 65, 0.5);
@@ -1529,6 +1563,7 @@ template {
   padding: 0;
   text-align: center;
   position: relative;
+  text-decoration: none;
 }
 .button:hover {
   color: rgba(31, 32, 65, 0.5);

@@ -1,0 +1,22 @@
+
+//TODO: Дропдаун-меню
+mixin site-menu(obj)
+
+  ul(class = obj.classList)
+    each item in obj.items
+      -
+        const linkClassList = [obj.linkClass];
+        if (item.dropdown) linkClassList.push(obj.linkClass + "_expanded");
+        if (item.active) linkClassList.push(obj.linkClass + "_active");
+
+      li(class = obj.itemClass)
+        a(class = linkClassList  href = item.href) !{item.text}
+        if item.dropdown
+          ul(class = obj.classList)
+            each link in item.dropdown
+              li(class = obj.itemClass)
+                a(class = obj.linkClass  href = link.href) !{link.text}
+
+
+
+

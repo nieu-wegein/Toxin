@@ -16,33 +16,49 @@ body::-webkit-scrollbar {
 .structural-blocks-page {
   background-color: #F4F4F6;
 
-  .site-footer:nth-child(4) {
-    max-width: 768px;
-    margin: 0 auto 140px;
-    line-height: 17px;
-    .site-footer {
-      &__content {
-        padding: 120px 9.72% 0;
-      }
-      &__info-block {
-        max-width: 100%;
-        margin: 0 auto;
-      }
-      &__info-text,
-      &__links-section,
-      &__subscription-block {
-        display: none;
-      }
-      &__bottom {
-        text-align: center;
-        flex-wrap: wrap;
-        justify-content: center;
-        margin-top: 0;
-        padding: 20px 9.72% 120px;
-      }
-      &__copyright {
-        width: 100%;
-        margin-bottom: 25px;
+  .site-header {
+    margin-bottom: 40px;
+    &:first-child {
+      z-index: 2;
+    }
+  }
+
+  .site-footer{
+    margin-bottom: 40px;
+
+    &:nth-child(4) { // стили для max-width: 768px
+      max-width: 768px;
+      margin: 0 auto 140px;
+      line-height: 17px;
+
+      .site-footer {
+        &__content {
+          padding: 120px 9.72% 0;
+        }
+
+        &__info-block {
+          max-width: 100%;
+          margin: 0 auto;
+        }
+
+        &__info-text,
+        &__links-section,
+        &__subscription-block {
+          display: none;
+        }
+
+        &__bottom {
+          text-align: center;
+          flex-wrap: wrap;
+          justify-content: center;
+          margin-top: 0;
+          padding: 20px 9.72% 120px;
+        }
+
+        &__copyright {
+          width: 100%;
+          margin-bottom: 25px;
+        }
       }
     }
   }
@@ -52,9 +68,4 @@ body::-webkit-scrollbar {
 .structural-blocks-header {
   padding: 2.08%;
   margin: 0 auto 28px;
-}
-
-.site-header,
-.site-footer {
-  margin-bottom: 40px;
 }

@@ -1,4 +1,4 @@
-include ../../mixins/menu-items
+include ../../mixins/site-menu
 include ../site-section/site-section
 include ../site-input/site-input
 include ../social-link/social-link
@@ -6,10 +6,40 @@ include ../social-link/social-link
 mixin site-footer()
 
   -
-    const footerLinks = [
-            [{text: "О нас"},{text: "Новости"},{text: "Служба поддержки"},{text: "Услуги"}],
-            [{text: "О сервисе"},{text: "Наша команда"},{text: "Вакансии"},{text: "Инвесторы"}],
-            [{text: "Соглашения"},{text: "Сообщества"},{text: "Связь с нами"}]
+    const mainPage = "../index/index.html"
+    const footerMenus = [
+      {
+        classList: "site-footer__menu-list",
+        itemClass: "site-footer__menu-item",
+        linkClass: "site-footer__menu-link",
+        items: [
+          {text: "О нас", href: mainPage},
+          {text: "Новости", href: mainPage},
+          {text: "Служба поддержки", href: mainPage},
+          {text: "Услуги", href: mainPage}
+        ]
+      },
+      {
+        classList: "site-footer__menu-list",
+        itemClass: "site-footer__menu-item",
+        linkClass: "site-footer__menu-link",
+        items: [
+          {text: "О сервисе", href: mainPage},
+          {text: "Наша команда", href: mainPage},
+          {text: "Вакансии", href: mainPage},
+          {text: "Инвесторы", href: mainPage}
+        ]
+      },
+      {
+        classList: "site-footer__menu-list",
+        itemClass: "site-footer__menu-item",
+        linkClass: "site-footer__menu-link",
+        items: [
+          {text: "Соглашения", href: mainPage},
+          {text: "Сообщества", href: mainPage},
+          {text: "Связь с нами", href: mainPage}
+        ]
+      }
     ]
 
   footer.site-footer
@@ -19,14 +49,11 @@ mixin site-footer()
         p.site-footer__info-text Бронирование номеров в лучшем отеле 2019 года по версии ассоциации «Отельные взгляды»
       .site-footer__links-section
         +site-section({h3: "Навигация", classList: "site-footer__menu-block"})
-          ul.site-footer__menu-list
-            +menu-items(footerLinks[0], "site-footer__menu-item", "site-footer__menu-link")
+          +site-menu(footerMenus[0])
         +site-section({h3: "О нас", classList: "site-footer__menu-block"})
-          ul.site-footer__menu-list
-            +menu-items(footerLinks[1], "site-footer__menu-item", "site-footer__menu-link")
+          +site-menu(footerMenus[1])
         +site-section({h3: "Служба поддержки", classList: "site-footer__menu-block"})
-          ul.site-footer__menu-list
-            +menu-items(footerLinks[2], "site-footer__menu-item", "site-footer__menu-link")
+          +site-menu(footerMenus[2])
       +site-section({h3: "Подписка", classList: "site-footer__subscription-block"})
         p.site-footer__subscription-text Получайте специальные предложения и новости сервиса
         form.site-footer__subscription-form

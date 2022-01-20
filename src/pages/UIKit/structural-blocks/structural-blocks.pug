@@ -13,9 +13,10 @@ html(lang = "en")
   body.structural-blocks-page
     .header-wrapper
       .structural-blocks-header
-        img.logo(src = "../img/min-logo.svg")
+        a(href = "../index/index.html")
+          img.logo(src = "../img/min-logo.svg")
     .body
-        +site-header()
-        +site-header("Юлий Цезарь")
+        +site-header({active: "О нас"})
+        +site-header({user: "Юлий Цезарь", active: "О нас"})
         +site-footer()
         +site-footer()

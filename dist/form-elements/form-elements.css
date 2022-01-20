@@ -736,6 +736,7 @@ template {
   padding: 0;
   text-align: center;
   position: relative;
+  text-decoration: none;
 }
 .button:hover {
   color: rgba(31, 32, 65, 0.5);
@@ -1632,8 +1633,8 @@ template {
   font-size: 14px;
   line-height: 24px;
   letter-spacing: -0.1px;
-  margin-top: 10px;
-  margin-left: 6px;
+  margin-top: 8px;
+  margin-left: 5px;
 }
 
 .site-ul {

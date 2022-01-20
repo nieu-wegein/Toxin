@@ -3,8 +3,7 @@
 <!--TODO: Submit для кнопки-->
 <!--TODO: Отправка данных на сервер-->
 <!--TODO: Валидация-->
-<!--TODO: Submit для кнопки-->
-<!--TODO: рейтинг из-вне--><!DOCTYPE html>
+<!--TODO: Submit для кнопки--><!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="utf-8">
@@ -15,7 +14,7 @@
   <script defer src="../cards/cards.js"></script><link href="../cards/cards.css" rel="stylesheet"></head>
   <body class="cards-page">
     <div class="wrapper">
-      <div class="header"><img class="logo" src="../img/min-logo.svg"></div>
+      <div class="header"><a href="../index/index.html"><img class="logo" src="../img/min-logo.svg"></a></div>
       <div class="content">
         <div class="content__column">
           <article class="search-block">
@@ -529,7 +528,7 @@
               <div class="room-card__rating">
                 <form class="room-card__rate-form">
                   <div class="rate-button" id="room888_room-rate">
-                    <input class="rate-button__radio" type="radio" id="room888_room-rate_star-5" name="room888_room-rate" value="5 stars">
+                    <input class="rate-button__radio" type="radio" id="room888_room-rate_star-5" name="room888_room-rate" value="5 stars" checked>
                     <label class="rate-button__label" for="room888_room-rate_star-5"><span class="rate-button__label-text">5 звезд</span></label>
                     <input class="rate-button__radio" type="radio" id="room888_room-rate_star-4" name="room888_room-rate" value="4 stars">
                     <label class="rate-button__label" for="room888_room-rate_star-4"><span class="rate-button__label-text">4 звезды</span></label>
@@ -541,11 +540,13 @@
                     <label class="rate-button__label" for="room888_room-rate_star-1"><span class="rate-button__label-text">1 звезду</span></label>
                   </div>
                 </form>
-                <p class="room-card__testimonial-counter"><span class="room-card__testimonial-count">145 отзывов</span></p>
+                <p class="room-card__testimonial-counter"><span class="room-card__testimonial-count">145</span>
+                  <!--Не нужно склонение?--> Отзывов
+                </p>
               </div>
             </div>
           </article>
-          <article class="room-card" id="room848">
+          <article class="room-card" id="room840">
             <h2 class="room-card__heading">Комната №  840</h2>
             <div class="room-card__image-container">
               <ul class="room-card__image-list">
@@ -566,24 +567,26 @@
             <div class="room-card__body">
               <div class="room-card__info">
                 <p class="room-card__room-number">№<span class="room-card__room-number-value">840</span></p>
-                <p class="room-card__price"><span class="room-card__price-value">9 990₽</span> в сутки</p>
+                <p class="room-card__price"><span class="room-card__price-value">9 900₽</span> в сутки</p>
               </div>
               <div class="room-card__rating">
                 <form class="room-card__rate-form">
-                  <div class="rate-button" id="room848_room-rate">
-                    <input class="rate-button__radio" type="radio" id="room848_room-rate_star-5" name="room848_room-rate" value="5 stars">
-                    <label class="rate-button__label" for="room848_room-rate_star-5"><span class="rate-button__label-text">5 звезд</span></label>
-                    <input class="rate-button__radio" type="radio" id="room848_room-rate_star-4" name="room848_room-rate" value="4 stars">
-                    <label class="rate-button__label" for="room848_room-rate_star-4"><span class="rate-button__label-text">4 звезды</span></label>
-                    <input class="rate-button__radio" type="radio" id="room848_room-rate_star-3" name="room848_room-rate" value="3 stars">
-                    <label class="rate-button__label" for="room848_room-rate_star-3"><span class="rate-button__label-text">3 звезды</span></label>
-                    <input class="rate-button__radio" type="radio" id="room848_room-rate_star-2" name="room848_room-rate" value="2 stars">
-                    <label class="rate-button__label" for="room848_room-rate_star-2"><span class="rate-button__label-text">2 звезды</span></label>
-                    <input class="rate-button__radio" type="radio" id="room848_room-rate_star-1" name="room848_room-rate" value="1 star">
-                    <label class="rate-button__label" for="room848_room-rate_star-1"><span class="rate-button__label-text">1 звезду</span></label>
+                  <div class="rate-button" id="room840_room-rate">
+                    <input class="rate-button__radio" type="radio" id="room840_room-rate_star-5" name="room840_room-rate" value="5 stars">
+                    <label class="rate-button__label" for="room840_room-rate_star-5"><span class="rate-button__label-text">5 звезд</span></label>
+                    <input class="rate-button__radio" type="radio" id="room840_room-rate_star-4" name="room840_room-rate" value="4 stars" checked>
+                    <label class="rate-button__label" for="room840_room-rate_star-4"><span class="rate-button__label-text">4 звезды</span></label>
+                    <input class="rate-button__radio" type="radio" id="room840_room-rate_star-3" name="room840_room-rate" value="3 stars">
+                    <label class="rate-button__label" for="room840_room-rate_star-3"><span class="rate-button__label-text">3 звезды</span></label>
+                    <input class="rate-button__radio" type="radio" id="room840_room-rate_star-2" name="room840_room-rate" value="2 stars">
+                    <label class="rate-button__label" for="room840_room-rate_star-2"><span class="rate-button__label-text">2 звезды</span></label>
+                    <input class="rate-button__radio" type="radio" id="room840_room-rate_star-1" name="room840_room-rate" value="1 star">
+                    <label class="rate-button__label" for="room840_room-rate_star-1"><span class="rate-button__label-text">1 звезду</span></label>
                   </div>
                 </form>
-                <p class="room-card__testimonial-counter"><span class="room-card__testimonial-count">65 отзывов</span></p>
+                <p class="room-card__testimonial-counter"><span class="room-card__testimonial-count">65</span>
+                  <!--Не нужно склонение?--> Отзывов
+                </p>
               </div>
             </div>
           </article>

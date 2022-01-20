@@ -35,13 +35,40 @@
     list-style: none;
     padding: 0;
     margin: 0;
+    background-color: white;
+
+    & .site-header__site-nav-list {
+      position: absolute;
+      padding-top: 10px;
+      border: 1px solid $site-dark-10;
+      border-top: none;
+      box-shadow: 0px 10px 20px $site-dark-5;
+      display: none;
+      white-space: nowrap; // избавление от зависимости меню от ширины родителя
+
+      &:hover {
+        display: block;
+      }
+      & .site-header__site-nav-item {
+        margin-right: 0;
+        &:hover {
+          background-color: $site-dark-10;
+        }
+      }
+      & .site-header__nav-link {
+        display: flex;
+        padding: 10px 20px;
+      }
+    }
   }
 
   &__site-nav-item {
+    position: relative;
     &:not(:last-child) {
       margin-right: 20px;
     }
   }
+
 
   &__nav-link {
     display: inline-flex;
@@ -49,10 +76,15 @@
     text-decoration: none;
     color: $site-dark-50;
 
-    &_expanded:after {
-      font-family: "Material Icons";
-      font-size: 24px;
-      content: "expand_more"
+    &_expanded {
+      &:hover + .site-header__site-nav-list {
+        display: block;
+      }
+      &::after {
+        font-family: "Material Icons";
+        font-size: 24px;
+        content: "expand_more"
+      }
     }
 
     &_active {
@@ -68,7 +100,6 @@
     margin: 0;
 
     &_logged {
-
       align-items: center;
 
       & .site-header__user-nav-item {
@@ -76,7 +107,6 @@
           margin-left: 18px;
         }
       }
-
       &::before {
         content: " ";
         width: 1px;
