@@ -15,20 +15,20 @@ mixin registration-block(obj = {})
     .registration-block__body
       form.registration-block__form
         +site-fieldset("Личные данные", {fieldset: "hidden"})
-          +site-input({label: "Имя", id: "reg-first-name", text: "Имя", modifiers: {label: "hidden"}})
-          +site-input({label: "Фамилия", id: "reg-last-name", text: "Фамилия", modifiers: {label: "hidden"}})
+          +site-input({label: "Имя", id: "reg-first-name", name: "name", text: "Имя", required: true, modifiers: {label: "hidden"}})
+          +site-input({label: "Фамилия", id: "reg-last-name", name: "lastname", text: "Фамилия", required: true, modifiers: {label: "hidden"}})
           +site-radio-group({options: [
-              {label: "Мужчина", id: "reg-man", name: "sex", checked: true},
-              {label: "Женщина", id: "reg-woman", name: "sex"}
+              {label: "Мужчина", id: "reg-man", name: "sex", value: "man", checked: true},
+              {label: "Женщина", id: "reg-woman", name: "sex", value: "woman"}
             ]})
-          +site-input({label: "Дата Рождения", id: "reg-date-of-birth", text: "ДД-ММ-ГГГГ", modifiers: {datemask: true}})
+          +site-input({label: "Дата Рождения", id: "reg-date-of-birth", name: "birthday", text: "ДД.ММ.ГГГГ", required: true, modifiers: {datemask: true}})
         +site-fieldset("Данные для входа в сервис")
-          +site-input({label: "Email", id: "reg-email", text: "Email", modifiers: {label: "hidden"}})
-          +site-input({label: "Пароль", id: "reg-password", text: "Пароль", modifiers: {label: "hidden"}})
+          +site-input({label: "Email", id: "reg-email", name: "email", type: "email", text: "Email", required: true, modifiers: {label: "hidden"}})
+          +site-input({label: "Пароль", id: "reg-password", name: "password", type: "password", text: "Пароль", required: true, modifiers: {label: "hidden"}})
         +site-checkbox-group({options: [
-            {label: "Получать спецпредложения", id: "reg-offer"}],
+            {label: "Получать спецпредложения", id: "reg-offers", name: "specialOffers"}],
              modifiers: {toggle: true}})
-        +site-button({type: "button", text: buttonText, modifiers: {primary: true, flexible: true, icon: "arrow"}})
+        +site-button({tag: "button", text: buttonText, type: "submit", modifiers: {primary: true, flexible: true, icon: "arrow"}})
     footer.registration-block__footer
       span.registration-block__already-have Уже есть аккаунт на Toxin
-      +site-button({type: "a", text: "Войти", modifiers: {rounded: true, block: true}})
+      +site-button({tag: "a", text: "Войти", modifiers: {rounded: true, block: true}})

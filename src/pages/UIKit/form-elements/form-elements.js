@@ -15,7 +15,7 @@ $(function() {
   inputList[1].value = "This is pretty awesome"
 
   const likeButtons = $(".like-button");
-  console.log(likeButtons)
+
   $(likeButtons[1]).addClass("like-button_active");
   $(likeButtons[2]).addClass("like-button_active");
   $(".like-button__counter", likeButtons[0]).text("2");

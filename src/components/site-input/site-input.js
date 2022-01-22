@@ -1,19 +1,19 @@
 import $ from "../../jquery-3.6.0.min";
 
 class SiteInput {
-
+  //Тут будет код
 }
 
 class MaskedInput extends SiteInput {
-
+  //Тут будет код
 }
 
 class DateInput extends MaskedInput {
 
   constructor(input) {
     super(input)
-    this.input = $(input);
 
+    this.input = $(input);
     this.input.on("input", this.setMask)
   }
 
@@ -34,7 +34,6 @@ class DateInput extends MaskedInput {
 
       this.input[0].value = inputText + ".";
     }
-
   }
 }
 

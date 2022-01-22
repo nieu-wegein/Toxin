@@ -1,12 +1,8 @@
 import $ from "../../jquery-3.6.0.min";
-
-
-//TODO: разбить на дочерние классы
-//TODO: РЕФАКТОРИНГ!!!
-
+import decline from "../../helpers/decline";
 
 class SiteDropdown {
-
+ // Тут будет код
 }
 
 export class CountingDropdown extends SiteDropdown {
@@ -14,32 +10,35 @@ export class CountingDropdown extends SiteDropdown {
   constructor(dropdown) {
     super(dropdown)
     this.dropdown = $(dropdown);
-    this.state = {}
     this.header = $(".site-dropdown__header", this.dropdown);
+    this.textArea = $(".site-dropdown__text-area", this.header)
+    this.testArea = $(".site-dropdown__text-area_hidden", this.header)
     this.window = $(".site-dropdown__window", this.dropdown);
     this.items = $(".site-dropdown__item", this.window);
-    this.footer = $(".site-dropdown__footer", this.window);
     this.counters = $(".site-dropdown__counter", this.window).get();
-    this.textArea = $(".text-area", this.header)
+    this.footer = $(".site-dropdown__footer", this.window);
+    this.buttonClear = $(".site-dropdown__button-clear", this.footer);
+    this.buttonApply = $(".site-dropdown__button-apply", this.footer);
 
+    this.updateState();
 
-    this.header.click(this.toogleWindow);
-    this.dropdown.focusout(this.onFocusLoose);
-    if (this.footer) {
-      this.footer.click(this.onFooterClick);
-      this.items.click(this.onItemClick());
-    } else
-      this.items.click(this.onItemClick())
+    this.header.click(this.toggleWindow);
+    $(this.counters).click(this.onCounterClick())
+    if (this.footer.length === 0)
+      this.dropdown.focusout(this.onFocusLoose);
+    else {
+      this.buttonClear.click(this.onClearClick);
+      this.buttonApply.click(this.onApplyClick);
+    }
   }
 
-  toogleWindow = () => {
+  toggleWindow = () => {
     this.header.toggleClass("site-dropdown__header_square");
     this.window.toggle();
   }
 
   onFocusLoose = (e) => {
     if (this.dropdown.has(e.relatedTarget).length === 0) {
-
       this.header.removeClass("site-dropdown__header_square");
       this.window.hide();
     }
@@ -49,52 +48,47 @@ export class CountingDropdown extends SiteDropdown {
 
     let text = "";
     const defaultText = this.header.data("text")
+    const initialWidth = this.textArea.width();
+    let headerState = {}
 
     for (let key in this.state) {
-
       if (this.state[key] !== 0) {
-        let lastDigit = this.state[key] % 10;
-        let penultDigit = Math.floor(this.state[key] % 100 / 10);
-        let cases = key.split(",");
-
-        text += text === "" ? this.state[key] + " " : ", " + this.state[key] + " "
-
-        if (lastDigit === 1 && penultDigit !== 1)
-          text += cases[0]
-        else if (lastDigit > 1 && lastDigit < 5 && penultDigit !== 1)
-          text += cases[1]
-        else
-          text += cases[2]
+        const item = $(`[data-name="${key}"]`, this.window);
+        const cases =  item.data("declination");
+        headerState[cases] = headerState[cases] ? headerState[cases] + this.state[key] : this.state[key];
       }
-
-      else text += "";
     }
+    for (let key in headerState) {
+      const cases = key.split(",");
+      const buffer = text;
+      text += text === "" ? decline(headerState[key], cases) : ", " + decline(headerState[key], cases);
 
+      if (this.testArea.text(text).width() > initialWidth) {
+        text = buffer + "...";
+        break;
+      }
+    }
     text === "" ? this.textArea.text(defaultText) : this.textArea.text(text);
   }
 
-  updateHeaderState = () => {
+  updateState = () => {
 
     const newState = {}
 
-    this.items.get().reduce((sum, current) => {
-      const declination = $(current).data("declination");
-
-      if (!sum[declination]) sum[declination] = 0;
-      sum[declination] += parseInt($(".site-dropdown__count", current)[0].innerText)
-
-      return sum;
+    this.items.get().reduce((obj, current) => {
+      const name = $(current).data("name");
+      obj[name] = parseInt($(".site-dropdown__count", current)[0].innerText)
+      return obj;
 
     }, newState)
 
     this.state = newState;
-
     this.setHeaderText();
   }
 
-  onItemClick = () => {
+  onCounterClick = () => {
 
-    let callback = this.footer ? this.toogleClearButton : this.updateHeaderState;
+    let callback = this.footer.length === 0 ? this.updateState : this.toggleClearButton;
 
     return function (e) {
       const buttonAdd = $(".site-dropdown__button-add", this);
@@ -118,46 +112,35 @@ export class CountingDropdown extends SiteDropdown {
     }
   }
 
-  toogleClearButton = () => {
-    if (this.footer) {
-      let clear = true; //TODO
-      const buttonClear = $(".site-dropdown__button-clear", this.footer)
-      const counters = $(".site-dropdown__count", this.window).get()
+  toggleClearButton = () => {
+    let count = this.counters.reduce((sum, current) => {
+      const a = $(".site-dropdown__count", current)[0].innerText;
+      return sum += parseInt(a)
+    }, 0)
 
-      let count = counters.reduce((sum, current) => {
-        return sum += parseInt(current.innerText)
-      }, 0)
-
-      if (count) buttonClear.css("visibility", "visible")
-      else buttonClear.css("visibility", "hidden")
-    }
+    if(count) this.buttonClear.css("visibility", "visible")
+    else this.buttonClear.css("visibility", "hidden")
   }
 
-  onFooterClick = (e) => {
-    const buttonClear = $(".site-dropdown__button-clear", this.footer);
-    const buttonApply = $(".site-dropdown__button-apply", this.footer);
+  onClearClick = () => {
+    this.counters.forEach((counter) => {
+      $(".site-dropdown__count", counter)[0].innerText = 0;
+      $(".site-dropdown__button-remove", counter).attr("disabled", true);
+      this.buttonApply.focus();
 
-    if (e.target === buttonClear[0]) {
-      this.counters.forEach((counter) => {
-        $(".site-dropdown__count", counter)[0].innerText = 0;
-        $(".site-dropdown__button-remove", counter).attr("disabled", true);
-        buttonApply.focus();
+      this.updateState();
+      this.toggleClearButton();
+    })
+  }
 
-        this.updateHeaderState();
-        this.toogleClearButton();
-      })
-    }
-    else if (e.target === buttonApply[0]) {
-      this.window.hide();
-      this.updateHeaderState();
-    }
-
+  onApplyClick = () => {
+    this.window.hide();
+    this.updateState();
   }
 }
 
 
 $(function (){
-
   const dropdownsList = $(".site-dropdown_counting-dropdown");
   dropdownsList.each((i, dropdown) => {new CountingDropdown(dropdown)});
 

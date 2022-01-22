@@ -77,5 +77,5 @@ body.room-details
         +site-section({h2: "Отмена", classList: "room-details__cancellation"})
           p.room-details__cancellation-text !{room.cancellation}
       +site-section({h2: "Забронировать", header: "hidden", classList: "room-details__booking-section"})
-        +booking-block({...room})
+        +booking-block(room)
   +site-footer()

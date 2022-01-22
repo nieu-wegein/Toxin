@@ -14,7 +14,7 @@ mixin site-button(obj)
        if (obj.modifiers.icon === "arrow") buttonClassList.push("arrow")
     }
 
-  if obj.type === "a"
+  if obj.tag === "a"
     a(class = buttonClassList href = obj.href) !{obj.text}
-  else if obj.type === "button"
-    button(class = buttonClassList type = obj.type) !{obj.text}
+  else if obj.tag === "button"
+    button(class = buttonClassList type = obj.type ? obj.type : "button") !{obj.text}

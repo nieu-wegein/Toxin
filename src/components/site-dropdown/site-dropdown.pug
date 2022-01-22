@@ -5,7 +5,7 @@ include ../form-element/form-element
 include ../site-calendar/site-calendar
 
 
-mixin site-dropdown(obj)
+mixin site-dropdown(obj = {})
   -
     const dropdownClassList = ["site-dropdown"];
     const windowClassList = ["site-dropdown__window"]
@@ -18,11 +18,10 @@ mixin site-dropdown(obj)
     if(obj.shared) {
       windowId = obj.shared.id
       forWindow = obj.shared.for ? obj.shared.for : obj.shared.id
-      windowClassList.push("site-dropdown__window_free")
     }
 
-    if (obj.modifiers) {
-      if (obj.modifiers.calendar){
+    if(obj.modifiers) {
+      if(obj.modifiers.calendar){
 
           modifiers.calendar = obj.modifiers.calendar;
           switch(modifiers.calendar.type) {
@@ -31,13 +30,12 @@ mixin site-dropdown(obj)
                           windowClassList.push("site-dropdown__window_free");
                           break;
             case "range": calendarClassList.push("site-calendar_range");
-                          obj.shared ? dropdownClassList.push("site-dropdown_shared-calendar") : dropdownClassList.push("site-dropdown_range-calendar");
+                          dropdownClassList.push(obj.shared ? "site-dropdown_shared-calendar": "site-dropdown_range-calendar");
                           windowClassList.push("site-dropdown__window_free");
                           break;
           }
       }
       else dropdownClassList.push("site-dropdown_counting-dropdown");
-
       if (obj.modifiers.buttons) modifiers.buttons = true
     }
     else
@@ -45,7 +43,7 @@ mixin site-dropdown(obj)
 
 
   +form-element(obj)
-    div(class = dropdownClassList id= obj.id)
+    div(class = dropdownClassList id= obj.id data-name = obj.name)
       +dropdown-header(obj.text, forWindow)
       if !obj.shared || windowId
         div(tabindex = -1 class = windowClassList id = windowId)

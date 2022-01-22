@@ -13,18 +13,18 @@ class CalendarDropdown extends SiteDropdown {
 
     this.dropdown = $(dropdown);
     this.header = $(".site-dropdown__header", dropdown);
-    this.textArea = $(".text-area", this.header);
+    this.textArea = $(".site-dropdown__text-area", this.header);
     this.window = $(".site-dropdown__window", dropdown);
     this.calendar = $(".site-calendar", this.window)[0].objectModel;
     this.footer = $(".site-dropdown__footer", dropdown);
     this.buttonClear = $(".site-dropdown__button-clear", this.footer);
     this.buttonApply = $(".site-dropdown__button-apply", this.footer);
 
-    this.header.click(this.toogleWindow);
-   // this.dropdown.focusout(this.onFocusLoose);
+    this.header.click(this.toggleWindow);
     this.calendar.onDatesClick(this.setHeaderText);
     if(this.buttonClear) this.buttonClear.click(this.clearState);
     if(this.buttonApply) this.buttonApply.click(this.apply);
+    // this.dropdown.focusout(this.onFocusLoose);
 
   }
 
@@ -33,7 +33,7 @@ class CalendarDropdown extends SiteDropdown {
   //     $(this.window).hide();
   // }
 
-  toogleWindow = () => {
+  toggleWindow = () => {
     $(this.window).toggle();
   }
 
@@ -61,7 +61,6 @@ class CalendarDropdown extends SiteDropdown {
   }
 
   apply = () => {
-    console.log(1223);
     this.window.hide();
   }
 }
@@ -81,7 +80,6 @@ class RangeCalendarDropdown extends CalendarDropdown {
 
   setHeaderRangeText = () => {
 
-  //  let defaultText = this.header.data("text");
     let text;
 
     if (this.calendar.state.activeDate)
@@ -117,16 +115,18 @@ class SharedCalendarDropdown {
      this.header = $(".site-dropdown__header", dropdown);
      this.window = document.getElementById(this.header.data("windowid"));
      this.calendar = this.window.querySelector(".site-calendar").objectModel;
-     this.textArea = $(".text-area", this.header);
+     this.textArea = $(".site-dropdown__text-area", this.header);
+     this.footer = $(".site-dropdown__footer", this.window);
+     this.buttonClear = $(".site-dropdown__button-clear", this.footer);
+     this.buttonApply = $(".site-dropdown__button-apply", this.footer);
 
      (this.window.owners = this.window.owners || []).push(this);
 
-    // this.state = {}
-    // this.footer = $(".site-dropdown__footer", this.window);
-
-    this.header.click(this.toogleWindow)
+    this.header.click(this.toggleWindow)
     this.calendar.onDatesClick(this.setHeaderText);
     this.dropdown.focusout(this.onFocusLoose)
+    if(this.buttonClear) this.buttonClear.click(this.clearState);
+    if(this.buttonApply) this.buttonApply.click(this.apply);
   }
 
   onFocusLoose = (e) => {
@@ -138,7 +138,7 @@ class SharedCalendarDropdown {
     if(current.length === 0) $(this.window).hide();
   }
 
-  toogleWindow = (e) => {
+  toggleWindow = (e) => {
 
     if(e.currentTarget === this.window.owners[0].header[0])  {
       this.calendar.removeClass("site-calendar_range")
@@ -155,6 +155,8 @@ class SharedCalendarDropdown {
     let defaultText0 =  this.window.owners[0].header.data("text")
     let defaultText1 =  this.window.owners[1].header.data("text")
 
+    if (this.footer) this.buttonClear.css("visibility", "visible");
+
     if(this.calendar.state.activeDate) {
       this.window.owners[0].textArea.text(this.calendar.state.activeDate)
     } else this.window.owners[0].textArea.text(defaultText0)
@@ -162,6 +164,25 @@ class SharedCalendarDropdown {
     if(this.calendar.rangeState.endDate) {
       this.window.owners[1].textArea.text(this.calendar.rangeState.endDate)
     } else this.window.owners[1].textArea.text(defaultText1)
+  }
+
+  clearState = () => {
+    $(this.calendar.state.activeButton).removeClass("button_primary")
+    $(this.calendar.rangeState.rangeButton).removeClass("button_primary")
+
+    this.calendar.state.activeButton = null;
+    this.calendar.rangeState.rangeButton = null;
+    this.calendar.state.activeDate = null;
+    this.calendar.rangeState.endDate = null;
+    this.calendar.clearRange();
+    this.setHeaderText();
+
+    this.buttonApply.focus();
+    this.buttonClear.css("visibility", "hidden");
+  }
+
+  apply = () => {
+    $(this.window).hide();
   }
 }
 

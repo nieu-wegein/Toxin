@@ -3,7 +3,7 @@
 
   padding: 0 19px;
   padding-bottom: 8px;
-  width: 318px;
+  max-width: 318px;
   border-radius: 4px;
   text-align: center;
   background-color: white;
@@ -100,8 +100,8 @@
   }
 
   &__optional-row {
+    width: 100%;
     display: flex;
+    justify-content: space-between;
   }
-
-
 }

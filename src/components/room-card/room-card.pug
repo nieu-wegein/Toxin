@@ -11,7 +11,8 @@ mixin room-card(id, room)
       ul.room-card__image-list
         each img in room.imgList
           li.room-card__image-item
-            img(class = "room-card__image" src = img alt = "Фотография номера")
+            a(href = "../room-details/room-details.html?id=" + room.number)
+              img(class = "room-card__image" src = img alt = "Фотография номера")
       button(class = "room-card__arrow room-card__arrow_left material-icons") chevron_left
       button(class = "room-card__arrow room-card__arrow_right material-icons" ) chevron_right
       .room-card__bullets-block

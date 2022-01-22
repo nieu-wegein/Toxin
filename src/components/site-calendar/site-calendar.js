@@ -14,8 +14,8 @@ class SiteCalendar {
     this.dateSection = $(".site-calendar__date-section", calendar);
     this.dates = $(".site-calendar__date", this.dateSection).get()
     this.optionalRow =  $(".site-calendar__optional-row", this.dateSection);
-    this.buttonPrev = $(".site-calendar__prev-site-button", calendar)
-    this.buttonNext = $(".site-calendar__next-site-button", calendar)
+    this.buttonPrev = $(".site-calendar__prev-button", calendar)
+    this.buttonNext = $(".site-calendar__next-button", calendar)
     this.today = new Date();
 
     this.state = {
@@ -23,7 +23,6 @@ class SiteCalendar {
       month: this.today.getMonth(),
       date: this.today.getDate()
     };
-
 
     this.render()
 
@@ -34,7 +33,8 @@ class SiteCalendar {
 
   render = () => {
 
-    const firstDayIndex = new Date(this.state.year, this.state.month, 1).getDay() - 1;
+    let firstDayIndex = new Date(this.state.year, this.state.month, 1).getDay();
+    firstDayIndex = firstDayIndex === 0 ?  6 : firstDayIndex - 1;
     const lastDate = new Date(this.state.year, this.state.month + 1, 0).getDate();
 
     this.prevLastDate = new Date(this.state.year, this.state.month,0).getDate();
@@ -45,13 +45,12 @@ class SiteCalendar {
     this.nextShowingDays = this.dates.length - 1;
 
 
+
     if(firstDayIndex + lastDate > 35) this.optionalRow.show();
     else this.optionalRow.hide();
 
+
     this.headerText.text(monthsList[this.state.month] + " " + this.state.year);
-
-
-
 
     for (let i = 0, g = this.prevStartFrom; i <= this.prevShowingDays; i++, g++ ) {
       $(this.dates[i]).attr("disabled", true);
@@ -60,9 +59,9 @@ class SiteCalendar {
     }
 
     for (let i = firstDayIndex, g = 1; g <= lastDate; i++, g++) {
-      $(this.dates[i]).data("fulldate", (g.toString().length > 1 ? g : "0" + g) + "." + (this.state.month + 1) + "." + this.state.year)
+      $(this.dates[i]).data("fulldate", (g.toString().length > 1 ? g : "0" + g) + "." + ((this.state.month + 1).toString().length > 1 ? this.state.month + 1 : "0" + (this.state.month+1)) + "." + this.state.year)
       $(this.dates[i]).attr("disabled", false);
-      this.dates[i].dateIndex = i; //
+      this.dates[i].dateIndex = i;
       this.dates[i].innerText = g;
     }
 
@@ -73,7 +72,7 @@ class SiteCalendar {
     }
 
 
-    if(this.state.month === this.today.getMonth()) {
+    if(this.state.month === this.today.getMonth() && this.state.year === this.today.getFullYear()) {
       if(this.state.todayButton)
         $(this.state.todayButton).addClass("button_secondary")
       else {
@@ -103,6 +102,7 @@ class SiteCalendar {
   }
 
   setNextMonth = () => {
+
     if (this.state.month === 11) {
       this.state.month = 0;
       this.state.year++;
@@ -151,8 +151,8 @@ class RangeCalendar extends SiteCalendar {
     this.rangeState = {}
     this.buttonPrev.click(this.setPrevMonth);
     this.buttonNext.click(this.setNextMonth);
-    $(this.dates).click(this.setStartButton); //?
-    $(this.dates).click(this.setRangeButton); //?
+    $(this.dates).click(this.setStartButton);
+    $(this.dates).click(this.setRangeButton);
     $(this.dates).hover(this.renderHoverRange);
     this.dateSection.mouseleave(this.clearHoverRange);
   }
@@ -164,6 +164,7 @@ class RangeCalendar extends SiteCalendar {
   }
 
   setNextMonth = () => {
+
     $(this.rangeState.rangeButton).removeClass("button_primary");
     this.rangeState.rangeButton = null;
     this.clearRange();
@@ -175,6 +176,13 @@ class RangeCalendar extends SiteCalendar {
       this.rangeState.hoverRange.forEach((date, i) => {
          $(date.parentElement).removeClass("focus-range");
          if (i === 0 && date === this.rangeState.rangeButton) $(date.parentElement).addClass("end-range");
+      })
+    }
+
+    if(this.state.hoverRange) {
+      this.state.hoverRange.forEach((date, i) => {
+        $(date.parentElement).removeClass("focus-range");
+        if (i === this.state.hoverRange.length - 1 && date === this.state.activeButton) $(date.parentElement).addClass("start-range");
       })
     }
   }
@@ -191,6 +199,20 @@ class RangeCalendar extends SiteCalendar {
 
       range.forEach((date, i) => {
         if (i === 0) $(date.parentElement).removeClass("end-range");
+        $(date.parentElement).addClass("focus-range");
+      })
+    }
+
+    if(this.rangeState.rangeButton && !(this.calendar.hasClass("site-calendar_range"))) {
+      this.clearHoverRange();
+      const startIndex = e.currentTarget.dateIndex;
+      const endIndex = this.state.activeButton ? this.state.activeButton.dateIndex : this.rangeState.rangeButton.dateIndex;
+      const range = this.dates.slice(startIndex, endIndex+1);
+
+      this.state.hoverRange = range;
+
+      range.forEach((date, i) => {
+        if (i === range.length - 1) $(date.parentElement).removeClass("start-range");
         $(date.parentElement).addClass("focus-range");
       })
     }
@@ -238,7 +260,6 @@ class RangeCalendar extends SiteCalendar {
       else {
         this.renderRange();
       }
-
     }
   }
 

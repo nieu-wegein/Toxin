@@ -9,9 +9,9 @@ mixin rooms-filter-menu()
     +site-dropdown({label: "Даты пребывания в отеле", id: "filter-dates", text: "ДД.ММ.ГГГГ - ДД.ММ.ГГГГ", modifiers: {calendar: {type: "range"}, buttons: true}})
     +site-dropdown({
       label: "Гости", id: "filter-guests", text: "Сколько гостей", options: [
-        {name: "Взрослые", value: "adults", declination: ["гость", "гостя", "гостей"]},
-        {name: "Дети", value: "children", declination: ["гость", "гостя", "гостей"]},
-        {name: "Младенцы", value: "babies", declination: ["гость", "гостя", "гостей"]}
+        {name: "Взрослые", declination: ["гость", "гостя", "гостей"]},
+        {name: "Дети", declination: ["гость", "гостя", "гостей"]},
+        {name: "Младенцы", declination: ["младенец", "младенца", "младенцев"]},
       ],
       modifiers: {buttons: true}
     })
@@ -31,9 +31,9 @@ mixin rooms-filter-menu()
     +site-dropdown({
       label: "Удобства номера", id: "filter-amenities", text: "Комнаты",
       options: [
-        {name: "Спальни", value: "bedrooms", declination: ["спальня", "спальни", "спален"]},
-        {name: "Кровать", value: "beds", declination: ["кровать", "кровати", "кроватей"]},
-        {name: "Ванные комнаты", value: "bathrooms", declination: ["ванная комната", "ванные комнаты", "ванных комнат"]}
+        {name: "Спальни", declination: ["спальня", "спальни", "спален"]},
+        {name: "Кровать", declination: ["кровать", "кровати", "кроватей"]},
+        {name: "Ванные комнаты", declination: ["ванная комната", "ванные комнаты", "ванных комнат"]}
       ]
     })
     .rooms-filter-menu__checkbox-wrapper

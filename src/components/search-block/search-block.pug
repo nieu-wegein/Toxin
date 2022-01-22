@@ -26,9 +26,9 @@ mixin search-block()
         .search-block__guests-dropdown-wrapper
           +site-dropdown({label: "Гости", id: "search-guest-dropdown", text: "Сколько гостей",
             options: [
-              {name: "Взрослые", value: "adults", declination: ["гость", "гостя", "гостей"]},
-              {name: "Дети", value: "children", declination: ["гость", "гостя", "гостей"]},
-              {name: "Младенцы", value: "babies", declination: ["гость", "гостя", "гостей"]}
+              {name: "Взрослые", declination: ["гость", "гостя", "гостей"]},
+              {name: "Дети", declination: ["гость", "гостя", "гостей"]},
+              {name: "Младенцы", declination: ["гость", "гостя", "гостей"]}
             ],
             modifiers: {buttons: true}})
-        +site-button({type: "button", text:"Подобрать номер", modifiers: {primary: true, flexible: true, icon: "arrow"}})
+        +site-button({tag: "button", text:"Подобрать номер", modifiers: {primary: true, flexible: true, icon: "arrow"}})

@@ -57,7 +57,7 @@ mixin site-footer()
       +site-section({h3: "Подписка", classList: "site-footer__subscription-block"})
         p.site-footer__subscription-text Получайте специальные предложения и новости сервиса
         form.site-footer__subscription-form
-          +site-input({label: "Подписка", text: "Email", modifiers: {submit: true, label: "hidden"}})
+          +site-input({label: "Подписка", id: "footer-subscription", name: "footerSubscription", type: "email", text: "Email", required: true, modifiers: {submit: true, label: "hidden"}})
     .site-footer__bottom
       p.site-footer__copyright Copyright © 2018 Toxin отель. Все права защищены.
       ul.site-footer__social-links

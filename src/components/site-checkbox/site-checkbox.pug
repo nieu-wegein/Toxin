@@ -25,7 +25,7 @@ mixin site-checkbox-group(obj)
     ul.site-checkbox-list
       each option in obj.options
         li(class = checkboxClassList)
-          input(type = "checkbox" id = option.id class = "site-checkbox__input" checked = option.checked)
+          input(type = "checkbox" id = option.id class = "site-checkbox__input" name = option.name, checked = option.checked)
           label(class = "site-checkbox__label"  for = option.id) !{option.label}
           if(obj.modifiers && obj.modifiers.rich)
             p.form-element__description !{option.note}

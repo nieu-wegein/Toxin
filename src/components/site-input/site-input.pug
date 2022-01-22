@@ -1,5 +1,4 @@
 //TODO: Валидация
-//TODO: Submit для кнопки
 
 include ../form-element/form-element
 
@@ -12,7 +11,7 @@ mixin site-input(obj)
 
     +form-element(obj)
       .site-input-wrapper
-        input(type = "text" id = obj.id class = inputClassList placeholder = obj.text)
+        input(type = obj.type id = obj.id class = inputClassList, name = obj.name, required = obj.required, placeholder = obj.text)
         if obj.modifiers && obj.modifiers.submit
           button.site-input__button.material-icons arrow_forward
       if obj.description

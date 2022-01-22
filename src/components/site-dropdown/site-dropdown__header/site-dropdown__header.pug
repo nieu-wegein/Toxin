@@ -1,4 +1,5 @@
 mixin dropdown-header(text, id)
     button.site-dropdown__header(type = "button" data-text = text data-windowid = id)
-      span.text-area !{double ? text[0] : text}
+      span.site-dropdown__text-area !{text}
+      span.site-dropdown__text-area_hidden
       span.site-dropdown__header-icon.material-icons expand_more

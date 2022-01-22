@@ -9,8 +9,20 @@
 
 .site-dropdown {
 
+  width: 100%;
+  position: relative;
+
+  &__text-area {
     width: 100%;
-    position: relative;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    &_hidden {
+      @include visually-hidden();
+      width: auto;
+    }
+  }
+
 
   &__window {
     display: none;

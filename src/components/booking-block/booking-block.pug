@@ -14,11 +14,12 @@ mixin booking-block(obj)
         span.booking-block__price-value !{separatePrice(obj.price) + obj.currency}
         |  в сутки
     .booking-block__body
-      form.booking-block__form
+      form(class = "booking-block__form" id = "booking-block__form")
         .booking-block__date-dropdown-wrapper
           +site-dropdown({
             label: "Прибытие",
             id: "booking-departure",
+            name: "departure",
             text: "ДД.ММ.ГГГГ",
             shared: {id: "booking-dropdown"},
             modifiers: {calendar: {type: "range"}, buttons: true}
@@ -27,6 +28,7 @@ mixin booking-block(obj)
           +site-dropdown({
             label: "Выезд",
             id: "booking-arrival",
+            name: "arrival",
             text: "ДД.ММ.ГГГГ",
             shared: {for: "booking-dropdown"},
             modifiers: {calendar: {type: "range"}, buttons: true}
@@ -35,9 +37,9 @@ mixin booking-block(obj)
           +site-dropdown({
             label: "Гости", id: "booking-guest-dropdown", text: "Сколько гостей",
             options: [
-              {name: "Взрослые", value: "adults", declination: ["гость", "гостя", "гостей"]},
-              {name: "Дети", value: "children", declination: ["гость", "гостя", "гостей"]},
-              {name: "Младенцы", value: "babies", declination: ["гость", "гостя", "гостей"]}
+              {name: "Взрослые", declination: ["гость", "гостя", "гостей"]},
+              {name: "Дети", declination: ["человек", "человека", "человек"]},
+              {name: "Младенцы", declination: ["гость", "гостя", "гостей"]}
             ],
             modifiers: {buttons: true}
           })
@@ -68,4 +70,4 @@ mixin booking-block(obj)
                 p.booking-block__termin.booking-block__termin_total Итого
               td.booking-block__bill-data
                 span.booking-block__result.booking-block__result_total #{separatePrice(obj.price*4 + obj.charge + obj.extraCharge) + obj.currency}
-        +site-button({type: "button", text: "Забронировать", modifiers: {primary: true, flexible: true, icon: "arrow"}})
+        +site-button({tag: "button", type: "submit", text: "Забронировать", modifiers: {primary: true, flexible: true, icon: "arrow"}})

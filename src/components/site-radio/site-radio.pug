@@ -14,5 +14,5 @@ mixin site-radio-group(obj)
     ul.site-radio-list
       each option in obj.options
         li.site-radio
-          input(type = "radio" id = option.id class = "site-radio__input" name = option.name checked = option.checked)
+          input(type = "radio" id = option.id class = "site-radio__input" name = option.name value = option.value checked = option.checked)
           label(class = "site-radio__label" for = option.id) !{option.label}
