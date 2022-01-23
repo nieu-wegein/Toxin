@@ -16,6 +16,10 @@
 
   padding: 0 4px;
 
+  &:focus-visible {
+    outline: 1px solid $site-dark-75;
+  }
+
   &::before {
     font-family: "Material Icons";
     content: "favorite_border";

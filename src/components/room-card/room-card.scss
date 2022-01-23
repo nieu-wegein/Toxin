@@ -1,4 +1,4 @@
-@import "../rate-button/rate-button";
+
 
 .room-card {
 
@@ -17,7 +17,7 @@
     overflow: hidden;
     height: 151px;
     &:hover {
-      & .room-card__arrow{
+      .room-card__arrow{
         display: inline-block;
       }
     }

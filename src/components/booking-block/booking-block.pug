@@ -37,9 +37,9 @@ mixin booking-block(obj)
           +site-dropdown({
             label: "Гости", id: "booking-guest-dropdown", text: "Сколько гостей",
             options: [
-              {name: "Взрослые", declination: ["гость", "гостя", "гостей"]},
-              {name: "Дети", declination: ["человек", "человека", "человек"]},
-              {name: "Младенцы", declination: ["гость", "гостя", "гостей"]}
+              {text: "Взрослые", name: "adults", declination: ["гость", "гостя", "гостей"]},
+              {text: "Дети", name: "children", declination: ["гость", "гостя", "гостей"]},
+              {text: "Младенцы", name: "babies", declination: ["гость", "гостя", "гостей"]}
             ],
             modifiers: {buttons: true}
           })

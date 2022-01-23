@@ -1,5 +1,4 @@
-@import "../site-dropdown/site-dropdown";
-@import "../site-button/site-button";
+
 
 //TODO: Проверить css в браузере на повторение одного и того же кода
 
@@ -64,6 +63,8 @@
   }
 
   &__date-dropdown-wrapper {
+    position: relative;
+    z-index: 2;
     width: 150px;
   }
 

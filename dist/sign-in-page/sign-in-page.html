@@ -1,13 +1,4 @@
-
-<!--TODO: Дропдаун-меню-->
-<!--TODO: Дропдаун-меню-->
-<!--TODO: Валидация-->
-<!--TODO: Submit для кнопки-->
-<!--TODO: Валидация-->
-<!--TODO: Submit для кнопки-->
-<!--TODO: Отправка данных на сервер-->
-<!--TODO: Валидация-->
-<!--TODO: Submit для кнопки--><!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en"></html>
 <head>
   <meta charset="utf-8">
@@ -18,8 +9,7 @@
   <script src="https://kit.fontawesome.com/a54cde8a02.js" crossorigin="anonymous"></script>
 <script defer src="../sign-in-page/sign-in-page.js"></script><link href="../sign-in-page/sign-in-page.css" rel="stylesheet"></head>
 <body class="sign-in-page">
-  <header class="site-header">
-<!--TODO: Добавить src по всему проекту--><a class="site-logo" href="../index/index.html"><img class="site-logo__image" src="../img/site-logo.svg" alt="TOXIN логотип"></a>
+  <header class="site-header"><a class="site-logo" href="../index/index.html"><img class="site-logo__image" src="../img/site-logo.svg" alt="TOXIN логотип"></a>
     <div class="site-header__navigation-wrapper">
       <nav class="site-header__site-navigation">
         <ul class="site-header__site-nav-list">
@@ -75,7 +65,7 @@
                     <label class="form-element__label" for="reg-first-name">Имя</label>
                   </div>
                   <div class="site-input-wrapper">
-                    <input class="site-input" type="text" id="reg-first-name" placeholder="Имя">
+                    <input class="site-input" id="reg-first-name" name="name" required placeholder="Имя">
                   </div>
                 </div>
                 <div class="form-element">
@@ -83,16 +73,16 @@
                     <label class="form-element__label" for="reg-last-name">Фамилия</label>
                   </div>
                   <div class="site-input-wrapper">
-                    <input class="site-input" type="text" id="reg-last-name" placeholder="Фамилия">
+                    <input class="site-input" id="reg-last-name" name="lastname" required placeholder="Фамилия">
                   </div>
                 </div>
                 <ul class="site-radio-list">
                   <li class="site-radio">
-                    <input class="site-radio__input" type="radio" id="reg-man" name="sex" checked>
+                    <input class="site-radio__input" type="radio" id="reg-man" name="sex" value="man" checked>
                     <label class="site-radio__label" for="reg-man">Мужчина</label>
                   </li>
                   <li class="site-radio">
-                    <input class="site-radio__input" type="radio" id="reg-woman" name="sex">
+                    <input class="site-radio__input" type="radio" id="reg-woman" name="sex" value="woman">
                     <label class="site-radio__label" for="reg-woman">Женщина</label>
                   </li>
                 </ul>
@@ -101,7 +91,7 @@
                     <label class="form-element__label" for="reg-date-of-birth">Дата Рождения</label>
                   </div>
                   <div class="site-input-wrapper">
-                    <input class="site-input site-input_date" type="text" id="reg-date-of-birth" placeholder="ДД-ММ-ГГГГ">
+                    <input class="site-input site-input_date" id="reg-date-of-birth" name="birthday" required placeholder="ДД.ММ.ГГГГ">
                   </div>
                 </div>
               </div>
@@ -114,7 +104,7 @@
                     <label class="form-element__label" for="reg-email">Email</label>
                   </div>
                   <div class="site-input-wrapper">
-                    <input class="site-input" type="text" id="reg-email" placeholder="Email">
+                    <input class="site-input" type="email" id="reg-email" name="email" required placeholder="Email">
                   </div>
                 </div>
                 <div class="form-element">
@@ -122,18 +112,18 @@
                     <label class="form-element__label" for="reg-password">Пароль</label>
                   </div>
                   <div class="site-input-wrapper">
-                    <input class="site-input" type="text" id="reg-password" placeholder="Пароль">
+                    <input class="site-input" type="password" id="reg-password" name="password" required placeholder="Пароль">
                   </div>
                 </div>
               </div>
             </fieldset>
             <ul class="site-checkbox-list">
               <li class="site-checkbox site-checkbox_toggle">
-                <input class="site-checkbox__input" type="checkbox" id="reg-offer">
-                <label class="site-checkbox__label" for="reg-offer">Получать спецпредложения</label>
+                <input class="site-checkbox__input" type="checkbox" id="reg-offers" name="specialOffers">
+                <label class="site-checkbox__label" for="reg-offers">Получать спецпредложения</label>
               </li>
             </ul>
-            <button class="button button_rounded button_primary button_flexible arrow" type="button">Зарегистрироваться</button>
+            <button class="button button_rounded button_primary button_flexible arrow" type="submit">Зарегистрироваться</button>
           </form>
         </div>
         <footer class="registration-block__footer"><span class="registration-block__already-have">Уже есть аккаунт на Toxin</span><a class="button button_rounded button_block">Войти</a>
@@ -150,7 +140,7 @@
                   <label class="form-element__label" for="log-in-email">Email</label>
                 </div>
                 <div class="site-input-wrapper">
-                  <input class="site-input" type="text" id="log-in-email" placeholder="Email">
+                  <input class="site-input" type="email" id="log-in-email" name="email" required placeholder="Email">
                 </div>
               </div>
               <div class="form-element">
@@ -158,10 +148,10 @@
                   <label class="form-element__label" for="log-in-password">Пароль</label>
                 </div>
                 <div class="site-input-wrapper">
-                  <input class="site-input" type="text" id="log-in-password" placeholder="Пароль">
+                  <input class="site-input" type="password" id="log-in-password" name="password" required placeholder="Пароль">
                 </div>
               </div>
-              <button class="button button_rounded button_primary button_flexible arrow" type="button">Войти</button>
+              <button class="button button_rounded button_primary button_flexible arrow" type="submit">Войти</button>
             </div>
           </fieldset>
         </form>
@@ -172,8 +162,7 @@
   </main>
   <footer class="site-footer">
     <div class="site-footer__content">
-      <div class="site-footer__info-block">
-<!--TODO: Добавить src по всему проекту--><a class="site-logo" href="../index/index.html"><img class="site-logo__image" src="../img/site-logo.svg" alt="TOXIN логотип"></a>
+      <div class="site-footer__info-block"><a class="site-logo" href="../index/index.html"><img class="site-logo__image" src="../img/site-logo.svg" alt="TOXIN логотип"></a>
         <p class="site-footer__info-text">Бронирование номеров в лучшем отеле 2019 года по версии ассоциации «Отельные взгляды»</p>
       </div>
       <div class="site-footer__links-section">
@@ -229,10 +218,10 @@
         <form class="site-footer__subscription-form">
           <div class="form-element">
             <div class="form-element__top form-element__top_hidden">
-              <label class="form-element__label">Подписка</label>
+              <label class="form-element__label" for="footer-subscription">Подписка</label>
             </div>
             <div class="site-input-wrapper">
-              <input class="site-input site-input_submit" type="text" placeholder="Email">
+              <input class="site-input site-input_submit" type="email" id="footer-subscription" name="footerSubscription" required placeholder="Email">
               <button class="site-input__button material-icons">arrow_forward</button>
             </div>
           </div>

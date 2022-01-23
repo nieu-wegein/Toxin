@@ -1,4 +1,7 @@
 .site-logo {
   display: inline-block;
   height: 40px;
+  &:focus-visible {
+    outline: 2px solid $site-dark-50;
+  }
 }

@@ -7,7 +7,7 @@ mixin log-in-block()
   article.log-in-block
     h2.log-in-block__heading Войти
     form.log-in-block__form
-      +site-fieldset("Данные для входа в сервис", {fieldset: "hidden"})
+      +site-fieldset("Данные для входа в сервис", {legend: "hidden"})
         +site-input({id: "log-in-email", label: "Email", type: "email", text: "Email", name: "email", required: true, modifiers: {label: "hidden"}})
         +site-input({id: "log-in-password", label: "Пароль", type: "password", text: "Пароль", name: "password", required: true, modifiers: {label: "hidden"}})
         +site-button({tag:"button", type: "submit", text: "Войти", modifiers: {primary: true, flexible: true, icon: "arrow"}})

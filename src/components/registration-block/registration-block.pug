@@ -4,7 +4,7 @@ include ../site-checkbox/site-checkbox
 include ../site-fieldset/site-fieldset
 include ../site-button/site-button
 
-//TODO: Отправка данных на сервер
+
 mixin registration-block(obj = {})
   -
     let buttonText = "Зарегистрироваться";
@@ -14,7 +14,7 @@ mixin registration-block(obj = {})
     h2.registration-block__heading Регистрация аккаунта
     .registration-block__body
       form.registration-block__form
-        +site-fieldset("Личные данные", {fieldset: "hidden"})
+        +site-fieldset("Личные данные", {legend: "hidden"})
           +site-input({label: "Имя", id: "reg-first-name", name: "name", text: "Имя", required: true, modifiers: {label: "hidden"}})
           +site-input({label: "Фамилия", id: "reg-last-name", name: "lastname", text: "Фамилия", required: true, modifiers: {label: "hidden"}})
           +site-radio-group({options: [

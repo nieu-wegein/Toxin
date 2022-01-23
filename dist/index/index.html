@@ -1,8 +1,4 @@
-
-<!--TODO: Дропдаун-меню-->
-<!--TODO: Дропдаун-меню-->
-<!--TODO: Валидация-->
-<!--TODO: Submit для кнопки--><!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en"></html>
 <head>
   <meta charset="utf-8">
@@ -13,8 +9,7 @@
   <script src="https://kit.fontawesome.com/a54cde8a02.js" crossorigin="anonymous"></script>
 <script defer src="../index/index.js"></script><link href="../index/index.css" rel="stylesheet"></head>
 <body class="search-offer">
-  <header class="site-header">
-<!--TODO: Добавить src по всему проекту--><a class="site-logo" href="../index/index.html"><img class="site-logo__image" src="../img/site-logo.svg" alt="TOXIN логотип"></a>
+  <header class="site-header"><a class="site-logo" href="../index/index.html"><img class="site-logo__image" src="../img/site-logo.svg" alt="TOXIN логотип"></a>
     <div class="site-header__navigation-wrapper">
       <nav class="site-header__site-navigation">
         <ul class="site-header__site-nav-list">
@@ -69,8 +64,8 @@
                   <label class="form-element__label" for="search-departure">Прибытие</label>
                 </div>
                 <div class="site-dropdown site-dropdown_shared-calendar" id="search-departure">
-                  <button class="site-dropdown__header" type="button" data-text="ДД.ММ.ГГГГ" data-windowid="search-calendar"><span class="text-area">ДД.ММ.ГГГГ</span><span class="site-dropdown__header-icon material-icons">expand_more</span></button>
-                  <div class="site-dropdown__window site-dropdown__window_free site-dropdown__window_free" tabindex="-1" id="search-calendar">
+                  <button class="site-dropdown__header" type="button" data-text="ДД.ММ.ГГГГ" data-windowid="search-calendar"><span class="site-dropdown__text-area">ДД.ММ.ГГГГ</span><span class="site-dropdown__text-area_hidden"></span><span class="site-dropdown__header-icon material-icons">expand_more</span></button>
+                  <div class="site-dropdown__window site-dropdown__window_free" tabindex="-1" id="search-calendar">
                     <div class="site-calendar site-calendar_range">
                       <div class="site-calendar__header">
                         <button class="site-calendar__prev-button material-icons" type="button">arrow_back</button><span class="site-calendar__header-text">Август 2019</span>
@@ -146,7 +141,7 @@
                   <label class="form-element__label" for="search-arrival">Выезд</label>
                 </div>
                 <div class="site-dropdown site-dropdown_shared-calendar" id="search-arrival">
-                  <button class="site-dropdown__header" type="button" data-text="ДД.ММ.ГГГГ" data-windowid="search-calendar"><span class="text-area">ДД.ММ.ГГГГ</span><span class="site-dropdown__header-icon material-icons">expand_more</span></button>
+                  <button class="site-dropdown__header" type="button" data-text="ДД.ММ.ГГГГ" data-windowid="search-calendar"><span class="site-dropdown__text-area">ДД.ММ.ГГГГ</span><span class="site-dropdown__text-area_hidden"></span><span class="site-dropdown__header-icon material-icons">expand_more</span></button>
                 </div>
               </div>
             </div>
@@ -156,24 +151,24 @@
                   <label class="form-element__label" for="search-guest-dropdown">Гости</label>
                 </div>
                 <div class="site-dropdown site-dropdown_counting-dropdown" id="search-guest-dropdown">
-                  <button class="site-dropdown__header" type="button" data-text="Сколько гостей"><span class="text-area">Сколько гостей</span><span class="site-dropdown__header-icon material-icons">expand_more</span></button>
+                  <button class="site-dropdown__header" type="button" data-text="Сколько гостей"><span class="site-dropdown__text-area">Сколько гостей</span><span class="site-dropdown__text-area_hidden"></span><span class="site-dropdown__header-icon material-icons">expand_more</span></button>
                   <div class="site-dropdown__window" tabindex="-1">
                     <ul class="site-dropdown__list">
-                      <li class="site-dropdown__item" data-value="adults" data-declination="[&quot;гость&quot;,&quot;гостя&quot;,&quot;гостей&quot;]">
+                      <li class="site-dropdown__item" data-name="adults" data-declination="[&quot;гость&quot;,&quot;гостя&quot;,&quot;гостей&quot;]">
                         <div class="site-dropdown__item-text">Взрослые</div>
                         <div class="site-dropdown__counter">
                           <button class="site-dropdown__button-remove" type="button" disabled>-</button><span class="site-dropdown__count">0</span>
                           <button class="site-dropdown__button-add" type="button">+</button>
                         </div>
                       </li>
-                      <li class="site-dropdown__item" data-value="children" data-declination="[&quot;гость&quot;,&quot;гостя&quot;,&quot;гостей&quot;]">
+                      <li class="site-dropdown__item" data-name="children" data-declination="[&quot;гость&quot;,&quot;гостя&quot;,&quot;гостей&quot;]">
                         <div class="site-dropdown__item-text">Дети</div>
                         <div class="site-dropdown__counter">
                           <button class="site-dropdown__button-remove" type="button" disabled>-</button><span class="site-dropdown__count">0</span>
                           <button class="site-dropdown__button-add" type="button">+</button>
                         </div>
                       </li>
-                      <li class="site-dropdown__item" data-value="babies" data-declination="[&quot;гость&quot;,&quot;гостя&quot;,&quot;гостей&quot;]">
+                      <li class="site-dropdown__item" data-name="babies" data-declination="[&quot;гость&quot;,&quot;гостя&quot;,&quot;гостей&quot;]">
                         <div class="site-dropdown__item-text">Младенцы</div>
                         <div class="site-dropdown__counter">
                           <button class="site-dropdown__button-remove" type="button" disabled>-</button><span class="site-dropdown__count">0</span>
@@ -189,7 +184,7 @@
                 </div>
               </div>
             </div>
-            <button class="button button_rounded button_primary button_flexible arrow" type="button">Подобрать номер</button>
+            <button class="button button_rounded button_primary button_flexible arrow" type="submit">Подобрать номер</button>
           </form>
         </div>
       </article>
@@ -198,8 +193,7 @@
   </main>
   <footer class="site-footer">
     <div class="site-footer__content">
-      <div class="site-footer__info-block">
-<!--TODO: Добавить src по всему проекту--><a class="site-logo" href="../index/index.html"><img class="site-logo__image" src="../img/site-logo.svg" alt="TOXIN логотип"></a>
+      <div class="site-footer__info-block"><a class="site-logo" href="../index/index.html"><img class="site-logo__image" src="../img/site-logo.svg" alt="TOXIN логотип"></a>
         <p class="site-footer__info-text">Бронирование номеров в лучшем отеле 2019 года по версии ассоциации «Отельные взгляды»</p>
       </div>
       <div class="site-footer__links-section">
@@ -255,10 +249,10 @@
         <form class="site-footer__subscription-form">
           <div class="form-element">
             <div class="form-element__top form-element__top_hidden">
-              <label class="form-element__label">Подписка</label>
+              <label class="form-element__label" for="footer-subscription">Подписка</label>
             </div>
             <div class="site-input-wrapper">
-              <input class="site-input site-input_submit" type="text" placeholder="Email">
+              <input class="site-input site-input_submit" type="email" id="footer-subscription" name="footerSubscription" required placeholder="Email">
               <button class="site-input__button material-icons">arrow_forward</button>
             </div>
           </div>

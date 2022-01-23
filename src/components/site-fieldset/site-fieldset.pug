@@ -2,19 +2,21 @@ mixin site-fieldset(legend, modifiers)
   -
      const legendClassList = ["site-fieldset__legend"];
      const areaClassList = ["site-fieldset__area"];
+     let tabindex;
 
      if (modifiers) {
          if (modifiers.expandable) {
            legendClassList.push("site-fieldset__legend_expand");
            areaClassList.push("site-fieldset__area_shrunk");
+           tabindex = 0;
          }
-         if (modifiers.fieldset === "hidden") {
+         if (modifiers.legend === "hidden") {
            legendClassList.push("site-fieldset__legend_hidden");
          }
      }
 
   fieldset.site-fieldset
     if(legend)
-      legend(class = legendClassList) !{legend}
+      legend(class = legendClassList tabindex = tabindex) !{legend}
     div(class = areaClassList)
       block

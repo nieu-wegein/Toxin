@@ -1,5 +1,3 @@
-@import "../site-dropdown/site-dropdown";
-@import "../site-button/site-button";
 
 .search-block {
 
@@ -31,6 +29,8 @@
 
   &__date-dropdown-wrapper {
     width: 150px;
+    position: relative;
+    z-index: 2;
   }
 
   &__guests-dropdown-wrapper {

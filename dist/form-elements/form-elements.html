@@ -1,7 +1,4 @@
-
-<!--TODO: Валидация-->
-<!--TODO: Submit для кнопки-->
-<!--TODO: datetime = ...--><!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="utf-8">
@@ -20,7 +17,7 @@
               <label class="form-element__label" for="email">Text field</label><span class="form-element__note">Default</span>
             </div>
             <div class="site-input-wrapper">
-              <input class="site-input" type="text" id="email" placeholder="Email">
+              <input class="site-input" id="email" placeholder="Email">
             </div>
           </div>
           <div class="form-element">
@@ -28,7 +25,7 @@
               <label class="form-element__label" for="awesome">Text field</label><span class="form-element__note">Hover / Focus</span>
             </div>
             <div class="site-input-wrapper">
-              <input class="site-input" type="text" id="awesome">
+              <input class="site-input" id="awesome">
             </div>
           </div>
           <div class="form-element">
@@ -36,24 +33,24 @@
               <label class="form-element__label" for="guests">Dropdown</label>
             </div>
             <div class="site-dropdown site-dropdown_counting-dropdown" id="guests">
-              <button class="site-dropdown__header" type="button" data-text="Сколько гостей"><span class="text-area">Сколько гостей</span><span class="site-dropdown__header-icon material-icons">expand_more</span></button>
+              <button class="site-dropdown__header" type="button" data-text="Сколько гостей"><span class="site-dropdown__text-area">Сколько гостей</span><span class="site-dropdown__text-area_hidden"></span><span class="site-dropdown__header-icon material-icons">expand_more</span></button>
               <div class="site-dropdown__window" tabindex="-1">
                 <ul class="site-dropdown__list">
-                  <li class="site-dropdown__item" data-value="adults" data-declination="[&quot;гость&quot;,&quot;гостя&quot;,&quot;гостей&quot;]">
+                  <li class="site-dropdown__item" data-name="adults" data-declination="[&quot;гость&quot;,&quot;гостя&quot;,&quot;гостей&quot;]">
                     <div class="site-dropdown__item-text">Взрослые</div>
                     <div class="site-dropdown__counter">
                       <button class="site-dropdown__button-remove" type="button" disabled>-</button><span class="site-dropdown__count">0</span>
                       <button class="site-dropdown__button-add" type="button">+</button>
                     </div>
                   </li>
-                  <li class="site-dropdown__item" data-value="children" data-declination="[&quot;гость&quot;,&quot;гостя&quot;,&quot;гостей&quot;]">
+                  <li class="site-dropdown__item" data-name="children" data-declination="[&quot;гость&quot;,&quot;гостя&quot;,&quot;гостей&quot;]">
                     <div class="site-dropdown__item-text">Дети</div>
                     <div class="site-dropdown__counter">
                       <button class="site-dropdown__button-remove" type="button" disabled>-</button><span class="site-dropdown__count">0</span>
                       <button class="site-dropdown__button-add" type="button">+</button>
                     </div>
                   </li>
-                  <li class="site-dropdown__item" data-value="babies" data-declination="[&quot;гость&quot;,&quot;гостя&quot;,&quot;гостей&quot;]">
+                  <li class="site-dropdown__item" data-name="babies" data-declination="[&quot;гость&quot;,&quot;гостя&quot;,&quot;гостей&quot;]">
                     <div class="site-dropdown__item-text">Младенцы</div>
                     <div class="site-dropdown__counter">
                       <button class="site-dropdown__button-remove" type="button" disabled>-</button><span class="site-dropdown__count">0</span>
@@ -73,7 +70,7 @@
               <label class="form-element__label" for="date">Masked text field</label>
             </div>
             <div class="site-input-wrapper">
-              <input class="site-input site-input_date" type="text" id="date" placeholder="ДД.ММ.ГГГГ">
+              <input class="site-input site-input_date" id="date" placeholder="ДД.ММ.ГГГГ">
             </div>
           </div>
           <div class="date-dropdown-wrapper">
@@ -82,8 +79,8 @@
                 <label class="form-element__label" for="departure">Date dropdown</label>
               </div>
               <div class="site-dropdown site-dropdown_shared-calendar" id="departure">
-                <button class="site-dropdown__header" type="button" data-text="ДД.ММ.ГГГГ" data-windowid="ui-page-calendar"><span class="text-area">ДД.ММ.ГГГГ</span><span class="site-dropdown__header-icon material-icons">expand_more</span></button>
-                <div class="site-dropdown__window site-dropdown__window_free site-dropdown__window_free" tabindex="-1" id="ui-page-calendar">
+                <button class="site-dropdown__header" type="button" data-text="ДД.ММ.ГГГГ" data-windowid="ui-page-calendar"><span class="site-dropdown__text-area">ДД.ММ.ГГГГ</span><span class="site-dropdown__text-area_hidden"></span><span class="site-dropdown__header-icon material-icons">expand_more</span></button>
+                <div class="site-dropdown__window site-dropdown__window_free" tabindex="-1" id="ui-page-calendar">
                   <div class="site-calendar site-calendar_range">
                     <div class="site-calendar__header">
                       <button class="site-calendar__prev-button material-icons" type="button">arrow_back</button><span class="site-calendar__header-text">Август 2019</span>
@@ -157,7 +154,7 @@
                 <label class="form-element__label" for="arrival">Date dropdown</label>
               </div>
               <div class="site-dropdown site-dropdown_shared-calendar" id="arrival">
-                <button class="site-dropdown__header" type="button" data-text="ДД.ММ.ГГГГ" data-windowid="ui-page-calendar"><span class="text-area">ДД.ММ.ГГГГ</span><span class="site-dropdown__header-icon material-icons">expand_more</span></button>
+                <button class="site-dropdown__header" type="button" data-text="ДД.ММ.ГГГГ" data-windowid="ui-page-calendar"><span class="site-dropdown__text-area">ДД.ММ.ГГГГ</span><span class="site-dropdown__text-area_hidden"></span><span class="site-dropdown__header-icon material-icons">expand_more</span></button>
               </div>
             </div>
           </div>
@@ -167,7 +164,7 @@
                 <label class="form-element__label" for="filter-dates">Filter date dropdown</label>
               </div>
               <div class="site-dropdown site-dropdown_range-calendar" id="filter-dates">
-                <button class="site-dropdown__header" type="button" data-text="ДД.ММ.ГГГГ - ДД.ММ.ГГГГ"><span class="text-area">ДД.ММ.ГГГГ - ДД.ММ.ГГГГ</span><span class="site-dropdown__header-icon material-icons">expand_more</span></button>
+                <button class="site-dropdown__header" type="button" data-text="ДД.ММ.ГГГГ - ДД.ММ.ГГГГ"><span class="site-dropdown__text-area">ДД.ММ.ГГГГ - ДД.ММ.ГГГГ</span><span class="site-dropdown__text-area_hidden"></span><span class="site-dropdown__header-icon material-icons">expand_more</span></button>
                 <div class="site-dropdown__window site-dropdown__window_free" tabindex="-1">
                   <div class="site-calendar site-calendar_range">
                     <div class="site-calendar__header">
@@ -244,7 +241,7 @@
                 <label class="form-element__label" for="subscription">Subscription text field</label>
               </div>
               <div class="site-input-wrapper">
-                <input class="site-input site-input_submit" type="text" id="subscription" placeholder="Email">
+                <input class="site-input site-input_submit" id="subscription" placeholder="Email">
                 <button class="site-input__button material-icons">arrow_forward</button>
               </div>
             </div>
@@ -317,27 +314,27 @@
             </div>
             <div class="rate-buttons-wrapper">
               <div class="rate-button" id="ui-stars">
-                <input class="rate-button__radio" type="radio" id="ui-stars_star-5" name="sample-stars-1" value="5 stars">
+                <input class="rate-button__radio" type="radio" id="ui-stars_star-5" name="sampleStars1" value="5 stars">
                 <label class="rate-button__label" for="ui-stars_star-5"><span class="rate-button__label-text">5 звезд</span></label>
-                <input class="rate-button__radio" type="radio" id="ui-stars_star-4" name="sample-stars-1" value="4 stars">
+                <input class="rate-button__radio" type="radio" id="ui-stars_star-4" name="sampleStars1" value="4 stars">
                 <label class="rate-button__label" for="ui-stars_star-4"><span class="rate-button__label-text">4 звезды</span></label>
-                <input class="rate-button__radio" type="radio" id="ui-stars_star-3" name="sample-stars-1" value="3 stars">
+                <input class="rate-button__radio" type="radio" id="ui-stars_star-3" name="sampleStars1" value="3 stars">
                 <label class="rate-button__label" for="ui-stars_star-3"><span class="rate-button__label-text">3 звезды</span></label>
-                <input class="rate-button__radio" type="radio" id="ui-stars_star-2" name="sample-stars-1" value="2 stars">
+                <input class="rate-button__radio" type="radio" id="ui-stars_star-2" name="sampleStars1" value="2 stars">
                 <label class="rate-button__label" for="ui-stars_star-2"><span class="rate-button__label-text">2 звезды</span></label>
-                <input class="rate-button__radio" type="radio" id="ui-stars_star-1" name="sample-stars-1" value="1 star">
+                <input class="rate-button__radio" type="radio" id="ui-stars_star-1" name="sampleStars1" value="1 star">
                 <label class="rate-button__label" for="ui-stars_star-1"><span class="rate-button__label-text">1 звезду</span></label>
               </div>
               <div class="rate-button" id="ui-rate">
-                <input class="rate-button__radio" type="radio" id="ui-rate_star-5" name="sample-stars-2" value="5 stars">
+                <input class="rate-button__radio" type="radio" id="ui-rate_star-5" name="sampleStars2" value="5 stars">
                 <label class="rate-button__label" for="ui-rate_star-5"><span class="rate-button__label-text">5 звезд</span></label>
-                <input class="rate-button__radio" type="radio" id="ui-rate_star-4" name="sample-stars-2" value="4 stars">
+                <input class="rate-button__radio" type="radio" id="ui-rate_star-4" name="sampleStars2" value="4 stars">
                 <label class="rate-button__label" for="ui-rate_star-4"><span class="rate-button__label-text">4 звезды</span></label>
-                <input class="rate-button__radio" type="radio" id="ui-rate_star-3" name="sample-stars-2" value="3 stars">
+                <input class="rate-button__radio" type="radio" id="ui-rate_star-3" name="sampleStars2" value="3 stars">
                 <label class="rate-button__label" for="ui-rate_star-3"><span class="rate-button__label-text">3 звезды</span></label>
-                <input class="rate-button__radio" type="radio" id="ui-rate_star-2" name="sample-stars-2" value="2 stars">
+                <input class="rate-button__radio" type="radio" id="ui-rate_star-2" name="sampleStars2" value="2 stars">
                 <label class="rate-button__label" for="ui-rate_star-2"><span class="rate-button__label-text">2 звезды</span></label>
-                <input class="rate-button__radio" type="radio" id="ui-rate_star-1" name="sample-stars-2" value="1 star">
+                <input class="rate-button__radio" type="radio" id="ui-rate_star-1" name="sampleStars2" value="1 star">
                 <label class="rate-button__label" for="ui-rate_star-1"><span class="rate-button__label-text">1 звезду</span></label>
               </div>
             </div>
@@ -392,69 +389,71 @@
           </section>
         </div>
         <div class="content__column">
-          <div class="form-element">
-            <div class="form-element__top">
-              <label class="form-element__label" for="dd-default">Dropdown</label><span class="form-element__note">Default</span>
-            </div>
-            <div class="site-dropdown site-dropdown_counting-dropdown" id="dd-default">
-              <button class="site-dropdown__header" type="button" data-text="Комнаты"><span class="text-area">Комнаты</span><span class="site-dropdown__header-icon material-icons">expand_more</span></button>
-              <div class="site-dropdown__window" tabindex="-1">
-                <ul class="site-dropdown__list">
-                  <li class="site-dropdown__item" data-value="bedrooms" data-declination="[&quot;спальня&quot;,&quot;спальни&quot;,&quot;спален&quot;]">
-                    <div class="site-dropdown__item-text">Спальни</div>
-                    <div class="site-dropdown__counter">
-                      <button class="site-dropdown__button-remove" type="button" disabled>-</button><span class="site-dropdown__count">0</span>
-                      <button class="site-dropdown__button-add" type="button">+</button>
-                    </div>
-                  </li>
-                  <li class="site-dropdown__item" data-value="beds" data-declination="[&quot;кровать&quot;,&quot;кровати&quot;,&quot;кроватей&quot;]">
-                    <div class="site-dropdown__item-text">Кровать</div>
-                    <div class="site-dropdown__counter">
-                      <button class="site-dropdown__button-remove" type="button" disabled>-</button><span class="site-dropdown__count">0</span>
-                      <button class="site-dropdown__button-add" type="button">+</button>
-                    </div>
-                  </li>
-                  <li class="site-dropdown__item" data-value="bathrooms" data-declination="[&quot;ванная комната&quot;,&quot;ванные комнаты&quot;,&quot;ванных комнат&quot;]">
-                    <div class="site-dropdown__item-text">Ванные комнаты</div>
-                    <div class="site-dropdown__counter">
-                      <button class="site-dropdown__button-remove" type="button" disabled>-</button><span class="site-dropdown__count">0</span>
-                      <button class="site-dropdown__button-add" type="button">+</button>
-                    </div>
-                  </li>
-                </ul>
+          <div class="site-dropdowns-wrapper">
+            <div class="form-element">
+              <div class="form-element__top">
+                <label class="form-element__label" for="dd-default">Dropdown</label><span class="form-element__note">Default</span>
+              </div>
+              <div class="site-dropdown site-dropdown_counting-dropdown" id="dd-default">
+                <button class="site-dropdown__header" type="button" data-text="Комнаты"><span class="site-dropdown__text-area">Комнаты</span><span class="site-dropdown__text-area_hidden"></span><span class="site-dropdown__header-icon material-icons">expand_more</span></button>
+                <div class="site-dropdown__window" tabindex="-1">
+                  <ul class="site-dropdown__list">
+                    <li class="site-dropdown__item" data-name="bedrooms" data-declination="[&quot;спальня&quot;,&quot;спальни&quot;,&quot;спален&quot;]">
+                      <div class="site-dropdown__item-text">Спальни</div>
+                      <div class="site-dropdown__counter">
+                        <button class="site-dropdown__button-remove" type="button" disabled>-</button><span class="site-dropdown__count">0</span>
+                        <button class="site-dropdown__button-add" type="button">+</button>
+                      </div>
+                    </li>
+                    <li class="site-dropdown__item" data-name="beds" data-declination="[&quot;кровать&quot;,&quot;кровати&quot;,&quot;кроватей&quot;]">
+                      <div class="site-dropdown__item-text">Кровать</div>
+                      <div class="site-dropdown__counter">
+                        <button class="site-dropdown__button-remove" type="button" disabled>-</button><span class="site-dropdown__count">0</span>
+                        <button class="site-dropdown__button-add" type="button">+</button>
+                      </div>
+                    </li>
+                    <li class="site-dropdown__item" data-name="bathrooms" data-declination="[&quot;ванная комната&quot;,&quot;ванные комнаты&quot;,&quot;ванных комнат&quot;]">
+                      <div class="site-dropdown__item-text">Ванные комнаты</div>
+                      <div class="site-dropdown__counter">
+                        <button class="site-dropdown__button-remove" type="button" disabled>-</button><span class="site-dropdown__count">0</span>
+                        <button class="site-dropdown__button-add" type="button">+</button>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
               </div>
             </div>
-          </div>
-          <div class="form-element">
-            <div class="form-element__top">
-              <label class="form-element__label" for="dd-expanded">Dropdown</label><span class="form-element__note">Expanded</span>
-            </div>
-            <div class="site-dropdown site-dropdown_counting-dropdown" id="dd-expanded">
-              <button class="site-dropdown__header" type="button" data-text="Комнаты"><span class="text-area">Комнаты</span><span class="site-dropdown__header-icon material-icons">expand_more</span></button>
-              <div class="site-dropdown__window" tabindex="-1">
-                <ul class="site-dropdown__list">
-                  <li class="site-dropdown__item" data-value="bedrooms" data-declination="[&quot;спальня&quot;,&quot;спальни&quot;,&quot;спален&quot;]">
-                    <div class="site-dropdown__item-text">Спальни</div>
-                    <div class="site-dropdown__counter">
-                      <button class="site-dropdown__button-remove" type="button" disabled>-</button><span class="site-dropdown__count">0</span>
-                      <button class="site-dropdown__button-add" type="button">+</button>
-                    </div>
-                  </li>
-                  <li class="site-dropdown__item" data-value="beds" data-declination="[&quot;кровать&quot;,&quot;кровати&quot;,&quot;кроватей&quot;]">
-                    <div class="site-dropdown__item-text">Кровать</div>
-                    <div class="site-dropdown__counter">
-                      <button class="site-dropdown__button-remove" type="button" disabled>-</button><span class="site-dropdown__count">0</span>
-                      <button class="site-dropdown__button-add" type="button">+</button>
-                    </div>
-                  </li>
-                  <li class="site-dropdown__item" data-value="bathrooms" data-declination="[&quot;ванная комната&quot;,&quot;ванные комнаты&quot;,&quot;ванных комнат&quot;]">
-                    <div class="site-dropdown__item-text">Ванные комнаты</div>
-                    <div class="site-dropdown__counter">
-                      <button class="site-dropdown__button-remove" type="button" disabled>-</button><span class="site-dropdown__count">0</span>
-                      <button class="site-dropdown__button-add" type="button">+</button>
-                    </div>
-                  </li>
-                </ul>
+            <div class="form-element">
+              <div class="form-element__top">
+                <label class="form-element__label" for="dd-expanded">Dropdown</label><span class="form-element__note">Expanded</span>
+              </div>
+              <div class="site-dropdown site-dropdown_counting-dropdown" id="dd-expanded">
+                <button class="site-dropdown__header" type="button" data-text="Комнаты"><span class="site-dropdown__text-area">Комнаты</span><span class="site-dropdown__text-area_hidden"></span><span class="site-dropdown__header-icon material-icons">expand_more</span></button>
+                <div class="site-dropdown__window" tabindex="-1">
+                  <ul class="site-dropdown__list">
+                    <li class="site-dropdown__item" data-name="bedrooms" data-declination="[&quot;спальня&quot;,&quot;спальни&quot;,&quot;спален&quot;]">
+                      <div class="site-dropdown__item-text">Спальни</div>
+                      <div class="site-dropdown__counter">
+                        <button class="site-dropdown__button-remove" type="button" disabled>-</button><span class="site-dropdown__count">0</span>
+                        <button class="site-dropdown__button-add" type="button">+</button>
+                      </div>
+                    </li>
+                    <li class="site-dropdown__item" data-name="beds" data-declination="[&quot;кровать&quot;,&quot;кровати&quot;,&quot;кроватей&quot;]">
+                      <div class="site-dropdown__item-text">Кровать</div>
+                      <div class="site-dropdown__counter">
+                        <button class="site-dropdown__button-remove" type="button" disabled>-</button><span class="site-dropdown__count">0</span>
+                        <button class="site-dropdown__button-add" type="button">+</button>
+                      </div>
+                    </li>
+                    <li class="site-dropdown__item" data-name="bathrooms" data-declination="[&quot;ванная комната&quot;,&quot;ванные комнаты&quot;,&quot;ванных комнат&quot;]">
+                      <div class="site-dropdown__item-text">Ванные комнаты</div>
+                      <div class="site-dropdown__counter">
+                        <button class="site-dropdown__button-remove" type="button" disabled>-</button><span class="site-dropdown__count">0</span>
+                        <button class="site-dropdown__button-add" type="button">+</button>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
               </div>
             </div>
           </div>
@@ -465,24 +464,24 @@
               <label class="form-element__label" for="dd-buttons-expanded">Dropdown</label>
             </div>
             <div class="site-dropdown site-dropdown_counting-dropdown" id="dd-buttons-expanded">
-              <button class="site-dropdown__header" type="button" data-text="Сколько гостей"><span class="text-area">Сколько гостей</span><span class="site-dropdown__header-icon material-icons">expand_more</span></button>
+              <button class="site-dropdown__header" type="button" data-text="Сколько гостей"><span class="site-dropdown__text-area">Сколько гостей</span><span class="site-dropdown__text-area_hidden"></span><span class="site-dropdown__header-icon material-icons">expand_more</span></button>
               <div class="site-dropdown__window" tabindex="-1">
                 <ul class="site-dropdown__list">
-                  <li class="site-dropdown__item" data-value="adults" data-declination="[&quot;гость&quot;,&quot;гостя&quot;,&quot;гостей&quot;]">
+                  <li class="site-dropdown__item" data-name="adults" data-declination="[&quot;гость&quot;,&quot;гостя&quot;,&quot;гостей&quot;]">
                     <div class="site-dropdown__item-text">Взрослые</div>
                     <div class="site-dropdown__counter">
                       <button class="site-dropdown__button-remove" type="button" disabled>-</button><span class="site-dropdown__count">0</span>
                       <button class="site-dropdown__button-add" type="button">+</button>
                     </div>
                   </li>
-                  <li class="site-dropdown__item" data-value="children" data-declination="[&quot;гость&quot;,&quot;гостя&quot;,&quot;гостей&quot;]">
+                  <li class="site-dropdown__item" data-name="children" data-declination="[&quot;гость&quot;,&quot;гостя&quot;,&quot;гостей&quot;]">
                     <div class="site-dropdown__item-text">Дети</div>
                     <div class="site-dropdown__counter">
                       <button class="site-dropdown__button-remove" type="button" disabled>-</button><span class="site-dropdown__count">0</span>
                       <button class="site-dropdown__button-add" type="button">+</button>
                     </div>
                   </li>
-                  <li class="site-dropdown__item" data-value="babies" data-declination="[&quot;гость&quot;,&quot;гостя&quot;,&quot;гостей&quot;]">
+                  <li class="site-dropdown__item" data-name="babies" data-declination="[&quot;гость&quot;,&quot;гостя&quot;,&quot;гостей&quot;]">
                     <div class="site-dropdown__item-text">Младенцы</div>
                     <div class="site-dropdown__counter">
                       <button class="site-dropdown__button-remove" type="button" disabled>-</button><span class="site-dropdown__count">0</span>
@@ -504,24 +503,24 @@
               <label class="form-element__label" for="dd-buttons-filled">Dropdown</label>
             </div>
             <div class="site-dropdown site-dropdown_counting-dropdown" id="dd-buttons-filled">
-              <button class="site-dropdown__header" type="button" data-text="Сколько гостей"><span class="text-area">Сколько гостей</span><span class="site-dropdown__header-icon material-icons">expand_more</span></button>
+              <button class="site-dropdown__header" type="button" data-text="Сколько гостей"><span class="site-dropdown__text-area">Сколько гостей</span><span class="site-dropdown__text-area_hidden"></span><span class="site-dropdown__header-icon material-icons">expand_more</span></button>
               <div class="site-dropdown__window" tabindex="-1">
                 <ul class="site-dropdown__list">
-                  <li class="site-dropdown__item" data-value="adults" data-declination="[&quot;гость&quot;,&quot;гостя&quot;,&quot;гостей&quot;]">
+                  <li class="site-dropdown__item" data-name="adults" data-declination="[&quot;гость&quot;,&quot;гостя&quot;,&quot;гостей&quot;]">
                     <div class="site-dropdown__item-text">Взрослые</div>
                     <div class="site-dropdown__counter">
                       <button class="site-dropdown__button-remove" type="button" disabled>-</button><span class="site-dropdown__count">0</span>
                       <button class="site-dropdown__button-add" type="button">+</button>
                     </div>
                   </li>
-                  <li class="site-dropdown__item" data-value="children" data-declination="[&quot;гость&quot;,&quot;гостя&quot;,&quot;гостей&quot;]">
+                  <li class="site-dropdown__item" data-name="children" data-declination="[&quot;гость&quot;,&quot;гостя&quot;,&quot;гостей&quot;]">
                     <div class="site-dropdown__item-text">Дети</div>
                     <div class="site-dropdown__counter">
                       <button class="site-dropdown__button-remove" type="button" disabled>-</button><span class="site-dropdown__count">0</span>
                       <button class="site-dropdown__button-add" type="button">+</button>
                     </div>
                   </li>
-                  <li class="site-dropdown__item" data-value="babies" data-declination="[&quot;гость&quot;,&quot;гостя&quot;,&quot;гостей&quot;]">
+                  <li class="site-dropdown__item" data-name="babies" data-declination="[&quot;гость&quot;,&quot;гостя&quot;,&quot;гостей&quot;]">
                     <div class="site-dropdown__item-text">Младенцы</div>
                     <div class="site-dropdown__counter">
                       <button class="site-dropdown__button-remove" type="button" disabled>-</button><span class="site-dropdown__count">0</span>
@@ -540,7 +539,7 @@
         <div class="content__column">
           <div class="expandable-checkbox-wrapper">
             <fieldset class="site-fieldset">
-              <legend class="site-fieldset__legend site-fieldset__legend_expand">Expandable checkbox list</legend>
+              <legend class="site-fieldset__legend site-fieldset__legend_expand" tabindex="0">Expandable checkbox list</legend>
               <div class="site-fieldset__area site-fieldset__area_shrunk">
                 <ul class="site-checkbox-list">
                   <li class="site-checkbox">
@@ -571,7 +570,7 @@
               </div>
             </fieldset>
             <fieldset class="site-fieldset">
-              <legend class="site-fieldset__legend site-fieldset__legend_expand">Expandable checkbox list</legend>
+              <legend class="site-fieldset__legend site-fieldset__legend_expand" tabindex="0">Expandable checkbox list</legend>
               <div class="site-fieldset__area site-fieldset__area_shrunk">
                 <ul class="site-checkbox-list">
                   <li class="site-checkbox">
@@ -656,7 +655,7 @@
               <div class="site-testimonial__image-container"><img class="site-testimonial__author-image" src="undefineduser1.png" width="44" height="44" alt="Фотография автора отзыва"></div>
               <div class="site-testimonial__info">
                 <cite class="site-testimonial__author-name">Мурад Сарафанов</cite>
-                <time class="site-testimonial__time" datetime="P5D">5 дней назад</time>
+                <time class="site-testimonial__time">5 дней назад</time>
               </div>
             </header>
             <div class="site-testimonial__body">

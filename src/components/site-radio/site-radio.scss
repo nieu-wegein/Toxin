@@ -1,4 +1,3 @@
-@import "../site-fieldset/site-fieldset";
 
 .site-radio {
 
@@ -18,6 +17,12 @@
     position: absolute;
     z-index: -1;
     opacity: 0;
+
+    &:focus-visible {
+      &+.site-radio__label::before {
+        outline: 1px solid $site-dark;
+      }
+    }
 
     &:checked {
       &+.site-radio__label{

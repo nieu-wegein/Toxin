@@ -407,6 +407,7 @@ template {
   color: rgba(31, 32, 65, 0.75);
   letter-spacing: -0.25px;
   cursor: pointer;
+  position: relative;
 }
 .site-dropdown__header-icon {
   -ms-flex-item-align: baseline;
@@ -415,11 +416,61 @@ template {
 .site-dropdown__header_square {
   border-bottom-right-radius: 0;
   border-bottom-left-radius: 0;
+  outline: 1px solid rgba(31, 32, 65, 0.5);
 }
-.site-dropdown__header:hover, .site-dropdown__header:focus {
+.site-dropdown__header_invalid:before {
+  position: absolute;
+  z-index: 3;
+  content: "report_problem";
+  font-family: "Material Icons";
+  font-size: 20px;
+  top: calc(100% + 12px);
+  opacity: 0;
+  -webkit-animation: error;
+          animation: error;
+  -webkit-animation-duration: 4s;
+          animation-duration: 4s;
+  color: red;
+}
+.site-dropdown__header_invalid:after {
+  position: absolute;
+  z-index: 2;
+  content: "Заполните это поле";
+  background-color: white;
+  width: 120px;
+  padding-left: 25px;
+  border: 1px solid rgba(31, 32, 65, 0.1);
+  border-radius: 5px;
+  -webkit-box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05);
+          box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05);
+  top: calc(100% + 5px);
+  opacity: 0;
+  -webkit-animation: error;
+          animation: error;
+  -webkit-animation-duration: 4s;
+          animation-duration: 4s;
+}
+.site-dropdown__header:hover, .site-dropdown__header:focus-visible {
   outline: 1px solid rgba(31, 32, 65, 0.5);
 }
 
+@-webkit-keyframes error {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes error {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
 .site-dropdown__list {
   padding-right: 7px;
   padding-left: 15px;
@@ -461,247 +512,27 @@ template {
   background-color: white;
 }
 
-.form-element {
+.site-dropdown {
   width: 100%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  vertical-align: top;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  position: relative;
 }
-.form-element__top {
+.site-dropdown.site-dropdown_counting-dropdown .site-dropdown__window {
+  outline: 1px solid rgba(31, 32, 65, 0.5);
+}
+.site-dropdown__text-area {
   width: 100%;
-  margin-bottom: 5px;
-  line-height: 15px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
-.form-element__top_hidden {
+.site-dropdown__text-area_hidden {
   clip: rect(0 0 0 0);
   width: 1px;
   height: 1px;
   opacity: 0;
   z-index: -1;
   position: absolute;
-}
-.form-element__label {
-  color: #1f2041;
-  font-size: 12px;
-  font-family: "Montserrat-Bold", sans-serif;
-  line-height: 15px;
-  text-transform: uppercase;
-  margin: 0;
-}
-.form-element__note {
-  font-family: "Montserrat", sans-serif;
-  color: rgba(31, 32, 65, 0.5);
-  font-size: 12px;
-  text-transform: uppercase;
-}
-.form-element__description {
-  font-family: "Montserrat", sans-serif;
-  color: rgba(31, 32, 65, 0.5);
-  font-size: 12px;
-}
-
-.site-calendar {
-  padding: 0 19px;
-  padding-bottom: 8px;
-  width: 318px;
-  border-radius: 4px;
-  text-align: center;
-  background-color: white;
-}
-.site-calendar__header {
-  color: #1f2041;
-  font-size: 19px;
-  font-family: "Montserrat-Bold", sans-serif;
-  line-height: 24px;
-  letter-spacing: 0.2px;
-  margin: 0;
-  padding: 20px 0;
-  margin-bottom: 10px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-}
-.site-calendar__prev-button, .site-calendar__next-button {
-  padding: 0;
-  border: none;
-  background-color: transparent;
-  cursor: pointer;
-  color: #BC9CFF;
-}
-.site-calendar__days-section, .site-calendar__date-section {
-  font-family: "Montserrat-Bold", sans-serif;
-  font-size: 12px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-}
-.site-calendar__date-section {
-  font-family: "Montserrat", sans-serif;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-}
-.site-calendar__date-cell.start-range {
-  border-radius: 50% 0 0 50%;
-}
-.site-calendar__date-cell.focus-range {
-  background: rgba(31, 32, 65, 0.05);
-}
-.site-calendar__date-cell.range {
-  background: -webkit-gradient(linear, left top, left bottom, from(rgba(188, 156, 255, 0.25)), to(rgba(139, 164, 249, 0.25)));
-  background: linear-gradient(180deg, rgba(188, 156, 255, 0.25) 0%, rgba(139, 164, 249, 0.25) 100%);
-}
-.site-calendar__date-cell.end-range {
-  border-radius: 0 50% 50% 0;
-}
-.site-calendar__date-cell:hover {
-  background: -webkit-gradient(linear, left top, left bottom, from(rgba(188, 156, 255, 0.25)), to(rgba(139, 164, 249, 0.25)));
-  background: linear-gradient(180deg, rgba(188, 156, 255, 0.25) 0%, rgba(139, 164, 249, 0.25) 100%);
-}
-.site-calendar__day, .site-calendar__date {
-  line-height: 15px;
-  padding: 0;
-  width: 40px;
-  height: 40px;
-}
-.site-calendar__day {
-  color: #BC9CFF;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-.site-calendar__date {
-  border: none;
-  background-color: transparent;
-  color: rgba(31, 32, 65, 0.5);
-  cursor: pointer;
-  border-radius: 50%;
-}
-.site-calendar__date.button_primary {
-  color: white;
-}
-.site-calendar__date.button_secondary {
-  color: white;
-}
-.site-calendar__date:disabled {
-  cursor: default;
-  color: rgba(31, 32, 65, 0.25);
-}
-.site-calendar__optional-row {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-}
-
-.button {
-  color: #BC9CFF;
-  font-size: 12px;
-  font-family: "Montserrat-Bold", sans-serif;
-  line-height: 15px;
-  text-transform: uppercase;
-  margin: 0;
-  cursor: pointer;
-  border: none;
-  background-color: white;
-  padding: 0;
-  text-align: center;
-  position: relative;
-  text-decoration: none;
-}
-.button:hover {
-  color: rgba(31, 32, 65, 0.5);
-}
-.button_rounded {
-  min-width: 100px;
-  min-height: 44px;
-  padding: 7px 17px 8px;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-  letter-spacing: -0.15px;
-  border: 2px solid transparent;
-  border-radius: 22px;
-  background-origin: border-box;
-  background-image: -webkit-gradient(linear, left top, left bottom, from(white), to(white)), -webkit-gradient(linear, left top, left bottom, from(#BC9CFF), to(#8BA4F9));
-  background-image: linear-gradient(white, white), linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
-  background-clip: padding-box, border-box;
-}
-.button_rounded:hover {
-  color: #BC9CFF;
-  background-image: -webkit-gradient(linear, left top, left bottom, from(white), to(white)), -webkit-gradient(linear, left top, left bottom, from(rgba(188, 156, 255, 0.5)), to(rgba(139, 164, 249, 0.5)));
-  background-image: linear-gradient(white, white), linear-gradient(180deg, rgba(188, 156, 255, 0.5) 0%, rgba(139, 164, 249, 0.5) 100%);
-}
-.button_secondary {
-  font-family: "Montserrat-Bold", sans-serif;
-  color: white;
-  background-image: -webkit-gradient(linear, left top, left bottom, from(#6FCF97), to(#66D2EA));
-  background-image: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%);
-}
-.button_secondary:hover {
-  background-image: -webkit-gradient(linear, left top, left bottom, from(#6FCF97), to(#66D2EA));
-  background-image: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%);
-}
-.button_primary {
-  font-family: "Montserrat-Bold", sans-serif;
-  color: white;
-  background-image: -webkit-gradient(linear, left top, left bottom, from(#BC9CFF), to(#8BA4F9));
-  background-image: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
-  background-clip: border-box;
-}
-.button_primary:hover {
-  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(188, 156, 255, 0.5)), to(rgba(139, 164, 249, 0.5)));
-  background-image: linear-gradient(180deg, rgba(188, 156, 255, 0.5) 0%, rgba(139, 164, 249, 0.5) 100%);
-  color: white;
-}
-.button_block {
-  display: -webkit-inline-box;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-.button_flexible {
-  width: 100%;
-}
-.button.arrow::after {
-  content: "arrow_forward";
-  font-family: "Material Icons";
-  font-size: 24px;
-  top: 13px;
-  right: 9px;
-  position: absolute;
-  text-transform: none;
-}
-
-.site-dropdown {
-  width: 100%;
-  position: relative;
+  width: auto;
 }
 .site-dropdown__window {
   display: none;
@@ -709,14 +540,16 @@ template {
   position: absolute;
   z-index: 1;
   background-color: white;
-  border: 1px solid rgba(31, 32, 65, 0.5);
+  border: 1px solid rgba(31, 32, 65, 0.25);
   border-radius: 0 0 4px 4px;
   border-top: none;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 .site-dropdown__window_free {
   width: auto;
   margin-top: 6px;
-  border: 1px solid rgba(31, 32, 65, 0.25);
+  border-top: 1px solid rgba(31, 32, 65, 0.25);
   border-radius: 4px;
   -webkit-box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05);
           box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05);
@@ -729,6 +562,9 @@ template {
   color: rgba(31, 32, 65, 0.5);
   border: 1px solid rgba(31, 32, 65, 0.25);
   border-radius: 50%;
+}
+.site-dropdown__button-add:focus-visible, .site-dropdown__button-remove:focus-visible {
+  outline: 1px solid #1f2041;
 }
 .site-dropdown__button-add:disabled, .site-dropdown__button-remove:disabled {
   cursor: default;
@@ -773,6 +609,9 @@ template {
 .button:hover {
   color: rgba(31, 32, 65, 0.5);
 }
+.button:focus-visible {
+  outline: 2px solid rgba(31, 32, 65, 0.5);
+}
 .button_rounded {
   min-width: 100px;
   min-height: 44px;
@@ -791,6 +630,9 @@ template {
   color: #BC9CFF;
   background-image: -webkit-gradient(linear, left top, left bottom, from(white), to(white)), -webkit-gradient(linear, left top, left bottom, from(rgba(188, 156, 255, 0.5)), to(rgba(139, 164, 249, 0.5)));
   background-image: linear-gradient(white, white), linear-gradient(180deg, rgba(188, 156, 255, 0.5) 0%, rgba(139, 164, 249, 0.5) 100%);
+}
+.button_rounded:focus-visible {
+  outline: 2px solid rgba(31, 32, 65, 0.75);
 }
 .button_secondary {
   font-family: "Montserrat-Bold", sans-serif;
@@ -836,53 +678,6 @@ template {
   right: 9px;
   position: absolute;
   text-transform: none;
-}
-
-.search-block {
-  background-color: white;
-  border: 1px solid rgba(0, 0, 0, 0.12);
-  border-radius: 4px;
-  -webkit-box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.2);
-          box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.2);
-  padding: 40px 29px 30px 29px;
-  max-width: 380px;
-}
-.search-block__heading-hidden {
-  clip: rect(0 0 0 0);
-  width: 1px;
-  height: 1px;
-  opacity: 0;
-  z-index: -1;
-  position: absolute;
-}
-.search-block__heading {
-  color: #1f2041;
-  font-size: 24px;
-  font-family: "Montserrat-Bold", sans-serif;
-  line-height: 29px;
-  margin: 0;
-  letter-spacing: -0.1px;
-  margin-bottom: 20px;
-}
-.search-block__form {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-}
-.search-block__form > .button {
-  margin-top: 32px;
-}
-.search-block__date-dropdown-wrapper {
-  width: 150px;
-}
-.search-block__guests-dropdown-wrapper {
-  width: 100%;
-  margin-top: 21px;
 }
 
 .form-element {
@@ -973,6 +768,9 @@ template {
   border-left: none;
   border-radius: 0 4px 4px 0;
 }
+.site-input__button:hover, .site-input__button:focus-visible {
+  outline: 1px solid rgba(31, 32, 65, 0.5);
+}
 .site-input::-webkit-input-placeholder {
   color: rgba(31, 32, 65, 0.25);
 }
@@ -992,65 +790,6 @@ template {
   outline: 1px solid rgba(31, 32, 65, 0.5);
 }
 
-.site-fieldset {
-  width: 100%;
-  padding: 0;
-  margin: 0;
-  border: none;
-}
-.site-fieldset__legend {
-  color: #1f2041;
-  font-size: 12px;
-  font-family: "Montserrat-Bold", sans-serif;
-  line-height: 15px;
-  text-transform: uppercase;
-  margin: 0;
-  margin-bottom: 5px;
-}
-.site-fieldset__legend_expand {
-  width: 100%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  cursor: pointer;
-}
-.site-fieldset__legend_expand::after {
-  content: "expand_more";
-  font-family: "Material Icons";
-  font-size: 24px;
-  color: rgba(31, 32, 65, 0.5);
-  text-transform: none;
-}
-.site-fieldset__legend_expand.reverse::after {
-  content: "expand_less";
-}
-.site-fieldset__legend_hidden {
-  clip: rect(0 0 0 0);
-  width: 1px;
-  height: 1px;
-  opacity: 0;
-  z-index: -1;
-  position: absolute;
-}
-.site-fieldset__area_shrunk {
-  max-height: 0;
-  margin: 0;
-  overflow: hidden;
-  -webkit-transition: max-height 0.2s ease-out, margin 0.2s;
-  transition: max-height 0.2s ease-out, margin 0.2s;
-}
-.site-fieldset__area_expanded {
-  max-height: 5000px;
-  -webkit-transition: max-height 0.8s ease-in;
-  transition: max-height 0.8s ease-in;
-}
-.site-fieldset__area .site-checkbox-list {
-  margin-top: 12px;
-}
-
 .site-radio {
   display: inline-block;
 }
@@ -1066,6 +805,9 @@ template {
   position: absolute;
   z-index: -1;
   opacity: 0;
+}
+.site-radio__input:focus-visible + .site-radio__label::before {
+  outline: 1px solid #1f2041;
 }
 .site-radio__input:checked + .site-radio__label {
   color: rgba(31, 32, 65, 0.75);
@@ -1107,65 +849,6 @@ template {
   border-radius: 50%;
 }
 
-.site-fieldset {
-  width: 100%;
-  padding: 0;
-  margin: 0;
-  border: none;
-}
-.site-fieldset__legend {
-  color: #1f2041;
-  font-size: 12px;
-  font-family: "Montserrat-Bold", sans-serif;
-  line-height: 15px;
-  text-transform: uppercase;
-  margin: 0;
-  margin-bottom: 5px;
-}
-.site-fieldset__legend_expand {
-  width: 100%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  cursor: pointer;
-}
-.site-fieldset__legend_expand::after {
-  content: "expand_more";
-  font-family: "Material Icons";
-  font-size: 24px;
-  color: rgba(31, 32, 65, 0.5);
-  text-transform: none;
-}
-.site-fieldset__legend_expand.reverse::after {
-  content: "expand_less";
-}
-.site-fieldset__legend_hidden {
-  clip: rect(0 0 0 0);
-  width: 1px;
-  height: 1px;
-  opacity: 0;
-  z-index: -1;
-  position: absolute;
-}
-.site-fieldset__area_shrunk {
-  max-height: 0;
-  margin: 0;
-  overflow: hidden;
-  -webkit-transition: max-height 0.2s ease-out, margin 0.2s;
-  transition: max-height 0.2s ease-out, margin 0.2s;
-}
-.site-fieldset__area_expanded {
-  max-height: 5000px;
-  -webkit-transition: max-height 0.8s ease-in;
-  transition: max-height 0.8s ease-in;
-}
-.site-fieldset__area .site-checkbox-list {
-  margin-top: 12px;
-}
-
 .site-checkbox:not(:first-child) {
   margin-top: 13px;
 }
@@ -1178,6 +861,9 @@ template {
   position: absolute;
   z-index: -1;
   opacity: 0;
+}
+.site-checkbox__input:focus-visible + .site-checkbox__label::before {
+  outline: 1px solid #1f2041;
 }
 .site-checkbox__input:checked + .site-checkbox__label::before {
   background: url(../c93d1d2e0ebf70b1d568.svg) no-repeat center;
@@ -1297,6 +983,9 @@ template {
   margin: 0;
   margin-bottom: 5px;
 }
+.site-fieldset__legend:focus-visible {
+  outline: 2px solid rgba(31, 32, 65, 0.5);
+}
 .site-fieldset__legend_expand {
   width: 100%;
   display: -webkit-box;
@@ -1315,7 +1004,8 @@ template {
   text-transform: none;
 }
 .site-fieldset__legend_expand.reverse::after {
-  content: "expand_less";
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
 }
 .site-fieldset__legend_hidden {
   clip: rect(0 0 0 0);
@@ -1329,8 +1019,7 @@ template {
   max-height: 0;
   margin: 0;
   overflow: hidden;
-  -webkit-transition: max-height 0.2s ease-out, margin 0.2s;
-  transition: max-height 0.2s ease-out, margin 0.2s;
+  visibility: hidden;
 }
 .site-fieldset__area_expanded {
   max-height: 5000px;
@@ -1341,87 +1030,112 @@ template {
   margin-top: 12px;
 }
 
-.button {
-  color: #BC9CFF;
-  font-size: 12px;
-  font-family: "Montserrat-Bold", sans-serif;
-  line-height: 15px;
-  text-transform: uppercase;
-  margin: 0;
-  cursor: pointer;
-  border: none;
-  background-color: white;
-  padding: 0;
-  text-align: center;
-  position: relative;
-  text-decoration: none;
-}
-.button:hover {
-  color: rgba(31, 32, 65, 0.5);
-}
-.button_rounded {
-  min-width: 100px;
-  min-height: 44px;
-  padding: 7px 17px 8px;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-  letter-spacing: -0.15px;
-  border: 2px solid transparent;
-  border-radius: 22px;
-  background-origin: border-box;
-  background-image: -webkit-gradient(linear, left top, left bottom, from(white), to(white)), -webkit-gradient(linear, left top, left bottom, from(#BC9CFF), to(#8BA4F9));
-  background-image: linear-gradient(white, white), linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
-  background-clip: padding-box, border-box;
-}
-.button_rounded:hover {
-  color: #BC9CFF;
-  background-image: -webkit-gradient(linear, left top, left bottom, from(white), to(white)), -webkit-gradient(linear, left top, left bottom, from(rgba(188, 156, 255, 0.5)), to(rgba(139, 164, 249, 0.5)));
-  background-image: linear-gradient(white, white), linear-gradient(180deg, rgba(188, 156, 255, 0.5) 0%, rgba(139, 164, 249, 0.5) 100%);
-}
-.button_secondary {
-  font-family: "Montserrat-Bold", sans-serif;
-  color: white;
-  background-image: -webkit-gradient(linear, left top, left bottom, from(#6FCF97), to(#66D2EA));
-  background-image: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%);
-}
-.button_secondary:hover {
-  background-image: -webkit-gradient(linear, left top, left bottom, from(#6FCF97), to(#66D2EA));
-  background-image: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%);
-}
-.button_primary {
-  font-family: "Montserrat-Bold", sans-serif;
-  color: white;
-  background-image: -webkit-gradient(linear, left top, left bottom, from(#BC9CFF), to(#8BA4F9));
-  background-image: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
-  background-clip: border-box;
-}
-.button_primary:hover {
-  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(188, 156, 255, 0.5)), to(rgba(139, 164, 249, 0.5)));
-  background-image: linear-gradient(180deg, rgba(188, 156, 255, 0.5) 0%, rgba(139, 164, 249, 0.5) 100%);
-  color: white;
-}
-.button_block {
+.rate-button {
   display: -webkit-inline-box;
   display: -ms-inline-flexbox;
   display: inline-flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: reverse;
+      -ms-flex-direction: row-reverse;
+          flex-direction: row-reverse;
 }
-.button_flexible {
-  width: 100%;
+.rate-button__label {
+  color: #BC9CFF;
+  cursor: pointer;
 }
-.button.arrow::after {
-  content: "arrow_forward";
-  font-family: "Material Icons";
-  font-size: 24px;
-  top: 13px;
-  right: 9px;
+.rate-button__label-text {
+  clip: rect(0 0 0 0);
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+  z-index: -1;
   position: absolute;
-  text-transform: none;
+}
+.rate-button__label::before {
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -webkit-text-stroke: transparent;
+  font-family: "Material Icons";
+  content: "star_border"/"Оценить в ";
+  top: 0;
+  left: 0;
+  font-size: 24px;
+  background-color: #bc9cff;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#BC9CFF), to(#8BA4F9));
+  background-image: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+}
+.rate-button__radio {
+  clip: rect(0 0 0 0);
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+  z-index: -1;
+  position: absolute;
+}
+.rate-button__radio:hover ~ .rate-button__label::before {
+  content: "star";
+  background-color: rgba(188, 156, 255, 0.25);
+  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(188, 156, 255, 0.25)), to(rgba(139, 164, 249, 0.25)));
+  background-image: linear-gradient(180deg, rgba(188, 156, 255, 0.25) 0%, rgba(139, 164, 249, 0.25) 100%);
+}
+.rate-button__radio:focus-visible + .rate-button__label::before {
+  outline: 1px solid rgba(31, 32, 65, 0.5);
+}
+.rate-button__radio:checked + .rate-button__label::before, .rate-button__radio:checked ~ .rate-button__label::before {
+  content: "star";
+  background-color: #bc9cff;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#BC9CFF), to(#8BA4F9));
+  background-image: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+}
+
+.search-block {
+  background-color: white;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  border-radius: 4px;
+  -webkit-box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.2);
+          box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.2);
+  padding: 40px 29px 30px 29px;
+  max-width: 380px;
+}
+.search-block__heading-hidden {
+  clip: rect(0 0 0 0);
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+  z-index: -1;
+  position: absolute;
+}
+.search-block__heading {
+  color: #1f2041;
+  font-size: 24px;
+  font-family: "Montserrat-Bold", sans-serif;
+  line-height: 29px;
+  margin: 0;
+  letter-spacing: -0.1px;
+  margin-bottom: 20px;
+}
+.search-block__form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+.search-block__form > .button {
+  margin-top: 32px;
+}
+.search-block__date-dropdown-wrapper {
+  width: 150px;
+  position: relative;
+  z-index: 2;
+}
+.search-block__guests-dropdown-wrapper {
+  width: 100%;
+  margin-top: 21px;
 }
 
 .registration-block {
@@ -1466,459 +1180,6 @@ template {
 }
 .registration-block .site-fieldset .site-radio-list {
   margin-bottom: 21px;
-}
-
-.site-dropdown__header {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  font-family: "Montserrat", sans-serif;
-  font-size: 14px;
-  line-height: 18px;
-  text-align: left;
-  background-color: white;
-  width: 100%;
-  padding: 8px 8px 10px 15px;
-  border: 1px solid rgba(31, 32, 65, 0.25);
-  border-radius: 4px;
-  color: rgba(31, 32, 65, 0.75);
-  letter-spacing: -0.25px;
-  cursor: pointer;
-}
-.site-dropdown__header-icon {
-  -ms-flex-item-align: baseline;
-      align-self: baseline;
-}
-.site-dropdown__header_square {
-  border-bottom-right-radius: 0;
-  border-bottom-left-radius: 0;
-}
-.site-dropdown__header:hover, .site-dropdown__header:focus {
-  outline: 1px solid rgba(31, 32, 65, 0.5);
-}
-
-.site-dropdown__list {
-  padding-right: 7px;
-  padding-left: 15px;
-  margin: 0;
-  margin-bottom: 11px;
-  letter-spacing: 0.05px;
-}
-
-.site-dropdown__item {
-  color: #1f2041;
-  font-size: 12px;
-  font-family: "Montserrat-Bold", sans-serif;
-  line-height: 15px;
-  text-transform: uppercase;
-  margin: 0;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  list-style: none;
-  width: 100%;
-  margin-top: 4px;
-}
-
-.site-dropdown__footer {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  padding: 12px 8px 18px 15px;
-  line-height: 15px;
-  background-color: white;
-}
-
-.form-element {
-  width: 100%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  vertical-align: top;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-}
-.form-element__top {
-  width: 100%;
-  margin-bottom: 5px;
-  line-height: 15px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-}
-.form-element__top_hidden {
-  clip: rect(0 0 0 0);
-  width: 1px;
-  height: 1px;
-  opacity: 0;
-  z-index: -1;
-  position: absolute;
-}
-.form-element__label {
-  color: #1f2041;
-  font-size: 12px;
-  font-family: "Montserrat-Bold", sans-serif;
-  line-height: 15px;
-  text-transform: uppercase;
-  margin: 0;
-}
-.form-element__note {
-  font-family: "Montserrat", sans-serif;
-  color: rgba(31, 32, 65, 0.5);
-  font-size: 12px;
-  text-transform: uppercase;
-}
-.form-element__description {
-  font-family: "Montserrat", sans-serif;
-  color: rgba(31, 32, 65, 0.5);
-  font-size: 12px;
-}
-
-.site-calendar {
-  padding: 0 19px;
-  padding-bottom: 8px;
-  width: 318px;
-  border-radius: 4px;
-  text-align: center;
-  background-color: white;
-}
-.site-calendar__header {
-  color: #1f2041;
-  font-size: 19px;
-  font-family: "Montserrat-Bold", sans-serif;
-  line-height: 24px;
-  letter-spacing: 0.2px;
-  margin: 0;
-  padding: 20px 0;
-  margin-bottom: 10px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-}
-.site-calendar__prev-button, .site-calendar__next-button {
-  padding: 0;
-  border: none;
-  background-color: transparent;
-  cursor: pointer;
-  color: #BC9CFF;
-}
-.site-calendar__days-section, .site-calendar__date-section {
-  font-family: "Montserrat-Bold", sans-serif;
-  font-size: 12px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-}
-.site-calendar__date-section {
-  font-family: "Montserrat", sans-serif;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-}
-.site-calendar__date-cell.start-range {
-  border-radius: 50% 0 0 50%;
-}
-.site-calendar__date-cell.focus-range {
-  background: rgba(31, 32, 65, 0.05);
-}
-.site-calendar__date-cell.range {
-  background: -webkit-gradient(linear, left top, left bottom, from(rgba(188, 156, 255, 0.25)), to(rgba(139, 164, 249, 0.25)));
-  background: linear-gradient(180deg, rgba(188, 156, 255, 0.25) 0%, rgba(139, 164, 249, 0.25) 100%);
-}
-.site-calendar__date-cell.end-range {
-  border-radius: 0 50% 50% 0;
-}
-.site-calendar__date-cell:hover {
-  background: -webkit-gradient(linear, left top, left bottom, from(rgba(188, 156, 255, 0.25)), to(rgba(139, 164, 249, 0.25)));
-  background: linear-gradient(180deg, rgba(188, 156, 255, 0.25) 0%, rgba(139, 164, 249, 0.25) 100%);
-}
-.site-calendar__day, .site-calendar__date {
-  line-height: 15px;
-  padding: 0;
-  width: 40px;
-  height: 40px;
-}
-.site-calendar__day {
-  color: #BC9CFF;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-.site-calendar__date {
-  border: none;
-  background-color: transparent;
-  color: rgba(31, 32, 65, 0.5);
-  cursor: pointer;
-  border-radius: 50%;
-}
-.site-calendar__date.button_primary {
-  color: white;
-}
-.site-calendar__date.button_secondary {
-  color: white;
-}
-.site-calendar__date:disabled {
-  cursor: default;
-  color: rgba(31, 32, 65, 0.25);
-}
-.site-calendar__optional-row {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-}
-
-.button {
-  color: #BC9CFF;
-  font-size: 12px;
-  font-family: "Montserrat-Bold", sans-serif;
-  line-height: 15px;
-  text-transform: uppercase;
-  margin: 0;
-  cursor: pointer;
-  border: none;
-  background-color: white;
-  padding: 0;
-  text-align: center;
-  position: relative;
-  text-decoration: none;
-}
-.button:hover {
-  color: rgba(31, 32, 65, 0.5);
-}
-.button_rounded {
-  min-width: 100px;
-  min-height: 44px;
-  padding: 7px 17px 8px;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-  letter-spacing: -0.15px;
-  border: 2px solid transparent;
-  border-radius: 22px;
-  background-origin: border-box;
-  background-image: -webkit-gradient(linear, left top, left bottom, from(white), to(white)), -webkit-gradient(linear, left top, left bottom, from(#BC9CFF), to(#8BA4F9));
-  background-image: linear-gradient(white, white), linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
-  background-clip: padding-box, border-box;
-}
-.button_rounded:hover {
-  color: #BC9CFF;
-  background-image: -webkit-gradient(linear, left top, left bottom, from(white), to(white)), -webkit-gradient(linear, left top, left bottom, from(rgba(188, 156, 255, 0.5)), to(rgba(139, 164, 249, 0.5)));
-  background-image: linear-gradient(white, white), linear-gradient(180deg, rgba(188, 156, 255, 0.5) 0%, rgba(139, 164, 249, 0.5) 100%);
-}
-.button_secondary {
-  font-family: "Montserrat-Bold", sans-serif;
-  color: white;
-  background-image: -webkit-gradient(linear, left top, left bottom, from(#6FCF97), to(#66D2EA));
-  background-image: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%);
-}
-.button_secondary:hover {
-  background-image: -webkit-gradient(linear, left top, left bottom, from(#6FCF97), to(#66D2EA));
-  background-image: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%);
-}
-.button_primary {
-  font-family: "Montserrat-Bold", sans-serif;
-  color: white;
-  background-image: -webkit-gradient(linear, left top, left bottom, from(#BC9CFF), to(#8BA4F9));
-  background-image: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
-  background-clip: border-box;
-}
-.button_primary:hover {
-  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(188, 156, 255, 0.5)), to(rgba(139, 164, 249, 0.5)));
-  background-image: linear-gradient(180deg, rgba(188, 156, 255, 0.5) 0%, rgba(139, 164, 249, 0.5) 100%);
-  color: white;
-}
-.button_block {
-  display: -webkit-inline-box;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-.button_flexible {
-  width: 100%;
-}
-.button.arrow::after {
-  content: "arrow_forward";
-  font-family: "Material Icons";
-  font-size: 24px;
-  top: 13px;
-  right: 9px;
-  position: absolute;
-  text-transform: none;
-}
-
-.site-dropdown {
-  width: 100%;
-  position: relative;
-}
-.site-dropdown__window {
-  display: none;
-  width: 100%;
-  position: absolute;
-  z-index: 1;
-  background-color: white;
-  border: 1px solid rgba(31, 32, 65, 0.5);
-  border-radius: 0 0 4px 4px;
-  border-top: none;
-}
-.site-dropdown__window_free {
-  width: auto;
-  margin-top: 6px;
-  border: 1px solid rgba(31, 32, 65, 0.25);
-  border-radius: 4px;
-  -webkit-box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05);
-          box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05);
-}
-.site-dropdown__button-add, .site-dropdown__button-remove {
-  cursor: pointer;
-  width: 30px;
-  height: 30px;
-  background-color: white;
-  color: rgba(31, 32, 65, 0.5);
-  border: 1px solid rgba(31, 32, 65, 0.25);
-  border-radius: 50%;
-}
-.site-dropdown__button-add:disabled, .site-dropdown__button-remove:disabled {
-  cursor: default;
-  opacity: 0.38;
-}
-.site-dropdown__button-clear {
-  cursor: pointer;
-  visibility: hidden;
-}
-.site-dropdown__button-apply {
-  cursor: pointer;
-  letter-spacing: -0.25px;
-}
-.site-dropdown__counter {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-.site-dropdown__count {
-  width: 32px;
-  text-align: center;
-}
-
-.button {
-  color: #BC9CFF;
-  font-size: 12px;
-  font-family: "Montserrat-Bold", sans-serif;
-  line-height: 15px;
-  text-transform: uppercase;
-  margin: 0;
-  cursor: pointer;
-  border: none;
-  background-color: white;
-  padding: 0;
-  text-align: center;
-  position: relative;
-  text-decoration: none;
-}
-.button:hover {
-  color: rgba(31, 32, 65, 0.5);
-}
-.button_rounded {
-  min-width: 100px;
-  min-height: 44px;
-  padding: 7px 17px 8px;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-  letter-spacing: -0.15px;
-  border: 2px solid transparent;
-  border-radius: 22px;
-  background-origin: border-box;
-  background-image: -webkit-gradient(linear, left top, left bottom, from(white), to(white)), -webkit-gradient(linear, left top, left bottom, from(#BC9CFF), to(#8BA4F9));
-  background-image: linear-gradient(white, white), linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
-  background-clip: padding-box, border-box;
-}
-.button_rounded:hover {
-  color: #BC9CFF;
-  background-image: -webkit-gradient(linear, left top, left bottom, from(white), to(white)), -webkit-gradient(linear, left top, left bottom, from(rgba(188, 156, 255, 0.5)), to(rgba(139, 164, 249, 0.5)));
-  background-image: linear-gradient(white, white), linear-gradient(180deg, rgba(188, 156, 255, 0.5) 0%, rgba(139, 164, 249, 0.5) 100%);
-}
-.button_secondary {
-  font-family: "Montserrat-Bold", sans-serif;
-  color: white;
-  background-image: -webkit-gradient(linear, left top, left bottom, from(#6FCF97), to(#66D2EA));
-  background-image: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%);
-}
-.button_secondary:hover {
-  background-image: -webkit-gradient(linear, left top, left bottom, from(#6FCF97), to(#66D2EA));
-  background-image: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%);
-}
-.button_primary {
-  font-family: "Montserrat-Bold", sans-serif;
-  color: white;
-  background-image: -webkit-gradient(linear, left top, left bottom, from(#BC9CFF), to(#8BA4F9));
-  background-image: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
-  background-clip: border-box;
-}
-.button_primary:hover {
-  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(188, 156, 255, 0.5)), to(rgba(139, 164, 249, 0.5)));
-  background-image: linear-gradient(180deg, rgba(188, 156, 255, 0.5) 0%, rgba(139, 164, 249, 0.5) 100%);
-  color: white;
-}
-.button_block {
-  display: -webkit-inline-box;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-.button_flexible {
-  width: 100%;
-}
-.button.arrow::after {
-  content: "arrow_forward";
-  font-family: "Material Icons";
-  font-size: 24px;
-  top: 13px;
-  right: 9px;
-  position: absolute;
-  text-transform: none;
 }
 
 .booking-block {
@@ -1994,6 +1255,8 @@ template {
       flex-wrap: wrap;
 }
 .booking-block__date-dropdown-wrapper {
+  position: relative;
+  z-index: 2;
   width: 150px;
 }
 .booking-block__guests-dropdown-wrapper {
@@ -2082,255 +1345,6 @@ template {
   margin-top: 15px;
 }
 
-.form-element {
-  width: 100%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  vertical-align: top;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-}
-.form-element__top {
-  width: 100%;
-  margin-bottom: 5px;
-  line-height: 15px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-}
-.form-element__top_hidden {
-  clip: rect(0 0 0 0);
-  width: 1px;
-  height: 1px;
-  opacity: 0;
-  z-index: -1;
-  position: absolute;
-}
-.form-element__label {
-  color: #1f2041;
-  font-size: 12px;
-  font-family: "Montserrat-Bold", sans-serif;
-  line-height: 15px;
-  text-transform: uppercase;
-  margin: 0;
-}
-.form-element__note {
-  font-family: "Montserrat", sans-serif;
-  color: rgba(31, 32, 65, 0.5);
-  font-size: 12px;
-  text-transform: uppercase;
-}
-.form-element__description {
-  font-family: "Montserrat", sans-serif;
-  color: rgba(31, 32, 65, 0.5);
-  font-size: 12px;
-}
-
-.site-input {
-  color: rgba(31, 32, 65, 0.75);
-  font-family: "Montserrat", sans-serif;
-  font-size: 14px;
-  line-height: 24px;
-  letter-spacing: -0.1px;
-  width: 100%;
-  padding: 12px 14px;
-  border: 1px solid rgba(31, 32, 65, 0.25);
-  border-radius: 4px;
-  line-height: 18px;
-  letter-spacing: -0.25px;
-}
-.site-input-wrapper {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  width: 100%;
-}
-.site-input_submit {
-  border-radius: 4px 0 0 4px;
-  border-right: none;
-}
-.site-input__button {
-  -webkit-background-clip: text;
-  -moz-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  -webkit-text-stroke: transparent;
-  cursor: pointer;
-  padding-right: 11px;
-  background-color: #BC9CFF;
-  background-image: -webkit-gradient(linear, left top, left bottom, from(#BC9CFF), to(#8BA4F9));
-  background-image: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
-  border: 1px solid rgba(31, 32, 65, 0.25);
-  border-left: none;
-  border-radius: 0 4px 4px 0;
-}
-.site-input::-webkit-input-placeholder {
-  color: rgba(31, 32, 65, 0.25);
-}
-.site-input::-moz-placeholder {
-  color: rgba(31, 32, 65, 0.25);
-}
-.site-input:-ms-input-placeholder {
-  color: rgba(31, 32, 65, 0.25);
-}
-.site-input::-ms-input-placeholder {
-  color: rgba(31, 32, 65, 0.25);
-}
-.site-input::placeholder {
-  color: rgba(31, 32, 65, 0.25);
-}
-.site-input:hover, .site-input:focus {
-  outline: 1px solid rgba(31, 32, 65, 0.5);
-}
-
-.site-fieldset {
-  width: 100%;
-  padding: 0;
-  margin: 0;
-  border: none;
-}
-.site-fieldset__legend {
-  color: #1f2041;
-  font-size: 12px;
-  font-family: "Montserrat-Bold", sans-serif;
-  line-height: 15px;
-  text-transform: uppercase;
-  margin: 0;
-  margin-bottom: 5px;
-}
-.site-fieldset__legend_expand {
-  width: 100%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  cursor: pointer;
-}
-.site-fieldset__legend_expand::after {
-  content: "expand_more";
-  font-family: "Material Icons";
-  font-size: 24px;
-  color: rgba(31, 32, 65, 0.5);
-  text-transform: none;
-}
-.site-fieldset__legend_expand.reverse::after {
-  content: "expand_less";
-}
-.site-fieldset__legend_hidden {
-  clip: rect(0 0 0 0);
-  width: 1px;
-  height: 1px;
-  opacity: 0;
-  z-index: -1;
-  position: absolute;
-}
-.site-fieldset__area_shrunk {
-  max-height: 0;
-  margin: 0;
-  overflow: hidden;
-  -webkit-transition: max-height 0.2s ease-out, margin 0.2s;
-  transition: max-height 0.2s ease-out, margin 0.2s;
-}
-.site-fieldset__area_expanded {
-  max-height: 5000px;
-  -webkit-transition: max-height 0.8s ease-in;
-  transition: max-height 0.8s ease-in;
-}
-.site-fieldset__area .site-checkbox-list {
-  margin-top: 12px;
-}
-
-.button {
-  color: #BC9CFF;
-  font-size: 12px;
-  font-family: "Montserrat-Bold", sans-serif;
-  line-height: 15px;
-  text-transform: uppercase;
-  margin: 0;
-  cursor: pointer;
-  border: none;
-  background-color: white;
-  padding: 0;
-  text-align: center;
-  position: relative;
-  text-decoration: none;
-}
-.button:hover {
-  color: rgba(31, 32, 65, 0.5);
-}
-.button_rounded {
-  min-width: 100px;
-  min-height: 44px;
-  padding: 7px 17px 8px;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-  letter-spacing: -0.15px;
-  border: 2px solid transparent;
-  border-radius: 22px;
-  background-origin: border-box;
-  background-image: -webkit-gradient(linear, left top, left bottom, from(white), to(white)), -webkit-gradient(linear, left top, left bottom, from(#BC9CFF), to(#8BA4F9));
-  background-image: linear-gradient(white, white), linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
-  background-clip: padding-box, border-box;
-}
-.button_rounded:hover {
-  color: #BC9CFF;
-  background-image: -webkit-gradient(linear, left top, left bottom, from(white), to(white)), -webkit-gradient(linear, left top, left bottom, from(rgba(188, 156, 255, 0.5)), to(rgba(139, 164, 249, 0.5)));
-  background-image: linear-gradient(white, white), linear-gradient(180deg, rgba(188, 156, 255, 0.5) 0%, rgba(139, 164, 249, 0.5) 100%);
-}
-.button_secondary {
-  font-family: "Montserrat-Bold", sans-serif;
-  color: white;
-  background-image: -webkit-gradient(linear, left top, left bottom, from(#6FCF97), to(#66D2EA));
-  background-image: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%);
-}
-.button_secondary:hover {
-  background-image: -webkit-gradient(linear, left top, left bottom, from(#6FCF97), to(#66D2EA));
-  background-image: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%);
-}
-.button_primary {
-  font-family: "Montserrat-Bold", sans-serif;
-  color: white;
-  background-image: -webkit-gradient(linear, left top, left bottom, from(#BC9CFF), to(#8BA4F9));
-  background-image: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
-  background-clip: border-box;
-}
-.button_primary:hover {
-  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(188, 156, 255, 0.5)), to(rgba(139, 164, 249, 0.5)));
-  background-image: linear-gradient(180deg, rgba(188, 156, 255, 0.5) 0%, rgba(139, 164, 249, 0.5) 100%);
-  color: white;
-}
-.button_block {
-  display: -webkit-inline-box;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-.button_flexible {
-  width: 100%;
-}
-.button.arrow::after {
-  content: "arrow_forward";
-  font-family: "Material Icons";
-  font-size: 24px;
-  top: 13px;
-  right: 9px;
-  position: absolute;
-  text-transform: none;
-}
-
 .log-in-block {
   background-color: white;
   border: 1px solid rgba(0, 0, 0, 0.12);
@@ -2369,7 +1383,7 @@ template {
 .site-calendar {
   padding: 0 19px;
   padding-bottom: 8px;
-  width: 318px;
+  max-width: 318px;
   border-radius: 4px;
   text-align: center;
   background-color: white;
@@ -2465,77 +1479,13 @@ template {
   color: rgba(31, 32, 65, 0.25);
 }
 .site-calendar__optional-row {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-}
-
-.site-dropdown__footer {
+  width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  padding: 12px 8px 18px 15px;
-  line-height: 15px;
-  background-color: white;
-}
-
-.rate-button {
-  display: -webkit-inline-box;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: reverse;
-      -ms-flex-direction: row-reverse;
-          flex-direction: row-reverse;
-}
-.rate-button__label {
-  color: #BC9CFF;
-  cursor: pointer;
-}
-.rate-button__label-text {
-  clip: rect(0 0 0 0);
-  width: 1px;
-  height: 1px;
-  opacity: 0;
-  z-index: -1;
-  position: absolute;
-}
-.rate-button__label::before {
-  -webkit-background-clip: text;
-  -moz-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  -webkit-text-stroke: transparent;
-  font-family: "Material Icons";
-  content: "star_border"/"Оценить в ";
-  top: 0;
-  left: 0;
-  font-size: 24px;
-  background-color: #bc9cff;
-  background-image: -webkit-gradient(linear, left top, left bottom, from(#BC9CFF), to(#8BA4F9));
-  background-image: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
-}
-.rate-button__radio {
-  clip: rect(0 0 0 0);
-  width: 1px;
-  height: 1px;
-  opacity: 0;
-  z-index: -1;
-  position: absolute;
-}
-.rate-button__radio:hover ~ .rate-button__label::before {
-  content: "star";
-  background-color: rgba(188, 156, 255, 0.25);
-  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(188, 156, 255, 0.25)), to(rgba(139, 164, 249, 0.25)));
-  background-image: linear-gradient(180deg, rgba(188, 156, 255, 0.25) 0%, rgba(139, 164, 249, 0.25) 100%);
-}
-.rate-button__radio:checked + .rate-button__label::before, .rate-button__radio:checked ~ .rate-button__label::before {
-  content: "star";
-  background-color: #bc9cff;
-  background-image: -webkit-gradient(linear, left top, left bottom, from(#BC9CFF), to(#8BA4F9));
-  background-image: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
 }
 
 .room-card {

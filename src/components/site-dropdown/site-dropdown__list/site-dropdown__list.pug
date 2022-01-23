@@ -3,7 +3,7 @@ mixin site-dropdown__list(options)
   ul.site-dropdown__list
     each option in options
       li.site-dropdown__item(data-name = option.name, data-declination= option.declination)
-        .site-dropdown__item-text !{option.name}
+        .site-dropdown__item-text !{option.text}
         .site-dropdown__counter
           button(type = "button" class = "site-dropdown__button-remove" disabled) -
           span.site-dropdown__count 0

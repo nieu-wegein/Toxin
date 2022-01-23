@@ -1,15 +1,17 @@
 @import "../../../fonts/fonts";
 @import "../../../variables/variables";
+@import "../../../components/form-element/form-element";
 @import "../../../components/site-input/site-input";
 @import "../../../components/site-dropdown/site-dropdown";
+@import "../../../components/site-button/site-button";
 @import "../../../components/site-calendar/site-calendar";
+@import "../../../components/site-fieldset/site-fieldset";
 @import "../../../components/site-checkbox/site-checkbox";
 @import "../../../components/site-radio/site-radio";
 @import "../../../components/site-section/site-section";
 @import "../../../components/like-button/like-button";
 @import "../../../components/rate-button/rate-button";
 @import "../../../components/site-range-slider/site-range-slider";
-@import "../../../components/form-element/form-element";
 @import "../../../components/site-pagination/site-pagination";
 @import "../../../components/site-ul/site-ul";
 @import "../../../components/features-list/features-list";
@@ -42,6 +44,7 @@ html { box-sizing: border-box; }
   align-items: start;
 
   &:nth-child(1) {
+    z-index: 3;
     grid-template-rows: 84px 84px 87px 104px 105px 105px;
   }
 
@@ -90,9 +93,9 @@ html { box-sizing: border-box; }
   .date-dropdown-wrapper {
     display: flex;
     justify-content: space-between;
-     & .form-element {
-       width: 150px;
-     }
+    .form-element {
+      width: 150px;
+    }
   }
 
   .filter-items-wrapper {
@@ -133,7 +136,9 @@ html { box-sizing: border-box; }
 
   .site-dropdowns-wrapper {
     width: 266px;
-    & .form-element:first-child {
+    .form-element:first-child {
+      position: relative;
+      z-index: 2;
       margin-bottom: 20px;
     }
   }

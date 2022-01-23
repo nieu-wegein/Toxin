@@ -33,6 +33,10 @@
       background-image: $primary-gradient-25;
     }
 
+    &:focus-visible + .rate-button__label::before {
+      outline: 1px solid $site-dark-50;
+    }
+
     &:checked + .rate-button__label::before,
     &:checked ~ .rate-button__label::before {
       content: "star";

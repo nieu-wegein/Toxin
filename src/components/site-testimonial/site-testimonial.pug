@@ -1,6 +1,4 @@
 
-//TODO: datetime = ...
-
 mixin site-testimonial(obj)
 
   blockquote.site-testimonial
@@ -9,7 +7,7 @@ mixin site-testimonial(obj)
         img.site-testimonial__author-image(src = obj.img width = "44" height = "44"  alt = "Фотография автора отзыва")
       .site-testimonial__info
         cite.site-testimonial__author-name #{obj.name}
-        time.site-testimonial__time(datetime = "P5D") #{obj.date}
+        time.site-testimonial__time #{obj.date}
     .site-testimonial__body
       .site-testimonial__button-wrapper
         include ../like-button/like-button

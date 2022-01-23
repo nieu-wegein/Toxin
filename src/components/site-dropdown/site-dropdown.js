@@ -9,6 +9,7 @@ export class CountingDropdown extends SiteDropdown {
 
   constructor(dropdown) {
     super(dropdown)
+    dropdown.objectModel = this;
     this.dropdown = $(dropdown);
     this.header = $(".site-dropdown__header", this.dropdown);
     this.textArea = $(".site-dropdown__text-area", this.header)
@@ -143,5 +144,4 @@ export class CountingDropdown extends SiteDropdown {
 $(function (){
   const dropdownsList = $(".site-dropdown_counting-dropdown");
   dropdownsList.each((i, dropdown) => {new CountingDropdown(dropdown)});
-
 })

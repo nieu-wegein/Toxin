@@ -1,5 +1,8 @@
 @import "../../../fonts/fonts";
 @import "../../../variables/variables";
+@import "../../../components/site-button/site-button";
+@import "../../../components/form-element/form-element";
+@import "../../../components/site-input/site-input";
 @import "../../../components/site-header/site-header";
 @import "../../../components/site-footer/site-footer.scss";
 
@@ -19,7 +22,7 @@ body::-webkit-scrollbar {
   .site-header {
     margin-bottom: 40px;
     &:first-child {
-      z-index: 2;
+      z-index: 5;
     }
   }
 

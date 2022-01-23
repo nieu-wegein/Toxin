@@ -10,7 +10,7 @@ class CalendarDropdown extends SiteDropdown {
 
   constructor(dropdown) {
     super(dropdown)
-
+    dropdown.objectModel = this;
     this.dropdown = $(dropdown);
     this.header = $(".site-dropdown__header", dropdown);
     this.textArea = $(".site-dropdown__text-area", this.header);
@@ -38,7 +38,6 @@ class CalendarDropdown extends SiteDropdown {
   }
 
   setHeaderText = () => {
-
     let defaultText = this.header.data("text")
 
     if (this.calendar.state.activeDate) {
@@ -50,7 +49,6 @@ class CalendarDropdown extends SiteDropdown {
   }
 
   clearState = () => {
-
     $(this.calendar.state.activeButton).removeClass("button_primary")
     this.calendar.state.activeButton = null;
     this.calendar.state.activeDate = null;
@@ -65,12 +63,11 @@ class CalendarDropdown extends SiteDropdown {
   }
 }
 
-
 class RangeCalendarDropdown extends CalendarDropdown {
 
   constructor(dropdown) {
     super(dropdown);
-
+    dropdown.objectModel = this;
     this.calendar.removeClass("site-calendar_range");
 
     this.calendar.onDatesClick(this.setHeaderRangeText);
@@ -79,9 +76,7 @@ class RangeCalendarDropdown extends CalendarDropdown {
   }
 
   setHeaderRangeText = () => {
-
     let text;
-
     if (this.calendar.state.activeDate)
       text = this.calendar.state.activeDate;
     if(this.calendar.rangeState && this.calendar.rangeState.endDate)
@@ -97,7 +92,6 @@ class RangeCalendarDropdown extends CalendarDropdown {
   }
 
   clearRangeState = () => {
-
     $(this.calendar.rangeState.rangeButton).removeClass("button_primary")
     this.calendar.removeClass("site-calendar_range")
     this.calendar.rangeState.rangeButton = null;
@@ -107,11 +101,11 @@ class RangeCalendarDropdown extends CalendarDropdown {
 }
 
 
-
 class SharedCalendarDropdown {
   constructor(dropdown) {
-
+     dropdown.objectModel = this;
      this.dropdown = $(dropdown);
+     this.state = {};
      this.header = $(".site-dropdown__header", dropdown);
      this.window = document.getElementById(this.header.data("windowid"));
      this.calendar = this.window.querySelector(".site-calendar").objectModel;
@@ -122,15 +116,14 @@ class SharedCalendarDropdown {
 
      (this.window.owners = this.window.owners || []).push(this);
 
-    this.header.click(this.toggleWindow)
-    this.calendar.onDatesClick(this.setHeaderText);
-    this.dropdown.focusout(this.onFocusLoose)
-    if(this.buttonClear) this.buttonClear.click(this.clearState);
-    if(this.buttonApply) this.buttonApply.click(this.apply);
+      this.header.click(this.toggleWindow)
+      this.calendar.onDatesClick(this.updateState);
+      this.dropdown.focusout(this.onFocusLoose)
+      if(this.buttonClear) this.buttonClear.click(this.clearState);
+      if(this.buttonApply) this.buttonApply.click(this.apply);
   }
 
   onFocusLoose = (e) => {
-
     const current = this.window.owners.filter((owner) => {
       return owner.dropdown.has(e.relatedTarget).length !== 0
     })
@@ -139,43 +132,51 @@ class SharedCalendarDropdown {
   }
 
   toggleWindow = (e) => {
-
     if(e.currentTarget === this.window.owners[0].header[0])  {
       this.calendar.removeClass("site-calendar_range")
     }
     else if (e.currentTarget === this.window.owners[1].header[0]) {
       this.calendar.addClass("site-calendar_range")
     }
-
     $(this.window).toggle();
   }
 
-  setHeaderText = () => {
+  updateState = () => {
+    this.window.owners[0].state = {
+      firstDate: this.calendar.state.activeDate,
+    }
+    this.window.owners[1].state = {
+      lastDate: this.calendar.rangeState.endDate
+    }
 
-    let defaultText0 =  this.window.owners[0].header.data("text")
-    let defaultText1 =  this.window.owners[1].header.data("text")
+    this.setHeaderText();
+  }
+
+  setHeaderText = () => {
+    let firstOwner = this.window.owners[0];
+    let secondOwner = this.window.owners[1];
+    let defaultText0 =  firstOwner.header.data("text");
+    let defaultText1 =  secondOwner.header.data("text");
 
     if (this.footer) this.buttonClear.css("visibility", "visible");
 
-    if(this.calendar.state.activeDate) {
-      this.window.owners[0].textArea.text(this.calendar.state.activeDate)
-    } else this.window.owners[0].textArea.text(defaultText0)
+    firstOwner.state.firstDate ? firstOwner.textArea.text(firstOwner.state.firstDate) :
+                                 firstOwner.textArea.text(defaultText0);
 
-    if(this.calendar.rangeState.endDate) {
-      this.window.owners[1].textArea.text(this.calendar.rangeState.endDate)
-    } else this.window.owners[1].textArea.text(defaultText1)
+    secondOwner.state.lastDate ? secondOwner.textArea.text(secondOwner.state.lastDate) :
+                                 secondOwner.textArea.text(defaultText1);
   }
 
   clearState = () => {
-    $(this.calendar.state.activeButton).removeClass("button_primary")
-    $(this.calendar.rangeState.rangeButton).removeClass("button_primary")
-
+    $(this.calendar.state.activeButton).removeClass("button_primary");
+    $(this.calendar.rangeState.rangeButton).removeClass("button_primary");
     this.calendar.state.activeButton = null;
     this.calendar.rangeState.rangeButton = null;
     this.calendar.state.activeDate = null;
     this.calendar.rangeState.endDate = null;
     this.calendar.clearRange();
-    this.setHeaderText();
+
+    this.updateState();
 
     this.buttonApply.focus();
     this.buttonClear.css("visibility", "hidden");
@@ -191,7 +192,6 @@ class SharedCalendarDropdown {
 
 
 $(function (){
-
   const calendarDropdowns = $(".site-dropdown_date-calendar");
   calendarDropdowns.each((i, dropdown) => {new CalendarDropdown(dropdown)});
 

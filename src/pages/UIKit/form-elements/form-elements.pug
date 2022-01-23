@@ -18,9 +18,9 @@ include ../../../components/site-testimonial/site-testimonial
     {label: "Text field", note: "Hover / Focus", id: "awesome"},
     {label: "Dropdown", id: "guests", text:  "Сколько гостей",
         options: [
-          {name: "Взрослые", declination: ["гость", "гостя", "гостей"]},
-          {name: "Дети", declination: ["гость", "гостя", "гостей"]},
-          {name: "Младенцы", declination: ["гость", "гостя", "гостей"]}
+          {text: "Взрослые", name: "adults", declination: ["гость", "гостя", "гостей"]},
+          {text: "Дети", name: "children", declination: ["гость", "гостя", "гостей"]},
+          {text: "Младенцы", name: "babies", declination: ["гость", "гостя", "гостей"]}
         ],
         modifiers: {buttons: true} //counted-list: true
       },
@@ -34,29 +34,29 @@ include ../../../components/site-testimonial/site-testimonial
     {label: "Subscription text field", id: "subscription", text: "Email", modifiers: {submit: true}},
     {label: "Dropdown", note: "Default", id: "dd-default", text: "Комнаты",
       options: [
-        {name: "Спальни", declination: ["спальня", "спальни", "спален"]},
-        {name: "Кровать",declination: ["кровать", "кровати", "кроватей"]},
-        {name: "Ванные комнаты", declination: ["ванная комната", "ванные комнаты", "ванных комнат"]}
+        {text: "Спальни", name: "bedrooms", declination: ["спальня", "спальни", "спален"]},
+        {text: "Кровать", name: "beds", declination: ["кровать", "кровати", "кроватей"]},
+        {text: "Ванные комнаты", name: "bathrooms", declination: ["ванная комната", "ванные комнаты", "ванных комнат"]}
       ]},
     {label: "Dropdown", note: "Expanded", id: "dd-expanded", text: "Комнаты",
       options: [
-        {name: "Спальни", declination: ["спальня", "спальни", "спален"]},
-        {name: "Кровать", declination: ["кровать", "кровати", "кроватей"]},
-        {name: "Ванные комнаты", declination: ["ванная комната", "ванные комнаты", "ванных комнат"]}
+        {text: "Спальни", name: "bedrooms", declination: ["спальня", "спальни", "спален"]},
+        {text: "Кровать", name: "beds", declination: ["кровать", "кровати", "кроватей"]},
+        {text: "Ванные комнаты", name: "bathrooms", declination: ["ванная комната", "ванные комнаты", "ванных комнат"]}
       ]},
     {label: "Dropdown", id: "dd-buttons-expanded", text: "Сколько гостей",
       options: [
-        {name: "Взрослые", declination: ["гость", "гостя", "гостей"]},
-        {name: "Дети", declination: ["гость", "гостя", "гостей"]},
-        {name: "Младенцы",  declination: ["гость", "гостя", "гостей"]}
+        {text: "Взрослые", name: "adults", declination: ["гость", "гостя", "гостей"]},
+        {text: "Дети", name: "children", declination: ["гость", "гостя", "гостей"]},
+        {text: "Младенцы", name: "babies",  declination: ["гость", "гостя", "гостей"]}
       ],
       modifiers: {buttons: true}
     },
     {label: "Dropdown", id: "dd-buttons-filled", text: "Сколько гостей",
       options: [
-        {name: "Взрослые", declination: ["гость", "гостя", "гостей"]},
-        {name: "Дети",  declination: ["гость", "гостя", "гостей"]},
-        {name: "Младенцы",  declination: ["гость", "гостя", "гостей"]}
+        {text: "Взрослые", name: "adults",  declination: ["гость", "гостя", "гостей"]},
+        {text: "Дети", name: "children", declination: ["гость", "гостя", "гостей"]},
+        {text: "Младенцы", name: "babies", declination: ["гость", "гостя", "гостей"]}
       ],
       modifiers: {buttons: true}
     }

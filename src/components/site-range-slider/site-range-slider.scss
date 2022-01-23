@@ -1,5 +1,4 @@
 
-
 .site-range-slider {
 
   position: relative;
@@ -49,6 +48,10 @@
       border-radius: 50%;
       cursor: pointer;
 
+    }
+
+    &:focus-visible {
+      outline: 1px solid $site-dark-50;
     }
   }
 

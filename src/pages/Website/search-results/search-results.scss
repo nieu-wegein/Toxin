@@ -1,5 +1,16 @@
 @import "../../../fonts/fonts";
 @import "../../../variables/variables";
+@import "../../../components/site-button/site-button";
+@import "../../../components/site-logo/site-logo";
+@import "../../../components/site-section/site-section";
+@import "../../../components/form-element/form-element";
+@import "../../../components/site-input/site-input";
+@import "../../../components/site-dropdown/site-dropdown";
+@import "../../../components/site-calendar/site-calendar";
+@import "../../../components/site-range-slider/site-range-slider";
+@import "../../../components/site-checkbox/site-checkbox";
+@import "../../../components/site-fieldset/site-fieldset";
+@import "../../../components/rate-button/rate-button";
 @import "../../../components/site-header/site-header";
 @import "../../../components/site-footer/site-footer.scss";
 @import "../../../components/rooms-filter-menu/rooms-filter-menu.scss";
@@ -64,7 +75,7 @@ $parent: 100%;
 
 @media (max-width: 1438px) {
   .search-results {
-    & .site-section__top {
+    .site-section__top {
       justify-content: center;
       text-align: center;
     }

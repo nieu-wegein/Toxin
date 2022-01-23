@@ -7,7 +7,6 @@ const monthsList = ["Январь", "Февраль", "Март", "Апрель"
 class SiteCalendar {
 
   constructor(calendar) {
-
     calendar.objectModel = this;
     this.calendar = $(calendar);
     this.headerText = $(".site-calendar__header-text", calendar);
@@ -102,7 +101,6 @@ class SiteCalendar {
   }
 
   setNextMonth = () => {
-
     if (this.state.month === 11) {
       this.state.month = 0;
       this.state.year++;
@@ -131,7 +129,6 @@ class SiteCalendar {
   }
 
   setActiveButton = (e) => {
-
     if (!this.calendar.hasClass("site-calendar_range")) {
       $(this.state.activeButton).removeClass("button_primary");
       $(e.currentTarget).addClass("button_primary");
@@ -164,14 +161,12 @@ class RangeCalendar extends SiteCalendar {
   }
 
   setNextMonth = () => {
-
     $(this.rangeState.rangeButton).removeClass("button_primary");
     this.rangeState.rangeButton = null;
     this.clearRange();
   }
 
   clearHoverRange = () => {
-
     if(this.rangeState.hoverRange) {
       this.rangeState.hoverRange.forEach((date, i) => {
          $(date.parentElement).removeClass("focus-range");
@@ -188,7 +183,6 @@ class RangeCalendar extends SiteCalendar {
   }
 
   renderHoverRange = (e) => {
-
     if(this.state.activeButton && this.calendar.hasClass("site-calendar_range")) {
       this.clearHoverRange();
       const startIndex = this.rangeState.rangeButton ? this.rangeState.rangeButton.dateIndex : this.state.activeButton.dateIndex;
@@ -219,7 +213,6 @@ class RangeCalendar extends SiteCalendar {
   }
 
   clearRange = () => {
-
     if(this.rangeState.range) {
       this.rangeState.range.forEach((date, i, arr) => {
         if(i === 0)            $(date.parentElement).removeClass("start-range");
@@ -231,7 +224,6 @@ class RangeCalendar extends SiteCalendar {
   }
 
   renderRange = (/*end*/) => {
-
     if(this.state.activeButton && this.rangeState.rangeButton) {
       const startIndex = this.state.activeButton.dateIndex;
       const endIndex = this.rangeState.rangeButton.dateIndex;
@@ -246,9 +238,7 @@ class RangeCalendar extends SiteCalendar {
   }
 
   setStartButton = (e) => {
-
     if(!this.calendar.hasClass("site-calendar_range") ) {
-
       this.clearRange();
 
       if(this.rangeState.rangeButton && this.state.activeButton.dateIndex >= this.rangeState.rangeButton.dateIndex) {
@@ -264,9 +254,7 @@ class RangeCalendar extends SiteCalendar {
   }
 
   setRangeButton = (e) => {
-
    if (this.calendar.hasClass("site-calendar_range")) {
-
      this.clearRange();
 
      if(this.state.activeButton && this.state.activeButton.dateIndex >= e.currentTarget.dateIndex) {
@@ -289,9 +277,7 @@ class RangeCalendar extends SiteCalendar {
 }
 
 
-
 $(function() {
-
   const siteCalendarList = $(".site-calendar_date");
   siteCalendarList.each((i, calendar) => {
     new SiteCalendar(calendar);
