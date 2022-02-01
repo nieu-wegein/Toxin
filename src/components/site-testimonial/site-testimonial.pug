@@ -1,3 +1,4 @@
+include ../../components/like-button/like-button
 
 mixin site-testimonial(obj)
 
@@ -10,5 +11,5 @@ mixin site-testimonial(obj)
         time.site-testimonial__time #{obj.date}
     .site-testimonial__body
       .site-testimonial__button-wrapper
-        include ../like-button/like-button
+        +like-button(12, true)
       p.site-testimonial__text !{obj.text}

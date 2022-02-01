@@ -3,6 +3,7 @@ include ../../../components/site-dropdown/site-dropdown
 include ../../../components/site-checkbox/site-checkbox
 include ../../../components/site-radio/site-radio
 include ../../../components/site-section/site-section
+include ../../../components/like-button/like-button
 include ../../../components/rate-button/rate-button
 include ../../../components/site-range-slider/site-range-slider
 include ../../../components/site-button/site-button
@@ -13,6 +14,7 @@ include ../../../components/site-testimonial/site-testimonial
 
 
 -
+  const imgPath = "/pages/UIKit/form-elements/img/";
   const firstList = [
     {label: "Text field", note: "Default",  id: "email", text: "Email"},
     {label: "Text field", note: "Hover / Focus", id: "awesome"},
@@ -32,19 +34,19 @@ include ../../../components/site-testimonial/site-testimonial
     {label: "Date dropdown", id: "arrival", text: "ДД.ММ.ГГГГ", shared: {for: "ui-page-calendar"}, modifiers: {calendar: {type: "range"}, buttons: true}},
     {label: "Filter date dropdown", id: "filter-dates", text: "ДД.ММ.ГГГГ - ДД.ММ.ГГГГ", modifiers: {calendar: {type: "range"}, buttons: true}},
     {label: "Subscription text field", id: "subscription", text: "Email", modifiers: {submit: true}},
-    {label: "Dropdown", note: "Default", id: "dd-default", text: "Комнаты",
+    {label: "Dropdown", note: "Default", id: "dd-rooms-default", text: "Комнаты",
       options: [
         {text: "Спальни", name: "bedrooms", declination: ["спальня", "спальни", "спален"]},
-        {text: "Кровать", name: "beds", declination: ["кровать", "кровати", "кроватей"]},
+        {text: "Кровати", name: "beds", declination: ["кровать", "кровати", "кроватей"]},
         {text: "Ванные комнаты", name: "bathrooms", declination: ["ванная комната", "ванные комнаты", "ванных комнат"]}
       ]},
-    {label: "Dropdown", note: "Expanded", id: "dd-expanded", text: "Комнаты",
+    {label: "Dropdown", note: "Expanded", id: "dd-rooms-expanded", text: "Комнаты",
       options: [
         {text: "Спальни", name: "bedrooms", declination: ["спальня", "спальни", "спален"]},
-        {text: "Кровать", name: "beds", declination: ["кровать", "кровати", "кроватей"]},
+        {text: "Кровати", name: "beds", declination: ["кровать", "кровати", "кроватей"]},
         {text: "Ванные комнаты", name: "bathrooms", declination: ["ванная комната", "ванные комнаты", "ванных комнат"]}
       ]},
-    {label: "Dropdown", id: "dd-buttons-expanded", text: "Сколько гостей",
+    {label: "Dropdown", id: "dd-guests-expanded", text: "Сколько гостей",
       options: [
         {text: "Взрослые", name: "adults", declination: ["гость", "гостя", "гостей"]},
         {text: "Дети", name: "children", declination: ["гость", "гостя", "гостей"]},
@@ -52,7 +54,7 @@ include ../../../components/site-testimonial/site-testimonial
       ],
       modifiers: {buttons: true}
     },
-    {label: "Dropdown", id: "dd-buttons-filled", text: "Сколько гостей",
+    {label: "Dropdown", id: "dd-guests-completed", text: "Сколько гостей",
       options: [
         {text: "Взрослые", name: "adults",  declination: ["гость", "гостя", "гостей"]},
         {text: "Дети", name: "children", declination: ["гость", "гостя", "гостей"]},
@@ -81,7 +83,7 @@ include ../../../components/site-testimonial/site-testimonial
         {label: "Телевизор", id: "TV"},
         {label: "Шампунь", id: "shampoo"},
       ],
-      modifiers: {expandable: true}},
+      modifiers: {expandable: "collapsed"}},
     {fieldset: "Expandable checkbox list", options: [
         {label: "Завтрак", id: "breakfast-2"},
         {label: "Письменный стол", id: "desk-2", checked: true},
@@ -90,7 +92,7 @@ include ../../../components/site-testimonial/site-testimonial
         {label: "Телевизор", id: "TV-2"},
         {label: "Шампунь", id: "shampoo-2"},
       ],
-      modifiers: {expandable: true}},
+      modifiers: {expandable: "expanded"}},
     {fieldset: "Rich checkbox buttons", options: [
         {label: "Широкий коридор", id: "wide-corridor", note: "Ширина коридоров в номере <br> не менее 91 см."},
         {label: "Помощник для инвалидов", id: "assistant", note: "На 1 этаже вас встретит специалист  и проводит до номера."},
@@ -104,6 +106,11 @@ include ../../../components/site-testimonial/site-testimonial
           {label: "Мужчина", id: "man", name: "sex", checked: true},
           {label: "Женщина", id: "woman", name: "sex"},
         ]},
+  ]
+
+  const rateButtonsList = [
+    {name: "sampleStars1", id: "ui-stars", stars: 4},
+    {name: "sampleStars2", id: "ui-rate", stars: 5}
   ]
 
   const rangeSliderList = [
@@ -123,7 +130,7 @@ include ../../../components/site-testimonial/site-testimonial
   const testimonialsList = [{
     name: "Мурад Сарафанов", date: "5 дней назад",
     text: "Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару  — никто не жаловался из соседей.",
-    img: path + "user1.png"
+    img: imgPath + "user1.png"
   }]
 
 doctype html
@@ -159,12 +166,12 @@ html(lang = "en")
           +site-checkbox-group(checkboxList[1])
           +site-section({h3: "Like Button"})
             .like-buttons-wrapper
-              include ../../../components/like-button/like-button
-              include ../../../components/like-button/like-button
+              +like-button(2)
+              +like-button(12, true)
           +site-section({h3: "Rate Button"})
             .rate-buttons-wrapper
-              +rate-button({name: "sampleStars1", id: "ui-stars"})
-              +rate-button({name: "sampleStars2", id: "ui-rate"})
+              +rate-button(rateButtonsList[0])
+              +rate-button(rateButtonsList[1])
         .content__column
           .range-slider-wrapper
             +site-range-slider(rangeSliderList[0])
@@ -173,7 +180,7 @@ html(lang = "en")
               each button in buttonsList
                 +site-button(button)
           +site-section({h3: "Pagination"})
-            +site-pagination()
+            +site-pagination({url: "/form-elements/form-elements.html", count: 3})
         .content__column
           .site-dropdowns-wrapper
             +site-dropdown(secondList[4])

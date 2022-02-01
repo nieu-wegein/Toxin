@@ -1,16 +1,23 @@
 include ../site-button/site-button
 
-mixin site-pagination()
-
-  -const buttonsList = ["1", "2", "3", "...", "15"]
+mixin site-pagination(obj={})
 
   .site-pagination
-    ul.site-pagination__pages
-      li
-        a.site-pagination__link.button_primary !{buttonsList[0]}
-      -for(let i = 1; i < buttonsList.length; i++)
+    nav.site-pagination__navigation
+      ul.site-pagination__pages-list
         li
-          a.site-pagination__link !{buttonsList[i]}
-      li
-        a.site-pagination__link.button_secondary.material-icons arrow_forward
+          a(class = "site-pagination__item site-pagination__item_hidden site-pagination__item_arrow" href = obj.url) arrow_back
+        li
+          a(class = "site-pagination__item site-pagination__item_active" href =  obj.url) 1
+        li
+          span(class = "site-pagination__item site-pagination__item_hidden site-pagination__item_ellipsis") ...
+        -for(let i = 2; i <= obj.count; i++)
+          li
+            a(class = "site-pagination__item site-pagination__item_link" href = obj.url) !{i}
+        li
+          span(class = "site-pagination__item site-pagination__item_ellipsis") ...
+        li
+          span(class = "site-pagination__item site-pagination__item_count") 15
+        li
+          a(class = "site-pagination__item site-pagination__item_arrow" href = obj.url) arrow_forward
     .site-pagination__summary 1 – 12 из 100+ вариантов аренды

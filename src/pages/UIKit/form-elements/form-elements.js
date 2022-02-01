@@ -14,24 +14,44 @@ $(function() {
   const inputList = $(".site-input");
   inputList[1].value = "This is pretty awesome"
 
-  const likeButtons = $(".like-button");
 
-  $(likeButtons[1]).addClass("like-button_active");
-  $(likeButtons[2]).addClass("like-button_active");
-  $(".like-button__counter", likeButtons[0]).text("2");
-  $(".like-button__counter", likeButtons[1]).text("12");
-  $(".like-button__counter", likeButtons[2]).text("12");
+  const dropdownList = $(".site-dropdown_counting-dropdown").get();
 
-  const rateButtons = $(".rate-button").get();
-  $("[value='5 stars']", rateButtons[0]).attr("checked", true);
-  $("[value='4 stars']", rateButtons[1]).attr("checked", true);
+  dropdownList[1].objectModel.initState({
+    bedrooms: 2,
+    beds: 2,
+    bathrooms: 1
+  })
 
-  $(".site-dropdown__window", $("#dd-expanded")).show();
-  $(".site-dropdown__window", $("#dd-buttons-expanded")).show();
-  $(".site-dropdown__window", $("#dd-buttons-filled")).show();
+  dropdownList[2].objectModel.initState({
+    bedrooms: 2,
+    beds: 2,
+    bathrooms: 0
+  })
+
+  dropdownList[4].objectModel.initState({
+    adults: 2,
+    children: 1
+  })
 
 
-  $(".site-dropdown__window", $("#dd-buttons-filled")).show();
+  for(let i = 2; i < 5; i++) {
+    $(".site-dropdown__header", dropdownList[i]).click()
+  }
 
-  $(".site-fieldset__legend_expand").get()[1].click();
+
+  const calendarList =  $(".site-calendar");
+
+  calendarList[0].objectModel.initState({
+    month: 7,
+    year: 2019
+  })
+
+  calendarList[1].objectModel.initState({
+    today: new Date("2019, 8, 8")
+  })
+
+  calendarList[0].objectModel.chooseEndDate(19)
+  calendarList[1].objectModel.chooseStartDate(19).chooseEndDate(23)
+
 })

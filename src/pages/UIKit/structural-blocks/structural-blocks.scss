@@ -1,10 +1,13 @@
 @import "../../../fonts/fonts";
 @import "../../../variables/variables";
 @import "../../../components/site-button/site-button";
+@import "../../../components/site-logo/site-logo";
 @import "../../../components/form-element/form-element";
+@import "../../../components/site-section/site-section";
 @import "../../../components/site-input/site-input";
 @import "../../../components/site-header/site-header";
-@import "../../../components/site-footer/site-footer.scss";
+@import "../../../components/site-footer/site-footer";
+
 
 //Временно для ПП
 body {
@@ -18,6 +21,11 @@ body::-webkit-scrollbar {
 
 .structural-blocks-page {
   background-color: #F4F4F6;
+
+  .header {
+    padding: 30px;
+    margin: 0 auto 28px;
+  }
 
   .site-header {
     margin-bottom: 40px;
@@ -65,10 +73,4 @@ body::-webkit-scrollbar {
       }
     }
   }
-}
-
-
-.structural-blocks-header {
-  padding: 2.08%;
-  margin: 0 auto 28px;
 }

@@ -1,6 +1,5 @@
 include site-dropdown__header/site-dropdown__header
 include site-dropdown__list/site-dropdown__list
-include site-dropdown__footer/site-dropdown__footer
 include ../form-element/form-element
 include ../site-calendar/site-calendar
 
@@ -52,6 +51,8 @@ mixin site-dropdown(obj = {})
           else if modifiers.calendar
             +site-calendar(calendarClassList)
           if modifiers.buttons
-            +site-dropdown__footer()
+            .site-dropdown__footer(tabindex= "-1")
+              +site-button({tag: "button", text: "Очистить", classList: "site-dropdown__button-clear"})
+              +site-button({tag: "button", text: "Применить", classList: "site-dropdown__button-apply"})
     if obj.description
       span.form-element__description !{obj.description}

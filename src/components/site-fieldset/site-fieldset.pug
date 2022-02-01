@@ -6,9 +6,16 @@ mixin site-fieldset(legend, modifiers)
 
      if (modifiers) {
          if (modifiers.expandable) {
-           legendClassList.push("site-fieldset__legend_expand");
-           areaClassList.push("site-fieldset__area_shrunk");
            tabindex = 0;
+
+           if (modifiers.expandable === "expanded") {
+             legendClassList.push("site-fieldset__legend_expand site-fieldset__legend_expand-reverse");
+             areaClassList.push("site-fieldset__area_expanded");
+           }
+           else if (modifiers.expandable === "collapsed") {
+             legendClassList.push("site-fieldset__legend_expand");
+             areaClassList.push("site-fieldset__area_collapsed");
+           }
          }
          if (modifiers.legend === "hidden") {
            legendClassList.push("site-fieldset__legend_hidden");

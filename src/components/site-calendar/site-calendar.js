@@ -2,91 +2,96 @@ import $ from "../../jquery-3.6.0.min";
 
 const monthsList = ["Январь", "Февраль", "Март", "Апрель",
                     "Май", "Июнь", "Июль", "Август",
-                    "Сентябрь", "Октябрь", "Ноябрь", "Декабрь"]
+                    "Сентябрь", "Октябрь", "Ноябрь", "Декабрь"];
 
 class SiteCalendar {
 
-  constructor(calendar) {
+  constructor(calendar, state) {
     calendar.objectModel = this;
+
     this.calendar = $(calendar);
     this.headerText = $(".site-calendar__header-text", calendar);
     this.dateSection = $(".site-calendar__date-section", calendar);
-    this.dates = $(".site-calendar__date", this.dateSection).get()
+    this.dates = $(".site-calendar__date", this.dateSection).get();
     this.optionalRow =  $(".site-calendar__optional-row", this.dateSection);
-    this.buttonPrev = $(".site-calendar__prev-button", calendar)
-    this.buttonNext = $(".site-calendar__next-button", calendar)
+    this.buttonPrev = $(".site-calendar__prev-button", calendar);
+    this.buttonNext = $(".site-calendar__next-button", calendar);
     this.today = new Date();
 
-    this.state = {
-      year: this.today.getFullYear(),
-      month: this.today.getMonth(),
-      date: this.today.getDate()
-    };
+    this.initState(state);
 
-    this.render()
-
-    $(this.dates).click(this.setActiveButton)
-    this.buttonPrev.click(this.setPrevMonth)
-    this.buttonNext.click(this.setNextMonth)
+    $(this.dates).click(this.setActiveButton);
+    this.buttonPrev.click(this.setPrevMonth);
+    this.buttonNext.click(this.setNextMonth);
   }
 
-  render = () => {
+  initState(state) {
+      this.today = state?.today || this.today;
+      this.state = {
+        ...this.state,
+        todayY: this.today.getFullYear(),
+        todayM: this.today.getMonth(),
+        todayD: this.today.getDate(),
+        year: state?.year || this.today.getFullYear(),
+        month: state?.month || this.today.getMonth(),
+      };
+    this.render();
+  }
+
+
+  render() {
+    this.state.page = new Date(this.state.year, this.state.month);
 
     let firstDayIndex = new Date(this.state.year, this.state.month, 1).getDay();
     firstDayIndex = firstDayIndex === 0 ?  6 : firstDayIndex - 1;
     const lastDate = new Date(this.state.year, this.state.month + 1, 0).getDate();
 
-    this.prevLastDate = new Date(this.state.year, this.state.month,0).getDate();
-    this.prevShowingDays = firstDayIndex - 1;
-    this.prevStartFrom = this.prevLastDate - this.prevShowingDays;
+    const prevLastDate = new Date(this.state.year, this.state.month,0).getDate();
+    const prevShowingDays = firstDayIndex - 1;
+    const prevStartFrom = prevLastDate - prevShowingDays;
 
-    this.nextFirstDayIndex = this.prevShowingDays + lastDate + 1;
-    this.nextShowingDays = this.dates.length - 1;
-
+    const nextFirstDayIndex = prevShowingDays + lastDate + 1;
+    const nextShowingDays = this.dates.length - 1;
 
 
     if(firstDayIndex + lastDate > 35) this.optionalRow.show();
     else this.optionalRow.hide();
 
-
     this.headerText.text(monthsList[this.state.month] + " " + this.state.year);
 
-    for (let i = 0, g = this.prevStartFrom; i <= this.prevShowingDays; i++, g++ ) {
+
+    for (let i = 0, g = prevStartFrom; i <= prevShowingDays; i++, g++ ) {
       $(this.dates[i]).attr("disabled", true);
       this.dates[i].dateIndex = i;
       this.dates[i].innerText = g;
     }
 
     for (let i = firstDayIndex, g = 1; g <= lastDate; i++, g++) {
-      $(this.dates[i]).data("fulldate", (g.toString().length > 1 ? g : "0" + g) + "." + ((this.state.month + 1).toString().length > 1 ? this.state.month + 1 : "0" + (this.state.month+1)) + "." + this.state.year)
       $(this.dates[i]).attr("disabled", false);
       this.dates[i].dateIndex = i;
       this.dates[i].innerText = g;
     }
 
-    for (let i = this.nextFirstDayIndex, g = 1; i <= this.nextShowingDays; i++, g++) {
+    for (let i = nextFirstDayIndex, g = 1; i <= nextShowingDays; i++, g++) {
       $(this.dates[i]).attr("disabled", true);
       this.dates[i].dateIndex = i;
       this.dates[i].innerText = g;
     }
 
 
-    if(this.state.month === this.today.getMonth() && this.state.year === this.today.getFullYear()) {
-      if(this.state.todayButton)
-        $(this.state.todayButton).addClass("button_secondary")
-      else {
-        this.state.todayButton = this.dates.find((date) => date.innerText == this.today.getDate() && $(date).data("fulldate"));
-        $(this.state.todayButton).addClass("button_secondary");
-      }
+    if(+this.state.page === +this.state.activePage) {
+        $(this.state.activeButton).addClass("site-calendar__date_active");
     }
-    else $(this.state.todayButton).removeClass("button_secondary")
 
+    if(this.state.todayButton) {
+      $(this.state.todayButton).removeClass("site-calendar__date_today");
+      this.state.todayButton = null;
+    }
+    if(this.state.month === this.state.todayM && this.state.year === this.state.todayY) {
+        this.state.todayButton = this.findButton(this.state.todayD)
+        $(this.state.todayButton).addClass("site-calendar__date_today");
+    }
   }
-
-  // updateState = (obj) => {
-  //   this.state = {...this.state, ...obj};
-  //   this.render();
-  // }
 
   setPrevMonth = () => {
     if (this.state.month === 0) {
@@ -95,8 +100,7 @@ class SiteCalendar {
     }
     else this.state.month--;
 
-    $(this.state.activeButton).removeClass("button_primary");
-    this.state.activeButton = null;
+    $(this.state.activeButton).removeClass("site-calendar__date_active");
     this.render();
   }
 
@@ -107,8 +111,7 @@ class SiteCalendar {
     }
     else this.state.month++;
 
-    $(this.state.activeButton).removeClass("button_primary");
-    this.state.activeButton = null;
+    $(this.state.activeButton).removeClass("site-calendar__date_active");
     this.render();
   }
 
@@ -124,60 +127,105 @@ class SiteCalendar {
     this.calendar.removeClass(className)
   }
 
-  onDatesClick = (handler) => {
+  onDateClick = (handler) => {
     $(this.dates).click(handler);
+  }
+
+  chooseDate = (date) => {
+   this.findButton(date).click();
+
+    return this
+  }
+
+  findButton(number) {
+    return this.dates.find((date) => date.innerText == number && !$(date).attr("disabled"));
   }
 
   setActiveButton = (e) => {
     if (!this.calendar.hasClass("site-calendar_range")) {
-      $(this.state.activeButton).removeClass("button_primary");
-      $(e.currentTarget).addClass("button_primary");
+      $(this.state.activeButton).removeClass("site-calendar__date_active");
+      $(e.currentTarget).addClass("site-calendar__date_active");
       this.state.activeButton = e.currentTarget;
-      this.state.activeDate = $(e.currentTarget).data("fulldate");
+      this.state.activeDate = e.currentTarget.innerText;
+      this.state.activePage = this.state.page
     }
   }
 }
 
 
-
 class RangeCalendar extends SiteCalendar {
-
   constructor(calendar) {
     super(calendar)
 
     this.rangeState = {}
+    this.renderRangeCalendar()
+
     this.buttonPrev.click(this.setPrevMonth);
     this.buttonNext.click(this.setNextMonth);
     $(this.dates).click(this.setStartButton);
     $(this.dates).click(this.setRangeButton);
     $(this.dates).hover(this.renderHoverRange);
-    this.dateSection.mouseleave(this.clearHoverRange);
+    this.dateSection.mouseout(this.clearHoverRange);
+
   }
 
+  renderRangeCalendar() {
+
+    if(+this.state.page === +this.rangeState.rangePage)
+      $(this.rangeState.rangeButton).addClass("site-calendar__date_end");
+
+    this.renderRange()
+
+  }
+
+  renderActivePage = () => {
+    this.clearRange()
+    $(this.rangeState.rangeButton).removeClass("site-calendar__date_end");
+
+    this.initState({
+      year: this.state.activePage.getFullYear(),
+      month: this.state.activePage.getMonth()
+    })
+
+    this.renderRangeCalendar()
+  }
+
+  renderRangePage = () => {
+    this.clearRange()
+    $(this.state.activeButton).removeClass("site-calendar__date_active");
+    $(this.rangeState.rangeButton).removeClass("site-calendar__date_end");
+
+    this.initState({
+      year: this.rangeState.rangePage.getFullYear(),
+      month: this.rangeState.rangePage.getMonth()
+    })
+
+    this.renderRangeCalendar()
+  }
+
+
   setPrevMonth = () => {
-    $(this.rangeState.rangeButton).removeClass("button_primary");
-    this.rangeState.rangeButton = null;
-    this.clearRange();
+    this.clearRange()
+    $(this.rangeState.rangeButton).removeClass("site-calendar__date_end");
+    this.renderRangeCalendar()
   }
 
   setNextMonth = () => {
-    $(this.rangeState.rangeButton).removeClass("button_primary");
-    this.rangeState.rangeButton = null;
-    this.clearRange();
+    this.clearRange()
+    $(this.rangeState.rangeButton).removeClass("site-calendar__date_end");
+    this.renderRangeCalendar()
   }
 
-  clearHoverRange = () => {
+  clearHoverRange = (e) => {
     if(this.rangeState.hoverRange) {
       this.rangeState.hoverRange.forEach((date, i) => {
-         $(date.parentElement).removeClass("focus-range");
-         if (i === 0 && date === this.rangeState.rangeButton) $(date.parentElement).addClass("end-range");
+        $(date).removeClass("site-calendar__date_hov-range");
       })
     }
 
     if(this.state.hoverRange) {
       this.state.hoverRange.forEach((date, i) => {
-        $(date.parentElement).removeClass("focus-range");
-        if (i === this.state.hoverRange.length - 1 && date === this.state.activeButton) $(date.parentElement).addClass("start-range");
+        $(date).removeClass("site-calendar__date_hov-range");
       })
     }
   }
@@ -185,29 +233,44 @@ class RangeCalendar extends SiteCalendar {
   renderHoverRange = (e) => {
     if(this.state.activeButton && this.calendar.hasClass("site-calendar_range")) {
       this.clearHoverRange();
-      const startIndex = this.rangeState.rangeButton ? this.rangeState.rangeButton.dateIndex : this.state.activeButton.dateIndex;
+      let startIndex;
       const endIndex = e.currentTarget.dateIndex;
-      const range = this.dates.slice(startIndex, endIndex+1);
 
+      if(+this.state.page === +this.rangeState.rangePage)
+        startIndex = this.rangeState.rangeButton.dateIndex
+       else if(+this.state.page === +this.state.activePage)
+        startIndex = this.state.activeButton.dateIndex;
+      else if (this.state.page > this.state.activePage  || this.rangeState.rangePage && this.state.page > this.rangeState.rangePage) {
+        startIndex = 0;
+      }
+      else return;
+
+      const range = this.dates.slice(startIndex, endIndex+1);
       this.rangeState.hoverRange = range;
 
-      range.forEach((date, i) => {
-        if (i === 0) $(date.parentElement).removeClass("end-range");
-        $(date.parentElement).addClass("focus-range");
+      range.forEach((date) => {
+        $(date).addClass("site-calendar__date_hov-range");
       })
     }
 
     if(this.rangeState.rangeButton && !(this.calendar.hasClass("site-calendar_range"))) {
       this.clearHoverRange();
       const startIndex = e.currentTarget.dateIndex;
-      const endIndex = this.state.activeButton ? this.state.activeButton.dateIndex : this.rangeState.rangeButton.dateIndex;
-      const range = this.dates.slice(startIndex, endIndex+1);
+      let endIndex;
 
+      if(+this.state.page === +this.state.activePage)
+         endIndex = this.state.activeButton.dateIndex;
+      else if(+this.state.page === +this.rangeState.rangePage)
+        endIndex = this.rangeState.rangeButton.dateIndex
+      else if (this.state.page < this.rangeState.rangePage  || this.state.page < this.rangeState.rangePage)
+         endIndex = this.dates.length - 1;
+
+
+      const range = this.dates.slice(startIndex, endIndex+1);
       this.state.hoverRange = range;
 
       range.forEach((date, i) => {
-        if (i === range.length - 1) $(date.parentElement).removeClass("start-range");
-        $(date.parentElement).addClass("focus-range");
+        $(date).addClass("site-calendar__date_hov-range");
       })
     }
   }
@@ -215,37 +278,51 @@ class RangeCalendar extends SiteCalendar {
   clearRange = () => {
     if(this.rangeState.range) {
       this.rangeState.range.forEach((date, i, arr) => {
-        if(i === 0)            $(date.parentElement).removeClass("start-range");
-        if(i === arr.length-1) $(date.parentElement).removeClass("end-range");
-        $(date.parentElement).removeClass("range");
+        $(date).removeClass("site-calendar__date_range");
       })
       this.rangeState.range = null;
     }
   }
 
-  renderRange = (/*end*/) => {
-    if(this.state.activeButton && this.rangeState.rangeButton) {
-      const startIndex = this.state.activeButton.dateIndex;
-      const endIndex = this.rangeState.rangeButton.dateIndex;
+  renderRange = () => {
+    if(this.state.activeButton && this.rangeState.rangeButton
+      && +this.state.activePage <= +this.state.page && +this.state.page <= +this.rangeState.rangePage)
+    {
+      const startIndex = this.state.activePage < this.state.page ?  0 : this.state.activeButton.dateIndex;
+      const endIndex = this.state.page < this.rangeState.rangePage ? this.dates.length - 1 : this.rangeState.rangeButton.dateIndex;
       this.rangeState.range = this.dates.slice(startIndex, endIndex + 1);
 
-      this.rangeState.range.forEach((date, i, arr) => {
-        if (i === 0) $(date.parentElement).addClass("start-range");
-        if (i === arr.length - 1) $(date.parentElement).addClass("end-range");
-        $(date.parentElement).addClass("range");
+      this.rangeState.range.forEach((date) => {
+        $(date).addClass("site-calendar__date_range");
       })
     }
   }
 
-  setStartButton = (e) => {
+  chooseStartDate = (date) => {
+    this.calendar.removeClass("site-calendar_range");
+    this.chooseDate(date);
+    this.calendar.addClass("site-calendar_range");
+
+    return this
+  }
+
+  chooseEndDate = (date) => {
+    this.findButton(date).click();
+
+    return this
+  }
+
+  setStartButton = () => {
     if(!this.calendar.hasClass("site-calendar_range") ) {
       this.clearRange();
 
-      if(this.rangeState.rangeButton && this.state.activeButton.dateIndex >= this.rangeState.rangeButton.dateIndex) {
-        $(this.rangeState.rangeButton).removeClass("button_primary");
+      if(this.rangeState.rangeButton && (this.state.page > this.rangeState.rangePage ||
+        +this.state.page === +this.rangeState.rangePage && this.state.activeButton.dateIndex >= this.rangeState.rangeButton.dateIndex))
+      {
+        $(this.rangeState.rangeButton).removeClass("site-calendar__date_end");
         this.rangeState.rangeButton = null;
-        this.rangeState.endDate = null;
-        this.setActiveButton(e);
+        this.rangeState.rangePage = null;
+        this.rangeState.rangeDate = null;
       }
       else {
         this.renderRange();
@@ -254,25 +331,29 @@ class RangeCalendar extends SiteCalendar {
   }
 
   setRangeButton = (e) => {
-   if (this.calendar.hasClass("site-calendar_range")) {
-     this.clearRange();
+    if (this.calendar.hasClass("site-calendar_range")) {
+      this.clearRange();
 
-     if(this.state.activeButton && this.state.activeButton.dateIndex >= e.currentTarget.dateIndex) {
-       $(this.rangeState.rangeButton).removeClass("button_primary")
-       this.rangeState.rangeButton = null;
-       this.rangeState.endDate = null;
-       this.calendar.removeClass("site-calendar_range");
-       this.setActiveButton(e);
-       this.calendar.addClass("site-calendar_range");
-     }
-     else {
-       $(this.rangeState.rangeButton).removeClass("button_primary");
-       $(e.currentTarget).addClass("button_primary");
-       this.rangeState.rangeButton = e.currentTarget;
-       this.rangeState.endDate = $(e.currentTarget).data("fulldate");
-       this.renderRange();
-     }
-   }
+      if(this.state.activeButton && (this.state.page < this.state.activePage ||
+        +this.state.page === +this.state.activePage && e.currentTarget.dateIndex <= this.state.activeButton.dateIndex))
+      {
+        $(this.rangeState.rangeButton).removeClass("site-calendar__date_end")
+        this.rangeState.rangeButton = null;
+        this.rangeState.rangeDate = null;
+        this.rangeState.rangePage = null
+        this.calendar.removeClass("site-calendar_range");
+        this.setActiveButton(e);
+        this.calendar.addClass("site-calendar_range");
+      }
+      else {
+        $(this.rangeState.rangeButton).removeClass("site-calendar__date_end");
+        $(e.currentTarget).addClass("site-calendar__date_end");
+        this.rangeState.rangeButton = e.currentTarget;
+        this.rangeState.rangeDate = e.currentTarget.innerText
+        this.rangeState.rangePage = this.state.page
+        this.renderRange();
+      }
+    }
   }
 }
 
@@ -287,5 +368,4 @@ $(function() {
   rangeCalendarList.each((i, calendar) => {
     new RangeCalendar(calendar);
   })
-
 })

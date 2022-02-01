@@ -1,3 +1,5 @@
+include ../../helpers/separate-price-js
+
 mixin site-range-slider(obj)
 
   -let middle = Math.floor((obj.max + obj.min) / 2)
@@ -7,10 +9,10 @@ mixin site-range-slider(obj)
       if obj.label
         label.form-element__label(for = obj.id) !{obj.label}
         .form-element__note
-          span.start-range !{obj.min}
+          span.start-range !{separatePrice(obj.startVal)}
           |₽
           |!{' - '}
-          span.end-range !{obj.max}
+          span.end-range !{separatePrice(obj.endVal)}
           |₽
     .site-range-slider
       .site-range-slider__track

@@ -2,6 +2,11 @@
 import $ from "../../jquery-3.6.0.min";
 import "../site-calendar/site-calendar"
 
+
+const monthsList = ["янв", "фев", "мар", "апр",
+  "мая", "июня", "июля", "авг",
+  "сен", "окт", "ноя", "дек"];
+
 class SiteDropdown {
 
 }
@@ -11,51 +16,77 @@ class CalendarDropdown extends SiteDropdown {
   constructor(dropdown) {
     super(dropdown)
     dropdown.objectModel = this;
+    this.state = {};
     this.dropdown = $(dropdown);
     this.header = $(".site-dropdown__header", dropdown);
     this.textArea = $(".site-dropdown__text-area", this.header);
     this.window = $(".site-dropdown__window", dropdown);
     this.calendar = $(".site-calendar", this.window)[0].objectModel;
-    this.footer = $(".site-dropdown__footer", dropdown);
-    this.buttonClear = $(".site-dropdown__button-clear", this.footer);
-    this.buttonApply = $(".site-dropdown__button-apply", this.footer);
+    this.footer = $(".site-dropdown__footer", this.window)[0];
+    if(this.footer) {
+      this.buttonClear = $(".site-dropdown__button-clear", this.footer);
+      this.buttonApply = $(".site-dropdown__button-apply", this.footer);
+    }
 
     this.header.click(this.toggleWindow);
-    this.calendar.onDatesClick(this.setHeaderText);
-    if(this.buttonClear) this.buttonClear.click(this.clearState);
-    if(this.buttonApply) this.buttonApply.click(this.apply);
-    // this.dropdown.focusout(this.onFocusLoose);
+    this.calendar.onDateClick(this.updateState);
+    if(this.footer) {
+      this.buttonClear.click(this.clearState);
+      this.buttonApply.click(this.apply);
+    }
+    else
+     this.dropdown.focusout(this.onFocusLoose);
 
   }
 
-  // onFocusLoose = (e) => {
-  //   if (this.dropdown.has(e.relatedTarget).length === 0)
-  //     $(this.window).hide();
-  // }
+   onFocusLoose = (e) => {
+     if (this.dropdown.has(e.relatedTarget).length === 0)
+       $(this.window).hide();
+   }
 
-  toggleWindow = () => {
-    $(this.window).toggle();
+  updateState = () => {
+
+    this.state = undefined;
+
+    if (this.calendar.state.activePage) {
+      this.state = {
+        day: this.calendar.state.activeDate,
+        month: String(this.calendar.state.activePage.getMonth() + 1),
+        year: String(this.calendar.state.activePage.getFullYear())
+      }
+    }
+
+    this.setHeaderText()
   }
 
   setHeaderText = () => {
-    let defaultText = this.header.data("text")
 
-    if (this.calendar.state.activeDate) {
-      this.textArea.text(this.calendar.state.activeDate)
-      if (this.footer) this.buttonClear.css("visibility", "visible");
+    let text = this.header.data("text");
+    let footer = "hidden";
+
+    if (this.state) {
+      const day = this.state.day.length < 2 ? "0" + this.state.day : this.state.day;
+      const month = this.state.month.length < 2 ? "0" + this.state.month : this.state.month;
+      text = day + "." + month + "." + this.state.year;
+      footer = "visible";
     }
-    else
-      this.textArea.text(defaultText)
+
+    if (this.footer) this.buttonClear.css("visibility", footer);
+     this.textArea.text(text)
   }
 
   clearState = () => {
-    $(this.calendar.state.activeButton).removeClass("button_primary")
-    this.calendar.state.activeButton = null;
-    this.calendar.state.activeDate = null;
-    this.setHeaderText();
-
     this.buttonApply.focus();
-    this.buttonClear.css("visibility", "hidden");
+
+    $(this.calendar.state.activeButton).removeClass("site-calendar__date_active");
+    this.calendar.state.activeButton = null;
+    this.calendar.state.activePage = null;
+    this.calendar.state.activeDate= null;
+    this.updateState();
+  }
+
+  toggleWindow = () => {
+    $(this.window).toggle();
   }
 
   apply = () => {
@@ -68,59 +99,98 @@ class RangeCalendarDropdown extends CalendarDropdown {
   constructor(dropdown) {
     super(dropdown);
     dropdown.objectModel = this;
+
+    this.rangeState;
     this.calendar.removeClass("site-calendar_range");
 
-    this.calendar.onDatesClick(this.setHeaderRangeText);
-    this.calendar.onDatesClick(this.changeState);
+    this.calendar.onDateClick(this.updateRangeState);
+    this.calendar.onDateClick(this.changeState);
     this.buttonClear.click(this.clearRangeState);
   }
 
-  setHeaderRangeText = () => {
-    let text;
-    if (this.calendar.state.activeDate)
-      text = this.calendar.state.activeDate;
-    if(this.calendar.rangeState && this.calendar.rangeState.endDate)
-      text +=  " - " + this.calendar.rangeState.endDate;
+  updateRangeState = () => {
 
-    this.textArea.text(text)
+    this.rangeState = undefined;
+
+    if (this.calendar.rangeState.rangePage) {
+      this.rangeState = {
+        day: this.calendar.rangeState.rangeDate,
+        month: String(this.calendar.rangeState.rangePage.getMonth() + 1),
+        year: String(this.calendar.rangeState.rangePage.getFullYear())
+      }
+    }
+
+    this.setHeaderText()
+  }
+
+  setHeaderText = () => {
+
+    let text1 = this.header.data("text").split("-")[0];
+    let text2 = this.header.data("text").split("-")[1]
+    let footer = "hidden";
+
+    if (this.state) {
+      const day = this.state.day.length < 2 ? "0" + this.state.day : this.state.day;
+      const month = monthsList[this.state.month - 1];
+      const year = this.state.year == this.calendar.state.todayY ? "" : this.state.year;
+      text1 = day + " " + month + " " + year;
+      footer = "visible"
+    }
+
+    if (this.rangeState) {
+      const day = this.rangeState.day.length < 2 ? "0" + this.rangeState.day : this.rangeState.day;
+      const month = monthsList[this.rangeState.month - 1];
+      const year = this.rangeState.year == this.calendar.state.todayY ? "" : this.rangeState.year;
+      text2 = day + " " + month + " " + year;
+      footer = "visible"
+    }
+
+    this.textArea.text(text1 + " - " + text2)
+
+    if (this.footer)
+      this.buttonClear.css("visibility", footer);
   }
 
   changeState = () => {
-    if(!this.calendar.hasClass(".site-calendar_range")) {
-      this.calendar.addClass("site-calendar_range")
-    }
+    this.calendar.addClass("site-calendar_range")
   }
 
   clearRangeState = () => {
-    $(this.calendar.rangeState.rangeButton).removeClass("button_primary")
+    $(this.calendar.rangeState.rangeButton).removeClass("site-calendar__date_end")
     this.calendar.removeClass("site-calendar_range")
     this.calendar.rangeState.rangeButton = null;
-    this.calendar.rangeState.endDate = null;
+    this.calendar.rangeState.rangePage = null;
+    this.calendar.rangeState.rangeDate = null;
     this.calendar.clearRange();
+    this.updateRangeState();
   }
 }
 
 
 class SharedCalendarDropdown {
   constructor(dropdown) {
-     dropdown.objectModel = this;
      this.dropdown = $(dropdown);
+    dropdown.objectModel = this;
+
      this.state = {};
      this.header = $(".site-dropdown__header", dropdown);
      this.window = document.getElementById(this.header.data("windowid"));
      this.calendar = this.window.querySelector(".site-calendar").objectModel;
      this.textArea = $(".site-dropdown__text-area", this.header);
-     this.footer = $(".site-dropdown__footer", this.window);
+     this.footer = $(".site-dropdown__footer", this.window)[0];
      this.buttonClear = $(".site-dropdown__button-clear", this.footer);
      this.buttonApply = $(".site-dropdown__button-apply", this.footer);
 
      (this.window.owners = this.window.owners || []).push(this);
 
-      this.header.click(this.toggleWindow)
-      this.calendar.onDatesClick(this.updateState);
-      this.dropdown.focusout(this.onFocusLoose)
-      if(this.buttonClear) this.buttonClear.click(this.clearState);
-      if(this.buttonApply) this.buttonApply.click(this.apply);
+      this.header.click(this.toggleWindow);
+      this.calendar.onDateClick(this.updateState);
+      if(this.footer) {
+        this.buttonClear.click(this.clearState);
+        this.buttonApply.click(this.apply);
+      }
+      else
+        this.dropdown.focusout(this.onFocusLoose);
   }
 
   onFocusLoose = (e) => {
@@ -128,55 +198,75 @@ class SharedCalendarDropdown {
       return owner.dropdown.has(e.relatedTarget).length !== 0
     })
 
-    if(current.length === 0) $(this.window).hide();
+    if(current.length === 0)
+      $(this.window).hide();
   }
 
   toggleWindow = (e) => {
     if(e.currentTarget === this.window.owners[0].header[0])  {
       this.calendar.removeClass("site-calendar_range")
+
+      if(this.calendar.state.activePage && +this.calendar.state.page !== +this.calendar.state.activePage)
+        this.calendar.renderActivePage()
     }
     else if (e.currentTarget === this.window.owners[1].header[0]) {
       this.calendar.addClass("site-calendar_range")
+
+      if(this.calendar.rangeState.rangePage && +this.calendar.state.page !== +this.calendar.rangeState.rangePage)
+        this.calendar.renderRangePage()
     }
     $(this.window).toggle();
   }
 
   updateState = () => {
-    this.window.owners[0].state = {
-      firstDate: this.calendar.state.activeDate,
+
+    this.window.owners[0].state = undefined;
+    this.window.owners[1].state = undefined;
+
+    if (this.calendar.state.activePage) {
+      this.window.owners[0].state = {
+        day: this.calendar.state.activeDate,
+        month: String(this.calendar.state.activePage.getMonth() + 1),
+        year: String(this.calendar.state.activePage.getFullYear())
+      }
     }
-    this.window.owners[1].state = {
-      lastDate: this.calendar.rangeState.endDate
+    if (this.calendar.rangeState.rangePage) {
+        this.window.owners[1].state = {
+          day: this.calendar.rangeState.rangeDate,
+          month: String(this.calendar.rangeState.rangePage.getMonth() + 1),
+          year: String(this.calendar.rangeState.rangePage.getFullYear())
+        }
     }
 
-    this.setHeaderText();
+    this.setHeaderText(this.window.owners[0]);
+    this.setHeaderText(this.window.owners[1]);
   }
 
-  setHeaderText = () => {
-    let firstOwner = this.window.owners[0];
-    let secondOwner = this.window.owners[1];
-    let defaultText0 =  firstOwner.header.data("text");
-    let defaultText1 =  secondOwner.header.data("text");
+  setHeaderText = (owner) => {
+    if (owner.state) {
+      const day = owner.state.day.length < 2 ? "0" + owner.state.day : owner.state.day;
+      const month = owner.state.month.length < 2 ? "0" + owner.state.month : owner.state.month;
+      owner.textArea.text(day + "." + month + "." + owner.state.year)
+    }
+    else
+      owner.textArea.text(owner.header.data("text"))
+
 
     if (this.footer) this.buttonClear.css("visibility", "visible");
-
-    firstOwner.state.firstDate ? firstOwner.textArea.text(firstOwner.state.firstDate) :
-                                 firstOwner.textArea.text(defaultText0);
-
-    secondOwner.state.lastDate ? secondOwner.textArea.text(secondOwner.state.lastDate) :
-                                 secondOwner.textArea.text(defaultText1);
   }
 
-  clearState = () => {
-    $(this.calendar.state.activeButton).removeClass("button_primary");
-    $(this.calendar.rangeState.rangeButton).removeClass("button_primary");
+  clearState = (e) => {
+    $(this.calendar.state.activeButton).removeClass("site-calendar__date_active");
+    $(this.calendar.rangeState.rangeButton).removeClass("site-calendar__date_end");
     this.calendar.state.activeButton = null;
+    this.calendar.state.activePage = null;
+    this.calendar.state.activeDate = null
     this.calendar.rangeState.rangeButton = null;
-    this.calendar.state.activeDate = null;
-    this.calendar.rangeState.endDate = null;
+    this.calendar.rangeState.rangePage = null
+    this.calendar.rangeState.rangeDate = null
     this.calendar.clearRange();
 
-    this.updateState();
+    this.updateState(e);
 
     this.buttonApply.focus();
     this.buttonClear.css("visibility", "hidden");

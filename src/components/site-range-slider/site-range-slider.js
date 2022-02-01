@@ -1,4 +1,5 @@
 import $ from "../../jquery-3.6.0.min";
+import separatePrice from "../../helpers/separate-price";
 
 class RangeSlider {
   constructor(slider) {
@@ -19,22 +20,20 @@ class RangeSlider {
 
   setStartValue = () => {
     //ширина слайдера минус место под кнопку - так же как и в стандартном инпуте
-    const sliderWidth = this.slider.width()/2 - 16; // вынести за пределы функции, если не нужен адаптив для элементов формы
+    const sliderWidth = this.slider.width()/2 - 16; // если не нужен адаптив для элементов формы, можно вынести за пределы функции
     const left = (this.rangeInputs[0].value - this.rangeInputs[0].min) / (this.rangeInputs[0].max - this.rangeInputs[0].min) * sliderWidth;
 
-
-    this.startRangeDisplay[0].innerText = this.rangeInputs[0].value;
+    this.startRangeDisplay[0].innerText = separatePrice(this.rangeInputs[0].value);
     this.fill.css("left", left);
   }
 
   setEndValue = () => {
-    const sliderWidth = this.slider.width()/2 - 16;
-    const right = sliderWidth - ((this.rangeInputs[1].value - this.rangeInputs[1].min) / (this.rangeInputs[1].max - this.rangeInputs[1].min) *  sliderWidth);
+    const sliderWidth = this.slider.width()/2 - 16; // если не нужен адаптив для элементов формы, можно вынести за пределы функции
+    const right = sliderWidth - (this.rangeInputs[1].value - this.rangeInputs[1].min) / (this.rangeInputs[1].max - this.rangeInputs[1].min) *  sliderWidth;
 
-    this.endRangeDisplay[0].innerText = this.rangeInputs[1].value;
+    this.endRangeDisplay[0].innerText = separatePrice(this.rangeInputs[1].value);
     this.fill.css("right", right );
   }
-
 }
 
 

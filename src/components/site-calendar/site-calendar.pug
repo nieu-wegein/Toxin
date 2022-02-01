@@ -19,9 +19,7 @@ mixin site-calendar(classList)
         .site-calendar__day !{day}
     .site-calendar__date-section
       each date in calendarDate
-        span.site-calendar__date-cell
-          button(type = "button" class = "site-calendar__date") !{date}
+        button(type = "button" class = "site-calendar__date") !{date}
       .site-calendar__optional-row
         -for(let i = 2; i < 9; i++)
-          span.site-calendar__date-cell
-            button(type = "button" class = "site-calendar__date") !{i}
+          button(type = "button" class = "site-calendar__date") !{i}

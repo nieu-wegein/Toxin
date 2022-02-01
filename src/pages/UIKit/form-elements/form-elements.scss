@@ -20,138 +20,142 @@
 html { box-sizing: border-box; }
 * {box-sizing: inherit}
 
-
-.wrapper {
-  width: 1440px;
-  margin: 0 auto;
-}
-
-.header {
-  padding: 30px;
-}
-
-.content {
-  display: grid;
-  grid-template-columns: 320px 373px 320px;
-  row-gap: 100px;
-  padding: 31px 141px;
-  justify-content: space-between;
-}
-
-.content__column {
-
-  display: grid;
-  align-items: start;
-
-  &:nth-child(1) {
-    z-index: 3;
-    grid-template-rows: 84px 84px 87px 104px 105px 105px;
+.form-elements-page {
+  .wrapper {
+    width: 1440px;
+    margin: 0 auto;
   }
 
-  &:nth-child(2) {
-    grid-template-rows: 170px 92px 129px 91px;
-    padding-left: 54px;
-
-    .site-fieldset:nth-child(2) .site-fieldset__legend {
-      margin-bottom: 14px;
-    }
+  .header {
+    padding: 30px;
   }
 
-  &:nth-child(3) {
-    grid-template-rows: 88px 309px
-  }
-
-  &:nth-child(4) {
-    grid-template-rows: 220px;
-  }
-
-  &:nth-child(5) {
-    padding-left: 54px;
-  }
-
-  &:nth-child(6) {
+  .content {
     display: grid;
+    grid-template-columns: 320px 373px 320px;
+    row-gap: 100px;
+    padding: 31px 141px;
+    justify-content: space-between;
   }
 
-  &:nth-child(7) {
-    .site-fieldset:first-child {
-      margin-bottom: 44px;
+  .content__column {
+
+    display: grid;
+    align-items: start;
+
+    &:nth-child(1) {
+      z-index: 3;
+      grid-template-rows: 84px 84px 87px 104px 105px 105px;
     }
-    min-height: 268px;
-  }
 
-  &:nth-child(8) {
-    padding-left: 54px;
-  }
-
-  &:nth-child(11) {
-    grid-column: 2 / 4;
-    padding-top: 10px;
-    padding-left: 54px;
-  }
-
-  .date-dropdown-wrapper {
-    display: flex;
-    justify-content: space-between;
-    .form-element {
-      width: 150px;
+    &:nth-child(2) {
+      grid-template-rows: 170px 92px 129px 91px;
+      padding-left: 54px;
     }
-  }
 
-  .filter-items-wrapper {
-    width: 267px;
-  }
+    &:nth-child(3) {
+      grid-template-rows: 88px 309px
+    }
 
-  .checkbox-wrapper {
-    width: 230px;
-  }
+    &:nth-child(4) {
+      grid-template-rows: 220px;
+    }
 
-  .like-buttons-wrapper {
-    width: 90px;
-    display: flex;
-    justify-content: space-between;
-  }
-  .rate-buttons-wrapper {
-    width: 260px;
-    display: flex;
-    justify-content: space-between;
-  }
-  .range-slider-wrapper {
-    width: 266px;
-  }
+    &:nth-child(5) {
+      padding-left: 54px;
+    }
 
-  .site-buttons-wrapper {
-    .button {
-      margin-right: 15px;
-      margin-bottom: 30px;
-      &:nth-child(4){
-        margin-bottom: 28px;
-        margin-right: 38px;
+    &:nth-child(6) {
+      display: grid;
+    }
+
+    &:nth-child(7) {
+      .site-fieldset:first-child {
+        margin-bottom: 34px;
       }
-      &:nth-child(5) {
-        margin-right: 18px;
+
+      min-height: 268px;
+    }
+
+    &:nth-child(8) {
+      padding-left: 54px;
+    }
+
+    &:nth-child(11) {
+      grid-column: 2 / 4;
+      padding-top: 10px;
+      padding-left: 54px;
+    }
+
+    .date-dropdown-wrapper {
+      display: flex;
+      justify-content: space-between;
+
+      .form-element {
+        width: 150px;
       }
     }
-  }
 
-  .site-dropdowns-wrapper {
-    width: 266px;
-    .form-element:first-child {
-      position: relative;
-      z-index: 2;
-      margin-bottom: 20px;
+    .filter-items-wrapper {
+      width: 267px;
     }
-  }
 
-  .expandable-checkbox-wrapper {
-    width: 255px;
-  }
+    .checkbox-wrapper {
+      width: 230px;
+    }
 
-  .rich-checkbox-wrapper {
-    width: 260px;
-  }
+    .like-buttons-wrapper {
+      width: 90px;
+      display: flex;
+      justify-content: space-between;
+    }
 
-  .bullet-list-wrapper {
-    width: 260px;
+    .rate-buttons-wrapper {
+      width: 260px;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .range-slider-wrapper {
+      width: 266px;
+    }
+
+    .site-buttons-wrapper {
+      .button {
+        margin-right: 15px;
+        margin-bottom: 30px;
+
+        &:nth-child(4) {
+          margin-bottom: 28px;
+          margin-right: 38px;
+        }
+
+        &:nth-child(5) {
+          margin-right: 18px;
+        }
+      }
+    }
+
+    .site-dropdowns-wrapper {
+      width: 266px;
+
+      .form-element:first-child {
+        position: relative;
+        z-index: 2;
+        margin-bottom: 20px;
+      }
+    }
+
+    .expandable-checkbox-wrapper {
+      width: 255px;
+    }
+
+    .rich-checkbox-wrapper {
+      width: 260px;
+    }
+
+    .bullet-list-wrapper {
+      width: 260px;
+    }
   }
 }

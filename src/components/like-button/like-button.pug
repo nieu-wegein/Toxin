@@ -1,3 +1,4 @@
 
-button.like-button
-  span.like-button__counter 0
+mixin like-button(count, like)
+  button(class = ["like-button", like ? "like-button_liked":""])
+    span.like-button__counter !{count}

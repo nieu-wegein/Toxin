@@ -42,7 +42,7 @@
     @include site-body($color: $site-dark-50);
     position: relative;
     display: inline-flex;
-    align-items: center;
+    align-items: flex-start;
     padding-left: 30px;
     cursor: pointer;
 

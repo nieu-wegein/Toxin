@@ -1,18 +1,18 @@
 
 .site-calendar {
 
-  padding: 0 19px;
-  padding-bottom: 8px;
-  max-width: 318px;
+  padding: 20px 19px;
+  max-width: 280px;
   border-radius: 4px;
   text-align: center;
   background-color: white;
+  box-sizing: content-box;
 
   &__header {
     @include site-h2();
 
-    padding: 20px 0;
-    margin-bottom: 10px;
+    padding-bottom: 20px;
+    margin-bottom: 8px;
 
     display: flex;
     justify-content: space-between;
@@ -41,24 +41,7 @@
   }
 
   &__date-cell {
-
-    &.start-range {
-      border-radius: 50% 0 0 50%;
-    }
-
-    &.focus-range {
-      background: $site-dark-5;
-    }
-
     &.range {
-      background: $primary-gradient-25;
-    }
-
-    &.end-range {
-      border-radius: 0 50% 50% 0;
-    }
-
-    &:hover{
       background: $primary-gradient-25;
     }
   }
@@ -83,14 +66,65 @@
     background-color: transparent;
     color: $site-dark-50;
     cursor: pointer;
-    border-radius: 50%;
 
-    &.button_primary{
-      color: white;
+    &:hover {
+      background: $primary-gradient-25;
     }
 
-    &.button_secondary{
+    &_today,
+    &_active,
+    &_end {
+      background-color: white;
+      border-radius: 50% 0 0 50%;
+      font-family: $ff-bold;
+      position: relative;
+      z-index: 1;
       color: white;
+
+      &::before {
+        z-index: -2;
+        content: " ";
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background-image: $primary-gradient;
+      }
+    }
+
+    &_end {
+      border-radius: 0 50% 50% 0;
+    }
+
+    &_today {
+      border-radius: 0;
+      &::before {
+        background-image: $secondary-gradient;
+      }
+      &.site-calendar__date_active::before,
+      &.site-calendar__date_end::before {
+        background-image: $primary-gradient;
+      }
+    }
+
+    &_hov-range {
+      background-color: $site-dark-5;
+      & + .site-calendar__date_active,
+      & + .site-calendar__date_end {
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0;
+      }
+    }
+
+    &:not(.site-calendar__date_hov-range) + .site-calendar__date_hov-range {
+      border-top-right-radius: 0;
+      border-bottom-right-radius: 0;
+    }
+
+    &_range {
+      background: $primary-gradient-25;
     }
 
     &:disabled {

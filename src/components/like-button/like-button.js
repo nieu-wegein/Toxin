@@ -4,12 +4,12 @@ function toggleLike(e) {
 
   const counter = e.currentTarget.querySelector(".like-button__counter");
 
-    if(e.currentTarget.classList.contains("like-button_active")) {
-      $(e.currentTarget).removeClass("like-button_active");
+    if(e.currentTarget.classList.contains("like-button_liked")) {
+      $(e.currentTarget).removeClass("like-button_liked");
       counter.innerText = parseInt(counter.innerText) - 1;
     }
     else {
-      $(e.currentTarget).addClass("like-button_active");
+      $(e.currentTarget).addClass("like-button_liked");
       counter.innerText = parseInt(counter.innerText) + 1;
     }
 }

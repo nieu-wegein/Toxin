@@ -48,14 +48,23 @@ html { box-sizing: border-box; }
       margin-top: 2px;
     }
 
+    &:nth-child(3) {
+      .site-dropdown__header {
+        display: none;
+      }
+      .site-dropdown__window_free {
+        display: block;
+        position: static;
+        margin: 0;
+        margin-bottom: 41px;
+      }
+    }
+
     .search-block {
       margin-bottom: 39px;
     }
     .booking-block {
       margin-bottom: 39px;
-    }
-    .calendar-wrapper {
-      margin-bottom: 42px;
     }
     .room-card {
       margin-bottom: 39px;

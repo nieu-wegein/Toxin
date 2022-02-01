@@ -44,5 +44,5 @@ body.search-results
           li.search-results__rooms-item
             +room-card("room" + room.number, roomsList[i])
       .search-results__pagination-container
-        +site-pagination()
+        +site-pagination({url: "/search-results/search-results.html", count: 3})
   +site-footer()

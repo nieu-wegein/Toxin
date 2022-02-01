@@ -3,7 +3,7 @@ include ../../../components/registration-block/registration-block
 include ../../../components/booking-block/booking-block
 include ../../../components/log-in-block/log-in-block
 include ../../../components/site-calendar/site-calendar
-include ../../../components/site-dropdown/site-dropdown__footer/site-dropdown__footer
+include ../../../components/site-dropdown/site-dropdown
 include ../../../components/room-card/room-card
 
 
@@ -55,8 +55,6 @@ html(lang = "en")
           +booking-block(room888)
           +log-in-block()
         .content__column
-          .calendar-wrapper
-            +site-calendar("site-calendar site-calendar_range")
-            +site-dropdown__footer()
+          +site-dropdown({id: "filter-dates", text: "ДД.ММ.ГГГГ - ДД.ММ.ГГГГ", modifiers: {calendar: {type: "range"}, buttons: true}})
           +room-card("room888", room888)
           +room-card("room840", room840)
