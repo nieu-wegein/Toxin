@@ -54,17 +54,18 @@ mixin site-header(obj = {})
     };
 
   header.site-header
-    include ../site-logo/site-logo
-    .site-header__navigation-wrapper
-      nav.site-header__site-navigation
-        +site-menu(navMenu)
-      .site-header__user-navigation
-        if(obj.user)
-          +site-menu(userMenu)
-        else
-          ul.site-header__user-nav-list
-            li.site-header__user-nav-item
-              +site-button({tag: "a", href: pages.signIn, modifiers: {rounded: true}, text: "Войти"})
-            li.site-header__user-nav-item
-              +site-button({tag: "a", href: pages.registration, modifiers: {primary: true}, text: "Зарегистрироваться"})
-
+    nav.site-header__site-navigation
+      include ../site-logo/site-logo
+      +site-menu(navMenu)
+    .site-header__body-blocker
+    .site-header__user-navigation
+      if(obj.user)
+        +site-menu(userMenu)
+      else
+        ul.site-header__user-nav-list
+          li.site-header__user-nav-item
+            +site-button({tag: "a", href: pages.signIn, modifiers: {rounded: true}, text: "Войти"})
+          li.site-header__user-nav-item
+            +site-button({tag: "a", href: pages.registration, modifiers: {primary: true}, text: "Зарегистрироваться"})
+    button.site-header__mob-menu-button.site-header__mob-menu-button_user.material-icons login
+    button.site-header__mob-menu-button.site-header__mob-menu-button_nav

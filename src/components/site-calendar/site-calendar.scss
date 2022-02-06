@@ -67,7 +67,7 @@
     color: $site-dark-50;
     cursor: pointer;
 
-    &:hover {
+    &:not([disabled="disabled"]):hover {
       background: $primary-gradient-25;
     }
 
@@ -91,6 +91,11 @@
         height: 40px;
         border-radius: 50%;
         background-image: $primary-gradient;
+      }
+
+      &:hover,
+      &:focus {
+        border-radius: 0;
       }
     }
 

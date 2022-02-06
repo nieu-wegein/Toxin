@@ -34,6 +34,7 @@
   &__menu {
     &-block {
       width: 33.3%;
+      margin-right: 30px;
     }
     &-list {
       padding: 0;
@@ -55,7 +56,9 @@
 
   &__subscription {
     &-block {
-      max-width: 22.4%;
+      min-width: 260px;
+      width: 22.4%;
+     // max-width: 22.4%;
       margin-top: 4px;
     }
     &-text {
@@ -93,6 +96,42 @@
     }
   }
 }
+
+
+@media(max-width: 1180px) {
+  .site-footer {
+    &__content {
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    &__info-block {
+      margin: 0;
+      margin-bottom: 30px;
+      max-width: none;
+      text-align: center;
+    }
+  }
+}
+
+@media(max-width: 960px) {
+  .site-footer {
+
+    &__links-section {
+      justify-content: space-around;
+    }
+
+    &__menu-block {
+      width: auto;
+    }
+
+    &__subscription-block {
+      display: none;
+    }
+  }
+}
+
+
 
 @media(max-width: 768px) {
   .site-footer {

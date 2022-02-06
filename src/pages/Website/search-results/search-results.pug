@@ -35,14 +35,18 @@ head
 body.search-results
   +site-header()
   main.search-results__main-section
-    h1.search-results__main-heading Результаты поиска
-    aside.search-results__aside
-      +rooms-filter-menu()
-    +site-section({h1: "Номера, которые мы для вас подобрали", classList: "search-results__rooms-section"})
-      ul.search-results__rooms-list
-        each room, i in roomsList
-          li.search-results__rooms-item
-            +room-card("room" + room.number, roomsList[i])
-      .search-results__pagination-container
-        +site-pagination({url: "/search-results/search-results.html", count: 3})
+    section.search-results__rooms-section
+      aside.search-results__aside
+        button.search-results__aside-close-button
+        +rooms-filter-menu()
+      .search-results__body-blocker
+      button.search-results__aside-open-button.material-icons arrow_forward_ios
+      .search-results__rooms-content-wrapper
+        h1.search-results__main-heading Номера, которые мы для вас подобрали
+        ul.search-results__rooms-list
+          each room, i in roomsList
+            li.search-results__rooms-item
+              +room-card("room" + room.number, roomsList[i])
+        .search-results__pagination-container
+          +site-pagination({url: "/search-results/search-results.html", count: 3})
   +site-footer()

@@ -1,6 +1,8 @@
 import "../../../normalize.scss";
 import './index.scss'
+import "../../../components/site-header/site-header";
 import "../../../components/search-block/search-block";
+
 import $ from "../../../jquery-3.6.0.min";
 
 

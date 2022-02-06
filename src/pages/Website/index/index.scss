@@ -11,14 +11,6 @@
 @import "../../../components/site-footer/site-footer.scss";
 @import "../../../components/search-block/search-block.scss";
 
-//Временно для ПП
-body {
-  overflow: -moz-scrollbars-none;
-  -ms-overflow-style: none;
-}
-body::-webkit-scrollbar {
-  width: 0 !important
-}
 
 html { box-sizing: border-box; }
 * {box-sizing: inherit}
@@ -36,7 +28,7 @@ html { box-sizing: border-box; }
     min-height: 830px;
     background-image: url("./img/background.png");
     background-size: cover;
-    background-position: top -70px center;
+    background-position: center top;
     background-repeat: no-repeat;
   }
 
@@ -51,7 +43,14 @@ html { box-sizing: border-box; }
 }
 
 @media (max-width: 768px) {
-  .search-block {
-    margin: 0 auto;
+  .search-offer {
+
+    &__search-section {
+      padding: 140px 0;
+    }
+    .search-block {
+      margin: 0 auto;
+    }
+
   }
 }

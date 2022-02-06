@@ -18,39 +18,99 @@
 @import "../../../components/site-pagination/site-pagination";
 
 
-body {
-  overflow: -moz-scrollbars-none;
-  -ms-overflow-style: none;
-}
-body::-webkit-scrollbar {
-  width: 0 !important
-}
 
 html { box-sizing: border-box; }
 * {box-sizing: inherit}
 
-$pagination-width: 240px;
-$parent: 100%;
 
 .search-results {
 
   &__main-section {
     display: flex;
-    padding: 30px calc(9.72% - 12px) 70px 9.72%;
+    padding: 30px 24px 70px 9.72%;
     margin-bottom: 1px;
     border-bottom: 1px solid $site-dark-25;
   }
 
-  &__main-heading {
-    @include visually-hidden();
+  &__aside {
+    background-color: white;
   }
 
-  &__aside {
-    min-height: 1024px;
+  &__aside-close-button {
+    display: none;
+    border: none;
+    background: none;
+    cursor: pointer;
+    right: 20px;
+    top: 10px;
+    width: 34px;
+    height: 34px;
+    position: absolute;
+
+    &::before,
+    &::after {
+      content: " ";
+      position: absolute;
+      width: 34px;
+      height: 2px;
+      background-color: $site-dark-50;
+      left: 0;
+    }
+
+    &::before {
+      transform: rotate(-45deg);
+    }
+
+    &::after {
+      transform: rotate(45deg);
+    }
   }
+
+  &__body-blocker {
+    visibility: hidden;
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    background-color: black;
+    opacity: 0;
+    transition: opacity 0.3s ease, visibility 0.4s ease;
+    top: 0;
+    left: 0;
+    z-index: 5;
+  }
+
+  &__aside-open-button {
+    position: sticky;
+    padding: 45vh 20px 55vh;
+    height: 0;
+    top: 0;
+    left: 0;
+    background: none;
+    border: none;
+    font-size: 72px;
+    color: $site-dark-50;
+    display: none;
+    cursor: pointer;
+
+    &::before{
+      content: "arrow_forward_ios";
+      position: absolute;
+      left: 40px;
+    }
+  }
+
 
   &__rooms-section {
+    display: flex;
+  }
+
+  &__rooms-content-wrapper {
     padding-left: 59px;
+  }
+
+  &__main-heading {
+    width: 100%;
+    @include site-h1();
   }
 
   &__rooms-list {
@@ -69,18 +129,115 @@ $parent: 100%;
   }
 
   &__pagination-container {
-    margin-left: calc((#{$parent} - #{$pagination-width}) /2 - 12px);
+    width: 100%;
+    margin-left: calc((100% - 240px) /2 - 65px);
   }
 }
 
-@media (max-width: 1438px) {
+
+@media (max-width: 1180px) {
   .search-results {
-    .site-section__top {
-      justify-content: center;
+    &__main-section {
+      padding-left: 40px;
+    }
+  }
+}
+
+@media (max-width: 1010px) {
+  .search-results {
+
+    &__main-section {
+      padding-left: 0;
+    }
+
+    &__aside {
+      height: 100vh;
+      position: fixed;
+      padding: 60px 0 20px;
+      left: -360px;
+      top: 0;
+      z-index: 6;
+      visibility: hidden;
+      width: 100%;
+      max-width: 360px;
+      overflow-y: auto;
+      transition: left 0.3s ease, visibility 0.3s ease;
+
+      &_active {
+        visibility: visible;
+        left: 0;
+
+        + .search-results__body-blocker {
+          visibility: visible;
+          opacity: 0.6;
+        }
+      }
+    }
+
+    &__aside-close-button {
+      display: inline-block;
+    }
+
+    .rooms-filter-menu {
+      margin: 0 auto;
+
+      .site-dropdown__window_free {
+        left: -27px;
+      }
+    }
+
+    &__aside-open-button {
+      display: inline-block;
+    }
+
+    &__rooms-content-wrapper {
+      padding-left: 50px;
       text-align: center;
     }
+
     &__rooms-list {
       justify-content: center;
+    }
+
+    &__pagination-container {
+      margin: 0;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .search-results {
+
+    &__main-section {
+      padding-top: 100px;
+      padding-left: 15px;
+      padding-right: 15px;
+    }
+    &__aside-open-button {
+      position: fixed;
+      left: 42vw;
+      padding: 17px;
+      top: 20px;
+      z-index: 4;
+      font-size: 0;
+
+      &::before {
+        content: "filter_alt";
+        font-size: 34px;
+        left: 0;
+        top: 0;
+      }
+    }
+    &__rooms-content-wrapper {
+      padding-left: 0;
+    }
+  }
+}
+
+@media (max-width: 350px) {
+  .search-results {
+    &__aside-open-button {
+      left: 35vw;
     }
   }
 }

@@ -7,6 +7,7 @@ mixin site-section(obj)
     if(obj.header === "hidden") headerClassList.push("site-section__heading_hidden")
 
   section(class = sectionClassList)
+    block before
     .site-section__top
       -for(let key in obj) {
          if key === "h1"

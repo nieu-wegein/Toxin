@@ -8,10 +8,10 @@ mixin room-card(id, room)
   article(class = ["room-card", room.luxe ? "room-card_luxe"  : ""] id = id)
     h2.room-card__heading Комната №  #{room.number}
     .room-card__image-container
-      ul.room-card__image-list
-        each img in room.imgList
-          li.room-card__image-item
-            a(href = "../room-details/room-details.html?id=" + room.number)
+      a(href = "../room-details/room-details.html?id=" + room.number)
+        ul.room-card__image-list
+          each img in room.imgList
+            li.room-card__image-item
               img(class = "room-card__image" src = img alt = "Фотография номера")
       button(class = "room-card__arrow room-card__arrow_left material-icons") chevron_left
       button(class = "room-card__arrow room-card__arrow_right material-icons" ) chevron_right
