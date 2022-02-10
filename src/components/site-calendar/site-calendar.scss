@@ -144,3 +144,23 @@
     justify-content: space-between;
   }
 }
+
+@media(max-width: 380px) {
+  .site-calendar {
+    max-width: 238px;
+    padding: 20px 10px;
+    &__date {
+      width: 34px;
+      height: 34px;
+
+      &_today,
+      &_active,
+      &_end {
+        &:before {
+          width: 34px;
+          height: 34px;
+        }
+      }
+    }
+  }
+}

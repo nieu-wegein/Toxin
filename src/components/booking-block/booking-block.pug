@@ -15,24 +15,25 @@ mixin booking-block(obj)
         |  в сутки
     .booking-block__body
       form(class = "booking-block__form" id = "booking-block__form")
-        .booking-block__date-dropdown-wrapper
-          +site-dropdown({
-            label: "Прибытие",
-            id: "booking-departure",
-            name: "departure",
-            text: "ДД.ММ.ГГГГ",
-            shared: {id: "booking-dropdown"},
-            modifiers: {calendar: {type: "range"}, buttons: true}
-          })
-        .booking-block__date-dropdown-wrapper
-          +site-dropdown({
-            label: "Выезд",
-            id: "booking-arrival",
-            name: "arrival",
-            text: "ДД.ММ.ГГГГ",
-            shared: {for: "booking-dropdown"},
-            modifiers: {calendar: {type: "range"}, buttons: true}
-          })
+        .booking-block__shared-dropdown-wrappers
+          .booking-block__date-dropdown-wrapper
+            +site-dropdown({
+              label: "Прибытие",
+              id: "booking-departure",
+              name: "departure",
+              text: "ДД.ММ.ГГГГ",
+              shared: {id: "booking-dropdown"},
+              modifiers: {calendar: {type: "range"}, buttons: true}
+            })
+          .booking-block__date-dropdown-wrapper
+            +site-dropdown({
+              label: "Выезд",
+              id: "booking-arrival",
+              name: "arrival",
+              text: "ДД.ММ.ГГГГ",
+              shared: {for: "booking-dropdown"},
+              modifiers: {calendar: {type: "range"}, buttons: true}
+            })
         .booking-block__guests-dropdown-wrapper
           +site-dropdown({
             label: "Гости", id: "booking-guest-dropdown", text: "Сколько гостей",

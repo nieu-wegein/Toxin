@@ -1,0 +1,16 @@
+
+mixin site-slider(imgList)
+  .site-slider
+    ul.site-slider__image-list
+      each img in imgList
+        li.site-slider__image-item
+          img(class = "site-slider__image" src = img alt = "Фотография номера")
+    button.site-slider__arrow.site-slider__arrow_left
+    button.site-slider__arrow.site-slider__arrow_right
+    .site-slider__bullets-block
+      .site-slider__bullets-wrapper
+        each img, i in imgList
+          if i === 0
+            .site-slider__bullet.site-slider__bullet_active
+          else
+            .site-slider__bullet

@@ -11,5 +11,5 @@ mixin site-testimonial(obj)
         time.site-testimonial__time #{obj.date}
     .site-testimonial__body
       .site-testimonial__button-wrapper
-        +like-button(12, true)
+        +like-button(obj.likes, obj.liked)
       p.site-testimonial__text !{obj.text}

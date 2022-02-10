@@ -10,7 +10,8 @@
 @import "../../../components/site-range-slider/site-range-slider";
 @import "../../../components/site-checkbox/site-checkbox";
 @import "../../../components/site-fieldset/site-fieldset";
-@import "../../../components/rate-button/rate-button";
+@import "../../../components/site-slider/site-slider";
+@import "../../../components/rate-button/star-rate";
 @import "../../../components/site-header/site-header";
 @import "../../../components/site-footer/site-footer.scss";
 @import "../../../components/rooms-filter-menu/rooms-filter-menu.scss";
@@ -129,7 +130,6 @@ html { box-sizing: border-box; }
   }
 
   &__pagination-container {
-    width: 100%;
     margin-left: calc((100% - 240px) /2 - 65px);
   }
 }
@@ -191,7 +191,7 @@ html { box-sizing: border-box; }
     }
 
     &__rooms-content-wrapper {
-      padding-left: 50px;
+      padding-left: 30px;
       text-align: center;
     }
 

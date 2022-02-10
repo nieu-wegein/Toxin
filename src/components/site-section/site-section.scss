@@ -2,17 +2,12 @@
 
   &__top {
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
     justify-content: space-between;
   }
 
-  &__note {
-    @include site-body($color: $site-dark-50, $lineH: 14px);
-  }
-
   &__heading {
-    margin: 0;
-
     &_h1 {
       @include site-h1();
     }
@@ -29,5 +24,11 @@
     &_hidden {
       @include visually-hidden();
     }
+
+  }
+
+  &__note {
+    @include site-body($color: $site-dark-50, $lineH: 14px);
   }
 }
+

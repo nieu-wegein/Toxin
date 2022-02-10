@@ -1,0 +1,47 @@
+.star-rate {
+
+  display: inline-flex;
+  flex-direction: row-reverse;
+
+  &__star {
+
+    &::before {
+      @include background-text-transparent();
+      font-family: "Material Icons";
+      content: "star_border" / "Оценить в ";
+      top:0;
+      left:0;
+      font-size: 24px;
+      background-image: $primary-gradient;
+    }
+
+    &-description {
+      @include visually-hidden();
+    }
+
+    &_filled::before {
+      content: "star" / "Оценить в ";
+    }
+  }
+
+  &__radio {
+    @include visually-hidden();
+
+    &:hover ~ .star-rate__star::before {
+      cursor: pointer;
+      content: "star" / "Оценить в ";
+      background-image: $primary-gradient-25;
+    }
+
+    &:focus-visible + .star-rate__star::before {
+      outline: 1px solid $site-dark-50;
+    }
+
+    &:checked ~ .star-rate__star::before {
+      content: "star" / "Оценить в ";
+      background-image: $primary-gradient;
+    }
+  }
+}
+
+

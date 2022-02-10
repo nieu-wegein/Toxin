@@ -1,4 +1,5 @@
-include ../rate-button/rate-button
+include ../site-slider/site-slider
+include ../rate-button/star-rate
 include ../../helpers/decline-js
 include ../../helpers/separate-price-js
 
@@ -7,31 +8,20 @@ mixin room-card(id, room)
 
   article(class = ["room-card", room.luxe ? "room-card_luxe"  : ""] id = id)
     h2.room-card__heading Комната №  #{room.number}
-    .room-card__image-container
-      a(href = "../room-details/room-details.html?id=" + room.number)
-        ul.room-card__image-list
-          each img in room.imgList
-            li.room-card__image-item
-              img(class = "room-card__image" src = img alt = "Фотография номера")
-      button(class = "room-card__arrow room-card__arrow_left material-icons") chevron_left
-      button(class = "room-card__arrow room-card__arrow_right material-icons" ) chevron_right
-      .room-card__bullets-block
-        each img, i in room.imgList
-          if i === 0
-            .room-card__bullet.room-card__bullet_active
-          else
-            .room-card__bullet
-    .room-card__body
-      .room-card__info
-        p.room-card__room-number №
-          span.room-card__room-number-value #{room.number}
-        p.room-card__price
-          span.room-card__price-value #{separatePrice(room.price) + room.currency}
-          |  в сутки
-      .room-card__rating
-        form.room-card__rate-form
-          +rate-button({name: id + "_room-rate", id: id + "_room-rate", stars: room.stars})
-        p.room-card__testimonial-counter
-          span.room-card__testimonial-count #{room.testimonialsList.count}
-          //Не нужно склонение?
-          |  Отзывов
+    .slider-container
+      +site-slider(room.imgList)
+    a(class = "room-card__full-page-link" href = "../room-details/room-details.html?id=" + room.number)
+      .room-card__body
+        .room-card__info
+          p.room-card__room-number №
+            span.room-card__room-number-value #{room.number}
+          p.room-card__price
+            span.room-card__price-value #{separatePrice(room.price) + room.currency}
+            |  в сутки
+        .room-card__rating
+          form.room-card__rate-form
+            +star-rate({type: "display", name: id + "_room-rate", id: id + "_room-rate", stars: room.stars})
+          p.room-card__testimonial-counter
+            span.room-card__testimonial-count #{room.testimonialsList.count}
+            //-Не нужно склонение?
+            |  Отзывов

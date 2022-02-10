@@ -1,5 +1,7 @@
 import "../../../normalize.scss";
 import './room-details.scss';
+import "../../../components/site-header/site-header";
+import "../../../components/site-slider/site-slider";
 import '../../../components/site-testimonial/site-testimonial';
 import '../../../components/booking-block/booking-block';
 import $ from "../../../jquery-3.6.0.min";

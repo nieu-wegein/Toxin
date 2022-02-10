@@ -4,7 +4,7 @@ include ../../../components/site-checkbox/site-checkbox
 include ../../../components/site-radio/site-radio
 include ../../../components/site-section/site-section
 include ../../../components/like-button/like-button
-include ../../../components/rate-button/rate-button
+include ../../../components/rate-button/star-rate
 include ../../../components/site-range-slider/site-range-slider
 include ../../../components/site-button/site-button
 include ../../../components/site-pagination/site-pagination
@@ -109,8 +109,8 @@ include ../../../components/site-testimonial/site-testimonial
   ]
 
   const rateButtonsList = [
-    {name: "sampleStars1", id: "ui-stars", stars: 4},
-    {name: "sampleStars2", id: "ui-rate", stars: 5}
+    {type: "send", name: "sampleStars1", id: "ui-stars", stars: 4},
+    {type: "send", name: "sampleStars2", id: "ui-rate", stars: 5}
   ]
 
   const rangeSliderList = [
@@ -128,9 +128,12 @@ include ../../../components/site-testimonial/site-testimonial
   ]
 
   const testimonialsList = [{
-    name: "Мурад Сарафанов", date: "5 дней назад",
+    id: 9662,
+    name: "Мурад Сарафанов",
+    date: "5 дней назад",
     text: "Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару  — никто не жаловался из соседей.",
-    img: imgPath + "user1.png"
+    img: imgPath + "user1.png",
+    likes: 12
   }]
 
 doctype html
@@ -170,8 +173,8 @@ html(lang = "en")
               +like-button(12, true)
           +site-section({h3: "Rate Button"})
             .rate-buttons-wrapper
-              +rate-button(rateButtonsList[0])
-              +rate-button(rateButtonsList[1])
+              +star-rate(rateButtonsList[0])
+              +star-rate(rateButtonsList[1])
         .content__column
           .range-slider-wrapper
             +site-range-slider(rangeSliderList[0])
@@ -203,4 +206,4 @@ html(lang = "en")
         .content__column
           +features-list(["comfort", "convenience"])
         .content__column
-          +site-testimonial(testimonialsList[0])
+          +site-testimonial({...testimonialsList[0], liked: true})

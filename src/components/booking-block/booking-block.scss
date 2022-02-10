@@ -6,7 +6,9 @@
   box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.2);
 
   padding: 40px 29px 30px 29px;
+  width: 380px;
   max-width: 380px;
+  box-sizing: border-box;
 
   &__heading {
     @include visually-hidden();
@@ -56,13 +58,21 @@
 
   &__form {
     display: flex;
-    justify-content: space-between;flex-wrap: wrap;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+
+  .booking-block__shared-dropdown-wrappers {
+    display: flex;
+    position: relative;
+    z-index: 2;
   }
 
   &__date-dropdown-wrapper {
-    position: relative;
-    z-index: 2;
-    width: 150px;
+    max-width: 150px;
+    &:first-child {
+      margin-right: 20px
+    }
   }
 
   &__guests-dropdown-wrapper {
@@ -149,6 +159,18 @@
     &_total {
       display: inline-block;
       margin-top: 15px;
+    }
+  }
+}
+
+@media(max-width: 380px) {
+  .booking-block {
+    width: auto;
+    padding-left: 20px;
+    padding-right: 20px;
+
+    .site-dropdown__window_free {
+      //left: -21px;
     }
   }
 }
