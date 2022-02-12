@@ -58,11 +58,10 @@
 
   &__form {
     display: flex;
-    justify-content: space-between;
     flex-wrap: wrap;
   }
 
-  .booking-block__shared-dropdown-wrappers {
+  &__shared-dropdowns-wrapper {
     display: flex;
     position: relative;
     z-index: 2;
@@ -169,8 +168,9 @@
     padding-left: 20px;
     padding-right: 20px;
 
-    .site-dropdown__window_free {
-      //left: -21px;
+    &__shared-dropdowns-wrapper {
+      width: 100%;
+      justify-content: space-between;
     }
   }
 }

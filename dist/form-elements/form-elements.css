@@ -1096,7 +1096,6 @@ template {
           animation-duration: 0.3s;
   position: absolute;
   left: 4px;
-  top: 6px;
   content: " ";
   width: 12px;
   height: 12px;
@@ -1496,6 +1495,9 @@ template {
   width: 40px;
   height: 40px;
   border-radius: 50%;
+}
+.site-pagination__item:focus {
+  outline: 2px solid rgba(31, 32, 65, 0.5);
 }
 .site-pagination__item_link:hover {
   font-family: "Montserrat-Bold", sans-serif;

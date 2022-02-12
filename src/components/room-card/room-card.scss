@@ -1,29 +1,51 @@
 
 .room-card {
 
+  display: flex;
+  flex-wrap: wrap;
+  position: relative;
   width: 270px;
   background-color: white;
   box-shadow: 0px 10px 20px $site-dark-5;
-  border-radius: 4px;
-  overflow: hidden;
+
+  &:focus-within {
+    .site-slider__button {
+      opacity: 1;
+    }
+  }
+
 
   &__heading {
+    order: 1;
     @include visually-hidden();
   }
 
   .slider-container {
+    order: 2;
+    border-radius: 4px 4px 0 0;
+    overflow: hidden;
     height: 151px;
+    display: inline-block;
   }
 
   &__full-page-link {
+    width: 100%;
     display: inline-block;
-    text-decoration: none
+    text-decoration: none;
+    outline: none;
+    order: 3;
+
+    &:focus-visible {
+     & ~ .room-card__outline-wrapper {
+        outline: 2px solid $site-dark-50;
+      }
+    }
   }
 
+
   &__body {
-    width: 233px;
-    margin: 0 17px 0 20px;
-    padding-top: 21px;
+    padding: 21px 17px 0 20px;
+    border-radius: 0 0 4px 4px;
   }
 
   &__info {
@@ -72,6 +94,16 @@
   &__testimonial-count {
     font-family: $ff-bold;
     font-size: 14px;
+  }
+
+  &__outline-wrapper {
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    border-radius: 4px;
+    outline-offset: 1px;
   }
 
   &_luxe {

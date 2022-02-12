@@ -15,21 +15,20 @@ include ../../../components/site-testimonial/site-testimonial
 
 -
   const imgPath = "/pages/UIKit/form-elements/img/";
-  const firstList = [
+  const inputList = [
     {label: "Text field", note: "Default",  id: "email", text: "Email"},
     {label: "Text field", note: "Hover / Focus", id: "awesome"},
-    {label: "Dropdown", id: "guests", text:  "Сколько гостей",
-        options: [
-          {text: "Взрослые", name: "adults", declination: ["гость", "гостя", "гостей"]},
-          {text: "Дети", name: "children", declination: ["гость", "гостя", "гостей"]},
-          {text: "Младенцы", name: "babies", declination: ["гость", "гостя", "гостей"]}
-        ],
-        modifiers: {buttons: true} //counted-list: true
-      },
     {label: "Masked text field",  id: "date", text: "ДД.ММ.ГГГГ", modifiers: {datemask: true}},
   ]
 
-  const secondList = [
+  const dropdownList = [
+    {label: "Dropdown", id: "guests", text: "Сколько гостей",
+      options: [
+        {text: "Взрослые", name: "adults", declination: ["гость", "гостя", "гостей"]},
+        {text: "Дети", name: "children", declination: ["гость", "гостя", "гостей"]},
+        {text: "Младенцы", name: "babies", declination: ["гость", "гостя", "гостей"]}
+      ],
+      modifiers: {buttons: true}},
     {label: "Date dropdown", id: "departure", text: "ДД.ММ.ГГГГ", shared: {id: "ui-page-calendar"}, modifiers: {calendar: {type: "range"}, buttons: true}},
     {label: "Date dropdown", id: "arrival", text: "ДД.ММ.ГГГГ", shared: {for: "ui-page-calendar"}, modifiers: {calendar: {type: "range"}, buttons: true}},
     {label: "Filter date dropdown", id: "filter-dates", text: "ДД.ММ.ГГГГ - ДД.ММ.ГГГГ", modifiers: {calendar: {type: "range"}, buttons: true}},
@@ -151,17 +150,17 @@ html(lang = "en")
           img.logo(src = "../img/min-logo.svg")
       .content
         .content__column
-          +site-input(firstList[0])
-          +site-input(firstList[1])
-          +site-dropdown(firstList[2])
-          +site-input(firstList[3])
+          +site-input(inputList[0])
+          +site-input(inputList[1])
+          +site-dropdown(dropdownList[0])
+          +site-input(inputList[2])
           .date-dropdown-wrapper
-            +site-dropdown(secondList[0])
-            +site-dropdown(secondList[1])
+            +site-dropdown(dropdownList[1])
+            +site-dropdown(dropdownList[2])
           .filter-items-wrapper
-            +site-dropdown(secondList[2])
+            +site-dropdown(dropdownList[3])
           .filter-items-wrapper
-            +site-input(secondList[3])
+            +site-input(dropdownList[4])
         .content__column
           .checkbox-wrapper
             +site-checkbox-group(checkboxList[0])
@@ -186,12 +185,12 @@ html(lang = "en")
             +site-pagination({url: "/form-elements/form-elements.html", count: 3})
         .content__column
           .site-dropdowns-wrapper
-            +site-dropdown(secondList[4])
-            +site-dropdown(secondList[5])
+            +site-dropdown(dropdownList[5])
+            +site-dropdown(dropdownList[6])
         .content__column
-          +site-dropdown(secondList[6])
+          +site-dropdown(dropdownList[7])
         .content__column
-          +site-dropdown(secondList[7])
+          +site-dropdown(dropdownList[8])
         .content__column
           .expandable-checkbox-wrapper
             +site-checkbox-group(checkboxList[2])

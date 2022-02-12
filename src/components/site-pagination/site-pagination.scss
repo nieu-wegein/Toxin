@@ -29,6 +29,10 @@
     height: 40px;
     border-radius: 50%;
 
+    &:focus {
+      outline: 2px solid $site-dark-50;
+    }
+
     &_link {
       &:hover{
         font-family: $ff-bold;

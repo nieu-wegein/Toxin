@@ -92,6 +92,10 @@
     text-decoration: none;
     color: $site-dark-50;
 
+    &:focus-visible {
+      outline: 2px solid $site-dark-50;
+    }
+
     &_expanded {
       &:hover + .site-header__site-nav-list {
         display: block;
@@ -145,6 +149,10 @@
     border: none;
     cursor: pointer;
 
+    &:focus-visible {
+      outline: 2px solid $site-dark;
+    }
+
 
     &_nav::before,
     &_nav::after {
@@ -167,6 +175,7 @@
       margin-left: 20px;
       margin-right: 10px;
       transition: transform 2s;
+      outline-offset: 3px;
 
       &::before {
         transform: translateY(-10px);

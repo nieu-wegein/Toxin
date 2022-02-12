@@ -98,16 +98,13 @@ class CountingDropdown extends SiteDropdown {
   updateCounters = () => {
     for (let key in this.state) {
       const item = $(`[data-name="${key}"]`, this.window);
-      const buttonAdd = $(".site-dropdown__button-add", item);
       const buttonRemove = $(".site-dropdown__button-remove", item);
 
-      if(this.state[key] === 0) {
-        buttonAdd.focus();
+      if(this.state[key] === 0)
         buttonRemove.attr("disabled", true);
-      }
-      else  {
+      else
         buttonRemove.removeAttr("disabled");
-      }
+
       $(".site-dropdown__count", item).text(this.state[key]);
     }
   }
@@ -118,16 +115,21 @@ class CountingDropdown extends SiteDropdown {
   }
 
   onCounterClick = (e) => {
-    const buttonAdd = $(".site-dropdown__button-add", e.currentTarget)[0];
-    const buttonRemove = $(".site-dropdown__button-remove", e.currentTarget)[0];
+    const buttonAdd = $(".site-dropdown__button-add", e.currentTarget);
+    const buttonRemove = $(".site-dropdown__button-remove", e.currentTarget);
     const name = $(e.currentTarget).parent().data("name");
 
-    if (e.target === buttonAdd) {
+
+    if (e.target === buttonAdd[0]) {
       this.state[name]++;
       this.updateDropdown();
     }
-    else if (e.target === buttonRemove) {
+    else if (e.target === buttonRemove[0]) {
       this.state[name]--;
+
+      if(this.state[name] === 0)
+        buttonAdd.focus();
+
       this.updateDropdown();
     }
   }

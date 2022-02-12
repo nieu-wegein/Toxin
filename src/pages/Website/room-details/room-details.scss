@@ -13,6 +13,7 @@
 @import "../../../components/site-ul/site-ul.scss";
 @import "../../../components/doughnut-chart/doughnut-chart.scss";
 @import "../../../components/site-testimonial/site-testimonial.scss";
+@import "../../../components/social-link/social-link";
 @import "../../../components/site-header/site-header";
 @import "../../../components/site-footer/site-footer";
 @import "../../../components/booking-block/booking-block";
@@ -263,6 +264,10 @@ html { box-sizing: border-box; }
 @media(max-width: 480px) {
   .room-details {
     &__main-info-wrapper {
+      padding-right: 0;
+      padding-left: 0;
+    }
+    &__content-wrapper {
       padding-right: 10px;
       padding-left: 10px;
     }
@@ -275,7 +280,7 @@ html { box-sizing: border-box; }
 @media(min-width: 320px) and (max-width: 380px) {
   .room-details {
     .booking-block .site-dropdown__window_free {
-      margin-left: calc((100vw - 320px) / 2);
+      margin-left: calc((100vw - 40px - 260px) / 2);
     }
   }
 }

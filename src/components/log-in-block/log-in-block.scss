@@ -6,6 +6,7 @@
   box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.2);
 
   padding: 40px 29px 30px 29px;
+  width: 380px;
   max-width: 380px;
 
   &__heading{
@@ -22,6 +23,9 @@
   }
 
   &__footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     padding-top: 30px;
   }
 
@@ -30,6 +34,14 @@
     font-size: 14px;
     line-height: 18px;
     letter-spacing: 0px;
-    margin-right: 55px;
+    margin-right: 20px;
+  }
+}
+
+@media (max-width: 380px) {
+  .log-in-block {
+    &__heading {
+      text-align: center;
+    }
   }
 }

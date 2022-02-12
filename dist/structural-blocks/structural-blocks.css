@@ -645,6 +645,10 @@ template {
   outline: 1px solid rgba(31, 32, 65, 0.5);
 }
 
+.social-link:focus-visible {
+  outline: 2px solid rgba(31, 32, 65, 0.5);
+}
+
 .site-header {
   padding: 15px 9.72%;
   background-color: white;
@@ -748,6 +752,9 @@ template {
   text-decoration: none;
   color: rgba(31, 32, 65, 0.5);
 }
+.site-header__nav-link:focus-visible {
+  outline: 2px solid rgba(31, 32, 65, 0.5);
+}
 .site-header__nav-link_expanded:hover + .site-header__site-nav-list {
   display: block;
 }
@@ -792,6 +799,9 @@ template {
   border: none;
   cursor: pointer;
 }
+.site-header__mob-menu-button:focus-visible {
+  outline: 2px solid #1f2041;
+}
 .site-header__mob-menu-button_nav::before, .site-header__mob-menu-button_nav::after {
   content: " ";
   position: absolute;
@@ -817,6 +827,7 @@ template {
   transition: -webkit-transform 2s;
   transition: transform 2s;
   transition: transform 2s, -webkit-transform 2s;
+  outline-offset: 3px;
 }
 .site-header__mob-menu-button_nav::before {
   -webkit-transform: translateY(-10px);
@@ -983,6 +994,9 @@ template {
 .site-footer__menu-link {
   text-decoration: none;
   color: rgba(31, 32, 65, 0.5);
+}
+.site-footer__menu-link:focus-visible {
+  outline: 2px solid rgba(31, 32, 65, 0.5);
 }
 .site-footer__subscription-block {
   min-width: 260px;

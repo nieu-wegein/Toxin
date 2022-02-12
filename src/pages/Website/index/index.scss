@@ -7,6 +7,7 @@
 @import "../../../components/site-input/site-input";
 @import "../../../components/site-dropdown/site-dropdown";
 @import "../../../components/site-calendar/site-calendar";
+@import "../../../components/social-link/social-link";
 @import "../../../components/site-header/site-header";
 @import "../../../components/site-footer/site-footer.scss";
 @import "../../../components/search-block/search-block.scss";
@@ -24,7 +25,7 @@ html { box-sizing: border-box; }
   &__search-section {
     @include site-body();
     position: relative;
-    padding: 70px 9.72% 0;
+    padding: 69px 9.72% 0;
     min-height: 830px;
     background-image: url("./img/background.png");
     background-size: cover;
@@ -52,5 +53,20 @@ html { box-sizing: border-box; }
       margin: 0 auto;
     }
 
+    &__slogan {
+      text-align: center;
+      right: auto;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+  }
+}
+
+@media(min-width: 320px) and (max-width: 380px) {
+  .search-offer {
+    .search-block .site-dropdown__window_free {
+      margin-left: calc((100vw - 40px - 260px) / 2);
+    }
   }
 }

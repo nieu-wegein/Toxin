@@ -488,10 +488,8 @@ template {
   height: 100%;
   max-height: inherit;
 }
-.site-slider:hover .site-slider__arrow {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+.site-slider:hover .site-slider__button {
+  opacity: 1;
 }
 .site-slider__image {
   display: block;
@@ -545,14 +543,17 @@ template {
 .site-slider__bullet_active {
   background-color: white;
 }
-.site-slider__arrow {
+.site-slider__button {
   position: absolute;
   top: 0;
   cursor: pointer;
   width: 15.6%;
   height: 100%;
-  background-color: transparent;
   border: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  opacity: 0;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -560,40 +561,70 @@ template {
       -ms-flex-align: center;
           align-items: center;
   padding: 0;
-  display: none;
+  outline: none;
 }
-.site-slider__arrow::before, .site-slider__arrow::after {
-  content: " ";
+.site-slider__button:hover, .site-slider__button:focus {
+  opacity: 1;
+}
+.site-slider__button:focus-visible .site-slider__arrow {
+  outline: 2px solid white;
+}
+.site-slider__button .site-slider__arrow {
+  position: relative;
+  width: 50%;
+  padding-top: 50%;
+  border-radius: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+.site-slider__button .site-slider__arrow::before, .site-slider__button .site-slider__arrow::after {
   position: absolute;
-  width: 18%;
-  padding-top: 5%;
+  content: " ";
+  width: 37%;
+  padding-top: 10%;
   background-color: white;
 }
-.site-slider__arrow_left {
+.site-slider__button .site-slider__arrow_left {
+  -webkit-transform: translate(4%, 4%);
+          transform: translate(4%, 4%);
+}
+.site-slider__button .site-slider__arrow_left::before {
+  top: 0;
+  -webkit-transform: translateY(350%) rotate(-45deg);
+          transform: translateY(350%) rotate(-45deg);
+}
+.site-slider__button .site-slider__arrow_left::after {
+  bottom: 0;
+  -webkit-transform: translateY(-350%) rotate(45deg);
+          transform: translateY(-350%) rotate(45deg);
+}
+.site-slider__button .site-slider__arrow_right {
+  -webkit-transform: translateY(4%);
+          transform: translateY(4%);
+}
+.site-slider__button .site-slider__arrow_right::before {
+  top: 0;
+  -webkit-transform: translateY(350%) rotate(45deg);
+          transform: translateY(350%) rotate(45deg);
+}
+.site-slider__button .site-slider__arrow_right::after {
+  bottom: 0;
+  -webkit-transform: translateY(-350%) rotate(-45deg);
+          transform: translateY(-350%) rotate(-45deg);
+}
+.site-slider__button_left {
   left: 0;
   background: -webkit-gradient(linear, left top, right top, from(rgba(0, 0, 0, 0.5)), color-stop(99.99%, rgba(0, 0, 0, 0)), to(rgba(255, 255, 255, 0)));
   background: linear-gradient(90deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0) 99.99%, rgba(255, 255, 255, 0) 100%);
 }
-.site-slider__arrow_left::before {
-  -webkit-transform: translateX(25%) translateY(-100%) rotate(-45deg);
-          transform: translateX(25%) translateY(-100%) rotate(-45deg);
-}
-.site-slider__arrow_left::after {
-  -webkit-transform: translateX(25%) translateY(100%) rotate(45deg);
-          transform: translateX(25%) translateY(100%) rotate(45deg);
-}
-.site-slider__arrow_right {
+.site-slider__button_right {
   right: 0;
   background: -webkit-gradient(linear, left top, right top, from(rgba(255, 255, 255, 0)), color-stop(0.01%, rgba(0, 0, 0, 0)), to(rgba(0, 0, 0, 0.5)));
   background: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, rgba(0, 0, 0, 0) 0.01%, rgba(0, 0, 0, 0.5) 100%);
-}
-.site-slider__arrow_right::before {
-  -webkit-transform: translateY(-100%) rotate(45deg);
-          transform: translateY(-100%) rotate(45deg);
-}
-.site-slider__arrow_right::after {
-  -webkit-transform: translateY(100%) rotate(-45deg);
-          transform: translateY(100%) rotate(-45deg);
 }
 
 .like-button {
@@ -1412,6 +1443,10 @@ template {
   margin: 0;
 }
 
+.social-link:focus-visible {
+  outline: 2px solid rgba(31, 32, 65, 0.5);
+}
+
 .site-header {
   padding: 15px 9.72%;
   background-color: white;
@@ -1515,6 +1550,9 @@ template {
   text-decoration: none;
   color: rgba(31, 32, 65, 0.5);
 }
+.site-header__nav-link:focus-visible {
+  outline: 2px solid rgba(31, 32, 65, 0.5);
+}
 .site-header__nav-link_expanded:hover + .site-header__site-nav-list {
   display: block;
 }
@@ -1559,6 +1597,9 @@ template {
   border: none;
   cursor: pointer;
 }
+.site-header__mob-menu-button:focus-visible {
+  outline: 2px solid #1f2041;
+}
 .site-header__mob-menu-button_nav::before, .site-header__mob-menu-button_nav::after {
   content: " ";
   position: absolute;
@@ -1584,6 +1625,7 @@ template {
   transition: -webkit-transform 2s;
   transition: transform 2s;
   transition: transform 2s, -webkit-transform 2s;
+  outline-offset: 3px;
 }
 .site-header__mob-menu-button_nav::before {
   -webkit-transform: translateY(-10px);
@@ -1750,6 +1792,9 @@ template {
 .site-footer__menu-link {
   text-decoration: none;
   color: rgba(31, 32, 65, 0.5);
+}
+.site-footer__menu-link:focus-visible {
+  outline: 2px solid rgba(31, 32, 65, 0.5);
 }
 .site-footer__subscription-block {
   min-width: 260px;
@@ -1921,13 +1966,10 @@ template {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
 }
-.booking-block .booking-block__shared-dropdown-wrappers {
+.booking-block__shared-dropdowns-wrapper {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -2031,6 +2073,12 @@ template {
     width: auto;
     padding-left: 20px;
     padding-right: 20px;
+  }
+  .booking-block__shared-dropdowns-wrapper {
+    width: 100%;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
   }
 }
 html {
@@ -2255,6 +2303,10 @@ html {
 }
 @media (max-width: 480px) {
   .room-details__main-info-wrapper {
+    padding-right: 0;
+    padding-left: 0;
+  }
+  .room-details__content-wrapper {
     padding-right: 10px;
     padding-left: 10px;
   }
@@ -2264,6 +2316,6 @@ html {
 }
 @media (min-width: 320px) and (max-width: 380px) {
   .room-details .booking-block .site-dropdown__window_free {
-    margin-left: calc((100vw - 320px) / 2);
+    margin-left: calc((100vw - 40px - 260px) / 2);
   }
 }

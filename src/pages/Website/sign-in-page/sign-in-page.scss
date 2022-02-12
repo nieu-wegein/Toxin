@@ -8,6 +8,7 @@
 @import "../../../components/site-radio/site-radio";
 @import "../../../components/site-checkbox/site-checkbox";
 @import "../../../components/site-fieldset/site-fieldset";
+@import "../../../components/social-link/social-link";
 @import "../../../components/site-header/site-header";
 @import "../../../components/site-footer/site-footer";
 @import "../../../components/registration-block/registration-block";
@@ -35,7 +36,7 @@ html { box-sizing: border-box; }
     display: flex;
     justify-content: center;
     background-image: url("./img/background.png");
-    background-position: top -70px center;
+    background-position: top center;
     background-size: cover;
     background-repeat: no-repeat;
 
@@ -46,6 +47,14 @@ html { box-sizing: border-box; }
 
     .log-in-block {
       margin: 172px 0;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .sign-in-page {
+    &__sign-in-section {
+      padding-top: 70px;
     }
   }
 }

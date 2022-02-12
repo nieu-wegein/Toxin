@@ -7,8 +7,8 @@
   max-height: inherit;
 
   &:hover {
-    .site-slider__arrow {
-      display: flex;
+    .site-slider__button {
+      opacity: 1;
     }
   }
 
@@ -65,48 +65,78 @@
     }
   }
 
-  &__arrow {
+  &__button {
     position: absolute;
     top: 0;
     cursor: pointer;
     width: 15.6%;
     height: 100%;
-    background-color: transparent;
     border: none;
+    display: flex;
+    opacity: 0;
     justify-content: center;
     align-items: center;
     padding: 0;
-    display: none;
+    outline: none;
 
-    &::before,
-    &::after {
-      content: " ";
-      position: absolute;
-      width: 18%;
-      padding-top: 5%;
-      background-color: white;
+    &:hover,
+    &:focus {
+      opacity: 1;
+    }
+
+    &:focus-visible .site-slider__arrow {
+      outline: 2px solid white;
+    }
+
+    .site-slider__arrow {
+      position: relative;
+      width: 50%;
+      padding-top: 50%;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+
+      &::before,
+      &::after {
+        position: absolute;
+        content: " ";
+        width: 37%;
+        padding-top: 10%;
+        background-color: white;
+      }
+      &_left {
+        transform: translate(4%, 4%);
+
+        &::before {
+          top: 0;
+          transform: translateY(350%) rotate(-45deg) ;
+        }
+        &::after {
+          bottom: 0;
+          transform: translateY(-350%) rotate(45deg) ;
+        }
+      }
+      &_right {
+        transform:  translateY(4%);
+        &::before {
+          top: 0;
+          transform: translateY(350%) rotate(45deg) ;
+        }
+        &::after {
+          bottom: 0;
+          transform: translateY(-350%) rotate(-45deg) ;
+        }
+      }
     }
 
     &_left {
       left: 0;
       background: linear-gradient(90deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0) 99.99%, rgba(255, 255, 255, 0) 100%);
-      &::before {
-        transform: translateX(25%)  translateY(-100%) rotate(-45deg);
-      }
-      &::after {
-        transform: translateX(25%) translateY(100%) rotate(45deg);
-      }
     }
 
     &_right {
       right: 0;
       background: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, rgba(0, 0, 0, 0) 0.01%, rgba(0, 0, 0, 0.5) 100%);
-      &::before {
-        transform:  translateY(-100%) rotate(45deg);
-      }
-      &::after {
-        transform:  translateY(100%) rotate(-45deg);
-      }
     }
   }
 }

@@ -8,8 +8,6 @@ mixin room-card(id, room)
 
   article(class = ["room-card", room.luxe ? "room-card_luxe"  : ""] id = id)
     h2.room-card__heading Комната №  #{room.number}
-    .slider-container
-      +site-slider(room.imgList)
     a(class = "room-card__full-page-link" href = "../room-details/room-details.html?id=" + room.number)
       .room-card__body
         .room-card__info
@@ -25,3 +23,6 @@ mixin room-card(id, room)
             span.room-card__testimonial-count #{room.testimonialsList.count}
             //-Не нужно склонение?
             |  Отзывов
+    .slider-container
+      +site-slider(room.imgList)
+    .room-card__outline-wrapper //- focus-within

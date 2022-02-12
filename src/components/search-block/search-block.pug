@@ -7,22 +7,23 @@ mixin search-block()
     .search-block__heading Найдём номера под ваши пожелания
     .search-block__body
       form.search-block__form
-        .search-block__date-dropdown-wrapper
-          +site-dropdown({
-            label: "Прибытие",
-            id: "search-departure",
-            text: "ДД.ММ.ГГГГ",
-            shared: {id: "search-calendar"},
-            modifiers: {calendar: {type: "range"}, buttons: true}
-          })
-        .search-block__date-dropdown-wrapper
-          +site-dropdown({
-            label: "Выезд",
-            id: "search-arrival",
-            text: "ДД.ММ.ГГГГ",
-            shared: {for: "search-calendar"},
-            modifiers: {calendar: {type: "range"}, buttons: true}
-          })
+        .search-block__shared-dropdowns-wrapper
+          .search-block__date-dropdown-wrapper
+            +site-dropdown({
+              label: "Прибытие",
+              id: "search-departure",
+              text: "ДД.ММ.ГГГГ",
+              shared: {id: "search-calendar"},
+              modifiers: {calendar: {type: "range"}, buttons: true}
+            })
+          .search-block__date-dropdown-wrapper
+            +site-dropdown({
+              label: "Выезд",
+              id: "search-arrival",
+              text: "ДД.ММ.ГГГГ",
+              shared: {for: "search-calendar"},
+              modifiers: {calendar: {type: "range"}, buttons: true}
+            })
         .search-block__guests-dropdown-wrapper
           +site-dropdown({label: "Гости", id: "search-guest-dropdown", text: "Сколько гостей",
             options: [

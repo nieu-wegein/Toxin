@@ -13,4 +13,4 @@ mixin log-in-block()
         +site-button({tag:"button", type: "submit", text: "Войти", modifiers: {primary: true, flexible: true, icon: "arrow"}})
     footer.log-in-block__footer
       span.log-in-block__no-account Нет аккаунта на Toxin?
-      +site-button({tag: "a", text: "Создать", modifiers: {rounded: true, block: true}})
+      +site-button({tag: "a", href: "../registration-page/registration-page.html", text: "Создать", modifiers: {rounded: true, block: true}})

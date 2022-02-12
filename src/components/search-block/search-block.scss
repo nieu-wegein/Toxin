@@ -15,26 +15,43 @@
 
   &__heading {
     @include site-h1();
-    margin-bottom:20px;
+    margin-bottom: 23px;
   }
 
   &__form {
-    display: flex;justify-content: space-between;
+    display: flex;
     flex-wrap: wrap;
+  }
 
-    &>.button {
-      margin-top: 32px;
-    }
+  &__shared-dropdowns-wrapper {
+    display: flex;
+    position: relative;
+    z-index: 2;
   }
 
   &__date-dropdown-wrapper {
-    width: 150px;
-    position: relative;
-    z-index: 2;
+    max-width: 150px;
+    &:first-child {
+      margin-right: 20px
+    }
   }
 
   &__guests-dropdown-wrapper {
     width: 100%;
     margin-top: 21px;
+    margin-bottom: 30px;
+  }
+}
+
+@media(max-width: 380px) {
+  .search-block {
+    width: auto;
+    padding-left: 20px;
+    padding-right: 20px;
+
+    &__shared-dropdowns-wrapper {
+      width: 100%;
+      justify-content: space-between;
+    }
   }
 }
