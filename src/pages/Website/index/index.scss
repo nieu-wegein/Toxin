@@ -1,25 +1,41 @@
-@import "../../../fonts/fonts";
-@import "../../../variables/variables";
-@import "../../../components/site-button/site-button";
-@import "../../../components/site-logo/site-logo";
-@import "../../../components/site-section/site-section";
-@import "../../../components/form-element/form-element";
-@import "../../../components/site-input/site-input";
-@import "../../../components/site-dropdown/site-dropdown";
-@import "../../../components/site-calendar/site-calendar";
-@import "../../../components/social-link/social-link";
-@import "../../../components/site-header/site-header";
-@import "../../../components/site-footer/site-footer.scss";
-@import "../../../components/search-block/search-block.scss";
+@import '../../../fonts/fonts';
+@import '../../../variables/variables';
+@import '../../../components/site-button/site-button';
+@import '../../../components/site-fieldset/site-fieldset';
+@import '../../../components/site-logo/site-logo';
+@import '../../../components/site-section/site-section';
+@import '../../../components/form-element/form-element';
+@import '../../../components/site-input/site-input';
+@import '../../../components/site-dropdown/site-dropdown';
+@import '../../../components/site-calendar/site-calendar';
+@import '../../../components/social-link/social-link';
+@import '../../../components/site-header/site-header';
+@import '../../../components/site-footer/site-footer.scss';
+@import '../../../components/log-in-block/log-in-block.scss';
+@import '../../../components/search-block/search-block.scss';
 
 
-html { box-sizing: border-box; }
-* {box-sizing: inherit}
+html {
+  font-size: 14px;
+  box-sizing: border-box;
+}
+
+* {
+  box-sizing: inherit
+}
 
 .search-offer {
 
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+
   &__main-heading {
     @include visually-hidden();
+  }
+
+  &__main-section {
+    flex: 1 0 auto;
   }
 
   &__search-section {
@@ -27,10 +43,25 @@ html { box-sizing: border-box; }
     position: relative;
     padding: 69px 9.72% 0;
     min-height: 830px;
-    background-image: url("./img/background.png");
+    background-image: url('../../../img/background-living-room.jpg');
     background-size: cover;
     background-position: center top;
     background-repeat: no-repeat;
+
+    @media(max-width: 768px)  {
+      padding: 140px 0;
+    }
+  }
+
+  .search-block {
+    @media(max-width: 768px) {
+      margin: 0 auto;
+    }
+    .site-dropdown__window_free {
+      @media(min-width: 320px) and (max-width: 380px) {
+        margin-left: calc((100vw - 40px - 260px) / 2);
+      }
+    }
   }
 
   &__slogan {
@@ -40,33 +71,13 @@ html { box-sizing: border-box; }
     text-align: right;
     right: 134px;
     bottom: 20px;
-  }
-}
+    overflow-wrap: anywhere;
 
-@media (max-width: 768px) {
-  .search-offer {
-
-    &__search-section {
-      padding: 140px 0;
-    }
-    .search-block {
-      margin: 0 auto;
-    }
-
-    &__slogan {
+    @media (max-width: 768px) {
       text-align: center;
       right: auto;
       left: 50%;
       transform: translateX(-50%);
-    }
-
-  }
-}
-
-@media(min-width: 320px) and (max-width: 380px) {
-  .search-offer {
-    .search-block .site-dropdown__window_free {
-      margin-left: calc((100vw - 40px - 260px) / 2);
     }
   }
 }

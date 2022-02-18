@@ -374,14 +374,14 @@ template {
   font-family: "Montserrat";
   font-style: normal;
   font-weight: 400;
-  src: local(""), url(../815a9e9ccfffa41179b2.woff) format("woff"), url(../e552eceeaa6929459f9f.ttf) format("truetype"), url(../22d8566c41c8d731931b.svg#Montserrat) format("svg");
+  src: local(""), url(../fonts/montserrat-v18-latin-ext_latin_cyrillic-ext_cyrillic-regular.woff) format("woff"), url(../fonts/montserrat-v18-latin-ext_latin_cyrillic-ext_cyrillic-regular.ttf) format("truetype"), url(../fonts/montserrat-v18-latin-ext_latin_cyrillic-ext_cyrillic-regular.svg#Montserrat) format("svg");
   /* Legacy iOS */
 }
 @font-face {
   font-family: "Montserrat-Bold";
   font-style: normal;
   font-weight: 700;
-  src: local(""), url(../ed42f12c8204ea6029e6.woff) format("woff"), url(../8053470a105c34478b57.ttf) format("truetype"), url(../fac85a3030008d30b0b8.svg#Montserrat) format("svg");
+  src: local(""), url(../fonts/montserrat-v18-latin-ext_latin_cyrillic-ext_cyrillic-700.woff) format("woff"), url(../fonts/montserrat-v18-latin-ext_latin_cyrillic-ext_cyrillic-700.ttf) format("truetype"), url(../fonts/montserrat-v18-latin-ext_latin_cyrillic-ext_cyrillic-700.svg#Montserrat) format("svg");
   /* Legacy iOS */
 }
 .button {
@@ -398,6 +398,7 @@ template {
   text-align: center;
   position: relative;
   text-decoration: none;
+  white-space: nowrap;
 }
 .button:hover {
   color: rgba(31, 32, 65, 0.5);
@@ -463,11 +464,17 @@ template {
 .button_flexible {
   width: 100%;
 }
-.button.arrow::after {
+.button_arrow {
+  padding-right: 40px;
+  padding-left: 40px;
+}
+.button_arrow::after {
   content: "arrow_forward";
   font-family: "Material Icons";
   font-size: 24px;
-  top: 13px;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  top: 50%;
   right: 9px;
   position: absolute;
   text-transform: none;
@@ -655,6 +662,7 @@ template {
   list-style: none;
   padding: 0;
   margin: 0;
+  overflow-wrap: anywhere;
 }
 .site-radio__input {
   position: absolute;
@@ -711,6 +719,7 @@ template {
   list-style: none;
   padding: 0;
   margin: 0;
+  overflow-wrap: anywhere;
 }
 .site-checkbox__input {
   position: absolute;
@@ -721,7 +730,7 @@ template {
   outline: 1px solid #1f2041;
 }
 .site-checkbox__input:checked + .site-checkbox__label::before {
-  background: url(../c93d1d2e0ebf70b1d568.svg) no-repeat center;
+  background: url(../img/checkbox-checked.svg) no-repeat center;
   border: 1px solid #BC9CFF;
 }
 .site-checkbox__label {
@@ -918,6 +927,7 @@ template {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  overflow-wrap: anywhere;
 }
 .site-header__site-navigation_active .site-header__site-nav-list {
   visibility: visible;
@@ -929,7 +939,7 @@ template {
 }
 .site-header__body-blocker {
   visibility: hidden;
-  width: 100vh;
+  width: 100vw;
   height: 100%;
   position: fixed;
   background-color: black;
@@ -939,13 +949,35 @@ template {
   top: 70px;
   left: 0;
 }
+.site-header__log-in-wrapper {
+  position: fixed;
+  left: calc(50vw - 190px);
+  z-index: 2;
+  visibility: hidden;
+  -webkit-transition: -webkit-transform 1s;
+  transition: -webkit-transform 1s;
+  transition: transform 1s;
+  transition: transform 1s, -webkit-transform 1s;
+}
+.site-header__log-in-wrapper_active {
+  visibility: visible;
+  -webkit-transform: translateY(calc(50vh - 50% + 70px));
+          transform: translateY(calc(50vh - 50% + 70px));
+}
+.site-header__log-in-wrapper_active + .site-header__body-blocker {
+  visibility: visible;
+  opacity: 0.6;
+}
 .site-header__site-nav-list {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
   list-style: none;
   padding: 0;
   margin: 0;
+  margin-left: 40px;
   background-color: white;
 }
 .site-header__site-nav-list .site-header__site-nav-list {
@@ -955,6 +987,7 @@ template {
   border-top: none;
   -webkit-box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05);
           box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05);
+  margin: 0;
   display: none;
   white-space: nowrap;
 }
@@ -962,22 +995,27 @@ template {
   display: block;
 }
 .site-header__site-nav-list .site-header__site-nav-list .site-header__site-nav-item {
-  margin-right: 0;
+  margin: 0;
 }
 .site-header__site-nav-list .site-header__site-nav-list .site-header__site-nav-item:hover {
   background-color: rgba(31, 32, 65, 0.1);
 }
 .site-header__site-nav-list .site-header__site-nav-list .site-header__nav-link {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
   padding: 10px 20px;
 }
 .site-header__site-nav-item {
   position: relative;
+  margin-top: 5px;
+  margin-bottom: 5px;
 }
 .site-header__site-nav-item:not(:last-child) {
   margin-right: 20px;
+}
+.site-header__site-nav-item:focus-within .site-header__site-nav-list {
+  display: block;
 }
 .site-header__nav-link {
   display: -webkit-inline-box;
@@ -1011,6 +1049,7 @@ template {
   list-style: none;
   padding: 0;
   margin: 0;
+  white-space: nowrap;
 }
 .site-header__user-nav-list_logged {
   -webkit-box-align: center;
@@ -1085,14 +1124,30 @@ template {
   -webkit-transform: rotate(45deg);
           transform: rotate(45deg);
 }
-.site-header__mob-menu-button_user {
+.site-header__mob-menu-button_login, .site-header__mob-menu-button_user {
+  position: relative;
+  width: 34px;
+  height: 34px;
+  font-size: 34px;
+  font-family: "Material Icons";
+  background-color: white;
+}
+.site-header__mob-menu-button_login::before, .site-header__mob-menu-button_user::before {
   -webkit-background-clip: text;
   -moz-background-clip: text;
   -webkit-text-fill-color: transparent;
   -webkit-text-stroke: transparent;
   background-image: -webkit-gradient(linear, left top, left bottom, from(#BC9CFF), to(#8BA4F9));
   background-image: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
-  font-size: 34px;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+.site-header__mob-menu-button_login::before {
+  content: "login";
+}
+.site-header__mob-menu-button_user::before {
+  content: "person";
 }
 
 @media (max-width: 1180px) {
@@ -1104,8 +1159,8 @@ template {
   .site-header__user-navigation {
     display: none;
   }
-  .site-header__mob-menu-button_user {
-    display: block;
+  .site-header__mob-menu-button_login, .site-header__mob-menu-button_user {
+    display: inline-block;
   }
 }
 @media (max-width: 768px) {
@@ -1115,7 +1170,7 @@ template {
     width: 100%;
   }
   .site-header__mob-menu-button_nav {
-    display: block;
+    display: inline-block;
   }
   .site-header__site-nav-list {
     color: #1f2041;
@@ -1184,6 +1239,7 @@ template {
           box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05);
 }
 .site-footer__content {
+  overflow-wrap: anywhere;
   padding: 100px 9.72% 102px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1201,6 +1257,7 @@ template {
 }
 .site-footer__info-text {
   margin: 18px 0;
+  overflow-wrap: anywhere;
 }
 .site-footer__links-section {
   display: -webkit-box;
@@ -1336,68 +1393,6 @@ template {
     margin-bottom: 25px;
   }
 }
-.registration-block {
-  background-color: white;
-  border: 1px solid rgba(0, 0, 0, 0.12);
-  border-radius: 4px;
-  -webkit-box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.2);
-          box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.2);
-  padding: 40px 29px 30px 29px;
-  width: 380px;
-  max-width: 380px;
-}
-.registration-block__heading {
-  color: #1f2041;
-  font-size: 24px;
-  font-family: "Montserrat-Bold", sans-serif;
-  line-height: 29px;
-  margin: 0;
-  letter-spacing: -0.1px;
-  margin-bottom: 20px;
-}
-.registration-block__footer {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  padding-top: 30px;
-}
-.registration-block__already-have {
-  font-family: "Montserrat", sans-serif;
-  font-size: 14px;
-  line-height: 18px;
-  letter-spacing: -0.15px;
-  margin-right: 35px;
-}
-.registration-block .site-fieldset:first-child {
-  margin-bottom: 20px;
-}
-.registration-block .site-fieldset:first-child .site-radio-list {
-  margin-bottom: 21px;
-}
-.registration-block .site-fieldset:nth-child(2) {
-  margin-bottom: 8px;
-}
-.registration-block .site-fieldset__legend {
-  margin-bottom: 5px;
-}
-.registration-block .site-fieldset .form-element:not(:last-child) {
-  margin-bottom: 10px;
-}
-.registration-block .site-checkbox-list {
-  margin-bottom: 22px;
-}
-
-@media (max-width: 380px) {
-  .registration-block__heading {
-    text-align: center;
-  }
-}
 .log-in-block {
   background-color: white;
   border: 1px solid rgba(0, 0, 0, 0.12);
@@ -1435,7 +1430,7 @@ template {
           align-items: center;
   padding-top: 30px;
 }
-.log-in-block__no-account {
+.log-in-block__no-account-button {
   font-family: "Montserrat", sans-serif;
   font-size: 14px;
   line-height: 18px;
@@ -1448,16 +1443,8 @@ template {
     text-align: center;
   }
 }
-body {
-  overflow: -moz-scrollbars-none;
-  -ms-overflow-style: none;
-}
-
-body::-webkit-scrollbar {
-  width: 0 !important;
-}
-
 html {
+  font-size: 14px;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
 }
@@ -1467,6 +1454,21 @@ html {
           box-sizing: inherit;
 }
 
+.sign-in-page {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  min-height: 100vh;
+}
+.sign-in-page .sign-in-page__main-section {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 0 auto;
+          flex: 1 0 auto;
+}
 .sign-in-page__main-heading {
   clip: rect(0 0 0 0);
   width: 1px;
@@ -1483,22 +1485,16 @@ html {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  background-image: url(../8281bb65b359d1850401.png);
+  background-image: url(../img/background-bedroom.jpg);
   background-position: top center;
   background-size: cover;
   background-repeat: no-repeat;
 }
-.sign-in-page__sign-in-section .registration-block {
-  display: none;
-  -webkit-transform: translate(3px);
-          transform: translate(3px);
-}
-.sign-in-page__sign-in-section .log-in-block {
-  margin: 172px 0;
-}
-
 @media (max-width: 768px) {
   .sign-in-page__sign-in-section {
     padding-top: 70px;
   }
+}
+.sign-in-page__sign-in-section .log-in-block {
+  margin: 172px 0;
 }

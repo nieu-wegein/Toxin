@@ -9,49 +9,49 @@ import "../../../components/site-checkbox/site-checkbox";
 import $ from "../../../jquery-3.6.0.min";
 
 
-$(function() {
+$(function () {
 
-  const inputList = $(".site-input");
-  inputList[1].value = "This is pretty awesome"
-
-
-  const dropdownList = $(".site-dropdown_counting-dropdown").get();
-
-  dropdownList[1].objectModel.initState({
-    bedrooms: 2,
-    beds: 2,
-    bathrooms: 1
-  })
-
-  dropdownList[2].objectModel.initState({
-    bedrooms: 2,
-    beds: 2,
-    bathrooms: 0
-  })
-
-  dropdownList[4].objectModel.initState({
-    adults: 2,
-    children: 1
-  })
+    const inputList = $(".site-input");
+    inputList[1].value = "This is pretty awesome"
 
 
-  for(let i = 2; i < 5; i++) {
-    $(".site-dropdown__header", dropdownList[i]).click()
-  }
+    const dropdownList = $(".site-dropdown_counting-dropdown").get();
+
+    dropdownList[1].objectModel.initState({
+        bedrooms: 2,
+        beds: 2,
+        bathrooms: 1
+    })
+
+    dropdownList[2].objectModel.initState({
+        bedrooms: 2,
+        beds: 2,
+        bathrooms: 0
+    })
+
+    dropdownList[4].objectModel.initState({
+        adults: 2,
+        children: 1
+    })
 
 
-  const calendarList =  $(".site-calendar");
+    for (let i = 2; i < 5; i++) {
+        $(".site-dropdown__header", dropdownList[i]).click()
+    }
 
-  calendarList[0].objectModel.initState({
-    month: 7,
-    year: 2019
-  })
 
-  calendarList[1].objectModel.initState({
-    today: new Date("2019, 8, 8")
-  })
+    const calendarList = $(".site-calendar");
 
-  calendarList[0].objectModel.chooseEndDate(19)
-  calendarList[1].objectModel.chooseStartDate(19).chooseEndDate(23)
+    calendarList[0].objectModel.initState({
+        month: 7,
+        year: 2019
+    })
+
+    calendarList[1].objectModel.initState({
+        today: new Date("2019, 8, 8")
+    })
+
+    calendarList[0].objectModel.chooseEndDate(19)
+    calendarList[1].objectModel.chooseStartDate(19).chooseEndDate(23)
 
 })

@@ -1,15 +1,15 @@
 -
-  function decline(number, cases, join = true) {
-    const last = number % 10;
-    const penult = Math.floor(number % 100 / 10);
+    function decline(number, cases, join = true) {
+        const last = number % 10;
+        const penult = Math.floor(number % 100 / 10);
 
-    if (last === 1 && penult !== 1)
-      return join ? number + " " + cases[0] : cases[0]
-    else if (last > 1 && last < 5 && penult !== 1)
-      return join ? number + " " + cases[1] : cases[1]
-    else
-      return join ? number + " " + cases[2] : cases[2]
-  }
+        if (last === 1 && penult !== 1)
+            return join ? number + " " + cases[0] : cases[0]
+        else if (last > 1 && last < 5 && penult !== 1)
+            return join ? number + " " + cases[1] : cases[1]
+        else
+            return join ? number + " " + cases[2] : cases[2]
+    }
 
 mixin decline()
-  //Пустой миксин для корректного подключения js-кода в другие pug-файлы
+    //Пустой миксин для корректного подключения js-кода в другие pug-файлы

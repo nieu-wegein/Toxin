@@ -2,6 +2,7 @@
 .site-testimonial {
 
   margin: 0;
+  overflow-wrap: anywhere;
 
   @include site-body();
 
@@ -22,7 +23,8 @@
   &__author-name {
     font-family: $ff-bold;
     font-style: normal;
-    display: block;
+    display: inline-block;
+    width: 100%;
   }
 
   &__body {

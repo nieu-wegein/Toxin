@@ -4,16 +4,41 @@
   @include site-body;
   box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05);
 
+  @media(max-width: 768px) {
+    line-height: 17px;
+  }
+
   &__content {
+    overflow-wrap: anywhere;
     padding: 100px 9.72% 102px;
     display: flex;
     background-color: white;
     box-shadow: 0px 1px 0px rgba(31, 32, 65, 0.1);
+
+    @media(max-width: 1180px) {
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    @media(max-width: 768px) {
+      padding: 120px 9.72% 0;
+    }
   }
 
   &__info-block {
     max-width: 22.4%;
     margin-right: 3.5%;
+
+    @media(max-width: 1180px) {
+      margin: 0;
+      margin-bottom: 30px;
+      max-width: none;
+      text-align: center;
+    }
+    @media(max-width: 768px) {
+      max-width: 100%;
+      margin: 0 auto;
+    }
   }
 
   .site-logo {
@@ -21,7 +46,12 @@
   }
 
   &__info-text {
-    margin:  18px 0;
+    margin: 18px 0;
+    overflow-wrap: anywhere;
+
+    @media(max-width: 768px) {
+      display: none;
+    }
   }
 
   &__links-section {
@@ -29,28 +59,44 @@
     list-style: none;
     flex-grow: 1;
     margin-top: 4px;
+
+    @media(max-width: 960px) {
+      justify-content: space-around;
+    }
+    @media(max-width: 768px) {
+      display: none;
+    }
   }
 
   &__menu {
     &-block {
       width: 33.3%;
       margin-right: 30px;
+
+      @media(max-width: 960px) {
+        width: auto;
+      }
     }
+
     &-list {
       padding: 0;
       margin: 0;
       margin-top: 8px;
       list-style: none;
     }
+
     &-item {
       line-height: 17px;
+
       &:not(:last-child) {
         margin-bottom: 20px;
       }
     }
+
     &-link {
       text-decoration: none;
       color: $site-dark-50;
+
       &:focus-visible {
         outline: 2px solid $site-dark-50;
       }
@@ -62,7 +108,12 @@
       min-width: 260px;
       width: 22.4%;
       margin-top: 4px;
+
+      @media(max-width: 960px) {
+        display: none;
+      }
     }
+
     &-text {
       margin-top: 4px;
       margin-bottom: 22px;
@@ -75,10 +126,23 @@
     background-color: white;
     margin-top: 1px;
     padding: 23px 9.72%;
+
+    @media(max-width: 768px) {
+      text-align: center;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-top: 0;
+      padding: 20px 9.72% 120px;
+    }
   }
 
-  &__copyright{
+  &__copyright {
     margin: 0;
+
+    @media(max-width: 768px) {
+      width: 100%;
+      margin-bottom: 25px;
+    }
   }
 
   &__social-links {
@@ -93,73 +157,9 @@
 
   &__social-link {
     width: 24px;
+
     &:not(:last-child) {
       margin-right: 20px;
-    }
-  }
-}
-
-
-@media(max-width: 1180px) {
-  .site-footer {
-    &__content {
-      flex-wrap: wrap;
-      justify-content: center;
-    }
-
-    &__info-block {
-      margin: 0;
-      margin-bottom: 30px;
-      max-width: none;
-      text-align: center;
-    }
-  }
-}
-
-@media(max-width: 960px) {
-  .site-footer {
-
-    &__links-section {
-      justify-content: space-around;
-    }
-
-    &__menu-block {
-      width: auto;
-    }
-
-    &__subscription-block {
-      display: none;
-    }
-  }
-}
-
-
-
-@media(max-width: 768px) {
-  .site-footer {
-    line-height: 17px;
-    &__content {
-      padding: 120px 9.72% 0;
-    }
-    &__info-block {
-      max-width: 100%;
-      margin: 0 auto;
-    }
-    &__info-text,
-    &__links-section,
-    &__subscription-block {
-      display: none;
-    }
-    &__bottom {
-      text-align: center;
-      flex-wrap: wrap;
-      justify-content: center;
-      margin-top: 0;
-      padding: 20px 9.72% 120px;
-    }
-    &__copyright {
-      width: 100%;
-      margin-bottom: 25px;
     }
   }
 }

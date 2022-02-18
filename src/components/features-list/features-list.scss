@@ -2,13 +2,14 @@
 
   @include site-body();
   margin: 0;
+  overflow-wrap: anywhere;
 
   &__wrapper {
     position: relative;
 
     &::before {
       @include background-text-transparent();
-      font-family: "Material Icons";
+      font-family: 'Material Icons';
       font-size: 48px;
       line-height: 48px;
       margin-right: 10px;
@@ -21,18 +22,21 @@
       border-top: 1px solid $site-dark-10;
       padding-top: 20px;
     }
+
     &:not(:last-child) {
       padding-bottom: 20px;
     }
 
     &_comfort::before {
-      content: "insert_emoticon";
+      content: 'insert_emoticon';
     }
+
     &_convenience::before {
-      content: "location_city";
+      content: 'location_city';
     }
+
     &_cosiness::before {
-      content: "whatshot";
+      content: 'whatshot';
     }
 
   }

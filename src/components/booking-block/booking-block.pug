@@ -44,31 +44,32 @@ mixin booking-block(obj)
             ],
             modifiers: {buttons: true}
           })
-        section.booking-block__bill-section
+        .booking-block__bill-section
           table.booking-block__bill-table
-            tr.booking-block__bill-row
-              td.booking-block__bill-data
-                div.booking-block__calculation
-                  p.booking-block__termin !{separatePrice(obj.price) + obj.currency} х #{decline(4, ["сутки", "суток", "суток"])}
-              td.booking-block__bill-data
-                span.booking-block__result !{separatePrice(obj.price*4) + obj.currency}
-            tr.booking-block__bill-row
-              td.booking-block__bill-data
-                div.booking-block__calculation
-                  p.booking-block__termin Сбор за услуги#{(obj.charge >= 0 ? "": ": скидка " + separatePrice(-obj.charge) + obj.currency)}
-                  button(type = "button" class = "booking-block__termin-info") i
-              td.booking-block__bill-data
-                span.booking-block__result #{(obj.charge > 0 ? separatePrice(obj.charge) : 0) + obj.currency}
-            tr.booking-block__bill-row
-              td.booking-block__bill-data
-                div.booking-block__calculation
-                  p.booking-block__termin Сбор за дополнительные услуги#{(obj.extraCharge >= 0 ? "" : ": скидка " + separatePrice(-obj.extraCharge) + obj.currency)}
-                  button(type = "button" class = "booking-block__termin-info") i
-              td.booking-block__bill-data
-                span.booking-block__result #{(obj.extraCharge > 0 ? separatePrice(obj.extraCharge) : 0) + obj.currency}
-            tr.booking-block__bill-row.booking-block__bill-row_total
-              td.booking-block__bill-data
-                p.booking-block__termin.booking-block__termin_total Итого
-              td.booking-block__bill-data
-                span.booking-block__result.booking-block__result_total #{separatePrice(obj.price*4 + obj.charge + obj.extraCharge) + obj.currency}
+            tbody.booking-block__bill-body
+              tr.booking-block__bill-row
+                td.booking-block__bill-data
+                  div.booking-block__calculation
+                    p.booking-block__termin !{separatePrice(obj.price) + obj.currency} х #{decline(4, ["сутки", "суток", "суток"])}
+                td.booking-block__bill-data
+                  span.booking-block__result !{separatePrice(obj.price*4) + obj.currency}
+              tr.booking-block__bill-row
+                td.booking-block__bill-data
+                  div.booking-block__calculation
+                    p.booking-block__termin Сбор за услуги#{(obj.charge >= 0 ? "": ": скидка " + separatePrice(-obj.charge) + obj.currency)}
+                    button(type = "button" class = "booking-block__termin-info") i
+                td.booking-block__bill-data
+                  span.booking-block__result #{(obj.charge > 0 ? separatePrice(obj.charge) : 0) + obj.currency}
+              tr.booking-block__bill-row
+                td.booking-block__bill-data
+                  div.booking-block__calculation
+                    p.booking-block__termin Сбор за дополнительные услуги#{(obj.extraCharge >= 0 ? "" : ": скидка " + separatePrice(-obj.extraCharge) + obj.currency)}
+                    button(type = "button" class = "booking-block__termin-info") i
+                td.booking-block__bill-data
+                  span.booking-block__result #{(obj.extraCharge > 0 ? separatePrice(obj.extraCharge) : 0) + obj.currency}
+              tr.booking-block__bill-row.booking-block__bill-row_total
+                td.booking-block__bill-data
+                  p.booking-block__termin.booking-block__termin_total Итого
+                td.booking-block__bill-data
+                  span.booking-block__result.booking-block__result_total #{separatePrice(obj.price*4 + obj.charge + obj.extraCharge) + obj.currency}
         +site-button({tag: "button", type: "submit", text: "Забронировать", modifiers: {primary: true, flexible: true, icon: "arrow"}})

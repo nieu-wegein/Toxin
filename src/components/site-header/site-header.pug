@@ -1,5 +1,6 @@
 include ../../mixins/site-menu
 include ../site-button/site-button
+include ../log-in-block/log-in-block
 
 mixin site-header(obj = {})
   -
@@ -20,8 +21,9 @@ mixin site-header(obj = {})
       linkClass: "site-header__nav-link",
       items: [
         {text: "О нас", active: obj.active === "О нас", href: pages.main},
-        {text: "Услуги", active: obj.active === "Услуги", href: pages.main,
-        dropdown:[
+        {
+          text: "Услуги", active: obj.active === "Услуги", href: pages.main,
+          dropdown: [
             {text: "form-elements", href: pages.formElements},
             {text: "cards", href: pages.cards},
             {text: "structural-blocks", href: pages.structuralBlocks},
@@ -34,7 +36,8 @@ mixin site-header(obj = {})
         },
         {text: "Вакансии", active: obj.active === "Вакансии", href: pages.main},
         {text: "Новости", active: obj.active === "Новости", href: pages.main},
-        {text: "Соглашения", active: obj.active === "Соглашения", href: pages.main,
+        {
+          text: "Соглашения", active: obj.active === "Соглашения", href: pages.main,
           dropdown: [
             {text: "Соглашение 1", href: pages.main},
             {text: "Соглашение 2", href: pages.main},
@@ -49,7 +52,7 @@ mixin site-header(obj = {})
       itemClass: "site-header__user-nav-item",
       linkClass: "site-header__nav-link",
       items: [
-        {text: obj.user}
+        {text: obj.user, href: pages.main}
       ]
     };
 
@@ -64,8 +67,20 @@ mixin site-header(obj = {})
       else
         ul.site-header__user-nav-list
           li.site-header__user-nav-item
-            +site-button({tag: "a", href: pages.signIn, modifiers: {rounded: true}, text: "Войти"})
+            +site-button({
+              tag: "a",
+              classList: "site-header__log-in-button",
+              href: pages.signIn,
+              modifiers: {rounded: true},
+              text: "Войти"
+            })
           li.site-header__user-nav-item
-            +site-button({tag: "a", href: pages.registration, modifiers: {primary: true}, text: "Зарегистрироваться"})
-    button.site-header__mob-menu-button.site-header__mob-menu-button_user.material-icons login
+            +site-button({
+              tag: "a",
+              classList: "site-header__reg-button",
+              href: pages.registration,
+              modifiers: {primary: true},
+              text: "Зарегистрироваться"
+            })
+    button(class = ["site-header__mob-menu-button", obj.user ? "site-header__mob-menu-button_user" : "site-header__mob-menu-button_login"])
     button.site-header__mob-menu-button.site-header__mob-menu-button_nav

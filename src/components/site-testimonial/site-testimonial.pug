@@ -1,15 +1,15 @@
 include ../../components/like-button/like-button
 
-mixin site-testimonial(obj)
+mixin site-testimonial(data, userData = {})
 
   blockquote.site-testimonial
     header.site-testimonial__header
       .site-testimonial__image-container
-        img.site-testimonial__author-image(src = obj.img width = "44" height = "44"  alt = "Фотография автора отзыва")
+        img.site-testimonial__author-image(src = data.img width = "44" height = "44"  alt = "Фотография автора отзыва")
       .site-testimonial__info
-        cite.site-testimonial__author-name #{obj.name}
-        time.site-testimonial__time #{obj.date}
+        cite.site-testimonial__author-name #{data.name}
+        time(class = "site-testimonial__time" datetime = `${data.datetime}`) #{data.date}
     .site-testimonial__body
       .site-testimonial__button-wrapper
-        +like-button(obj.likes, obj.liked)
-      p.site-testimonial__text !{obj.text}
+        +like-button(data.likes, userData.likes.includes(data.id))
+      p.site-testimonial__text !{data.text}

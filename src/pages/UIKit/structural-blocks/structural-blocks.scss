@@ -1,13 +1,13 @@
-@import "../../../fonts/fonts";
-@import "../../../variables/variables";
-@import "../../../components/site-button/site-button";
-@import "../../../components/site-logo/site-logo";
-@import "../../../components/form-element/form-element";
-@import "../../../components/site-section/site-section";
-@import "../../../components/site-input/site-input";
-@import "../../../components/social-link/social-link";
-@import "../../../components/site-header/site-header";
-@import "../../../components/site-footer/site-footer";
+@import '../../../fonts/fonts';
+@import '../../../variables/variables';
+@import '../../../components/site-button/site-button';
+@import '../../../components/site-logo/site-logo';
+@import '../../../components/form-element/form-element';
+@import '../../../components/site-section/site-section';
+@import '../../../components/site-input/site-input';
+@import '../../../components/social-link/social-link';
+@import '../../../components/site-header/site-header';
+@import '../../../components/site-footer/site-footer';
 
 
 .structural-blocks-page {
@@ -20,12 +20,13 @@
 
   .site-header {
     margin-bottom: 40px;
+
     &:first-child {
       z-index: 5;
     }
   }
 
-  .site-footer{
+  .site-footer {
     margin-bottom: 40px;
 
     &:nth-child(4) { // стили для max-width: 768px

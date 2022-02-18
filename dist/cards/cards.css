@@ -375,14 +375,14 @@ template {
   font-family: "Montserrat";
   font-style: normal;
   font-weight: 400;
-  src: local(""), url(../815a9e9ccfffa41179b2.woff) format("woff"), url(../e552eceeaa6929459f9f.ttf) format("truetype"), url(../22d8566c41c8d731931b.svg#Montserrat) format("svg");
+  src: local(""), url(../fonts/montserrat-v18-latin-ext_latin_cyrillic-ext_cyrillic-regular.woff) format("woff"), url(../fonts/montserrat-v18-latin-ext_latin_cyrillic-ext_cyrillic-regular.ttf) format("truetype"), url(../fonts/montserrat-v18-latin-ext_latin_cyrillic-ext_cyrillic-regular.svg#Montserrat) format("svg");
   /* Legacy iOS */
 }
 @font-face {
   font-family: "Montserrat-Bold";
   font-style: normal;
   font-weight: 700;
-  src: local(""), url(../ed42f12c8204ea6029e6.woff) format("woff"), url(../8053470a105c34478b57.ttf) format("truetype"), url(../fac85a3030008d30b0b8.svg#Montserrat) format("svg");
+  src: local(""), url(../fonts/montserrat-v18-latin-ext_latin_cyrillic-ext_cyrillic-700.woff) format("woff"), url(../fonts/montserrat-v18-latin-ext_latin_cyrillic-ext_cyrillic-700.ttf) format("truetype"), url(../fonts/montserrat-v18-latin-ext_latin_cyrillic-ext_cyrillic-700.svg#Montserrat) format("svg");
   /* Legacy iOS */
 }
 .site-dropdown__header {
@@ -492,11 +492,15 @@ template {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  list-style: none;
   width: 100%;
 }
 .site-dropdown__item:not(:first-child) {
   margin-top: 6px;
+}
+
+.site-dropdown__item-text {
+  padding-right: 10px;
+  overflow-wrap: anywhere;
 }
 
 .site-dropdown {
@@ -566,6 +570,8 @@ template {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
 }
 .site-dropdown__count {
   width: 32px;
@@ -607,6 +613,7 @@ template {
   text-align: center;
   position: relative;
   text-decoration: none;
+  white-space: nowrap;
 }
 .button:hover {
   color: rgba(31, 32, 65, 0.5);
@@ -672,11 +679,17 @@ template {
 .button_flexible {
   width: 100%;
 }
-.button.arrow::after {
+.button_arrow {
+  padding-right: 40px;
+  padding-left: 40px;
+}
+.button_arrow::after {
   content: "arrow_forward";
   font-family: "Material Icons";
   font-size: 24px;
-  top: 13px;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  top: 50%;
   right: 9px;
   position: absolute;
   text-transform: none;
@@ -802,6 +815,7 @@ template {
   list-style: none;
   padding: 0;
   margin: 0;
+  overflow-wrap: anywhere;
 }
 .site-radio__input {
   position: absolute;
@@ -858,6 +872,7 @@ template {
   list-style: none;
   padding: 0;
   margin: 0;
+  overflow-wrap: anywhere;
 }
 .site-checkbox__input {
   position: absolute;
@@ -868,7 +883,7 @@ template {
   outline: 1px solid #1f2041;
 }
 .site-checkbox__input:checked + .site-checkbox__label::before {
-  background: url(../c93d1d2e0ebf70b1d568.svg) no-repeat center;
+  background: url(../img/checkbox-checked.svg) no-repeat center;
   border: 1px solid #BC9CFF;
 }
 .site-checkbox__label {
@@ -1121,9 +1136,9 @@ template {
   width: 50%;
   padding-top: 50%;
   border-radius: 50%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -1326,7 +1341,7 @@ template {
           align-items: center;
   padding-top: 30px;
 }
-.registration-block__already-have {
+.registration-block__have-account-button {
   font-family: "Montserrat", sans-serif;
   font-size: 14px;
   line-height: 18px;
@@ -1463,6 +1478,7 @@ template {
 }
 .booking-block__bill-row {
   vertical-align: top;
+  overflow-wrap: anywhere;
 }
 .booking-block__bill-row :nth-child(even) {
   text-align: right;
@@ -1474,6 +1490,7 @@ template {
   line-height: 24px;
   letter-spacing: 0.2px;
   margin: 0;
+  overflow-wrap: normal;
 }
 .booking-block__bill-data {
   padding: 0;
@@ -1524,8 +1541,21 @@ template {
   white-space: nowrap;
 }
 .booking-block .booking-block__result_total {
-  display: inline-block;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
   margin-top: 15px;
+}
+.booking-block .booking-block__result_total:before {
+  content: " ";
+  width: 100%;
+  height: 0;
+  position: relative;
+  bottom: 6px;
+  border-bottom: 1px dashed rgba(31, 32, 65, 0.25);
 }
 
 @media (max-width: 380px) {
@@ -1578,7 +1608,7 @@ template {
           align-items: center;
   padding-top: 30px;
 }
-.log-in-block__no-account {
+.log-in-block__no-account-button {
   font-family: "Montserrat", sans-serif;
   font-size: 14px;
   line-height: 18px;
@@ -1846,6 +1876,7 @@ template {
   font-family: "Montserrat", sans-serif;
   line-height: 18px;
   color: rgba(31, 32, 65, 0.5);
+  padding-left: 15px;
 }
 .room-card__price {
   font-size: 12px;

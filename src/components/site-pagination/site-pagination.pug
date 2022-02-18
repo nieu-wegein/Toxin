@@ -5,19 +5,19 @@ mixin site-pagination(obj={})
   .site-pagination
     nav.site-pagination__navigation
       ul.site-pagination__pages-list
-        li
-          a(class = "site-pagination__item site-pagination__item_hidden site-pagination__item_arrow" href = obj.url) arrow_back
-        li
-          a(class = "site-pagination__item site-pagination__item_active" href =  obj.url) 1
-        li
-          span(class = "site-pagination__item site-pagination__item_hidden site-pagination__item_ellipsis") ...
+        li.site-pagination__item
+          a(class = "site-pagination__entity site-pagination__entity_hidden site-pagination__entity_arrow" href = obj.url) arrow_back
+        li.site-pagination__item
+          a(class = "site-pagination__entity site-pagination__entity_active" href =  obj.url) 1
+        li.site-pagination__item
+          span(class = "site-pagination__entity site-pagination__entity_hidden site-pagination__entity_ellipsis") ...
         -for(let i = 2; i <= obj.count; i++)
-          li
-            a(class = "site-pagination__item site-pagination__item_link" href = obj.url) !{i}
-        li
-          span(class = "site-pagination__item site-pagination__item_ellipsis") ...
-        li
-          span(class = "site-pagination__item site-pagination__item_count") 15
-        li
-          a(class = "site-pagination__item site-pagination__item_arrow" href = obj.url) arrow_forward
+          li.site-pagination__item
+            a(class = "site-pagination__entity site-pagination__entity_link" href = obj.url) !{i}
+        li.site-pagination__item
+          span(class = "site-pagination__entity site-pagination__entity_ellipsis") ...
+        li.site-pagination__item
+          span(class = "site-pagination__entity site-pagination__entity_count") 15
+        li.site-pagination__item
+          a(class = "site-pagination__entity site-pagination__entity_arrow" href = obj.url) arrow_forward
     .site-pagination__summary 1 – 12 из 100+ вариантов аренды

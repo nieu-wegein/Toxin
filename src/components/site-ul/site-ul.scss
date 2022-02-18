@@ -5,6 +5,7 @@
   list-style: none;
   margin: 0;
   padding: 0;
+  overflow-wrap: anywhere;
 
   &__item {
     padding-left: 20px;
@@ -15,7 +16,7 @@
     }
 
     &::before {
-      content: " ";
+      content: ' ';
       left: 0;
       top: 7px;
       position: absolute;

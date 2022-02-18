@@ -10,6 +10,12 @@
   max-width: 380px;
   box-sizing: border-box;
 
+  @media(max-width: 380px) {
+    width: auto;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
   &__heading {
     @include visually-hidden();
   }
@@ -32,7 +38,7 @@
     }
 
     &_luxe::after {
-      content: "Люкс";
+      content: 'Люкс';
 
       font-size: 12px;
       line-height: 14px;
@@ -65,10 +71,16 @@
     display: flex;
     position: relative;
     z-index: 2;
+
+    @media(max-width: 380px) {
+      width: 100%;
+      justify-content: space-between;
+    }
   }
 
   &__date-dropdown-wrapper {
     max-width: 150px;
+
     &:first-child {
       margin-right: 20px
     }
@@ -81,7 +93,7 @@
 
   &__bill {
 
-    &-section{
+    &-section {
       @include site-body($lineH: 18px);
       width: 100%;
       padding-top: 7px;
@@ -96,12 +108,15 @@
 
     &-row {
       vertical-align: top;
+      overflow-wrap: anywhere;
 
       :nth-child(even) {
         text-align: right;
       }
+
       &_total {
         @include site-h2();
+        overflow-wrap: normal;
       }
     }
 
@@ -140,7 +155,7 @@
       align-items: flex-end;
 
       &:after {
-        content: " ";
+        content: ' ';
         width: 100%;
         height: 0;
         margin-left: 5px;
@@ -155,22 +170,22 @@
 
   .booking-block__result {
     white-space: nowrap;
+
     &_total {
-      display: inline-block;
+      display: flex;
+      align-items: flex-end;
       margin-top: 15px;
-    }
-  }
-}
 
-@media(max-width: 380px) {
-  .booking-block {
-    width: auto;
-    padding-left: 20px;
-    padding-right: 20px;
+      &:before {
+        content: ' ';
+        width: 100%;
+        height: 0;
 
-    &__shared-dropdowns-wrapper {
-      width: 100%;
-      justify-content: space-between;
+        position: relative;
+        bottom: 6px;
+
+        border-bottom: 1px dashed $site-dark-25;
+      }
     }
   }
 }

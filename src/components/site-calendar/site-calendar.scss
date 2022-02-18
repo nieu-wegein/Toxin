@@ -8,6 +8,11 @@
   background-color: white;
   box-sizing: content-box;
 
+  @media(max-width: 380px) {
+    max-width: 238px;
+    padding: 20px 10px;
+  }
+
   &__header {
     @include site-h2();
 
@@ -67,7 +72,7 @@
     color: $site-dark-50;
     cursor: pointer;
 
-    &:not([disabled="disabled"]):hover {
+    &:not([disabled='disabled']):hover {
       background: $primary-gradient-25;
     }
 
@@ -83,7 +88,7 @@
 
       &::before {
         z-index: -2;
-        content: " ";
+        content: ' ';
         position: absolute;
         left: 0;
         top: 0;
@@ -105,9 +110,11 @@
 
     &_today {
       border-radius: 0;
+
       &::before {
         background-image: $secondary-gradient;
       }
+
       &.site-calendar__date_active::before,
       &.site-calendar__date_end::before {
         background-image: $primary-gradient;
@@ -116,6 +123,7 @@
 
     &_hov-range {
       background-color: $site-dark-5;
+
       & + .site-calendar__date_active,
       & + .site-calendar__date_end {
         border-top-left-radius: 0;
@@ -136,20 +144,8 @@
       cursor: default;
       color: $site-dark-25;
     }
-  }
 
-  &__optional-row {
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-  }
-}
-
-@media(max-width: 380px) {
-  .site-calendar {
-    max-width: 238px;
-    padding: 20px 10px;
-    &__date {
+    @media(max-width: 380px) {
       width: 34px;
       height: 34px;
 
@@ -162,5 +158,11 @@
         }
       }
     }
+  }
+
+  &__optional-row {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
   }
 }

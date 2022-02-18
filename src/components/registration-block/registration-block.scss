@@ -12,7 +12,11 @@
 
   &__heading {
     @include site-h1();
-    margin-bottom:20px ;
+    margin-bottom: 20px;
+
+    @media (max-width: 380px) {
+      text-align: center;
+    }
   }
 
   &__footer {
@@ -22,7 +26,7 @@
     padding-top: 30px;
   }
 
-  &__already-have{
+  &__have-account-button {
     font-family: $ff-normal;
     font-size: 14px;
     line-height: 18px;
@@ -47,6 +51,7 @@
     &__legend {
       margin-bottom: 5px;
     }
+
     .form-element:not(:last-child) {
       margin-bottom: 10px;
     }
@@ -54,13 +59,5 @@
 
   .site-checkbox-list {
     margin-bottom: 22px;
-  }
-}
-
-@media (max-width: 380px) {
-  .registration-block {
-    &__heading {
-      text-align: center;
-    }
   }
 }

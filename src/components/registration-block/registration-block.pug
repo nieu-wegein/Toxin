@@ -30,5 +30,5 @@ mixin registration-block(obj = {})
              modifiers: {toggle: true}})
         +site-button({tag: "button", text: buttonText, type: "submit", modifiers: {primary: true, flexible: true, icon: "arrow"}})
     footer.registration-block__footer
-      span.registration-block__already-have Уже есть аккаунт на Toxin
+      span.registration-block__have-account-button Уже есть аккаунт на Toxin
       +site-button({tag: "a", href: "../sign-in-page/sign-in-page.html", text: "Войти", modifiers: {rounded: true, block: true}})

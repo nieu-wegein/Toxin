@@ -14,8 +14,8 @@
     display: flex;
   }
 
-  &__item {
-    display: flex;
+  &__entity {
+    display: inline-flex;
     justify-content: center;
     align-items: center;
 
@@ -34,14 +34,15 @@
     }
 
     &_link {
-      &:hover{
+      &:hover {
         font-family: $ff-bold;
         color: white;
         background: $primary-gradient-25;
       }
     }
+
     &_arrow {
-      font-family: "Material Icons";
+      font-family: 'Material Icons';
       background-image: $secondary-gradient;
       font-size: 24px;
       color: white;

@@ -6,9 +6,9 @@ mixin site-slider(imgList)
         li.site-slider__image-item
           img(class = "site-slider__image" src = img alt = "Фотография номера")
     button.site-slider__button.site-slider__button_left
-      .site-slider__arrow.site-slider__arrow_left
+      span.site-slider__arrow.site-slider__arrow_left
     button.site-slider__button.site-slider__button_right
-      .site-slider__arrow.site-slider__arrow_right
+      span.site-slider__arrow.site-slider__arrow_right
     .site-slider__bullets-block
       .site-slider__bullets-wrapper
         each img, i in imgList

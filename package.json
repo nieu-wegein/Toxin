@@ -22,9 +22,12 @@
     "pug-loader": "^2.4.0",
     "sass": "^1.44.0",
     "sass-loader": "^12.3.0",
-    "style-loader": "^3.3.1",
     "webpack": "^5.64.4",
     "webpack-cli": "^4.9.1",
     "webpack-dev-server": "^4.7.1"
+  },
+  "dependencies": {
+    "html-loader": "^3.1.0",
+    "pug-html-loader": "^1.1.5"
   }
 }

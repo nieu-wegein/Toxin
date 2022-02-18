@@ -8,28 +8,27 @@ import "../../../components/room-card/room-card";
 import $ from "../../../jquery-3.6.0.min";
 
 
-
 $(function () {
 
-  const calendarList =  $(".site-calendar");
+    const calendarList = $(".site-calendar");
 
-  calendarList[1].objectModel.initState({
-    today: new Date("2019, 8, 8")
-  })
+    calendarList[1].objectModel.initState({
+        today: new Date("2019, 8, 8")
+    })
 
-  calendarList[2].objectModel.initState({
-    today: new Date("2019, 8, 8")
-  })
-  calendarList[1].objectModel.chooseStartDate(19).chooseEndDate(23)
-  calendarList[2].objectModel.chooseStartDate(19).chooseEndDate(23)
+    calendarList[2].objectModel.initState({
+        today: new Date("2019, 8, 8")
+    })
+    calendarList[1].objectModel.chooseStartDate(19).chooseEndDate(23)
+    calendarList[2].objectModel.chooseStartDate(19).chooseEndDate(23)
 
 
-  const dropdownList = $(".site-dropdown_counting-dropdown").get();
+    const dropdownList = $(".site-dropdown_counting-dropdown").get();
 
-  dropdownList[1].objectModel.initState({
-    adults: 1,
-    children: 1,
-    babies: 1
-  })
+    dropdownList[1].objectModel.initState({
+        adults: 1,
+        children: 1,
+        babies: 1
+    })
 
 })

@@ -13,6 +13,7 @@
     line-height: 15px;
     display: flex;
     justify-content: space-between;
+
     &_hidden {
       @include visually-hidden;
     }

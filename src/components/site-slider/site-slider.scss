@@ -60,6 +60,7 @@
     &:not(:last-child) {
       margin-right: 9%;
     }
+
     &_active {
       background-color: white;
     }
@@ -93,38 +94,43 @@
       width: 50%;
       padding-top: 50%;
       border-radius: 50%;
-      display: flex;
+      display: inline-flex;
       justify-content: center;
 
       &::before,
       &::after {
         position: absolute;
-        content: " ";
+        content: ' ';
         width: 37%;
         padding-top: 10%;
         background-color: white;
       }
+
       &_left {
         transform: translate(4%, 4%);
 
         &::before {
           top: 0;
-          transform: translateY(350%) rotate(-45deg) ;
+          transform: translateY(350%) rotate(-45deg);
         }
+
         &::after {
           bottom: 0;
-          transform: translateY(-350%) rotate(45deg) ;
+          transform: translateY(-350%) rotate(45deg);
         }
       }
+
       &_right {
-        transform:  translateY(4%);
+        transform: translateY(4%);
+
         &::before {
           top: 0;
-          transform: translateY(350%) rotate(45deg) ;
+          transform: translateY(350%) rotate(45deg);
         }
+
         &::after {
           bottom: 0;
-          transform: translateY(-350%) rotate(-45deg) ;
+          transform: translateY(-350%) rotate(-45deg);
         }
       }
     }

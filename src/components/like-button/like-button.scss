@@ -3,7 +3,7 @@
   width: 40px;
   height: 20px;
 
-  display: flex;
+  display: inline-flex;
   align-items: center;
 
   border: 1px solid $site-dark-25;
@@ -21,8 +21,8 @@
   }
 
   &::before {
-    font-family: "Material Icons";
-    content: "favorite_border";
+    font-family: 'Material Icons';
+    content: 'favorite_border';
     margin-right: 7px;
   }
 
@@ -39,16 +39,16 @@
     &::before {
 
       @include background-text-transparent();
-      content: "favorite";
+      content: 'favorite';
 
       background-color: $site-purple;
       background-image: $primary-gradient;
     }
 
     &::after {
-      font-family: "Material Icons";
+      font-family: 'Material Icons';
       @include background-text-transparent();
-      content: "favorite";
+      content: 'favorite';
       position: absolute;
       left: 4px;
 

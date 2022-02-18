@@ -1,1 +1,1 @@
-import  "../site-slider/site-slider"
+import "../site-slider/site-slider"

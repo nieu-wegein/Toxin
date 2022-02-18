@@ -9,6 +9,12 @@
   padding: 40px 29px 30px 29px;
   max-width: 380px;
 
+  @media(max-width: 380px) {
+    width: auto;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
   &__heading-hidden {
     @include visually-hidden();
   }
@@ -27,10 +33,16 @@
     display: flex;
     position: relative;
     z-index: 2;
+
+    @media(max-width: 380px) {
+      width: 100%;
+      justify-content: space-between;
+    }
   }
 
   &__date-dropdown-wrapper {
     max-width: 150px;
+
     &:first-child {
       margin-right: 20px
     }
@@ -43,15 +55,4 @@
   }
 }
 
-@media(max-width: 380px) {
-  .search-block {
-    width: auto;
-    padding-left: 20px;
-    padding-right: 20px;
 
-    &__shared-dropdowns-wrapper {
-      width: 100%;
-      justify-content: space-between;
-    }
-  }
-}

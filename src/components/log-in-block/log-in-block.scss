@@ -9,15 +9,21 @@
   width: 380px;
   max-width: 380px;
 
-  &__heading{
+  &__heading {
     @include site-h1();
     margin-bottom: 20px;
+
+    @media (max-width: 380px) {
+      text-align: center;
+    }
   }
+
   &__form {
     .button {
       margin-top: 10px;
     }
   }
+
   .site-input {
     margin-bottom: 10px;
   }
@@ -29,7 +35,7 @@
     padding-top: 30px;
   }
 
-  &__no-account{
+  &__no-account-button {
     font-family: $ff-normal;
     font-size: 14px;
     line-height: 18px;
@@ -38,10 +44,3 @@
   }
 }
 
-@media (max-width: 380px) {
-  .log-in-block {
-    &__heading {
-      text-align: center;
-    }
-  }
-}

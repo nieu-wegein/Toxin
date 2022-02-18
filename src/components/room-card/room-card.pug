@@ -17,8 +17,7 @@ mixin room-card(id, room)
             span.room-card__price-value #{separatePrice(room.price) + room.currency}
             |  в сутки
         .room-card__rating
-          form.room-card__rate-form
-            +star-rate({type: "display", name: id + "_room-rate", id: id + "_room-rate", stars: room.stars})
+          +star-rate({type: "display", name: id + "_room-rate", id: id + "_room-rate", stars: room.stars})
           p.room-card__testimonial-counter
             span.room-card__testimonial-count #{room.testimonialsList.count}
             //-Не нужно склонение?

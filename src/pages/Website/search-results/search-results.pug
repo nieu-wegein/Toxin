@@ -4,49 +4,142 @@ include ../../../components/rooms-filter-menu/rooms-filter-menu
 include ../../../components/room-card/room-card
 include ../../../components/site-pagination/site-pagination
 -
-  const imgPath = "/pages/website/search-results/img/"
-  const roomsList = [
-    {imgList: [imgPath + "room888-1_xs.png", imgPath + "room888-2_xs.png", imgPath + "room888-3_xs.png", imgPath + "test-white.png"], number: "888", price: 9990, currency: "₽", stars: 5, testimonialsList: {count: 145}, luxe: true},
-    {imgList: [imgPath + "room840_xs.png", imgPath + "test-black.png", imgPath + "test-black.png", imgPath + "test-white.png"], number: "840", price: 9900, currency: "₽", stars: 4, testimonialsList: {count: 65}},
-    {imgList: [imgPath + "room980_xs.png", imgPath + "test-black.png", imgPath + "test-black.png", imgPath + "test-white.png"], number: "980", price: 8500, currency: "₽", stars: 3, testimonialsList: {count: 35}, luxe: true},
-    {imgList: [imgPath + "room856_xs.png", imgPath + "test-black.png", imgPath + "test-black.png", imgPath + "test-white.png"], number: "856", price: 7300, currency: "₽", stars: 5, testimonialsList: {count: 19}},
-    {imgList: [imgPath+ "room740_xs.png", imgPath + "test-black.png", imgPath + "test-black.png", imgPath + "test-white.png"], number: "740",  price: 6000, currency: "₽", stars: 4, testimonialsList: {count: 44}},
-    {imgList: [imgPath + "room982_xs.png", imgPath + "test-black.png", imgPath + "test-black.png", imgPath + "test-white.png"], number: "982", price: 5800, currency: "₽", stars: 3, testimonialsList: {count: 56}},
-    {imgList: [imgPath + "room678_xs.png", imgPath + "test-black.png", imgPath + "test-black.png", imgPath + "test-white.png"], number: "678", price: 5500, currency: "₽", stars: 5, testimonialsList: {count: 45}},
-    {imgList: [imgPath + "room450_xs.png", imgPath + "test-black.png", imgPath + "test-black.png", imgPath + "test-white.png"], number: "450", price: 5300, currency: "₽", stars: 4, testimonialsList: {count: 39}},
-    {imgList: [imgPath + "room350_xs.png", imgPath + "test-black.png", imgPath + "test-black.png", imgPath + "test-white.png"], number: "350", price: 5000, currency: "₽", stars: 3, testimonialsList: {count: 77}},
-    {imgList: [imgPath + "room666_xs.png", imgPath + "test-black.png", imgPath + "test-black.png", imgPath + "test-white.png"], number: "666", price: 5000, currency: "₽", stars: 5, testimonialsList: {count: 25}},
-    {imgList: [imgPath + "room444_xs.png", imgPath + "test-black.png", imgPath + "test-black.png", imgPath + "test-white.png"], number: "444", price: 5000, currency: "₽", stars: 3, testimonialsList: {count: 15}},
-    {imgList: [imgPath + "room352_xs.png", imgPath + "test-black.png", imgPath + "test-black.png", imgPath + "test-white.png"], number: "352", price: 5000, currency: "₽", stars: 3, testimonialsList: {count: 55}}
-  ]
+    const imgPath = "../../../img/"
+    const roomsList = [
+        {
+            imgList: [imgPath + "room888-1_xs.jpg", imgPath + "room888-2_xs.jpg", imgPath + "room888-3_xs.jpg", imgPath + "test-white.jpg"],
+            number: "888",
+            price: 9990,
+            currency: "₽",
+            stars: 5,
+            testimonialsList: {count: 145},
+            luxe: true
+        },
+        {
+            imgList: [imgPath + "room840_xs.jpg", imgPath + "test-black.jpg", imgPath + "test-black.jpg", imgPath + "test-white.jpg"],
+            number: "840",
+            price: 9900,
+            currency: "₽",
+            stars: 4,
+            testimonialsList: {count: 65}
+        },
+        {
+            imgList: [imgPath + "room980_xs.jpg", imgPath + "test-black.jpg", imgPath + "test-black.jpg", imgPath + "test-white.jpg"],
+            number: "980",
+            price: 8500,
+            currency: "₽",
+            stars: 3,
+            testimonialsList: {count: 35},
+            luxe: true
+        },
+        {
+            imgList: [imgPath + "room856_xs.jpg", imgPath + "test-black.jpg", imgPath + "test-black.jpg", imgPath + "test-white.jpg"],
+            number: "856",
+            price: 7300,
+            currency: "₽",
+            stars: 5,
+            testimonialsList: {count: 19}
+        },
+        {
+            imgList: [imgPath + "room740_xs.jpg", imgPath + "test-black.jpg", imgPath + "test-black.jpg", imgPath + "test-white.jpg"],
+            number: "740",
+            price: 6000,
+            currency: "₽",
+            stars: 4,
+            testimonialsList: {count: 44}
+        },
+        {
+            imgList: [imgPath + "room982_xs.jpg", imgPath + "test-black.jpg", imgPath + "test-black.jpg", imgPath + "test-white.jpg"],
+            number: "982",
+            price: 5800,
+            currency: "₽",
+            stars: 3,
+            testimonialsList: {count: 56}
+        },
+        {
+            imgList: [imgPath + "room678_xs.jpg", imgPath + "test-black.jpg", imgPath + "test-black.jpg", imgPath + "test-white.jpg"],
+            number: "678",
+            price: 5500,
+            currency: "₽",
+            stars: 5,
+            testimonialsList: {count: 45}
+        },
+        {
+            imgList: [imgPath + "room450_xs.jpg", imgPath + "test-black.jpg", imgPath + "test-black.jpg", imgPath + "test-white.jpg"],
+            number: "450",
+            price: 5300,
+            currency: "₽",
+            stars: 4,
+            testimonialsList: {count: 39}
+        },
+        {
+            imgList: [imgPath + "room350_xs.jpg", imgPath + "test-black.jpg", imgPath + "test-black.jpg", imgPath + "test-white.jpg"],
+            number: "350",
+            price: 5000,
+            currency: "₽",
+            stars: 3,
+            testimonialsList: {count: 77}
+        },
+        {
+            imgList: [imgPath + "room666_xs.jpg", imgPath + "test-black.jpg", imgPath + "test-black.jpg", imgPath + "test-white.jpg"],
+            number: "666",
+            price: 5000,
+            currency: "₽",
+            stars: 5,
+            testimonialsList: {count: 25}
+        },
+        {
+            imgList: [imgPath + "room444_xs.jpg", imgPath + "test-black.jpg", imgPath + "test-black.jpg", imgPath + "test-white.jpg"],
+            number: "444",
+            price: 5000,
+            currency: "₽",
+            stars: 3,
+            testimonialsList: {count: 15}
+        },
+        {
+            imgList: [imgPath + "room352_xs.jpg", imgPath + "test-black.jpg", imgPath + "test-black.jpg", imgPath + "test-white.jpg"],
+            number: "352",
+            price: 5000,
+            currency: "₽",
+            stars: 3,
+            testimonialsList: {count: 55}
+        }
+    ]
 
 
 
 doctype html
-html(lang = "en")
-head
-  meta(charset="utf-8")
-  meta(name="viewport" content="initial-scale=1.0, width=device-width")
-  meta(name="keywords", content = "")
-  meta(name="description", content=" ")
-  link(rel = "stylesheet" href="https://fonts.googleapis.com/css?family=Material+Icons")
-  script(src="https://kit.fontawesome.com/a54cde8a02.js" crossorigin="anonymous")
+html(lang = "ru")
+    head
+        meta(charset="utf-8")
+        meta(name="viewport" content="initial-scale=1.0, width=device-width")
+        meta(name="keywords", content = "")
+        meta(name="description", content=" ")
+        meta(name="msapplication-TileColor" content="#da532c")
+        meta(name="theme-color" content="#ffffff")
+        link(rel = "stylesheet" href="https://fonts.googleapis.com/css?family=Material+Icons")
+        link(rel="apple-touch-icon" sizes="152x152" href="/apple-touch-icon.png")
+        link(rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png")
+        link(rel="manifest" href="/site.webmanifest")
+        link(rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5")
+        title TOXIN - Бронирование номеров в лучшем отеле страны
+        script(src="https://kit.fontawesome.com/a54cde8a02.js" crossorigin="anonymous")
 
-body.search-results
-  +site-header()
-  main.search-results__main-section
-    section.search-results__rooms-section
-      aside.search-results__aside
-        button.search-results__aside-close-button
-        +rooms-filter-menu()
-      .search-results__body-blocker
-      button.search-results__aside-open-button.material-icons arrow_forward_ios
-      .search-results__rooms-content-wrapper
-        h1.search-results__main-heading Номера, которые мы для вас подобрали
-        ul.search-results__rooms-list
-          each room in roomsList
-            li.search-results__rooms-item
-              +room-card("room" + room.number, room)
-        .search-results__pagination-container
-          +site-pagination({url: "/search-results/search-results.html", count: 3})
-  +site-footer()
+    body.search-results
+        +site-header()
+        main.search-results__main-section
+            .search-results__content-wrapper
+                aside.search-results__aside
+                    button.search-results__aside-close-button
+                    +rooms-filter-menu()
+                .search-results__body-blocker
+                button.search-results__aside-open-button.material-icons arrow_forward_ios
+                section.search-results__results-section
+                    h1.search-results__main-heading Номера, которые мы для вас подобрали
+                    ul.search-results__rooms-list
+                        each room in roomsList
+                            li.search-results__rooms-item
+                                +room-card("room" + room.number, room)
+                    .search-results__pagination-container
+                        +site-pagination({url: "/search-results/search-results.html", count: 3})
+        +site-footer()

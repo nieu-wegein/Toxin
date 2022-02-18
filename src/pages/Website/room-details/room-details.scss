@@ -1,36 +1,55 @@
-@import "../../../fonts/fonts";
-@import "../../../variables/variables";
-@import "../../../components/site-button/site-button";
-@import "../../../components/site-logo/site-logo";
-@import "../../../components/site-slider/site-slider";
-@import "../../../components/like-button/like-button";
-@import "../../../components/site-dropdown/site-dropdown";
-@import "../../../components/site-section/site-section";
-@import "../../../components/site-calendar/site-calendar";
-@import "../../../components/form-element/form-element";
-@import "../../../components/site-input/site-input";
-@import "../../../components/features-list/features-list";
-@import "../../../components/site-ul/site-ul.scss";
-@import "../../../components/doughnut-chart/doughnut-chart.scss";
-@import "../../../components/site-testimonial/site-testimonial.scss";
-@import "../../../components/social-link/social-link";
-@import "../../../components/site-header/site-header";
-@import "../../../components/site-footer/site-footer";
-@import "../../../components/booking-block/booking-block";
+@import '../../../fonts/fonts';
+@import '../../../variables/variables';
+@import '../../../components/site-button/site-button';
+@import '../../../components/site-logo/site-logo';
+@import '../../../components/site-slider/site-slider';
+@import '../../../components/like-button/like-button';
+@import '../../../components/site-dropdown/site-dropdown';
+@import '../../../components/site-section/site-section';
+@import '../../../components/site-calendar/site-calendar';
+@import '../../../components/form-element/form-element';
+@import '../../../components/site-input/site-input';
+@import '../../../components/features-list/features-list';
+@import '../../../components/site-ul/site-ul.scss';
+@import '../../../components/doughnut-chart/doughnut-chart.scss';
+@import '../../../components/site-testimonial/site-testimonial.scss';
+@import '../../../components/social-link/social-link';
+@import '../../../components/site-header/site-header';
+@import '../../../components/site-footer/site-footer';
+@import '../../../components/booking-block/booking-block';
 
 
+html {
+  font-size: 14px;
+  box-sizing: border-box;
+}
 
-html { box-sizing: border-box; }
-* {box-sizing: inherit}
+* {
+  box-sizing: inherit
+}
 
 .room-details {
+
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+
+  @media(max-width: 768px) {
+    overflow-x: hidden;
+  }
 
   &__main-section {
     max-width: 1440px;
     margin: 0 auto;
     padding-bottom: 72px;
+
     &-wrapper {
       border-bottom: 1px solid $site-dark-25;
+      flex: 1 0 auto;
+
+      @media(max-width: 768px) {
+        padding-top: 70px;
+      }
     }
   }
 
@@ -41,6 +60,10 @@ html { box-sizing: border-box; }
   &__site-slider-wrapper {
     max-height: 350px;
     display: none;
+
+    @media(max-width: 768px) {
+      display: block;
+    }
   }
 
   &__image-table {
@@ -49,14 +72,20 @@ html { box-sizing: border-box; }
     max-height: 485px;
     display: flex;
     justify-content: center;
+
+    @media(max-width: 768px) {
+      display: none;
+    }
   }
 
   &__image-column {
     &:nth-child(1) {
       width: 68.1%;
     }
+
     &:nth-child(2) {
       width: 31.9%;
+
       .room-details__image-container {
         height: 50%;
       }
@@ -75,25 +104,94 @@ html { box-sizing: border-box; }
   &__main-info-wrapper {
     padding: 70px 9.72% 0;
     display: flex;
+
+    @media(max-width: 1444px) {
+      padding-right: 40px;
+      padding-left: 70px;
+    }
+
+    @media(max-width: 1231px) {
+      flex-wrap: wrap;
+      justify-content: center;
+      padding-left: 40px;
+    }
+    @media(max-width: 631px) {
+      padding-right: 40px;
+      padding-left: 40px;
+    }
+    @media(max-width: 480px) {
+      padding-right: 0;
+      padding-left: 0;
+    }
   }
 
   &__content-wrapper {
     display: flex;
     flex-wrap: wrap;
     margin-right: 68px;
+
+    @media(max-width: 1444px) {
+      margin-right: 50px;
+    }
+
+    @media(max-width: 1231px) {
+      justify-content: space-evenly;
+      margin-right: 0;
+      max-width: 990px;
+      padding-bottom: 70px;
+    }
+
+    @media(max-width: 768px) {
+      justify-content: space-between;
+    }
+    @media(max-width: 631px) {
+      justify-content: center;
+    }
+    @media(max-width: 480px) {
+      padding-right: 10px;
+      padding-left: 10px;
+    }
+  }
+
+  .site-section__top {
+    @media(max-width: 631px) {
+      justify-content: center;
+      text-align: center;
+    }
   }
 
   &__room-features {
     width: 280px;
     margin-right: 81px;
+
     .features-list {
       margin-top: 20px;
+    }
+    @media(max-width: 1444px) {
+      margin-right: 72px;
+    }
+    @media(max-width: 768px) {
+      margin-right: 30px;
+      width: 255px;
+    }
+    @media(max-width: 631px) {
+      margin-bottom: 70px;
     }
   }
 
   &__room-impressions {
     .doughnut-chart {
       margin-top: 21px;
+    }
+    @media(max-width: 768px) {
+      max-width: 250px;
+    }
+    @media(max-width: 631px) {
+      max-width: 316px;
+      margin-bottom: 40px;
+    }
+    @media(max-width: 480px) {
+      max-width: 251px;
     }
   }
 
@@ -103,9 +201,18 @@ html { box-sizing: border-box; }
 
     .site-testimonial {
       margin-top: 23px;
+
       &:nth-child(2) {
         margin-top: 19px;
       }
+    }
+
+    @media(max-width: 1231px) {
+      padding: 70px 0 37px;
+      max-width: 770px;
+    }
+    @media(max-width: 631px) {
+      display: none;
     }
   }
 
@@ -117,8 +224,25 @@ html { box-sizing: border-box; }
     .site-ul {
       margin-top: 17px;
     }
+
     .site-section__top {
       padding-left: 21px;
+    }
+
+    @media(max-width: 1444px) {
+      margin-right: 72px;
+    }
+
+    @media(max-width: 768px) {
+      margin-right: 15px;
+    }
+    @media(max-width: 631px) {
+      max-width: 400px;
+      margin-bottom: 40px;
+
+      .site-section__top {
+        padding-left: 0;
+      }
     }
   }
 
@@ -130,157 +254,23 @@ html { box-sizing: border-box; }
       @include site-body();
       margin-top: 17px;
     }
+
+    @media(max-width: 768px) {
+      max-width: 260px;
+    }
+    @media(max-width: 631px) {
+      max-width: 400px;
+    }
   }
 
   &__booking-section {
     max-width: 380px;
   }
 
-}
-
-@media(max-width: 1444px) {
-
-  .room-details {
-
-    &__content-wrapper {
-      margin-right: 50px;
-    }
-
-    &__main-info-wrapper {
-      padding-right: 40px;
-      padding-left: 70px;
-    }
-
-    &__room-features,
-    &__room-rules {
-        margin-right: 72px;
-    }
-  }
-}
-
-@media(max-width: 1231px) {
-  .room-details {
-    &__content-wrapper {
-      justify-content: space-evenly;
-      margin-right: 0;
-      max-width: 990px;
-      padding-bottom: 70px;
-    }
-    &__main-info-wrapper {
-      flex-wrap: wrap;
-      justify-content: center;
-      padding-left: 40px;
-    }
-    &__room-testimonials {
-      padding: 70px 0 37px;
-      max-width: 770px;
-    }
-  }
-}
-
-@media(max-width: 768px) {
-  .room-details {
-
-    overflow-x: hidden;
-
-    &__main-section-wrapper {
-      padding-top: 70px;
-    }
-
-    &__site-slider-wrapper {
-      display: block;
-    }
-
-    &__image-table {
-      display: none;
-    }
-
-    &__content-wrapper {
-      justify-content: space-between;
-    }
-    &__room-features {
-      margin-right: 30px;
-      width: 255px;
-    }
-    &__room-impressions {
-      max-width: 250px;
-    }
-    &__room-rules {
-      margin-right: 15px;
-    }
-
-    &__cancellation {
-      max-width: 260px;
-    }
-  }
-}
-
-@media(max-width: 631px) {
-  .room-details {
-
-    &__main-info-wrapper {
-      padding-right: 40px;
-      padding-left: 40px;
-    }
-
-    &__content-wrapper {
-      justify-content: center;
-    }
-
-    .site-section__top {
-      justify-content: center;
-      text-align: center;
-    }
-
-    &__room-features {
-      padding-bottom: 70px;
-    }
-
-    &__room-impressions {
-      max-width: 316px;
-    }
-
-    &__room-testimonials {
-      .site-section__note {
-        display: none;
-      }
-    }
-
-    &__room-rules {
-      max-width: 400px;
-      margin-bottom: 40px;
-
-      .site-section__top {
-        padding-left: 0;
-      }
-    }
-    &__cancellation {
-      max-width: 400px;
-    }
-
-  }
-}
-
-@media(max-width: 480px) {
-  .room-details {
-    &__main-info-wrapper {
-      padding-right: 0;
-      padding-left: 0;
-    }
-    &__content-wrapper {
-      padding-right: 10px;
-      padding-left: 10px;
-    }
-    &__room-impressions {
-      max-width: 251px;
-    }
-  }
-}
-
-@media(min-width: 320px) and (max-width: 380px) {
-  .room-details {
-    .booking-block .site-dropdown__window_free {
+  .booking-block .site-dropdown__window_free {
+    @media(min-width: 320px) and (max-width: 380px) {
       margin-left: calc((100vw - 40px - 260px) / 2);
     }
   }
+
 }

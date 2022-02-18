@@ -25,7 +25,8 @@ module.exports = {
     },
     output: {
         path: PATHS.dist,
-        filename: '[name]/[name].js'
+        filename: '[name]/[name].js',
+        assetModuleFilename: "[name][ext]",
     },
     devServer: {
         static: [{directory: path.join(__dirname, 'dist')}, {directory: path.join(__dirname, 'src')}]
@@ -33,29 +34,38 @@ module.exports = {
 
     module: {
         rules: [
+            // {
+            //     test: /\.pug$/,
+            //     loader: 'pug-loader',
+            //     options: {
+            //         pretty: true
+            //     }
+            // },
+
             {
-                test: /\.pug$/,
-                loader: 'pug-loader',
-                options: {
-                    pretty: true
-                }
+              test: /\.pug$/,
+              use: ["html-loader", {loader: 'pug-html-loader', options: {exports: false}}]
             },
             {
                 test: /\.scss$/,
                 use: [MiniCssExtractPlugin.loader, "css-loader","postcss-loader", "sass-loader"]
             },
-            // {
-            //     test: /\.(ttf|woff|woff2|svg)$/,
-            //     use: [
-            //             {
-            //                 loader: "file-loader",
-            //                 options: {
-            //                     name: '[name].[ext]',
-            //                     outputPath: 'fonts/'
-            //                 }
-            //             }
-            //         ]
-            // }
+            {
+              test: /\.(ttf|woff|woff2|svg)$/,
+              type: "asset/resource",
+              exclude: [/img/],
+              generator: {
+                filename: 'fonts/[name][ext]'
+              }
+            },
+            {
+              test: /\.(jpeg|jpg|png|svg|gif|ico)$/,
+              type: "asset/resource",
+              exclude: [/fonts/],
+              generator: {
+                filename: 'img/[name][ext]'
+              }
+            }
         ]
     },
     plugins: [new HtmlWebpackPlugin(

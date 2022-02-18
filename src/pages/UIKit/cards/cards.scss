@@ -1,24 +1,29 @@
-@import "../../../fonts/fonts";
-@import "../../../variables/variables";
-@import "../../../components/site-dropdown/site-dropdown";
-@import "../../../components/site-button/site-button";
-@import "../../../components/form-element/form-element";
-@import "../../../components/site-input/site-input";
-@import "../../../components/site-radio/site-radio";
-@import "../../../components/site-checkbox/site-checkbox";
-@import "../../../components/site-fieldset/site-fieldset";
-@import "../../../components/site-slider/site-slider";
-@import "../../../components/rate-button/star-rate";
-@import "../../../components/search-block/search-block";
-@import "../../../components/registration-block/registration-block";
-@import "../../../components/booking-block/booking-block";
-@import "../../../components/log-in-block/log-in-block";
-@import "../../../components/site-calendar/site-calendar";
-@import "../../../components/room-card/room-card";
+@import '../../../fonts/fonts';
+@import '../../../variables/variables';
+@import '../../../components/site-dropdown/site-dropdown';
+@import '../../../components/site-button/site-button';
+@import '../../../components/form-element/form-element';
+@import '../../../components/site-input/site-input';
+@import '../../../components/site-radio/site-radio';
+@import '../../../components/site-checkbox/site-checkbox';
+@import '../../../components/site-fieldset/site-fieldset';
+@import '../../../components/site-slider/site-slider';
+@import '../../../components/rate-button/star-rate';
+@import '../../../components/search-block/search-block';
+@import '../../../components/registration-block/registration-block';
+@import '../../../components/booking-block/booking-block';
+@import '../../../components/log-in-block/log-in-block';
+@import '../../../components/site-calendar/site-calendar';
+@import '../../../components/room-card/room-card';
 
 
-html { box-sizing: border-box; }
-* {box-sizing: inherit}
+html {
+  box-sizing: border-box;
+}
+
+* {
+  box-sizing: inherit
+}
 
 .cards-page {
   background-color: #F4F4F6;
@@ -41,9 +46,9 @@ html { box-sizing: border-box; }
 
   &__column {
 
-    &:not(:last-child) {
-      margin-right: 40px;
-    }
+             &:not(:last-child) {
+          margin-right: 40px;
+         }
 
     &:nth-child(2) {
       margin-top: 2px;
@@ -53,6 +58,7 @@ html { box-sizing: border-box; }
       .site-dropdown__header {
         display: none;
       }
+
       .site-dropdown__window_free {
         display: block;
         position: static;
@@ -64,9 +70,11 @@ html { box-sizing: border-box; }
     .search-block {
       margin-bottom: 39px;
     }
+
     .booking-block {
       margin-bottom: 39px;
     }
+
     .room-card {
       margin-bottom: 39px;
     }

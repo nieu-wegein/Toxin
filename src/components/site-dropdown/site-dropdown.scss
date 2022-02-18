@@ -1,5 +1,5 @@
-@import "site-dropdown__header/site-dropdown__header";
-@import "site-dropdown__list/site-dropdown__list";
+@import 'site-dropdown__header/site-dropdown__header';
+@import 'site-dropdown__list/site-dropdown__list';
 
 .site-dropdown {
 
@@ -17,6 +17,7 @@
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+
     &_hidden {
       @include visually-hidden();
       width: auto;
@@ -61,7 +62,7 @@
       outline: 1px solid $site-dark;
     }
 
-    &:disabled{
+    &:disabled {
       cursor: default;
       opacity: 0.38;
     }
@@ -70,6 +71,7 @@
   &__counter {
     display: flex;
     align-items: center;
+    flex-shrink: 0;
   }
 
   &__count {

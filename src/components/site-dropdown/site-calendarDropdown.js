@@ -203,13 +203,17 @@ class SharedCalendarDropdown {
   }
 
   toggleWindow = (e) => {
-    if(e.currentTarget === this.window.owners[0].header[0])  {
+
+    const owner1 = this.window.owners[0];
+    const owner2 = this.window.owners[1];
+
+    if(e.currentTarget === owner1.header[0] || $(e.currentTarget).attr("for") === owner1.dropdown.attr("id"))  {
       this.calendar.removeClass("site-calendar_range")
 
       if(this.calendar.state.activePage && +this.calendar.state.page !== +this.calendar.state.activePage)
         this.calendar.renderActivePage()
     }
-    else if (e.currentTarget === this.window.owners[1].header[0]) {
+    else if (e.currentTarget === owner2.header[0] || $(e.currentTarget).attr("for") === owner2.dropdown.attr("id")) {
       this.calendar.addClass("site-calendar_range")
 
       if(this.calendar.rangeState.rangePage && +this.calendar.state.page !== +this.calendar.rangeState.rangePage)
@@ -283,12 +287,34 @@ class SharedCalendarDropdown {
 
 $(function (){
   const calendarDropdowns = $(".site-dropdown_date-calendar");
-  calendarDropdowns.each((i, dropdown) => {new CalendarDropdown(dropdown)});
+  calendarDropdowns.each((i, dropdown) => {
+
+    new CalendarDropdown(dropdown);
+
+    const label = $(`label[for = "${$(dropdown).attr("id")}" ]`);
+    label.click(dropdown.objectModel.toggleWindow);
+
+  });
 
   const rangeCalendarDropdowns = $(".site-dropdown_range-calendar");
-  rangeCalendarDropdowns.each((i, dropdown) => {new RangeCalendarDropdown(dropdown)});
+  rangeCalendarDropdowns.each((i, dropdown) => {
+
+    new RangeCalendarDropdown(dropdown)
+
+    const label = $(`label[for = "${$(dropdown).attr("id")}" ]`);
+    label.click(dropdown.objectModel.toggleWindow);
+
+  });
 
   const sharedCalendarDropdowns = $(".site-dropdown_shared-calendar");
-  sharedCalendarDropdowns.each((i, dropdown) => {new SharedCalendarDropdown(dropdown)});
+  sharedCalendarDropdowns.each((i, dropdown) => {
+
+    new SharedCalendarDropdown(dropdown)
+
+    const label = $(`label[for = "${$(dropdown).attr("id")}" ]`);
+    label.click(function (e) {
+      dropdown.objectModel.toggleWindow(e);
+    });
+  });
 
 })

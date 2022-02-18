@@ -1,24 +1,29 @@
-@import "../../../fonts/fonts";
-@import "../../../variables/variables";
-@import "../../../components/form-element/form-element";
-@import "../../../components/site-input/site-input";
-@import "../../../components/site-dropdown/site-dropdown";
-@import "../../../components/site-button/site-button";
-@import "../../../components/site-calendar/site-calendar";
-@import "../../../components/site-fieldset/site-fieldset";
-@import "../../../components/site-checkbox/site-checkbox";
-@import "../../../components/site-radio/site-radio";
-@import "../../../components/site-section/site-section";
-@import "../../../components/like-button/like-button";
-@import "../../../components/rate-button/star-rate";
-@import "../../../components/site-range-slider/site-range-slider";
-@import "../../../components/site-pagination/site-pagination";
-@import "../../../components/site-ul/site-ul";
-@import "../../../components/features-list/features-list";
-@import "../../../components/site-testimonial/site-testimonial";
+@import '../../../fonts/fonts';
+@import '../../../variables/variables';
+@import '../../../components/form-element/form-element';
+@import '../../../components/site-input/site-input';
+@import '../../../components/site-dropdown/site-dropdown';
+@import '../../../components/site-button/site-button';
+@import '../../../components/site-calendar/site-calendar';
+@import '../../../components/site-fieldset/site-fieldset';
+@import '../../../components/site-checkbox/site-checkbox';
+@import '../../../components/site-radio/site-radio';
+@import '../../../components/site-section/site-section';
+@import '../../../components/like-button/like-button';
+@import '../../../components/rate-button/star-rate';
+@import '../../../components/site-range-slider/site-range-slider';
+@import '../../../components/site-pagination/site-pagination';
+@import '../../../components/site-ul/site-ul';
+@import '../../../components/features-list/features-list';
+@import '../../../components/site-testimonial/site-testimonial';
 
-html { box-sizing: border-box; }
-* {box-sizing: inherit}
+html {
+  box-sizing: border-box;
+}
+
+* {
+  box-sizing: inherit
+}
 
 .form-elements-page {
   .wrapper {

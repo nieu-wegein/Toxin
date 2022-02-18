@@ -4,21 +4,27 @@ include ../../../components/registration-block/registration-block
 include ../../../components/log-in-block/log-in-block
 
 doctype html
-html(lang = "en")
-head
-  meta(charset="utf-8")
-  meta(name="viewport" content="initial-scale=1.0, width=device-width")
-  meta(name="keywords", content = "")
-  meta(name="description", content=" ")
-  link(rel = "stylesheet" href="https://fonts.googleapis.com/css?family=Material+Icons")
-  script(src="https://kit.fontawesome.com/a54cde8a02.js" crossorigin="anonymous")
+html(lang = "ru")
+    head
+        meta(charset="utf-8")
+        meta(name="viewport" content="initial-scale=1.0, width=device-width")
+        meta(name="keywords", content = "")
+        meta(name="description", content=" ")
+        meta(name="msapplication-TileColor" content="#da532c")
+        meta(name="theme-color" content="#ffffff")
+        link(rel = "stylesheet" href="https://fonts.googleapis.com/css?family=Material+Icons")
+        link(rel="apple-touch-icon" sizes="152x152" href="/apple-touch-icon.png")
+        link(rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png")
+        link(rel="manifest" href="/site.webmanifest")
+        link(rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5")
+        title TOXIN - Бронирование номеров в лучшем отеле страны
+        script(src="https://kit.fontawesome.com/a54cde8a02.js" crossorigin="anonymous")
 
 
-body.registration-page
-  +site-header()
-  main.registration-page__main-section
-    h1.registration-page__main-heading Страница регистрации аккаунта
-    section.registration-page__registration-section
-      +registration-block()
-      +log-in-block()
-  +site-footer()
+    body.registration-page
+        +site-header()
+        main.registration-page__main-section
+            h1.registration-page__main-heading Страница регистрации аккаунта
+            section.registration-page__registration-section
+                +registration-block()
+        +site-footer()

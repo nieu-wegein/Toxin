@@ -21,8 +21,8 @@
       cursor: pointer;
 
       &::after {
-        content: "expand_more";
-        font-family: "Material Icons";
+        content: 'expand_more';
+        font-family: 'Material Icons';
         font-size: 24px;
         color: $site-dark-50;
         text-transform: none;

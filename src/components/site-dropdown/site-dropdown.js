@@ -154,6 +154,12 @@ class CountingDropdown extends SiteDropdown {
 }
 
 $(function (){
+
   const dropdownsList = $(".site-dropdown_counting-dropdown");
-  dropdownsList.each((i, dropdown) => {new CountingDropdown(dropdown)});
+  dropdownsList.each((i, dropdown) => {
+    new CountingDropdown(dropdown);
+
+    const label = $(`label[for = "${$(dropdown).attr("id")}" ]`);
+    label.click(dropdown.objectModel.toggleWindow);
+  });
 })

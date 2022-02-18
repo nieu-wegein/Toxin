@@ -11,86 +11,101 @@ include ../../../helpers/decline-js
 
 
 -
-  const imgPath = "/pages/website/room-details/img/";
-  const room = {
-    imgList: [imgPath + "room888-1_m.png", imgPath + "room888-2_s.png", imgPath + "room888-3_s.png"],
-    number: "888",
-    price: 9990,
-    charge: -2179,
-    extraCharge: 300,
-    currency: "₽",
-    luxe: true,
-    features: ["comfort", "convenience", "cosiness"],
-    rules: ["Нельзя с питомцами", "Без вечеринок и мероприятий", "Время прибытия — после 13:00, а выезд до 12:00"],
-    cancellation: "Бесплатная отмена в течение 48 ч. После этого при отмене не позднее чем за 5 дн. до прибытия вы получите полный возврат за вычетом сбора за услуги.",
-    rating: {great: 130, good: 65, satisfactory: 65, poorly: 0},
-    testimonialsList: {
-      count: 2,
-      items: [
-        {
-          id: 84121,
-          name: "Мурад Сарафанов",
-          date: "5 дней назад",
-          text: "Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару  — никто не жаловался из соседей.",
-          img: imgPath + "user1.png",
-          likes: 12,
+    const imgPath = "../../../img/";
+    const room = {
+        imgList: [imgPath + "room888-1_m.jpg", imgPath + "room888-2_s.jpg", imgPath + "room888-3_s.jpg"],
+        number: "888",
+        price: 9990,
+        charge: -2179,
+        extraCharge: 300,
+        currency: "₽",
+        luxe: true,
+        features: ["comfort", "convenience", "cosiness"],
+        rules: ["Нельзя с питомцами", "Без вечеринок и мероприятий", "Время прибытия — после 13:00, а выезд до 12:00"],
+        cancellation: "Бесплатная отмена в течение 48 ч. После этого при отмене не позднее чем за 5 дн. до прибытия вы получите полный возврат за вычетом сбора за услуги.",
+        rating: {great: 130, good: 65, satisfactory: 65, poorly: 0},
+        testimonialsList: {
+            count: 2,
+            items: [
+                {
+                    id: 84121,
+                    name: "Мурад Сарафанов",
+                    date: "5 дней назад",
+                    datetime: "2019-08-03T11:16",
+                    text: "Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару  — никто не жаловался из соседей.",
+                    img: imgPath + "user1.jpg",
+                    likes: 12,
+                },
+                {
+                    id: 36019,
+                    name: "Патрисия Стёклышкова",
+                    date: "Неделю назад",
+                    datetime: "2019-07-28T11:16",
+                    text: "Обслуживание на высоте! Всё аккуратно, чисто. Завтраки в номер советую заказать, каждый день новое блюдо и десерт как комплимент",
+                    img: imgPath + "user2.jpg",
+                    likes: 2
+                }]
         },
-        {
-          id: 36019,
-          name: "Патрисия Стёклышкова",
-          date: "Неделю назад",
-          text: "Обслуживание на высоте! Всё аккуратно, чисто. Завтраки в номер советую заказать, каждый день новое блюдо и десерт как комплимент",
-          img: imgPath + "user2.png",
-          likes: 2
-        }]
-    },
-  }
+    }
 
-  userData = {
-    likes: [84121]
-  }
+    const userData = {
+        likes: [84121]
+    }
+
+
 
 doctype html
-html(lang = "en")
-head
-  meta(charset="utf-8")
-  meta(name="viewport" content="initial-scale=1.0, width=device-width")
-  meta(name="keywords", content = "")
-  meta(name="description", content=" ")
-  link(rel = "stylesheet" href="https://fonts.googleapis.com/css?family=Material+Icons")
-  script(src="https://kit.fontawesome.com/a54cde8a02.js" crossorigin="anonymous")
+html(lang = "ru")
+    head
+        meta(charset="utf-8")
+        meta(name="viewport" content="initial-scale=1.0, width=device-width")
+        meta(name="keywords", content = "")
+        meta(name="description", content=" ")
+        meta(name="msapplication-TileColor" content="#da532c")
+        meta(name="theme-color" content="#ffffff")
+        link(rel = "stylesheet" href="https://fonts.googleapis.com/css?family=Material+Icons")
+        link(rel="apple-touch-icon" sizes="152x152" href="/apple-touch-icon.png")
+        link(rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png")
+        link(rel="manifest" href="/site.webmanifest")
+        link(rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5")
+        title TOXIN - Бронирование номеров в лучшем отеле страны
+        script(src="https://kit.fontawesome.com/a54cde8a02.js" crossorigin="anonymous")
 
 
-body.room-details
-  +site-header()
-  .room-details__main-section-wrapper
-    main.room-details__main-section
-      h1.room-details__main-heading Информация о номере
-      +site-section({h2: "Фотографии номера", header: "hidden", classList: "room-details__photos-section"})
-        .room-details__site-slider-wrapper
-          +site-slider(room.imgList)
-        .room-details__image-table
-          .room-details__image-column
-            .room-details__image-container
-              img(class = "room-details__room-photo", src = room.imgList[0] alt = "Фотография комнаты")
-          .room-details__image-column
-            .room-details__image-container
-              img(class = "room-details__room-photo", src = room.imgList[1] alt = "Фотография комнаты")
-            .room-details__image-container
-              img(class = "room-details__room-photo", src = room.imgList[2] alt = "Фотография комнаты")
-      .room-details__main-info-wrapper
-        .room-details__content-wrapper
-          +site-section({h2: "Сведения о номере", classList: "room-details__room-features"})
-            +features-list(room.features)
-          +site-section({h2: "Впечатления от номера", classList: "room-details__room-impressions"})
-            +doughnut-chart(room.rating)
-          +site-section({h2: "Отзывы посетителей номера", note: decline(room.testimonialsList.count, ['отзыв', 'отзыва', 'отзывов']), classList: "room-details__room-testimonials"})
-            each testimonial in room.testimonialsList.items
-              +site-testimonial({...testimonial, liked: userData.likes.includes(testimonial.id)})
-          +site-section({h2: "Правила", classList: "room-details__room-rules"})
-            +site-ul(room.rules)
-          +site-section({h2: "Отмена", classList: "room-details__cancellation"})
-            p.room-details__cancellation-text !{room.cancellation}
-        +site-section({h2: "Забронировать", header: "hidden", classList: "room-details__booking-section"})
-          +booking-block(room)
-  +site-footer()
+    body.room-details
+        +site-header()
+        .room-details__main-section-wrapper
+            main.room-details__main-section
+                h1.room-details__main-heading Информация о номере
+                +site-section({h2: "Фотографии номера", header: "hidden", classList: "room-details__photos-section"})
+                    .room-details__site-slider-wrapper
+                        +site-slider(room.imgList)
+                    .room-details__image-table
+                        .room-details__image-column
+                            .room-details__image-container
+                                img(class = "room-details__room-photo", src = room.imgList[0] alt = "Фотография комнаты")
+                        .room-details__image-column
+                            .room-details__image-container
+                                img(class = "room-details__room-photo", src = room.imgList[1] alt = "Фотография комнаты")
+                            .room-details__image-container
+                                img(class = "room-details__room-photo", src = room.imgList[2] alt = "Фотография комнаты")
+                .room-details__main-info-wrapper
+                    .room-details__content-wrapper
+                        +site-section({h2: "Сведения о номере", classList: "room-details__room-features"})
+                            +features-list(room.features)
+                        +site-section({h2: "Впечатления от номера", classList: "room-details__room-impressions"})
+                            +doughnut-chart(room.rating)
+                        +site-section({
+                            h2: "Отзывы посетителей номера",
+                            note: decline(room.testimonialsList.count, ['отзыв', 'отзыва', 'отзывов']),
+                            classList: "room-details__room-testimonials"
+                        })
+                            each testimonial in room.testimonialsList.items
+                                +site-testimonial(testimonial, userData)
+                        +site-section({h2: "Правила", classList: "room-details__room-rules"})
+                            +site-ul(room.rules)
+                        +site-section({h2: "Отмена", classList: "room-details__cancellation"})
+                            p.room-details__cancellation-text !{room.cancellation}
+                    +site-section({h2: "Забронировать", header: "hidden", classList: "room-details__booking-section"})
+                        +booking-block(room)
+        +site-footer()

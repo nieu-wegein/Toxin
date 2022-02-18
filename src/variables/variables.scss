@@ -1,6 +1,5 @@
-
-$ff-normal: "Montserrat", sans-serif;
-$ff-bold: "Montserrat-Bold", sans-serif;
+$ff-normal: 'Montserrat', sans-serif;
+$ff-bold: 'Montserrat-Bold', sans-serif;
 $site-purple: #BC9CFF;
 $site-green: #6FCF97;
 $site-dark: rgba(31, 32, 65, 1);
@@ -10,20 +9,20 @@ $site-dark-25: rgba(31, 32, 65, 0.25);
 $site-dark-10: rgba(31, 32, 65, 0.1);
 $site-dark-5: rgba(31, 32, 65, 0.05);
 $primary-gradient: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
-$primary-gradient-25: linear-gradient(180deg, rgba(188,156,255,0.25) 0%, rgba(139,164,249,0.25) 100%);
-$primary-gradient-50: linear-gradient(180deg, rgba(188,156,255,0.5) 0%, rgba(139,164,249,0.5) 100%);
+$primary-gradient-25: linear-gradient(180deg, rgba(188, 156, 255, 0.25) 0%, rgba(139, 164, 249, 0.25) 100%);
+$primary-gradient-50: linear-gradient(180deg, rgba(188, 156, 255, 0.5) 0%, rgba(139, 164, 249, 0.5) 100%);
 $secondary-gradient: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%);
 
-@mixin site-h1 ($color: $site-dark, $font:"Montserrat-Bold", $fontS: 24px, $lineH: 29px){
+@mixin site-h1($color: $site-dark, $font:'Montserrat-Bold', $fontS: 24px, $lineH: 29px) {
   color: $color;
-  font-size:  $fontS;
+  font-size: $fontS;
   font-family: $font, sans-serif;
   line-height: $lineH;
   margin: 0;
   letter-spacing: -0.1px;
 }
 
-@mixin site-h2($color: $site-dark, $font:"Montserrat-Bold", $fontS: 19px, $lineH: 24px) {
+@mixin site-h2($color: $site-dark, $font:'Montserrat-Bold', $fontS: 19px, $lineH: 24px) {
   color: $color;
   font-size: $fontS;
   font-family: $font, sans-serif;
@@ -32,7 +31,7 @@ $secondary-gradient: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%);
   margin: 0;
 }
 
-@mixin site-h3($color: $site-dark, $font:"Montserrat-Bold", $fontS: 12px, $lineH: 15px) {
+@mixin site-h3($color: $site-dark, $font:'Montserrat-Bold', $fontS: 12px, $lineH: 15px) {
   color: $color;
   font-size: $fontS;
   font-family: $font, sans-serif;
@@ -41,7 +40,7 @@ $secondary-gradient: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%);
   margin: 0;
 }
 
-@mixin site-body($color: $site-dark-75, $font:"Montserrat", $fontS: 14px, $lineH: 24px){
+@mixin site-body($color: $site-dark-75, $font:'Montserrat', $fontS: 14px, $lineH: 24px) {
   color: $color;
   font-family: $font, sans-serif;
   font-size: $fontS;

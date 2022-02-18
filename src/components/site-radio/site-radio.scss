@@ -3,7 +3,7 @@
 
   display: inline-block;
 
-  &:not(:last-child){
+  &:not(:last-child) {
     margin-right: 15px;
   }
 
@@ -11,6 +11,7 @@
     list-style: none;
     padding: 0;
     margin: 0;
+    overflow-wrap: anywhere;
   }
 
   &__input {
@@ -19,13 +20,13 @@
     opacity: 0;
 
     &:focus-visible {
-      &+.site-radio__label::before {
+      & + .site-radio__label::before {
         outline: 1px solid $site-dark;
       }
     }
 
     &:checked {
-      &+.site-radio__label{
+      & + .site-radio__label {
         color: $site-dark-75;
 
         &::before {
@@ -38,7 +39,7 @@
     }
   }
 
-  &__label{
+  &__label {
     @include site-body($color: $site-dark-50);
     position: relative;
     display: inline-flex;
@@ -46,13 +47,13 @@
     padding-left: 30px;
     cursor: pointer;
 
-    &::before{
+    &::before {
       box-sizing: border-box;
       position: absolute;
       left: 0;
-      content: " ";
+      content: ' ';
       width: 20px;
-      height:  20px;
+      height: 20px;
       padding: 3px;
       border: 1px solid $site-dark-25;
       border-radius: 50%;

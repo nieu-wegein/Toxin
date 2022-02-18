@@ -8,53 +8,64 @@ include ../../../components/room-card/room-card
 
 
 -
-  const imgPath = "/pages/UIKit/cards/img/";
-  const room888 = {
-    imgList: [imgPath + "room888-1_s.png", imgPath + "room888-2_s.png", imgPath + "room888-3_s.png", imgPath + "test-black.png"],
-    number: "888",
-    price: 9990,
-    charge: -2179,
-    extraCharge: 300,
-    currency: "₽",
-    stars: 5,
-    luxe: true,
-    testimonialsList: {
-      count: 145
-    },
-  };
-  const room840 = {
-    imgList: [imgPath + "room840.png", imgPath + "test-black.png", imgPath + "test-black.png", imgPath + "test-white.png"],
-    number: "840",
-    price: 9900,
-    currency: "₽",
-    luxe: false,
-    stars: 4,
-    testimonialsList: {
-      count: 65
+    const imgPath = "../../../img/";
+    const room888 = {
+        imgList: [imgPath + "room888-1_xs.jpg", imgPath + "room888-2_xs.jpg", imgPath + "room888-3_xs.jpg", imgPath + "test-black.jpg"],
+        number: "888",
+        price: 9990,
+        charge: -2179,
+        extraCharge: 300,
+        currency: "₽",
+        stars: 5,
+        luxe: true,
+        testimonialsList: {
+            count: 145
+        },
+    };
+    const room840 = {
+        imgList: [imgPath + "room840.jpg", imgPath + "test-black.jpg", imgPath + "test-black.jpg", imgPath + "test-white.jpg"],
+        number: "840",
+        price: 9900,
+        currency: "₽",
+        luxe: false,
+        stars: 4,
+        testimonialsList: {
+            count: 65
+        }
     }
-  }
 
 doctype html
-html(lang = "en")
-  head
-    meta(charset="utf-8")
-    meta(name="viewport" content="initial-scale=1.0, width=device-width")
-    meta(name="keywords", content = "")
-    meta(name="description", content=" ")
-    link(rel = "stylesheet" href="https://fonts.googleapis.com/css?family=Material+Icons")
-  body.cards-page
-    .wrapper
-      .header
-        a(href = "../index/index.html")
-          img.logo(src = "../img/min-logo.svg")
-      .content
-        .content__column
-          +search-block()
-          +registration-block({modifiers: {paymentLink: true}})
-        .content__column
-          +booking-block(room888)
-          +log-in-block()
-        .content__column
-          +site-dropdown({id: "filter-dates", text: "ДД.ММ.ГГГГ - ДД.ММ.ГГГГ", modifiers: {calendar: {type: "range"}, buttons: true}})
-          +room-card("room888", room888)
-          +room-card("room840", room840)
+html(lang = "ru")
+    head
+        meta(charset="utf-8")
+        meta(name="viewport", content="initial-scale=1.0, width=device-width")
+        meta(name="keywords", content = "")
+        meta(name="description", content=" ")
+        meta(name="msapplication-TileColor" content="#da532c")
+        meta(name="theme-color" content="#ffffff")
+        link(rel = "stylesheet" href="https://fonts.googleapis.com/css?family=Material+Icons")
+        link(rel="apple-touch-icon" sizes="152x152" href="/apple-touch-icon.png")
+        link(rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png")
+        link(rel="manifest" href="/site.webmanifest")
+        link(rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5")
+        title TOXIN - Бронирование номеров в лучшем отеле страны
+    body.cards-page
+      .wrapper
+          .header
+              a.logo-link(href = "../index/index.html")
+                 img.logo(src = "../../../img/min-logo.svg")
+          .content
+              .content__column
+                  +search-block()
+                  +registration-block({modifiers: {paymentLink: true}})
+              .content__column
+                  +booking-block(room888)
+                  +log-in-block()
+              .content__column
+                  +site-dropdown({
+                      id: "filter-dates",
+                      text: "ДД.ММ.ГГГГ - ДД.ММ.ГГГГ",
+                      modifiers: {calendar: {type: "range"}, buttons: true}
+                    })
+                  +room-card("room888", room888)
+                  +room-card("room840", room840)

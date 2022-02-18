@@ -11,7 +11,7 @@ mixin form-element(obj)
     if(obj.label || obj.note)
       div(class = topClassList)
         if obj.label
-          label(class = "form-element__label", for = obj.id) !{obj.label}
+          label(class = ["form-element__label", obj.label.classList], for = obj.id) !{obj.label}
         if obj.note
           span.form-element__note !{obj.note}
       block

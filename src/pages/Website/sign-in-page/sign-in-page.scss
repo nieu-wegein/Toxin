@@ -1,31 +1,37 @@
-@import "../../../fonts/fonts";
-@import "../../../variables/variables";
-@import "../../../components/site-button/site-button";
-@import "../../../components/site-logo/site-logo";
-@import "../../../components/site-section/site-section";
-@import "../../../components/form-element/form-element";
-@import "../../../components/site-input/site-input";
-@import "../../../components/site-radio/site-radio";
-@import "../../../components/site-checkbox/site-checkbox";
-@import "../../../components/site-fieldset/site-fieldset";
-@import "../../../components/social-link/social-link";
-@import "../../../components/site-header/site-header";
-@import "../../../components/site-footer/site-footer";
-@import "../../../components/registration-block/registration-block";
-@import "../../../components/log-in-block/log-in-block.scss";
+@import '../../../fonts/fonts';
+@import '../../../variables/variables';
+@import '../../../components/site-button/site-button';
+@import '../../../components/site-logo/site-logo';
+@import '../../../components/site-section/site-section';
+@import '../../../components/form-element/form-element';
+@import '../../../components/site-input/site-input';
+@import '../../../components/site-radio/site-radio';
+@import '../../../components/site-checkbox/site-checkbox';
+@import '../../../components/site-fieldset/site-fieldset';
+@import '../../../components/social-link/social-link';
+@import '../../../components/site-header/site-header';
+@import '../../../components/site-footer/site-footer';
+@import '../../../components/log-in-block/log-in-block.scss';
 
-body {
-  overflow: -moz-scrollbars-none;
-  -ms-overflow-style: none;
-}
-body::-webkit-scrollbar {
-  width: 0 !important
+
+html {
+  font-size: 14px;
+  box-sizing: border-box;
 }
 
-html { box-sizing: border-box; }
-* {box-sizing: inherit}
+* {
+  box-sizing: inherit
+}
 
 .sign-in-page {
+
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+
+  .sign-in-page__main-section {
+    flex: 1 0 auto;
+  }
 
   &__main-heading {
     @include visually-hidden();
@@ -35,26 +41,17 @@ html { box-sizing: border-box; }
     min-height: 702px;
     display: flex;
     justify-content: center;
-    background-image: url("./img/background.png");
+    background-image: url('../../../img/background-bedroom.jpg');
     background-position: top center;
     background-size: cover;
     background-repeat: no-repeat;
 
-    .registration-block {
-      display: none;
-      transform: translate(3px);
+    @media (max-width: 768px) {
+      padding-top: 70px;
     }
 
     .log-in-block {
       margin: 172px 0;
-    }
-  }
-}
-
-@media (max-width: 768px) {
-  .sign-in-page {
-    &__sign-in-section {
-      padding-top: 70px;
     }
   }
 }

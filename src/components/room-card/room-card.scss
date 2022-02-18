@@ -36,7 +36,7 @@
     order: 3;
 
     &:focus-visible {
-     & ~ .room-card__outline-wrapper {
+      & ~ .room-card__outline-wrapper {
         outline: 2px solid $site-dark-50;
       }
     }
@@ -60,13 +60,14 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding-top: 7px;
-    padding-bottom: 14px;
+    padding-top: 6px;
+    padding-bottom: 16.5px;
   }
 
   &__room-number {
     @include site-h2();
     letter-spacing: 0;
+
     &:first-letter {
       font-size: 14px;
       line-height: 17px;
@@ -80,6 +81,7 @@
     font-family: $ff-normal;
     line-height: 18px;
     color: $site-dark-50;
+    padding-left: 15px;
   }
 
   &__price {
@@ -110,7 +112,7 @@
     .room-card__room-number::after {
       position: relative;
       top: 1px;
-      content: "Люкс";
+      content: 'Люкс';
       font-size: 12px;
       line-height: 14px;
       text-transform: uppercase;
