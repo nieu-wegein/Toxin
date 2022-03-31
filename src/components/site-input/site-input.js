@@ -40,7 +40,7 @@ class DateInput extends MaskedInput {
 
 $(function () {
 
-  const maskedInputList = $(".site-input_date");
+  const maskedInputList = $(".site-input_with-date-mask");
   maskedInputList.each((i, input) => {new DateInput(input)})
 
 })

@@ -27,22 +27,22 @@
       padding-bottom: 20px;
     }
 
-    &_comfort::before {
+    &_with-smile-icon::before {
       content: 'insert_emoticon';
     }
 
-    &_convenience::before {
+    &_with-city-icon::before {
       content: 'location_city';
     }
 
-    &_cosiness::before {
+    &_with-fire-icon::before {
       content: 'whatshot';
     }
 
   }
 
   &__termin {
-    font-family: $ff-bold;
+    @extend %ff-bold;
   }
 
   &__description {
@@ -51,5 +51,13 @@
     &:not(:last-child) {
       margin-bottom: 20px;
     }
+  }
+}
+
+@-moz-document url-prefix() {
+  .features-list__wrapper::before {
+    position: relative;
+    line-height: 40px;
+    top: -37px;
   }
 }

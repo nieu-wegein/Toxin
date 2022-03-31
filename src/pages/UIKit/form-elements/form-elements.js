@@ -15,7 +15,7 @@ $(function () {
     inputList[1].value = "This is pretty awesome"
 
 
-    const dropdownList = $(".site-dropdown_counting-dropdown").get();
+    const dropdownList = $(".site-dropdown_counting").get();
 
     dropdownList[1].objectModel.initState({
         bedrooms: 2,

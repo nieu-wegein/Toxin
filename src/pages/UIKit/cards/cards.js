@@ -23,7 +23,7 @@ $(function () {
     calendarList[2].objectModel.chooseStartDate(19).chooseEndDate(23)
 
 
-    const dropdownList = $(".site-dropdown_counting-dropdown").get();
+    const dropdownList = $(".site-dropdown_counting").get();
 
     dropdownList[1].objectModel.initState({
         adults: 1,

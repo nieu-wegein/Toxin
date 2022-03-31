@@ -80,16 +80,16 @@ class SiteCalendar {
 
 
     if(+this.state.page === +this.state.activePage) {
-        $(this.state.activeButton).addClass("site-calendar__date_active");
+        $(this.state.activeButton).addClass("site-calendar__date_active-date");
     }
 
     if(this.state.todayButton) {
-      $(this.state.todayButton).removeClass("site-calendar__date_today");
+      $(this.state.todayButton).removeClass("site-calendar__date_today-date");
       this.state.todayButton = null;
     }
     if(this.state.month === this.state.todayM && this.state.year === this.state.todayY) {
         this.state.todayButton = this.findButton(this.state.todayD)
-        $(this.state.todayButton).addClass("site-calendar__date_today");
+        $(this.state.todayButton).addClass("site-calendar__date_today-date");
     }
   }
 
@@ -100,7 +100,7 @@ class SiteCalendar {
     }
     else this.state.month--;
 
-    $(this.state.activeButton).removeClass("site-calendar__date_active");
+    $(this.state.activeButton).removeClass("site-calendar__date_active-date");
     this.render();
   }
 
@@ -111,7 +111,7 @@ class SiteCalendar {
     }
     else this.state.month++;
 
-    $(this.state.activeButton).removeClass("site-calendar__date_active");
+    $(this.state.activeButton).removeClass("site-calendar__date_active-date");
     this.render();
   }
 
@@ -143,8 +143,8 @@ class SiteCalendar {
 
   setActiveButton = (e) => {
     if (!this.calendar.hasClass("site-calendar_range")) {
-      $(this.state.activeButton).removeClass("site-calendar__date_active");
-      $(e.currentTarget).addClass("site-calendar__date_active");
+      $(this.state.activeButton).removeClass("site-calendar__date_active-date");
+      $(e.currentTarget).addClass("site-calendar__date_active-date");
       this.state.activeButton = e.currentTarget;
       this.state.activeDate = e.currentTarget.innerText;
       this.state.activePage = this.state.page
@@ -172,7 +172,7 @@ class RangeCalendar extends SiteCalendar {
   renderRangeCalendar() {
 
     if(+this.state.page === +this.rangeState.rangePage)
-      $(this.rangeState.rangeButton).addClass("site-calendar__date_end");
+      $(this.rangeState.rangeButton).addClass("site-calendar__date_end-date");
 
     this.renderRange()
 
@@ -180,7 +180,7 @@ class RangeCalendar extends SiteCalendar {
 
   renderActivePage = () => {
     this.clearRange()
-    $(this.rangeState.rangeButton).removeClass("site-calendar__date_end");
+    $(this.rangeState.rangeButton).removeClass("site-calendar__date_end-date");
 
     this.initState({
       year: this.state.activePage.getFullYear(),
@@ -192,8 +192,8 @@ class RangeCalendar extends SiteCalendar {
 
   renderRangePage = () => {
     this.clearRange()
-    $(this.state.activeButton).removeClass("site-calendar__date_active");
-    $(this.rangeState.rangeButton).removeClass("site-calendar__date_end");
+    $(this.state.activeButton).removeClass("site-calendar__date_active-date");
+    $(this.rangeState.rangeButton).removeClass("site-calendar__date_end-date");
 
     this.initState({
       year: this.rangeState.rangePage.getFullYear(),
@@ -206,13 +206,13 @@ class RangeCalendar extends SiteCalendar {
 
   setPrevMonth = () => {
     this.clearRange()
-    $(this.rangeState.rangeButton).removeClass("site-calendar__date_end");
+    $(this.rangeState.rangeButton).removeClass("site-calendar__date_end-date");
     this.renderRangeCalendar()
   }
 
   setNextMonth = () => {
     this.clearRange()
-    $(this.rangeState.rangeButton).removeClass("site-calendar__date_end");
+    $(this.rangeState.rangeButton).removeClass("site-calendar__date_end-date");
     this.renderRangeCalendar()
   }
 
@@ -319,7 +319,7 @@ class RangeCalendar extends SiteCalendar {
       if(this.rangeState.rangeButton && (this.state.page > this.rangeState.rangePage ||
         +this.state.page === +this.rangeState.rangePage && this.state.activeButton.dateIndex >= this.rangeState.rangeButton.dateIndex))
       {
-        $(this.rangeState.rangeButton).removeClass("site-calendar__date_end");
+        $(this.rangeState.rangeButton).removeClass("site-calendar__date_end-date");
         this.rangeState.rangeButton = null;
         this.rangeState.rangePage = null;
         this.rangeState.rangeDate = null;
@@ -337,7 +337,7 @@ class RangeCalendar extends SiteCalendar {
       if(this.state.activeButton && (this.state.page < this.state.activePage ||
         +this.state.page === +this.state.activePage && e.currentTarget.dateIndex <= this.state.activeButton.dateIndex))
       {
-        $(this.rangeState.rangeButton).removeClass("site-calendar__date_end")
+        $(this.rangeState.rangeButton).removeClass("site-calendar__date_end-date")
         this.rangeState.rangeButton = null;
         this.rangeState.rangeDate = null;
         this.rangeState.rangePage = null
@@ -346,8 +346,8 @@ class RangeCalendar extends SiteCalendar {
         this.calendar.addClass("site-calendar_range");
       }
       else {
-        $(this.rangeState.rangeButton).removeClass("site-calendar__date_end");
-        $(e.currentTarget).addClass("site-calendar__date_end");
+        $(this.rangeState.rangeButton).removeClass("site-calendar__date_end-date");
+        $(e.currentTarget).addClass("site-calendar__date_end-date");
         this.rangeState.rangeButton = e.currentTarget;
         this.rangeState.rangeDate = e.currentTarget.innerText
         this.rangeState.rangePage = this.state.page

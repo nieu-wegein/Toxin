@@ -33,15 +33,15 @@
       outline: 2px solid $site-dark-50;
     }
 
-    &_link {
+    &_with-link {
       &:hover {
-        font-family: $ff-bold;
+        @extend %ff-bold;
         color: white;
         background: $primary-gradient-25;
       }
     }
 
-    &_arrow {
+    &_with-arrow {
       font-family: 'Material Icons';
       background-image: $secondary-gradient;
       font-size: 24px;
@@ -53,8 +53,8 @@
     }
 
     &_active {
+      @extend %ff-bold;
       background-image: $primary-gradient;
-      font-family: $ff-bold;
       color: white;
     }
 

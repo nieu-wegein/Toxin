@@ -379,12 +379,17 @@ template {
   /* Legacy iOS */
 }
 @font-face {
-  font-family: "Montserrat-Bold";
+  font-family: "Montserrat";
   font-style: normal;
   font-weight: 700;
   src: local(""), url(../fonts/montserrat-v18-latin-ext_latin_cyrillic-ext_cyrillic-700.woff) format("woff"), url(../fonts/montserrat-v18-latin-ext_latin_cyrillic-ext_cyrillic-700.ttf) format("truetype"), url(../fonts/montserrat-v18-latin-ext_latin_cyrillic-ext_cyrillic-700.svg#Montserrat) format("svg");
   /* Legacy iOS */
 }
+.room-card__price-value, .room-card__testimonial-count, .site-calendar__date_today-date, .site-calendar__date_active-date, .site-calendar__date_end-date, .site-calendar__days-section, .site-calendar__date-section, .booking-block .booking-block__termin-info, .booking-block__price-value, .site-checkbox_rich .site-checkbox__label, .button_primary, .button_secondary {
+  font-family: "Montserrat", "Arial", sans-serif;
+  font-weight: 700;
+}
+
 .site-dropdown__header {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -395,7 +400,7 @@ template {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  font-family: "Montserrat", sans-serif;
+  font-family: "Montserrat", "Arial", sans-serif;
   font-size: 14px;
   line-height: 18px;
   text-align: left;
@@ -479,7 +484,8 @@ template {
 .site-dropdown__item {
   color: #1f2041;
   font-size: 12px;
-  font-family: "Montserrat-Bold", sans-serif;
+  font-family: "Montserrat", "Arial", sans-serif;
+  font-weight: 700;
   line-height: 15px;
   text-transform: uppercase;
   margin: 0;
@@ -507,7 +513,7 @@ template {
   width: 100%;
   position: relative;
 }
-.site-dropdown.site-dropdown_counting-dropdown .site-dropdown__window {
+.site-dropdown.site-dropdown_counting .site-dropdown__window {
   outline: 1px solid rgba(31, 32, 65, 0.5);
 }
 .site-dropdown__text-area {
@@ -602,7 +608,8 @@ template {
 .button {
   color: #BC9CFF;
   font-size: 12px;
-  font-family: "Montserrat-Bold", sans-serif;
+  font-family: "Montserrat", "Arial", sans-serif;
+  font-weight: 700;
   line-height: 15px;
   text-transform: uppercase;
   margin: 0;
@@ -644,7 +651,6 @@ template {
   outline: 2px solid rgba(31, 32, 65, 0.75);
 }
 .button_secondary {
-  font-family: "Montserrat-Bold", sans-serif;
   color: white;
   background-image: -webkit-gradient(linear, left top, left bottom, from(#6FCF97), to(#66D2EA));
   background-image: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%);
@@ -654,7 +660,6 @@ template {
   background-image: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%);
 }
 .button_primary {
-  font-family: "Montserrat-Bold", sans-serif;
   color: white;
   background-image: -webkit-gradient(linear, left top, left bottom, from(#BC9CFF), to(#8BA4F9));
   background-image: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
@@ -664,6 +669,9 @@ template {
   background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(188, 156, 255, 0.5)), to(rgba(139, 164, 249, 0.5)));
   background-image: linear-gradient(180deg, rgba(188, 156, 255, 0.5) 0%, rgba(139, 164, 249, 0.5) 100%);
   color: white;
+}
+.button_flexible {
+  width: 100%;
 }
 .button_block {
   display: -webkit-inline-box;
@@ -676,14 +684,11 @@ template {
       -ms-flex-align: center;
           align-items: center;
 }
-.button_flexible {
-  width: 100%;
-}
-.button_arrow {
+.button_with-arrow-icon {
   padding-right: 40px;
   padding-left: 40px;
 }
-.button_arrow::after {
+.button_with-arrow-icon::after {
   content: "arrow_forward";
   font-family: "Material Icons";
   font-size: 24px;
@@ -729,27 +734,29 @@ template {
 .form-element__label {
   color: #1f2041;
   font-size: 12px;
-  font-family: "Montserrat-Bold", sans-serif;
+  font-family: "Montserrat", "Arial", sans-serif;
+  font-weight: 700;
   line-height: 15px;
   text-transform: uppercase;
   margin: 0;
 }
 .form-element__note {
-  font-family: "Montserrat", sans-serif;
+  font-family: "Montserrat", "Arial", sans-serif;
   color: rgba(31, 32, 65, 0.5);
   font-size: 12px;
   text-transform: uppercase;
 }
 .form-element__description {
-  font-family: "Montserrat", sans-serif;
+  font-family: "Montserrat", "Arial", sans-serif;
   color: rgba(31, 32, 65, 0.5);
   font-size: 12px;
 }
 
 .site-input {
   color: rgba(31, 32, 65, 0.75);
-  font-family: "Montserrat", sans-serif;
+  font-family: "Montserrat", "Arial", sans-serif;
   font-size: 14px;
+  font-weight: 400;
   line-height: 24px;
   letter-spacing: -0.1px;
   width: 100%;
@@ -765,7 +772,7 @@ template {
   display: flex;
   width: 100%;
 }
-.site-input_submit {
+.site-input_for-submit {
   border-radius: 4px 0 0 4px;
   border-right: none;
 }
@@ -809,7 +816,7 @@ template {
   display: inline-block;
 }
 .site-radio:not(:last-child) {
-  margin-right: 15px;
+  margin-right: 20px;
 }
 .site-radio-list {
   list-style: none;
@@ -838,17 +845,15 @@ template {
 }
 .site-radio__label {
   color: rgba(31, 32, 65, 0.5);
-  font-family: "Montserrat", sans-serif;
+  font-family: "Montserrat", "Arial", sans-serif;
   font-size: 14px;
+  font-weight: 400;
   line-height: 24px;
   letter-spacing: -0.1px;
   position: relative;
   display: -webkit-inline-box;
   display: -ms-inline-flexbox;
   display: inline-flex;
-  -webkit-box-align: start;
-      -ms-flex-align: start;
-          align-items: flex-start;
   padding-left: 30px;
   cursor: pointer;
 }
@@ -863,6 +868,10 @@ template {
   padding: 3px;
   border: 1px solid rgba(31, 32, 65, 0.25);
   border-radius: 50%;
+}
+.site-radio__label-text {
+  -webkit-transform: translateY(-3px);
+          transform: translateY(-3px);
 }
 
 .site-checkbox:not(:first-child) {
@@ -888,8 +897,9 @@ template {
 }
 .site-checkbox__label {
   color: rgba(31, 32, 65, 0.5);
-  font-family: "Montserrat", sans-serif;
+  font-family: "Montserrat", "Arial", sans-serif;
   font-size: 14px;
+  font-weight: 400;
   line-height: 18px;
   letter-spacing: -0.1px;
   position: relative;
@@ -914,48 +924,49 @@ template {
   margin-top: 9px;
 }
 .site-checkbox_rich .site-checkbox__label {
-  font-family: "Montserrat-Bold", sans-serif;
   color: rgba(31, 32, 65, 0.75);
 }
-.site-checkbox_toggle:not(:first-child) {
+.site-checkbox_switchable:not(:first-child) {
   margin-top: 10px;
 }
-.site-checkbox_toggle .site-checkbox__input:checked + .site-checkbox__label::before {
+.site-checkbox_switchable .site-checkbox__input:checked + .site-checkbox__label::before {
   background-image: none;
 }
-.site-checkbox_toggle .site-checkbox__input:checked + .site-checkbox__label::after {
-  -webkit-animation: toggle;
-          animation: toggle;
+.site-checkbox_switchable .site-checkbox__input:checked + .site-checkbox__label::after {
+  -webkit-animation: switch;
+          animation: switch;
   -webkit-animation-duration: 0.3s;
           animation-duration: 0.3s;
   left: 24px;
   background: -webkit-gradient(linear, left top, left bottom, from(#BC9CFF), to(#8BA4F9));
   background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
 }
-.site-checkbox_toggle .site-checkbox__label {
+.site-checkbox_switchable .site-checkbox__label {
   padding-left: 50px;
   color: rgba(31, 32, 65, 0.75);
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
   line-height: 24px;
 }
-.site-checkbox_toggle .site-checkbox__label::before {
+.site-checkbox_switchable .site-checkbox__label::before {
   width: 40px;
   border-radius: 10px;
 }
-.site-checkbox_toggle .site-checkbox__label::after {
-  -webkit-animation: toggle_back;
-          animation: toggle_back;
+.site-checkbox_switchable .site-checkbox__label::after {
+  -webkit-animation: switch_back;
+          animation: switch_back;
   -webkit-animation-duration: 0.3s;
           animation-duration: 0.3s;
   position: absolute;
   left: 4px;
+  top: 4px;
   content: " ";
   width: 12px;
   height: 12px;
   background: rgba(31, 32, 65, 0.25);
   border-radius: 50%;
+}
+.site-checkbox_switchable .site-checkbox__label-text {
+  -webkit-transform: translateY(-3px);
+          transform: translateY(-3px);
 }
 .site-checkbox .form-element__description {
   margin: 0;
@@ -963,23 +974,23 @@ template {
   padding-left: 30px;
 }
 
-@-webkit-keyframes toggle {
+@-webkit-keyframes switch {
   from {
     left: 3px;
   }
 }
 
-@keyframes toggle {
+@keyframes switch {
   from {
     left: 3px;
   }
 }
-@-webkit-keyframes toggle_back {
+@-webkit-keyframes switch_back {
   from {
     left: 25px;
   }
 }
-@keyframes toggle_back {
+@keyframes switch_back {
   from {
     left: 25px;
   }
@@ -993,7 +1004,8 @@ template {
 .site-fieldset__legend {
   color: #1f2041;
   font-size: 12px;
-  font-family: "Montserrat-Bold", sans-serif;
+  font-family: "Montserrat", "Arial", sans-serif;
+  font-weight: 700;
   line-height: 15px;
   text-transform: uppercase;
   margin: 0;
@@ -1002,7 +1014,7 @@ template {
 .site-fieldset__legend:focus-visible {
   outline: 2px solid rgba(31, 32, 65, 0.5);
 }
-.site-fieldset__legend_expand {
+.site-fieldset__legend_expanding {
   width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1012,14 +1024,14 @@ template {
           justify-content: space-between;
   cursor: pointer;
 }
-.site-fieldset__legend_expand::after {
+.site-fieldset__legend_expanding::after {
   content: "expand_more";
   font-family: "Material Icons";
   font-size: 24px;
   color: rgba(31, 32, 65, 0.5);
   text-transform: none;
 }
-.site-fieldset__legend_expand-reverse::after {
+.site-fieldset__legend_expanding-reverse::after {
   -webkit-transform: rotate(180deg);
           transform: rotate(180deg);
 }
@@ -1204,7 +1216,7 @@ template {
   -webkit-text-fill-color: transparent;
   -webkit-text-stroke: transparent;
   font-family: "Material Icons";
-  content: "star_border"/"Оценить в ";
+  content: "star_border";
   top: 0;
   left: 0;
   font-size: 24px;
@@ -1220,7 +1232,7 @@ template {
   position: absolute;
 }
 .star-rate__star_filled::before {
-  content: "star"/"Оценить в ";
+  content: "star";
 }
 .star-rate__radio {
   clip: rect(0 0 0 0);
@@ -1232,7 +1244,7 @@ template {
 }
 .star-rate__radio:hover ~ .star-rate__star::before {
   cursor: pointer;
-  content: "star"/"Оценить в ";
+  content: "star";
   background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(188, 156, 255, 0.25)), to(rgba(139, 164, 249, 0.25)));
   background-image: linear-gradient(180deg, rgba(188, 156, 255, 0.25) 0%, rgba(139, 164, 249, 0.25) 100%);
 }
@@ -1240,7 +1252,7 @@ template {
   outline: 1px solid rgba(31, 32, 65, 0.5);
 }
 .star-rate__radio:checked ~ .star-rate__star::before {
-  content: "star"/"Оценить в ";
+  content: "star";
   background-image: -webkit-gradient(linear, left top, left bottom, from(#BC9CFF), to(#8BA4F9));
   background-image: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
 }
@@ -1254,6 +1266,13 @@ template {
   padding: 40px 29px 30px 29px;
   max-width: 380px;
 }
+@media (max-width: 380px) {
+  .search-block {
+    width: auto;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
 .search-block__heading-hidden {
   clip: rect(0 0 0 0);
   width: 1px;
@@ -1265,7 +1284,8 @@ template {
 .search-block__heading {
   color: #1f2041;
   font-size: 24px;
-  font-family: "Montserrat-Bold", sans-serif;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
   line-height: 29px;
   margin: 0;
   letter-spacing: -0.1px;
@@ -1285,6 +1305,14 @@ template {
   position: relative;
   z-index: 2;
 }
+@media (max-width: 380px) {
+  .search-block__shared-dropdowns-wrapper {
+    width: 100%;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+}
 .search-block__date-dropdown-wrapper {
   max-width: 150px;
 }
@@ -1297,19 +1325,6 @@ template {
   margin-bottom: 30px;
 }
 
-@media (max-width: 380px) {
-  .search-block {
-    width: auto;
-    padding-left: 20px;
-    padding-right: 20px;
-  }
-  .search-block__shared-dropdowns-wrapper {
-    width: 100%;
-    -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
-  }
-}
 .registration-block {
   background-color: white;
   border: 1px solid rgba(0, 0, 0, 0.12);
@@ -1323,11 +1338,17 @@ template {
 .registration-block__heading {
   color: #1f2041;
   font-size: 24px;
-  font-family: "Montserrat-Bold", sans-serif;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
   line-height: 29px;
   margin: 0;
   letter-spacing: -0.1px;
   margin-bottom: 20px;
+}
+@media (max-width: 380px) {
+  .registration-block__heading {
+    text-align: center;
+  }
 }
 .registration-block__footer {
   display: -webkit-box;
@@ -1342,7 +1363,7 @@ template {
   padding-top: 30px;
 }
 .registration-block__have-account-button {
-  font-family: "Montserrat", sans-serif;
+  font-family: "Montserrat", "Arial", sans-serif;
   font-size: 14px;
   line-height: 18px;
   letter-spacing: -0.15px;
@@ -1355,7 +1376,7 @@ template {
   margin-bottom: 21px;
 }
 .registration-block .site-fieldset:nth-child(2) {
-  margin-bottom: 8px;
+  margin-bottom: 10px;
 }
 .registration-block .site-fieldset__legend {
   margin-bottom: 5px;
@@ -1364,14 +1385,9 @@ template {
   margin-bottom: 10px;
 }
 .registration-block .site-checkbox-list {
-  margin-bottom: 22px;
+  margin-bottom: 20px;
 }
 
-@media (max-width: 380px) {
-  .registration-block__heading {
-    text-align: center;
-  }
-}
 .booking-block {
   background-color: white;
   border: 1px solid rgba(0, 0, 0, 0.12);
@@ -1383,6 +1399,13 @@ template {
   max-width: 380px;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+}
+@media (max-width: 380px) {
+  .booking-block {
+    width: auto;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
 }
 .booking-block__heading {
   clip: rect(0 0 0 0);
@@ -1407,7 +1430,8 @@ template {
 .booking-block__room-number {
   color: #1f2041;
   font-size: 24px;
-  font-family: "Montserrat-Bold", sans-serif;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
   line-height: 29px;
   margin: 0;
   letter-spacing: -0.1px;
@@ -1428,13 +1452,12 @@ template {
 }
 .booking-block__price {
   margin: 0;
-  font-family: "Montserrat", sans-serif;
+  font-family: "Montserrat", "Arial", sans-serif;
   font-size: 12px;
   line-height: 18px;
   color: rgba(31, 32, 65, 0.5);
 }
 .booking-block__price-value {
-  font-family: "Montserrat-Bold", sans-serif;
   font-size: 14px;
 }
 .booking-block__form {
@@ -1451,6 +1474,14 @@ template {
   position: relative;
   z-index: 2;
 }
+@media (max-width: 380px) {
+  .booking-block__shared-dropdowns-wrapper {
+    width: 100%;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+}
 .booking-block__date-dropdown-wrapper {
   max-width: 150px;
 }
@@ -1463,8 +1494,9 @@ template {
 }
 .booking-block__bill-section {
   color: rgba(31, 32, 65, 0.75);
-  font-family: "Montserrat", sans-serif;
+  font-family: "Montserrat", "Arial", sans-serif;
   font-size: 14px;
+  font-weight: 400;
   line-height: 18px;
   letter-spacing: -0.1px;
   width: 100%;
@@ -1486,7 +1518,8 @@ template {
 .booking-block__bill-row_total {
   color: #1f2041;
   font-size: 19px;
-  font-family: "Montserrat-Bold", sans-serif;
+  font-family: "Montserrat", "Arial", sans-serif;
+  font-weight: 700;
   line-height: 24px;
   letter-spacing: 0.2px;
   margin: 0;
@@ -1510,7 +1543,6 @@ template {
   cursor: pointer;
   width: 20px;
   height: 20px;
-  font-family: "Montserrat-Bold", sans-serif;
   text-align: center;
   color: rgba(31, 32, 65, 0.25);
   border: 1px solid rgba(31, 32, 65, 0.25);
@@ -1558,19 +1590,6 @@ template {
   border-bottom: 1px dashed rgba(31, 32, 65, 0.25);
 }
 
-@media (max-width: 380px) {
-  .booking-block {
-    width: auto;
-    padding-left: 20px;
-    padding-right: 20px;
-  }
-  .booking-block__shared-dropdowns-wrapper {
-    width: 100%;
-    -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
-  }
-}
 .log-in-block {
   background-color: white;
   border: 1px solid rgba(0, 0, 0, 0.12);
@@ -1584,11 +1603,17 @@ template {
 .log-in-block__heading {
   color: #1f2041;
   font-size: 24px;
-  font-family: "Montserrat-Bold", sans-serif;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
   line-height: 29px;
   margin: 0;
   letter-spacing: -0.1px;
   margin-bottom: 20px;
+}
+@media (max-width: 380px) {
+  .log-in-block__heading {
+    text-align: center;
+  }
 }
 .log-in-block__form .button {
   margin-top: 10px;
@@ -1609,18 +1634,13 @@ template {
   padding-top: 30px;
 }
 .log-in-block__no-account-button {
-  font-family: "Montserrat", sans-serif;
+  font-family: "Montserrat", "Arial", sans-serif;
   font-size: 14px;
   line-height: 18px;
   letter-spacing: 0px;
   margin-right: 20px;
 }
 
-@media (max-width: 380px) {
-  .log-in-block__heading {
-    text-align: center;
-  }
-}
 .site-calendar {
   padding: 20px 19px;
   max-width: 280px;
@@ -1630,10 +1650,17 @@ template {
   -webkit-box-sizing: content-box;
           box-sizing: content-box;
 }
+@media (max-width: 380px) {
+  .site-calendar {
+    max-width: 238px;
+    padding: 20px 10px;
+  }
+}
 .site-calendar__header {
   color: #1f2041;
   font-size: 19px;
-  font-family: "Montserrat-Bold", sans-serif;
+  font-family: "Montserrat", "Arial", sans-serif;
+  font-weight: 700;
   line-height: 24px;
   letter-spacing: 0.2px;
   margin: 0;
@@ -1654,7 +1681,6 @@ template {
   color: #BC9CFF;
 }
 .site-calendar__days-section, .site-calendar__date-section {
-  font-family: "Montserrat-Bold", sans-serif;
   font-size: 12px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1664,7 +1690,7 @@ template {
           justify-content: space-between;
 }
 .site-calendar__date-section {
-  font-family: "Montserrat", sans-serif;
+  font-family: "Montserrat", "Arial", sans-serif;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
 }
@@ -1700,15 +1726,14 @@ template {
   background: -webkit-gradient(linear, left top, left bottom, from(rgba(188, 156, 255, 0.25)), to(rgba(139, 164, 249, 0.25)));
   background: linear-gradient(180deg, rgba(188, 156, 255, 0.25) 0%, rgba(139, 164, 249, 0.25) 100%);
 }
-.site-calendar__date_today, .site-calendar__date_active, .site-calendar__date_end {
+.site-calendar__date_today-date, .site-calendar__date_active-date, .site-calendar__date_end-date {
   background-color: white;
   border-radius: 50% 0 0 50%;
-  font-family: "Montserrat-Bold", sans-serif;
   position: relative;
   z-index: 1;
   color: white;
 }
-.site-calendar__date_today::before, .site-calendar__date_active::before, .site-calendar__date_end::before {
+.site-calendar__date_today-date::before, .site-calendar__date_active-date::before, .site-calendar__date_end-date::before {
   z-index: -2;
   content: " ";
   position: absolute;
@@ -1720,27 +1745,27 @@ template {
   background-image: -webkit-gradient(linear, left top, left bottom, from(#BC9CFF), to(#8BA4F9));
   background-image: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
 }
-.site-calendar__date_today:hover, .site-calendar__date_today:focus, .site-calendar__date_active:hover, .site-calendar__date_active:focus, .site-calendar__date_end:hover, .site-calendar__date_end:focus {
+.site-calendar__date_today-date:hover, .site-calendar__date_today-date:focus, .site-calendar__date_active-date:hover, .site-calendar__date_active-date:focus, .site-calendar__date_end-date:hover, .site-calendar__date_end-date:focus {
   border-radius: 0;
 }
-.site-calendar__date_end {
+.site-calendar__date_end-date {
   border-radius: 0 50% 50% 0;
 }
-.site-calendar__date_today {
+.site-calendar__date_today-date {
   border-radius: 0;
 }
-.site-calendar__date_today::before {
+.site-calendar__date_today-date::before {
   background-image: -webkit-gradient(linear, left top, left bottom, from(#6FCF97), to(#66D2EA));
   background-image: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%);
 }
-.site-calendar__date_today.site-calendar__date_active::before, .site-calendar__date_today.site-calendar__date_end::before {
+.site-calendar__date_today-date.site-calendar__date_active-date::before, .site-calendar__date_today-date.site-calendar__date_end-date::before {
   background-image: -webkit-gradient(linear, left top, left bottom, from(#BC9CFF), to(#8BA4F9));
   background-image: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
 }
 .site-calendar__date_hov-range {
   background-color: rgba(31, 32, 65, 0.05);
 }
-.site-calendar__date_hov-range + .site-calendar__date_active, .site-calendar__date_hov-range + .site-calendar__date_end {
+.site-calendar__date_hov-range + .site-calendar__date_active-date, .site-calendar__date_hov-range + .site-calendar__date_end-date {
   border-top-left-radius: 0;
   border-bottom-left-radius: 0;
 }
@@ -1756,6 +1781,16 @@ template {
   cursor: default;
   color: rgba(31, 32, 65, 0.25);
 }
+@media (max-width: 380px) {
+  .site-calendar__date {
+    width: 34px;
+    height: 34px;
+  }
+  .site-calendar__date_today-date:before, .site-calendar__date_active-date:before, .site-calendar__date_end-date:before {
+    width: 34px;
+    height: 34px;
+  }
+}
 .site-calendar__optional-row {
   width: 100%;
   display: -webkit-box;
@@ -1766,20 +1801,6 @@ template {
           justify-content: space-between;
 }
 
-@media (max-width: 380px) {
-  .site-calendar {
-    max-width: 238px;
-    padding: 20px 10px;
-  }
-  .site-calendar__date {
-    width: 34px;
-    height: 34px;
-  }
-  .site-calendar__date_today:before, .site-calendar__date_active:before, .site-calendar__date_end:before {
-    width: 34px;
-    height: 34px;
-  }
-}
 .room-card {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1854,13 +1875,14 @@ template {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  padding-top: 7px;
-  padding-bottom: 14px;
+  padding-top: 6px;
+  padding-bottom: 16.5px;
 }
 .room-card__room-number {
   color: #1f2041;
   font-size: 19px;
-  font-family: "Montserrat-Bold", sans-serif;
+  font-family: "Montserrat", "Arial", sans-serif;
+  font-weight: 700;
   line-height: 24px;
   letter-spacing: 0.2px;
   margin: 0;
@@ -1873,7 +1895,7 @@ template {
 }
 .room-card__price, .room-card__testimonial-counter {
   margin: 0;
-  font-family: "Montserrat", sans-serif;
+  font-family: "Montserrat", "Arial", sans-serif;
   line-height: 18px;
   color: rgba(31, 32, 65, 0.5);
   padding-left: 15px;
@@ -1885,7 +1907,6 @@ template {
   font-size: 14px;
 }
 .room-card__price-value, .room-card__testimonial-count {
-  font-family: "Montserrat-Bold", sans-serif;
   font-size: 14px;
 }
 .room-card__outline-wrapper {
@@ -1955,7 +1976,7 @@ html {
   margin-bottom: 41px;
 }
 .content__column .search-block {
-  margin-bottom: 39px;
+  margin-bottom: 37px;
 }
 .content__column .booking-block {
   margin-bottom: 39px;

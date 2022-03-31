@@ -24,21 +24,21 @@ mixin site-dropdown(obj = {})
 
           modifiers.calendar = obj.modifiers.calendar;
           switch(modifiers.calendar.type) {
-            case "date":  calendarClassList.push("site-calendar_date");
-                          dropdownClassList.push ("site-dropdown_date-calendar");
+            case "date":  calendarClassList.push("site-calendar_simple");
+                          dropdownClassList.push ("site-dropdown_simple");
                           windowClassList.push("site-dropdown__window_free");
                           break;
             case "range": calendarClassList.push("site-calendar_range");
-                          dropdownClassList.push(obj.shared ? "site-dropdown_shared-calendar": "site-dropdown_range-calendar");
+                          dropdownClassList.push(obj.shared ? "site-dropdown_shared": "site-dropdown_range");
                           windowClassList.push("site-dropdown__window_free");
                           break;
           }
       }
-      else dropdownClassList.push("site-dropdown_counting-dropdown");
+      else dropdownClassList.push("site-dropdown_counting");
       if (obj.modifiers.buttons) modifiers.buttons = true
     }
     else
-      dropdownClassList.push("site-dropdown_counting-dropdown");
+      dropdownClassList.push("site-dropdown_counting");
 
 
   +form-element(obj)

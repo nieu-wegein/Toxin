@@ -10,7 +10,7 @@
 @import '../../../components/site-radio/site-radio';
 @import '../../../components/site-section/site-section';
 @import '../../../components/like-button/like-button';
-@import '../../../components/rate-button/star-rate';
+@import '../../../components/star-rate/star-rate';
 @import '../../../components/site-range-slider/site-range-slider';
 @import '../../../components/site-pagination/site-pagination';
 @import '../../../components/site-ul/site-ul';
@@ -127,7 +127,7 @@ html {
 
     .site-buttons-wrapper {
       .button {
-        margin-right: 15px;
+        margin-right: 20px;
         margin-bottom: 30px;
 
         &:nth-child(4) {
@@ -136,7 +136,7 @@ html {
         }
 
         &:nth-child(5) {
-          margin-right: 18px;
+          margin-right: 23px;
         }
       }
     }

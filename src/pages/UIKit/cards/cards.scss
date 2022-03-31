@@ -8,7 +8,7 @@
 @import '../../../components/site-checkbox/site-checkbox';
 @import '../../../components/site-fieldset/site-fieldset';
 @import '../../../components/site-slider/site-slider';
-@import '../../../components/rate-button/star-rate';
+@import '../../../components/star-rate/star-rate';
 @import '../../../components/search-block/search-block';
 @import '../../../components/registration-block/registration-block';
 @import '../../../components/booking-block/booking-block';
@@ -46,9 +46,9 @@ html {
 
   &__column {
 
-             &:not(:last-child) {
-          margin-right: 40px;
-         }
+   &:not(:last-child) {
+    margin-right: 40px;
+   }
 
     &:nth-child(2) {
       margin-top: 2px;
@@ -68,7 +68,7 @@ html {
     }
 
     .search-block {
-      margin-bottom: 39px;
+      margin-bottom: 37px;
     }
 
     .booking-block {

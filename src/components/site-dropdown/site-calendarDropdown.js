@@ -1,4 +1,3 @@
-// import {Dropdown} from "./site-dropdown"
 import $ from "../../jquery-3.6.0.min";
 import "../site-calendar/site-calendar"
 
@@ -78,7 +77,7 @@ class CalendarDropdown extends SiteDropdown {
   clearState = () => {
     this.buttonApply.focus();
 
-    $(this.calendar.state.activeButton).removeClass("site-calendar__date_active");
+    $(this.calendar.state.activeButton).removeClass("site-calendar__date_active-date");
     this.calendar.state.activeButton = null;
     this.calendar.state.activePage = null;
     this.calendar.state.activeDate= null;
@@ -156,7 +155,7 @@ class RangeCalendarDropdown extends CalendarDropdown {
   }
 
   clearRangeState = () => {
-    $(this.calendar.rangeState.rangeButton).removeClass("site-calendar__date_end")
+    $(this.calendar.rangeState.rangeButton).removeClass("site-calendar__date_end-date")
     this.calendar.removeClass("site-calendar_range")
     this.calendar.rangeState.rangeButton = null;
     this.calendar.rangeState.rangePage = null;
@@ -260,8 +259,8 @@ class SharedCalendarDropdown {
   }
 
   clearState = (e) => {
-    $(this.calendar.state.activeButton).removeClass("site-calendar__date_active");
-    $(this.calendar.rangeState.rangeButton).removeClass("site-calendar__date_end");
+    $(this.calendar.state.activeButton).removeClass("site-calendar__date_active-date");
+    $(this.calendar.rangeState.rangeButton).removeClass("site-calendar__date_end-date");
     this.calendar.state.activeButton = null;
     this.calendar.state.activePage = null;
     this.calendar.state.activeDate = null
@@ -286,7 +285,7 @@ class SharedCalendarDropdown {
 
 
 $(function (){
-  const calendarDropdowns = $(".site-dropdown_date-calendar");
+  const calendarDropdowns = $(".site-dropdown_simple-calendar");
   calendarDropdowns.each((i, dropdown) => {
 
     new CalendarDropdown(dropdown);
@@ -296,7 +295,7 @@ $(function (){
 
   });
 
-  const rangeCalendarDropdowns = $(".site-dropdown_range-calendar");
+  const rangeCalendarDropdowns = $(".site-dropdown_range");
   rangeCalendarDropdowns.each((i, dropdown) => {
 
     new RangeCalendarDropdown(dropdown)
@@ -306,7 +305,7 @@ $(function (){
 
   });
 
-  const sharedCalendarDropdowns = $(".site-dropdown_shared-calendar");
+  const sharedCalendarDropdowns = $(".site-dropdown_shared");
   sharedCalendarDropdowns.each((i, dropdown) => {
 
     new SharedCalendarDropdown(dropdown)

@@ -54,8 +54,8 @@ mixin doughnut-chart(obj)
         <circle r="58" cx="60" cy="60" transform="rotate(-90 60 60)"  stroke-dasharray = "#{getDashedLine(great)} #{circumference}" stroke-dashoffset = "-#{good + satisfactory + poorly}" stroke-width="4" stroke="url(#great)" fill="none">
           <title>#{decline(obj.great, cases)}</title>
         </circle>
-        <text class="doughnut-chart__votes-count" x="50%" y="49%" text-anchor="middle" font-family="Montserrat-Bold, sans-serif" font-size="24" fill = "#BC9CFF">#{votes}</text>
-        <text class="doughnut-chart__votes-span" x="50%" y="64%" text-anchor="middle" font-family="Montserrat-Bold, sans-serif" font-size="15"  fill = "#BC9CFF">#{decline(votes, cases, false)}</text>
+        <text class="doughnut-chart__votes-count" x="50%" y="49%" text-anchor="middle" font-family="Montserrat, sans-serif" font-size="24" font-weight= 700 fill = "#BC9CFF">#{votes}</text>
+        <text class="doughnut-chart__votes-span" x="50%" y="64%" text-anchor="middle" font-family="Montserrat, sans-serif" font-size="15" font-weight= 700 fill = "#BC9CFF">#{decline(votes, cases, false)}</text>
       </svg>
       figcaption.doughnut-chart__caption
         dl.doughnut-chart__legend
@@ -68,7 +68,7 @@ mixin doughnut-chart(obj)
             dd.doughnut-chart__definition Хорошо
               span.doughnut-chart__color-label - #{decline(obj.good, cases)}
           .doughnut-chart__item-wrapper
-            dt.doughnut-chart__color.doughnut-chart__color_violet
+            dt.doughnut-chart__color.doughnut-chart__color_purple
             dd.doughnut-chart__definition Удовлетворительно
               span.doughnut-chart__color-label - #{decline(obj.satisfactory, cases)}
           .doughnut-chart__item-wrapper

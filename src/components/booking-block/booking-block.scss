@@ -58,7 +58,7 @@
   }
 
   &__price-value {
-    font-family: $ff-bold;
+    @extend %ff-bold;
     font-size: 14px;
   }
 
@@ -134,12 +134,12 @@
     margin: 0;
 
     &-info {
+      @extend %ff-bold;
       position: relative;
       bottom: 2px;
       cursor: pointer;
       width: 20px;
       height: 20px;
-      font-family: $ff-bold;
       text-align: center;
       color: $site-dark-25;
       border: 1px solid $site-dark-25;

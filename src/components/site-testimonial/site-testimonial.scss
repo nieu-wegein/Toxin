@@ -21,7 +21,7 @@
   }
 
   &__author-name {
-    font-family: $ff-bold;
+    @extend %ff-bold;
     font-style: normal;
     display: inline-block;
     width: 100%;

@@ -1,5 +1,9 @@
-$ff-normal: 'Montserrat', sans-serif;
-$ff-bold: 'Montserrat-Bold', sans-serif;
+$ff-normal: 'Montserrat', 'Arial', sans-serif;
+%ff-bold {
+  font-family:  'Montserrat', 'Arial', sans-serif;
+  font-weight: 700;
+}
+
 $site-purple: #BC9CFF;
 $site-green: #6FCF97;
 $site-dark: rgba(31, 32, 65, 1);
@@ -13,37 +17,41 @@ $primary-gradient-25: linear-gradient(180deg, rgba(188, 156, 255, 0.25) 0%, rgba
 $primary-gradient-50: linear-gradient(180deg, rgba(188, 156, 255, 0.5) 0%, rgba(139, 164, 249, 0.5) 100%);
 $secondary-gradient: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%);
 
-@mixin site-h1($color: $site-dark, $font:'Montserrat-Bold', $fontS: 24px, $lineH: 29px) {
+@mixin site-h1($color: $site-dark, $font:'Montserrat', $fontW: 700, $fontS: 24px, $lineH: 29px) {
   color: $color;
   font-size: $fontS;
   font-family: $font, sans-serif;
+  font-weight: $fontW;
   line-height: $lineH;
   margin: 0;
   letter-spacing: -0.1px;
 }
 
-@mixin site-h2($color: $site-dark, $font:'Montserrat-Bold', $fontS: 19px, $lineH: 24px) {
+@mixin site-h2($color: $site-dark, $font:'Montserrat', $fontW: 700, $fontS: 19px, $lineH: 24px) {
   color: $color;
   font-size: $fontS;
-  font-family: $font, sans-serif;
+  font-family: $font, 'Arial', sans-serif;
+  font-weight: $fontW;
   line-height: $lineH;
   letter-spacing: 0.2px;
   margin: 0;
 }
 
-@mixin site-h3($color: $site-dark, $font:'Montserrat-Bold', $fontS: 12px, $lineH: 15px) {
+@mixin site-h3($color: $site-dark, $font:'Montserrat', $fontW: 700, $fontS: 12px, $lineH: 15px) {
   color: $color;
   font-size: $fontS;
-  font-family: $font, sans-serif;
+  font-family: $font, 'Arial', sans-serif;
+  font-weight: $fontW;
   line-height: $lineH;
   text-transform: uppercase;
   margin: 0;
 }
 
-@mixin site-body($color: $site-dark-75, $font:'Montserrat', $fontS: 14px, $lineH: 24px) {
+@mixin site-body($color: $site-dark-75, $font:'Montserrat', $fontW: 400, $fontS: 14px, $lineH: 24px) {
   color: $color;
-  font-family: $font, sans-serif;
+  font-family: $font, 'Arial', sans-serif;
   font-size: $fontS;
+  font-weight: $fontW;
   line-height: $lineH;
   letter-spacing: -0.1px;
 }

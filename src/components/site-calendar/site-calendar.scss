@@ -34,7 +34,7 @@
 
   &__days-section,
   &__date-section {
-    font-family: $ff-bold;
+    @extend %ff-bold;
     font-size: 12px;
     display: flex;
     justify-content: space-between;
@@ -76,12 +76,12 @@
       background: $primary-gradient-25;
     }
 
-    &_today,
-    &_active,
-    &_end {
+    &_today-date,
+    &_active-date,
+    &_end-date {
+      @extend %ff-bold;
       background-color: white;
       border-radius: 50% 0 0 50%;
-      font-family: $ff-bold;
       position: relative;
       z-index: 1;
       color: white;
@@ -104,19 +104,19 @@
       }
     }
 
-    &_end {
+    &_end-date {
       border-radius: 0 50% 50% 0;
     }
 
-    &_today {
+    &_today-date {
       border-radius: 0;
 
       &::before {
         background-image: $secondary-gradient;
       }
 
-      &.site-calendar__date_active::before,
-      &.site-calendar__date_end::before {
+      &.site-calendar__date_active-date::before,
+      &.site-calendar__date_end-date::before {
         background-image: $primary-gradient;
       }
     }
@@ -124,8 +124,8 @@
     &_hov-range {
       background-color: $site-dark-5;
 
-      & + .site-calendar__date_active,
-      & + .site-calendar__date_end {
+      & + .site-calendar__date_active-date,
+      & + .site-calendar__date_end-date {
         border-top-left-radius: 0;
         border-bottom-left-radius: 0;
       }
@@ -149,9 +149,9 @@
       width: 34px;
       height: 34px;
 
-      &_today,
-      &_active,
-      &_end {
+      &_today-date,
+      &_active-date,
+      &_end-date {
         &:before {
           width: 34px;
           height: 34px;

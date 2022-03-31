@@ -8,7 +8,7 @@
     &::before {
       @include background-text-transparent();
       font-family: 'Material Icons';
-      content: 'star_border' / 'Оценить в ';
+      content: 'star_border';
       top: 0;
       left: 0;
       font-size: 24px;
@@ -20,7 +20,7 @@
     }
 
     &_filled::before {
-      content: 'star' / 'Оценить в ';
+      content: 'star';
     }
   }
 
@@ -29,7 +29,7 @@
 
     &:hover ~ .star-rate__star::before {
       cursor: pointer;
-      content: 'star' / 'Оценить в ';
+      content: 'star';
       background-image: $primary-gradient-25;
     }
 
@@ -38,7 +38,7 @@
     }
 
     &:checked ~ .star-rate__star::before {
-      content: 'star' / 'Оценить в ';
+      content: 'star';
       background-image: $primary-gradient;
     }
   }

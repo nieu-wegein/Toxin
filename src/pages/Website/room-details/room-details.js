@@ -9,7 +9,7 @@ import $ from "../../../jquery-3.6.0.min";
 
 $(function () {
 
-    const dropdown = $(".site-dropdown_counting-dropdown").get();
+    const dropdown = $(".site-dropdown_counting").get();
 
     dropdown[0].objectModel.initState({
         adults: 1,

@@ -195,7 +195,7 @@
     }
 
     &_active {
-      font-family: $ff-bold;
+      @extend %ff-bold;
       color: $site-dark-75;
     }
 
@@ -224,7 +224,7 @@
     margin: 0;
     white-space: nowrap;
 
-    &_logged {
+    &_for-logged {
       align-items: center;
 
       .site-header__user-nav-item {
@@ -260,8 +260,8 @@
     }
 
 
-    &_nav::before,
-    &_nav::after {
+    &_for-nav-menu::before,
+    &_for-nav-menu::after {
       content: ' ';
       position: absolute;
       left: 0;
@@ -271,7 +271,7 @@
       transition: transform 0.3s;
     }
 
-    &_nav {
+    &_for-nav-menu {
       width: 34px;
       height: 34px;
       padding: 16px 0;
@@ -308,8 +308,8 @@
       }
     }
 
-    &_login,
-    &_user {
+    &_for-login-menu,
+    &_for-user-menu {
       position: relative;
       width: 34px;
       height: 34px;
@@ -331,11 +331,11 @@
 
     }
 
-    &_login::before {
+    &_for-login-menu::before {
       content: 'login';
     }
 
-    &_user::before {
+    &_for-user-menu::before {
       content: 'person';
     }
   }

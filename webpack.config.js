@@ -9,8 +9,6 @@ const PATHS = {
     uikit: path.join(__dirname, '/src/pages/UIKit/')
 }
 
-//TODO: Исправить кавычки
-
 module.exports = {
     mode: "development",
     entry: {
@@ -34,13 +32,6 @@ module.exports = {
 
     module: {
         rules: [
-            // {
-            //     test: /\.pug$/,
-            //     loader: 'pug-loader',
-            //     options: {
-            //         pretty: true
-            //     }
-            // },
 
             {
               test: /\.pug$/,

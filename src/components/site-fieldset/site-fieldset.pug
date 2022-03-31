@@ -9,11 +9,11 @@ mixin site-fieldset(legend, modifiers)
            tabindex = 0;
 
            if (modifiers.expandable === "expanded") {
-             legendClassList.push("site-fieldset__legend_expand site-fieldset__legend_expand-reverse");
+             legendClassList.push("site-fieldset__legend_expanding site-fieldset__legend_expanding-reverse");
              areaClassList.push("site-fieldset__area_expanded");
            }
            else if (modifiers.expandable === "collapsed") {
-             legendClassList.push("site-fieldset__legend_expand");
+             legendClassList.push("site-fieldset__legend_expanding");
              areaClassList.push("site-fieldset__area_collapsed");
            }
          }

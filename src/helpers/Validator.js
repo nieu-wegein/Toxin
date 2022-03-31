@@ -14,10 +14,10 @@ export default class Validator {
         const currentValue = $(".site-dropdown__text-area", header).text();
         let valid = true;
 
-        if ($(dropdown).hasClass("site-dropdown_counting-dropdown")) {
+        if ($(dropdown).hasClass("site-dropdown_counting")) {
             const defaultValue = header.data("text");
             valid = defaultValue !== currentValue;
-        } else if ($(dropdown).hasClass("site-dropdown_shared-calendar")) {
+        } else if ($(dropdown).hasClass("site-dropdown_shared")) {
             const regex = /\d\d.\d\d.\d\d\d\d/g;
             valid = regex.test(currentValue);
         }

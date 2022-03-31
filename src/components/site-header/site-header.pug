@@ -48,7 +48,7 @@ mixin site-header(obj = {})
     };
 
     const userMenu = {
-      classList: ["site-header__user-nav-list", "site-header__user-nav-list_logged"],
+      classList: ["site-header__user-nav-list", "site-header__user-nav-list_for-logged"],
       itemClass: "site-header__user-nav-item",
       linkClass: "site-header__nav-link",
       items: [
@@ -82,5 +82,5 @@ mixin site-header(obj = {})
               modifiers: {primary: true},
               text: "Зарегистрироваться"
             })
-    button(class = ["site-header__mob-menu-button", obj.user ? "site-header__mob-menu-button_user" : "site-header__mob-menu-button_login"])
-    button.site-header__mob-menu-button.site-header__mob-menu-button_nav
+    button(class = ["site-header__mob-menu-button", obj.user ? "site-header__mob-menu-button_for-user-menu" : "site-header__mob-menu-button_for-login-menu"])
+    button.site-header__mob-menu-button.site-header__mob-menu-button_for-nav-menu

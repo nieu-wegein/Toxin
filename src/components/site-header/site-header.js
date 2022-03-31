@@ -7,12 +7,12 @@ $(function () {
   const siteNav =  $(".site-header__site-navigation");
   const bodyBlocker = $(".site-header__body-blocker");
   const body = $("body");
-  const menuButton = $(".site-header__mob-menu-button_nav");
+  const menuButton = $(".site-header__mob-menu-button_for-nav-menu");
 
 
 
   menuButton.click(function() {
-    menuButton.toggleClass("site-header__mob-menu-button_nav-close");
+    menuButton.toggleClass("site-header__mob-menu-button_for-nav-menu-close");
     siteNav.toggleClass("site-header__site-navigation_active");
 
     if(siteNav.hasClass("site-header__site-navigation_active"))
@@ -23,7 +23,7 @@ $(function () {
 
   bodyBlocker.click(function () {
     body.css("overflow", "visible");
-    menuButton.removeClass("site-header__mob-menu-button_nav-close");
+    menuButton.removeClass("site-header__mob-menu-button_for-nav-menu-close");
     siteNav.removeClass("site-header__site-navigation_active");
   })
 

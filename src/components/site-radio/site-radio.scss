@@ -4,7 +4,7 @@
   display: inline-block;
 
   &:not(:last-child) {
-    margin-right: 15px;
+    margin-right: 20px;
   }
 
   &-list {
@@ -43,7 +43,6 @@
     @include site-body($color: $site-dark-50);
     position: relative;
     display: inline-flex;
-    align-items: flex-start;
     padding-left: 30px;
     cursor: pointer;
 
@@ -58,5 +57,9 @@
       border: 1px solid $site-dark-25;
       border-radius: 50%;
     }
+  }
+
+  &__label-text {
+    transform: translateY(-3px);
   }
 }

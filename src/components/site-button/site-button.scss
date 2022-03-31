@@ -46,7 +46,7 @@
   }
 
   &_secondary {
-    font-family: $ff-bold;
+    @extend %ff-bold;
     color: white;
     background-image: $secondary-gradient;
 
@@ -56,7 +56,7 @@
   }
 
   &_primary {
-    font-family: $ff-bold;
+    @extend %ff-bold;
     color: white;
     background-image: $primary-gradient;
     background-clip: border-box;
@@ -67,17 +67,18 @@
     }
   }
 
+
+  &_flexible {
+    width: 100%;
+  }
+
   &_block {
     display: inline-flex;
     justify-content: center;
     align-items: center;
   }
 
-  &_flexible {
-    width: 100%;
-  }
-
-  &_arrow {
+  &_with-arrow-icon {
 
     padding-right: 40px;
     padding-left: 40px;

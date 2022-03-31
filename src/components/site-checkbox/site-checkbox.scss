@@ -58,12 +58,12 @@
     }
 
     .site-checkbox__label {
-      font-family: $ff-bold;
+      @extend %ff-bold;
       color: $site-dark-75;
     }
   }
 
-  &_toggle {
+  &_switchable {
 
     &:not(:first-child) {
       margin-top: 10px;
@@ -76,7 +76,7 @@
         }
 
         & + .site-checkbox__label::after {
-          animation: toggle;
+          animation: switch;
           animation-duration: 0.3s;
           left: 24px;
           background: $primary-gradient;
@@ -87,7 +87,6 @@
     .site-checkbox__label {
       padding-left: 50px;
       color: $site-dark-75;
-      align-items: center;
       line-height: 24px;
 
       &::before {
@@ -96,17 +95,21 @@
       }
 
       &::after {
-        animation: toggle_back;
+        animation: switch_back;
         animation-duration: 0.3s;
 
         position: absolute;
         left: 4px;
+        top: 4px;
         content: ' ';
         width: 12px;
         height: 12px;
         background: $site-dark-25;
         border-radius: 50%;
       }
+    }
+    .site-checkbox__label-text {
+      transform: translateY(-3px);
     }
   }
 
@@ -117,7 +120,7 @@
   }
 }
 
-@keyframes toggle {
+@keyframes switch {
   from {
     left: 3px;
   }
@@ -125,7 +128,7 @@
   }
 }
 
-@keyframes toggle_back {
+@keyframes switch_back {
   from {
     left: 25px;
   }

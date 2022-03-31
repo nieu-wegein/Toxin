@@ -155,7 +155,7 @@ class CountingDropdown extends SiteDropdown {
 
 $(function (){
 
-  const dropdownsList = $(".site-dropdown_counting-dropdown");
+  const dropdownsList = $(".site-dropdown_counting");
   dropdownsList.each((i, dropdown) => {
     new CountingDropdown(dropdown);
 

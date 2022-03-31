@@ -8,7 +8,7 @@ import $ from "../../../jquery-3.6.0.min";
 
 $(function () {
 
-    const dropdownList = $(".site-dropdown_counting-dropdown").get();
+    const dropdownList = $(".site-dropdown_counting").get();
 
     dropdownList[0].objectModel.initState({
         adults: 2,
@@ -17,8 +17,8 @@ $(function () {
     });
 
     dropdownList[1].objectModel.initState({
-        beds: 2,
         bedrooms: 2,
+        beds: 2,
         bathrooms: 1
     });
 

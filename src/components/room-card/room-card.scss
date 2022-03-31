@@ -94,7 +94,7 @@
 
   &__price-value,
   &__testimonial-count {
-    font-family: $ff-bold;
+    @extend %ff-bold;
     font-size: 14px;
   }
 

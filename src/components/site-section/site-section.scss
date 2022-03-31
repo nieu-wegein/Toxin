@@ -8,15 +8,15 @@
   }
 
   &__heading {
-    &_h1 {
+    &_with-h1 {
       @include site-h1();
     }
 
-    &_h2 {
+    &_with-h2 {
       @include site-h2();
     }
 
-    &_h3 {
+    &_with-h3 {
       @include site-h3();
       margin-bottom: 15px;
     }

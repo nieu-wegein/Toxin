@@ -14,7 +14,7 @@ mixin site-checkbox-group(obj)
     const checkboxClassList = ["site-checkbox"];
     if (obj.modifiers) {
         if( obj.modifiers.toggle){
-          checkboxClassList.push("site-checkbox_toggle")
+          checkboxClassList.push("site-checkbox_switchable")
         }
         if (obj.modifiers.rich) {
           checkboxClassList.push("site-checkbox_rich");
@@ -26,6 +26,7 @@ mixin site-checkbox-group(obj)
       each option in obj.options
         li(class = checkboxClassList)
           input(type = "checkbox" id = option.id class = "site-checkbox__input" name = option.name, checked = option.checked)
-          label(class = "site-checkbox__label"  for = option.id) !{option.label}
+          label(class = "site-checkbox__label"  for = option.id)
+            span.site-checkbox__label-text !{option.label}
           if(obj.modifiers && obj.modifiers.rich)
             p.form-element__description !{option.note}

@@ -5,8 +5,8 @@ mixin site-input(obj)
     -var inputClassList = ["site-input"];
 
     -if (obj.modifiers)
-      -if (obj.modifiers.datemask) inputClassList.push("site-input_date");
-      -if (obj.modifiers.submit) inputClassList.push("site-input_submit");
+      -if (obj.modifiers.datemask) inputClassList.push("site-input_with-date-mask");
+      -if (obj.modifiers.submit) inputClassList.push("site-input_for-submit");
 
     +form-element(obj)
       .site-input-wrapper
