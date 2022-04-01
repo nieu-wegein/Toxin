@@ -26,4 +26,4 @@
 + [jQuery](https://jquery.com/download/) - v3.6.0
 + [normalize.css](https://necolas.github.io/normalize.css/) - v8.0.1
 
-Библиотеки jQuery в данном проекте не использовались.
+Плагины jQuery в данном проекте не использовались.
